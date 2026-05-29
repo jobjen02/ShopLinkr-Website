@@ -4,14 +4,12 @@ import vue from '@astrojs/vue';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
     site: 'https://shoplinkr.com',
     output: 'server',
-    adapter: node({
-        mode: 'standalone',
-    }),
+    adapter: vercel(),
     i18n: {
         locales: ['nl', 'en'],
         defaultLocale: 'nl',
