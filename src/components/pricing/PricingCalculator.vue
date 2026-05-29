@@ -13,10 +13,10 @@ const MAX_CHANNELS = 100;
 const ORDER_SLIDER_MAX = 1000;
 const ORDER_TARGET_MAX = 100000;
 
-const CURVE_POWER = 3;
+const CURVE_POWER = 2;
 
 const CHANNEL_SLIDER_MAX = 1000;
-const CHANNEL_CURVE_POWER = 3;
+const CHANNEL_CURVE_POWER = 2;
 
 function ordersToSliderPosition(orderCount: number): number {
     if (orderCount <= 0) {
@@ -87,16 +87,20 @@ function sliderPositionToChannels(position: number): number {
 
 const ORDER_TICKS = [
     {
-        value: 100,
-        label: '100',
+        value: 500,
+        label: '500',
     },
     {
-        value: 1000,
-        label: '1k',
+        value: 2500,
+        label: '2,5k',
     },
     {
         value: 10000,
         label: '10k',
+    },
+    {
+        value: 50000,
+        label: '50k',
     },
 ];
 
@@ -111,6 +115,10 @@ const CHANNEL_TICKS = [
     {
         value: 5,
         label: '5',
+    },
+    {
+        value: 10,
+        label: '10',
     },
     {
         value: 25,
@@ -269,18 +277,18 @@ const ordersLabel = computed(() => {
 
 const ordersAriaText = computed(() => {
     if (isMaxOrders.value) {
-        return '100.000 of meer orders per maand';
+        return '100.000 of meer bestellingen per maand';
     }
 
     if (orders.value === 0) {
-        return '0 orders per maand';
+        return '0 bestellingen per maand';
     }
 
     if (orders.value === 1) {
-        return '1 order per maand';
+        return '1 bestelling per maand';
     }
 
-    return `${formattedOrders.value} orders per maand`;
+    return `${formattedOrders.value} bestellingen per maand`;
 });
 
 const channelLabel = computed(() => {
@@ -301,7 +309,7 @@ const salesNoticeText = computed(() => {
     }
 
     if (isMaxOrders.value) {
-        return 'Boven 100.000 orders per maand? Plan een gesprek met sales voor enterprise pricing.';
+        return 'Boven 100.000 bestellingen per maand? Plan een gesprek met sales voor enterprise pricing.';
     }
 
     return 'Meer dan 100 verkoopkanalen? Plan een gesprek met sales voor enterprise pricing.';
@@ -385,7 +393,7 @@ watch(orderSliderValue, (newValue) => {
                     <div class="mb-10">
                         <div class="flex items-baseline justify-between mb-4">
                             <label for="orders-input" class="text-sm font-semibold text-charcoal">
-                                Orders per maand
+                                Bestellingen per maand
                             </label>
                             <span class="text-base font-semibold text-charcoal tabular-nums">
                                 {{ ordersLabel }}
@@ -446,7 +454,7 @@ watch(orderSliderValue, (newValue) => {
                             </div>
                             <div class="flex items-baseline justify-between gap-4">
                                 <dt class="text-steel">
-                                    Orders
+                                    Bestellingen
                                     <span v-if="orders > 0" class="text-gravel">
                                         ({{ formattedOrders }})
                                     </span>
