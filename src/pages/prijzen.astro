@@ -1,0 +1,204 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import PricingCalculator from '../components/pricing/PricingCalculator.vue';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import FaqList from '../components/template/FaqList.astro';
+
+const inclusions = [
+    {
+        title: 'Alle features inbegrepen',
+        body: 'Voorraad, picklijsten, labels, inkoop. Geen losse modules of duurdere pakketten.',
+        icon: 'fa-duotone fa-solid fa-grid-2',
+    },
+    {
+        title: 'Ongelimiteerde gebruikers',
+        body: 'Iedereen in je magazijn werkt mee. Geen prijs per seat, geen plafond.',
+        icon: 'fa-duotone fa-solid fa-users',
+    },
+    {
+        title: 'Snelle support',
+        body: 'Reactie binnen 24 uur, vaak sneller. Direct contact met iemand die ShopLinkr kent.',
+        icon: 'fa-duotone fa-solid fa-comments',
+    },
+    {
+        title: 'Gratis migratie en onboarding',
+        body: 'We helpen je vanaf je huidige systeem, importeren je producten en zetten je kanalen op.',
+        icon: 'fa-duotone fa-solid fa-arrow-right-arrow-left',
+    },
+    {
+        title: 'Wekelijkse updates',
+        body: 'Nieuwe functies en verbeteringen rollen elke week uit. Zonder extra kosten.',
+        icon: 'fa-duotone fa-solid fa-arrows-rotate',
+    },
+    {
+        title: 'Geen jaarbinding',
+        body: 'Maandelijks opzegbaar. Geen vendor lock-in. Je data is altijd van jou.',
+        icon: 'fa-duotone fa-solid fa-calendar-check',
+    },
+    {
+        title: '14 dagen gratis trial',
+        body: 'Probeer ShopLinkr met je eigen producten en orders. Geen creditcard nodig.',
+        icon: 'fa-duotone fa-solid fa-circle-play',
+    },
+    {
+        title: 'Geen verborgen kosten',
+        body: 'Eén transparant tarief op basis van kanalen en orders. Geen setup fees of toeslagen.',
+        icon: 'fa-duotone fa-solid fa-shield-check',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Wat als ik in een maand meer orders heb dan verwacht?',
+        answer: 'Je springt automatisch naar de juiste volumetier en betaalt het bijbehorende tarief in die maand. De maand erop val je weer terug als je volume daalt. Geen extra kosten per losse order, geen verrassingen.',
+    },
+    {
+        question: 'Kan ik mijn abonnement pauzeren of opzeggen?',
+        answer: 'Opzeggen kan elke maand zonder opzegtermijn. Pauzeren is mogelijk, bijvoorbeeld in een rustig seizoen. Stuur ons een bericht en we regelen het.',
+    },
+    {
+        question: 'Welke verkoopkanalen en vervoerders worden ondersteund?',
+        answer: 'Bol, Shopify, WooCommerce, Lightspeed, Kaufland en koppelingen met PostNL, DPD, GLS, MyParcel, Sendcloud, Sendy, QLS, ParcelPro en Innosend. We breiden het aanbod continu uit op basis van klantvraag.',
+    },
+    {
+        question: 'Hoe werkt de gratis trial van 14 dagen?',
+        answer: 'Je krijgt twee weken volledige toegang tot alle features. Je hoeft geen creditcard achter te laten. Na de trial bepaal je zelf of je doorgaat. Doe je niets, dan stopt het account automatisch.',
+    },
+    {
+        question: 'Is migratie van een ander systeem inbegrepen?',
+        answer: 'Ja. We zetten samen met jou de eerste setup op, importeren je producten en voorraad en helpen met de koppelingen naar je kanalen. Daar betaal je niets extra voor.',
+    },
+    {
+        question: 'Wat is er inbegrepen in de support?',
+        answer: 'Toegang tot onze chat en mail support, met een reactietijd van doorgaans onder de 24 uur. Geen tickets in een wachtrij, geen losse support-pakketten. Voor inrichtingsvragen plannen we ook graag een korte call.',
+    },
+    {
+        question: 'Wat als ik later vragen heb of meer wil weten?',
+        answer: 'Plan een demo of stuur ons een bericht. We denken graag mee over de inrichting voor jouw magazijn, vrijblijvend.',
+    },
+];
+
+const jsonLd = [
+    {
+        '@type': 'Product',
+        name: 'ShopLinkr',
+        description: 'Magazijnsoftware voor Nederlandse webshops. Voorraad, picklijsten, labels en orderverwerking in één platform.',
+        brand: {
+            '@type': 'Brand',
+            name: 'ShopLinkr',
+        },
+        offers: {
+            '@type': 'Offer',
+            price: '5',
+            priceCurrency: 'EUR',
+            priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: '5',
+                priceCurrency: 'EUR',
+                unitText: 'MONTH',
+            },
+            availability: 'https://schema.org/InStock',
+        },
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Prijzen | ShopLinkr"
+    description="Transparant prijsmodel voor ShopLinkr. Je betaalt voor wat je gebruikt. Verkoopkanalen vanaf €5 per maand plus een staffeltarief per order. 14 dagen gratis proberen."
+    eyebrow="Prijzen"
+    heading="Eén transparant prijsmodel."
+    subheading="Je betaalt alleen voor wat je gebruikt. Alle features zitten erbij, ook in het kleinste pakket."
+    jsonLd={jsonLd}
+>
+    <PricingCalculator client:visible />
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-2xl mb-16 md:mb-20">
+                <p class="eyebrow mb-4">Wat zit erbij</p>
+                <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Alles inbegrepen, ongeacht je volume.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Geen tiers met afgeknepen features, geen extra modules om bij te boeken. Eén tarief op basis van je gebruik. Klaar.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                {
+                    inclusions.map((item) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-7 md:p-8 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                            <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-6">
+                                <i class={`${item.icon} text-[1.15rem]`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="text-base md:text-[1.05rem] font-semibold text-charcoal mb-2 tracking-tight leading-snug">
+                                {item.title}
+                            </h3>
+                            <p class="text-sm text-steel leading-relaxed">
+                                {item.body}
+                            </p>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vraag het ons,
+                        <span class="block text-sunstone-deep">we denken mee.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mis je een vraag? Stuur ons een bericht via de chat of plan een gesprek met ons team.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>
+
+<style>
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    details summary {
+        outline: none;
+    }
+
+    details summary:focus-visible h3 {
+        text-decoration: underline;
+        text-decoration-color: var(--color-sunstone-deep);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+    }
+</style>

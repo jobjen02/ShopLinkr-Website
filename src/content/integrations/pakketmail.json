@@ -1,0 +1,16 @@
+{
+    "name": "PakketMail",
+    "slug": "pakketmail",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/PakketMail.png",
+    "summary": "Verstuur met PakketMail-tarieven via meerdere vervoerders. Eén dashboard, één integratie.",
+    "tagline": "Eenvoudig, voordelig en zorgeloos verzenden!",
+    "about": "PakketMail is verzendsoftware voor webshops en retailers. Het platform ondersteunt koppelingen met webshopplatformen en marktplaatsen en werkt met meerdere vervoerders. Denk aan PostNL, DHL, DPD, GLS en UPS. Met PakketMail kun je eenvoudig verzendlabels maken, Track & Trace e-mails versturen en retourzendingen beheren.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij PakketMail. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

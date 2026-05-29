@@ -1,0 +1,17 @@
+{
+    "name": "Sendy",
+    "slug": "sendy",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/Sendy.jpg",
+    "summary": "Print verzendlabels van Sendy direct vanuit ShopLinkr. Eén workflow voor al je pakketten.",
+    "supportSlug": "sendy-koppelen",
+    "tagline": "Slimme software voor een eenvoudig verzendproces.",
+    "about": "Sendy is een verzendsoftware die bedrijven helpt pakketten efficiënt te versturen. Het biedt integraties met vervoerders zoals PostNL, DHL en DPD, en koppelt eenvoudig met webshops. Met Sendy kun je verzendlabels automatisch aanmaken, je verzendproces optimaliseren en profiteren van scherpe tarieven.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij Sendy. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

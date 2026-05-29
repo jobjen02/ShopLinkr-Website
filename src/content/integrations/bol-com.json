@@ -1,0 +1,18 @@
+{
+    "name": "Bol",
+    "slug": "bol-com",
+    "category": "marketplace",
+    "status": "live",
+    "logo": "/assets/marketplaces/bol.jpeg",
+    "summary": "Synchroniseer voorraad en orders met Bol. Automatische orderimport, voorraad-update en verzendlabels.",
+    "url": "https://www.bol.com",
+    "supportSlug": "bol-com-koppelen",
+    "tagline": "Beheer al je bol winkels op één plek.",
+    "about": "bol is de grootste online marketplace van Nederland en België. Naast het eigen aanbod biedt bol ook een platform waar externe verkopers, oftewel partners, hun producten kunnen aanbieden. Klanten bestellen gemakkelijk via de website of app, en de levering wordt verzorgd door bol of de partners zelf.",
+    "faqs": [
+        {
+            "q": "Worden gepauzeerde producten geïmporteerd in ShopLinkr?",
+            "a": "Ja, alle producten die in je bol omgeving staan, worden overgenomen in ShopLinkr. Staat een product op pauze? Dan zie je in ShopLinkr dat het product als \"inactief\" is gemarkeerd. Je kunt het product eenvoudig vanuit ShopLinkr weer activeren en direct van pauze afhalen."
+        }
+    ]
+}

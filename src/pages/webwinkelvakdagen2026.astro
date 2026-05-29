@@ -1,0 +1,163 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const eventInfo = [
+    {
+        label: 'Datum',
+        value: '20 en 21 januari 2026',
+        icon: 'fa-solid fa-calendar-days',
+    },
+    {
+        label: 'Locatie',
+        value: 'Jaarbeurs Utrecht',
+        icon: 'fa-solid fa-location-dot',
+    },
+    {
+        label: 'Toegang',
+        value: 'Gratis voor professionals',
+        icon: 'fa-solid fa-ticket',
+    },
+];
+
+const reasons = [
+    {
+        eyebrow: 'Persoonlijk gesprek',
+        heading: 'Stel je vragen aan ons team.',
+        body: 'Loop langs voor een gesprek met de mensen achter ShopLinkr. Of je nu net begint met multi-channel verkoop of al een goed draaiende webshop runt, we kijken samen wat ShopLinkr voor jouw situatie kan betekenen.',
+        icon: 'fa-solid fa-comments',
+    },
+    {
+        eyebrow: 'Live demo',
+        heading: 'Zie ShopLinkr in actie.',
+        body: 'We laten je live zien hoe een verkoop op Bol direct je voorraad bijwerkt in Shopify of WooCommerce, hoe je picklijsten draait met locaties, en hoe je verzendlabels in bulk print. Geen verhaal, gewoon zien hoe het werkt.',
+        icon: 'fa-solid fa-display',
+    },
+    {
+        eyebrow: 'Beursaanbieding',
+        heading: 'Speciale voorwaarden voor beursbezoekers.',
+        body: 'Spreek je ons op de beurs, dan delen we graag onze beursaanbieding met je. Een leuk extraatje voor iedereen die de stap naar slimmer voorraadbeheer wil maken.',
+        icon: 'fa-solid fa-gift',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Webwinkel Vakdagen 2026 - ShopLinkr',
+    description: 'Met ShopLinkr verwerk je eenvoudig bestellingen van al je webshops op één centrale plek. Bezoek ons op de Webwinkel Vakdagen 2026.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Webwinkel vakdagen 2026 - ShopLinkr"
+    description="Met ShopLinkr verwerk je eenvoudig bestellingen van al je webshops op één centrale plek. Bezoek ons op de Webwinkel Vakdagen 2026."
+    eyebrow="Webwinkel Vakdagen 2026"
+    heading="Kom langs op de Webwinkel Vakdagen 2026."
+    subheading="We zijn aanwezig in de Jaarbeurs Utrecht. Loop langs voor een demo, een goed gesprek en een speciale beursaanbieding voor nieuwe klanten."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-4xl">
+                <p class="eyebrow mb-4">Event-informatie</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-10">
+                    Tot snel in de Jaarbeurs.
+                </h2>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    {
+                        eventInfo.map((info) => (
+                            <div class="bg-paper rounded-2xl p-7 ring-1 ring-chalk-dark">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-5">
+                                    <i class={`${info.icon} text-base`} aria-hidden="true" />
+                                </div>
+                                <p class="eyebrow mb-2">{info.label}</p>
+                                <p class="text-lg font-semibold text-charcoal tracking-tight leading-snug">
+                                    {info.value}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Wat kun je verwachten</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Waarom je even bij ons langsloopt.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    De Webwinkel Vakdagen zijn dé plek waar Nederlandse webshops samenkomen. We zijn er om kennis te maken, te laten zien hoe ShopLinkr werkt en met je mee te denken over jouw werkstroom.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    reasons.map((reason) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${reason.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{reason.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{reason.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{reason.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{reason.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {reason.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+
+            <div class="mt-16 max-w-3xl">
+                <p class="text-base text-steel leading-relaxed">
+                    Kan je niet wachten tot de beurs of red je het die dagen niet? Plan dan online een demo in. Dan praten we je nu al bij over wat ShopLinkr voor je kan betekenen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

@@ -1,0 +1,124 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Koppeling',
+        heading: 'Eén keer koppelen, daarna draait het vanzelf.',
+        body: 'Je verbindt je WooCommerce-shop met ShopLinkr via een paar klikken. Je producten worden ingelezen en je voorraad rolt automatisch binnen. Vanaf dat moment houdt ShopLinkr je WooCommerce-voorraad realtime synchroon met al je andere kanalen.',
+        icon: 'fa-solid fa-plug',
+    },
+    {
+        eyebrow: 'Realtime',
+        heading: 'Updates binnen seconden.',
+        body: 'Verkoop je iets op WooCommerce, dan past ShopLinkr je voorraad direct aan op Bol, Shopify en je andere kanalen. Andersom werkt het ook: een bestelling op Bol trekt meteen voorraad af in WooCommerce, zodat je nooit dubbel verkoopt.',
+        icon: 'fa-solid fa-bolt',
+    },
+    {
+        eyebrow: 'Geen handmatig werk',
+        heading: 'Stop met cijfers overtikken.',
+        body: 'Handmatig voorraad bijwerken is verleden tijd. ShopLinkr neemt de complete sync uit handen, zodat je geen tijd meer kwijt bent aan administratie. Die tijd steek je in producten, content of marketing voor je WooCommerce-shop.',
+        icon: 'fa-solid fa-keyboard',
+    },
+    {
+        eyebrow: 'Geen oversells',
+        heading: 'Voorkom dat je verkoopt wat je niet hebt.',
+        body: 'Een oversell is duur: je raakt een klant kwijt en je krijgt een slechte review. Doordat je voorraad continu synchroon staat, communiceer je nooit meer een aantal naar je klanten dat je niet werkelijk in huis hebt.',
+        icon: 'fa-solid fa-shield-check',
+    },
+    {
+        eyebrow: 'Klaar voor groei',
+        heading: 'Multi-channel zonder hoofdpijn.',
+        body: 'Wil je vanuit WooCommerce uitbreiden naar Bol, Shopify of Kaufland? ShopLinkr maakt dat ineens een stuk simpeler. Eén voorraadbron, alle kanalen tegelijk bedienen, en je houdt overzicht ongeacht hoe groot je wordt.',
+        icon: 'fa-solid fa-chart-line',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'WooCommerce voorraad synchronisatie - ShopLinkr',
+    description: 'Zoek je een simpele oplossing voor het beheren van je voorraad in WooCommerce? Met onze tool synchroniseer je je WooCommerce-voorraad realtime met al je andere verkoopkanalen.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="WooCommerce voorraad synchronisatie - ShopLinkr"
+    description="Zoek je een simpele oplossing voor het beheren van je voorraad in WooCommerce? Met onze tool synchroniseer je je WooCommerce-voorraad realtime met al je andere verkoopkanalen."
+    eyebrow="WooCommerce voorraad synchronisatie"
+    heading="WooCommerce voorraad synchronisatie, eenvoudig geregeld."
+    subheading="De voorraad van jouw WooCommerce-webshop beheren in ShopLinkr. Realtime synchroon met al je andere verkoopkanalen, zonder handmatig werk."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Voor WooCommerce-shops</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    De voordelen van automatische synchronisatie.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    WooCommerce is krachtig, maar zonder goede voorraadsynchronisatie loop je vast zodra je via meerdere kanalen verkoopt. ShopLinkr neemt die complexiteit weg en houdt alles in lijn met wat er werkelijk op het schap ligt.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

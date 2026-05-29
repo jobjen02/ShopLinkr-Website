@@ -1,0 +1,79 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'ShopLinker of ShopLinkr?',
+    description: 'Ben je een e-commerce ondernemer die worstelt met het beheren van je voorraad? Zoek niet verder! Onze voorraadbeheer software is ontworpen om je leven gemakkelijker te maken. Lees verder om erachter te komen hoe.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Voorraadbeheer software - ShopLinkr"
+    description="Ben je een e-commerce ondernemer die worstelt met het beheren van je voorraad? Zoek niet verder! Onze voorraadbeheer software is ontworpen om je leven gemakkelijker te maken. Lees verder om erachter te komen hoe."
+    eyebrow="Welke naam is juist?"
+    heading="ShopLinker of ShopLinkr?"
+    subheading="Je spreekt het uit als 'ShopLinker', maar zo schrijf je het niet. ShopLinkr is de juiste term."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="eyebrow mb-4">De juiste schrijfwijze</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-8">
+                    ShopLinker bestaat niet, ShopLinkr wel.
+                </h2>
+                <div class="prose-content text-lg text-steel leading-relaxed space-y-6">
+                    <p>
+                        We horen het regelmatig: mensen typen ShopLinker in plaats van ShopLinkr. Logisch, want je spreekt het ook precies zo uit. De juiste schrijfwijze is alleen wat korter: ShopLinkr, zonder de 'e' aan het eind.
+                    </p>
+                    <p>
+                        De naam komt voort uit wat het platform doet. Met ShopLinkr kun je je verschillende verkoopkanalen (je shops) aan elkaar koppelen (linken). Shop plus linken, dat werd ShopLinkr. We hebben de 'e' bewust weggelaten voor een moderne, kortere schrijfwijze.
+                    </p>
+                    <p>
+                        Zoek je dus op ShopLinker en kom je hier terecht? Welkom. Je bent goed terechtgekomen, alleen onthoud voortaan: het is ShopLinkr.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 md:mt-20 max-w-3xl">
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-tight mb-6">
+                    Wat doet ShopLinkr precies?
+                </h2>
+                <p class="text-base text-steel leading-relaxed">
+                    ShopLinkr is een order- en voorraadbeheersysteem voor webshops die op meerdere kanalen tegelijk verkopen. Denk aan Bol, Shopify, WooCommerce en Kaufland. We zorgen dat je voorraad continu klopt, je bestellingen samenkomen op één plek en je picklijsten en verzendlabels in één werkstroom draait. Of je nu ShopLinker of ShopLinkr typt, je vindt ons hier.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

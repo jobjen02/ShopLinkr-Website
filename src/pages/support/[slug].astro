@@ -1,0 +1,336 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SupportHero from '../../components/support/SupportHero.astro';
+import {
+    supportCategoriesBySlug,
+    findSubcategoryBySlug,
+} from '../../data/supportCategories';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const articles = await getCollection('supportArticles');
+    return articles.map((article) => ({
+        params: {
+            slug: article.id.split('/').pop(),
+        },
+        props: {
+            article,
+        },
+    }));
+};
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const categoryInfo = supportCategoriesBySlug[article.data.category];
+const subcategoryInfo = categoryInfo && article.data.subcategory
+    ? findSubcategoryBySlug(categoryInfo, article.data.subcategory)
+    : undefined;
+
+const articleSlug = article.id.split('/').pop();
+const canonicalUrl = `https://shoplinkr.com/support/${articleSlug}`;
+
+const articleSchema = {
+    '@type': 'TechArticle',
+    headline: article.data.title,
+    description: article.data.summary,
+    dateModified: article.data.lastUpdated.toISOString(),
+    datePublished: article.data.lastUpdated.toISOString(),
+    mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+    },
+    articleSection: article.data.categoryLabel,
+    author: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        url: 'https://shoplinkr.com',
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+        },
+    },
+};
+
+const breadcrumbItems = [
+    {
+        href: '/support',
+        label: 'Support',
+    },
+];
+
+if (categoryInfo) {
+    breadcrumbItems.push({
+        href: `/support/categorieen/${categoryInfo.slug}`,
+        label: categoryInfo.label,
+    });
+}
+
+if (categoryInfo && subcategoryInfo) {
+    breadcrumbItems.push({
+        href: `/support/categorieen/${categoryInfo.slug}/${subcategoryInfo.slug}`,
+        label: subcategoryInfo.label,
+    });
+}
+
+const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://shoplinkr.com',
+        },
+        ...breadcrumbItems.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 2,
+            name: item.label,
+            item: `https://shoplinkr.com${item.href}`,
+        })),
+        {
+            '@type': 'ListItem',
+            position: breadcrumbItems.length + 2,
+            name: article.data.title,
+            item: canonicalUrl,
+        },
+    ],
+};
+
+const jsonLd = [articleSchema, breadcrumbSchema];
+
+export const prerender = true;
+---
+
+<BaseLayout
+    title={`${article.data.title} | ShopLinkr Support`}
+    description={article.data.summary}
+    jsonLd={jsonLd}
+>
+    <SupportHero
+        title={article.data.title}
+        subtitle={article.data.summary}
+    />
+
+    <section class="bg-paper">
+        <div class="container-prose py-12 md:py-16">
+            <div class="max-w-3xl">
+                <nav aria-label="Breadcrumb" class="mb-10">
+                    <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-gravel">
+                        {breadcrumbItems.map((b) => (
+                            <>
+                                <li>
+                                    <a href={b.href} class="hover:text-charcoal transition-colors">
+                                        {b.label}
+                                    </a>
+                                </li>
+                                <li aria-hidden="true">
+                                    <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
+                                </li>
+                            </>
+                        ))}
+                        <li class="text-charcoal line-clamp-1 max-w-[28ch] md:max-w-none">
+                            {article.data.title}
+                        </li>
+                    </ol>
+                </nav>
+
+                <article class="prose-shoplinkr">
+                    <Content />
+                </article>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style is:global>
+    .prose-shoplinkr {
+        color: var(--color-flint);
+        font-size: 1.0625rem;
+        line-height: 1.75;
+    }
+
+    .prose-shoplinkr > * + * {
+        margin-top: 1.25em;
+    }
+
+    .prose-shoplinkr h2 {
+        color: var(--color-charcoal);
+        font-size: 1.625rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .prose-shoplinkr h3 {
+        color: var(--color-charcoal);
+        font-size: 1.375rem;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.35;
+        margin-top: 2em;
+        margin-bottom: 0.6em;
+    }
+
+    .prose-shoplinkr h4 {
+        color: var(--color-charcoal);
+        font-size: 1.0625rem;
+        font-weight: 600;
+        margin-top: 1.5em;
+        margin-bottom: 0.4em;
+    }
+
+    .prose-shoplinkr p {
+        margin: 1em 0;
+    }
+
+    .prose-shoplinkr a {
+        color: var(--color-sunstone-deep);
+        text-decoration: none;
+        transition: color 0.15s ease;
+    }
+
+    .prose-shoplinkr a:hover {
+        color: var(--color-sunstone);
+        text-decoration: underline;
+        text-decoration-color: var(--color-sunstone-soft);
+        text-underline-offset: 3px;
+    }
+
+    .prose-shoplinkr strong {
+        color: var(--color-charcoal);
+        font-weight: 600;
+    }
+
+    .prose-shoplinkr ul,
+    .prose-shoplinkr ol {
+        margin: 1.25em 0;
+        padding-left: 1.5em;
+    }
+
+    .prose-shoplinkr ul > li {
+        list-style-type: disc;
+        margin: 0.4em 0;
+        padding-left: 0.25em;
+    }
+
+    .prose-shoplinkr ul > li::marker {
+        color: var(--color-sunstone-deep);
+    }
+
+    .prose-shoplinkr {
+        counter-reset: shoplinkr-step;
+    }
+
+    .prose-shoplinkr h2,
+    .prose-shoplinkr h3,
+    .prose-shoplinkr h4 {
+        counter-reset: shoplinkr-step;
+    }
+
+    .prose-shoplinkr ol {
+        list-style: none;
+        padding-left: 2.25em;
+    }
+
+    .prose-shoplinkr ol > li {
+        position: relative;
+        counter-increment: shoplinkr-step;
+        margin: 0.4em 0;
+        padding-left: 0.25em;
+    }
+
+    .prose-shoplinkr ol > li::before {
+        content: counter(shoplinkr-step) ".";
+        position: absolute;
+        left: -1.75em;
+        top: 0;
+        color: var(--color-gravel);
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        min-width: 1.5em;
+    }
+
+    .prose-shoplinkr blockquote {
+        border-left: 3px solid var(--color-sunstone);
+        margin: 1.75em 0;
+        padding: 0.25em 0 0.25em 1.5em;
+        color: var(--color-charcoal);
+        font-style: italic;
+    }
+
+    .prose-shoplinkr code {
+        background-color: var(--color-chalk);
+        color: var(--color-charcoal);
+        padding: 0.15em 0.4em;
+        border-radius: 0.375rem;
+        font-family: var(--font-mono);
+        font-size: 0.9em;
+    }
+
+    .prose-shoplinkr pre {
+        background-color: var(--color-charcoal);
+        color: var(--color-chalk);
+        padding: 1.25em;
+        border-radius: 0.75rem;
+        overflow-x: auto;
+        margin: 1.5em 0;
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        line-height: 1.6;
+    }
+
+    .prose-shoplinkr pre code {
+        background-color: transparent;
+        color: inherit;
+        padding: 0;
+    }
+
+    .prose-shoplinkr img {
+        margin: 1.75em 0;
+        border-radius: 1rem;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .prose-shoplinkr figure {
+        margin: 1.75em 0;
+    }
+
+    .prose-shoplinkr figure img {
+        margin: 0;
+    }
+
+    .prose-shoplinkr table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.75em 0;
+        font-size: 0.95em;
+    }
+
+    .prose-shoplinkr th,
+    .prose-shoplinkr td {
+        border-bottom: 1px solid var(--color-chalk-dark);
+        padding: 0.65em 0.85em;
+        text-align: left;
+    }
+
+    .prose-shoplinkr th {
+        background-color: var(--color-chalk-light);
+        color: var(--color-charcoal);
+        font-weight: 600;
+    }
+
+    .prose-shoplinkr hr {
+        border: 0;
+        border-top: 1px solid var(--color-chalk-dark);
+        margin: 2.5em 0;
+    }
+</style>

@@ -1,0 +1,124 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Samenstellen',
+        heading: 'Bouw bundels uit producten die je al verkoopt.',
+        body: 'Combineer artikelen uit je bestaande assortiment tot een aantrekkelijk pakket. Een starterset, een cadeaubox of een seizoenscombinatie, je stelt het samen in een paar klikken.',
+        icon: 'fa-solid fa-boxes-packing',
+    },
+    {
+        eyebrow: 'Voorraadsync',
+        heading: 'Voorraad blijft altijd in balans.',
+        body: 'De bundel deelt zijn voorraad met de losse SKU\'s. Verkoop je er één, dan zakt de voorraad van zowel de bundel als de individuele producten automatisch mee. Geen oversells, geen scheef lopende administratie.',
+        icon: 'fa-solid fa-arrows-rotate',
+    },
+    {
+        eyebrow: 'Hogere AOV',
+        heading: 'Klanten kopen meer in één moeite.',
+        body: 'Een goed samengestelde bundel maakt het voor de klant makkelijk om voor de complete oplossing te gaan in plaats van één los product. Daar zit je marge en je gemiddelde orderwaarde stijgt mee.',
+        icon: 'fa-solid fa-chart-line-up',
+    },
+    {
+        eyebrow: 'Cross-sell',
+        heading: 'Producten ontdekken die anders blijven liggen.',
+        body: 'Verras je klant met combinaties die hij los misschien niet zou vinden. Een bundel zet jouw stille parels in de schijnwerpers naast je toppers, zonder dat je nieuwe SKU\'s hoeft in te kopen.',
+        icon: 'fa-solid fa-lightbulb',
+    },
+    {
+        eyebrow: 'Klanttevredenheid',
+        heading: 'Eén pakket, klaar voor gebruik.',
+        body: 'Klanten waarderen het als ze niet hoeven te puzzelen welke onderdelen samen werken. Een kant-en-klare bundel neemt twijfel weg en levert een betere ervaring op, van bestellen tot uitpakken.',
+        icon: 'fa-solid fa-heart',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Productbundels | ShopLinkr',
+    description: 'Maximaliseer je verkoopmogelijkheden met ShopLinkr’s productbundel feature: Stel eenvoudig aantrekkelijke bundels samen en verhoog je omzet.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Productbundels instellen via ShopLinkr"
+    description="Maximaliseer je verkoopmogelijkheden met ShopLinkr's productbundel feature: Stel eenvoudig aantrekkelijke bundels samen en verhoog je omzet."
+    eyebrow="Bundels"
+    heading="Verhoog je orderwaarde met slimme bundels."
+    subheading="Een goede bundel verkoopt zichzelf. Stel in ShopLinkr in een paar klikken een pakket samen uit je bestaande producten en zie je gemiddelde orderwaarde groeien."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Meer waarde per bestelling</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Slim verpakken, slim verkopen.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Een bundel in ShopLinkr is meer dan een korting. Het is een nieuwe SKU die zijn voorraad deelt met de losse producten, zodat je verkoop altijd in balans blijft op elk kanaal waar je actief bent.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

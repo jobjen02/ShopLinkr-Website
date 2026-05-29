@@ -1,0 +1,236 @@
+---
+import { externalLinks } from '../../data/externalLinks';
+
+const channels = [
+    {
+        name: 'Bol',
+        src: '/assets/marketplaces/bol.jpeg',
+    },
+    {
+        name: 'Shopify',
+        src: '/assets/webshops/Shopify.jpg',
+    },
+    {
+        name: 'WooCommerce',
+        src: '/assets/webshops/WooCommerce.png',
+    },
+    {
+        name: 'Kaufland',
+        src: '/assets/marketplaces/kaufland.jpg',
+    },
+];
+
+const carriers = [
+    {
+        name: 'PostNL',
+        src: '/assets/carriers/PostNL.jpg',
+    },
+    {
+        name: 'DPD',
+        src: '/assets/carriers/dpd.jpeg',
+    },
+    {
+        name: 'GLS',
+        src: '/assets/carriers/GLS.png',
+    },
+    {
+        name: 'MyParcel',
+        src: '/assets/carriers/MyParcel.jpg',
+    },
+    {
+        name: 'Sendcloud',
+        src: '/assets/carriers/Sendcloud.png',
+    },
+];
+---
+
+<section class="py-24 md:py-32">
+    <div class="container-prose">
+        <div class="max-w-2xl mb-14 md:mb-16">
+            <p class="eyebrow mb-4">Wat je krijgt</p>
+            <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                Eén platform voor je hele magazijnoperatie.
+            </h2>
+            <p class="mt-6 text-lg text-steel leading-relaxed">
+                Geen losse tools die elkaar niet kennen. ShopLinkr brengt voorraad, orders, picken, labelen en verzenden samen in één systeem.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+            <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col justify-between gap-8 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div>
+                    <p class="eyebrow mb-3">Voorraad sync</p>
+                    <h3 class="text-3xl md:text-[2.5rem] font-semibold text-charcoal tracking-tight leading-[1.05] mb-5">
+                        Eén voorraad, alle kanalen.
+                    </h3>
+                    <p class="text-steel leading-relaxed text-base md:text-lg max-w-md">
+                        ShopLinkr houdt je voorraad realtime kloppend. Verkocht op Bol? Shopify, WooCommerce en Kaufland zien het binnen seconden.
+                    </p>
+                </div>
+                <ul class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-medium text-charcoal">
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                        Geen oversells
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                        Geen handwerk
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                        Realtime updates
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                        VVB ondersteund
+                    </li>
+                </ul>
+            </article>
+
+            <article class="md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <p class="eyebrow">Verkoopkanalen</p>
+                <div class="flex items-center gap-3 flex-wrap">
+                    {
+                        channels.map((channel) => (
+                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light ring-1 ring-chalk-dark overflow-hidden">
+                                <img
+                                    src={channel.src}
+                                    alt={channel.name}
+                                    width="56"
+                                    height="56"
+                                    loading="lazy"
+                                    class="h-full w-full object-contain p-1.5"
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="text-sm text-steel mt-auto">Bol, Shopify, WooCommerce en Kaufland in één omgeving.</p>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-users text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Onbeperkt gebruikers.</p>
+                    <p class="text-sm text-steel mt-1.5">Voeg je hele team toe, zonder extra kosten per gebruiker.</p>
+                </div>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-store text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Door bol-verkopers gebouwd.</p>
+                    <p class="text-sm text-steel mt-1.5">Eigen ervaring uit een eigen webshop.</p>
+                </div>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-wand-magic-sparkles text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Slimme regels.</p>
+                    <p class="text-sm text-steel mt-1.5">Stel automatische regels in, ShopLinkr doet de rest.</p>
+                </div>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-location-dot text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Magazijnlocaties.</p>
+                    <p class="text-sm text-steel mt-1.5">Per product zie je direct waar het ligt.</p>
+                </div>
+            </article>
+
+            <article class="md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <p class="eyebrow">Vervoerders</p>
+                <div class="flex items-center gap-3 flex-wrap">
+                    {
+                        carriers.map((carrier) => (
+                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light ring-1 ring-chalk-dark overflow-hidden">
+                                <img
+                                    src={carrier.src}
+                                    alt={carrier.name}
+                                    width="56"
+                                    height="56"
+                                    loading="lazy"
+                                    class="h-full w-full object-contain p-1.5"
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+                <p class="text-sm text-steel mt-auto">Labels uit één flow, track &amp; trace automatisch terug.</p>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-route text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Picklijst met looproute.</p>
+                    <p class="text-sm text-steel mt-1.5">Telefoon, tablet of scanner.</p>
+                </div>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-chart-line text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Winst per order.</p>
+                    <p class="text-sm text-steel mt-1.5">Inkoopprijzen erin, marges eruit.</p>
+                </div>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-barcode-read text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Barcode scanner support.</p>
+                    <p class="text-sm text-steel mt-1.5">Scan elk product, geen fouten in je pickflow.</p>
+                </div>
+            </article>
+
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                    <i class="fa-duotone fa-solid fa-print text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">ShopLinkr Autoprint.</p>
+                    <p class="text-sm text-steel mt-1.5">Verzendlabels rollen automatisch uit je printer via PrintNote.</p>
+                </div>
+            </article>
+
+            <article class="md:col-span-4 bg-charcoal text-paper rounded-2xl p-6 md:p-8 transition duration-300 ease-out hover:bg-charcoal/95">
+                <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5">
+                    <div class="flex-1">
+                        <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/50 mb-2">Direct starten</p>
+                        <h3 class="text-2xl md:text-3xl font-semibold tracking-tight leading-snug">
+                            Klaar om te starten?
+                        </h3>
+                        <p class="text-paper/70 mt-2 text-[0.975rem] max-w-2xl">
+                            Koppel je kanalen, importeer je producten en verwerk je eerste order vandaag.
+                        </p>
+                    </div>
+                    <a
+                        href={externalLinks.register}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-sunstone text-sm whitespace-nowrap"
+                    >
+                        Gratis starten
+                        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>

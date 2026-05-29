@@ -1,0 +1,16 @@
+{
+    "name": "GLS",
+    "slug": "gls",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/GLS.png",
+    "summary": "Genereer GLS-labels rechtstreeks vanuit ShopLinkr. Snel verzenden door heel Europa met live tracking.",
+    "tagline": "Parcels to people",
+    "about": "GLS (General Logistics Systems) is een internationale pakketdienst die actief is in heel Europa en daarbuiten. GLS bezorgt pakketten voor webshops, bedrijven en particulieren en staat bekend om zijn betrouwbare bezorgnetwerk, snelle levering en uitgebreide Track & Trace mogelijkheden. Met GLS kun je pakketten verzenden binnen Nederland, door heel Europa en naar internationale bestemmingen.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij GLS. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

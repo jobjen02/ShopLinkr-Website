@@ -1,0 +1,18 @@
+{
+    "name": "Kaufland",
+    "slug": "kaufland",
+    "category": "marketplace",
+    "status": "live",
+    "logo": "/assets/marketplaces/kaufland.jpg",
+    "summary": "Verkoop op Kaufland en houd je voorraad realtime synchroon. Verover de Duitse markt zonder extra werk.",
+    "url": "https://www.kaufland.de",
+    "supportSlug": "kaufland-koppelen",
+    "tagline": "Verwerk eenvoudig je Kaufland bestellingen met je favoriete vervoerder vanuit ShopLinkr",
+    "about": "Kaufland is een groot Duits bedrijf dat zich richt op online en offline retail. Via hun online platform biedt Kaufland een breed assortiment producten aan, zoals elektronica, kleding, speelgoed, en huishoudelijke artikelen. Het platform werkt als een marktplaats, waar externe verkopers hun producten kunnen aanbieden aan een breed publiek. Kaufland richt zich op gebruiksvriendelijke diensten, snelle levering, en een groot productaanbod, wat het een belangrijke speler maakt in de online retailsector in Europa.",
+    "faqs": [
+        {
+            "q": "Kan ik alle landen koppelen aan ShopLinkr?",
+            "a": "Ja, je kunt alle landen koppelen aan ShopLinkr. Zodra je Kaufland gaat koppelen selecteer je het gewenste land voor dat verkoopkanaal. Elk verkoopkanaal is gekoppeld aan 1 land. Je koppelt Kaufland dus vaker als je meerdere landen wilt koppelen aan ShopLinkr."
+        }
+    ]
+}

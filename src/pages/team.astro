@@ -1,0 +1,415 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const team = [
+    {
+        name: 'Job',
+        role: 'Founder / Developer',
+        photo: '/images/team/rIjDTHDh7F1ucNVPvkRg3dHT2ZQ.png',
+        bio: 'Begon ShopLinkr vanuit zijn eigen webshop. Bouwt nog steeds elke dag aan het platform en kent elk hoekje van de code.',
+        focus: 'Architectuur en API integraties',
+        emoji: 'fa-code',
+    },
+    {
+        name: 'Stijn',
+        role: 'Marketing / Customer happiness',
+        photo: '/images/team/92PrDnKBY75TXrhH11Ti9A1jU.png',
+        bio: 'Eerste aanspreekpunt voor klanten. Zorgt dat je vraag binnen no time bij de juiste persoon ligt.',
+        focus: 'Onboarding en klantcontact',
+        emoji: 'fa-headset',
+    },
+    {
+        name: 'Tommy',
+        role: '(Product) Design',
+        photo: '/images/team/rzPqzsMXycKbFfV8gkOWIaFcJ8.png',
+        bio: 'Maakt het product net dat tikje rustiger. Elke knop, elk scherm, elke flow gaat eerst over zijn tafel.',
+        focus: 'Interface en gebruikerservaring',
+        emoji: 'fa-pen-ruler',
+    },
+    {
+        name: 'Jij?',
+        role: 'Nieuwe topper',
+        photo: '/images/team/GoWNvgKZvVTzmZQKHoh2Ccnk4E.png',
+        bio: 'We zoeken altijd mensen die net zo gek zijn op magazijnen, code en blije klanten als wij.',
+        focus: 'Open sollicitaties welkom',
+        emoji: 'fa-sparkles',
+    },
+];
+
+const realTeam = team.filter((member) => member.name !== 'Jij?');
+
+const stats = [
+    {
+        value: '1M+',
+        label: 'Bestellingen verwerkt',
+    },
+    {
+        value: '2022',
+        label: 'Opgericht in Nederland',
+    },
+    {
+        value: '1e',
+        label: 'Pay as you go in NL',
+    },
+    {
+        value: '4.9',
+        label: 'Klantbeoordeling',
+    },
+];
+
+const values = [
+    {
+        icon: 'fa-handshake',
+        title: 'Korte lijnen.',
+        body: 'Je belt of mailt, je krijgt iemand uit het team aan de lijn. Geen tickets die rond stuiteren.',
+    },
+    {
+        icon: 'fa-gauge-high',
+        title: 'Snel bouwen.',
+        body: 'Feature gevraagd, vaak binnen weken in productie. Klanten sturen onze roadmap.',
+    },
+    {
+        icon: 'fa-heart',
+        title: 'Eigen ervaring.',
+        body: 'We snappen je magazijn omdat we er zelf één hadden. Geen aannames, wel praktijk.',
+    },
+];
+
+const jsonLd = {
+    '@type': 'AboutPage',
+    name: 'Team | ShopLinkr',
+    description: 'Maak kennis met het team achter ShopLinkr. Een klein, betrokken team dat magazijnsoftware bouwt voor Nederlandse webshops.',
+    mainEntity: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        url: 'https://shoplinkr.com',
+        foundingDate: '2022',
+        founder: {
+            '@type': 'Person',
+            name: 'Job',
+        },
+        employee: realTeam.map((member) => ({
+            '@type': 'Person',
+            name: member.name,
+            jobTitle: member.role,
+            description: member.bio,
+            ...(member.photo && {
+                image: `https://shoplinkr.com${member.photo}`,
+            }),
+            worksFor: {
+                '@type': 'Organization',
+                name: 'ShopLinkr',
+            },
+        })),
+    },
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Team | ShopLinkr"
+    description="Maak kennis met het team achter ShopLinkr. Een klein, betrokken team dat magazijnsoftware bouwt voor Nederlandse webshops."
+    eyebrow="Ons team"
+    heading="Klein team, korte lijnen."
+    subheading="De mensen die ShopLinkr elke dag een beetje beter maken. Je krijgt ons aan de lijn, niet een callcenter."
+    jsonLd={jsonLd}
+>
+    <section class="py-12 md:py-16">
+        <div class="container-prose">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                {
+                    stats.map((stat) => (
+                        <div class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 text-center md:text-left transition duration-300 ease-out hover:ring-chalk-darker">
+                            <p class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-none">
+                                {stat.value}
+                            </p>
+                            <p class="mt-2 text-sm text-gravel">
+                                {stat.label}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container-prose">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 items-start">
+                <div class="lg:col-span-2 lg:sticky lg:top-24">
+                    <p class="eyebrow mb-4">Hoe het begon</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Ontstaan in een eigen magazijn.
+                    </h2>
+                </div>
+                <div class="lg:col-span-3 space-y-6 text-base md:text-lg text-steel leading-relaxed">
+                    <p>
+                        ShopLinkr ontstond in 2022 uit eigen behoefte. Oprichter Job had een webshop en verkocht via meerdere kanalen, waaronder bol en Amazon. Zonder groot budget, maar met de noodzaak om voorraad en orders bij te houden, bouwde hij als softwareontwikkelaar een eigen oplossing.
+                    </p>
+                    <p>
+                        Al snel vroegen andere webshops of ze die tool ook mochten gebruiken. Zo werd ShopLinkr geboren. Niet vanuit een pitch deck, maar vanuit een echt magazijn met echte orders.
+                    </p>
+                    <p class="text-charcoal font-medium">
+                        Inmiddels zijn we met een vast team, hebben we meer dan 1 miljoen bestellingen verwerkt en blijven we doen waar we mee begonnen: praktische software voor webshops die hun magazijn serieus nemen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-2xl mb-12 md:mb-16">
+                <p class="eyebrow mb-3">Het team</p>
+                <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.05]">
+                    De mensen achter ShopLinkr.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Een klein team, ieder met een eigen rol, maar samen verantwoordelijk voor wat je gebruikt.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-5">
+                <article class="md:col-span-3 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark overflow-hidden flex flex-col transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                    <div class="aspect-[4/3] md:aspect-auto md:flex-1 bg-paper/40 overflow-hidden">
+                        <img
+                            src={team[0].photo}
+                            alt={team[0].name}
+                            class="h-full w-full object-contain"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="p-7 md:p-9 border-t border-chalk-dark/60 bg-paper/70 backdrop-blur-sm">
+                        <div class="flex items-start justify-between gap-4 mb-3">
+                            <div>
+                                <h3 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-tight">
+                                    {team[0].name}
+                                </h3>
+                                <p class="mt-1 text-sm font-medium text-sunstone-deep">
+                                    {team[0].role}
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 shrink-0">
+                                <i class={`fa-duotone fa-solid ${team[0].emoji} text-lg`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <p class="text-steel leading-relaxed text-base">
+                            {team[0].bio}
+                        </p>
+                        <p class="mt-4 text-xs uppercase tracking-[0.18em] font-semibold text-gravel">
+                            {team[0].focus}
+                        </p>
+                    </div>
+                </article>
+
+                <article class="md:col-span-3 bg-paper rounded-2xl ring-1 ring-chalk-dark overflow-hidden flex flex-col sm:flex-row transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                    <div class="sm:w-2/5 aspect-square sm:aspect-auto bg-chalk-light overflow-hidden shrink-0">
+                        <img
+                            src={team[1].photo}
+                            alt={team[1].name}
+                            class="h-full w-full object-contain"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="p-6 md:p-7 flex-1 flex flex-col">
+                        <div class="flex items-start justify-between gap-3 mb-2">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-tight">
+                                    {team[1].name}
+                                </h3>
+                                <p class="mt-1 text-sm font-medium text-sunstone-deep">
+                                    {team[1].role}
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center justify-center h-9 w-9 rounded-lg bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 shrink-0">
+                                <i class={`fa-duotone fa-solid ${team[1].emoji} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <p class="text-steel leading-relaxed text-sm md:text-base">
+                            {team[1].bio}
+                        </p>
+                        <p class="mt-4 text-xs uppercase tracking-[0.18em] font-semibold text-gravel">
+                            {team[1].focus}
+                        </p>
+                    </div>
+                </article>
+
+                <article class="md:col-span-3 bg-paper rounded-2xl ring-1 ring-chalk-dark overflow-hidden flex flex-col sm:flex-row transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                    <div class="sm:w-2/5 aspect-square sm:aspect-auto bg-chalk-light overflow-hidden shrink-0 order-1 sm:order-2">
+                        <img
+                            src={team[2].photo}
+                            alt={team[2].name}
+                            class="h-full w-full object-contain"
+                            loading="lazy"
+                        />
+                    </div>
+                    <div class="p-6 md:p-7 flex-1 flex flex-col order-2 sm:order-1">
+                        <div class="flex items-start justify-between gap-3 mb-2">
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-tight">
+                                    {team[2].name}
+                                </h3>
+                                <p class="mt-1 text-sm font-medium text-sunstone-deep">
+                                    {team[2].role}
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center justify-center h-9 w-9 rounded-lg bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 shrink-0">
+                                <i class={`fa-duotone fa-solid ${team[2].emoji} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <p class="text-steel leading-relaxed text-sm md:text-base">
+                            {team[2].bio}
+                        </p>
+                        <p class="mt-4 text-xs uppercase tracking-[0.18em] font-semibold text-gravel">
+                            {team[2].focus}
+                        </p>
+                    </div>
+                </article>
+
+                <article class="md:col-span-6 bg-charcoal text-paper rounded-2xl ring-1 ring-charcoal overflow-hidden flex flex-col md:flex-row items-stretch transition duration-300 ease-out hover:bg-charcoal/95">
+                    <div class="md:w-1/3 aspect-square md:aspect-auto bg-charcoal/60 overflow-hidden shrink-0 relative">
+                        <img
+                            src={team[3].photo}
+                            alt={team[3].name}
+                            class="h-full w-full object-contain opacity-90"
+                            loading="lazy"
+                        />
+                        <div class="absolute inset-0 bg-gradient-to-tr from-charcoal/60 via-transparent to-transparent pointer-events-none"></div>
+                    </div>
+                    <div class="p-7 md:p-10 flex-1 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist/15 text-sunstone-soft ring-1 ring-sunstone-soft/30 shrink-0">
+                                <i class={`fa-duotone fa-solid ${team[3].emoji} text-lg`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </span>
+                            <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/60">
+                                We zoeken jou
+                            </p>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-semibold tracking-tight leading-tight text-paper">
+                            Komt jouw foto hier te staan?
+                        </h3>
+                        <p class="mt-3 text-paper/70 text-base md:text-lg leading-relaxed max-w-xl">
+                            We groeien rustig, maar staan altijd open voor mensen die net zo gek zijn op magazijnen, code en blije klanten als wij. Stuur ons een berichtje, ook als er geen vacature open staat.
+                        </p>
+                        <div class="mt-6">
+                            <a
+                                href="mailto:contact@shoplinkr.com?subject=Open%20sollicitatie"
+                                class="btn btn-sunstone text-sm whitespace-nowrap"
+                            >
+                                Stuur een open sollicitatie
+                                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24">
+        <div class="container-prose">
+            <div class="max-w-2xl mb-12 md:mb-16">
+                <p class="eyebrow mb-3">Hoe we werken</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Drie dingen waar we niet aan tornen.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+                {
+                    values.map((value) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-8 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`fa-duotone fa-solid ${value.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">
+                                    {value.title}
+                                </h3>
+                                <p class="mt-2 text-base text-steel leading-relaxed">
+                                    {value.body}
+                                </p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto">
+                <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-12 relative overflow-hidden">
+                    <div class="absolute -top-10 -left-4 text-sunstone-mist text-[10rem] leading-none font-serif select-none pointer-events-none" aria-hidden="true">
+                        &ldquo;
+                    </div>
+                    <div class="relative">
+                        <p class="eyebrow mb-4">Waar het om gaat</p>
+                        <p class="text-2xl md:text-3xl font-medium text-charcoal tracking-tight leading-[1.3]">
+                            We willen geen tien duizend klanten met een ticket. We willen een paar honderd webshops die hun magazijn echt op orde hebben.
+                        </p>
+                        <div class="mt-8 flex items-center gap-4">
+                            <div class="h-12 w-12 rounded-full overflow-hidden ring-1 ring-chalk-dark bg-chalk-light shrink-0">
+                                <img
+                                    src={team[0].photo}
+                                    alt="Job"
+                                    class="h-full w-full object-contain"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-charcoal">
+                                    Job
+                                </p>
+                                <p class="text-sm text-gravel">
+                                    Founder ShopLinkr
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+        <div class="container-prose">
+            <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+                <div class="flex-1">
+                    <p class="eyebrow mb-3">Liever even kennismaken?</p>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-snug">
+                        Plan een gratis demo en spreek iemand uit het team.
+                    </h2>
+                    <p class="mt-3 text-base text-steel leading-relaxed max-w-xl">
+                        Twintig minuten, een-op-een, zonder verplichtingen. We laten zien hoe ShopLinkr past op jouw magazijn.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 shrink-0">
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-sunstone text-base whitespace-nowrap"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Demo inplannen
+                        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href={externalLinks.register}
+                        class="btn btn-secondary text-base whitespace-nowrap"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Gratis starten
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

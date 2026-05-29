@@ -1,0 +1,407 @@
+---
+const sidebarItems = [
+    {
+        icon: 'fa-magnifying-glass',
+        label: 'Zoeken',
+        hotkey: true,
+    },
+    {
+        icon: 'fa-house',
+        label: 'Dashboard',
+        active: true,
+    },
+    {
+        icon: 'fa-cart-shopping',
+        label: 'Bestellingen',
+        badge: '1',
+        hasChevron: true,
+    },
+    {
+        icon: 'fa-shirt',
+        label: 'Producten',
+        hasChevron: true,
+    },
+    {
+        icon: 'fa-arrow-right-arrow-left',
+        label: 'Retouren',
+        badge: '15',
+    },
+    {
+        icon: 'fa-paper-plane',
+        label: 'Inkoop',
+        badge: '3',
+        hasChevron: true,
+    },
+    {
+        icon: 'fa-truck',
+        label: 'Zendingen',
+    },
+    {
+        icon: 'fa-chart-column',
+        label: 'Rapporten',
+    },
+    {
+        icon: 'fa-gear',
+        label: 'Instellingen',
+    },
+];
+
+const counters = [
+    {
+        icon: 'fa-cart-shopping',
+        label: 'Open bestellingen',
+        value: '12',
+    },
+    {
+        icon: 'fa-cart-shopping',
+        label: 'Bestellingen vandaag',
+        value: '87',
+    },
+    {
+        icon: 'fa-arrow-right-arrow-left',
+        label: 'Open retouren',
+        value: '5',
+    },
+    {
+        icon: 'fa-arrow-right-arrow-left',
+        label: 'Retouren vandaag',
+        value: '2',
+    },
+    {
+        icon: 'fa-chart-line',
+        label: 'Omzet vandaag',
+        value: '€ 3,24K',
+    },
+];
+
+const statsRow1 = [
+    {
+        label: 'Totaal bestellingen',
+        value: '4.847',
+        delta: '5,4%',
+        positive: true,
+    },
+    {
+        label: 'Totaal verkochte stuks',
+        value: '7.821',
+        delta: '1,9%',
+        positive: true,
+    },
+    {
+        label: 'Gem. orderwaarde',
+        value: '€ 38,50',
+        delta: '4,9%',
+        positive: true,
+    },
+    {
+        label: 'Retourpercentage',
+        value: '2,1%',
+        delta: '0,3%',
+        positive: true,
+    },
+];
+
+const statsRow2 = [
+    {
+        label: 'Omzet incl. BTW',
+        value: '€ 186,40K',
+        delta: '4,6%',
+        positive: true,
+    },
+    {
+        label: 'Omzet excl. BTW',
+        value: '€ 154,05K',
+        delta: '4,6%',
+        positive: true,
+    },
+    {
+        label: 'Winst',
+        value: '€ 28,90K',
+        delta: '16,6%',
+        positive: true,
+    },
+    {
+        label: 'Winstmarge %',
+        value: '18,7%',
+        delta: '1,4%',
+        positive: true,
+    },
+];
+
+const buildAreaPath = (points: Array<number>, width: number, height: number) => {
+    const max = Math.max(...points);
+    const min = Math.min(...points);
+    const range = max - min || 1;
+    const stepX = width / (points.length - 1);
+    const coords = points.map((value, index) => {
+        const x = index * stepX;
+        const y = height - ((value - min) / range) * (height - 8) - 4;
+        return [x, y];
+    });
+    const linePath = coords
+        .map(([x, y], i) => (i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`))
+        .join(' ');
+    const areaPath = `${linePath} L ${width} ${height} L 0 ${height} Z`;
+    return {
+        line: linePath,
+        area: areaPath,
+    };
+};
+
+const salesVolumeStuks = [240, 290, 320, 270, 350, 230, 200, 380, 340, 410, 380, 450, 310, 270, 470, 520, 480, 560, 510, 380, 340, 580, 640, 590];
+const salesVolumeBest = [150, 185, 200, 170, 220, 145, 125, 240, 215, 260, 240, 285, 195, 170, 295, 330, 305, 355, 325, 240, 215, 365, 405, 375];
+const financialOmzet = [4200, 5100, 5600, 4750, 6100, 3900, 3400, 6600, 5900, 7100, 6600, 7800, 5300, 4600, 8100, 9000, 8300, 9700, 8800, 6500, 5800, 10100, 11100, 10300];
+const financialWinst = [780, 950, 1050, 880, 1130, 720, 630, 1230, 1100, 1320, 1230, 1450, 980, 850, 1510, 1670, 1540, 1800, 1640, 1200, 1080, 1880, 2060, 1910];
+const financialCommissie = [210, 255, 280, 240, 305, 195, 170, 330, 295, 355, 330, 390, 265, 230, 405, 450, 415, 485, 440, 325, 290, 505, 555, 515];
+const margesData = [16, 18, 17, 19, 16, 17, 16, 18, 20, 19, 18, 21, 19, 18, 22, 20, 23, 21, 24, 22, 21, 25, 23, 26];
+
+const volumeWidth = 600;
+const volumeHeight = 220;
+const stuksPath = buildAreaPath(salesVolumeStuks, volumeWidth, volumeHeight);
+const bestPath = buildAreaPath(salesVolumeBest, volumeWidth, volumeHeight);
+const omzetPath = buildAreaPath(financialOmzet, volumeWidth, volumeHeight);
+const winstPath = buildAreaPath(financialWinst, volumeWidth, volumeHeight);
+const commissiePath = buildAreaPath(financialCommissie, volumeWidth, volumeHeight);
+const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
+---
+
+<div class="dashboard-preview relative bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]">
+    <aside class="w-60 bg-sunstone flex flex-col flex-shrink-0">
+        <div class="px-5 pt-5 pb-5">
+            <img src="/logo/logo-white.svg" alt="ShopLinkr" class="h-6 w-auto" />
+        </div>
+
+        <nav class="px-2.5 pt-1 space-y-0.5 flex-1 overflow-hidden">
+            {
+                sidebarItems.map((item) => (
+                    <div
+                        class={`flex items-center gap-3 px-3 py-2 rounded-md text-sm ${
+                            item.active
+                                ? 'bg-paper text-charcoal font-semibold'
+                                : 'text-charcoal/85'
+                        }`}
+                    >
+                        <i class={`fa-solid ${item.icon} w-4 text-center text-sm ${item.active ? 'text-charcoal' : 'text-charcoal/70'}`}></i>
+                        <span class="flex-1 truncate">{item.label}</span>
+                        {item.hotkey && (
+                            <span class="flex items-center gap-0.5 text-[10px] text-charcoal/60">
+                                <span class="px-1 py-0.5 ring-1 ring-charcoal/20 rounded text-[10px] font-mono leading-none">⌘</span>
+                                <span class="px-1 py-0.5 ring-1 ring-charcoal/20 rounded text-[10px] font-mono leading-none">K</span>
+                            </span>
+                        )}
+                        {item.badge && (
+                            <span class={`text-[10px] font-semibold tabular-nums leading-none ${
+                                parseInt(item.badge) >= 100
+                                    ? 'bg-charcoal text-paper px-1.5 py-1 rounded'
+                                    : 'text-charcoal/60 px-1'
+                            }`}>{item.badge}</span>
+                        )}
+                        {item.hasChevron && (
+                            <i class="fa-solid fa-chevron-right text-[9px] text-charcoal/40"></i>
+                        )}
+                    </div>
+                ))
+            }
+        </nav>
+
+        <div class="px-2.5 pb-3 pt-3 border-t border-charcoal/10">
+            <div class="flex items-center gap-3 px-3 py-2 rounded-md">
+                <div class="h-8 w-8 rounded-md bg-paper ring-1 ring-charcoal/10 flex items-center justify-center text-[10px] font-bold text-charcoal leading-none tracking-tight">
+                    DW
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-xs font-semibold text-charcoal truncate leading-tight">Demo gebruiker</p>
+                    <p class="text-[10px] text-charcoal/60 truncate leading-tight mt-0.5">demowebshop.nl</p>
+                </div>
+                <i class="fa-solid fa-chevron-down text-[10px] text-charcoal/50"></i>
+            </div>
+        </div>
+    </aside>
+
+    <div class="flex-1 bg-chalk-light p-5 overflow-hidden">
+        <div class="grid grid-cols-5 gap-3 mb-4">
+            {
+                counters.map((counter) => (
+                    <div class="bg-paper ring-1 ring-chalk rounded-md px-3.5 py-3 flex items-center gap-3">
+                        <i class={`fa-regular ${counter.icon} text-[15px] text-gravel flex-shrink-0`}></i>
+                        <div class="min-w-0">
+                            <p class="text-[12px] text-gravel truncate leading-tight">{counter.label}</p>
+                            <p class="text-sm font-semibold text-charcoal tabular-nums leading-tight mt-0.5">{counter.value}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+            <div class="bg-paper ring-1 ring-chalk rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal">
+                <span>Laatste 30 dagen</span>
+                <i class="fa-solid fa-chevron-down text-[10px] text-gravel"></i>
+            </div>
+            <div class="bg-paper ring-1 ring-chalk rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal">
+                <i class="fa-regular fa-calendar text-gravel"></i>
+                <span class="tabular-nums">28-04-2026 - 27-05-2026</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3 mb-3">
+            {
+                statsRow1.map((stat) => (
+                    <div class="bg-paper ring-1 ring-chalk rounded-md px-4 py-3.5">
+                        <p class="text-[12px] text-gravel mb-1.5">{stat.label}</p>
+                        <div class="flex items-baseline gap-2">
+                            <p class="text-xl font-semibold text-charcoal tabular-nums leading-none">{stat.value}</p>
+                            <div class={`flex items-center gap-0.5 text-[11px] font-semibold tabular-nums ${stat.positive ? 'text-green' : 'text-red'}`}>
+                                <i class={`fa-solid ${stat.positive ? 'fa-arrow-up' : 'fa-arrow-down'} text-[9px]`}></i>
+                                <span>{stat.delta}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="grid grid-cols-4 gap-3 mb-4">
+            {
+                statsRow2.map((stat) => (
+                    <div class="bg-paper ring-1 ring-chalk rounded-md px-4 py-3.5">
+                        <p class="text-[12px] text-gravel mb-1.5">{stat.label}</p>
+                        <div class="flex items-baseline gap-2">
+                            <p class="text-xl font-semibold text-charcoal tabular-nums leading-none">{stat.value}</p>
+                            <div class={`flex items-center gap-0.5 text-[11px] font-semibold tabular-nums ${stat.positive ? 'text-green' : 'text-red'}`}>
+                                <i class={`fa-solid ${stat.positive ? 'fa-arrow-up' : 'fa-arrow-down'} text-[9px]`}></i>
+                                <span>{stat.delta}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mb-3">
+            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <p class="text-sm font-semibold text-charcoal">Verkoopvolume</p>
+                    <div class="flex items-center gap-3 text-[11px]">
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-sunstone"></span>
+                            <span class="text-gravel">Verkochte stuks</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-blue"></span>
+                            <span class="text-gravel">Bestellingen</span>
+                        </span>
+                    </div>
+                </div>
+                <svg viewBox={`0 0 ${volumeWidth} ${volumeHeight}`} class="w-full h-32" preserveAspectRatio="none">
+                    <path d={stuksPath.area} fill="#e8b679" fill-opacity="0.16" />
+                    <path d={stuksPath.line} fill="none" stroke="#e8b679" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                    <path d={bestPath.area} fill="#007bff" fill-opacity="0.08" />
+                    <path d={bestPath.line} fill="none" stroke="#007bff" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <p class="text-sm font-semibold text-charcoal">Financieel overzicht</p>
+                    <div class="flex items-center gap-3 text-[11px]">
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-sunstone"></span>
+                            <span class="text-gravel">Omzet</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-green"></span>
+                            <span class="text-gravel">Winst</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-red-light"></span>
+                            <span class="text-gravel">Commissie</span>
+                        </span>
+                    </div>
+                </div>
+                <svg viewBox={`0 0 ${volumeWidth} ${volumeHeight}`} class="w-full h-32" preserveAspectRatio="none">
+                    <path d={omzetPath.area} fill="#e8b679" fill-opacity="0.14" />
+                    <path d={omzetPath.line} fill="none" stroke="#e8b679" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                    <path d={winstPath.area} fill="#22c55e" fill-opacity="0.10" />
+                    <path d={winstPath.line} fill="none" stroke="#22c55e" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                    <path d={commissiePath.line} fill="none" stroke="#f87171" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+                <div class="flex items-center justify-between mb-3">
+                    <p class="text-sm font-semibold text-charcoal">Marges, Retouren & Annuleringen</p>
+                    <div class="flex items-center gap-3 text-[11px]">
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-green"></span>
+                            <span class="text-gravel">Winstmarge</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-red-light"></span>
+                            <span class="text-gravel">Retouren</span>
+                        </span>
+                        <span class="inline-flex items-center gap-1.5">
+                            <span class="h-2 w-2 rounded-full bg-sunstone"></span>
+                            <span class="text-gravel">Annuleringen</span>
+                        </span>
+                    </div>
+                </div>
+                <svg viewBox={`0 0 ${volumeWidth} ${volumeHeight}`} class="w-full h-32" preserveAspectRatio="none">
+                    <path d={margesPath.area} fill="#22c55e" fill-opacity="0.12" />
+                    <path d={margesPath.line} fill="none" stroke="#22c55e" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+                <div class="flex items-center justify-between mb-4">
+                    <p class="text-sm font-semibold text-charcoal">Verdeling per verkoopkanaal</p>
+                    <div class="inline-flex items-center bg-chalk rounded-md p-0.5 text-[10px] font-medium">
+                        <span class="px-2 py-1 bg-paper text-charcoal rounded">Omzet</span>
+                        <span class="px-2 py-1 text-gravel">Winst</span>
+                        <span class="px-2 py-1 text-gravel">Bestellingen</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="relative flex-shrink-0">
+                        <svg viewBox="0 0 100 100" class="w-32 h-32">
+                            <circle cx="50" cy="50" r="36" fill="none" stroke="#f3f3f3" stroke-width="14" />
+                            <circle cx="50" cy="50" r="36" fill="none" stroke="#e8b679" stroke-width="14" stroke-dasharray="158 226" stroke-linecap="butt" transform="rotate(-90 50 50)" />
+                            <circle cx="50" cy="50" r="36" fill="none" stroke="#22c55e" stroke-width="14" stroke-dasharray="50 226" stroke-dashoffset="-158" stroke-linecap="butt" transform="rotate(-90 50 50)" />
+                            <circle cx="50" cy="50" r="36" fill="none" stroke="#f87171" stroke-width="14" stroke-dasharray="18 226" stroke-dashoffset="-208" stroke-linecap="butt" transform="rotate(-90 50 50)" />
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center">
+                            <p class="text-[10px] text-gravel leading-none">Totaal</p>
+                            <p class="text-sm font-semibold text-charcoal tabular-nums leading-tight mt-1">€ 186K</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs flex-1">
+                        <li class="flex items-center justify-between gap-2">
+                            <span class="inline-flex items-center gap-2">
+                                <span class="h-2 w-2 rounded-full bg-sunstone"></span>
+                                <span class="text-gravel">Eigen webshop</span>
+                            </span>
+                            <span class="text-charcoal font-medium tabular-nums">70%</span>
+                        </li>
+                        <li class="flex items-center justify-between gap-2">
+                            <span class="inline-flex items-center gap-2">
+                                <span class="h-2 w-2 rounded-full bg-green"></span>
+                                <span class="text-gravel">Bol</span>
+                            </span>
+                            <span class="text-charcoal font-medium tabular-nums">22%</span>
+                        </li>
+                        <li class="flex items-center justify-between gap-2">
+                            <span class="inline-flex items-center gap-2">
+                                <span class="h-2 w-2 rounded-full bg-red-light"></span>
+                                <span class="text-gravel">Marketplace</span>
+                            </span>
+                            <span class="text-charcoal font-medium tabular-nums">8%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

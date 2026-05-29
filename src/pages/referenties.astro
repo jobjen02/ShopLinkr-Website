@@ -1,0 +1,128 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const story = {
+    company: 'Schoongedaan.nl',
+    logo: '/testimonials/Schoongedaan.png',
+    intro: 'Jasper startte SchoonGedaan twee jaar geleden vanuit een kastje naast zijn bureau. Inmiddels runt hij een snelgroeiend bedrijf in Nieuwegein, gespecialiseerd in schoonmaakmiddelen voor vloeren, keukens, zwembaden en nog veel meer. Via bol, Kaufland en zijn eigen webshop levert hij dagelijks honderden bestellingen.',
+    challenge: 'Door snelle groei raakte het oude magazijn al snel chaotisch. Producten stonden door elkaar en orderpicken kostte veel tijd. Jasper kon maximaal 60 bestellingen per dag verwerken en liep tegen fouten, retouren en frustratie aan.',
+    solution: 'Met ShopLinkr bracht Jasper structuur in zijn magazijn en koppelde hij alle verkoopkanalen. Dankzij slimme picklijsten en mobiele barcodescanners is het pick- en pack proces nu volledig geautomatiseerd. Bestellingen, voorraad, verzending en zelfs retouren worden volledig vanuit een systeem geregeld, waardoor Jasper dagelijks honderden bestellingen foutloos kan verwerken.',
+    metric: 'Van 60 bestellingen per dag naar 150-250 bestellingen, met pieken van 500 orders op maandag.',
+};
+
+const jsonLd = {
+    '@type': 'Article',
+    headline: `Klantverhaal: ${story.company}`,
+    description: story.metric,
+    about: {
+        '@type': 'Organization',
+        name: story.company,
+        url: 'https://schoongedaan.nl',
+    },
+    author: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        url: 'https://shoplinkr.com',
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+        },
+    },
+    image: `https://shoplinkr.com${story.logo}`,
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Referenties | ShopLinkr"
+    description="Maak kennis met onze geweldige klanten. Lees hoe Nederlandse webshops met ShopLinkr hun magazijn, voorraad en orderverwerking onder controle krijgen."
+    eyebrow="Klantverhalen"
+    heading="Referenties."
+    subheading="Maak kennis met onze geweldige klanten."
+    jsonLd={jsonLd}
+>
+    <section class="py-20 md:py-28">
+        <div class="container-prose">
+            <article class="max-w-4xl mx-auto bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
+                <header class="px-8 md:px-14 pt-10 md:pt-14 pb-8 md:pb-10 text-center border-b border-chalk-dark">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-paper ring-1 ring-chalk-dark mb-6 overflow-hidden">
+                        <img
+                            src={story.logo}
+                            alt={story.company}
+                            class="h-full w-full object-contain p-2"
+                            loading="lazy"
+                        />
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight">
+                        {story.company}
+                    </h2>
+                </header>
+
+                <div class="px-8 md:px-14 py-10 md:py-14 space-y-10">
+                    <div>
+                        <h3 class="eyebrow mb-3">Over Schoongedaan</h3>
+                        <p class="text-charcoal leading-relaxed text-[1.0625rem]">
+                            {story.intro}
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="eyebrow mb-3">De uitdaging</h3>
+                        <p class="text-steel leading-relaxed text-[1.0625rem]">
+                            {story.challenge}
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="eyebrow mb-3">De oplossing</h3>
+                        <p class="text-steel leading-relaxed text-[1.0625rem]">
+                            {story.solution}
+                        </p>
+                    </div>
+
+                    <div class="bg-sunstone-mist/50 ring-1 ring-sunstone-soft/50 rounded-2xl px-7 py-7 md:px-9 md:py-8">
+                        <h3 class="eyebrow mb-3">Het resultaat</h3>
+                        <p class="text-charcoal leading-snug text-lg md:text-xl font-semibold tracking-tight">
+                            {story.metric}
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="mt-16 md:mt-20 max-w-2xl mx-auto text-center">
+                <p class="eyebrow mb-3">Word jij de volgende?</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight">
+                    Probeer ShopLinkr met je eigen magazijn.
+                </h2>
+                <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href={externalLinks.register}
+                        class="btn btn-sunstone text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Gratis Starten
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-secondary text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Demo inplannen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

@@ -1,0 +1,17 @@
+{
+    "name": "Innosend",
+    "slug": "innosend",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/Innosend.jpg",
+    "summary": "Maak Innosend-labels aan vanuit elke picklijst. Snel verzenden naar binnenland en buitenland.",
+    "supportSlug": "innosend-koppelen",
+    "tagline": "Complete verzendsoftware om je pakketten eenvoudig te verzenden.",
+    "about": "Innosend is gebruiksvriendelijke verzendsoftware voor alle soorten webshops. Je kunt pakketten met meerdere vervoerders verzenden, zodat je altijd het scherpste verzendtarief hebt. Dankzij slimme verzendregels worden bestellingen automatisch aan de juiste vervoerder gekoppeld. Met Innosend is je verzendproces een stuk makkelijker en overzichtelijker. Innosend helpt je kosteloos bij het opzetten van een account, zodat je direct aan de slag kunt.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij Innosend. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

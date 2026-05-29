@@ -1,0 +1,130 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Registratie',
+        heading: 'Leg een inkomende levering vast in een paar klikken.',
+        body: 'Komt er een nieuwe lading binnen? Maak in ShopLinkr een levering aan, koppel de juiste producten en geef per artikel aan hoeveel stuks je verwacht. Geen losse spreadsheets, geen papieren bonnen.',
+        icon: 'fa-solid fa-truck-ramp-box',
+    },
+    {
+        eyebrow: 'Real-time voorraad',
+        heading: 'Voorraad gaat direct mee omhoog.',
+        body: 'Zodra je een levering verwerkt, schiet de voorraad meteen omhoog in al je gekoppelde verkoopkanalen. Wat je vandaag inboekt, kun je vandaag verkopen.',
+        icon: 'fa-solid fa-arrow-up-9-1',
+    },
+    {
+        eyebrow: 'Team notities',
+        heading: 'Iedereen ziet hetzelfde verhaal.',
+        body: 'Plak een pakbon erbij, voeg een opmerking toe over een beschadigde doos of zet een collega op de hoogte met een interne notitie. Je hele team werkt vanuit dezelfde informatie.',
+        icon: 'fa-solid fa-note-sticky',
+    },
+    {
+        eyebrow: 'PDF checklist',
+        heading: 'Print een werkbon voor je magazijn.',
+        body: 'Vanuit elke levering genereer je een nette PDF-checklist die je magazijnmedewerker meeneemt naar de loods. Alle producten met verwachte aantallen staan erop, klaar om afgevinkt te worden.',
+        icon: 'fa-solid fa-clipboard-list-check',
+    },
+    {
+        eyebrow: 'Audit trail',
+        heading: 'Terugzoeken wat je drie maanden terug ontving.',
+        body: 'Elke levering blijft volledig zichtbaar in je historie. Wie heeft de levering aangemaakt, welke aantallen zijn ontvangen, welke notities zijn toegevoegd. Handig bij controles of klachten van leveranciers.',
+        icon: 'fa-solid fa-clock-rotate-left',
+    },
+    {
+        eyebrow: 'Voorraadbeheer',
+        heading: 'Leveringen draaien mee in je hele logistiek.',
+        body: 'Je inkomende lading sluit naadloos aan op je centrale voorraadbeheer. Wat je inboekt, zie je terug in je beschikbare voorraad per kanaal en in de prognoses van ShopLinkr.',
+        icon: 'fa-solid fa-diagram-project',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Leveringen bijhouden via ShopLinkr',
+    description: 'Efficiënt Inkomende Leveringen Beheren: Leer hoe ShopLinkr je in staat stelt om inkomende leveringen eenvoudig te registreren, controleren en integreren in je voorraadbeheer, waardoor je logistiek proces naadloos verloopt.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Leveringen bijhouden via ShopLinkr"
+    description="Efficiënt Inkomende Leveringen Beheren: Leer hoe ShopLinkr je in staat stelt om inkomende leveringen eenvoudig te registreren, controleren en integreren in je voorraadbeheer, waardoor je logistiek proces naadloos verloopt."
+    eyebrow="Inkomende leveringen"
+    heading="Boek nieuwe voorraad in zonder gedoe."
+    subheading="Registreer leveringen van je leveranciers, vink ze af op de werkvloer en zie je voorraad direct meegroeien in al je verkoopkanalen."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Inkomende leveringen</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Van bestelbon naar beschikbare voorraad.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Een levering binnen krijgen lijkt simpel, tot je beseft hoeveel kleine stappen erbij komen kijken. ShopLinkr brengt al die stappen samen in één duidelijk proces, zodat je magazijn altijd up-to-date is en je niets vergeet.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

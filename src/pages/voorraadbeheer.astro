@@ -1,0 +1,130 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Multi-channel',
+        heading: 'Koppel al je verkoopkanalen in één keer.',
+        body: 'Verkoop je via Bol, Shopify of WooCommerce, of via alle drie tegelijk? ShopLinkr verbindt je kanalen en bouwt er één voorraadoverzicht omheen. Je werkt vanaf nu vanuit één scherm in plaats van constant te switchen tussen platformen.',
+        icon: 'fa-solid fa-plug',
+    },
+    {
+        eyebrow: 'Altijd kloppend',
+        heading: 'Voorraad die altijd klopt.',
+        body: 'Verkoop je een product op Bol, dan trekt ShopLinkr de voorraad meteen af op Shopify en WooCommerce. Geen oversells meer, geen geannuleerde bestellingen. Je ziet per product hoeveel je fysiek hebt liggen, hoeveel er gereserveerd staan en hoeveel je daadwerkelijk nog kunt verkopen.',
+        icon: 'fa-solid fa-arrows-rotate',
+    },
+    {
+        eyebrow: 'Razendsnel picken',
+        heading: 'Picklijsten die je magazijn versnellen.',
+        body: 'Op de picklijst staat per product de locatie. Je picker loopt de meest efficiënte route en haalt in één keer alles op voor meerdere bestellingen tegelijk. Zo bespaar je minuten per order en houd je het tempo erin tijdens piekdagen.',
+        icon: 'fa-solid fa-list-check',
+    },
+    {
+        eyebrow: 'Verzending',
+        heading: 'Automatische verzendlabels.',
+        body: 'Direct vanuit ShopLinkr print je een verzendlabel van PostNL, DPD, MyParcel, Sendcloud of een andere koppeling. De track en trace gaat automatisch terug naar je verkoopkanaal en je klant. Geen knip- en plakwerk meer tussen marketplace en vervoerder.',
+        icon: 'fa-solid fa-truck-fast',
+    },
+    {
+        eyebrow: 'Inkoopadvies',
+        heading: 'Slimme prognoses voor je inkoop.',
+        body: 'Op basis van je verkoophistorie laat ShopLinkr zien welke producten je bijna kwijt bent en hoeveel je opnieuw zou moeten inkopen. Zo voorkom je dat je topverkoper opeens uitverkocht raakt, zonder dat je magazijn vol komt te liggen.',
+        icon: 'fa-solid fa-chart-line',
+    },
+    {
+        eyebrow: 'Direct starten',
+        heading: 'Vandaag aanmelden, vandaag werken.',
+        body: 'Geen lange implementatietrajecten, geen consultants. Je koppelt je kanalen, je voorraad rolt binnen en je kunt direct aan de slag. De eerste 14 dagen probeer je ShopLinkr gratis uit, zonder creditcard en zonder verplichtingen.',
+        icon: 'fa-solid fa-bolt',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Voorraadbeheer - ShopLinkr',
+    description: 'Eenvoudig de voorraad van je webshop beheren? Dat kan! In één oplossing beheer jij de voorraad van al je producten en kanalen.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Voorraadbeheer - ShopLinkr"
+    description="Eenvoudig de voorraad van je webshop beheren? Dat kan! In één oplossing beheer jij de voorraad van al je producten en kanalen."
+    eyebrow="Voorraadbeheer"
+    heading="Voorraadbeheer voor webshops die wél willen doorgroeien."
+    subheading="Eén plek voor de voorraad van al je producten op al je kanalen. ShopLinkr houdt je voorraad realtime kloppend, zodat je nooit meer verkoopt wat je niet hebt."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Voorraadbeheer</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Eén voorraad, op elk verkoopkanaal.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    ShopLinkr trekt al je producten uit je kanalen, brengt ze samen in één overzicht en synchroniseert je voorraad realtime terug. Geen dubbel werk, geen oversells, en altijd zicht op wat er werkelijk op het schap ligt.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

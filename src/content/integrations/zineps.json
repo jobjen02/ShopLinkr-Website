@@ -1,0 +1,16 @@
+{
+    "name": "Zineps",
+    "slug": "zineps",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/Zineps.svg",
+    "summary": "Print Zineps-labels in je gewone orderflow. Inclusief tracking-updates terug naar de webshop.",
+    "tagline": "Logistieke integratie software.",
+    "about": "Zineps is verzendsoftware waarmee je eenvoudig verzendlabels kunt aanmaken voor verschillende vervoerders. Het platform helpt webshops en logistieke systemen om hun verzendproces te automatiseren. Via Zineps kun je verzendlabels genereren voor vervoerders zoals PostNL, DHL en internationale partners, zodat pakketten snel en efficiënt kunnen worden verzonden.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij Zineps. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

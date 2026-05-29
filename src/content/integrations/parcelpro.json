@@ -1,0 +1,17 @@
+{
+    "name": "ParcelPro",
+    "slug": "parcelpro",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/ParcelPro.jpg",
+    "summary": "Eén connectie voor PostNL, DHL en GLS via ParcelPro. Labels printen en tracking automatisch verwerkt.",
+    "supportSlug": "parcelpro-koppelen",
+    "tagline": "Koppel meerdere vervoerders in één systeem.",
+    "about": "Met ParcelPro verbind je meerdere vervoerders in één systeem. Op dit moment biedt ParcelPro koppelingen met 18 verschillende vervoerders. Door ParcelPro te integreren met ShopLinkr, krijg je direct de mogelijkheid om al deze vervoerders via ShopLinkr te gebruiken.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij ParcelPro. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

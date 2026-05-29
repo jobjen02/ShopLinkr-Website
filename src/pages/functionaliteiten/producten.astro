@@ -1,0 +1,194 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const stories = [
+    {
+        eyebrow: 'Producten in beeld',
+        heading: 'Producten van al je kanalen op één plek.',
+        body: 'ShopLinkr haalt je producten op uit Bol, Shopify, WooCommerce en Kaufland en zet ze samen in één overzicht. Vanuit deze plek werk je aan je voorraad, locaties, bundels en orders. Productcontent en prijzen blijven door je verkoopkanaal beheerd.',
+        icon: 'fa-duotone fa-solid fa-cubes',
+        visualLabel: 'Productoverzicht',
+    },
+    {
+        eyebrow: 'Voorraad per variant',
+        heading: 'Maten, kleuren en smaken nauwkeurig bijhouden.',
+        body: 'Verkoop je hetzelfde product in meerdere varianten? ShopLinkr houdt de voorraad per variant bij en synchroniseert per variant terug naar je kanalen. Zo zie je in één oogopslag welke variant goed loopt en welke nog op het schap ligt.',
+        icon: 'fa-duotone fa-solid fa-shapes',
+        visualLabel: 'Variantenpaneel',
+    },
+    {
+        eyebrow: 'Productbundels',
+        heading: 'Meerdere artikelen, één verkoopeenheid.',
+        body: 'Stel een bundel samen door losse artikelen te koppelen tot één verkoopproduct. Verkoop je een cadeauset of combideal, dan trekt ShopLinkr automatisch de juiste hoeveelheid af van elk component. De voorraad van de bundel rekent vanzelf op het minst beschikbare onderdeel.',
+        icon: 'fa-duotone fa-solid fa-boxes-packing',
+        visualLabel: 'Bundel samenstellen',
+    },
+    {
+        eyebrow: 'Voorraadmeldingen',
+        heading: 'Krijg een seintje voordat je misgrijpt.',
+        body: 'Stel per product een drempelwaarde in en ontvang automatisch een melding zodra de voorraad daaronder zakt. Zo weet je op tijd wanneer je moet inkopen en voorkom je dat een topverkoper opeens uitverkocht raakt.',
+        icon: 'fa-duotone fa-solid fa-bell',
+        visualLabel: 'Voorraadmelding',
+    },
+    {
+        eyebrow: 'Fictieve voorraad',
+        heading: 'Houd je echte cijfers privé.',
+        body: 'Wil je niet dat concurrenten kunnen zien hoeveel je verkoopt? Stel een fictief aantal in dat ShopLinkr doorgeeft aan je verkoopkanalen. Zolang je werkelijke voorraad boven de drempel blijft, communiceren we het fictieve aantal. Daalt je echte voorraad? Dan schakelen we automatisch over, zodat je nooit meer verkoopt dan je hebt.',
+        icon: 'fa-duotone fa-solid fa-eye-slash',
+        visualLabel: 'Fictief vs werkelijk',
+    },
+    {
+        eyebrow: 'Magazijnlocaties',
+        heading: 'Direct weten waar elk product ligt.',
+        body: 'Koppel een magazijnlocatie aan je producten en zie tijdens het picken precies waar je moet zijn. Werkt naadloos samen met onze pick & pack lijsten en bespaart elke picker minuten per order.',
+        icon: 'fa-duotone fa-solid fa-location-dot',
+        visualLabel: 'Magazijnlocatie',
+    },
+];
+
+const channels = [
+    {
+        title: 'Bol',
+        body: 'We importeren je producten en synchroniseren voorraadupdates realtime terug naar Bol, ook voor LVB-zendingen via de slimme switch.',
+    },
+    {
+        title: 'Shopify',
+        body: 'ShopLinkr leest je producten in en houdt de voorraad in je Shopify-shop kloppend, ook bij verkoop via andere kanalen.',
+    },
+    {
+        title: 'WooCommerce',
+        body: 'Je WooCommerce-producten komen automatisch in je ShopLinkr-omgeving terecht. Voorraad blijft realtime synchroon.',
+    },
+    {
+        title: 'Kaufland',
+        body: 'Breid uit naar de Duitse markt zonder dubbel voorraadwerk. ShopLinkr verbindt Kaufland en houdt voorraad kloppend.',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Producten in beeld met ShopLinkr',
+    description: 'Producten in beeld voor voorraad, bundels, locaties en orders. Productcontent en prijzen blijven op je verkoopkanaal.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Producten in beeld met ShopLinkr"
+    description="Producten in beeld voor voorraad, bundels, locaties en orders. Productcontent en prijzen blijven op je verkoopkanaal."
+    eyebrow="Producten in beeld"
+    heading="Al je producten in één overzicht."
+    subheading="ShopLinkr haalt je producten op uit Bol, Shopify, WooCommerce en Kaufland en gebruikt dat overzicht voor je voorraad, bundels, locaties en orders. Productcontent en prijzen blijven op het kanaal zelf."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-paper">
+        <div class="container-prose">
+            {
+                stories.map((story, index) => {
+                    const isReversed = index % 2 === 1;
+
+                    return (
+                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
+                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+                                    <div
+                                        class="relative w-full rounded-3xl overflow-hidden bg-chalk-light ring-1 ring-chalk-dark"
+                                        style="aspect-ratio: 4 / 3;"
+                                    >
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-10 text-center">
+                                            <div class="flex items-center justify-center h-20 w-20 rounded-2xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)]">
+                                                <i class={`${story.icon} text-3xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold mb-2">
+                                                    Visual: {story.visualLabel}
+                                                </p>
+                                                <p class="text-sm text-gravel max-w-[32ch]">
+                                                    Hier komt later een echte screenshot uit ShopLinkr.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
+                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
+                                        {story.heading}
+                                    </h2>
+                                    <p class="text-lg text-steel leading-relaxed">
+                                        {story.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    );
+                })
+            }
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Multi-channel</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Eén voorraad,
+                        <span class="block text-sunstone-deep">op elk verkoopkanaal.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Verkoop je via meerdere kanalen, dan houd je je voorraad niet meer op elk platform apart bij. ShopLinkr importeert je producten uit je verkoopkanalen en synchroniseert voorraadupdates realtime terug. Zo voorkom je oversells zonder dat je iets dubbel hoeft te doen.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            channels.map((channel) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-plug text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{channel.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{channel.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

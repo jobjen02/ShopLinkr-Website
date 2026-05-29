@@ -1,0 +1,124 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Labels printen',
+        heading: 'Print vanuit één werkstroom.',
+        body: 'Of een bestelling nu binnenkomt via Bol, je eigen webshop of een andere marketplace, je verzendlabel print je direct vanuit ShopLinkr. Geen schakelen tussen marketplace-portalen en losse tools.',
+        icon: 'fa-solid fa-print',
+    },
+    {
+        eyebrow: 'Track en trace',
+        heading: 'Klant en marketplace meteen op de hoogte.',
+        body: 'Zodra je labelt, schiet de track en trace code automatisch terug naar je verkoopkanaal en je klant. Geen handmatig knip- en plakwerk, en geen klanten die in het ongewisse blijven.',
+        icon: 'fa-solid fa-location-arrow',
+    },
+    {
+        eyebrow: 'Multi-carrier',
+        heading: 'PostNL, DPD, MyParcel, Sendcloud en meer.',
+        body: 'Koppel de vervoerders en verzendplatformen die je toch al gebruikt. Eén integratie aanzetten en je print direct labels, zonder gedoe met API-keys of losse plug-ins.',
+        icon: 'fa-solid fa-truck-fast',
+    },
+    {
+        eyebrow: 'Slimme regels',
+        heading: 'De juiste vervoerder kiest zichzelf.',
+        body: 'Op basis van bestemming, gewicht, afmeting of waarde bepaalt ShopLinkr automatisch welke vervoerder bij de bestelling past. Zo gaat altijd de goedkoopste of snelste optie naar je klant.',
+        icon: 'fa-solid fa-route',
+    },
+    {
+        eyebrow: 'Bulk',
+        heading: 'Honderden labels in één handeling.',
+        body: 'Tijdens piekdagen verwerk je een hele stapel bestellingen in één keer. Selecteren, printen, klaar. Zo blijft je werkstroom soepel, ook als de orders binnenstromen.',
+        icon: 'fa-solid fa-layer-group',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Vervoerders | ShopLinkr',
+    description: 'Vervoerdersopties in ShopLinkr: Ontdek hoe je verzendlabels genereert en de track & trace-informatie beheert, ongeacht het verkoopkanaal. Verbeter je logistiek met ShopLinkr’s vervoerdersintegraties.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Vervoerders koppelen met ShopLinkr"
+    description="Vervoerdersopties in ShopLinkr: Ontdek hoe je verzendlabels genereert en de track & trace-informatie beheert, ongeacht het verkoopkanaal. Verbeter je logistiek met ShopLinkr's vervoerdersintegraties."
+    eyebrow="Verzending"
+    heading="Print labels van alle Nederlandse vervoerders."
+    subheading="Of een bestelling nu via Bol, je eigen webshop of een andere marketplace binnenkomt: vanuit ShopLinkr print je het label en regel je track en trace in één werkstroom."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Eén werkwijze voor al je kanalen</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Labels printen los van het verkoopkanaal.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Je hoeft niet langer per marketplace in een ander scherm te werken. ShopLinkr verzamelt al je bestellingen op één plek, zodat je in dezelfde flow je labels print, je picklijst draait en je track en trace verstuurt.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

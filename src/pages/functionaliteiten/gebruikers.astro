@@ -1,0 +1,124 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Uitnodigen',
+        heading: 'Nodig je team uit via e-mail.',
+        body: 'Voer het e-mailadres van je collega in en klik op uitnodigen. ShopLinkr stuurt automatisch een uitnodiging waarmee diegene in een paar klikken aan boord is. Geen accountgedoe, geen handmatige koppelingen.',
+        icon: 'fa-solid fa-envelope-open-text',
+    },
+    {
+        eyebrow: 'Onboarding',
+        heading: 'Direct in dezelfde bedrijfsomgeving.',
+        body: 'Klikt je collega op de uitnodiging, dan wordt het account meteen gekoppeld aan jouw omgeving. Even een wachtwoord kiezen en de nieuwe gebruiker ziet dezelfde producten, voorraad en bestellingen als jij.',
+        icon: 'fa-solid fa-user-plus',
+    },
+    {
+        eyebrow: 'Samenwerken',
+        heading: 'Iedereen werkt in dezelfde data.',
+        body: 'Geen losse accounts om handmatig aan elkaar te knopen, geen versies die uit elkaar lopen. Wat de één invoert ziet de ander direct, zo bouw je echt samen aan hetzelfde magazijn.',
+        icon: 'fa-solid fa-people-roof',
+    },
+    {
+        eyebrow: 'Rollen en rechten',
+        heading: 'Iedere rol krijgt de juiste toegang.',
+        body: 'Geef je magazijnmedewerker andere toegang dan je inkoper of administratief medewerker. Je bepaalt zelf wie wat mag zien en aanpassen, zodat iedereen precies de juiste tools in handen heeft.',
+        icon: 'fa-solid fa-user-shield',
+    },
+    {
+        eyebrow: 'Audit trail',
+        heading: 'Per gebruiker terugzien wat er is gebeurd.',
+        body: 'Wie heeft die voorraadcorrectie doorgevoerd? Wie heeft de bestelling van gisteren bewerkt? Je ziet per gebruiker terug welke handelingen er gedaan zijn, zodat je altijd grip houdt op je data.',
+        icon: 'fa-solid fa-list-timeline',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Gebruikers toevoegen aan ShopLinkr',
+    description: 'Eenvoudig samen werken met je hele team doe je met ShopLinkr. Nodig eenvoudig gebruikers uit voor je account en werk makkelijk samen. Het is nog nooit zo leuk geweest!',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Gebruikers toevoegen aan ShopLinkr"
+    description="Eenvoudig samen werken met je hele team doe je met ShopLinkr. Nodig eenvoudig gebruikers uit voor je account en werk makkelijk samen. Het is nog nooit zo leuk geweest!"
+    eyebrow="Team & toegang"
+    heading="Werk samen met je hele team."
+    subheading="Nodig collega's uit, geef ze de juiste rechten en werk samen in dezelfde omgeving. Je magazijn draait pas echt soepel als je niet de enige bent die het ziet."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Team & toegang</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Je magazijn draait beter met meer ogen.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Eén persoon die alles doet werkt op de korte termijn. Maar als je groeit wil je je team meenemen. ShopLinkr maakt het simpel om collega's aan je account toe te voegen, zodat iedereen vanuit zijn eigen rol bijdraagt aan dezelfde voorraad, bestellingen en producten.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

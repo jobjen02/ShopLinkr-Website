@@ -1,0 +1,198 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+interface Pillar {
+    eyebrow: string;
+    heading: string;
+    body: string;
+    accent: 'paper' | 'chalk';
+    features: Array<{
+        title: string;
+        href: string;
+        icon: string;
+    }>;
+}
+
+const pillars: Array<Pillar> = [
+    {
+        eyebrow: 'Orders & verzending',
+        heading: 'Van bestelling binnen tot pakket de deur uit.',
+        body: 'Verwerk orders uit Bol, Shopify en WooCommerce vanuit één scherm. Pick efficiënt, print labels van alle Nederlandse vervoerders en handel retouren netjes af.',
+        accent: 'paper',
+        features: [
+            {
+                title: 'Bestellingen',
+                href: '/functionaliteiten/bestellingen',
+                icon: 'fa-solid fa-receipt',
+            },
+            {
+                title: 'Picklijsten',
+                href: '/functionaliteiten/pick-en-pack',
+                icon: 'fa-solid fa-clipboard-list',
+            },
+            {
+                title: 'Vervoerders',
+                href: '/functionaliteiten/vervoerders',
+                icon: 'fa-solid fa-truck',
+            },
+            {
+                title: 'Retouren',
+                href: '/functionaliteiten/retouren',
+                icon: 'fa-solid fa-arrow-rotate-left',
+            },
+        ],
+    },
+    {
+        eyebrow: 'Voorraad & magazijn',
+        heading: 'Realtime grip op je producten en je magazijn.',
+        body: 'Eén voorraadbron voor al je verkoopkanalen. Slim inkoopadvies, voorraadmeldingen, magazijnlocaties per product en bundels die zelf de voorraad afrekenen.',
+        accent: 'chalk',
+        features: [
+            {
+                title: 'Voorraad',
+                href: '/functionaliteiten/voorraad',
+                icon: 'fa-solid fa-boxes-stacked',
+            },
+            {
+                title: 'Producten',
+                href: '/functionaliteiten/producten',
+                icon: 'fa-solid fa-tag',
+            },
+            {
+                title: 'Locatiebeheer',
+                href: '/functionaliteiten/locatiebeheer',
+                icon: 'fa-solid fa-location-dot',
+            },
+            {
+                title: 'Inkoopadvies',
+                href: '/functionaliteiten/inkoopadvies',
+                icon: 'fa-solid fa-lightbulb',
+            },
+            {
+                title: 'Productbundels',
+                href: '/functionaliteiten/productbundels',
+                icon: 'fa-solid fa-cubes',
+            },
+            {
+                title: 'Leveringen',
+                href: '/functionaliteiten/leveringen',
+                icon: 'fa-solid fa-truck-ramp-box',
+            },
+        ],
+    },
+    {
+        eyebrow: 'Automatiseren & beheren',
+        heading: 'Laat ShopLinkr het werk doen.',
+        body: 'Automatiseer terugkerend werk met slimme regels, krijg inzicht in je cijfers, beheer klanten centraal en geef je team toegang met de juiste rechten.',
+        accent: 'paper',
+        features: [
+            {
+                title: 'Regels',
+                href: '/functionaliteiten/regels',
+                icon: 'fa-solid fa-bolt',
+            },
+            {
+                title: 'Rapporten',
+                href: '/functionaliteiten/rapporten',
+                icon: 'fa-solid fa-chart-line',
+            },
+            {
+                title: 'Klanten',
+                href: '/functionaliteiten/klanten',
+                icon: 'fa-solid fa-users',
+            },
+            {
+                title: 'Gebruikers',
+                href: '/functionaliteiten/gebruikers',
+                icon: 'fa-solid fa-user-plus',
+            },
+        ],
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Functionaliteiten | ShopLinkr',
+    description: 'Alle functionaliteiten van ShopLinkr op een rij. Alles wat je nodig hebt om je bestellingen en voorraad goed te beheren.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Functionaliteiten - ShopLinkr"
+    description="Alle functionaliteiten van ShopLinkr op een rij. Alles wat je nodig hebt om je bestellingen en voorraad goed te beheren."
+    eyebrow="Functionaliteiten"
+    heading="Alles wat je nodig hebt, in één systeem."
+    subheading="Van bestelling tot pakket, en alles wat daartussen zit. ShopLinkr brengt je hele orderflow samen op één plek."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    {
+        pillars.map((pillar) => (
+            <section class={`py-24 md:py-32 ${pillar.accent === 'chalk' ? 'bg-chalk-light' : 'bg-paper'}`}>
+                <div class="container-prose">
+                    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                        <div class="lg:col-span-5">
+                            <p class="eyebrow mb-5">{pillar.eyebrow}</p>
+                            <h2 class="text-3xl md:text-4xl lg:text-[2.75rem] font-semibold text-charcoal tracking-tight leading-[1.1]">
+                                {pillar.heading}
+                            </h2>
+                            <p class="mt-6 text-base md:text-lg text-steel leading-relaxed">
+                                {pillar.body}
+                            </p>
+                        </div>
+
+                        <div class="lg:col-span-7">
+                            <ul class="grid sm:grid-cols-2 gap-3">
+                                {pillar.features.map((feature) => (
+                                    <li>
+                                        <a
+                                            href={feature.href}
+                                            class="group flex items-center gap-4 bg-paper rounded-xl ring-1 ring-chalk-dark hover:ring-sunstone-soft hover:bg-sunstone-mist/30 px-5 py-4 transition-all duration-200"
+                                        >
+                                            <span class="flex-shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-lg bg-chalk-light text-gravel group-hover:bg-sunstone-mist group-hover:text-sunstone-deep transition-colors">
+                                                <i class={`${feature.icon} text-sm`} aria-hidden="true"></i>
+                                            </span>
+                                            <span class="flex-1 text-[15px] font-medium text-charcoal group-hover:text-sunstone-deep transition-colors">
+                                                {feature.title}
+                                            </span>
+                                            <i class="fa-solid fa-arrow-right text-xs text-gravel group-hover:text-sunstone-deep group-hover:translate-x-0.5 transition-all" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        ))
+    }
+
+    <CtaBanner />
+</PageLayout>

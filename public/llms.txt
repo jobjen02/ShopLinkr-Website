@@ -1,0 +1,44 @@
+# ShopLinkr
+
+> ShopLinkr is een Nederlands WMS en voorraadbeheerplatform voor kleine en middelgrote webshops. Het automatiseert orderverwerking, picklijsten, labelprinting en multi-channel voorraadsynchronisatie tussen Bol, Shopify, WooCommerce, Kaufland en alle Nederlandse vervoerders.
+
+## Product
+- [Functionaliteiten overzicht](https://shoplinkr.com/functionaliteiten): Alle functies van ShopLinkr op één pagina.
+- [Bestellingen](https://shoplinkr.com/functionaliteiten/bestellingen): Centraal verwerken van bestellingen uit Bol, Shopify, WooCommerce en Kaufland.
+- [Voorraad](https://shoplinkr.com/functionaliteiten/voorraad): Realtime voorraadbeheer over al je verkoopkanalen, met prognose en fictieve voorraad.
+- [Producten](https://shoplinkr.com/functionaliteiten/producten): Centraal productoverzicht voor voorraad, varianten en bundels.
+- [Picklijsten](https://shoplinkr.com/functionaliteiten/pick-en-pack): Slimme pick-routes door je magazijn met barcode scannen en label printing.
+- [Regels](https://shoplinkr.com/functionaliteiten/regels): Automatiseer terugkerend werk met condities en acties.
+- [Inkoopadvies](https://shoplinkr.com/functionaliteiten/inkoopadvies): Slim inkoopadvies op basis van verkoopdata en levertijden.
+- [Locatiebeheer](https://shoplinkr.com/functionaliteiten/locatiebeheer): Hiërarchische magazijnlocaties gekoppeld aan producten.
+- [Vervoerders](https://shoplinkr.com/functionaliteiten/vervoerders): Labels printen voor PostNL, DPD, MyParcel, Sendcloud en meer.
+- [Retouren](https://shoplinkr.com/functionaliteiten/retouren): Eenvoudig retouren verwerken en terugboeken naar voorraad.
+- [Rapporten](https://shoplinkr.com/functionaliteiten/rapporten): Inzicht in bestsellers, dode voorraad, voorraadwaarde en ABC-analyse.
+
+## Integraties
+- [Integraties overzicht](https://shoplinkr.com/integraties): Alle webshop-, marketplace- en vervoerderkoppelingen.
+- [Bol](https://shoplinkr.com/integraties/bol-com): Voorraad en orders synchroniseren met Bol.
+- [Shopify](https://shoplinkr.com/integraties/shopify): Voorraadsync en orderimport voor Shopify webshops.
+- [WooCommerce](https://shoplinkr.com/integraties/woocommerce): Voorraadsync en orderimport voor WooCommerce.
+- [Kaufland](https://shoplinkr.com/integraties/kaufland): Verkoop op Kaufland met realtime voorraadsync.
+
+## Support
+- [Helpcentrum](https://shoplinkr.com/support): Documentatie en handleidingen.
+- [Aan de slag](https://shoplinkr.com/support/categorieen/aan-de-slag): Start-gids voor nieuwe gebruikers.
+- [Voorraadbeheer support](https://shoplinkr.com/support/categorieen/voorraadbeheer): Help-artikelen over voorraadbeheer.
+- [Orderverwerking support](https://shoplinkr.com/support/categorieen/orderverwerking): Help-artikelen over orderverwerking.
+
+## Resources
+- [Blog](https://shoplinkr.com/blogs): Artikelen over voorraadbeheer, magazijnoptimalisatie en e-commerce.
+- [Gratis Excel template](https://shoplinkr.com/voorraadbeheer-excel-template): Voorraadbeheer Excel template om gratis te downloaden.
+
+## Bedrijf
+- [Klantverhalen](https://shoplinkr.com/referenties): Cases van webshops die met ShopLinkr werken.
+- [Team](https://shoplinkr.com/team): De mensen achter ShopLinkr.
+- [Contact](https://shoplinkr.com/contact): Demo aanvragen of vragen stellen.
+- [Prijzen](https://shoplinkr.com/prijzen): Pay-as-you-go prijsmodel.
+
+## Juridisch
+- [Privacybeleid](https://shoplinkr.com/privacy): Hoe we omgaan met persoonsgegevens.
+- [Voorwaarden](https://shoplinkr.com/voorwaarden): Algemene voorwaarden voor het gebruik van ShopLinkr.
+- [Cookiebeleid](https://shoplinkr.com/cookies): Welke cookies we gebruiken en waarvoor.

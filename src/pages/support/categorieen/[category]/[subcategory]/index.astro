@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import SupportHero from '../../../../../components/support/SupportHero.astro';
+import {
+    supportCategories,
+    supportCategoriesBySlug,
+    findSubcategoryBySlug,
+} from '../../../../../data/supportCategories';
+
+export async function getStaticPaths() {
+    return supportCategories.flatMap((c) => c.subcategories.map((s) => ({
+        params: {
+            category: c.slug,
+            subcategory: s.slug,
+        },
+    })));
+}
+
+const { category, subcategory } = Astro.params;
+const categoryInfo = supportCategoriesBySlug[category as string];
+const subcategoryInfo = categoryInfo ? findSubcategoryBySlug(categoryInfo, subcategory as string) : undefined;
+
+if (!categoryInfo || !subcategoryInfo) {
+    throw new Error(`Unknown support path: ${category}/${subcategory}`);
+}
+
+const allArticles = await getCollection('supportArticles');
+const articlesInSubcategory = allArticles
+    .filter((a) => a.data.category === category && a.data.subcategory === subcategoryInfo.slug)
+    .sort((a, b) => a.data.order - b.data.order);
+
+const siblingSubcategories = categoryInfo.subcategories.filter((s) => s.slug !== subcategory);
+const otherSubcategories = supportCategories
+    .filter((c) => c.slug !== category)
+    .flatMap((c) => c.subcategories.slice(0, 1).map((s) => ({
+        categorySlug: c.slug,
+        subSlug: s.slug,
+        label: s.label,
+    })));
+
+const andereOnderwerpen = [
+    ...siblingSubcategories.map((s) => ({
+        categorySlug: category as string,
+        subSlug: s.slug,
+        label: s.label,
+    })),
+    ...otherSubcategories,
+].slice(0, 6);
+
+const collectionSchema = {
+    '@type': 'CollectionPage',
+    name: `${subcategoryInfo.label} | ${categoryInfo.label} | ShopLinkr Support`,
+    description: subcategoryInfo.summary ?? `Support artikelen over ${subcategoryInfo.label}.`,
+    url: `https://shoplinkr.com/support/categorieen/${categoryInfo.slug}/${subcategoryInfo.slug}`,
+};
+
+const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://shoplinkr.com',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Support',
+            item: 'https://shoplinkr.com/support',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: categoryInfo.label,
+            item: `https://shoplinkr.com/support/categorieen/${categoryInfo.slug}`,
+        },
+        {
+            '@type': 'ListItem',
+            position: 4,
+            name: subcategoryInfo.label,
+            item: `https://shoplinkr.com/support/categorieen/${categoryInfo.slug}/${subcategoryInfo.slug}`,
+        },
+    ],
+};
+
+const jsonLd = [collectionSchema, breadcrumbSchema];
+
+export const prerender = true;
+---
+
+<BaseLayout
+    title={`${subcategoryInfo.label} | ${categoryInfo.label} | ShopLinkr Support`}
+    description={subcategoryInfo.summary ?? `Support artikelen over ${subcategoryInfo.label}.`}
+    jsonLd={jsonLd}
+>
+    <SupportHero
+        title={subcategoryInfo.label}
+        subtitle={subcategoryInfo.summary}
+    />
+
+    <section class="bg-paper">
+        <div class="container-prose py-12 md:py-16">
+            <nav aria-label="Breadcrumb" class="mb-10">
+                <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-gravel">
+                    <li>
+                        <a href="/support" class="hover:text-charcoal transition-colors">
+                            Support
+                        </a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                        <a href={`/support/categorieen/${categoryInfo.slug}`} class="hover:text-charcoal transition-colors">
+                            {categoryInfo.label}
+                        </a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
+                    </li>
+                    <li class="text-charcoal">
+                        {subcategoryInfo.label}
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="max-w-3xl">
+                <h2 class="text-[26px] md:text-[32px] font-semibold text-charcoal tracking-tight mb-7">
+                    Artikelen
+                </h2>
+
+                {articlesInSubcategory.length === 0 && (
+                    <div class="rounded-[14px] bg-chalk-light border border-chalk-dark/70 p-10 text-center">
+                        <p class="text-charcoal font-semibold mb-1">Nog geen artikelen</p>
+                        <p class="text-sm text-steel">
+                            We werken hard aan nieuwe inhoud. Kom binnenkort terug, of bekijk een ander onderwerp hieronder.
+                        </p>
+                    </div>
+                )}
+
+                {articlesInSubcategory.length > 0 && (
+                    <ul class="flex flex-col gap-3">
+                        {articlesInSubcategory.map((a) => {
+                            const slug = a.id.split('/').pop() ?? a.id;
+                            return (
+                                <li>
+                                    <a
+                                        href={`/support/${slug}`}
+                                        class="group block bg-paper rounded-[14px] border border-chalk-dark/70 hover:border-chalk-dark hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-6 py-5"
+                                    >
+                                        <h3 class="text-[17px] font-semibold text-charcoal tracking-tight group-hover:text-sunstone-deep transition-colors">
+                                            {a.data.title}
+                                        </h3>
+                                        <p class="mt-1 text-[14px] text-steel leading-relaxed">
+                                            {a.data.summary}
+                                        </p>
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                )}
+            </div>
+
+            {andereOnderwerpen.length > 0 && (
+                <div class="mt-16 md:mt-20 max-w-3xl">
+                    <div class="rounded-[18px] bg-chalk-light px-7 md:px-9 py-8 md:py-10">
+                        <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal tracking-tight mb-6">
+                            Andere onderwerpen
+                        </h2>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {andereOnderwerpen.map((s) => (
+                                <li>
+                                    <a
+                                        href={`/support/categorieen/${s.categorySlug}/${s.subSlug}`}
+                                        class="flex items-center justify-between gap-3 rounded-[10px] bg-paper px-5 py-3 text-[15px] font-medium text-charcoal hover:bg-sunstone-mist/60 hover:text-sunstone-deep transition-colors"
+                                    >
+                                        <span>{s.label}</span>
+                                        <i class="fa-solid fa-chevron-right text-[11px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
+        </div>
+    </section>
+</BaseLayout>

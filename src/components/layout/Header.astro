@@ -1,0 +1,393 @@
+---
+import { externalLinks } from '../../data/externalLinks';
+
+interface NavLink {
+    type: 'link';
+    label: string;
+    href: string;
+}
+
+interface NavDropdownItem {
+    label: string;
+    href: string;
+}
+
+interface NavDropdown {
+    type: 'dropdown';
+    label: string;
+    items: Array<NavDropdownItem>;
+}
+
+interface NavMegaItem {
+    label: string;
+    tagline: string;
+    href: string;
+}
+
+interface NavMega {
+    type: 'mega';
+    label: string;
+    items: Array<NavMegaItem>;
+}
+
+type NavEntry = NavLink | NavDropdown | NavMega;
+
+const navigation: Array<NavEntry> = [
+    {
+        type: 'mega',
+        label: 'Functionaliteiten',
+        items: [
+            {
+                label: 'Bestellingen',
+                tagline: 'Verwerk al je orders op één plek',
+                href: '/functionaliteiten/bestellingen',
+            },
+            {
+                label: 'Voorraad',
+                tagline: 'Voorkom oversells en houd realtime grip',
+                href: '/functionaliteiten/voorraad',
+            },
+            {
+                label: 'Producten',
+                tagline: 'Eén centraal overzicht van al je producten',
+                href: '/functionaliteiten/producten',
+            },
+            {
+                label: 'Picklijsten',
+                tagline: 'Sneller picken met minder fouten',
+                href: '/functionaliteiten/pick-en-pack',
+            },
+            {
+                label: 'Regels',
+                tagline: 'Automatiseer terugkerend werk',
+                href: '/functionaliteiten/regels',
+            },
+            {
+                label: 'Inkoopadvies',
+                tagline: 'Weet wanneer je wat moet inkopen',
+                href: '/functionaliteiten/inkoopadvies',
+            },
+        ],
+    },
+    {
+        type: 'link',
+        label: 'Integraties',
+        href: '/integraties',
+    },
+    {
+        type: 'link',
+        label: 'Prijzen',
+        href: '/prijzen',
+    },
+    {
+        type: 'dropdown',
+        label: 'Over',
+        items: [
+            {
+                href: '/referenties',
+                label: 'Klantverhalen',
+            },
+            {
+                href: '/team',
+                label: 'Team',
+            },
+            {
+                href: '/contact',
+                label: 'Contact',
+            },
+        ],
+    },
+    {
+        type: 'link',
+        label: 'Support',
+        href: '/support',
+    },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActiveLink(href: string): boolean {
+    if (href === '/') {
+        return currentPath === '/';
+    }
+
+    return currentPath.startsWith(href);
+}
+
+function isActiveDropdown(items: Array<{ href: string }>): boolean {
+    return items.some((item) => isActiveLink(item.href));
+}
+---
+
+<div id="header-sentinel" aria-hidden="true" class="absolute top-0 h-px w-px"></div>
+
+<header
+    id="site-header"
+    class="sticky top-0 z-50 bg-paper/80 backdrop-blur-md border-b border-transparent transition-[border-color,box-shadow] duration-200"
+>
+    <nav class="container-prose flex items-center justify-between h-16">
+        <a href="/" class="flex items-center" aria-label="ShopLinkr home">
+            <img
+                src="/logo/logo.svg"
+                alt="ShopLinkr"
+                width="138"
+                height="28"
+                class="h-7 w-auto"
+            />
+        </a>
+
+        <ul class="hidden md:flex items-center gap-7 text-[14px] font-medium text-steel">
+            {
+                navigation.map((entry) => {
+                    if (entry.type === 'link') {
+                        const active = isActiveLink(entry.href);
+                        return (
+                            <li>
+                                <a
+                                    href={entry.href}
+                                    class:list={[
+                                        'hover:text-charcoal transition-colors',
+                                        active && 'text-charcoal',
+                                    ]}
+                                    aria-current={active ? 'page' : undefined}
+                                >
+                                    {entry.label}
+                                </a>
+                            </li>
+                        );
+                    }
+
+                    if (entry.type === 'dropdown') {
+                        const active = isActiveDropdown(entry.items);
+                        return (
+                            <li class="relative group">
+                                <button
+                                    type="button"
+                                    class:list={[
+                                        'inline-flex items-center gap-1.5 hover:text-charcoal transition-colors py-2',
+                                        active && 'text-charcoal',
+                                    ]}
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                >
+                                    {entry.label}
+                                    <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                                </button>
+                                <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-opacity duration-150">
+                                    <div class="min-w-[220px] rounded-xl border border-chalk-dark bg-paper shadow-[0_12px_40px_-12px_rgb(25_25_25_/_0.18)] p-2">
+                                        {entry.items.map((item) => (
+                                            <a
+                                                href={item.href}
+                                                class="block rounded-md px-3 py-2 text-[14px] font-medium text-steel hover:bg-chalk-light hover:text-charcoal transition-colors"
+                                            >
+                                                {item.label}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </li>
+                        );
+                    }
+
+                    const megaActive = isActiveDropdown(entry.items);
+                    return (
+                        <li class="relative group">
+                            <button
+                                type="button"
+                                class:list={[
+                                    'inline-flex items-center gap-1.5 hover:text-charcoal transition-colors py-2',
+                                    megaActive && 'text-charcoal',
+                                ]}
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                {entry.label}
+                                <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                            </button>
+                            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-opacity duration-150">
+                                <div class="w-[760px] rounded-2xl border border-chalk-dark bg-paper shadow-[0_24px_60px_-20px_rgb(25_25_25_/_0.22)] p-3">
+                                    <div class="grid grid-cols-3 gap-1">
+                                        {entry.items.map((item) => {
+                                            const itemActive = isActiveLink(item.href);
+                                            return (
+                                                <a
+                                                    href={item.href}
+                                                    class:list={[
+                                                        'block rounded-xl px-4 py-3.5 hover:bg-chalk-light transition-colors group/item',
+                                                        itemActive && 'bg-sunstone-mist/30',
+                                                    ]}
+                                                    aria-current={itemActive ? 'page' : undefined}
+                                                >
+                                                    <p class="text-[14px] font-semibold text-charcoal group-hover/item:text-sunstone-deep transition-colors mb-0.5">
+                                                        {item.label}
+                                                    </p>
+                                                    <p class="text-[12.5px] text-gravel leading-snug">
+                                                        {item.tagline}
+                                                    </p>
+                                                </a>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    );
+                })
+            }
+        </ul>
+
+        <div class="flex items-center gap-3 sm:gap-5">
+            <a
+                href={externalLinks.login}
+                class="hidden md:inline text-[14px] font-medium text-steel hover:text-charcoal transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Inloggen
+            </a>
+            <a
+                href={externalLinks.register}
+                class="btn btn-sunstone text-sm"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Gratis Starten
+            </a>
+            <button
+                id="mobile-menu-toggle"
+                type="button"
+                class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md text-charcoal hover:bg-chalk transition-colors"
+                aria-label="Menu openen"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <i class="fa-solid fa-bars text-base"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div
+        id="mobile-menu"
+        class="md:hidden hidden border-t border-chalk-dark bg-paper"
+    >
+        <ul class="container-prose flex flex-col py-3">
+            {
+                navigation.map((entry) => {
+                    if (entry.type === 'link') {
+                        return (
+                            <li>
+                                <a
+                                    href={entry.href}
+                                    class="block py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors"
+                                >
+                                    {entry.label}
+                                </a>
+                            </li>
+                        );
+                    }
+
+                    if (entry.type === 'dropdown') {
+                        return (
+                            <li>
+                                <details class="group">
+                                    <summary class="flex items-center justify-between py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors cursor-pointer list-none">
+                                        {entry.label}
+                                        <i class="fa-solid fa-chevron-down text-[11px] text-gravel transition-transform duration-200 group-open:rotate-180" />
+                                    </summary>
+                                    <div class="pl-3 pb-1">
+                                        {entry.items.map((item) => (
+                                            <a
+                                                href={item.href}
+                                                class="block py-2 text-[14px] font-medium text-steel hover:text-charcoal transition-colors"
+                                            >
+                                                {item.label}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </details>
+                            </li>
+                        );
+                    }
+
+                    return (
+                        <li>
+                            <details class="group">
+                                <summary class="flex items-center justify-between py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors cursor-pointer list-none">
+                                    {entry.label}
+                                    <i class="fa-solid fa-chevron-down text-[11px] text-gravel transition-transform duration-200 group-open:rotate-180" />
+                                </summary>
+                                <div class="pl-3 pb-2">
+                                    {entry.items.map((item) => (
+                                        <a
+                                            href={item.href}
+                                            class="block py-2"
+                                        >
+                                            <p class="text-[14px] font-semibold text-charcoal">
+                                                {item.label}
+                                            </p>
+                                            <p class="text-[12.5px] text-gravel leading-snug mt-0.5">
+                                                {item.tagline}
+                                            </p>
+                                        </a>
+                                    ))}
+                                </div>
+                            </details>
+                        </li>
+                    );
+                })
+            }
+            <li class="border-t border-chalk-dark mt-2 pt-3">
+                <a
+                    href={externalLinks.login}
+                    class="block py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Inloggen
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<style>
+    #site-header.is-scrolled {
+        border-bottom-color: var(--color-chalk-dark);
+        box-shadow: 0 6px 24px -16px rgb(25 25 25 / 0.18);
+    }
+</style>
+
+<script>
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+
+    if (toggle && menu) {
+        toggle.addEventListener('click', () => {
+            const expanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!expanded));
+            menu.classList.toggle('hidden');
+            const icon = toggle.querySelector('i');
+
+            if (icon) {
+                icon.className = expanded ? 'fa-solid fa-bars text-base' : 'fa-solid fa-xmark text-base';
+            }
+        });
+    }
+
+    const header = document.getElementById('site-header');
+    const sentinel = document.getElementById('header-sentinel');
+
+    if (header && sentinel && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                header.classList.toggle('is-scrolled', !entry.isIntersecting);
+            },
+            {
+                rootMargin: '0px',
+                threshold: 0,
+            }
+        );
+
+        observer.observe(sentinel);
+    }
+</script>

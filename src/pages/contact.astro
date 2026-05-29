@@ -1,0 +1,275 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ContactForm from '../components/islands/ContactForm.vue';
+import FaqList from '../components/template/FaqList.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const channels = [
+    {
+        eyebrow: 'Stuur een bericht',
+        title: 'Vul het formulier in.',
+        body: 'Voor concrete vragen, een korte intro of feedback. Reactie binnen één uur tijdens kantooruren.',
+        icon: 'fa-duotone fa-solid fa-paper-plane',
+        href: '#contactformulier',
+        cta: 'Naar het formulier',
+        external: false,
+    },
+    {
+        eyebrow: 'Plan een demo',
+        title: 'Kies een moment in onze agenda.',
+        body: 'Twintig minuten samen door ShopLinkr lopen, afgestemd op jouw magazijn. Geen sales-script.',
+        icon: 'fa-duotone fa-solid fa-calendar-check',
+        href: externalLinks.demoBooking,
+        cta: 'Plan een demo in',
+        external: true,
+    },
+    {
+        eyebrow: 'Zoek het zelf op',
+        title: 'Bezoek het helpcentrum.',
+        body: 'Honderden artikelen met uitleg, video en stappenplannen. Vaak vind je hier direct je antwoord.',
+        icon: 'fa-duotone fa-solid fa-book-open-cover',
+        href: '/support',
+        cta: 'Naar het helpcentrum',
+        external: false,
+    },
+];
+
+const expectations = [
+    {
+        title: 'Snel antwoord van een mens.',
+        body: 'Reactie meestal binnen één uur tijdens kantooruren. Geen ticket in een wachtrij, geen bot.',
+        icon: 'fa-duotone fa-solid fa-bolt',
+    },
+    {
+        title: 'Iemand die ShopLinkr kent.',
+        body: 'Je spreekt direct met ons team. Geen warme overdracht, geen herhaalde uitleg.',
+        icon: 'fa-duotone fa-solid fa-user-headset',
+    },
+    {
+        title: 'Geen sales-druk.',
+        body: 'We helpen je verder, ook als je nog twijfelt of nog niet klant bent. Vrijblijvend.',
+        icon: 'fa-duotone fa-solid fa-handshake',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Hoe snel krijg ik antwoord?',
+        answer: 'Tijdens kantooruren reageren we doorgaans binnen een uur. Stuur je iets in het weekend? Dan hoor je vrijwel altijd op maandagochtend van ons.',
+    },
+    {
+        question: 'Kan ik ook bellen of via WhatsApp?',
+        answer: 'Bellen kan op +31 6 49 78 12 12, maandag tot en met vrijdag van 08:30 tot 17:00. Voor korte vragen werkt mailen of het formulier vaak sneller, omdat we dan direct kunnen meekijken.',
+    },
+    {
+        question: 'Ik ben nog geen klant. Kan ik toch contact opnemen?',
+        answer: 'Absoluut. Of je nu oriënteert, twijfelt tussen tools of een specifieke vraag hebt, we denken graag mee. Helemaal vrijblijvend.',
+    },
+    {
+        question: 'Wat als ik liever eerst zelf rondkijk?',
+        answer: 'Je kan 14 dagen gratis ShopLinkr proberen, zonder creditcard. Lopen we ergens samen tegenaan, dan staan we klaar.',
+    },
+];
+
+const jsonLd = [
+    {
+        '@type': 'ContactPage',
+        name: 'Contact | ShopLinkr',
+        description: 'Neem contact op met ShopLinkr. Stuur een bericht, plan een demo of bezoek het helpcentrum. Reactie meestal binnen een uur tijdens kantooruren.',
+        mainEntity: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            url: 'https://shoplinkr.com',
+            contactPoint: [
+                {
+                    '@type': 'ContactPoint',
+                    contactType: 'customer support',
+                    email: 'contact@shoplinkr.com',
+                    telephone: '+31649781212',
+                    availableLanguage: ['Dutch', 'English'],
+                    hoursAvailable: {
+                        '@type': 'OpeningHoursSpecification',
+                        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                        opens: '08:30',
+                        closes: '17:00',
+                    },
+                },
+            ],
+        },
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Contact | ShopLinkr"
+    description="Stuur een bericht, plan een demo of bezoek het helpcentrum. Reactie meestal binnen een uur tijdens kantooruren."
+    eyebrow="Contact"
+    heading="Laten we praten."
+    subheading="Een korte vraag, een eerste kennismaking of een uitgebreid gesprek over je magazijn. Kies de manier die jou het beste past."
+    jsonLd={jsonLd}
+>
+    <section class="pt-4 pb-16 md:pb-20">
+        <div class="container-prose">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+                {
+                    channels.map((channel) => (
+                        <a
+                            href={channel.href}
+                            target={channel.external ? '_blank' : undefined}
+                            rel={channel.external ? 'noopener noreferrer' : undefined}
+                            class="group flex flex-col gap-5 bg-paper rounded-2xl ring-1 ring-chalk-dark p-7 md:p-8 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                        >
+                            <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${channel.icon} text-[1.15rem]`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div class="flex-1">
+                                <p class="eyebrow mb-2">{channel.eyebrow}</p>
+                                <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug mb-3">
+                                    {channel.title}
+                                </h3>
+                                <p class="text-sm md:text-[0.975rem] text-steel leading-relaxed">
+                                    {channel.body}
+                                </p>
+                            </div>
+                            <span class="inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                                {channel.cta}
+                                <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section id="contactformulier" class="py-16 md:py-24 bg-chalk-light scroll-mt-24">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-7">
+                    <ContactForm client:load />
+                </div>
+
+                <aside class="lg:col-span-5 space-y-6">
+                    <div class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-7 md:p-8">
+                        <p class="eyebrow mb-4">Wat je kan verwachten</p>
+                        <ul class="space-y-5">
+                            {
+                                expectations.map((item) => (
+                                    <li class="flex items-start gap-4">
+                                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                            <i class={`${item.icon} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-base font-semibold text-charcoal tracking-tight leading-snug">
+                                                {item.title}
+                                            </p>
+                                            <p class="text-sm text-steel leading-relaxed mt-1">
+                                                {item.body}
+                                            </p>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                    <div class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-7 md:p-8">
+                        <p class="eyebrow mb-4">Direct bereiken</p>
+                        <div class="space-y-5">
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-gravel mb-1.5">E-mail</p>
+                                <a
+                                    href="mailto:contact@shoplinkr.com"
+                                    class="inline-flex items-center gap-2 text-charcoal font-semibold hover:text-sunstone-deep transition-colors"
+                                >
+                                    <i class="fa-solid fa-envelope text-sm text-sunstone-deep" aria-hidden="true"></i>
+                                    contact@shoplinkr.com
+                                </a>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-gravel mb-1.5">Telefoon</p>
+                                <a
+                                    href="tel:+31649781212"
+                                    class="inline-flex items-center gap-2 text-charcoal font-semibold hover:text-sunstone-deep transition-colors"
+                                >
+                                    <i class="fa-solid fa-phone text-sm text-sunstone-deep" aria-hidden="true"></i>
+                                    +31 6 49 78 12 12
+                                </a>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-[0.14em] text-gravel mb-1.5">Bereikbaar</p>
+                                <p class="text-charcoal font-semibold">
+                                    Maandag tot vrijdag
+                                </p>
+                                <p class="text-sm text-steel mt-0.5">
+                                    08:30 tot 17:00 uur
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-charcoal text-paper rounded-2xl p-7 md:p-8">
+                        <i class="fa-solid fa-quote-left text-sunstone-soft text-xl mb-4" aria-hidden="true"></i>
+                        <p class="text-paper/90 text-base md:text-[1.05rem] leading-relaxed">
+                            Het team denkt actief met je mee, ook bij vragen die niet over de software zelf gaan. Dat maakt het verschil.
+                        </p>
+                        <p class="mt-5 text-sm text-paper/60">
+                            Jasper de Waard
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Misschien staat
+                        <span class="block text-sunstone-deep">je vraag hier al.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Een paar dingen die we vaker krijgen. Staat jouw vraag er niet bij, stuur dan een bericht.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>
+
+<style>
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    details summary {
+        outline: none;
+    }
+
+    details summary:focus-visible h3 {
+        text-decoration: underline;
+        text-decoration-color: var(--color-sunstone-deep);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+    }
+</style>

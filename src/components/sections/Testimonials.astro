@@ -1,0 +1,91 @@
+---
+const testimonials = [
+    {
+        quote: 'Met ShopLinkr besparen we dagelijks enorm veel tijd. We hebben nu maar 1 medewerker in dienst in plaats van 5, en het gaat nu nog steeds efficiënter.',
+        author: 'Jasper de Waard',
+        company: 'Schoongedaan',
+        logo: '/testimonials/Schoongedaan.png',
+    },
+    {
+        quote: 'Super software met een eerlijke prijs. Sterke communicatie en korte lijntjes. Aanrader!',
+        author: 'Tijn Zuijdervliet',
+        company: 'Cryptoken',
+        logo: '/testimonials/Cryptoken.svg',
+    },
+    {
+        quote: 'Fijne software! Zeer gebruiksvriendelijk en perfect geschikt voor zowel kleine als grotere webshops met meerdere verkoopkanalen.',
+        author: 'Nabodhi van der Lind',
+        company: 'Cozy Design',
+        logo: '/testimonials/CozyDesign.jpg',
+    },
+    {
+        quote: 'Zeer tevreden over ShopLinkr! De service is top en het team staat altijd klaar om snel en vriendelijk te helpen. Vragen worden duidelijk beantwoord en je merkt dat ze echt met je meedenken.',
+        author: 'Nick Siep',
+        company: 'Voordelig Inslaan',
+        logo: '/testimonials/VoordeligInslaan.jpg',
+    },
+];
+---
+
+<section class="py-24 md:py-32 bg-chalk-light">
+    <div class="container-prose">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 md:mb-16">
+            <div class="max-w-2xl">
+                <p class="eyebrow mb-3">Wat klanten zeggen</p>
+                <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight">
+                    Geliefd door Nederlandse webshops.
+                </h2>
+                <p class="mt-5 text-lg text-steel leading-relaxed">
+                    Van eenpitters tot teams met meerdere magazijnen.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-3 text-sm">
+                <span class="inline-flex items-center gap-0.5 text-sunstone-deep">
+                    {Array.from({ length: 5 }).map(() => (
+                        <i class="fa-solid fa-star text-[0.95rem]" aria-hidden="true"></i>
+                    ))}
+                </span>
+                <span class="font-semibold text-charcoal">4,9</span>
+                <span class="text-gravel">op Trustpilot</span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 md:gap-6">
+            {
+                testimonials.map((testimonial) => (
+                    <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark hover:ring-chalk-darker transition-colors p-8 md:p-10 flex flex-col">
+                        <p class="text-charcoal leading-relaxed text-[1.0625rem] mb-8 flex-1">
+                            {testimonial.quote}
+                        </p>
+
+                        <div class="flex items-center gap-4">
+                            <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <img
+                                    src={testimonial.logo}
+                                    alt={testimonial.company}
+                                    class="h-full w-full object-contain p-1.5"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="min-w-0">
+                                <p class="font-semibold text-charcoal text-sm">{testimonial.author}</p>
+                                <p class="text-xs text-gravel mt-0.5">{testimonial.company}</p>
+                            </div>
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+
+        <div class="mt-12 flex justify-center">
+            <a
+                href="https://nl.trustpilot.com/review/shoplinkr.com"
+                class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5"
+            >
+                Alle reviews op Trustpilot
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</section>

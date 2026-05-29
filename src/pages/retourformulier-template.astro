@@ -1,0 +1,125 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Wat het is',
+        heading: 'Een retourformulier in één Word-bestand.',
+        body: 'Een retourformulier is het papier dat je meestuurt in je verzending, zodat je klant precies weet wat te doen als hij iets wil retourneren. Wij hebben een Word-template uitgewerkt die je direct kunt invullen met je eigen huisstijl, bedrijfsgegevens en retourvoorwaarden.',
+        icon: 'fa-solid fa-file-word',
+    },
+    {
+        eyebrow: 'Voor je klant',
+        heading: 'Duidelijke retouren betekenen blijere klanten.',
+        body: 'Een goed retourformulier voorkomt verwarring. Je klant weet welke informatie nodig is, waarom hij iets retourneert en hoe hij het pakket terugstuurt. Dat zorgt voor minder vragen bij je klantenservice en meer vertrouwen bij een eerste bestelling.',
+        icon: 'fa-solid fa-face-smile',
+    },
+    {
+        eyebrow: 'Voor jou',
+        heading: 'Minder fouten in je retourverwerking.',
+        body: 'Komt een retour binnen zonder duidelijke gegevens, dan ben je tijd kwijt om uit te zoeken van wie en welke order het is. Met een goed ingevuld formulier weet je direct wat je in handen hebt, en kun je de retour snel en netjes verwerken.',
+        icon: 'fa-solid fa-square-check',
+    },
+    {
+        eyebrow: 'Aanpasbaar',
+        heading: 'Pas hem aan naar jouw merk.',
+        body: 'De template is een Word-bestand, dus volledig aanpasbaar. Voeg je logo toe, pas de tekst aan, verander de kleuren naar je huisstijl en exporteer hem als PDF. Binnen tien minuten heb je een professioneel retourformulier dat je in elke verzending kunt meegeven.',
+        icon: 'fa-solid fa-pen-to-square',
+    },
+    {
+        eyebrow: 'De volgende stap',
+        heading: 'Retouren slim verwerken met ShopLinkr.',
+        body: 'Een retourformulier helpt je klant, maar het is pas één stap. In ShopLinkr verwerk je retouren direct in je voorraad, kan je producten terug op het schap zetten of afkeuren, en houd je het overzicht over al je retourstromen. Lekker werken bij dat formulier.',
+        icon: 'fa-solid fa-arrow-rotate-left',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Retourformulier template - ShopLinkr',
+    description: 'Download ons gratis retourformulier template en verbeter je retourverwerking. Eenvoudig in gebruik en aanpasbaar naar je eigen huisstijl.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Voorraadbeheer Excel | Voorraad Excel Template - ShopLinkr"
+    description="Download ons gratis inkoop excel template en verbeter je voorraadbeheer. Eenvoudig in gebruik en ideaal voor webshops."
+    eyebrow="Gratis download"
+    heading="Retourformulier template, klaar voor gebruik."
+    subheading="Een uitgewerkt retourformulier in Word, gratis te downloaden. Pas hem aan naar je huisstijl en geef hem mee in elke verzending."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href="mailto:contact@shoplinkr.com?subject=Aanvraag%20retourformulier%20template"
+                    class="btn btn-sunstone text-base"
+                >
+                    Template aanvragen
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-gravel">
+                Stuur ons een mailtje en we sturen je het Word-document direct toe. Helemaal vrijblijvend.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Over de template</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Waarom een retourformulier het verschil maakt.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Een goed retourformulier is een klein document met groot effect: minder vragen, snellere verwerking en een professionelere indruk. Wij hebben het basiswerk voor je gedaan, jij kunt hem direct gebruiken.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

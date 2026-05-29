@@ -1,0 +1,16 @@
+{
+    "name": "EctaroShip",
+    "slug": "ectaroship",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/EctaroShip.png",
+    "summary": "Verzending via EctaroShip met scherpe tarieven. Labels en tracking volledig geautomatiseerd.",
+    "tagline": "Verzend met vertrouwen. Sneller & gemakkelijker",
+    "about": "EctaroShip is verzendsoftware waarmee je eenvoudig verzendlabels kunt aanmaken voor verschillende vervoerders. Het platform helpt webshops en logistieke systemen om hun verzendproces te centraliseren en efficiënter te verwerken. Met EctaroShip kun je vanuit één omgeving pakketten verzenden, labels genereren en zendingen beheren zonder orders handmatig tussen systemen te hoeven overnemen.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij EctaroShip. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

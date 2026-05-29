@@ -1,0 +1,16 @@
+{
+    "name": "PostNL",
+    "slug": "post-nl",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/PostNL.jpg",
+    "summary": "Verzend met PostNL via je eigen contract. Labels printen vanuit ShopLinkr, tracking direct in je systeem.",
+    "tagline": "PostNL is het nationale postbedrijf van Nederland",
+    "about": "PostNL is het nationale postbedrijf van Nederland. Ze bezorgen brieven en pakketten in Nederland en de rest van de Benelux. PostNL biedt ook logistieke oplossingen voor e-commerce en heeft een geschiedenis van meer dan 225 jaar.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij PostNL. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

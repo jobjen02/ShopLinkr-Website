@@ -1,0 +1,213 @@
+---
+interface Channel {
+    name: string;
+    file: string;
+    folder: 'carriers' | 'marketplaces' | 'webshops';
+}
+
+const channels: Array<Channel> = [
+    {
+        name: 'Bol',
+        file: 'bol.jpeg',
+        folder: 'marketplaces',
+    },
+    {
+        name: 'Kaufland',
+        file: 'kaufland.jpg',
+        folder: 'marketplaces',
+    },
+    {
+        name: 'Shopify',
+        file: 'Shopify.jpg',
+        folder: 'webshops',
+    },
+    {
+        name: 'WooCommerce',
+        file: 'WooCommerce.png',
+        folder: 'webshops',
+    },
+    {
+        name: 'Lightspeed',
+        file: 'Lightspeed.png',
+        folder: 'webshops',
+    },
+    {
+        name: 'Sendy',
+        file: 'Sendy.jpg',
+        folder: 'carriers',
+    },
+    {
+        name: 'MyParcel',
+        file: 'MyParcel.jpg',
+        folder: 'carriers',
+    },
+    {
+        name: 'Sendcloud',
+        file: 'Sendcloud.png',
+        folder: 'carriers',
+    },
+    {
+        name: 'Innosend',
+        file: 'Innosend.jpg',
+        folder: 'carriers',
+    },
+    {
+        name: 'QLS',
+        file: 'QLS.jpg',
+        folder: 'carriers',
+    },
+    {
+        name: 'DeliveryMatch',
+        file: 'DeliveryMatch.jpg',
+        folder: 'carriers',
+    },
+    {
+        name: 'DPD',
+        file: 'dpd.jpeg',
+        folder: 'carriers',
+    },
+    {
+        name: 'PostNL',
+        file: 'PostNL.jpg',
+        folder: 'carriers',
+    },
+    {
+        name: 'ParcelPro',
+        file: 'ParcelPro.jpg',
+        folder: 'carriers',
+    },
+    {
+        name: 'GLS',
+        file: 'GLS.png',
+        folder: 'carriers',
+    },
+    {
+        name: 'PakketMail',
+        file: 'PakketMail.png',
+        folder: 'carriers',
+    },
+    {
+        name: 'Zineps',
+        file: 'Zineps.svg',
+        folder: 'carriers',
+    },
+    {
+        name: 'EctaroShip',
+        file: 'EctaroShip.png',
+        folder: 'carriers',
+    },
+    {
+        name: 'TransMission',
+        file: 'TransMission.png',
+        folder: 'carriers',
+    },
+];
+---
+
+<section class="border-y border-chalk-dark bg-paper py-14 md:py-16">
+    <div class="container-prose">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold text-center mb-14">
+            Werkt met de tools die je al gebruikt
+        </p>
+    </div>
+
+    <div class="marquee-wrapper">
+        <div class="marquee-track">
+            {
+                [...channels, ...channels].map((channel) => (
+                    <div class="marquee-item">
+                        <img
+                            src={`/assets/${channel.folder}/${channel.file}`}
+                            alt={channel.name}
+                            class="marquee-logo"
+                            loading="lazy"
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .marquee-wrapper {
+        overflow: hidden;
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 12%,
+            black 88%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 12%,
+            black 88%,
+            transparent
+        );
+    }
+
+    .marquee-track {
+        display: flex;
+        align-items: center;
+        gap: 4.5rem;
+        width: max-content;
+        animation: marquee 80s linear infinite;
+        padding-block: 0.5rem;
+    }
+
+    .marquee-wrapper:hover .marquee-track {
+        animation-play-state: paused;
+    }
+
+    .marquee-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        height: 3.5rem;
+    }
+
+    .marquee-logo {
+        height: 2.25rem;
+        width: auto;
+        max-width: 9rem;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    @media (min-width: 768px) {
+        .marquee-logo {
+            height: 2.75rem;
+            max-width: 11rem;
+        }
+
+        .marquee-track {
+            gap: 5rem;
+        }
+
+        .marquee-item {
+            height: 4rem;
+        }
+    }
+
+    .marquee-item:hover .marquee-logo {
+        transform: scale(1.05);
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .marquee-track {
+            animation: none;
+        }
+    }
+</style>

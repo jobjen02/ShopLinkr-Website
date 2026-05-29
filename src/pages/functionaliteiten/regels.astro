@@ -1,0 +1,126 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const stories = [
+    {
+        eyebrow: 'Acties uitvoeren',
+        heading: 'Laat ShopLinkr de juiste keuze maken.',
+        body: 'Een regel koppelt een actie aan een gebeurtenis rondom een bestelling. Denk aan automatisch een verzendmethode selecteren, een label aan een order hangen, bestellingen in een batch zetten of de prioriteit verhogen. Wat jij anders handmatig zou doen, doet ShopLinkr in een fractie van een seconde. Sneller verwerken zonder de fouten die bij handwerk horen.',
+        icon: 'fa-duotone fa-solid fa-wand-magic-sparkles',
+        visualLabel: 'Acties keuze',
+    },
+    {
+        eyebrow: 'Condities combineren',
+        heading: 'Bepaal zelf wanneer een regel triggert.',
+        body: 'Stel condities in op gewicht, postcode, kanaal, producttype of klantgroep. Combineer ze met AND wanneer alles moet kloppen, of met OR wanneer één voorwaarde voldoende is. Zo bouw je regels die exact passen bij hoe jouw magazijn werkt. Brievenbuspakketten onder de 2 kilo? Spoedlevering voor zakelijke klanten? Je kunt het allemaal vangen in slimme condities.',
+        icon: 'fa-duotone fa-solid fa-filter',
+        visualLabel: 'Conditie builder',
+    },
+    {
+        eyebrow: 'Praktijkvoorbeelden',
+        heading: 'Regels die je vandaag kunt instellen.',
+        body: 'Een paar concrete startpunten. Alles onder 2 kilo automatisch via PostNL Brievenbus naar Nederland. Bol bestellingen krijgen altijd een hoge prioriteit zodat ze als eerste de deur uit gaan. Producten in de categorie glas gaan in een aparte batch met een verzekerde vervoerder. Drie regels, drie verschillende winsten op je werkdag.',
+        icon: 'fa-duotone fa-solid fa-lightbulb',
+        visualLabel: 'Voorbeeldregels',
+    },
+    {
+        eyebrow: 'Schaalbare automatisering',
+        heading: 'Eén keer instellen, blijvend voordeel.',
+        body: 'Een regel die je vandaag bouwt, doet vanaf morgen elke dag zijn werk. Of je nu tien orders per dag verwerkt of duizend, de regel draait voor elke bestelling die binnenkomt. Hoe meer regels je inricht, hoe meer keuzes ShopLinkr van je overneemt. Je houdt zelf tijd over voor waar je verschil maakt: groei, marketing en je klanten.',
+        icon: 'fa-duotone fa-solid fa-infinity',
+        visualLabel: 'Automatisering',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Automatische regels instellen',
+    description: 'Eenvoudig regels instellen met ShopLinkr. Automatisch een verzendmethode selecteren bij een bestelling. Bestellingen verwerken wordt nu nog eenvoudiger.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Automatische regels instellen"
+    description="Eenvoudig regels instellen met ShopLinkr. Automatisch een verzendmethode selecteren bij een bestelling. Bestellingen verwerken wordt nu nog eenvoudiger."
+    eyebrow="Automatisering"
+    heading="Laat ShopLinkr het werk doen."
+    subheading="Stel regels in die bij elke bestelling automatisch de juiste actie uitvoeren. Sneller verwerken, minder handmatige keuzes, geen fouten."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-paper">
+        <div class="container-prose">
+            {
+                stories.map((story, index) => {
+                    const isReversed = index % 2 === 1;
+
+                    return (
+                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
+                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+                                    <div
+                                        class="relative w-full rounded-3xl overflow-hidden bg-chalk-light ring-1 ring-chalk-dark"
+                                        style="aspect-ratio: 4 / 3;"
+                                    >
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-10 text-center">
+                                            <div class="flex items-center justify-center h-20 w-20 rounded-2xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)]">
+                                                <i class={`${story.icon} text-3xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold mb-2">
+                                                    Visual: {story.visualLabel}
+                                                </p>
+                                                <p class="text-sm text-gravel max-w-[32ch]">
+                                                    Hier komt later een echte screenshot uit ShopLinkr.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
+                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
+                                        {story.heading}
+                                    </h2>
+                                    <p class="text-lg text-steel leading-relaxed">
+                                        {story.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    );
+                })
+            }
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

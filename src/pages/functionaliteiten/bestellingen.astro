@@ -1,0 +1,190 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const stories = [
+    {
+        eyebrow: 'Eén centraal overzicht',
+        heading: 'Alle kanalen bij elkaar op één scherm.',
+        body: 'Verkoop jij via Bol, Shopify en WooCommerce naast elkaar? Dan ken je de pijn van switchen tussen tabbladen om bestellingen te verzamelen. In ShopLinkr komen al je orders binnen op één centrale bestellingenpagina. Je ziet direct welk kanaal de bestelling plaatste, welke producten erin zitten en waar ze in je magazijn liggen. Geen losse exports of CSV gedoe, gewoon één werkplek voor je hele verkoop.',
+        icon: 'fa-duotone fa-solid fa-layer-group',
+        visualLabel: 'Bestellingenoverzicht',
+    },
+    {
+        eyebrow: 'Batches verwerken',
+        heading: 'Grote volumes in één vloeiende beweging.',
+        body: 'Honderden orders op een drukke maandag? Selecteer een batch bestellingen en verwerk ze in één keer. ShopLinkr bundelt de pickwerkzaamheden, genereert labels in bulk en zet de status automatisch door. Wat eerst een halve dag kostte, doe je nu in een uurtje. Lekker efficient als de pieken in je verkoop oplopen.',
+        icon: 'fa-duotone fa-solid fa-boxes-stacked',
+        visualLabel: 'Batchverwerking',
+    },
+    {
+        eyebrow: 'Losse bestellingen',
+        heading: 'Volledige controle voor uitzonderingen.',
+        body: 'Soms wil je een order net even anders behandelen. Een spoedlevering, een aangepast verzendadres of een cadeaubon die mee moet. Naast batchverwerking pak je elke bestelling ook los op. Pas details aan, kies een andere vervoerder of voeg een notitie toe voor je magazijn. Je houdt de controle waar dat nodig is.',
+        icon: 'fa-duotone fa-solid fa-hand-pointer',
+        visualLabel: 'Bestellingsdetail',
+    },
+    {
+        eyebrow: 'Verzendlabels',
+        heading: 'Direct labels printen bij je favoriete vervoerder.',
+        body: 'Vanuit ShopLinkr maak je in een paar klikken verzendlabels aan bij de vervoerder die jij gebruikt. Sluit je accounts aan en de juiste labels rollen er meteen uit. Geen handmatig invoeren van adressen, geen heen en weer schakelen tussen portalen. Plakken en wegsturen, klaar.',
+        icon: 'fa-duotone fa-solid fa-print',
+        visualLabel: 'Label printen',
+    },
+    {
+        eyebrow: 'Meerdere vervoerders',
+        heading: 'Zoveel keuze als je magazijn nodig heeft.',
+        body: 'Werk je met PostNL voor de standaard pakketten, DPD voor de zwaardere zendingen en MyParcel of Sendcloud voor het buitenland? ShopLinkr koppelt met meerdere carriers tegelijk zodat je per bestelling de slimste keuze maakt. Zo houd je je verzendkosten scherp en geef je je klanten de leverbelofte die past.',
+        icon: 'fa-duotone fa-solid fa-truck-fast',
+        visualLabel: 'Vervoerders keuze',
+    },
+    {
+        eyebrow: 'Status sync',
+        heading: 'Track & trace automatisch terug naar je kanalen.',
+        body: 'Zodra een label is aangemaakt en de order is verstuurd, gaat de status realtime terug naar het verkoopkanaal waar de bestelling vandaan kwam. De klant ontvangt zijn track & trace, jouw winkel toont de juiste status en jij hoeft niets handmatig bij te werken. Een rustig achtergrondproces dat continu loopt.',
+        icon: 'fa-duotone fa-solid fa-arrows-rotate',
+        visualLabel: 'Status sync',
+    },
+];
+
+const workflowSteps = [
+    {
+        title: 'Bestelling komt binnen',
+        body: 'Een order vanuit Bol, Shopify of WooCommerce verschijnt direct in je centrale overzicht, compleet met de besteldetails en magazijnlocatie.',
+    },
+    {
+        title: 'Picken en inpakken',
+        body: 'Pak je losse orders of stel een batch samen. Je picklijst toont precies waar in je magazijn elk product ligt.',
+    },
+    {
+        title: 'Label en verzenden',
+        body: 'Kies je vervoerder, print je label en de status loopt automatisch terug naar het kanaal waar de bestelling vandaan kwam.',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Bestellingen verwerken met ShopLinkr',
+    description: 'Eenvoudig bestellingen verwerken met ShopLinkr. Verzendlabels aanmaken van jou favoriete vervoerder. Eenvoudig batches verwerken, maar natuurlijk ook losse bestellingen.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Bestellingen verwerken met ShopLinkr"
+    description="Eenvoudig bestellingen verwerken met ShopLinkr. Verzendlabels aanmaken van jou favoriete vervoerder. Eenvoudig batches verwerken, maar natuurlijk ook losse bestellingen."
+    eyebrow="Bestellingen"
+    heading="Alles verwerken op één plek."
+    subheading="Bestellingen uit Bol, Shopify en WooCommerce komen samen in één centraal overzicht. Verwerk ze in batches, kies je vervoerder en stuur de status automatisch terug naar je kanalen."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-paper">
+        <div class="container-prose">
+            {
+                stories.map((story, index) => {
+                    const isReversed = index % 2 === 1;
+
+                    return (
+                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
+                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+                                    <div
+                                        class="relative w-full rounded-3xl overflow-hidden bg-chalk-light ring-1 ring-chalk-dark"
+                                        style="aspect-ratio: 4 / 3;"
+                                    >
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-10 text-center">
+                                            <div class="flex items-center justify-center h-20 w-20 rounded-2xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)]">
+                                                <i class={`${story.icon} text-3xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold mb-2">
+                                                    Visual: {story.visualLabel}
+                                                </p>
+                                                <p class="text-sm text-gravel max-w-[32ch]">
+                                                    Hier komt later een echte screenshot uit ShopLinkr.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
+                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
+                                        {story.heading}
+                                    </h2>
+                                    <p class="text-lg text-steel leading-relaxed">
+                                        {story.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    );
+                })
+            }
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Zo loopt een bestelling</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Drie stappen,
+                        <span class="block text-sunstone-deep">geen losse eindjes.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Een bestelling die binnenkomt doorloopt in ShopLinkr altijd dezelfde heldere route. Voorspelbaar voor jou, snel voor je klant.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            workflowSteps.map((step) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-circle-check text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

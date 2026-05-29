@@ -1,0 +1,222 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../layouts/PageLayout.astro';
+import IntegrationCard from '../components/template/IntegrationCard.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+const all = await getCollection('integrations');
+
+const webshops = all
+    .filter((i) => i.data.category === 'webshop')
+    .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const marketplaces = all
+    .filter((i) => i.data.category === 'marketplace')
+    .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const carriers = all
+    .filter((i) => i.data.category === 'carrier')
+    .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const totalCount = webshops.length + marketplaces.length + carriers.length;
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Integraties | ShopLinkr',
+    description: 'ShopLinkr werkt met Bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in één klik kunt koppelen.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Integraties | ShopLinkr"
+    description="ShopLinkr werkt met Bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in één klik kunt koppelen."
+    eyebrow="Integraties"
+    heading="Koppel je verkoopkanalen en vervoerders."
+    subheading="ShopLinkr werkt met de tools die jij al gebruikt. Van Bol tot PostNL, alles op één plek."
+    jsonLd={jsonLd}
+>
+    <section class="py-20 md:py-28">
+        <div class="container-prose">
+            <div class="flex items-baseline justify-between flex-wrap gap-4 mb-12">
+                <p class="text-sm text-gravel">
+                    {totalCount} integraties beschikbaar
+                </p>
+                <div
+                    class="inline-flex items-center gap-1 rounded-full bg-chalk-light ring-1 ring-chalk-dark p-1 text-sm"
+                    role="tablist"
+                    aria-label="Filter integraties"
+                >
+                    <button
+                        type="button"
+                        class="filter-tab is-active px-4 py-1.5 rounded-full font-medium text-charcoal transition-colors"
+                        data-filter="all"
+                        aria-selected="true"
+                    >
+                        Alle
+                    </button>
+                    <button
+                        type="button"
+                        class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
+                        data-filter="webshop"
+                        aria-selected="false"
+                    >
+                        Webshops
+                    </button>
+                    <button
+                        type="button"
+                        class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
+                        data-filter="marketplace"
+                        aria-selected="false"
+                    >
+                        Marketplaces
+                    </button>
+                    <button
+                        type="button"
+                        class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
+                        data-filter="carrier"
+                        aria-selected="false"
+                    >
+                        Vervoerders
+                    </button>
+                </div>
+            </div>
+
+            {webshops.length > 0 && (
+                <div class="integration-group mb-16" data-group="webshop">
+                    <div class="flex items-baseline justify-between mb-6">
+                        <h2 class="eyebrow">Webshops</h2>
+                        <span class="text-xs text-gravel">
+                            {webshops.length} {webshops.length === 1 ? 'webshop' : 'webshops'}
+                        </span>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                        {webshops.map((i) => (
+                            <IntegrationCard
+                                {...i.data}
+                                href={`/integraties/${i.data.slug}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {marketplaces.length > 0 && (
+                <div class="integration-group mb-16" data-group="marketplace">
+                    <div class="flex items-baseline justify-between mb-6">
+                        <h2 class="eyebrow">Marketplaces</h2>
+                        <span class="text-xs text-gravel">
+                            {marketplaces.length} {marketplaces.length === 1 ? 'kanaal' : 'kanalen'}
+                        </span>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                        {marketplaces.map((i) => (
+                            <IntegrationCard
+                                {...i.data}
+                                href={`/integraties/${i.data.slug}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {carriers.length > 0 && (
+                <div class="integration-group" data-group="carrier">
+                    <div class="flex items-baseline justify-between mb-6">
+                        <h2 class="eyebrow">Vervoerders</h2>
+                        <span class="text-xs text-gravel">
+                            {carriers.length} vervoerders
+                        </span>
+                    </div>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                        {carriers.map((i) => (
+                            <IntegrationCard
+                                {...i.data}
+                                href={`/integraties/${i.data.slug}`}
+                            />
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
+    </section>
+
+    <section class="pb-20 md:pb-28">
+        <div class="container-prose">
+            <div class="max-w-2xl mx-auto text-center rounded-2xl ring-1 ring-chalk-dark bg-chalk-light px-8 py-12">
+                <p class="eyebrow mb-3">Mis je een integratie?</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight">
+                    Laat het ons weten.
+                </h2>
+                <p class="mt-4 text-steel leading-relaxed">
+                    We bouwen voortdurend nieuwe koppelingen. Vertel ons welke tool jij gebruikt en wij kijken of we het kunnen oppakken.
+                </p>
+                <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href="mailto:contact@shoplinkr.com?subject=Integratie%20verzoek"
+                        class="btn btn-secondary text-sm"
+                    >
+                        <i class="fa-solid fa-envelope text-xs" aria-hidden="true"></i>
+                        Stuur ons een mail
+                    </a>
+                    <a href="/contact" class="btn btn-secondary text-sm">
+                        Neem contact op
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>
+
+<style>
+    .filter-tab {
+        cursor: pointer;
+        border: 0;
+        background: transparent;
+    }
+
+    .filter-tab.is-active {
+        background-color: var(--color-paper, #fff);
+        color: var(--color-charcoal);
+        box-shadow: 0 1px 2px rgba(25, 25, 25, 0.08);
+    }
+
+    .filter-tab:not(.is-active):hover {
+        color: var(--color-charcoal);
+    }
+
+    .integration-group.is-hidden {
+        display: none;
+    }
+</style>
+
+<script>
+    const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
+    const groups = document.querySelectorAll<HTMLElement>('.integration-group');
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const filter = tab.dataset.filter;
+
+            tabs.forEach((t) => {
+                const active = t === tab;
+                t.classList.toggle('is-active', active);
+                t.setAttribute('aria-selected', active ? 'true' : 'false');
+                t.classList.toggle('text-charcoal', active);
+                t.classList.toggle('text-gravel', !active);
+            });
+
+            groups.forEach((group) => {
+                if (filter === 'all') {
+                    group.classList.remove('is-hidden');
+                    return;
+                }
+                const matches = group.dataset.group === filter;
+                group.classList.toggle('is-hidden', !matches);
+            });
+        });
+    });
+</script>

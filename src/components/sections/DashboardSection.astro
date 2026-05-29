@@ -1,0 +1,68 @@
+---
+import DashboardPreview from '../product/DashboardPreview.astro';
+---
+
+<section class="py-24 md:py-32 bg-chalk-light">
+    <div class="container-prose">
+        <div class="max-w-3xl mb-12 md:mb-16">
+            <p class="eyebrow mb-3">Eén dashboard</p>
+            <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight">
+                Zie in één oogopslag <span class="text-gravel">hoe je magazijn draait.</span>
+            </h2>
+            <p class="mt-5 text-lg text-steel leading-relaxed">
+                Open orders, vandaag binnengekomen, retouren, omzet. ShopLinkr toont real-time de getallen die ertoe doen, met grafieken voor verkoopvolume, financiën, marges en verdeling per verkoopkanaal. Eén overzicht in plaats van tien losse tabbladen.
+            </p>
+        </div>
+    </div>
+
+    <div class="dashboard-shell">
+        <div class="dashboard-scroll">
+            <div class="dashboard-frame">
+                <DashboardPreview />
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Desktop: centered, capped at 1320px, with normal page padding.
+       Mobile/tablet: horizontal scroll so the dashboard keeps its native proportions
+       (sidebar + multi-column charts) instead of collapsing and looking like a different UI. */
+    .dashboard-shell {
+        position: relative;
+    }
+
+    .dashboard-scroll {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-inline: 1rem;
+    }
+
+    .dashboard-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .dashboard-frame {
+        max-width: 1320px;
+        margin-inline: auto;
+    }
+
+    @media (min-width: 768px) {
+        .dashboard-scroll {
+            padding-inline: 2rem;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .dashboard-shell::after {
+            content: "";
+            position: absolute;
+            inset: 0 0 0 auto;
+            width: 3rem;
+            background: linear-gradient(to right, transparent, var(--color-chalk-light));
+            pointer-events: none;
+        }
+    }
+</style>

@@ -1,0 +1,17 @@
+{
+    "name": "DPD",
+    "slug": "dpd",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/dpd.jpeg",
+    "summary": "Genereer DPD-verzendlabels en pickup-locaties direct in je orderflow. Track en trace automatisch teruggekoppeld.",
+    "supportSlug": "dpd-koppelen",
+    "tagline": "Klimaatneutraal, duurzaam en innovatief: allemaal in één pakket.",
+    "about": "DPD is een pakketbezorgdienst die pakketten snel en betrouwbaar levert. Ze werken in veel landen en bieden diensten voor bedrijven en particulieren. Met hun track-and-trace systeem kun je eenvoudig je pakket volgen. DPD staat voor \"Dynamic Parcel Distribution\" en is bekend om hun focus op duurzaamheid en klantvriendelijke bezorgopties.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij DPD. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

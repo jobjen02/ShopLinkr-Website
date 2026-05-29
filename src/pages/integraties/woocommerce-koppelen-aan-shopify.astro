@@ -1,0 +1,132 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'ShopLinkr als brug',
+        heading: 'Eén platform voor twee webshops naast elkaar.',
+        body: 'Heb je een WooCommerce shop en een Shopify shop tegelijk draaien? ShopLinkr legt de verbinding ertussen. Je koppelt beide aan ShopLinkr, en vanaf dat moment zit alles in één overzicht. Geen aparte tools, geen dubbele administratie.',
+        icon: 'fa-solid fa-arrows-left-right-to-line',
+    },
+    {
+        eyebrow: 'Matchen op EAN',
+        heading: 'Producten worden vanzelf aan elkaar gekoppeld.',
+        body: 'ShopLinkr koppelt producten in WooCommerce en Shopify aan elkaar op basis van EAN. Eén keer op orde, en het systeem weet daarna altijd welke variant bij welk kanaal hoort. Nieuwe producten neem je in een paar klikken mee.',
+        icon: 'fa-solid fa-barcode',
+    },
+    {
+        eyebrow: 'Voorraad realtime in sync',
+        heading: 'Verkopen op één shop, voorraad zakt in beide.',
+        body: 'Verkoop je een product op Shopify, dan past ShopLinkr de voorraad op WooCommerce direct aan. En andersom. Zo houd je één waarheid voor je voorraad, ook als je op beide kanalen actief verkoopt. Belangrijk: ShopLinkr synct alleen voorraad en orders. Je productpagina en prijzen blijven van jou per kanaal.',
+        icon: 'fa-solid fa-arrows-rotate',
+    },
+    {
+        eyebrow: 'Bestellingen op één plek',
+        heading: 'Alle orders in dezelfde bestellingenlijst.',
+        body: 'Bestellingen uit WooCommerce en Shopify verschijnen samen in ShopLinkr. Je picked, verpakt en verstuurt vanuit dezelfde flow, ongeacht waar de order vandaan komt. Je magazijnteam werkt elke dag op dezelfde manier.',
+        icon: 'fa-solid fa-list-check',
+    },
+    {
+        eyebrow: 'Geen oversells',
+        heading: 'Verkoop nooit meer wat je niet op voorraad hebt.',
+        body: 'Doordat de voorraad razendsnel meebeweegt, voorkom je dat je hetzelfde laatste stuks twee keer verkoopt. Minder annuleringen, minder klantvragen en een consistente ervaring voor iedereen die bij je bestelt.',
+        icon: 'fa-solid fa-shield-check',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Koppel je WooCommerce webshop aan Shopify',
+    description: 'Koppel je WooCommerce webshop aan je eigen Shopify webshop. Je voorraad is altijd gesynchroniseerd en bestellingen komen op een plek binnen.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Koppel je WooCommerce webshop aan Shopify - ShopLinkr"
+    description="Koppel je WooCommerce webshop aan je eigen Shopify webshop. Je voorraad is altijd gesynchroniseerd en bestellingen komen op één plek binnen."
+    eyebrow="WooCommerce en Shopify"
+    heading="WooCommerce koppelen met Shopify via ShopLinkr."
+    subheading="Verkoop je via WooCommerce en Shopify tegelijk? ShopLinkr synchroniseert je voorraad realtime tussen beide shops en verzamelt alle bestellingen op één plek."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <a
+                href="/integraties"
+                class="inline-flex items-center gap-2 text-sm text-gravel hover:text-charcoal transition-colors mb-8"
+            >
+                <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
+                Terug naar alle integraties
+            </a>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Voorraad synchronisatie</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Eén voorraadbron voor WooCommerce en Shopify.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    ShopLinkr verbindt je WooCommerce shop met je Shopify shop. Voorraadmutaties gaan beide kanten op, bestellingen komen samen in één overzicht. Hieronder zie je wat de koppeling concreet voor je doet.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

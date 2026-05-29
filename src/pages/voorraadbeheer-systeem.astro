@@ -1,0 +1,124 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Waarom een systeem',
+        heading: 'Excel raakt z\'n grenzen sneller dan je denkt.',
+        body: 'Een spreadsheet werkt prima tot je tweede of derde kanaal erbij komt. Vanaf dat moment loop je achter de feiten aan: je voorraad klopt niet meer, oversells stapelen zich op en je picker pakt verkeerde aantallen. Een voorraadbeheer systeem neemt dat handwerk uit je dag.',
+        icon: 'fa-solid fa-triangle-exclamation',
+    },
+    {
+        eyebrow: 'Eén werkplek',
+        heading: 'Alle kanalen samen op één scherm.',
+        body: 'ShopLinkr koppelt Bol, Shopify, WooCommerce en Kaufland in één omgeving. Je voorraad, bestellingen en retouren beheer je vanaf nu vanuit een centrale plek, met je productlijst altijd in beeld en zonder constant tussen tabbladen te schakelen.',
+        icon: 'fa-solid fa-grip',
+    },
+    {
+        eyebrow: 'Realtime sync',
+        heading: 'Live updates, geen vertraging.',
+        body: 'Verkoop je iets op Bol, dan past ShopLinkr je voorraad direct aan op je andere kanalen. Geen oversells, geen geannuleerde bestellingen, en geen excuses naar klanten. Je voorraad klopt continu met wat er werkelijk in je magazijn ligt.',
+        icon: 'fa-solid fa-bolt',
+    },
+    {
+        eyebrow: 'Snel en accuraat',
+        heading: 'Orders verwerken in minuten, niet uren.',
+        body: 'Bestellingen komen automatisch binnen, je print picklijsten met locaties, draait verzendlabels in bulk en stuurt track en trace terug. Wat voorheen een hele ochtend kostte, doe je nu tussen je koffie en je lunch door.',
+        icon: 'fa-solid fa-bag-shopping',
+    },
+    {
+        eyebrow: 'Inzicht',
+        heading: 'Zie waar je voorraad zit en wat hij doet.',
+        body: 'Per product zie je fysieke voorraad, gereserveerde aantallen en wat er nog beschikbaar is om te verkopen. Combineer dat met magazijnlocaties en inkoopadvies en je hebt continu grip op wat er in je magazijn gebeurt.',
+        icon: 'fa-solid fa-magnifying-glass-chart',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Voorraadbeheer systeem - ShopLinkr',
+    description: 'Ben je een e-commerce ondernemer die worstelt met het beheren van je voorraad? Zoek niet verder! Onze voorraadbeheer software is ontworpen om je leven gemakkelijker te maken.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Voorraadbeheer software - ShopLinkr"
+    description="Ben je een e-commerce ondernemer die worstelt met het beheren van je voorraad? Zoek niet verder! Onze voorraadbeheer software is ontworpen om je leven gemakkelijker te maken."
+    eyebrow="Voorraadbeheer systeem"
+    heading="Het juiste voorraadbeheer systeem voor jouw bedrijf."
+    subheading="Een goed systeem is essentieel als je serieus wilt doorgroeien. ShopLinkr brengt al je verkoopkanalen, voorraad en bestellingen samen in één centrale werkplek."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Waarom een voorraadbeheer systeem</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Een systeem dat met je meedenkt.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Zonder een goed systeem ben je veel tijd kwijt aan handwerk dat niets oplevert. ShopLinkr automatiseert je voorraad, je bestellingen en je verzending, zodat je je tijd kunt steken in groei in plaats van in administratie.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

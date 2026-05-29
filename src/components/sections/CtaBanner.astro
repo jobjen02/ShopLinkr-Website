@@ -1,0 +1,57 @@
+---
+import { externalLinks } from '../../data/externalLinks';
+---
+
+<section class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-[radial-gradient(circle_at_center,#faedd5,transparent_60%)] opacity-50"></div>
+    </div>
+
+    <div class="container-prose">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="eyebrow mb-5">Beginnen met ShopLinkr</p>
+            <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-charcoal leading-[1.05]">
+                Vandaag inrichten,
+                <span class="block text-sunstone-deep">morgen sneller picken.</span>
+            </h2>
+            <p class="mt-7 text-lg text-steel leading-relaxed max-w-xl mx-auto">
+                Probeer ShopLinkr 14 dagen gratis. Geen creditcard, geen verplichtingen. Eén platform voor voorraad, picklijsten en verzending.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo aanvragen
+                </a>
+            </div>
+
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-sm text-gravel">
+                <span class="inline-flex items-center gap-2">
+                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                    14 dagen gratis
+                </span>
+                <span class="inline-flex items-center gap-2">
+                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                    Geen creditcard
+                </span>
+                <span class="inline-flex items-center gap-2">
+                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                    Maandelijks opzegbaar
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

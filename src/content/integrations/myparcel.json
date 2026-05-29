@@ -1,0 +1,17 @@
+{
+    "name": "MyParcel",
+    "slug": "myparcel",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/MyParcel.jpg",
+    "summary": "Maak in seconden MyParcel-labels aan voor PostNL, DHL en DPD. Tracking automatisch terug naar je kanalen.",
+    "supportSlug": "myparcel-koppelen",
+    "tagline": "Hét nr. 1 verzendplatform voor online ondernemers",
+    "about": "MyParcel is een verzendplatform voor webwinkels. Het helpt je eenvoudig pakketten te versturen via vervoerders zoals PostNL en DHL. Je kunt verzendlabels maken, Track & Trace aanbieden en retouren beheren. Het maakt het verzenden sneller en overzichtelijker voor webshops.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij MyParcel. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

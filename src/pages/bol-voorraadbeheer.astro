@@ -1,0 +1,124 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Voor bol verkopers',
+        heading: 'Altijd grip op je voorraad bij bol.',
+        body: 'Als bol-verkoper kan je het je niet veroorloven om uit voorraad te raken zonder dat je het ziet aankomen. ShopLinkr koppelt je bol-account en houdt je voorraad realtime kloppend, ook als je daarnaast op Shopify, WooCommerce of een eigen webshop verkoopt.',
+        icon: 'fa-solid fa-store',
+    },
+    {
+        eyebrow: 'Hogere ranking',
+        heading: 'Voorraad die meewerkt aan je positie.',
+        body: 'Bol weegt mee hoe betrouwbaar je verkoopt. Een lege voorraad of een geannuleerde bestelling drukt je ranking, en daar wil je vanaf. Door je voorraad altijd te laten kloppen, voorkom je negatieve signalen en bouw je structureel aan je positie binnen het platform.',
+        icon: 'fa-solid fa-arrow-trend-up',
+    },
+    {
+        eyebrow: 'Realtime updates',
+        heading: 'Voorraadupdates met je bol koppeling.',
+        body: 'Verkoop je iets via je webshop, dan past ShopLinkr je bol-voorraad direct aan. Andersom geldt hetzelfde: een verkoop op bol trekt meteen voorraad af op je andere kanalen. Je communiceert continu de juiste aantallen, zonder ooit handmatig in te grijpen.',
+        icon: 'fa-solid fa-arrows-rotate',
+    },
+    {
+        eyebrow: 'VVB ondersteund',
+        heading: 'Werkt ook voor Verzending Via Bol.',
+        body: 'Stuur je je voorraad naar het magazijn van bol? ShopLinkr ondersteunt de VVB-flow inclusief de slimme switch tussen eigen verzending en bol-fulfillment. Je houdt zicht op wat er bij jou ligt en wat bij bol ligt, samen in één overzicht.',
+        icon: 'fa-solid fa-warehouse',
+    },
+    {
+        eyebrow: 'Geen contracten',
+        heading: 'Vandaag aanmelden, vandaag werken.',
+        body: 'Je probeert ShopLinkr 14 dagen gratis uit, zonder creditcard, zonder verplichtingen. Koppel je bol-account, importeer je producten en je draait meteen je eerste orders door het systeem. Maandelijks opzegbaar als het toch niet bij je past.',
+        icon: 'fa-solid fa-bolt',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Bol voorraadbeheer - ShopLinkr',
+    description: 'Voorraadbeheer voor bol-verkopers die oversells willen voorkomen en hun ranking willen beschermen. ShopLinkr koppelt je bol-account en houdt je voorraad realtime kloppend over al je kanalen.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Bol voorraadbeheer - ShopLinkr"
+    description="Voorraadbeheer voor bol-verkopers die oversells willen voorkomen en hun ranking willen beschermen. ShopLinkr koppelt je bol-account en houdt je voorraad realtime kloppend over al je kanalen."
+    eyebrow="Bol voorraadbeheer"
+    heading="Bol voorraadbeheer dat je nooit meer in de steek laat."
+    subheading="Voorraadbeheer voor bol-verkopers die geen oversells meer willen, hun ranking willen beschermen en hun verkoop op meerdere kanalen tegelijk willen draaien."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Voor bol verkopers</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Wat ShopLinkr doet voor je bol-account.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    ShopLinkr is gebouwd door bol-verkopers, voor bol-verkopers. We weten waar je tegenaan loopt, van oversells tot rankingdips, en hebben de tool die dat structureel oplost.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

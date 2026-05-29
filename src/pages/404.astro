@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const quickLinks = [
+    {
+        title: 'Functionaliteiten',
+        body: 'Bekijk alles wat ShopLinkr kan.',
+        href: '/functionaliteiten',
+        icon: 'fa-solid fa-grid-2',
+    },
+    {
+        title: 'Integraties',
+        body: 'Zie met welke kanalen en vervoerders we koppelen.',
+        href: '/integraties',
+        icon: 'fa-solid fa-plug',
+    },
+    {
+        title: 'Support',
+        body: 'Vind antwoorden in onze help-artikelen.',
+        href: '/support',
+        icon: 'fa-solid fa-life-ring',
+    },
+    {
+        title: 'Prijzen',
+        body: 'Bekijk wat ShopLinkr kost per maand.',
+        href: '/prijzen',
+        icon: 'fa-solid fa-tag',
+    },
+];
+
+export const prerender = true;
+---
+
+<BaseLayout
+    title="Pagina niet gevonden | ShopLinkr"
+    description="De pagina die je zoekt bestaat niet meer of is verplaatst. Vind hier wat je nodig hebt."
+>
+    <section class="py-20 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="eyebrow mb-5">404</p>
+                <h1 class="text-4xl md:text-6xl font-semibold text-charcoal tracking-tight leading-[1.05]">
+                    Deze pagina is helaas
+                    <span class="block text-sunstone-deep">niet meer te vinden.</span>
+                </h1>
+                <p class="mt-7 text-lg text-steel leading-relaxed max-w-xl mx-auto">
+                    De link is misschien verouderd, of de pagina is verplaatst. Probeer een van onderstaande snelkoppelingen of ga terug naar de homepage.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href="/"
+                        class="btn btn-sunstone text-base"
+                    >
+                        Terug naar home
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-secondary text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Plan een demo in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-24 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto">
+                <p class="eyebrow mb-4 text-center">Of ga direct naar</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] text-center mb-10">
+                    Wat zoek je?
+                </h2>
+
+                <ul class="grid sm:grid-cols-2 gap-3">
+                    {
+                        quickLinks.map((link) => (
+                            <li>
+                                <a
+                                    href={link.href}
+                                    class="group flex items-start gap-4 bg-paper rounded-xl ring-1 ring-chalk-dark hover:ring-sunstone-soft hover:bg-sunstone-mist/30 px-5 py-5 transition-all duration-200"
+                                >
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-lg bg-chalk-light text-gravel group-hover:bg-sunstone-mist group-hover:text-sunstone-deep transition-colors">
+                                        <i class={`${link.icon} text-sm`} aria-hidden="true"></i>
+                                    </span>
+                                    <div class="flex-1">
+                                        <p class="text-[15px] font-semibold text-charcoal group-hover:text-sunstone-deep transition-colors">
+                                            {link.title}
+                                        </p>
+                                        <p class="mt-0.5 text-sm text-gravel">
+                                            {link.body}
+                                        </p>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right text-xs text-gravel group-hover:text-sunstone-deep group-hover:translate-x-0.5 transition-all mt-3" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

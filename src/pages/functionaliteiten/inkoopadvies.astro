@@ -1,0 +1,190 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const stories = [
+    {
+        eyebrow: 'Verkoopdata als basis',
+        heading: 'Prognose op basis van jouw historie.',
+        body: 'Hoeveel verkoop je gemiddeld per dag van een product? En hoeveel dagen voorraad heb je dan nog? ShopLinkr kijkt naar je verkoopdata van de afgelopen X dagen en berekent precies wanneer je voorraad opraakt. Geen onderbuikgevoel meer, maar concrete cijfers waar je op kunt sturen.',
+        icon: 'fa-duotone fa-solid fa-chart-line',
+        visualLabel: 'Verkoopprognose',
+    },
+    {
+        eyebrow: 'Inclusief levertijd',
+        heading: 'Houdt rekening met je leverancier.',
+        body: 'Je leverancier heeft een levertijd van twee weken. Dan moet je dus tijdig bestellen, anders sta je toch met lege handen. ShopLinkr neemt de levertijd van elke leverancier mee in het advies, zodat je inkoop precies op tijd binnenkomt en je nooit voor verrassingen komt te staan.',
+        icon: 'fa-duotone fa-solid fa-truck-fast',
+        visualLabel: 'Levertijd timing',
+    },
+    {
+        eyebrow: 'Voorkom misgrijpen',
+        heading: 'Nooit meer nee verkopen.',
+        body: 'Misgrijpen op een populair product is frustrerend. De vraag is er, maar de voorraad ontbreekt. ShopLinkr waarschuwt je ruim voordat een product opraakt, zodat je op tijd kunt bijbestellen en geen omzet misloopt. Je klanten blijven tevreden en je conversie blijft hoog.',
+        icon: 'fa-duotone fa-solid fa-shield-check',
+        visualLabel: 'Waarschuwing',
+    },
+    {
+        eyebrow: 'Voorkom dode voorraad',
+        heading: 'Geen geld vast in te veel voorraad.',
+        body: 'Te veel inkopen is net zo vervelend als te weinig. Je geld zit dan vast in producten die langzaam verkopen en je magazijn loopt onnodig vol. ShopLinkr berekent op basis van je verkoopsnelheid hoeveel je echt nodig hebt. Zo investeer je gericht en houd je werkkapitaal beschikbaar voor groei.',
+        icon: 'fa-duotone fa-solid fa-piggy-bank',
+        visualLabel: 'Werkkapitaal',
+    },
+    {
+        eyebrow: 'Multi-channel inzicht',
+        heading: 'Alle verkopen tellen mee.',
+        body: 'Verkoop je via meerdere kanalen, zoals Bol, je eigen webshop en marketplaces? ShopLinkr bundelt alle verkopen over al je kanalen tot één prognose per product. Zo krijg je een compleet beeld van de werkelijke vraag en bestel je nooit te krap of juist te ruim in.',
+        icon: 'fa-duotone fa-solid fa-arrows-to-circle',
+        visualLabel: 'Multi-channel data',
+    },
+    {
+        eyebrow: 'Seizoenseffecten',
+        heading: 'Voorbereid op piek en dal.',
+        body: 'Verkoop je producten die afhankelijk zijn van een seizoen of feestdagen? ShopLinkr houdt rekening met seizoenseffecten in je prognose. Zo voorkom je dat je te krap zit tijdens een piek en niet onnodig veel inkoopt voor een rustige periode. Inkopen wordt zo voorspelbaar, ook bij wisselende vraag.',
+        icon: 'fa-duotone fa-solid fa-calendar-days',
+        visualLabel: 'Seizoenscurve',
+    },
+];
+
+const workflowSteps = [
+    {
+        title: 'Bekijk het inkoopadvies',
+        body: 'Open de inkoopadvies pagina en zie in één oogopslag welke producten besteld moeten worden, gesorteerd op urgentie.',
+    },
+    {
+        title: 'Controleer het voorstel',
+        body: 'Per product zie je hoeveel stuks je moet bijbestellen op basis van verkopen, levertijd en je gewenste buffer. Pas aan als dat nodig is.',
+    },
+    {
+        title: 'Maak een inkooporder',
+        body: 'Met één klik zet je het advies om naar een inkooporder per leverancier. Verstuur de order en wacht op de levering.',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Inkoopadvies | ShopLinkr',
+    description: 'Krijg slim inkoopadvies in ShopLinkr op basis van je verkoopdata. Weet altijd wanneer en hoeveel je moet bijbestellen, voorkom misgrijpen en investeer niet onnodig in voorraad.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Inkoopadvies | ShopLinkr"
+    description="Krijg slim inkoopadvies in ShopLinkr op basis van je verkoopdata. Weet altijd wanneer en hoeveel je moet bijbestellen, voorkom misgrijpen en investeer niet onnodig in voorraad."
+    eyebrow="Slim inkopen"
+    heading="Weet wanneer je wat moet inkopen."
+    subheading="ShopLinkr berekent op basis van je verkoopdata wanneer producten opraken en hoeveel je moet bijbestellen. Zo voorkom je misgrijpen en blijft je werkkapitaal beschikbaar voor groei."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-paper">
+        <div class="container-prose">
+            {
+                stories.map((story, index) => {
+                    const isReversed = index % 2 === 1;
+
+                    return (
+                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
+                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+                                    <div
+                                        class="relative w-full rounded-3xl overflow-hidden bg-chalk-light ring-1 ring-chalk-dark"
+                                        style="aspect-ratio: 4 / 3;"
+                                    >
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-10 text-center">
+                                            <div class="flex items-center justify-center h-20 w-20 rounded-2xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)]">
+                                                <i class={`${story.icon} text-3xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold mb-2">
+                                                    Visual: {story.visualLabel}
+                                                </p>
+                                                <p class="text-sm text-gravel max-w-[32ch]">
+                                                    Hier komt later een echte screenshot uit ShopLinkr.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
+                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
+                                        {story.heading}
+                                    </h2>
+                                    <p class="text-lg text-steel leading-relaxed">
+                                        {story.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    );
+                })
+            }
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Van advies naar order</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        In drie stappen
+                        <span class="block text-sunstone-deep">van advies naar inkoop.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Inkopen hoeft niet ingewikkeld te zijn. Met ShopLinkr zet je een inkoopadvies razendsnel om in een concrete inkooporder bij de juiste leverancier.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ol class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            workflowSteps.map((step, index) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5 text-sm font-semibold">
+                                        {index + 1}
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

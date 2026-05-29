@@ -1,0 +1,82 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const jsonLd = {
+    '@type': 'AboutPage',
+    name: 'Over ShopLinkr',
+    description: 'ShopLinkr ontstond in 2022 uit eigen behoefte. Vandaag verwerkten we meer dan 1 miljoen bestellingen voor Nederlandse webshops, met een pay as you go model dat voor elk bedrijf betaalbaar blijft.',
+    mainEntity: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        foundingDate: '2022',
+        founder: {
+            '@type': 'Person',
+            name: 'Job',
+        },
+    },
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Over ShopLinkr | ShopLinkr"
+    description="ShopLinkr ontstond in 2022 uit eigen behoefte. Vandaag verwerkten we meer dan 1 miljoen bestellingen voor Nederlandse webshops, met een pay as you go model dat voor elk bedrijf betaalbaar blijft."
+    eyebrow="Over ShopLinkr"
+    heading="Wij zijn ShopLinkr."
+    subheading="Ons verhaal in het kort."
+    jsonLd={jsonLd}
+>
+    <section class="py-16 md:py-24">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto space-y-7 text-charcoal leading-relaxed text-[1.0625rem]">
+                <p>
+                    Bij ShopLinkr geloven we dat een order- en voorraadbeheersysteem voor iedereen toegankelijk moet zijn, ongeacht het budget. Daarom hebben wij als eerste in Nederland een 'pay as you go' model geïntroduceerd. Zo betaal je alleen voor wat je gebruikt, waardoor het betaalbaar blijft voor elk bedrijf.
+                </p>
+                <p>
+                    ShopLinkr ontstond in 2022 uit eigen behoefte. Oprichter Job had een webshop en verkocht via meerdere kanalen, zoals bol en Amazon. Zonder groot budget, maar met de noodzaak om voorraad en orders bij te houden, ontwikkelde hij als softwareontwikkelaar een eigen oplossing. Al snel vroegen andere bedrijven of ze deze tool ook mochten gebruiken. Zo werd ShopLinkr geboren!
+                </p>
+                <p>
+                    Vandaag de dag heeft ShopLinkr een fantastisch team en hebben we meer dan 1 miljoen bestellingen verwerkt.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="eyebrow mb-3">Wil je meer weten?</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight">
+                    Ontmoet het team of lees een klantverhaal.
+                </h2>
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href="/team"
+                        class="btn btn-secondary text-base"
+                    >
+                        Bekijk het team
+                    </a>
+                    <a
+                        href="/referenties"
+                        class="btn btn-secondary text-base"
+                    >
+                        Lees klantverhalen
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-sunstone text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Demo inplannen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

@@ -1,0 +1,18 @@
+{
+    "name": "Shopify",
+    "slug": "shopify",
+    "category": "webshop",
+    "status": "live",
+    "logo": "/assets/webshops/Shopify.jpg",
+    "summary": "Synchroniseer voorraad en orders met Shopify. Centraliseer je hele orderflow over kanalen heen, met realtime voorraadsync.",
+    "url": "https://www.shopify.com",
+    "supportSlug": "shopify-koppelen",
+    "tagline": "Shopify regelt alles, van betaling tot aan het retourproces.",
+    "about": "Shopify is een platform waarmee je eenvoudig een webwinkel kunt opzetten en beheren. Het helpt je om producten te verkopen, betalingen te verwerken en je winkel vorm te geven, zonder dat je technische kennis nodig hebt. Je kunt er zowel online als offline mee verkopen, bijvoorbeeld via een fysieke winkel of pop-upshop.",
+    "faqs": [
+        {
+            "q": "Worden conceptproducten geïmporteerd?",
+            "a": "Dit kun je zelf instellen. Tijdens het koppelen van je Shopify winkel kun je aangeven of je dit wilt. Achteraf kun je dit eenvoudig aanpassen."
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+---
+import PicklistPickPreview from '../product/PicklistPickPreview.vue';
+import { externalLinks } from '../../data/externalLinks';
+---
+
+<section class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden">
+    <div class="absolute inset-0 -z-10 pointer-events-none">
+        <div class="absolute -top-40 -right-40 w-[55%] h-[55%] bg-[radial-gradient(circle_at_70%_20%,#faedd5,transparent_70%)] opacity-30"></div>
+    </div>
+
+    <div class="container-prose">
+        <div class="grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20 items-center">
+            <div>
+                <p class="inline-flex items-center gap-2 text-xs font-medium text-gravel mb-6">
+                    <span class="h-1.5 w-1.5 rounded-full bg-sunstone"></span>
+                    Binnenkort ook voor fulfilment bedrijven
+                </p>
+
+                <h1 class="text-[2.25rem] sm:text-[2.75rem] md:text-[3.5rem] font-semibold text-charcoal leading-[1.05] tracking-tight">
+                    Magazijnsoftware voor webshops.
+                </h1>
+
+                <p class="mt-6 text-lg md:text-xl text-steel leading-relaxed max-w-xl">
+                    Met ShopLinkr heb je één software waarmee je jouw volledige magazijn kunt runnen en beheren.
+                </p>
+
+                <div class="mt-9 flex flex-col sm:flex-row gap-3">
+                    <a
+                        href={externalLinks.register}
+                        class="btn btn-sunstone text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Gratis Starten
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-secondary text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Demo inplannen
+                    </a>
+                </div>
+
+                <p class="mt-5 text-sm text-gravel">
+                    Geen creditcard nodig. Maandelijks opzegbaar.
+                </p>
+            </div>
+
+            <div class="relative mt-4 lg:mt-0">
+                <PicklistPickPreview client:visible />
+            </div>
+        </div>
+    </div>
+</section>

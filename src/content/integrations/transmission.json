@@ -1,0 +1,8 @@
+{
+    "name": "TransMission",
+    "slug": "transmission",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/TransMission.png",
+    "summary": "Geschikt voor grotere zendingen en pallets met TransMission. Labels en tracking in dezelfde flow als je pakketten."
+}

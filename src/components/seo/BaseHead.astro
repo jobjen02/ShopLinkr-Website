@@ -1,0 +1,59 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    image?: string;
+    canonical?: string;
+    locale?: 'nl' | 'en';
+}
+
+const {
+    title,
+    description,
+    image = '/og-default.svg',
+    canonical,
+    locale = 'nl',
+} = Astro.props;
+
+const canonicalURL = canonical
+    ? new URL(canonical, Astro.site)
+    : new URL(Astro.url.pathname, Astro.site);
+
+const ogLocale = locale === 'nl' ? 'nl_NL' : 'en_US';
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="canonical" href={canonicalURL} />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:site_name" content="ShopLinkr" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.site)} />
+
+<link rel="alternate" hreflang="nl" href={new URL('/', Astro.site)} />
+<link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+<link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/solid.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/regular.min.css" />
+<link rel="stylesheet" href="/fontawesome/css/duotone.min.css" />
+
+<link rel="sitemap" href="/sitemap-index.xml" />

@@ -1,0 +1,18 @@
+{
+    "name": "WooCommerce",
+    "slug": "woocommerce",
+    "category": "webshop",
+    "status": "live",
+    "logo": "/assets/webshops/WooCommerce.png",
+    "summary": "Koppel je WooCommerce webshop aan ShopLinkr. Voorraadupdates worden realtime gesynchroniseerd en bestellingen importeren automatisch.",
+    "url": "https://woocommerce.com",
+    "supportSlug": "woocommerce-koppelen",
+    "tagline": "Verwerk eenvoudig je WooCommerce bestellingen met je favoriete vervoerder vanuit ShopLinkr",
+    "about": "WooCommerce is een gratis plugin voor WordPress waarmee je een webshop kunt maken. Het is populair omdat het eenvoudig te gebruiken is en veel mogelijkheden biedt, zoals producten toevoegen, betalingen accepteren en verzendopties instellen. Je kunt het aanpassen met extra plugins en thema's, waardoor het geschikt is voor kleine én grote webshops.",
+    "faqs": [
+        {
+            "q": "Welke code gebruikt ShopLinkr als EAN code?",
+            "a": "WooCommerce heeft standaard geen EAN veld. Daarom gebruikt ShopLinkr het SKU veld voor EAN codes. Je kunt echter een plugin installeren om een EAN veld toe te voegen aan producten. ShopLinkr ondersteunt hiervoor de plugin \"EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory\" van WPFactory. Als er een EAN code is ingevuld, wordt deze gebruikt; anders valt ShopLinkr terug op het SKU veld. Producten zonder EAN- of SKU-waarde worden niet geïmporteerd door ShopLinkr."
+        }
+    ]
+}

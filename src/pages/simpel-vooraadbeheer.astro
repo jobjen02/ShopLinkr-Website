@@ -1,0 +1,124 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+import { externalLinks } from '../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Eén klik',
+        heading: 'Voorraad synchronisatie in één keer geregeld.',
+        body: 'Koppel je verkoopkanalen en ShopLinkr neemt het over. Zodra er een bestelling binnenkomt, past je voorraad zich automatisch aan op al je andere kanalen. Je hoeft nooit meer handmatig cijfers over te tikken of bij te werken.',
+        icon: 'fa-solid fa-bolt',
+    },
+    {
+        eyebrow: 'Geen gedoe',
+        heading: 'Automatisch werkt voor je.',
+        body: 'Geen complexe instellingen, geen lange leerprocessen. ShopLinkr werkt vanaf dag één voor je in plaats van andersom. Je richt het in, je laat het draaien en je voorraad blijft kloppen, ook als je zelf niet achter je laptop zit.',
+        icon: 'fa-solid fa-wand-magic-sparkles',
+    },
+    {
+        eyebrow: 'Tijdwinst',
+        heading: 'Uren per week terugkrijgen.',
+        body: 'Je bent niet langer bezig met voorraad bijwerken, oversells oplossen of klanten teleurstellen. Die tijd steek je in waar je ondernemer voor bent geworden: nieuwe producten, marketing of gewoon vrije tijd.',
+        icon: 'fa-solid fa-clock',
+    },
+    {
+        eyebrow: 'Foutloos',
+        heading: 'Minder menselijke fouten.',
+        body: 'Handmatig werken betekent fouten maken. Een typo, een verkeerd aantal, een vergeten update. Automatiseer je dat, dan haal je de hele foutbron weg. Je voorraad klopt continu omdat een mens er niet meer tussen zit.',
+        icon: 'fa-solid fa-shield-check',
+    },
+    {
+        eyebrow: 'Voor iedereen',
+        heading: 'Gebouwd voor mensen, niet voor experts.',
+        body: 'ShopLinkr is gemaakt voor webshopondernemers die simpel voorraad willen beheren, niet voor IT-specialisten. De interface spreekt vanzelf en je hoeft geen handleiding van honderd pagina\'s door om aan de slag te kunnen.',
+        icon: 'fa-solid fa-user-check',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Simpel voorraadbeheer - ShopLinkr',
+    description: 'Ben je op zoek naar een efficiënte manier om je voorraad te beheren zonder gedoe? Ontdek ShopLinkr, de ultieme oplossing voor simpel voorraadbeheer.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Simpel voorraadbeheer - ShopLinkr"
+    description="Ben je op zoek naar een efficiënte manier om je voorraad te beheren zonder gedoe? Ontdek ShopLinkr, de ultieme oplossing voor simpel voorraadbeheer."
+    eyebrow="Simpel voorraadbeheer"
+    heading="Simpel voorraadbeheer, écht zonder gedoe."
+    subheading="Ben je op zoek naar een efficiënte manier om je voorraad te beheren zonder gedoe? ShopLinkr maakt voorraadbeheer zo simpel als het hoort te zijn."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Waarom ShopLinkr</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    De voordelen van simpel voorraadbeheer.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Voorraadbeheer hoeft niet ingewikkeld te zijn. ShopLinkr neemt het handwerk uit handen en houdt je voorraad realtime kloppend op al je verkoopkanalen, zodat je je weer kunt richten op groeien.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

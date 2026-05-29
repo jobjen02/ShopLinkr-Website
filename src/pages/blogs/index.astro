@@ -1,0 +1,136 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import BlogCard from '../../components/template/BlogCard.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+
+const blogs = await getCollection('blogs');
+const sorted = blogs
+    .filter((b) => b.data.isVisible && b.data.isBlog)
+    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const [featured, ...rest] = sorted;
+
+const featuredDate = featured
+    ? new Intl.DateTimeFormat('nl-NL', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    }).format(featured.data.publishedAt)
+    : null;
+
+const jsonLd = {
+    '@type': 'Blog',
+    name: 'ShopLinkr Blog',
+    description: 'Praktische artikelen over voorraadbeheer, picklijsten, multi-channel verkoop en meer.',
+    url: 'https://shoplinkr.com/blogs',
+    publisher: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+        },
+    },
+    blogPost: sorted.slice(0, 10).map((post) => ({
+        '@type': 'BlogPosting',
+        headline: post.data.title,
+        url: `https://shoplinkr.com/blogs/${post.id}`,
+        datePublished: post.data.publishedAt.toISOString(),
+    })),
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Blog | ShopLinkr"
+    description="Praktische artikelen over voorraadbeheer, picklijsten, multi-channel verkoop en meer."
+    eyebrow="Blog"
+    heading="Tips voor jouw magazijnoperatie."
+    subheading="Praktische artikelen over voorraadbeheer, picklijsten, multi-channel verkoop en meer."
+    jsonLd={jsonLd}
+>
+    {featured && (
+        <section class="pb-16 md:pb-20 bg-paper">
+            <div class="container-prose">
+                <a
+                    href={`/blogs/${featured.id}`}
+                    class="group grid gap-8 lg:grid-cols-12 lg:gap-12 items-center"
+                >
+                    <div class="lg:col-span-7 overflow-hidden rounded-2xl bg-chalk-light ring-1 ring-chalk-dark aspect-video lg:aspect-[16/10]">
+                        {featured.data.image ? (
+                            <img
+                                src={featured.data.image}
+                                alt={featured.data.imageAlt ?? featured.data.title}
+                                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                                loading="eager"
+                            />
+                        ) : (
+                            <div class="h-full w-full flex items-center justify-center bg-gradient-to-br from-chalk-light to-sunstone-mist/40">
+                                <i class="fa-solid fa-newspaper text-5xl text-sunstone-deep/40" aria-hidden="true"></i>
+                            </div>
+                        )}
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="flex items-center gap-2.5 text-xs">
+                            {featured.data.category && (
+                                <>
+                                    <span class="eyebrow !text-sunstone-deep">{featured.data.category}</span>
+                                    <span class="text-chalk-darker" aria-hidden="true">·</span>
+                                </>
+                            )}
+                            <time
+                                datetime={featured.data.publishedAt.toISOString()}
+                                class="text-gravel font-medium"
+                            >
+                                {featuredDate}
+                            </time>
+                        </div>
+
+                        <h2 class="mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] group-hover:text-sunstone-deep transition-colors">
+                            {featured.data.title}
+                        </h2>
+
+                        <p class="mt-5 text-base md:text-lg text-steel leading-relaxed">
+                            {featured.data.excerpt}
+                        </p>
+
+                        <span class="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep group-hover:gap-2.5 transition-all">
+                            Lees verder
+                            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    )}
+
+    {rest.length > 0 && (
+        <section class="pb-24 md:pb-32 bg-paper">
+            <div class="container-prose">
+                <div class="border-t border-chalk-dark pt-12 md:pt-16">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-10">
+                        Meer artikelen
+                    </h2>
+                    <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                        {rest.map((blog) => (
+                            <BlogCard
+                                title={blog.data.title}
+                                excerpt={blog.data.excerpt}
+                                publishedAt={blog.data.publishedAt}
+                                image={blog.data.image}
+                                imageAlt={blog.data.imageAlt}
+                                slug={blog.id}
+                                category={blog.data.category}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    )}
+
+    <CtaBanner />
+</PageLayout>

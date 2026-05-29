@@ -1,0 +1,22 @@
+---
+interface Props {
+    schema: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const { schema } = Astro.props;
+const payload = Array.isArray(schema)
+    ? schema
+    : [schema];
+---
+
+{
+    payload.map((item) => (
+        <script
+            type="application/ld+json"
+            set:html={JSON.stringify({
+                '@context': 'https://schema.org',
+                ...item,
+            })}
+        />
+    ))
+}

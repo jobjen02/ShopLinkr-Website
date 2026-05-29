@@ -1,0 +1,425 @@
+---
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import IntegrationCard from '../../components/template/IntegrationCard.astro';
+import FaqList from '../../components/template/FaqList.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const integrations = await getCollection('integrations');
+    return integrations.map((integration) => ({
+        params: {
+            slug: integration.data.slug,
+        },
+        props: {
+            integration,
+            allIntegrations: integrations,
+        },
+    }));
+};
+
+const { integration, allIntegrations } = Astro.props;
+const {
+    name,
+    category,
+    logo,
+    summary,
+    status,
+    url,
+    supportSlug,
+    tagline,
+    about,
+    faqs,
+} = integration.data;
+
+const categoryLabels: Record<string, string> = {
+    webshop: 'Webshop',
+    marketplace: 'Marketplace',
+    carrier: 'Vervoerder',
+    other: 'Overig',
+};
+
+const categoryLabel = categoryLabels[category] ?? category;
+const isCarrier = category === 'carrier';
+const isComingSoon = status === 'coming-soon';
+
+const relatedHeading = isCarrier
+    ? 'Andere vervoerders'
+    : category === 'marketplace'
+        ? 'Andere marketplaces'
+        : category === 'webshop'
+            ? 'Andere webshops'
+            : 'Andere integraties';
+
+const related = allIntegrations
+    .filter((i) => i.data.category === category && i.data.slug !== integration.data.slug)
+    .slice(0, 3);
+
+const effectiveTagline = tagline ?? `Koppel ${name} aan ShopLinkr in een paar minuten.`;
+
+const aboutFallback = isCarrier
+    ? `${name} is een van de vervoerders die je via ShopLinkr direct kunt aansturen. Print labels in seconden, stuur tracking automatisch terug naar je klanten, en verwerk je zendingen vanuit dezelfde picklijst.`
+    : category === 'webshop'
+        ? `${name} is een populair webshop-platform. Met de ShopLinkr-koppeling synchroniseer je voorraad, importeer je orders automatisch en print je labels vanuit dezelfde flow.`
+        : `${name} is een verkoopkanaal dat naadloos in je ShopLinkr-omgeving past. Bestellingen komen automatisch binnen en je voorraad blijft realtime kloppend.`;
+
+const effectiveAbout = about ?? aboutFallback;
+
+const benefits = isCarrier
+    ? [
+        {
+            icon: 'fa-duotone fa-solid fa-print',
+            title: 'Labels in seconden',
+            body: `Print ${name}-labels direct vanuit je picklijst. Adres, gewicht en orderregels staan al ingevuld, je hoeft niets meer over te typen.`,
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-route',
+            title: 'Tracking terug naar de klant',
+            body: 'Zodra het label geprint is, gaat de track and trace automatisch terug naar je webshop en marketplaces. Je klant ziet de status zonder dat jij iets hoeft te doen.',
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-bolt',
+            title: 'Slimme keuze per order',
+            body: 'Stel regels in zodat ShopLinkr automatisch de juiste vervoerder kiest per order. Op gewicht, postcode, kanaal of producttype.',
+        },
+    ]
+    : [
+        {
+            icon: 'fa-duotone fa-solid fa-arrows-rotate',
+            title: 'Realtime orderimport',
+            body: `Bestellingen van ${name} verschijnen automatisch in ShopLinkr binnen een minuut nadat ze geplaatst zijn. Geen handmatige exports meer.`,
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-boxes-stacked',
+            title: 'Voorraad altijd in sync',
+            body: `Verkoop je via ${name} of buiten ${name} om, ShopLinkr houdt je voorraad realtime synchroon over alle verkoopkanalen. Geen oversells meer.`,
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-truck-fast',
+            title: 'Verzendlabels uit dezelfde flow',
+            body: `Pick je order en print het label bij je voorkeurs-vervoerder. ${name} importeert automatisch de track and trace.`,
+        },
+    ];
+
+const quickFacts = [
+    {
+        icon: 'fa-solid fa-circle-check',
+        label: isComingSoon ? 'Binnenkort live' : 'Live koppeling',
+    },
+    {
+        icon: 'fa-solid fa-arrows-rotate',
+        label: 'Realtime sync',
+    },
+    {
+        icon: 'fa-solid fa-money-bill-wave',
+        label: 'Geen setup-kosten',
+    },
+    {
+        icon: 'fa-solid fa-stopwatch',
+        label: 'Klaar in 2 minuten',
+    },
+];
+
+const integrationSchema = {
+    '@type': 'WebPage',
+    name: `${name} koppelen aan ShopLinkr`,
+    description: summary,
+    url: `https://shoplinkr.com/integraties/${integration.data.slug}`,
+};
+
+const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://shoplinkr.com',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Integraties',
+            item: 'https://shoplinkr.com/integraties',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: `${name} koppelen aan ShopLinkr`,
+            item: `https://shoplinkr.com/integraties/${integration.data.slug}`,
+        },
+    ],
+};
+
+const faqSchema = faqs && faqs.length > 0
+    ? {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.a,
+            },
+        })),
+    }
+    : null;
+
+const jsonLd = faqSchema
+    ? [integrationSchema, breadcrumbSchema, faqSchema]
+    : [integrationSchema, breadcrumbSchema];
+
+export const prerender = true;
+---
+
+<BaseLayout
+    title={`${name} koppelen aan ShopLinkr | Integraties`}
+    description={summary}
+    jsonLd={jsonLd}
+>
+    <section class="relative bg-paper overflow-hidden">
+        <div class="absolute inset-x-0 top-0 -z-0 pointer-events-none h-[600px]">
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] opacity-60"></div>
+        </div>
+
+        <div class="container-prose pt-10 md:pt-14 pb-20 md:pb-28 relative">
+            <a
+                href="/integraties"
+                class="inline-flex items-center gap-2 text-sm text-gravel hover:text-charcoal transition-colors mb-10"
+            >
+                <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
+                Terug naar alle integraties
+            </a>
+
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <aside class="lg:col-span-4 order-2">
+                    <div class="lg:sticky lg:top-24 space-y-5">
+                        <div class="bg-chalk-light/60 rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="h-16 w-16 rounded-xl bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                    <img
+                                        src={logo}
+                                        alt={`${name} logo`}
+                                        class="h-full w-full object-contain p-2.5"
+                                    />
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-[11px] uppercase tracking-[0.18em] text-gravel font-semibold mb-1">
+                                        {categoryLabel}
+                                    </p>
+                                    {isComingSoon ? (
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
+                                            Binnenkort
+                                        </span>
+                                    ) : (
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-paper text-charcoal text-[10px] font-semibold uppercase tracking-wider ring-1 ring-chalk-dark">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                            Live
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            <ul class="space-y-2.5 pb-5 mb-5 border-b border-chalk-dark">
+                                {
+                                    quickFacts.map((fact) => (
+                                        <li class="flex items-center gap-2.5 text-[13px] text-charcoal">
+                                            <i class={`${fact.icon} text-xs text-sunstone-deep`} aria-hidden="true"></i>
+                                            {fact.label}
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+
+                            <div class="space-y-2">
+                                {supportSlug && (
+                                    <a
+                                        href={`/support/${supportSlug}`}
+                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-sunstone-soft hover:bg-sunstone-mist/30 px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                    >
+                                        <span class="inline-flex items-center gap-2.5">
+                                            <i class="fa-solid fa-book-open text-xs text-sunstone-deep" aria-hidden="true"></i>
+                                            Lees de handleiding
+                                        </span>
+                                        <i class="fa-solid fa-arrow-right text-[10px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                                {url && (
+                                    <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-chalk-darker px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                    >
+                                        <span class="inline-flex items-center gap-2.5">
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gravel" aria-hidden="true"></i>
+                                            Bezoek {name}
+                                        </span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 px-1">
+                            <a
+                                href={externalLinks.register}
+                                class="btn btn-sunstone text-sm w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Gratis starten
+                                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                            <a
+                                href={externalLinks.demoBooking}
+                                class="btn btn-secondary text-sm w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Demo inplannen
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="lg:col-span-8 order-1">
+                    <header class="pb-14 md:pb-16">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                            Koppelen met {name}.
+                        </h1>
+                        <p class="mt-5 text-base md:text-lg text-steel leading-relaxed max-w-2xl">
+                            {effectiveTagline}
+                        </p>
+                        <p class="mt-3 text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                            {summary}
+                        </p>
+                    </header>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">Over {name}</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5">
+                            Wat is {name}?
+                        </h2>
+                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                            {effectiveAbout}
+                        </p>
+                    </section>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">Wat krijg je</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                            Drie pijlers waar je dagelijks profijt van hebt.
+                        </h2>
+
+                        <ul class="space-y-5 md:space-y-6">
+                            {
+                                benefits.map((benefit) => (
+                                    <li class="flex items-start gap-5">
+                                        <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                            <i class={`${benefit.icon} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pt-0.5">
+                                            <h3 class="text-base md:text-lg font-semibold text-charcoal mb-1.5 tracking-tight leading-snug">
+                                                {benefit.title}
+                                            </h3>
+                                            <p class="text-sm md:text-[15px] text-steel leading-relaxed max-w-2xl">
+                                                {benefit.body}
+                                            </p>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </section>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">Aan de slag</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5 max-w-2xl">
+                            Klaar om {name} te koppelen?
+                        </h2>
+                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl mb-8">
+                            De koppeling staat in een paar minuten en je hoeft geen technische kennis te hebben. We hebben een complete handleiding gemaakt die je stap voor stap door het proces loopt, inclusief screenshots en antwoorden op de meest gestelde vragen.
+                        </p>
+
+                        {supportSlug ? (
+                            <a
+                                href={`/support/${supportSlug}`}
+                                class="group flex items-center gap-5 bg-charcoal text-paper rounded-xl p-6 md:p-7 hover:bg-charcoal/95 transition-all duration-200"
+                            >
+                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-paper/10 text-paper flex-shrink-0">
+                                    <i class="fa-solid fa-book-open text-base" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-[10px] uppercase tracking-[0.18em] text-paper/60 font-semibold mb-0.5">
+                                        Handleiding
+                                    </p>
+                                    <p class="text-base md:text-lg font-semibold leading-snug">
+                                        Open de stap-voor-stap handleiding voor {name}
+                                    </p>
+                                </div>
+                                <i class="fa-solid fa-arrow-right text-sm text-paper/70 group-hover:text-paper group-hover:translate-x-0.5 transition-all" aria-hidden="true"></i>
+                            </a>
+                        ) : (
+                            <a
+                                href="/support"
+                                class="group inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                            >
+                                Bekijk onze handleidingen in het helpcentrum
+                                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+                            </a>
+                        )}
+                    </section>
+
+                    {faqs && faqs.length > 0 && (
+                        <section class="border-t border-chalk-dark py-14 md:py-16">
+                            <p class="eyebrow mb-3">Veelgestelde vragen</p>
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                                Vragen over de {name}-koppeling.
+                            </h2>
+
+                            <FaqList
+                                items={faqs.map((faq) => ({
+                                    question: faq.q,
+                                    answer: faq.a,
+                                }))}
+                            />
+                        </section>
+                    )}
+
+                    {related.length > 0 && (
+                        <section class="border-t border-chalk-dark pt-14 md:pt-16">
+                            <p class="eyebrow mb-3">Meer integraties</p>
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10">
+                                {relatedHeading}.
+                            </h2>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                {related.map((i) => (
+                                    <IntegrationCard
+                                        {...i.data}
+                                        href={`/integraties/${i.data.slug}`}
+                                    />
+                                ))}
+                            </div>
+
+                            <div class="mt-8">
+                                <a
+                                    href="/integraties"
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                >
+                                    Bekijk alle integraties
+                                    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </section>
+                    )}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</BaseLayout>

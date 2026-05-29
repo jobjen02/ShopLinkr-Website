@@ -1,0 +1,124 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Klantoverzicht',
+        heading: 'Alle klanten op één centrale plek.',
+        body: 'Of een klant nu via Bol, je eigen webshop of een andere marketplace bestelt, je ziet alles in één profiel. Geen losse lijstjes meer per kanaal en geen klanten die je dubbel hebt staan.',
+        icon: 'fa-solid fa-user',
+    },
+    {
+        eyebrow: 'Adressen',
+        heading: 'Verzend- en factuuradressen direct bewerken.',
+        body: 'Een typefout of een nieuw adres voor een vaste klant pas je rechtstreeks aan in ShopLinkr. Je hoeft niet langer per marketplace in een andere omgeving te duiken om iets recht te zetten.',
+        icon: 'fa-solid fa-location-dot',
+    },
+    {
+        eyebrow: 'Klantinformatie',
+        heading: 'Alles wat je nodig hebt in één scherm.',
+        body: 'Open een klantkaart en je ziet meteen contactgegevens, bestelhistorie en openstaande zaken. Vragen over een bestelling beantwoord je sneller en je voorkomt fouten in adressen of verzending.',
+        icon: 'fa-solid fa-id-card',
+    },
+    {
+        eyebrow: 'Multi-channel',
+        heading: 'Eén klantbeeld over al je kanalen heen.',
+        body: 'Zie meteen via welke kanalen een klant eerder besteld heeft en hoe vaak. Zo behandel je je beste klant als een beste klant, ongeacht waar de eerste bestelling vandaan kwam.',
+        icon: 'fa-solid fa-layer-group',
+    },
+    {
+        eyebrow: 'Bestelhistorie',
+        heading: 'Direct afhandelen vanuit het klantbeeld.',
+        body: 'Vanuit hetzelfde scherm waar je de klant ziet, handel je openstaande orders af en stuur je een correctie door. Geen schakelen tussen klanten- en bestellingenoverzicht.',
+        icon: 'fa-solid fa-clock-rotate-left',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Klanten | ShopLinkr',
+    description: 'Efficiënt Klantbeheer in ShopLinkr: Leer hoe je verzendadressen beheert en klantinformatie inziet voor een naadloze orderafhandeling met ShopLinkr’s klantbeheerfuncties.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Klanten beheren met ShopLinkr"
+    description="Efficiënt Klantbeheer in ShopLinkr: Leer hoe je verzendadressen beheert en klantinformatie inziet voor een naadloze orderafhandeling met ShopLinkr's klantbeheerfuncties."
+    eyebrow="Klantbeheer"
+    heading="Alle klanten op één plek."
+    subheading="Of een bestelling nu via je eigen webshop, Bol of een andere marketplace binnenkomt: in ShopLinkr werk je vanuit één klantbeeld en handel je orders snel en netjes af."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Eén klantoverzicht</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Eén centraal beeld van iedere klant.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Klanten bestellen niet meer via één kanaal. Vandaag via je webshop, morgen via Bol. ShopLinkr brengt al die contactmomenten samen in één klantkaart, zonder te schakelen tussen platformen.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

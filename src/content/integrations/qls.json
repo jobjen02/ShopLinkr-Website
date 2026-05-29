@@ -1,0 +1,17 @@
+{
+    "name": "QLS",
+    "slug": "qls",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/QLS.jpg",
+    "summary": "Print QLS-labels rechtstreeks vanuit je picklijst. Inclusief automatische tracking terug naar je webshop.",
+    "supportSlug": "qls-koppelen",
+    "tagline": "Passie voor e-commerce",
+    "about": "QLS is één van de snelst groeiende bedrijven in e-commercelogistiek in de Benelux. Door webshops volledig te ontzorgen met fulfilment, pakketdienst en slimme software (my.QLS), helpt QLS ondernemers hun logistiek te optimaliseren en moeiteloos op te schalen. Meer dan 1.500 webshops hebben al voor QLS gekozen als strategische partner. QLS biedt complete e-commerce logistiek: Fulfilment, Pakketdienst, Software.",
+    "faqs": [
+        {
+            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij QLS. De adresgegevens kun je indien gewenst handmatig aanpassen."
+        }
+    ]
+}

@@ -1,0 +1,190 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const stories = [
+    {
+        eyebrow: 'Realtime voorraadbeheer',
+        heading: 'Nooit meer misgrijpen op een product.',
+        body: 'Heb je ooit misgegrepen op een product? De klant verwacht het product morgen in huis te hebben, maar jij hebt het niet eens in je magazijn liggen. Je neemt contact op met de klant en moet hem teleurstellen dat het morgen niet geleverd kan worden. Dit wil je nooit meemaken als verkoper. Dit kun je voorkomen door ShopLinkr te gebruiken. Elke minuut halen wij namelijk alle bestellingen op, hierdoor hebben we een accuraat beeld van je voorraad en kunnen we dit eenvoudig doorgeven aan je verkoopkanalen.',
+        icon: 'fa-duotone fa-solid fa-arrows-rotate',
+        visualLabel: 'Realtime sync',
+    },
+    {
+        eyebrow: 'Voorraad prognose',
+        heading: 'Weet op tijd wanneer je moet inkopen.',
+        body: 'Heb jij er ook moeite mee te berekenen wanneer een product uitverkocht raakt? Dit is verleden tijd. ShopLinkr berekent wanneer je voorraad uitverkocht raakt op basis van verkopen van de afgelopen X dagen. Op deze manier weet jij wanneer je product uitverkocht raakt en wanneer je moet gaan inkopen.',
+        icon: 'fa-duotone fa-solid fa-chart-line',
+        visualLabel: 'Voorraadprognose',
+    },
+    {
+        eyebrow: 'Nauwkeurig inzicht',
+        heading: 'Zie precies waarom je voorraad zo laag is.',
+        body: 'Vraag jij je wel eens af waarom je voorraad zo laag is? Dat je even niet meer weet waarom de voorraad van een product opeens 0 is? Geen zorgen. In ShopLinkr zie je precies wat er gebeurt en waarom een product een bepaalde voorraad heeft.',
+        icon: 'fa-duotone fa-solid fa-magnifying-glass-chart',
+        visualLabel: 'Voorraadhistorie',
+    },
+    {
+        eyebrow: 'Locaties beheren',
+        heading: 'Een goede basis begint bij locaties.',
+        body: 'Heb jij een groot magazijn of juist een kleine? Het maakt niet uit, want groot of klein, het begint bij een goede basis: de locaties van je producten. Waar liggen je producten? Kan iemand direct beginnen als die jouw magazijn voor het eerst ziet? Bij ShopLinkr geloven we erin dat voorraadlocaties bijhouden een van de belangrijkste dingen is bij het hebben van een eigen voorraad. Je kunt een hiërarchie maken van locaties en hier producten aan koppelen. Je ziet op de bestellingenpagina en in de pick & pack lijst waar je het product moet picken in je magazijn.',
+        icon: 'fa-duotone fa-solid fa-location-dot',
+        visualLabel: 'Locaties hiërarchie',
+    },
+    {
+        eyebrow: 'Fictieve voorraad',
+        heading: 'Houd je concurrenten in het ongewisse.',
+        body: 'Vind jij het ook zo vervelend dat andere verkopers precies kunnen zien hoeveel voorraad je hebt van je producten? Of dat spiders en crawlers continu je productinformatie scannen om te achterhalen hoe vaak je iets verkoopt? Dat begrijpen we helemaal. Stel in ShopLinkr in dat er een fictieve voorraad van bijvoorbeeld 300 stuks wordt doorgegeven aan je webshop, zolang je eigen voorraad minimaal 4 stuks bedraagt. Daalt je voorraad tot 4 stuks of minder? Dan schakelen we automatisch over naar je echte voorraad, zodat je geen producten verkoopt die je niet op voorraad hebt.',
+        icon: 'fa-duotone fa-solid fa-eye-slash',
+        visualLabel: 'Fictief vs werkelijk',
+    },
+    {
+        eyebrow: 'LVB switch',
+        heading: 'Automatisch overschakelen naar je eigen magazijn.',
+        body: 'Vind jij het ook zo vervelend wanneer een product op uitverkocht komt te staan zodra je LVB-voorraad op is, terwijl je in je eigen magazijn nog genoeg voorraad hebt liggen? Met ShopLinkr voorkom je dit probleem. Je kunt eenvoudig instellen dat zodra de LVB-voorraad op is, de locatie automatisch wordt overgezet naar je eigen magazijn, inclusief jouw levertijd. Zo blijft je product beschikbaar voor verkoop en voorkom je misgelopen omzet.',
+        icon: 'fa-duotone fa-solid fa-shuffle',
+        visualLabel: 'LVB switch',
+    },
+];
+
+const stockTypes = [
+    {
+        title: 'Beschikbare voorraad',
+        body: 'Dit is de voorraad die beschikbaar is voor verkoop.',
+    },
+    {
+        title: 'Gereserveerde voorraad',
+        body: 'Dit is de voorraad die gereserveerd is voor openstaande bestellingen.',
+    },
+    {
+        title: 'Totale voorraad',
+        body: 'Dit is de som van de beschikbare en gereserveerde voorraad. Loop je in je magazijn naar dit product, dan zie je deze voorraad liggen.',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Voorraad beheren met ShopLinkr',
+    description: 'Verbeter je voorraadbeheer met ShopLinkr. Beheer en synchroniseer je voorraad vanuit één plek. Ontdek handige functies zoals product bundels, voorraad notificaties, voorraad prognoses en fictieve voorraad.',
+};
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Voorraad beheren met ShopLinkr"
+    description="Verbeter je voorraadbeheer met ShopLinkr. Beheer en synchroniseer je voorraad vanuit één plek. Ontdek handige functies zoals product bundels, voorraad notificaties, voorraad prognoses en fictieve voorraad."
+    eyebrow="Voorraadbeheer"
+    heading="Op één plek al je voorraad beheren."
+    subheading="Realtime synchronisatie tussen ShopLinkr en je verkoopkanalen. Geen oversells, geen handmatige correcties, altijd een accuraat beeld van wat er ligt."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-paper">
+        <div class="container-prose">
+            {
+                stories.map((story, index) => {
+                    const isReversed = index % 2 === 1;
+
+                    return (
+                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
+                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
+                                    <div
+                                        class="relative w-full rounded-3xl overflow-hidden bg-chalk-light ring-1 ring-chalk-dark"
+                                        style="aspect-ratio: 4 / 3;"
+                                    >
+                                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-10 text-center">
+                                            <div class="flex items-center justify-center h-20 w-20 rounded-2xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)]">
+                                                <i class={`${story.icon} text-3xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold mb-2">
+                                                    Visual: {story.visualLabel}
+                                                </p>
+                                                <p class="text-sm text-gravel max-w-[32ch]">
+                                                    Hier komt later een echte screenshot uit ShopLinkr.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
+                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
+                                        {story.heading}
+                                    </h2>
+                                    <p class="text-lg text-steel leading-relaxed">
+                                        {story.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    );
+                })
+            }
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Soorten voorraad</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Drie soorten voorraad,
+                        <span class="block text-sunstone-deep">één duidelijk overzicht.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        In ShopLinkr werken we met drie soorten voorraad zodat je precies weet wat beschikbaar is, wat al gereserveerd is en wat er werkelijk op je schap ligt.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            stockTypes.map((type) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-boxes-stacked text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>
