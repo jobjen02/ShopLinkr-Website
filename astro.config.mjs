@@ -59,7 +59,7 @@ export default defineConfig({
                     };
                 }
 
-                if (url.includes('/privacy') || url.includes('/voorwaarden') || url.includes('/cookies')) {
+                if (url.includes('/cookies')) {
                     return {
                         ...item,
                         priority: 0.3,

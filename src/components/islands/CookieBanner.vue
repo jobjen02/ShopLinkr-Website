@@ -259,7 +259,7 @@ onBeforeUnmount(() => {
                     Lees meer in ons
                     <a href="/cookies" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">cookiebeleid</a>
                     en
-                    <a href="/privacy" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">privacybeleid</a>.
+                    <a href="https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf" target="_blank" rel="noopener noreferrer" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">privacyverklaring</a>.
                 </p>
 
                 <div class="mt-5 flex flex-col gap-2">

@@ -1,5 +1,6 @@
 ---
 import NewsletterSignup from '../islands/NewsletterSignup.vue';
+import { externalLinks } from '../../data/externalLinks';
 
 const sections = [
     {
@@ -202,16 +203,20 @@ const year = new Date().getFullYear();
             <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
                 <p>© {year} ShopLinkr. Alle rechten voorbehouden.</p>
                 <a
-                    href="/privacy"
+                    href={externalLinks.privacyPdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="hover:text-charcoal transition-colors"
                 >
-                    Privacybeleid
+                    Privacyverklaring
                 </a>
                 <a
-                    href="/voorwaarden"
+                    href={externalLinks.termsPdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="hover:text-charcoal transition-colors"
                 >
-                    Voorwaarden
+                    Algemene voorwaarden
                 </a>
                 <a
                     href="/cookies"
