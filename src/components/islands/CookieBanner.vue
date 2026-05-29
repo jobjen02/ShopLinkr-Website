@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
 interface CookieConsent {
     necessary: true;
@@ -10,12 +10,15 @@ interface CookieConsent {
 }
 
 const STORAGE_KEY = 'shoplinkr-cookie-consent';
+const REOPEN_EVENT = 'cookie-banner-reopen';
+const UPDATED_EVENT = 'cookie-consent-updated';
 const CONSENT_VERSION = 1;
 
 const isVisible = ref(false);
 const showDetails = ref(false);
 const analyticsEnabled = ref(false);
 const marketingEnabled = ref(false);
+let initialOpenTimer: number | null = null;
 
 function readConsent(): CookieConsent | null {
     if (typeof window === 'undefined') {
@@ -41,51 +44,51 @@ function readConsent(): CookieConsent | null {
     }
 }
 
-function writeConsent(consent: CookieConsent): void {
+function writeConsent(consent: CookieConsent): boolean {
     try {
         window.localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
-        window.dispatchEvent(new CustomEvent('cookie-consent-updated', {
+        window.dispatchEvent(new CustomEvent(UPDATED_EVENT, {
             detail: consent,
         }));
+        return true;
     } catch {
-        // localStorage geblokkeerd: niets te doen, banner blijft niet meer terugkomen door state
+        return false;
     }
 }
 
+function closeWith(consent: CookieConsent): void {
+    writeConsent(consent);
+    isVisible.value = false;
+}
+
 function acceptAll(): void {
-    const consent: CookieConsent = {
+    closeWith({
         necessary: true,
         analytics: true,
         marketing: true,
         timestamp: Date.now(),
         version: CONSENT_VERSION,
-    };
-    writeConsent(consent);
-    isVisible.value = false;
+    });
 }
 
 function rejectAll(): void {
-    const consent: CookieConsent = {
+    closeWith({
         necessary: true,
         analytics: false,
         marketing: false,
         timestamp: Date.now(),
         version: CONSENT_VERSION,
-    };
-    writeConsent(consent);
-    isVisible.value = false;
+    });
 }
 
 function saveCustom(): void {
-    const consent: CookieConsent = {
+    closeWith({
         necessary: true,
         analytics: analyticsEnabled.value,
         marketing: marketingEnabled.value,
         timestamp: Date.now(),
         version: CONSENT_VERSION,
-    };
-    writeConsent(consent);
-    isVisible.value = false;
+    });
 }
 
 function toggleDetails(): void {
@@ -101,18 +104,24 @@ const summary = computed(() => {
         return 'Je accepteert alleen noodzakelijke cookies.';
     }
 
-    const parts: Array<string> = ['noodzakelijke cookies'];
-
-    if (analyticsEnabled.value) {
-        parts.push('analytische cookies');
+    if (analyticsEnabled.value && !marketingEnabled.value) {
+        return 'Je accepteert noodzakelijke en analytische cookies.';
     }
 
-    if (marketingEnabled.value) {
-        parts.push('marketing cookies');
-    }
-
-    return `Je accepteert ${parts.join(' en ')}.`;
+    return 'Je accepteert noodzakelijke en marketing cookies.';
 });
+
+function onReopen(): void {
+    const existing = readConsent();
+
+    if (existing) {
+        analyticsEnabled.value = existing.analytics;
+        marketingEnabled.value = existing.marketing;
+    }
+
+    showDetails.value = true;
+    isVisible.value = true;
+}
 
 onMounted(() => {
     const existing = readConsent();
@@ -121,12 +130,21 @@ onMounted(() => {
         analyticsEnabled.value = existing.analytics;
         marketingEnabled.value = existing.marketing;
         isVisible.value = false;
-        return;
+    } else {
+        initialOpenTimer = window.setTimeout(() => {
+            isVisible.value = true;
+        }, 600);
     }
 
-    window.setTimeout(() => {
-        isVisible.value = true;
-    }, 600);
+    window.addEventListener(REOPEN_EVENT, onReopen);
+});
+
+onBeforeUnmount(() => {
+    if (initialOpenTimer !== null) {
+        window.clearTimeout(initialOpenTimer);
+    }
+
+    window.removeEventListener(REOPEN_EVENT, onReopen);
 });
 </script>
 
@@ -142,7 +160,9 @@ onMounted(() => {
         <div
             v-if="isVisible"
             role="dialog"
-            aria-label="Cookie-instellingen"
+            aria-modal="false"
+            aria-labelledby="cookie-banner-title"
+            aria-describedby="cookie-banner-desc"
             class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 md:max-w-md z-[100] bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_24px_60px_-20px_rgba(25,25,25,0.25)] overflow-hidden"
         >
             <div class="p-6">
@@ -151,10 +171,10 @@ onMounted(() => {
                         <i class="fa-solid fa-cookie-bite text-sm" aria-hidden="true"></i>
                     </span>
                     <div>
-                        <h2 class="text-base font-semibold text-charcoal tracking-tight">
+                        <h2 id="cookie-banner-title" class="text-base font-semibold text-charcoal tracking-tight">
                             Cookies
                         </h2>
-                        <p class="mt-1 text-sm text-steel leading-relaxed">
+                        <p id="cookie-banner-desc" class="mt-1 text-sm text-steel leading-relaxed">
                             We gebruiken cookies om de site te laten werken en je ervaring te verbeteren. Kies wat je accepteert.
                         </p>
                     </div>

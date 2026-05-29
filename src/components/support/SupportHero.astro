@@ -4,9 +4,14 @@ import { externalLinks } from '../../data/externalLinks';
 interface Props {
     title: string;
     subtitle?: string;
+    showCtas?: boolean;
 }
 
-const { title, subtitle } = Astro.props;
+const {
+    title,
+    subtitle,
+    showCtas = true,
+} = Astro.props;
 ---
 
 <section class="relative bg-paper overflow-hidden">
@@ -25,25 +30,27 @@ const { title, subtitle } = Astro.props;
                 </p>
             )}
 
-            <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
-                <a
-                    href={externalLinks.register}
-                    class="btn btn-sunstone text-base"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Gratis Starten
-                </a>
-                <a
-                    href={externalLinks.demoBooking}
-                    class="inline-flex items-center justify-center gap-2 text-base font-semibold text-charcoal hover:text-sunstone-deep transition-colors px-6 py-3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Demo inplannen
-                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
-                </a>
-            </div>
+            {showCtas && (
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href={externalLinks.register}
+                        class="btn btn-sunstone text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Gratis starten
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="inline-flex items-center justify-center gap-2 text-base font-semibold text-charcoal hover:text-sunstone-deep transition-colors px-6 py-3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Demo inplannen
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                </div>
+            )}
         </div>
     </div>
 </section>

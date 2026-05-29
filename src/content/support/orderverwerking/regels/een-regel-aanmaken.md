@@ -32,7 +32,7 @@ lastUpdated: "2026-05-28"
 <p>Klik op <strong>Voorwaarde toevoegen</strong>.</p>
 </li>
 <li>
-<p>Kies het <strong>type</strong> voorwaarde. Je kunt kiezen uit tientallen opties, verdeeld over drie categorieen:</p>
+<p>Kies het <strong>type</strong> voorwaarde. Je kunt kiezen uit tientallen opties, verdeeld over drie categorieën:</p>
 <ul>
 <li>
 <p><strong>Klantgegevens (verzending)</strong>: naam, e-mail, adres, land, postcode, Waddeneilanden</p>

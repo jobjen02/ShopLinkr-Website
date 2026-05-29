@@ -4,14 +4,14 @@
     "category": "carrier",
     "status": "live",
     "logo": "/assets/carriers/bol.jpg",
-    "summary": "Verzenden via Bol (VVB) als vervoerder. Genereer verzendlabels van Bol direct vanuit ShopLinkr en verstuur pakketten via Bol's eigen netwerk.",
+    "summary": "Verzend met de scherpe tarieven van bol. Verzendlabels worden vanuit ShopLinkr aangevraagd en de bezorgverantwoordelijkheid ligt bij bol.",
     "url": "https://www.bol.com",
-    "tagline": "Verzenden zonder zorgen via bol",
-    "about": "bol biedt de dienst Verzenden via bol (VVB) aan, waarmee je kunt profiteren van scherpe verzendtarieven en handige voordelen. Met VVB heb je de mogelijkheid om gemakkelijk verzendlabels aan te maken voor je bestellingen via het platform van Bol. Een belangrijk voordeel is dat je niet verantwoordelijk wordt gehouden als de vervoerder een pakket niet op tijd bezorgt. Daarnaast worden de zendingen automatisch gevolgd en ontvang je ondersteuning bij problemen met de bezorging. Dit maakt het verzendproces niet alleen voordeliger, maar ook efficiënter en betrouwbaarder.",
+    "tagline": "Verzenden zonder zorgen via bol.",
+    "about": "Verzenden via bol (VVB) is een dienst van bol waarmee je gebruikmaakt van scherpe verzendtarieven via hun vervoerdersnetwerk. Een belangrijk voordeel is dat de bezorgverantwoordelijkheid bij bol ligt, dus als een pakket te laat is wordt jij daar niet op afgerekend. Zendingen worden automatisch gevolgd en bol staat klant voor je als er iets fout gaat met de bezorging.",
     "faqs": [
         {
             "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling ontvangen we een verzendlabel van Bol. De adresgegevens kunnen niet worden gewijzigd, omdat Bol deze zelf beheert."
+            "a": "Ja, op basis van de verzendgegevens van een bestelling ontvangen we een verzendlabel van bol. De adresgegevens kunnen niet worden gewijzigd, omdat bol deze zelf beheert."
         }
     ]
 }

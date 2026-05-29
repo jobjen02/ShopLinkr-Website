@@ -20,10 +20,37 @@ const carriers = all
 
 const totalCount = webshops.length + marketplaces.length + carriers.length;
 
+const popularCombinations = [
+    {
+        href: '/integraties/shopify-koppelen-aan-bol-com',
+        from: 'Shopify',
+        fromLogo: '/assets/webshops/Shopify.jpg',
+        to: 'bol',
+        toLogo: '/assets/marketplaces/bol.jpeg',
+        body: 'Voorraad realtime synchroon en al je orders in één lijst.',
+    },
+    {
+        href: '/integraties/woocommerce-koppelen-aan-bol-com',
+        from: 'WooCommerce',
+        fromLogo: '/assets/webshops/WooCommerce.png',
+        to: 'bol',
+        toLogo: '/assets/marketplaces/bol.jpeg',
+        body: 'WordPress plus bol, gekoppeld zonder losse plugins per kanaal.',
+    },
+    {
+        href: '/integraties/woocommerce-koppelen-aan-shopify',
+        from: 'WooCommerce',
+        fromLogo: '/assets/webshops/WooCommerce.png',
+        to: 'Shopify',
+        toLogo: '/assets/webshops/Shopify.jpg',
+        body: 'Twee shops, één voorraadbeeld. Ideaal voor parallelle merken.',
+    },
+];
+
 const jsonLd = {
     '@type': 'WebPage',
     name: 'Integraties | ShopLinkr',
-    description: 'ShopLinkr werkt met Bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in één klik kunt koppelen.',
+    description: 'ShopLinkr werkt met bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in een paar klikken koppelt.',
 };
 
 export const prerender = true;
@@ -31,28 +58,28 @@ export const prerender = true;
 
 <PageLayout
     title="Integraties | ShopLinkr"
-    description="ShopLinkr werkt met Bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in één klik kunt koppelen."
+    description="ShopLinkr werkt met bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in een paar klikken koppelt."
     eyebrow="Integraties"
     heading="Koppel je verkoopkanalen en vervoerders."
-    subheading="ShopLinkr werkt met de tools die jij al gebruikt. Van Bol tot PostNL, alles op één plek."
+    subheading="ShopLinkr werkt met de tools die jij al gebruikt. Van Shopify en bol tot PostNL en Sendcloud, alles op één plek."
     jsonLd={jsonLd}
 >
     <section class="py-20 md:py-28">
         <div class="container-prose">
             <div class="flex items-baseline justify-between flex-wrap gap-4 mb-12">
-                <p class="text-sm text-gravel">
+                <p class="text-sm text-gravel" aria-live="polite" data-result-count>
                     {totalCount} integraties beschikbaar
                 </p>
                 <div
                     class="inline-flex items-center gap-1 rounded-full bg-chalk-light ring-1 ring-chalk-dark p-1 text-sm"
-                    role="tablist"
-                    aria-label="Filter integraties"
+                    role="group"
+                    aria-label="Filter integraties op type"
                 >
                     <button
                         type="button"
                         class="filter-tab is-active px-4 py-1.5 rounded-full font-medium text-charcoal transition-colors"
                         data-filter="all"
-                        aria-selected="true"
+                        aria-pressed="true"
                     >
                         Alle
                     </button>
@@ -60,7 +87,7 @@ export const prerender = true;
                         type="button"
                         class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
                         data-filter="webshop"
-                        aria-selected="false"
+                        aria-pressed="false"
                     >
                         Webshops
                     </button>
@@ -68,7 +95,7 @@ export const prerender = true;
                         type="button"
                         class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
                         data-filter="marketplace"
-                        aria-selected="false"
+                        aria-pressed="false"
                     >
                         Marketplaces
                     </button>
@@ -76,7 +103,7 @@ export const prerender = true;
                         type="button"
                         class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
                         data-filter="carrier"
-                        aria-selected="false"
+                        aria-pressed="false"
                     >
                         Vervoerders
                     </button>
@@ -142,6 +169,60 @@ export const prerender = true;
         </div>
     </section>
 
+    <section class="pb-16 md:pb-20">
+        <div class="container-prose">
+            <div class="mb-10 md:mb-12">
+                <p class="eyebrow mb-3">Populaire combinaties</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight">
+                    Twee kanalen tegelijk, één workflow.
+                </h2>
+                <p class="mt-3 text-steel leading-relaxed max-w-2xl">
+                    Veel shops draaien al meerdere kanalen naast elkaar. Voor deze combinaties hebben we extra uitleg gemaakt over wat de koppeling concreet voor jou doet.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+                {popularCombinations.map((combo) => (
+                    <a
+                        href={combo.href}
+                        class="group relative block bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                    >
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <img
+                                    src={combo.fromLogo}
+                                    alt=""
+                                    class="h-full w-full object-contain p-1.5"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <i class="fa-solid fa-arrow-right-arrow-left text-xs text-gravel" aria-hidden="true"></i>
+                            <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <img
+                                    src={combo.toLogo}
+                                    alt=""
+                                    class="h-full w-full object-contain p-1.5"
+                                    loading="lazy"
+                                />
+                            </div>
+                        </div>
+                        <p class="eyebrow !text-gravel mb-1">Combinatie</p>
+                        <h3 class="text-base font-semibold text-charcoal tracking-tight">
+                            {combo.from} en {combo.to}
+                        </h3>
+                        <p class="mt-3 text-sm text-steel leading-relaxed">
+                            {combo.body}
+                        </p>
+                        <span class="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-charcoal group-hover:text-sunstone-deep transition-colors">
+                            Bekijk de koppeling
+                            <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                ))}
+            </div>
+        </div>
+    </section>
+
     <section class="pb-20 md:pb-28">
         <div class="container-prose">
             <div class="max-w-2xl mx-auto text-center rounded-2xl ring-1 ring-chalk-dark bg-chalk-light px-8 py-12">
@@ -159,9 +240,6 @@ export const prerender = true;
                     >
                         <i class="fa-solid fa-envelope text-xs" aria-hidden="true"></i>
                         Stuur ons een mail
-                    </a>
-                    <a href="/contact" class="btn btn-secondary text-sm">
-                        Neem contact op
                     </a>
                 </div>
             </div>
@@ -196,27 +274,69 @@ export const prerender = true;
 <script>
     const tabs = document.querySelectorAll<HTMLButtonElement>('.filter-tab');
     const groups = document.querySelectorAll<HTMLElement>('.integration-group');
+    const resultCount = document.querySelector<HTMLElement>('[data-result-count]');
 
-    tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-            const filter = tab.dataset.filter;
+    const totalByGroup: Record<string, number> = {};
+    groups.forEach((group) => {
+        const key = group.dataset.group ?? '';
+        const cards = group.querySelectorAll('[data-integration]').length;
+        totalByGroup[key] = cards;
+    });
+    const grandTotal = Object.values(totalByGroup).reduce((acc, n) => acc + n, 0);
 
-            tabs.forEach((t) => {
-                const active = t === tab;
-                t.classList.toggle('is-active', active);
-                t.setAttribute('aria-selected', active ? 'true' : 'false');
-                t.classList.toggle('text-charcoal', active);
-                t.classList.toggle('text-gravel', !active);
-            });
+    const labelFor = (filter: string, count: number): string => {
+        if (filter === 'webshop') {
+            return `${count} ${count === 1 ? 'webshop' : 'webshops'} beschikbaar`;
+        }
+        if (filter === 'marketplace') {
+            return `${count} ${count === 1 ? 'marketplace' : 'marketplaces'} beschikbaar`;
+        }
+        if (filter === 'carrier') {
+            return `${count} ${count === 1 ? 'vervoerder' : 'vervoerders'} beschikbaar`;
+        }
+        return `${count} integraties beschikbaar`;
+    };
 
-            groups.forEach((group) => {
-                if (filter === 'all') {
-                    group.classList.remove('is-hidden');
-                    return;
-                }
-                const matches = group.dataset.group === filter;
-                group.classList.toggle('is-hidden', !matches);
-            });
+    const applyFilter = (tab: HTMLButtonElement): void => {
+        const filter = tab.dataset.filter ?? 'all';
+
+        tabs.forEach((t) => {
+            const active = t === tab;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-pressed', active ? 'true' : 'false');
+            t.classList.toggle('text-charcoal', active);
+            t.classList.toggle('text-gravel', !active);
+        });
+
+        groups.forEach((group) => {
+            if (filter === 'all') {
+                group.classList.remove('is-hidden');
+                return;
+            }
+            const matches = group.dataset.group === filter;
+            group.classList.toggle('is-hidden', !matches);
+        });
+
+        if (resultCount) {
+            const count = filter === 'all'
+                ? grandTotal
+                : (totalByGroup[filter] ?? 0);
+            resultCount.textContent = labelFor(filter, count);
+        }
+    };
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => applyFilter(tab));
+
+        tab.addEventListener('keydown', (event) => {
+            if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+                return;
+            }
+            event.preventDefault();
+            const direction = event.key === 'ArrowRight' ? 1 : -1;
+            const next = tabs[(index + direction + tabs.length) % tabs.length];
+            next.focus();
+            applyFilter(next);
         });
     });
 </script>

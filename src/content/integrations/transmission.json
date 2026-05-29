@@ -4,5 +4,13 @@
     "category": "carrier",
     "status": "live",
     "logo": "/assets/carriers/TransMission.png",
-    "summary": "Geschikt voor grotere zendingen en pallets met TransMission. Labels en tracking in dezelfde flow als je pakketten."
+    "summary": "Geschikt voor grotere zendingen en pallets met TransMission. Labels en tracking in dezelfde flow als je pakketten.",
+    "tagline": "Stuk- en palletzendingen door heel Europa.",
+    "about": "TransMission is een Nederlandse vervoerder die zich richt op stuk- en palletzendingen, zowel binnen Nederland als door Europa. Door samenwerking in een Europees netwerk van regionale vervoerders is TransMission sterk in zendingen waarvoor een gewone pakketdienst te beperkt is. Denk aan grote dozen, pallets en zendingen met levertijd-afspraken.",
+    "faqs": [
+        {
+            "q": "Werkt TransMission ook voor reguliere pakketzendingen?",
+            "a": "TransMission richt zich met name op stuk- en palletzendingen. Voor reguliere pakketten gebruik je in ShopLinkr meestal een vervoerder als PostNL, DPD of GLS. Met een verzendregel kun je makkelijk per ordertype een andere vervoerder kiezen."
+        }
+    ]
 }

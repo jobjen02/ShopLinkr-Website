@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
+const UPSTREAM_TIMEOUT_MS = 8_000;
+
 const MAILCOACH_BASE_URL = process.env.MAILCOACH_BASE_URL
     ?? import.meta.env.MAILCOACH_BASE_URL
     ?? 'https://mailcoach.app';
@@ -17,10 +19,28 @@ function tokenPreview(token: string): string {
     const trimmed = token.trim();
     const hadWhitespace = trimmed !== token;
     const length = trimmed.length;
+
+    if (length < 8) {
+        return `(te kort, lengte ${length}${hadWhitespace ? ', let op: bevatte whitespace' : ''})`;
+    }
+
     const head = trimmed.slice(0, 4);
     const tail = trimmed.slice(-4);
 
     return `${head}...${tail} (lengte ${length}${hadWhitespace ? ', let op: bevatte whitespace' : ''})`;
+}
+
+function debugResponse(body: Record<string, unknown>): Response {
+    return new Response(
+        JSON.stringify(body, null, 2),
+        {
+            status: 200,
+            headers: {
+                'Content-Type': 'application/json',
+                'Cache-Control': 'no-store',
+            },
+        },
+    );
 }
 
 export const GET: APIRoute = async () => {
@@ -33,15 +53,12 @@ export const GET: APIRoute = async () => {
     const tokenInfo = tokenPreview(MAILCOACH_API_TOKEN);
 
     if (!MAILCOACH_API_TOKEN) {
-        return new Response(
-            JSON.stringify({
-                ok: false,
-                token: tokenInfo,
-                base_url: baseUrl,
-                hint: 'MAILCOACH_API_TOKEN is niet ingesteld in .env',
-            }, null, 2),
-            { status: 200, headers: { 'Content-Type': 'application/json' } },
-        );
+        return debugResponse({
+            ok: false,
+            token: tokenInfo,
+            base_url: baseUrl,
+            hint: 'MAILCOACH_API_TOKEN is niet ingesteld in .env',
+        });
     }
 
     try {
@@ -51,6 +68,7 @@ export const GET: APIRoute = async () => {
                 Authorization: `Bearer ${MAILCOACH_API_TOKEN.trim()}`,
                 Accept: 'application/json',
             },
+            signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
         });
 
         const text = await response.text();
@@ -62,27 +80,25 @@ export const GET: APIRoute = async () => {
             parsed = text;
         }
 
-        return new Response(
-            JSON.stringify({
-                ok: response.ok,
-                token: tokenInfo,
-                base_url: baseUrl,
-                check_url: checkUrl,
-                upstream_status: response.status,
-                upstream_body: parsed,
-            }, null, 2),
-            { status: 200, headers: { 'Content-Type': 'application/json' } },
-        );
+        return debugResponse({
+            ok: response.ok,
+            token: tokenInfo,
+            base_url: baseUrl,
+            check_url: checkUrl,
+            upstream_status: response.status,
+            upstream_body: parsed,
+        });
     } catch (error) {
-        return new Response(
-            JSON.stringify({
-                ok: false,
-                token: tokenInfo,
-                base_url: baseUrl,
-                check_url: checkUrl,
-                network_error: error instanceof Error ? error.message : String(error),
-            }, null, 2),
-            { status: 200, headers: { 'Content-Type': 'application/json' } },
-        );
+        const isTimeout = error instanceof DOMException && error.name === 'TimeoutError';
+
+        return debugResponse({
+            ok: false,
+            token: tokenInfo,
+            base_url: baseUrl,
+            check_url: checkUrl,
+            network_error: isTimeout
+                ? 'Upstream timeout'
+                : (error instanceof Error ? error.message : String(error)),
+        });
     }
 };

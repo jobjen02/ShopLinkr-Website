@@ -5,7 +5,7 @@ import { externalLinks } from '../data/externalLinks';
 
 const eventInfo = [
     {
-        label: 'Datum',
+        label: 'Editie',
         value: '20 en 21 januari 2026',
         icon: 'fa-solid fa-calendar-days',
     },
@@ -15,48 +15,48 @@ const eventInfo = [
         icon: 'fa-solid fa-location-dot',
     },
     {
-        label: 'Toegang',
-        value: 'Gratis voor professionals',
-        icon: 'fa-solid fa-ticket',
+        label: 'Volgende editie',
+        value: 'Plan een demo in tussendoor',
+        icon: 'fa-solid fa-arrow-right',
     },
 ];
 
 const reasons = [
     {
         eyebrow: 'Persoonlijk gesprek',
-        heading: 'Stel je vragen aan ons team.',
-        body: 'Loop langs voor een gesprek met de mensen achter ShopLinkr. Of je nu net begint met multi-channel verkoop of al een goed draaiende webshop runt, we kijken samen wat ShopLinkr voor jouw situatie kan betekenen.',
+        heading: 'Praat met ons team in dezelfde sfeer.',
+        body: 'Wat we op de Webwinkel Vakdagen het leukste vonden, doen we elke week via een online demo. Een gesprek over jouw werkstroom, je kanalen en wat ShopLinkr voor jouw situatie kan betekenen. Geen verkooppraatje, gewoon meedenken.',
         icon: 'fa-solid fa-comments',
     },
     {
         eyebrow: 'Live demo',
         heading: 'Zie ShopLinkr in actie.',
-        body: 'We laten je live zien hoe een verkoop op Bol direct je voorraad bijwerkt in Shopify of WooCommerce, hoe je picklijsten draait met locaties, en hoe je verzendlabels in bulk print. Geen verhaal, gewoon zien hoe het werkt.',
+        body: 'We laten je live zien hoe een verkoop op bol direct je voorraad bijwerkt in Shopify of WooCommerce, hoe je picklijsten draait met locaties en hoe je verzendlabels in bulk print. Geen verhaal, gewoon zien hoe het werkt.',
         icon: 'fa-solid fa-display',
     },
     {
-        eyebrow: 'Beursaanbieding',
-        heading: 'Speciale voorwaarden voor beursbezoekers.',
-        body: 'Spreek je ons op de beurs, dan delen we graag onze beursaanbieding met je. Een leuk extraatje voor iedereen die de stap naar slimmer voorraadbeheer wil maken.',
-        icon: 'fa-solid fa-gift',
+        eyebrow: 'Vrijblijvend starten',
+        heading: '14 dagen gratis uitproberen.',
+        body: 'Heb je het op de beurs gemist of wil je gewoon snel aan de slag? Maak een account aan en draai 14 dagen je eigen orders door ShopLinkr. Geen creditcard nodig, maandelijks opzegbaar.',
+        icon: 'fa-solid fa-bolt',
     },
 ];
 
 const jsonLd = {
     '@type': 'WebPage',
     name: 'Webwinkel Vakdagen 2026 - ShopLinkr',
-    description: 'Met ShopLinkr verwerk je eenvoudig bestellingen van al je webshops op één centrale plek. Bezoek ons op de Webwinkel Vakdagen 2026.',
+    description: 'We waren aanwezig op de Webwinkel Vakdagen 2026 in de Jaarbeurs Utrecht. Plan een demo in voor een persoonlijk gesprek over je voorraadbeheer.',
 };
 
 export const prerender = true;
 ---
 
 <PageLayout
-    title="Webwinkel vakdagen 2026 - ShopLinkr"
-    description="Met ShopLinkr verwerk je eenvoudig bestellingen van al je webshops op één centrale plek. Bezoek ons op de Webwinkel Vakdagen 2026."
+    title="Webwinkel Vakdagen 2026 - ShopLinkr"
+    description="We waren aanwezig op de Webwinkel Vakdagen 2026 in de Jaarbeurs Utrecht. Plan een demo in voor een persoonlijk gesprek over je voorraadbeheer."
     eyebrow="Webwinkel Vakdagen 2026"
-    heading="Kom langs op de Webwinkel Vakdagen 2026."
-    subheading="We zijn aanwezig in de Jaarbeurs Utrecht. Loop langs voor een demo, een goed gesprek en een speciale beursaanbieding voor nieuwe klanten."
+    heading="We waren erbij op de Webwinkel Vakdagen 2026."
+    subheading="Wat een geweldige editie. Bedankt voor alle goede gesprekken in de Jaarbeurs Utrecht. Wil je alsnog kennismaken? Plan een online demo in, dan praten we je rustig bij."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -86,9 +86,9 @@ export const prerender = true;
     <section class="py-16 md:py-20 bg-chalk-light">
         <div class="container-prose">
             <div class="max-w-4xl">
-                <p class="eyebrow mb-4">Event-informatie</p>
+                <p class="eyebrow mb-4">Terugblik</p>
                 <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-10">
-                    Tot snel in de Jaarbeurs.
+                    Bedankt voor de mooie editie.
                 </h2>
 
                 <div class="grid md:grid-cols-3 gap-6">
@@ -113,12 +113,12 @@ export const prerender = true;
     <section class="py-20 md:py-28 bg-paper">
         <div class="container-prose">
             <div class="max-w-3xl mb-12 md:mb-16">
-                <p class="eyebrow mb-4">Wat kun je verwachten</p>
+                <p class="eyebrow mb-4">Beurs gemist?</p>
                 <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                    Waarom je even bij ons langsloopt.
+                    Geen probleem, we praten je graag bij.
                 </h2>
                 <p class="mt-6 text-lg text-steel leading-relaxed">
-                    De Webwinkel Vakdagen zijn dé plek waar Nederlandse webshops samenkomen. We zijn er om kennis te maken, te laten zien hoe ShopLinkr werkt en met je mee te denken over jouw werkstroom.
+                    De Webwinkel Vakdagen 2026 zit erop, maar de gesprekken die we daar hadden voeren we het hele jaar door. Plan een online demo in, dan kijken we samen wat ShopLinkr voor jouw werkstroom kan doen.
                 </p>
             </div>
 
@@ -153,7 +153,7 @@ export const prerender = true;
 
             <div class="mt-16 max-w-3xl">
                 <p class="text-base text-steel leading-relaxed">
-                    Kan je niet wachten tot de beurs of red je het die dagen niet? Plan dan online een demo in. Dan praten we je nu al bij over wat ShopLinkr voor je kan betekenen.
+                    Liever direct aan de slag? Maak een account aan en start je gratis proefperiode van 14 dagen. Je hoeft geen creditcard achter te laten, en je kunt elk moment maandelijks opzeggen.
                 </p>
             </div>
         </div>

@@ -11,43 +11,43 @@ interface PickItem {
 
 const items: Array<PickItem> = [
     {
-        product: 'XXL Omega 3',
-        sku: '8719881006231',
+        product: 'Omega 3 capsules',
+        sku: 'SUP-OMG3-120',
         location: 'A.1.1',
         quantity: 1,
         image: '/products/omega_3.png',
     },
     {
-        product: 'Vitakruid Magnesium Tauraat',
-        sku: '8717438690063',
+        product: 'Magnesium tabletten',
+        sku: 'SUP-MGT-90',
         location: 'A.1.2',
         quantity: 5,
         image: '/products/magnesium_tauraat.png',
     },
     {
-        product: 'XXL Vitamin D3',
-        sku: '8719881009997',
+        product: 'Vitamine D3',
+        sku: 'SUP-VD3-60',
         location: 'A.2.1',
         quantity: 2,
         image: '/products/vitamin_d3.png',
     },
     {
-        product: 'Vitamin Bundle',
-        sku: '8719881022521',
+        product: 'Vitamine bundel',
+        sku: 'SUP-BNDL-04',
         location: 'A.3.1',
         quantity: 4,
         image: '/products/vitamin_bundle.jpeg',
     },
     {
         product: 'Vogelvoer 1 kg',
-        sku: 'vogelvoer-1000',
+        sku: 'BIRD-1000',
         location: 'B.1.1',
         quantity: 3,
         image: '/products/bird-food-1kg.png',
     },
     {
         product: 'Vogelvoer 500 gram',
-        sku: 'vogelvoer-500',
+        sku: 'BIRD-500',
         location: 'B.1.2',
         quantity: 2,
         image: '/products/bird-food-500g.png',
@@ -108,9 +108,15 @@ const reset = () => {
 };
 
 const handleKeydown = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-        reset();
+    if (event.key !== 'Escape') {
+        return;
     }
+    const target = event.target as HTMLElement | null;
+    const tag = target?.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target?.isContentEditable) {
+        return;
+    }
+    reset();
 };
 
 onMounted(() => {
@@ -143,17 +149,17 @@ onUnmounted(() => {
                 class="inline-flex items-center gap-2 px-2.5 py-1.5 ring-1 ring-chalk-dark rounded-md text-sm text-charcoal hover:ring-chalk-darker transition-colors"
                 @click="reset"
             >
-                <i class="fa-solid fa-xmark text-gravel"></i>
+                <i class="fa-solid fa-xmark text-gravel" aria-hidden="true"></i>
                 <span>Opnieuw</span>
-                <span class="ml-0.5 px-1.5 py-0.5 text-[10px] ring-1 ring-chalk-dark rounded text-steel font-medium font-mono uppercase tracking-wide leading-none">
+                <kbd class="ml-0.5 px-1.5 py-0.5 text-[10px] ring-1 ring-chalk-dark rounded text-steel font-medium font-mono uppercase tracking-wide leading-none">
                     Esc
-                </span>
+                </kbd>
             </button>
         </div>
 
-        <div v-if="isComplete" class="flex flex-col items-center text-center py-8">
+        <div v-if="isComplete" role="status" aria-live="polite" class="flex flex-col items-center text-center py-8">
             <div class="h-16 w-16 rounded-full bg-green/10 flex items-center justify-center mb-5">
-                <i class="fa-solid fa-circle-check text-green text-4xl"></i>
+                <i class="fa-solid fa-circle-check text-green text-4xl" aria-hidden="true"></i>
             </div>
             <p class="text-xl font-semibold text-charcoal mb-1">Picklijst voltooid</p>
             <p class="text-sm text-gravel mb-7">Breng de containers naar de inpakker.</p>
@@ -162,7 +168,7 @@ onUnmounted(() => {
                 class="inline-flex items-center gap-2 px-4 py-2 bg-flint text-paper text-sm font-medium rounded-md hover:bg-charcoal transition-colors"
                 @click="reset"
             >
-                <i class="fa-solid fa-rotate-right text-xs"></i>
+                <i class="fa-solid fa-rotate-right text-xs" aria-hidden="true"></i>
                 Opnieuw beginnen
             </button>
         </div>
@@ -203,14 +209,14 @@ onUnmounted(() => {
                 <button
                     type="button"
                     class="h-10 w-10 bg-flint text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
-                    aria-label="Min een"
+                    aria-label="Verlaag aantal gepickt"
                     :disabled="currentPicked === 0 || animating"
                     @click="decrease"
                 >
-                    <i class="fa-solid fa-minus text-sm"></i>
+                    <i class="fa-solid fa-minus text-sm" aria-hidden="true"></i>
                 </button>
 
-                <div class="h-10 px-4 min-w-[3rem] ring-1 ring-chalk-dark rounded-md flex items-center justify-center text-charcoal tabular-nums font-medium">
+                <div class="h-10 px-4 min-w-[3rem] ring-1 ring-chalk-dark rounded-md flex items-center justify-center text-charcoal tabular-nums font-medium" aria-live="polite">
                     {{ currentPicked }}
                 </div>
 
@@ -219,11 +225,11 @@ onUnmounted(() => {
                 <button
                     type="button"
                     class="h-10 w-10 bg-flint text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
-                    aria-label="Plus een"
+                    aria-label="Verhoog aantal gepickt"
                     :disabled="animating"
                     @click="increase"
                 >
-                    <i class="fa-solid fa-plus text-sm"></i>
+                    <i class="fa-solid fa-plus text-sm" aria-hidden="true"></i>
                 </button>
             </div>
         </div>

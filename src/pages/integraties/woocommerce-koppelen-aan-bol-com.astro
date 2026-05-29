@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 
 const rows = [
@@ -19,7 +20,7 @@ const rows = [
     {
         eyebrow: 'Voorraad realtime in sync',
         heading: 'Eén voorraadbeeld voor allebei je kanalen.',
-        body: 'Verkoop je een product op bol, dan past ShopLinkr de voorraad op WooCommerce direct aan. Krijg je een order binnen via je eigen webshop, dan gaat de voorraad op bol omlaag. Belangrijk: ShopLinkr synct alleen voorraad en orders. Je productcontent en prijzen blijven van jou.',
+        body: 'Verkoop je een product op bol, dan past ShopLinkr de voorraad op WooCommerce direct aan. Krijg je een order binnen via je eigen webshop, dan gaat de voorraad op bol omlaag. Eén voorraadbron, dezelfde betrouwbare stand op elk kanaal.',
         icon: 'fa-solid fa-arrows-rotate',
     },
     {
@@ -31,23 +32,98 @@ const rows = [
     {
         eyebrow: 'Voorkom oversells',
         heading: 'Verkoop nooit meer wat je niet op voorraad hebt.',
-        body: 'Doordat de voorraad razendsnel tussen kanalen meebeweegt, voorkom je dat hetzelfde laatste stuks op twee plekken tegelijk verkocht wordt. Minder annuleringen, geen bol verkoopboetes en blijere klanten.',
+        body: 'Doordat de voorraad razendsnel tussen kanalen meebeweegt, voorkom je dat hetzelfde laatste stuk op twee plekken tegelijk verkocht wordt. Minder annuleringen, geen bol verkoopboetes en blijere klanten.',
         icon: 'fa-solid fa-shield-check',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Koppel je bol webshop aan WooCommerce',
-    description: 'Koppel je bol webshop aan je eigen WooCommerce webshop. Je voorraad is altijd gesynchroniseerd en bestellingen komen op een plek binnen.',
-};
+const setupSteps = [
+    {
+        label: 'Stap 1',
+        title: 'WooCommerce koppelen',
+        body: 'Installeer onze WooCommerce-plugin op je WordPress site, kopiëer een API-sleutel uit ShopLinkr en je shop praat direct mee. Geen developer nodig.',
+    },
+    {
+        label: 'Stap 2',
+        title: 'EAN op orde brengen',
+        body: 'WooCommerce heeft standaard geen EAN-veld. Wij ondersteunen de EAN Barcode Generator plugin van WPFactory. Geen EAN? Dan gebruikt ShopLinkr je SKU-veld als fallback.',
+    },
+    {
+        label: 'Stap 3',
+        title: 'bol erbij klikken',
+        body: 'Open je bol verkoopaccount, autoriseer ShopLinkr in een paar klikken. Je listings worden opgehaald en gematcht met je WooCommerce-producten op EAN.',
+    },
+    {
+        label: 'Stap 4',
+        title: 'Sync staat',
+        body: 'Klaar. Vanaf nu lopen voorraad en orders tussen beide kanalen door ShopLinkr. Je verwerkt alles vanuit één omgeving, je magazijn merkt geen verschil meer tussen kanalen.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Heb ik een speciale WooCommerce plugin nodig?',
+        answer: 'Ja, om je shop met ShopLinkr te laten praten installeer je onze WooCommerce-plugin. Die haalt orders binnen en duwt voorraad-updates terug. Voor EAN-codes raden we de plugin "EAN Barcode Generator for WooCommerce" van WPFactory aan, omdat WooCommerce zelf geen EAN-veld kent.',
+    },
+    {
+        question: 'Wat als mijn producten geen EAN hebben?',
+        answer: 'Dan valt ShopLinkr terug op het SKU-veld voor de matching. Belangrijk wel: producten zonder EAN én zonder SKU worden niet geïmporteerd, omdat we ze dan niet betrouwbaar kunnen koppelen aan een bol-listing.',
+    },
+    {
+        question: 'Werkt de koppeling met WooCommerce variaties?',
+        answer: 'Ja. Elke variatie wordt als losse SKU behandeld en krijgt zijn eigen voorraadstand op bol. Mits elke variatie een uniek EAN of SKU heeft, kunnen we ze probleemloos matchen.',
+    },
+];
+
+const jsonLd = [
+    {
+        '@type': 'WebPage',
+        name: 'WooCommerce koppelen aan bol via ShopLinkr',
+        description: 'Verkoop je via WooCommerce en bol? ShopLinkr synchroniseert je voorraad realtime tussen beide kanalen en verzamelt al je bestellingen op één plek.',
+        url: 'https://shoplinkr.com/integraties/woocommerce-koppelen-aan-bol-com',
+    },
+    {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://shoplinkr.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Integraties',
+                item: 'https://shoplinkr.com/integraties',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'WooCommerce koppelen aan bol',
+                item: 'https://shoplinkr.com/integraties/woocommerce-koppelen-aan-bol-com',
+            },
+        ],
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
-    title="Koppel je bol webshop aan WooCommerce - ShopLinkr"
-    description="Koppel je bol webshop aan je eigen WooCommerce webshop. Je voorraad is altijd gesynchroniseerd en bestellingen komen op één plek binnen."
+    title="WooCommerce koppelen aan bol via ShopLinkr | Integraties"
+    description="Verkoop je via WooCommerce en bol? ShopLinkr synchroniseert je voorraad realtime tussen beide kanalen en verzamelt al je bestellingen op één plek."
     eyebrow="WooCommerce en bol"
     heading="WooCommerce koppelen met bol via ShopLinkr."
     subheading="Verkoop je via WooCommerce en via bol? ShopLinkr synchroniseert je voorraad realtime en verzamelt alle bestellingen op één plek. Eén workflow, geen oversells."
@@ -55,13 +131,25 @@ export const prerender = true;
 >
     <section class="pb-12 md:pb-16 bg-paper">
         <div class="container-prose">
-            <a
-                href="/integraties"
-                class="inline-flex items-center gap-2 text-sm text-gravel hover:text-charcoal transition-colors mb-8"
-            >
-                <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
-                Terug naar alle integraties
-            </a>
+            <nav aria-label="Breadcrumb" class="mb-8">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                    <li>
+                        <a href="/" class="hover:text-charcoal transition-colors">Home</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li>
+                        <a href="/integraties" class="hover:text-charcoal transition-colors">Integraties</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li class="text-charcoal font-medium" aria-current="page">
+                        WooCommerce koppelen aan bol
+                    </li>
+                </ol>
+            </nav>
 
             <div class="flex flex-col sm:flex-row gap-3">
                 <a
@@ -125,6 +213,51 @@ export const prerender = true;
                     ))
                 }
             </ul>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light/60">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-14">
+                <p class="eyebrow mb-4">Zo zet je het op</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Van plugin tot verkopen, in vier stappen.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    WooCommerce en bol koppelen vraagt om een paar specifieke keuzes, vooral rondom EAN en SKU. We hebben de stappen op een rij gezet zodat je weet wat je te wachten staat.
+                </p>
+            </div>
+
+            <ol class="grid sm:grid-cols-2 gap-4 md:gap-5">
+                {
+                    setupSteps.map((step) => (
+                        <li class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                            <p class="text-[11px] uppercase tracking-[0.18em] text-sunstone-deep font-semibold mb-2">
+                                {step.label}
+                            </p>
+                            <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight mb-2">
+                                {step.title}
+                            </h3>
+                            <p class="text-sm text-steel leading-relaxed">
+                                {step.body}
+                            </p>
+                        </li>
+                    ))
+                }
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-10">
+                    Wat WooCommerce-shops vaak vragen.
+                </h2>
+
+                <FaqList items={faqs} />
+            </div>
         </div>
     </section>
 

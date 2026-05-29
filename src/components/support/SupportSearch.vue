@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
 interface SearchItem {
     title: string;
@@ -7,6 +7,7 @@ interface SearchItem {
     category: string;
     categoryLabel: string;
     subcategory: string | null;
+    subcategoryLabel: string | null;
     href: string;
 }
 
@@ -19,13 +20,17 @@ const isFocused = ref(false);
 const blurTimer = ref<number | null>(null);
 const selectedIndex = ref(-1);
 const dropdownRef = ref<HTMLElement | null>(null);
+const inputRef = ref<HTMLInputElement | null>(null);
+
+const DIACRITICS_REGEX = /[̀-ͯ]/g;
+
+function stripDiacritics(input: string): string {
+    return input.toLowerCase().normalize('NFD').replace(DIACRITICS_REGEX, '');
+}
 
 function tokenize(input: string): Array<string> {
-    return input
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[̀-ͯ]/g, '')
-        .split(/[\s,\.\!\?\-_/]+/)
+    return stripDiacritics(input)
+        .split(/[\s,.!?\-_/]+/)
         .filter((t) => t.length > 0);
 }
 
@@ -35,12 +40,12 @@ interface ScoredItem {
 }
 
 function scoreItem(item: SearchItem, tokens: Array<string>): number {
-    const title = item.title.toLowerCase();
-    const titleNorm = title.normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const titleNorm = stripDiacritics(item.title);
     const titleWords = titleNorm.split(/\s+/);
-    const summary = item.summary.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-    const categoryLabel = item.categoryLabel.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-    const subcategory = (item.subcategory ?? '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    const summary = stripDiacritics(item.summary);
+    const categoryLabel = stripDiacritics(item.categoryLabel);
+    const subcategoryLabel = stripDiacritics(item.subcategoryLabel ?? '');
+    const subcategorySlug = stripDiacritics(item.subcategory ?? '');
 
     let score = 0;
     let matchedAll = true;
@@ -64,7 +69,7 @@ function scoreItem(item: SearchItem, tokens: Array<string>): number {
             tokenScore += 5;
         }
 
-        if (subcategory.includes(token)) {
+        if (subcategoryLabel.includes(token) || subcategorySlug.includes(token)) {
             tokenScore += 5;
         }
 
@@ -166,6 +171,16 @@ const clearQuery = () => {
 };
 
 const onKeydown = (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+        if (query.value.length > 0) {
+            event.preventDefault();
+            clearQuery();
+            return;
+        }
+        (event.target as HTMLInputElement)?.blur();
+        return;
+    }
+
     if (!showDropdown.value || !hasResults.value) {
         return;
     }
@@ -185,20 +200,31 @@ const onKeydown = (event: KeyboardEvent) => {
     }
 
     if (event.key === 'Enter') {
-        if (selectedIndex.value >= 0 && selectedIndex.value < results.value.length) {
+        const idx = selectedIndex.value >= 0 ? selectedIndex.value : 0;
+
+        if (idx < results.value.length) {
             event.preventDefault();
-            const target = results.value[selectedIndex.value];
+            const target = results.value[idx];
             window.location.href = target.href;
         }
-        return;
-    }
-
-    if (event.key === 'Escape') {
-        event.preventDefault();
-        clearQuery();
-        (event.target as HTMLInputElement)?.blur();
     }
 };
+
+onMounted(() => {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+
+    if (q && q.trim().length > 0) {
+        query.value = q.trim().slice(0, 200);
+
+        nextTick(() => {
+            if (inputRef.value) {
+                inputRef.value.focus();
+                isFocused.value = true;
+            }
+        });
+    }
+});
 
 onBeforeUnmount(() => {
     if (blurTimer.value !== null) {
@@ -208,13 +234,20 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div class="relative w-full max-w-2xl mx-auto">
+    <div
+        class="relative w-full max-w-2xl mx-auto"
+        role="combobox"
+        :aria-expanded="showDropdown"
+        aria-haspopup="listbox"
+        aria-owns="support-search-results"
+    >
         <div class="relative">
             <i
                 class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gravel pointer-events-none"
                 aria-hidden="true"
             ></i>
             <input
+                ref="inputRef"
                 v-model="query"
                 type="search"
                 placeholder="Zoek in helpartikelen..."
@@ -222,6 +255,11 @@ onBeforeUnmount(() => {
                 aria-autocomplete="list"
                 aria-controls="support-search-results"
                 :aria-activedescendant="selectedIndex >= 0 ? `support-search-result-${selectedIndex}` : undefined"
+                autocomplete="off"
+                autocapitalize="off"
+                autocorrect="off"
+                spellcheck="false"
+                enterkeyhint="search"
                 class="search-input w-full pl-12 pr-12 py-4 bg-paper ring-1 ring-chalk-dark rounded-2xl text-base text-charcoal placeholder:text-gravel focus:ring-2 focus:ring-sunstone-deep focus:outline-none transition shadow-[0_8px_30px_-15px_rgba(25,25,25,0.12)]"
                 @focus="onFocus"
                 @blur="onBlur"
@@ -265,7 +303,7 @@ onBeforeUnmount(() => {
                     @mouseenter="selectedIndex = i"
                 >
                     <p class="text-[0.6875rem] text-sunstone-deep font-semibold uppercase tracking-wider mb-1.5">
-                        {{ r.categoryLabel }}<span v-if="r.subcategory"> &middot; {{ r.subcategory }}</span>
+                        {{ r.categoryLabel }}<span v-if="r.subcategoryLabel"> &middot; {{ r.subcategoryLabel }}</span>
                     </p>
                     <p class="text-sm font-semibold text-charcoal mb-1 tracking-tight">
                         {{ r.title }}
@@ -277,14 +315,23 @@ onBeforeUnmount(() => {
             </div>
             <div
                 v-else
+                role="status"
+                aria-live="polite"
                 class="px-5 py-8 text-center"
             >
                 <p class="text-sm text-charcoal font-medium mb-1">
                     Geen artikelen gevonden
                 </p>
-                <p class="text-xs text-gravel">
-                    Probeer een ander zoekwoord of blader hieronder door de categorieen.
+                <p class="text-xs text-gravel mb-3">
+                    Probeer een ander zoekwoord of blader hieronder door de categorieën.
                 </p>
+                <a
+                    href="/contact"
+                    class="inline-flex items-center gap-1.5 text-xs font-semibold text-sunstone-deep hover:text-sunstone transition-colors"
+                >
+                    Of neem contact op
+                    <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </div>

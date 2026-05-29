@@ -4,6 +4,27 @@ import PricingCalculator from '../components/pricing/PricingCalculator.vue';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import FaqList from '../components/template/FaqList.astro';
 
+const pricingExamples = [
+    {
+        label: 'Starter',
+        sub: '2 kanalen, 250 orders',
+        amount: '€ 50,00',
+        breakdown: '€ 10 kanalen + € 40 orders',
+    },
+    {
+        label: 'Groeiend',
+        sub: '4 kanalen, 1.000 orders',
+        amount: '€ 130,00',
+        breakdown: '€ 20 kanalen + € 110 orders',
+    },
+    {
+        label: 'Schaal',
+        sub: '6 kanalen, 5.000 orders',
+        amount: '€ 317,45',
+        breakdown: '€ 30 kanalen + € 287,45 orders',
+    },
+];
+
 const inclusions = [
     {
         title: 'Alle features inbegrepen',
@@ -50,7 +71,7 @@ const inclusions = [
 const faqs = [
     {
         question: 'Wat als ik in een maand meer orders heb dan verwacht?',
-        answer: 'Je springt automatisch naar de juiste volumetier en betaalt het bijbehorende tarief in die maand. De maand erop val je weer terug als je volume daalt. Geen extra kosten per losse order, geen verrassingen.',
+        answer: 'Je rekening schaalt automatisch mee. Elke order valt binnen een staffel met een eigen tarief, en je betaalt netjes per staffel die je raakt. De maand erop reken je weer af op basis van dat volume. Geen contractwijzigingen, geen verrassingen.',
     },
     {
         question: 'Kan ik mijn abonnement pauzeren of opzeggen?',
@@ -89,15 +110,14 @@ const jsonLd = [
         },
         offers: {
             '@type': 'Offer',
-            price: '5',
             priceCurrency: 'EUR',
+            availability: 'https://schema.org/InStock',
+            url: 'https://shoplinkr.com/prijzen',
             priceSpecification: {
                 '@type': 'UnitPriceSpecification',
-                price: '5',
                 priceCurrency: 'EUR',
                 unitText: 'MONTH',
             },
-            availability: 'https://schema.org/InStock',
         },
     },
     {
@@ -118,13 +138,85 @@ export const prerender = true;
 
 <PageLayout
     title="Prijzen | ShopLinkr"
-    description="Transparant prijsmodel voor ShopLinkr. Je betaalt voor wat je gebruikt. Verkoopkanalen vanaf €5 per maand plus een staffeltarief per order. 14 dagen gratis proberen."
+    description="Transparant prijsmodel voor ShopLinkr. Pay as you go: je betaalt per verkoopkanaal en per order, alle features inbegrepen. 14 dagen gratis proberen."
     eyebrow="Prijzen"
     heading="Eén transparant prijsmodel."
     subheading="Je betaalt alleen voor wat je gebruikt. Alle features zitten erbij, ook in het kleinste pakket."
     jsonLd={jsonLd}
 >
     <PricingCalculator client:visible />
+
+    <section class="py-20 md:py-24">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Hoe het werkt</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Twee bouwstenen,
+                        <span class="block text-sunstone-deep">geen verrassingen.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Je rekening bestaat uit een vast bedrag per verkoopkanaal en een staffeltarief per order. Schuif met de calculator om jouw maandprijs te zien, of reken zelf na met de getallen hieronder.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-7">
+                            <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-5">
+                                <i class="fa-duotone fa-solid fa-plug text-[1.15rem]" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <p class="text-xs uppercase tracking-[0.08em] font-semibold text-gravel mb-2">Per verkoopkanaal</p>
+                            <p class="text-2xl md:text-[1.625rem] font-semibold text-charcoal tracking-tight leading-snug">
+                                Vast maandtarief.
+                            </p>
+                            <p class="mt-4 text-sm text-steel leading-relaxed">
+                                Elk kanaal dat je koppelt, kost hetzelfde. Of het nu Bol, Shopify, WooCommerce of Kaufland is, het tarief blijft gelijk per kanaal per maand.
+                            </p>
+                        </article>
+
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-7">
+                            <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-5">
+                                <i class="fa-duotone fa-solid fa-layer-group text-[1.15rem]" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <p class="text-xs uppercase tracking-[0.08em] font-semibold text-gravel mb-2">Per order</p>
+                            <p class="text-2xl md:text-[1.625rem] font-semibold text-charcoal tracking-tight leading-snug">
+                                Staffeltarief.
+                            </p>
+                            <p class="mt-4 text-sm text-steel leading-relaxed">
+                                Per orderstaffel een eigen tarief, dat in de hogere staffels naar enkele centen per order zakt. Hoe meer orders je per maand verwerkt, hoe lager het gemiddelde per order.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="mt-6 rounded-2xl bg-chalk-light ring-1 ring-chalk-dark p-7">
+                        <p class="text-xs uppercase tracking-[0.08em] font-semibold text-gravel mb-5">
+                            Voorbeelden
+                        </p>
+                        <ul class="divide-y divide-chalk-dark">
+                            {
+                                pricingExamples.map((example) => (
+                                    <li class="py-3 first:pt-0 last:pb-0 flex items-baseline justify-between gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold text-charcoal">{example.label}</p>
+                                            <p class="text-xs text-gravel mt-0.5">{example.sub}</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-base font-semibold text-charcoal tabular-nums whitespace-nowrap">{example.amount}</p>
+                                            <p class="text-xs text-gravel tabular-nums whitespace-nowrap mt-0.5">{example.breakdown}</p>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                        <p class="mt-5 text-xs text-gravel leading-relaxed">
+                            Totalen per maand, exclusief btw. Reken zelf na via de calculator hierboven.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="py-24 md:py-32 bg-chalk-light">
         <div class="container-prose">
@@ -134,7 +226,7 @@ export const prerender = true;
                     Alles inbegrepen, ongeacht je volume.
                 </h2>
                 <p class="mt-6 text-lg text-steel leading-relaxed">
-                    Geen tiers met afgeknepen features, geen extra modules om bij te boeken. Eén tarief op basis van je gebruik. Klaar.
+                    Geen pakketten met afgeknepen features, geen extra modules om bij te boeken. Eén prijsmodel op basis van je gebruik. Klaar.
                 </p>
             </div>
 
@@ -185,20 +277,3 @@ export const prerender = true;
 
     <CtaBanner />
 </PageLayout>
-
-<style>
-    details summary::-webkit-details-marker {
-        display: none;
-    }
-
-    details summary {
-        outline: none;
-    }
-
-    details summary:focus-visible h3 {
-        text-decoration: underline;
-        text-decoration-color: var(--color-sunstone-deep);
-        text-decoration-thickness: 2px;
-        text-underline-offset: 4px;
-    }
-</style>

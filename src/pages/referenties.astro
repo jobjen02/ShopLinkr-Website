@@ -6,11 +6,38 @@ import { externalLinks } from '../data/externalLinks';
 const story = {
     company: 'Schoongedaan.nl',
     logo: '/testimonials/Schoongedaan.png',
-    intro: 'Jasper startte SchoonGedaan twee jaar geleden vanuit een kastje naast zijn bureau. Inmiddels runt hij een snelgroeiend bedrijf in Nieuwegein, gespecialiseerd in schoonmaakmiddelen voor vloeren, keukens, zwembaden en nog veel meer. Via bol, Kaufland en zijn eigen webshop levert hij dagelijks honderden bestellingen.',
+    intro: 'Jasper startte Schoongedaan twee jaar geleden vanuit een kastje naast zijn bureau. Inmiddels runt hij een snelgroeiend bedrijf in Nieuwegein, gespecialiseerd in schoonmaakmiddelen voor vloeren, keukens, zwembaden en nog veel meer. Via bol, Kaufland en zijn eigen webshop levert hij dagelijks honderden bestellingen.',
     challenge: 'Door snelle groei raakte het oude magazijn al snel chaotisch. Producten stonden door elkaar en orderpicken kostte veel tijd. Jasper kon maximaal 60 bestellingen per dag verwerken en liep tegen fouten, retouren en frustratie aan.',
-    solution: 'Met ShopLinkr bracht Jasper structuur in zijn magazijn en koppelde hij alle verkoopkanalen. Dankzij slimme picklijsten en mobiele barcodescanners is het pick- en pack proces nu volledig geautomatiseerd. Bestellingen, voorraad, verzending en zelfs retouren worden volledig vanuit een systeem geregeld, waardoor Jasper dagelijks honderden bestellingen foutloos kan verwerken.',
-    metric: 'Van 60 bestellingen per dag naar 150-250 bestellingen, met pieken van 500 orders op maandag.',
+    solution: 'Met ShopLinkr bracht Jasper structuur in zijn magazijn en koppelde hij al zijn verkoopkanalen. Dankzij slimme picklijsten en mobiele barcodescanners is het pick- en pack proces nu volledig geautomatiseerd. Bestellingen, voorraad, verzending en zelfs retouren regelt hij vanuit één systeem, waardoor Jasper dagelijks honderden bestellingen foutloos verwerkt.',
+    metric: 'Van 60 bestellingen per dag naar 150 tot 250 bestellingen, met pieken van 500 orders op maandag.',
 };
+
+const voices = [
+    {
+        quote: 'Met ShopLinkr besparen we dagelijks enorm veel tijd. We hebben nu maar 1 medewerker in dienst in plaats van 5, en het gaat nu nog steeds efficiënter.',
+        author: 'Jasper de Waard',
+        company: 'Schoongedaan',
+        logo: '/testimonials/Schoongedaan.png',
+    },
+    {
+        quote: 'Super software met een eerlijke prijs. Sterke communicatie en korte lijntjes. Aanrader!',
+        author: 'Tijn Zuijdervliet',
+        company: 'Cryptoken',
+        logo: '/testimonials/Cryptoken.svg',
+    },
+    {
+        quote: 'Fijne software! Zeer gebruiksvriendelijk en perfect geschikt voor zowel kleine als grotere webshops met meerdere verkoopkanalen.',
+        author: 'Nabodhi van der Lind',
+        company: 'Cozy Design',
+        logo: '/testimonials/CozyDesign.jpg',
+    },
+    {
+        quote: 'Zeer tevreden over ShopLinkr! De service is top en het team staat altijd klaar om snel en vriendelijk te helpen. Vragen worden duidelijk beantwoord en je merkt dat ze echt met je meedenken.',
+        author: 'Nick Siep',
+        company: 'Voordelig Inslaan',
+        logo: '/testimonials/VoordeligInslaan.jpg',
+    },
+];
 
 const jsonLd = {
     '@type': 'Article',
@@ -41,16 +68,23 @@ export const prerender = true;
 ---
 
 <PageLayout
-    title="Referenties | ShopLinkr"
-    description="Maak kennis met onze geweldige klanten. Lees hoe Nederlandse webshops met ShopLinkr hun magazijn, voorraad en orderverwerking onder controle krijgen."
+    title="Klantverhalen | ShopLinkr"
+    description="Hoe Nederlandse webshops met ShopLinkr hun magazijn, voorraad en orderverwerking op orde krijgen. Lees het verhaal van Schoongedaan en wat andere klanten over ons zeggen."
     eyebrow="Klantverhalen"
-    heading="Referenties."
-    subheading="Maak kennis met onze geweldige klanten."
+    heading="Webshops die hun magazijn serieus nemen."
+    subheading="Van eenpitters tot teams met meerdere magazijnen. Hieronder een uitgelicht verhaal en wat andere klanten te zeggen hebben."
     jsonLd={jsonLd}
 >
-    <section class="py-20 md:py-28">
+    <section class="py-16 md:py-24">
         <div class="container-prose">
-            <article class="max-w-4xl mx-auto bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
+            <div class="max-w-2xl mb-10 md:mb-14">
+                <p class="eyebrow mb-3">Uitgelicht verhaal</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Van 60 naar 500 orders per dag.
+                </h2>
+            </div>
+
+            <article class="max-w-4xl bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
                 <header class="px-8 md:px-14 pt-10 md:pt-14 pb-8 md:pb-10 text-center border-b border-chalk-dark">
                     <div class="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-paper ring-1 ring-chalk-dark mb-6 overflow-hidden">
                         <img
@@ -60,43 +94,109 @@ export const prerender = true;
                             loading="lazy"
                         />
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight">
+                    <h3 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight">
                         {story.company}
-                    </h2>
+                    </h3>
                 </header>
 
                 <div class="px-8 md:px-14 py-10 md:py-14 space-y-10">
                     <div>
-                        <h3 class="eyebrow mb-3">Over Schoongedaan</h3>
+                        <p class="eyebrow mb-3">Over Schoongedaan</p>
                         <p class="text-charcoal leading-relaxed text-[1.0625rem]">
                             {story.intro}
                         </p>
                     </div>
 
                     <div>
-                        <h3 class="eyebrow mb-3">De uitdaging</h3>
+                        <p class="eyebrow mb-3">De uitdaging</p>
                         <p class="text-steel leading-relaxed text-[1.0625rem]">
                             {story.challenge}
                         </p>
                     </div>
 
                     <div>
-                        <h3 class="eyebrow mb-3">De oplossing</h3>
+                        <p class="eyebrow mb-3">De oplossing</p>
                         <p class="text-steel leading-relaxed text-[1.0625rem]">
                             {story.solution}
                         </p>
                     </div>
 
                     <div class="bg-sunstone-mist/50 ring-1 ring-sunstone-soft/50 rounded-2xl px-7 py-7 md:px-9 md:py-8">
-                        <h3 class="eyebrow mb-3">Het resultaat</h3>
+                        <p class="eyebrow mb-3">Het resultaat</p>
                         <p class="text-charcoal leading-snug text-lg md:text-xl font-semibold tracking-tight">
                             {story.metric}
                         </p>
                     </div>
                 </div>
             </article>
+        </div>
+    </section>
 
-            <div class="mt-16 md:mt-20 max-w-2xl mx-auto text-center">
+    <section class="py-16 md:py-24 bg-chalk-light">
+        <div class="container-prose">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
+                <div class="max-w-2xl">
+                    <p class="eyebrow mb-3">Wat klanten zeggen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Stemmen uit het magazijn.
+                    </h2>
+                </div>
+
+                <div class="flex items-center gap-3 text-sm">
+                    <span class="inline-flex items-center gap-0.5 text-sunstone-deep">
+                        {Array.from({ length: 5 }).map(() => (
+                            <i class="fa-solid fa-star text-[0.95rem]" aria-hidden="true"></i>
+                        ))}
+                    </span>
+                    <span class="font-semibold text-charcoal">4,9</span>
+                    <span class="text-gravel">op Trustpilot</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5 md:gap-6">
+                {
+                    voices.map((voice) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark hover:ring-chalk-darker transition-colors p-8 md:p-10 flex flex-col">
+                            <p class="text-charcoal leading-relaxed text-[1.0625rem] mb-8 flex-1">
+                                {voice.quote}
+                            </p>
+
+                            <div class="flex items-center gap-4">
+                                <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                    <img
+                                        src={voice.logo}
+                                        alt={voice.company}
+                                        class="h-full w-full object-contain p-1.5"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="font-semibold text-charcoal text-sm">{voice.author}</p>
+                                    <p class="text-xs text-gravel mt-0.5">{voice.company}</p>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+
+            <div class="mt-12 flex justify-center">
+                <a
+                    href="https://nl.trustpilot.com/review/shoplinkr.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5"
+                >
+                    Alle reviews op Trustpilot
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+        <div class="container-prose">
+            <div class="max-w-2xl mx-auto text-center">
                 <p class="eyebrow mb-3">Word jij de volgende?</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight">
                     Probeer ShopLinkr met je eigen magazijn.
@@ -108,7 +208,7 @@ export const prerender = true;
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Gratis Starten
+                        Gratis starten
                         <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                     </a>
                     <a

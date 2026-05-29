@@ -28,15 +28,12 @@ const formattedDate = formatter.format(publishedAt);
 const href = `/blogs/${slug}`;
 ---
 
-<article class="group flex flex-col">
-    <a
-        href={href}
-        class="block overflow-hidden rounded-xl bg-chalk-light ring-1 ring-chalk-dark aspect-video"
-    >
+<article class="group relative flex flex-col">
+    <div class="overflow-hidden rounded-xl bg-chalk-light ring-1 ring-chalk-dark aspect-video">
         {image ? (
             <img
                 src={image}
-                alt={imageAlt ?? title}
+                alt={imageAlt ?? ''}
                 class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
             />
@@ -45,7 +42,7 @@ const href = `/blogs/${slug}`;
                 <i class="fa-solid fa-newspaper text-3xl text-sunstone-deep/40" aria-hidden="true"></i>
             </div>
         )}
-    </a>
+    </div>
 
     <div class="mt-5 flex items-center gap-2.5 text-xs">
         {category && (
@@ -60,7 +57,10 @@ const href = `/blogs/${slug}`;
     </div>
 
     <h3 class="mt-3 text-xl font-semibold text-charcoal tracking-tight leading-snug">
-        <a href={href} class="hover:text-sunstone-deep transition-colors">
+        <a
+            href={href}
+            class="hover:text-sunstone-deep transition-colors after:absolute after:inset-0 after:content-['']"
+        >
             {title}
         </a>
     </h3>
@@ -69,13 +69,13 @@ const href = `/blogs/${slug}`;
         {excerpt}
     </p>
 
-    <a
-        href={href}
+    <span
         class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep group-hover:gap-2.5 transition-all"
+        aria-hidden="true"
     >
         Lees verder
-        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
-    </a>
+        <i class="fa-solid fa-arrow-right text-xs"></i>
+    </span>
 </article>
 
 <style>

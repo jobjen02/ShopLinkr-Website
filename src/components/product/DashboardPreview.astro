@@ -165,7 +165,7 @@ const commissiePath = buildAreaPath(financialCommissie, volumeWidth, volumeHeigh
 const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
 ---
 
-<div class="dashboard-preview relative bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]">
+<div class="dashboard-preview relative bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]" role="img" aria-label="Voorbeeld van het ShopLinkr dashboard met counters, kerncijfers en grafieken voor verkoopvolume, financiën, marges en verdeling per kanaal.">
     <aside class="w-60 bg-sunstone flex flex-col flex-shrink-0">
         <div class="px-5 pt-5 pb-5">
             <img src="/logo/logo-white.svg" alt="ShopLinkr" class="h-6 w-auto" />
@@ -191,7 +191,7 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                         )}
                         {item.badge && (
                             <span class={`text-[10px] font-semibold tabular-nums leading-none ${
-                                parseInt(item.badge) >= 100
+                                parseInt(item.badge, 10) >= 100
                                     ? 'bg-charcoal text-paper px-1.5 py-1 rounded'
                                     : 'text-charcoal/60 px-1'
                             }`}>{item.badge}</span>
@@ -240,7 +240,7 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
             </div>
             <div class="bg-paper ring-1 ring-chalk rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal">
                 <i class="fa-regular fa-calendar text-gravel"></i>
-                <span class="tabular-nums">28-04-2026 - 27-05-2026</span>
+                <span class="tabular-nums">29-04-2026 - 28-05-2026</span>
             </div>
         </div>
 

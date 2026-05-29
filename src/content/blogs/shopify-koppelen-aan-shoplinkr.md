@@ -8,15 +8,15 @@ isVisible: true
 isBlog: true
 ---
 
-<p><strong>Ontdek de krachtige nieuwe integratie tussen ShopLinkr en Shopify. Beheer moeiteloos je producten, verwerk bestellingen en print verzendlabels, allemaal vanuit één geïntegreerd platform.</strong></p>
+<p><strong>Met de Shopify integratie van ShopLinkr verwerk je orders, druk je verzendlabels en houd je je voorraad in sync over al je verkoopkanalen. Alles vanuit één centraal platform.</strong></p>
 <p>Bekijk <a href="https://support.shoplinkr.com/artikel/shopify-koppelen" target="_blank">hier</a> de handleiding voor het koppelen van Shopify.</p>
-<h2>Geoptimaliseerd productbeheer</h2>
-<p>Met de integratie worden al je producten automatisch gesynchroniseerd tussen Shopify en ShopLinkr. Dit betekent dat je altijd beschikt over de meest up-to-date productinformatie en voorraadniveaus.</p>
+<h2>Producten uit Shopify in één overzicht</h2>
+<p>Bij de koppeling worden je Shopify producten in ShopLinkr binnengehaald, zodat je per artikel weet waar het ligt, wat de voorraad is en welke kanalen het verkopen. Zo werk je altijd vanuit dezelfde basis.</p>
 <h2>Efficiënte orderverwerking</h2>
-<p>Verwerk je bestellingen snel en nauwkeurig rechtstreeks vanuit ShopLinkr. Met slechts een paar klikken kun je betalingen registreren, verzendlabels genereren en de track &amp; trace informatie automatisch bijwerken in Shopify.</p>
-<h2>Naadloze track &amp; trace-updates</h2>
-<p>Dankzij de integratie worden alle verzendupdates automatisch gesynchroniseerd tussen ShopLinkr en Shopify. Je klanten ontvangen direct de bijgewerkte track &amp; trace informatie, wat zorgt voor een naadloze en transparante verzendervaring.</p>
-<h2>Vereenvoudigd voorraadbeheer</h2>
-<p>Met de Shopify-integratie van ShopLinkr hoef je je geen zorgen te maken over handmatig bijwerken van voorraadniveaus. Elke verkoop wordt automatisch gesynchroniseerd, waardoor je altijd een nauwkeurig overzicht hebt van je voorraad.</p>
-<h2>Koppel je Shopify winkel aan ShopLinkr &amp; probeer 14 dagen gratis!</h2>
-<p>Wil je meer weten over de nieuwe integratie van ShopLinkr met Shopify en hoe het jouw verkoopproces kan verbeteren? Neem dan nu contact met ons op of meld je aan voor een gratis proefperiode en ervaar zelf hoe deze integratie je e-commerce activiteiten naar een hoger niveau tilt.</p>
+<p>Verwerk je Shopify bestellingen rechtstreeks vanuit ShopLinkr. Pick, pak en print je verzendlabels in een paar klikken en de track &amp; trace gaat automatisch terug naar Shopify.</p>
+<h2>Automatische track &amp; trace updates</h2>
+<p>Zodra je een label aanmaakt, schiet ShopLinkr de verzendupdate door naar Shopify. Je klanten zien direct waar hun bestelling is en jij hoeft niets handmatig bij te werken.</p>
+<h2>Voorraad altijd in sync</h2>
+<p>Elke verkoop, retour of inkomende levering past je voorraad in ShopLinkr aan, en die voorraad sync je realtime door naar Shopify en je andere kanalen. Zo verkoop je nooit meer wat er niet meer ligt.</p>
+<h2>Koppel je Shopify winkel aan ShopLinkr &amp; probeer 14 dagen gratis</h2>
+<p>Klaar om je magazijn en je Shopify winkel naadloos te laten samenwerken? <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en ervaar het zelf.</p>

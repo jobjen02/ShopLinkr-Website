@@ -38,7 +38,7 @@ lastUpdated: "2026-05-28"
 </li>
 </ol>
 <p><strong>Let op:</strong> als je PrintNode installeert op een Windows-apparaat, krijg je de optie om PrintNode te installeren als een Windows Service. Kies hier <strong>niet</strong> voor.</p>
-<p>Zodra het programma is geinstalleerd, log je in met dezelfde inloggegevens. PrintNode draait vervolgens op de achtergrond.</p>
+<p>Zodra het programma is geïnstalleerd, log je in met dezelfde inloggegevens. PrintNode draait vervolgens op de achtergrond.</p>
 <h3>Printers koppelen</h3>
 <p>Na het installeren van PrintNode verschijnen je printers automatisch in ShopLinkr. Ga naar <strong>Instellingen &gt; Printers</strong> om te controleren of je printers zichtbaar zijn. Vanuit daar kun je ze koppelen aan een inpakstation. Zie <a href="/support/inpakstations-instellen">Inpakstations instellen</a> voor meer informatie.</p>
 <h3>Inloggegevens kwijt?</h3>

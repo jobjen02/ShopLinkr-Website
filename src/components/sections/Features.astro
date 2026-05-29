@@ -1,6 +1,4 @@
 ---
-import { externalLinks } from '../../data/externalLinks';
-
 const channels = [
     {
         name: 'Bol',
@@ -59,7 +57,7 @@ const carriers = [
         <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
             <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col justify-between gap-8 transition duration-300 ease-out hover:ring-chalk-darker">
                 <div>
-                    <p class="eyebrow mb-3">Voorraad sync</p>
+                    <p class="eyebrow mb-3">Voorraadsynchronisatie</p>
                     <h3 class="text-3xl md:text-[2.5rem] font-semibold text-charcoal tracking-tight leading-[1.05] mb-5">
                         Eén voorraad, alle kanalen.
                     </h3>
@@ -82,7 +80,7 @@ const carriers = [
                     </li>
                     <li class="flex items-center gap-2">
                         <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                        VVB ondersteund
+                        Onbeperkt kanalen
                     </li>
                 </ul>
             </article>
@@ -105,7 +103,7 @@ const carriers = [
                         ))
                     }
                 </div>
-                <p class="text-sm text-steel mt-auto">Bol, Shopify, WooCommerce en Kaufland in één omgeving.</p>
+                <p class="text-sm text-steel mt-auto">Beheer al je orders en voorraad vanuit één omgeving.</p>
             </article>
 
             <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
@@ -123,8 +121,8 @@ const carriers = [
                     <i class="fa-duotone fa-solid fa-store text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Door bol-verkopers gebouwd.</p>
-                    <p class="text-sm text-steel mt-1.5">Eigen ervaring uit een eigen webshop.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Gemaakt door bol-verkopers.</p>
+                    <p class="text-sm text-steel mt-1.5">Ontstaan uit onze eigen webshop, dagelijks getoetst aan de praktijk.</p>
                 </div>
             </article>
 
@@ -134,7 +132,7 @@ const carriers = [
                 </div>
                 <div>
                     <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Slimme regels.</p>
-                    <p class="text-sm text-steel mt-1.5">Stel automatische regels in, ShopLinkr doet de rest.</p>
+                    <p class="text-sm text-steel mt-1.5">Wijs vervoerders, labels en flows automatisch toe op basis van je eigen logica.</p>
                 </div>
             </article>
 
@@ -144,7 +142,7 @@ const carriers = [
                 </div>
                 <div>
                     <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Magazijnlocaties.</p>
-                    <p class="text-sm text-steel mt-1.5">Per product zie je direct waar het ligt.</p>
+                    <p class="text-sm text-steel mt-1.5">Per product zie je direct waar het ligt. Picken zonder zoeken.</p>
                 </div>
             </article>
 
@@ -175,7 +173,7 @@ const carriers = [
                 </div>
                 <div>
                     <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Picklijst met looproute.</p>
-                    <p class="text-sm text-steel mt-1.5">Telefoon, tablet of scanner.</p>
+                    <p class="text-sm text-steel mt-1.5">Werkt op je telefoon, tablet en scanner.</p>
                 </div>
             </article>
 
@@ -185,7 +183,7 @@ const carriers = [
                 </div>
                 <div>
                     <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Winst per order.</p>
-                    <p class="text-sm text-steel mt-1.5">Inkoopprijzen erin, marges eruit.</p>
+                    <p class="text-sm text-steel mt-1.5">Inkoopprijzen erin, marges per order en kanaal eruit.</p>
                 </div>
             </article>
 
@@ -194,8 +192,8 @@ const carriers = [
                     <i class="fa-duotone fa-solid fa-barcode-read text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Barcode scanner support.</p>
-                    <p class="text-sm text-steel mt-1.5">Scan elk product, geen fouten in je pickflow.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Barcodescanner.</p>
+                    <p class="text-sm text-steel mt-1.5">Scan elk product en pick zonder fouten.</p>
                 </div>
             </article>
 
@@ -204,29 +202,27 @@ const carriers = [
                     <i class="fa-duotone fa-solid fa-print text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">ShopLinkr Autoprint.</p>
-                    <p class="text-sm text-steel mt-1.5">Verzendlabels rollen automatisch uit je printer via PrintNote.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Autoprint.</p>
+                    <p class="text-sm text-steel mt-1.5">Verzendlabels rollen automatisch uit je printer.</p>
                 </div>
             </article>
 
             <article class="md:col-span-4 bg-charcoal text-paper rounded-2xl p-6 md:p-8 transition duration-300 ease-out hover:bg-charcoal/95">
                 <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5">
                     <div class="flex-1">
-                        <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/50 mb-2">Direct starten</p>
+                        <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/50 mb-2">Hoe wij rekenen</p>
                         <h3 class="text-2xl md:text-3xl font-semibold tracking-tight leading-snug">
-                            Klaar om te starten?
+                            Pay-as-you-go, geen vaste maandprijs.
                         </h3>
                         <p class="text-paper/70 mt-2 text-[0.975rem] max-w-2xl">
-                            Koppel je kanalen, importeer je producten en verwerk je eerste order vandaag.
+                            Je betaalt voor de kanalen en orders die je daadwerkelijk gebruikt. Klein beginnen kan, meegroeien ook.
                         </p>
                     </div>
                     <a
-                        href={externalLinks.register}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/prijzen"
                         class="btn btn-sunstone text-sm whitespace-nowrap"
                     >
-                        Gratis starten
+                        Bekijk prijzen
                         <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                     </a>
                 </div>

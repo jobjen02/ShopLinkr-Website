@@ -17,14 +17,9 @@ const jsonLd = {
     url: 'https://shoplinkr.com',
     offers: {
         '@type': 'Offer',
-        price: '57',
         priceCurrency: 'EUR',
-        priceSpecification: {
-            '@type': 'UnitPriceSpecification',
-            price: '57',
-            priceCurrency: 'EUR',
-            unitText: 'MONTH',
-        },
+        availability: 'https://schema.org/InStock',
+        url: 'https://shoplinkr.com/prijzen',
     },
     aggregateRating: {
         '@type': 'AggregateRating',
@@ -39,7 +34,7 @@ export const prerender = true;
 
 <BaseLayout
     title="ShopLinkr | Magazijnsoftware voor Nederlandse webshops"
-    description="Run je magazijn zonder chaos. Voorraad, picklijsten, labels en orderverwerking in één platform. Vanaf €57 per maand. 14 dagen gratis proberen."
+    description="Run je magazijn zonder chaos. Voorraad, picklijsten, labels en orderverwerking in één platform. Pay-as-you-go en 14 dagen gratis proberen."
     jsonLd={jsonLd}
 >
     <Hero />

@@ -45,8 +45,8 @@ const ogLocale = locale === 'nl' ? 'nl_NL' : 'en_US';
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.site)} />
 
-<link rel="alternate" hreflang="nl" href={new URL('/', Astro.site)} />
-<link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+<link rel="alternate" hreflang="nl" href={canonicalURL} />
+<link rel="alternate" hreflang="x-default" href={canonicalURL} />
 
 <link rel="preconnect" href="https://rsms.me/" />
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />

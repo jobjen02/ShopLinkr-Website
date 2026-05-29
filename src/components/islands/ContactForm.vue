@@ -12,6 +12,27 @@ interface FormState {
 
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
+const MAX_NAME_LENGTH = 120;
+const MAX_EMAIL_LENGTH = 254;
+const MAX_PHONE_LENGTH = 40;
+const MAX_SUBJECT_LENGTH = 200;
+const MAX_MESSAGE_LENGTH = 5000;
+
+const FRIENDLY_ERRORS: Record<string, string> = {
+    'Name too short': 'Vul je naam in, minstens 2 letters.',
+    'Invalid email': 'Het e-mailadres ziet er niet helemaal goed uit.',
+    'Message too short': 'Je bericht is wat aan de korte kant, geef ons iets meer context.',
+    'Consent required': 'Vink eerst akkoord aan om door te kunnen.',
+    'Server is niet juist geconfigureerd': 'We hebben hier iets om te fixen. Mail ons even op contact@shoplinkr.com.',
+    'Mail kon niet verstuurd worden': 'Het versturen lukte niet. Probeer het zo nog eens of mail ons direct op contact@shoplinkr.com.',
+    'Invalid content type': 'Er ging iets mis bij het versturen. Probeer het zo nog eens.',
+    'Payload too large': 'Je bericht is te lang. Maak het wat korter en probeer het nog eens.',
+    'Invalid JSON': 'Er ging iets mis bij het versturen. Probeer het zo nog eens.',
+    'Invalid payload': 'Er ging iets mis bij het versturen. Probeer het zo nog eens.',
+};
+
+const FALLBACK_ERROR = 'Het versturen lukte niet. Probeer het zo nog eens of mail ons direct op contact@shoplinkr.com.';
+
 const state = ref<FormState>({
     name: '',
     email: '',
@@ -34,6 +55,14 @@ const isValid = computed(() => {
 
 const characterCount = computed(() => state.value.message.length);
 
+function friendlyError(raw: string | undefined): string {
+    if (!raw) {
+        return FALLBACK_ERROR;
+    }
+
+    return FRIENDLY_ERRORS[raw] ?? FALLBACK_ERROR;
+}
+
 async function handleSubmit(): Promise<void> {
     if (!isValid.value || status.value === 'submitting') {
         return;
@@ -49,11 +78,11 @@ async function handleSubmit(): Promise<void> {
 
     try {
         const payload = {
-            name: state.value.name.trim(),
-            email: state.value.email.trim(),
-            phone: state.value.phone.trim(),
-            subject: state.value.subject.trim(),
-            message: state.value.message.trim(),
+            name: state.value.name.trim().slice(0, MAX_NAME_LENGTH),
+            email: state.value.email.trim().slice(0, MAX_EMAIL_LENGTH),
+            phone: state.value.phone.trim().slice(0, MAX_PHONE_LENGTH),
+            subject: state.value.subject.trim().slice(0, MAX_SUBJECT_LENGTH),
+            message: state.value.message.trim().slice(0, MAX_MESSAGE_LENGTH),
             consent: state.value.consent,
             website: honeypot.value,
         };
@@ -69,15 +98,15 @@ async function handleSubmit(): Promise<void> {
 
         if (!response.ok) {
             const data = await response.json().catch(() => ({}));
-            throw new Error(data?.error ?? 'Verzending mislukt');
+            const rawError = typeof data?.error === 'string' ? data.error : undefined;
+            throw new Error(rawError ?? 'unknown');
         }
 
         status.value = 'success';
     } catch (error) {
         status.value = 'error';
-        errorMessage.value = error instanceof Error && error.message
-            ? `Het versturen lukte niet. ${error.message}. Probeer het zo nog eens of mail ons direct op contact@shoplinkr.com.`
-            : 'Het versturen lukte niet. Probeer het zo nog eens of mail ons direct op contact@shoplinkr.com.';
+        const raw = error instanceof Error ? error.message : undefined;
+        errorMessage.value = friendlyError(raw);
     }
 }
 
@@ -99,6 +128,8 @@ function reset(): void {
 <template>
     <div
         v-if="status === 'success'"
+        role="status"
+        aria-live="polite"
         class="bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10 text-center"
     >
         <div class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-5">
@@ -134,6 +165,8 @@ function reset(): void {
 
         <form
             class="space-y-5"
+            novalidate
+            aria-describedby="contact-form-help"
             @submit.prevent="handleSubmit"
         >
             <div
@@ -162,6 +195,7 @@ function reset(): void {
                         type="text"
                         required
                         autocomplete="name"
+                        :maxlength="MAX_NAME_LENGTH"
                         placeholder="Jouw naam"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
@@ -177,6 +211,8 @@ function reset(): void {
                         type="email"
                         required
                         autocomplete="email"
+                        :maxlength="MAX_EMAIL_LENGTH"
+                        inputmode="email"
                         placeholder="naam@bedrijf.nl"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
@@ -194,6 +230,8 @@ function reset(): void {
                         v-model="state.phone"
                         type="tel"
                         autocomplete="tel"
+                        :maxlength="MAX_PHONE_LENGTH"
+                        inputmode="tel"
                         placeholder="+31 6 12 34 56 78"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
@@ -208,6 +246,7 @@ function reset(): void {
                         id="contact-subject"
                         v-model="state.subject"
                         type="text"
+                        :maxlength="MAX_SUBJECT_LENGTH"
                         placeholder="Waar gaat het over?"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
@@ -219,8 +258,8 @@ function reset(): void {
                     <label for="contact-message" class="block text-sm font-medium text-charcoal">
                         Bericht <span class="text-sunstone-deep">*</span>
                     </label>
-                    <span class="text-xs text-gravel">
-                        {{ characterCount }} tekens
+                    <span class="text-xs text-gravel" aria-live="polite">
+                        {{ characterCount }} / {{ MAX_MESSAGE_LENGTH }}
                     </span>
                 </div>
                 <textarea
@@ -229,6 +268,7 @@ function reset(): void {
                     required
                     rows="5"
                     minlength="10"
+                    :maxlength="MAX_MESSAGE_LENGTH"
                     placeholder="Waar kunnen we je mee helpen?"
                     class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition resize-y min-h-[140px]"
                 ></textarea>
@@ -249,6 +289,7 @@ function reset(): void {
             <div
                 v-if="status === 'error'"
                 role="alert"
+                aria-live="assertive"
                 class="rounded-lg bg-paper ring-1 ring-red-200 px-4 py-3 text-sm text-red-700"
             >
                 {{ errorMessage }}
@@ -257,6 +298,7 @@ function reset(): void {
             <button
                 type="submit"
                 :disabled="!isValid || status === 'submitting'"
+                :aria-busy="status === 'submitting'"
                 class="btn btn-sunstone text-base w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 <span v-if="status === 'submitting'" class="inline-flex items-center gap-2">
@@ -269,7 +311,7 @@ function reset(): void {
                 </span>
             </button>
 
-            <p class="text-xs text-gravel mt-3">
+            <p id="contact-form-help" class="text-xs text-gravel mt-3">
                 We reageren meestal binnen een uur tijdens kantooruren (ma-vr 08:30-17:00).
             </p>
         </form>

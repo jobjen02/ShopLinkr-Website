@@ -11,7 +11,7 @@ lastUpdated: "2026-05-28"
 
 <p>Volg de onderstaande stappen om je Shopify webshop te koppelen met ShopLinkr. Om alle producten correct in te laden, moet elk product in Shopify een EAN code hebben in het 'Barcode' veld.</p>
 <img alt="" src="/images/support/shopify-koppelen/6P0b37IIumCBmYAilXnQus4QoI.png">
-<h2>Shopify koppelen</h2>
+<h3>Stappen</h3>
 <ol>
 <li>
 <p>Ga in ShopLinkr naar "Instellingen" &gt; "Verkoopkanalen" en klik op "Verkoopkanaal koppelen".</p>

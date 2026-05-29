@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 
 const rows = [
@@ -19,7 +20,7 @@ const rows = [
     {
         eyebrow: 'Voorraad in sync',
         heading: 'Verkocht op bol, direct lager op Shopify.',
-        body: 'Verkoop je een product op bol, dan past ShopLinkr de voorraad in Shopify direct aan. Andersom net zo. Zo houd je één betrouwbare voorraad, ook als je op beide kanalen druk verkoopt. Belangrijk: ShopLinkr synct alleen voorraad en orders, niet je productcontent of prijzen.',
+        body: 'Verkoop je een product op bol, dan past ShopLinkr de voorraad in Shopify direct aan. Andersom net zo. Zo houd je één betrouwbare voorraad, ook als je op beide kanalen druk verkoopt. Je voorraad blijft over al je kanalen kloppend, en je magazijn werkt met één waarheid.',
         icon: 'fa-solid fa-arrows-rotate',
     },
     {
@@ -36,18 +37,93 @@ const rows = [
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Koppel je bol webshop aan Shopify',
-    description: 'Koppel je bol webshop aan je eigen Shopify webshop. Je voorraad is altijd gesynchroniseerd met elkaar en bestellingen komen op een plaats binnen.',
-};
+const dayInLife = [
+    {
+        time: '08:30',
+        title: 'Orders binnen',
+        body: 'Je magazijn opent. ShopLinkr toont gisteravonds orders uit Shopify en je bol verkoopaccount netjes in één lijst, gesorteerd op urgentie.',
+    },
+    {
+        time: '09:00',
+        title: 'Picken met één lijst',
+        body: 'Je print één picklijst voor het hele team. Het maakt niet uit of een order via Shopify of bol binnenkwam, de route door je magazijn is dezelfde.',
+    },
+    {
+        time: '11:00',
+        title: 'Verzending eruit',
+        body: 'Labels rollen uit de printer, track and trace gaat automatisch terug naar Shopify én bol. Je klanten zien de status zonder dat jij iets hoeft te doen.',
+    },
+    {
+        time: '15:45',
+        title: 'Voorraad herzien',
+        body: 'Tussendoor verkocht je 4 keer dezelfde sneaker via bol. Shopify is allang bijgewerkt, zonder dat iemand handmatig iets aanpaste.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Werkt de koppeling met meerdere bol verkoopaccounts?',
+        answer: 'Ja. Je koppelt elk verkoopaccount los aan ShopLinkr en bepaalt per account welke producten je deelt. Heb je een NL en BE account? Dan beheer je ze gewoon naast elkaar in dezelfde omgeving.',
+    },
+    {
+        question: 'Hoe snel beweegt de voorraad tussen Shopify en bol?',
+        answer: 'Een nieuwe order in je Shopify shop of op bol leidt vrijwel direct tot een voorraad-update op het andere kanaal. In de praktijk komt dat neer op een paar seconden.',
+    },
+    {
+        question: 'Wat is de eerste stap?',
+        answer: 'Maak een ShopLinkr account aan, koppel je Shopify webshop met een paar klikken, en daarna je bol verkoopaccount. We hebben stap-voor-stap handleidingen voor allebei en je hebt geen developer nodig.',
+    },
+];
+
+const jsonLd = [
+    {
+        '@type': 'WebPage',
+        name: 'Shopify koppelen aan bol via ShopLinkr',
+        description: 'Verkoop je via Shopify en bol? ShopLinkr houdt je voorraad realtime synchroon en verzamelt alle bestellingen in één overzicht. Eén workflow, geen oversells.',
+        url: 'https://shoplinkr.com/integraties/shopify-koppelen-aan-bol-com',
+    },
+    {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://shoplinkr.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Integraties',
+                item: 'https://shoplinkr.com/integraties',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Shopify koppelen aan bol',
+                item: 'https://shoplinkr.com/integraties/shopify-koppelen-aan-bol-com',
+            },
+        ],
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
-    title="Koppel je bol webshop aan Shopify - ShopLinkr"
-    description="Koppel je bol webshop aan je eigen Shopify webshop. Je voorraad is altijd gesynchroniseerd met elkaar en bestellingen komen op één plaats binnen."
+    title="Shopify koppelen aan bol via ShopLinkr | Integraties"
+    description="Verkoop je via Shopify en bol? ShopLinkr houdt je voorraad realtime synchroon en verzamelt alle bestellingen in één overzicht. Eén workflow, geen oversells."
     eyebrow="Shopify en bol"
     heading="Shopify koppelen met bol via ShopLinkr."
     subheading="Verkoop je via Shopify en via bol? ShopLinkr houdt je voorraad realtime in sync en verzamelt alle bestellingen op één plek. Eén workflow, geen oversells."
@@ -55,13 +131,25 @@ export const prerender = true;
 >
     <section class="pb-12 md:pb-16 bg-paper">
         <div class="container-prose">
-            <a
-                href="/integraties"
-                class="inline-flex items-center gap-2 text-sm text-gravel hover:text-charcoal transition-colors mb-8"
-            >
-                <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
-                Terug naar alle integraties
-            </a>
+            <nav aria-label="Breadcrumb" class="mb-8">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                    <li>
+                        <a href="/" class="hover:text-charcoal transition-colors">Home</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li>
+                        <a href="/integraties" class="hover:text-charcoal transition-colors">Integraties</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li class="text-charcoal font-medium" aria-current="page">
+                        Shopify koppelen aan bol
+                    </li>
+                </ol>
+            </nav>
 
             <div class="flex flex-col sm:flex-row gap-3">
                 <a
@@ -125,6 +213,52 @@ export const prerender = true;
                     ))
                 }
             </ul>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light/60">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-14">
+                <p class="eyebrow mb-4">Een dag in jouw magazijn</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Zo voelt de Shopify + bol flow.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Een typische dag, vanaf het moment dat je magazijn opengaat tot aan de laatste afhaling. Zonder twee tabbladen, zonder dubbele picklijsten.
+                </p>
+            </div>
+
+            <ol class="grid sm:grid-cols-2 gap-4 md:gap-5">
+                {
+                    dayInLife.map((step) => (
+                        <li class="relative bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                            <div class="flex items-baseline gap-3 mb-3">
+                                <span class="text-xs font-mono font-semibold text-sunstone-deep tracking-wider">{step.time}</span>
+                                <span class="h-px flex-1 bg-chalk-dark"></span>
+                            </div>
+                            <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight mb-2">
+                                {step.title}
+                            </h3>
+                            <p class="text-sm text-steel leading-relaxed">
+                                {step.body}
+                            </p>
+                        </li>
+                    ))
+                }
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-10">
+                    Wat je nog wilt weten.
+                </h2>
+
+                <FaqList items={faqs} />
+            </div>
         </div>
     </section>
 

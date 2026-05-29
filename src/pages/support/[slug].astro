@@ -16,11 +16,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
         },
         props: {
             article,
+            allArticles: articles,
         },
     }));
 };
 
-const { article } = Astro.props;
+const { article, allArticles } = Astro.props;
 const { Content } = await render(article);
 
 const categoryInfo = supportCategoriesBySlug[article.data.category];
@@ -30,6 +31,42 @@ const subcategoryInfo = categoryInfo && article.data.subcategory
 
 const articleSlug = article.id.split('/').pop();
 const canonicalUrl = `https://shoplinkr.com/support/${articleSlug}`;
+
+const articleId = article.id;
+const sameSubcategoryArticles = allArticles
+    .filter((a) => {
+        return a.id !== articleId
+            && a.data.category === article.data.category
+            && article.data.subcategory !== undefined
+            && a.data.subcategory === article.data.subcategory;
+    })
+    .sort((a, b) => a.data.order - b.data.order);
+
+const sameCategoryArticles = allArticles
+    .filter((a) => {
+        return a.id !== articleId
+            && a.data.category === article.data.category
+            && a.data.subcategory !== article.data.subcategory;
+    })
+    .sort((a, b) => a.data.order - b.data.order);
+
+const relatedArticles = [...sameSubcategoryArticles, ...sameCategoryArticles]
+    .slice(0, 4)
+    .map((a) => {
+        const slug = a.id.split('/').pop() ?? a.id;
+        return {
+            title: a.data.title,
+            summary: a.data.summary,
+            href: `/support/${slug}`,
+            subcategoryLabel: a.data.subcategoryLabel ?? null,
+        };
+    });
+
+const lastUpdatedFormatted = new Intl.DateTimeFormat('nl-NL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+}).format(article.data.lastUpdated);
 
 const articleSchema = {
     '@type': 'TechArticle',
@@ -115,6 +152,7 @@ export const prerender = true;
     <SupportHero
         title={article.data.title}
         subtitle={article.data.summary}
+        showCtas={false}
     />
 
     <section class="bg-paper">
@@ -143,7 +181,75 @@ export const prerender = true;
                 <article class="prose-shoplinkr">
                     <Content />
                 </article>
+
+                <p class="mt-12 text-[13px] text-gravel">
+                    Laatst bijgewerkt op <time datetime={article.data.lastUpdated.toISOString().slice(0, 10)}>{lastUpdatedFormatted}</time>
+                </p>
+
+                <div class="mt-12 rounded-[18px] bg-chalk-light px-7 md:px-9 py-8 md:py-9 border border-chalk-dark/60">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-none w-10 h-10 rounded-full bg-sunstone-mist flex items-center justify-center">
+                            <i class="fa-solid fa-headset text-sunstone-deep" aria-hidden="true"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h2 class="text-[19px] md:text-[20px] font-semibold text-charcoal tracking-tight mb-1.5">
+                                Nog vragen?
+                            </h2>
+                            <p class="text-[14.5px] text-steel leading-relaxed mb-4">
+                                We helpen je graag verder. Stuur een bericht of plan een gesprek in.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <a
+                                    href="/contact"
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] bg-paper border border-chalk-dark text-[14px] font-semibold text-charcoal hover:bg-sunstone-mist/60 hover:border-sunstone-soft hover:text-sunstone-deep transition-colors"
+                                >
+                                    <i class="fa-solid fa-envelope text-[13px]" aria-hidden="true"></i>
+                                    Neem contact op
+                                </a>
+                                {categoryInfo && (
+                                    <a
+                                        href={`/support/categorieen/${categoryInfo.slug}`}
+                                        class="inline-flex items-center gap-2 px-4 py-2 rounded-[10px] text-[14px] font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                    >
+                                        Terug naar {categoryInfo.label}
+                                        <i class="fa-solid fa-arrow-right text-[12px]" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            {relatedArticles.length > 0 && (
+                <div class="max-w-3xl mt-16 md:mt-20">
+                    <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal tracking-tight mb-6">
+                        Verder lezen
+                    </h2>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {relatedArticles.map((r) => (
+                            <li>
+                                <a
+                                    href={r.href}
+                                    class="group block bg-paper rounded-[14px] border border-chalk-dark/70 hover:border-chalk-dark hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-5 py-4 h-full"
+                                >
+                                    {r.subcategoryLabel && (
+                                        <p class="text-[0.6875rem] text-sunstone-deep font-semibold uppercase tracking-wider mb-1.5">
+                                            {r.subcategoryLabel}
+                                        </p>
+                                    )}
+                                    <h3 class="text-[15px] font-semibold text-charcoal tracking-tight group-hover:text-sunstone-deep transition-colors line-clamp-2">
+                                        {r.title}
+                                    </h3>
+                                    <p class="mt-1 text-[13px] text-steel leading-relaxed line-clamp-2">
+                                        {r.summary}
+                                    </p>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     </section>
 </BaseLayout>

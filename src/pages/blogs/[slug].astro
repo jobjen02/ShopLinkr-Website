@@ -6,17 +6,35 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 
 export async function getStaticPaths() {
     const blogs = await getCollection('blogs');
-    return blogs.map((blog) => ({
-        params: {
-            slug: blog.id,
-        },
-        props: {
-            blog,
-        },
-    }));
+    const visibleBlogs = blogs.filter((b) => b.data.isBlog);
+
+    return blogs.map((blog) => {
+        const others = visibleBlogs.filter((b) => b.id !== blog.id);
+
+        const sameCategory = blog.data.category
+            ? others.filter((b) => b.data.category === blog.data.category)
+            : [];
+
+        const otherIds = new Set(sameCategory.map((b) => b.id));
+        const fallback = others.filter((b) => !otherIds.has(b.id));
+
+        const related = [...sameCategory, ...fallback]
+            .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+            .slice(0, 3);
+
+        return {
+            params: {
+                slug: blog.id,
+            },
+            props: {
+                blog,
+                related,
+            },
+        };
+    });
 }
 
-const { blog } = Astro.props;
+const { blog, related } = Astro.props;
 const { Content } = await render(blog);
 
 const formattedDate = new Intl.DateTimeFormat('nl-NL', {
@@ -24,19 +42,6 @@ const formattedDate = new Intl.DateTimeFormat('nl-NL', {
     month: 'long',
     day: 'numeric',
 }).format(blog.data.publishedAt);
-
-const allBlogs = await getCollection('blogs');
-const others = allBlogs.filter((b) => b.id !== blog.id && b.data.isBlog);
-
-const sameCategory = blog.data.category
-    ? others.filter((b) => b.data.category === blog.data.category)
-    : [];
-
-const fallback = others.filter((b) => !sameCategory.includes(b));
-
-const related = [...sameCategory, ...fallback]
-    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
-    .slice(0, 3);
 
 const canonicalUrl = `https://shoplinkr.com/blogs/${blog.id}`;
 
@@ -46,6 +51,7 @@ const articleSchema = {
     description: blog.data.excerpt,
     datePublished: blog.data.publishedAt.toISOString(),
     dateModified: blog.data.publishedAt.toISOString(),
+    inLanguage: 'nl-NL',
     mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': canonicalUrl,
@@ -64,7 +70,7 @@ const articleSchema = {
         },
     },
     ...(blog.data.image && {
-        image: blog.data.image,
+        image: `https://shoplinkr.com${blog.data.image}`,
     }),
     ...(blog.data.category && {
         articleSection: blog.data.category,

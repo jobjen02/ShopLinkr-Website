@@ -103,6 +103,10 @@ const benefits = isCarrier
         },
     ];
 
+const syncLabel = isCarrier
+    ? 'Tracking automatisch terug'
+    : 'Voorraad en orders in sync';
+
 const quickFacts = [
     {
         icon: 'fa-solid fa-circle-check',
@@ -110,7 +114,7 @@ const quickFacts = [
     },
     {
         icon: 'fa-solid fa-arrows-rotate',
-        label: 'Realtime sync',
+        label: syncLabel,
     },
     {
         icon: 'fa-solid fa-money-bill-wave',
@@ -185,13 +189,25 @@ export const prerender = true;
         </div>
 
         <div class="container-prose pt-10 md:pt-14 pb-20 md:pb-28 relative">
-            <a
-                href="/integraties"
-                class="inline-flex items-center gap-2 text-sm text-gravel hover:text-charcoal transition-colors mb-10"
-            >
-                <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
-                Terug naar alle integraties
-            </a>
+            <nav aria-label="Breadcrumb" class="mb-10">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                    <li>
+                        <a href="/" class="hover:text-charcoal transition-colors">Home</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li>
+                        <a href="/integraties" class="hover:text-charcoal transition-colors">Integraties</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li class="text-charcoal font-medium" aria-current="page">
+                        {name}
+                    </li>
+                </ol>
+            </nav>
 
             <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
                 <aside class="lg:col-span-4 order-2">

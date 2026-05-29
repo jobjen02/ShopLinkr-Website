@@ -9,28 +9,24 @@ const stories = [
         heading: 'Laat ShopLinkr de juiste keuze maken.',
         body: 'Een regel koppelt een actie aan een gebeurtenis rondom een bestelling. Denk aan automatisch een verzendmethode selecteren, een label aan een order hangen, bestellingen in een batch zetten of de prioriteit verhogen. Wat jij anders handmatig zou doen, doet ShopLinkr in een fractie van een seconde. Sneller verwerken zonder de fouten die bij handwerk horen.',
         icon: 'fa-duotone fa-solid fa-wand-magic-sparkles',
-        visualLabel: 'Acties keuze',
     },
     {
         eyebrow: 'Condities combineren',
         heading: 'Bepaal zelf wanneer een regel triggert.',
-        body: 'Stel condities in op gewicht, postcode, kanaal, producttype of klantgroep. Combineer ze met AND wanneer alles moet kloppen, of met OR wanneer één voorwaarde voldoende is. Zo bouw je regels die exact passen bij hoe jouw magazijn werkt. Brievenbuspakketten onder de 2 kilo? Spoedlevering voor zakelijke klanten? Je kunt het allemaal vangen in slimme condities.',
+        body: 'Stel condities in op gewicht, postcode, kanaal, producttype of klantgroep. Combineer ze zoals je wil: álle moeten kloppen, of één is al voldoende. Zo bouw je regels die exact passen bij hoe jouw magazijn werkt. Brievenbuspakketten onder de 2 kilo? Spoedlevering voor zakelijke klanten? Je vangt het allemaal in slimme regels.',
         icon: 'fa-duotone fa-solid fa-filter',
-        visualLabel: 'Conditie builder',
     },
     {
         eyebrow: 'Praktijkvoorbeelden',
         heading: 'Regels die je vandaag kunt instellen.',
-        body: 'Een paar concrete startpunten. Alles onder 2 kilo automatisch via PostNL Brievenbus naar Nederland. Bol bestellingen krijgen altijd een hoge prioriteit zodat ze als eerste de deur uit gaan. Producten in de categorie glas gaan in een aparte batch met een verzekerde vervoerder. Drie regels, drie verschillende winsten op je werkdag.',
+        body: 'Een paar concrete startpunten. Alles onder 2 kilo automatisch via PostNL Brievenbus naar Nederland. Bol-bestellingen krijgen altijd een hoge prioriteit zodat ze als eerste de deur uit gaan. Producten in de categorie glas gaan in een aparte batch met een verzekerde vervoerder. Drie regels, drie verschillende winsten op je werkdag.',
         icon: 'fa-duotone fa-solid fa-lightbulb',
-        visualLabel: 'Voorbeeldregels',
     },
     {
         eyebrow: 'Schaalbare automatisering',
         heading: 'Eén keer instellen, blijvend voordeel.',
         body: 'Een regel die je vandaag bouwt, doet vanaf morgen elke dag zijn werk. Of je nu tien orders per dag verwerkt of duizend, de regel draait voor elke bestelling die binnenkomt. Hoe meer regels je inricht, hoe meer keuzes ShopLinkr van je overneemt. Je houdt zelf tijd over voor waar je verschil maakt: groei, marketing en je klanten.',
         icon: 'fa-duotone fa-solid fa-infinity',
-        visualLabel: 'Automatisering',
     },
 ];
 
@@ -44,7 +40,7 @@ export const prerender = true;
 ---
 
 <PageLayout
-    title="Automatische regels instellen"
+    title="Regels instellen met ShopLinkr"
     description="Eenvoudig regels instellen met ShopLinkr. Automatisch een verzendmethode selecteren bij een bestelling. Bestellingen verwerken wordt nu nog eenvoudiger."
     eyebrow="Automatisering"
     heading="Laat ShopLinkr het werk doen."
@@ -86,20 +82,13 @@ export const prerender = true;
                             <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                                 <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
                                     <div
-                                        class="relative w-full rounded-3xl overflow-hidden bg-chalk-light ring-1 ring-chalk-dark"
+                                        class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-sunstone-mist via-paper to-chalk-light ring-1 ring-chalk-dark"
                                         style="aspect-ratio: 4 / 3;"
                                     >
-                                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-5 p-10 text-center">
-                                            <div class="flex items-center justify-center h-20 w-20 rounded-2xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)]">
-                                                <i class={`${story.icon} text-3xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold mb-2">
-                                                    Visual: {story.visualLabel}
-                                                </p>
-                                                <p class="text-sm text-gravel max-w-[32ch]">
-                                                    Hier komt later een echte screenshot uit ShopLinkr.
-                                                </p>
+                                        <div class="absolute inset-0 opacity-40 pointer-events-none" style="background: radial-gradient(circle at 30% 30%, var(--color-sunstone-soft) 0%, transparent 55%);"></div>
+                                        <div class="absolute inset-0 flex items-center justify-center p-10">
+                                            <div class="flex items-center justify-center h-28 w-28 md:h-32 md:w-32 rounded-3xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_18px_40px_-18px_rgba(25,25,25,0.18)]">
+                                                <i class={`${story.icon} text-5xl md:text-6xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>

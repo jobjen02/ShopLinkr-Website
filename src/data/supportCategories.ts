@@ -27,7 +27,7 @@ export const supportCategories: Array<SupportCategory> = [
             {
                 slug: 'voorbereiding',
                 label: 'Voorbereiding',
-                summary: 'Alles om goed voorbereid van start te gaan met ShopLinkr.',
+                summary: 'Alles om goed voorbereid van start te gaan met ShopLinkr',
             },
         ],
     },
@@ -117,7 +117,7 @@ export const supportCategories: Array<SupportCategory> = [
     },
     {
         slug: 'rapportages-en-inzicht',
-        label: 'Rapportages & inzicht',
+        label: 'Rapportages & Inzicht',
         summary: 'Krijg inzicht in je prestaties en cijfers',
         icon: 'fa-duotone fa-solid fa-chart-line',
         subcategories: [
@@ -152,7 +152,7 @@ export const supportCategories: Array<SupportCategory> = [
             {
                 slug: 'api',
                 label: 'API',
-                summary: 'Integreer je eigen systemen met ShopLinkr via de publieke API. Beheer je magazijndata vanuit je eigen software.',
+                summary: 'Integreer je eigen systemen met ShopLinkr via de publieke API',
             },
         ],
     },
@@ -168,8 +168,4 @@ export const supportCategoriesBySlug: Record<string, SupportCategory> = supportC
 
 export function findSubcategoryBySlug(category: SupportCategory, slug: string): SupportSubcategory | undefined {
     return category.subcategories.find((s) => s.slug === slug);
-}
-
-export function findSubcategoryByLabel(category: SupportCategory, label: string): SupportSubcategory | undefined {
-    return category.subcategories.find((s) => s.label === label);
 }

@@ -16,6 +16,7 @@ const searchData = articles
             category: a.data.category,
             categoryLabel: a.data.categoryLabel,
             subcategory: a.data.subcategory ?? null,
+            subcategoryLabel: a.data.subcategoryLabel ?? null,
             href: `/support/${slug}`,
         };
     })
@@ -28,7 +29,7 @@ const jsonLd = {
     url: 'https://shoplinkr.com/support',
     mainEntity: {
         '@type': 'ItemList',
-        numberOfItems: articles.length,
+        numberOfItems: supportCategories.length,
         itemListElement: supportCategories.map((category, index) => ({
             '@type': 'ListItem',
             position: index + 1,
@@ -48,7 +49,7 @@ export const prerender = true;
 >
     <SupportHero
         title="Support"
-        subtitle="We helpen je graag goed opweg!"
+        subtitle="We helpen je graag goed op weg."
     />
 
     <section class="bg-paper">

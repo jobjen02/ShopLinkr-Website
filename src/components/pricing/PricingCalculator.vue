@@ -214,25 +214,17 @@ const channelCost = computed(() => {
 });
 
 const orderCost = computed(() => {
-    let remaining = orders.value;
+    const totalOrders = orders.value;
     let total = 0;
-    let lastMax = 0;
 
     for (const tier of ORDER_TIERS) {
-        const tierMax = tier.max ?? Infinity;
-        const tierSize = tierMax - lastMax;
-        const inThisTier = Math.min(remaining, tierSize);
-
-        if (inThisTier > 0) {
-            total += inThisTier * tier.pricePerOrder;
-            remaining -= inThisTier;
-        }
-
-        if (remaining <= 0) {
+        if (totalOrders <= tier.min) {
             break;
         }
 
-        lastMax = tierMax;
+        const tierMax = tier.max ?? Infinity;
+        const ordersInTier = Math.min(totalOrders, tierMax) - tier.min;
+        total += ordersInTier * tier.pricePerOrder;
     }
 
     return total;
@@ -273,6 +265,22 @@ const ordersLabel = computed(() => {
     }
 
     return formattedOrders.value;
+});
+
+const ordersAriaText = computed(() => {
+    if (isMaxOrders.value) {
+        return '100.000 of meer orders per maand';
+    }
+
+    if (orders.value === 0) {
+        return '0 orders per maand';
+    }
+
+    if (orders.value === 1) {
+        return '1 order per maand';
+    }
+
+    return `${formattedOrders.value} orders per maand`;
 });
 
 const channelLabel = computed(() => {
@@ -344,6 +352,7 @@ watch(orderSliderValue, (newValue) => {
                             :max="CHANNEL_SLIDER_MAX"
                             step="1"
                             class="pricing-range w-full"
+                            :aria-valuetext="channelLabel"
                             :style="{
                                 '--progress': `${(channelSliderValue / CHANNEL_SLIDER_MAX) * 100}%`,
                             }"
@@ -391,6 +400,7 @@ watch(orderSliderValue, (newValue) => {
                             :max="ORDER_SLIDER_MAX"
                             step="1"
                             class="pricing-range w-full"
+                            :aria-valuetext="ordersAriaText"
                             :style="{
                                 '--progress': `${(orderSliderValue / ORDER_SLIDER_MAX) * 100}%`,
                             }"
@@ -462,7 +472,7 @@ watch(orderSliderValue, (newValue) => {
                     </div>
 
                     <p class="text-sm text-chalk-darker leading-relaxed mb-6">
-                        Vanaf &euro; 5 per maand. Geen verborgen kosten. Maandelijks opzegbaar.
+                        Pay as you go. Geen verborgen kosten. Maandelijks opzegbaar.
                     </p>
 
                     <div
