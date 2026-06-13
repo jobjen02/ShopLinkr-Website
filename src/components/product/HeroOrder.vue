@@ -59,9 +59,11 @@ const seq: Array<{ dur: number; fn: () => void }> = [
     { dur: 600, fn: () => (done.value = 3) }, // Ingepakt
     { dur: 400, fn: () => (labelShown.value = true) }, // PostNL-label klaar
     { dur: 1500, fn: () => { done.value = 4; ttShown.value = true; } }, // Verzonden + T&T
-    { dur: 4000, fn: () => (visible.value = false) }, // hold, dan fade out
-    { dur: 600, fn: () => { instant.value = true; reset(); } }, // snap-reset onzichtbaar
-    { dur: 150, fn: () => { instant.value = false; visible.value = true; } }, // fade in, loop
+    // Hold the finished state, then snap the progress back to the start without
+    // the card disappearing: instant flag kills transitions so nothing visibly
+    // collapses, then the loop replays from step 1.
+    { dur: 3500, fn: () => { instant.value = true; reset(); } },
+    { dur: 100, fn: () => { instant.value = false; } },
 ];
 
 let idx = 0;
@@ -218,7 +220,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                     :class="synced ? 'opacity-100' : 'opacity-0'"
                 >
                     <span class="h-1.5 w-1.5 rounded-full bg-green"></span>
-                    Overal gelijk
+                    Voorraad bijgewerkt
                 </span>
             </div>
             <div class="flex items-center gap-1.5 mt-2.5">
