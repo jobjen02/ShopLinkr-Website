@@ -1,62 +1,112 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const rows = [
-    {
-        eyebrow: 'Registratie',
-        heading: 'Leg een inkomende levering vast in een paar klikken.',
-        body: 'Komt er een nieuwe lading binnen? Maak in ShopLinkr een levering aan, koppel de juiste producten en geef per artikel aan hoeveel stuks je verwacht. Geen losse spreadsheets, geen papieren bonnen.',
-        icon: 'fa-solid fa-truck-ramp-box',
-    },
-    {
-        eyebrow: 'Real-time voorraad',
-        heading: 'Voorraad gaat direct mee omhoog.',
-        body: 'Zodra je een levering verwerkt, schiet de voorraad meteen omhoog in al je gekoppelde verkoopkanalen. Wat je vandaag inboekt, kun je vandaag verkopen.',
-        icon: 'fa-solid fa-arrow-up-9-1',
-    },
-    {
-        eyebrow: 'Team notities',
-        heading: 'Iedereen ziet hetzelfde verhaal.',
-        body: 'Plak een pakbon erbij, voeg een opmerking toe over een beschadigde doos of zet een collega op de hoogte met een interne notitie. Je hele team werkt vanuit dezelfde informatie.',
-        icon: 'fa-solid fa-note-sticky',
-    },
-    {
-        eyebrow: 'PDF checklist',
-        heading: 'Print een werkbon voor je magazijn.',
-        body: 'Vanuit elke levering genereer je een nette PDF-checklist die je magazijnmedewerker meeneemt naar de loods. Alle producten met verwachte aantallen staan erop, klaar om afgevinkt te worden.',
-        icon: 'fa-solid fa-clipboard-list-check',
-    },
-    {
-        eyebrow: 'Historie',
-        heading: 'Terugzoeken wat je drie maanden terug ontving.',
-        body: 'Elke levering blijft volledig zichtbaar in je historie. Wie heeft de levering aangemaakt, welke aantallen zijn ontvangen en welke notities zijn toegevoegd. Handig bij controles of als een leverancier vraagt om bewijs.',
-        icon: 'fa-solid fa-clock-rotate-left',
-    },
+const subFeatures = [
     {
         eyebrow: 'Verschillen signaleren',
         heading: 'Zie meteen waar de pakbon niet klopt.',
-        body: 'Tijdens het inboeken vergelijk je verwachte en ontvangen aantallen naast elkaar. Een tekort, een teveel of een verkeerd artikel valt direct op, zodat je het meteen kunt opnemen met je leverancier.',
-        icon: 'fa-solid fa-scale-balanced',
+        body: 'Tijdens het ontvangen zet je verwachte en ontvangen aantallen naast elkaar. Een tekort, een teveel of een verkeerd artikel valt direct op, zodat je het op kunt nemen met je leverancier.',
+        icon: 'fa-duotone fa-solid fa-scale-balanced',
+    },
+    {
+        eyebrow: 'Locatie per item',
+        heading: 'Bepaal per regel waar de voorraad heen gaat.',
+        body: 'Per regel kies je de opslaglocatie waar de voorraad terechtkomt. Handig als je een levering verdeelt over meerdere magazijnplekken of zones.',
+        icon: 'fa-duotone fa-solid fa-warehouse',
+    },
+    {
+        eyebrow: 'Backorders mee',
+        heading: 'Openstaande bestellingen automatisch vrijgegeven.',
+        body: 'Staan er backorders open voor producten in de levering? Zodra je ontvangt, springen die orders terug naar Open en kun je ze gewoon picken en verzenden.',
+        icon: 'fa-duotone fa-solid fa-clock-rotate-left',
+    },
+    {
+        eyebrow: 'Vanuit inkoopadvies',
+        heading: 'Van advies naar concept-levering in één klik.',
+        body: 'Werk je met inkoopadvies? Zet het in één keer om naar concept-leveringen per leverancier, klaar om te bestellen.',
+        icon: 'fa-duotone fa-solid fa-wand-magic-sparkles',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Leveringen bijhouden via ShopLinkr',
-    description: 'Inkomende leveringen efficiënt beheren met ShopLinkr. Registreer leveringen, controleer aantallen op de werkvloer en zie je voorraad direct meegroeien in al je verkoopkanalen.',
-};
+const workflowSteps = [
+    {
+        title: 'Levering aanmaken',
+        body: 'Kies de leverancier, vul een referentie en verwachte leverdatum in en voeg de producten toe die je verwacht. Of zet een inkoopadvies in één klik om naar concept-leveringen per leverancier.',
+    },
+    {
+        title: 'Markeren als ingekocht',
+        body: 'Bestelling geplaatst bij je leverancier? Zet de levering op Ingekocht. Vanaf dat moment staat de levering klaar om ontvangen te worden.',
+    },
+    {
+        title: 'Producten ontvangen',
+        body: 'Vink per regel af wat er binnen is en kies de opslaglocatie. De voorraad wordt direct bijgewerkt in al je verkoopkanalen. Een barcodescanner werkt ook: ShopLinkr herkent het product aan de EAN-code en telt automatisch mee.',
+    },
+    {
+        title: 'Levering afronden',
+        body: 'Klaar met inboeken? Markeer de levering als Verwerkt. Wat niet binnen is gekomen blijft zichtbaar onder Niet ontvangen, zodat je later kunt terugzien wat er miste.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Kun je een levering vanuit een inkoopadvies aanmaken?',
+        answer: 'Ja. Het inkoopadvies berekent op basis van je voorraad, backorders en verwachte verkoop wat je per leverancier moet bestellen. Ben je tevreden met het advies, dan zet je het in één klik om naar leveringen. ShopLinkr maakt per leverancier een levering aan met de geadviseerde producten en aantallen, met status <strong>Concept</strong> en klaar om te bestellen.',
+    },
+    {
+        question: 'Hoe verwerk je een levering waarvan je minder ontvangt dan besteld?',
+        answer: 'Tijdens het ontvangen vul je per regel het werkelijke aantal in. Het verschil blijft staan onder Verwacht, zodat je het later alsnog kunt ontvangen als er nog wat nakomt. Rond je de levering af terwijl er regels openstaan, dan vind je die terug onder Niet ontvangen.',
+    },
+    {
+        question: 'Wat gebeurt er met backorders zodra je een levering ontvangt?',
+        answer: 'Backorders voor producten in de levering komen automatisch vrij zodra je de voorraad ontvangt. De bestellingen springen terug naar <strong>Open</strong> en je kunt ze gewoon picken en verzenden. Je hoeft niet eerst alle backorders zelf na te lopen.',
+    },
+    {
+        question: 'Kun je een ontvangst ongedaan maken?',
+        answer: 'Ja. Heb je per ongeluk een product ontvangen of de verkeerde locatie gekozen, dan kun je de ontvangst ongedaan maken. De voorraad wordt weer afgeschreven van de locatie en het product schuift terug naar Verwacht, zodat je het opnieuw kunt ontvangen.',
+    },
+    {
+        question: 'Hoe koppel je een levering aan een specifieke opslaglocatie?',
+        answer: 'Per ontvangen regel kies je de locatie waar het product naartoe gaat. Zo kun je een levering verdelen over meerdere locaties of zones in je magazijn. Elke ontvangst wordt vastgelegd als voorraadmutatie met de reden Levering ontvangen, zodat je later precies kunt terugzien welke stuks naar welke locatie zijn gegaan.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Leveringen', '/functionaliteiten/leveringen'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Leveringen bijhouden met ShopLinkr',
+        description: 'Beheer inkomende leveringen in ShopLinkr. Registreer wat je verwacht, controleer aantallen bij ontvangst en zie je voorraad direct bijwerken in al je verkoopkanalen.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Leveringen bijhouden met ShopLinkr"
-    description="Inkomende leveringen efficiënt beheren met ShopLinkr. Registreer leveringen, controleer aantallen op de werkvloer en zie je voorraad direct meegroeien in al je verkoopkanalen."
+    description="Beheer inkomende leveringen in ShopLinkr. Registreer wat je verwacht, controleer aantallen bij ontvangst en zie je voorraad direct bijwerken in al je verkoopkanalen."
     eyebrow="Inkomende leveringen"
-    heading="Boek nieuwe voorraad in zonder gedoe."
-    subheading="Registreer leveringen van je leveranciers, vink ze af op de werkvloer en zie je voorraad direct meegroeien in al je verkoopkanalen."
+    heading="Van pakbon naar voorraad in één flow."
+    subheading="Registreer wat je bij je leveranciers verwacht, vink de regels af tijdens het ontvangen en zie je voorraad direct bijwerken in al je verkoopkanalen."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -83,46 +133,164 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-paper">
-        <div class="container-prose">
-            <div class="max-w-3xl mb-12 md:mb-16">
-                <p class="eyebrow mb-4">Van pakbon naar voorraad</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                    Eén vast proces voor elke binnenkomende lading.
-                </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
-                    Een levering binnenkrijgen lijkt simpel, tot je beseft hoeveel kleine stappen erbij komen kijken. ShopLinkr brengt die stappen samen in één duidelijke flow, zodat je magazijn altijd up-to-date is en niets door de vingers glipt.
-                </p>
-            </div>
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Inboeken op de werkvloer</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Verwacht naast ontvangen,
+                            <span class="block">verschil meteen zichtbaar.</span>
+                        </h2>
+                    </div>
 
-            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
-                {
-                    rows.map((row) => (
-                        <li class="py-10 md:py-12">
-                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
-                                <div class="md:col-span-4 flex md:items-start gap-4">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
-                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
-                                    </div>
-                                    <div class="md:hidden">
-                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
-                                    </div>
-                                    <div class="hidden md:block">
-                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
-                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
-                                    </div>
-                                </div>
-                                <div class="md:col-span-8">
-                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
-                                        {row.body}
-                                    </p>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-truck-ramp-box text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <div class="flex flex-col">
+                                    <span class="text-sm font-semibold text-charcoal">L-2026-148</span>
+                                    <span class="text-[11px] text-gravel">Noorderlicht Goederen</span>
                                 </div>
                             </div>
-                        </li>
+                            <span class="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-sunstone-mist text-sunstone-deep text-[10px] uppercase tracking-[0.12em] font-semibold ring-1 ring-sunstone-soft/40">
+                                <span class="h-1.5 w-1.5 rounded-full bg-sunstone-deep"></span>
+                                In verwerking
+                            </span>
+                        </div>
+
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex flex-col min-w-0">
+                                    <span class="text-sm text-charcoal font-medium truncate">T-shirt Classic Wit M</span>
+                                    <span class="text-[11px] text-gravel">B.4</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-xs text-gravel tabular-nums">100</span>
+                                    <i class="fa-solid fa-arrow-right text-gravel text-[10px]" aria-hidden="true"></i>
+                                    <span class="text-xs text-charcoal font-semibold tabular-nums">100</span>
+                                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <div class="flex flex-col min-w-0">
+                                    <span class="text-sm text-charcoal font-medium truncate">Bluetooth oortjes Onyx</span>
+                                    <span class="text-[11px] text-gravel">A.2</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-xs text-gravel tabular-nums">50</span>
+                                    <i class="fa-solid fa-arrow-right text-gravel text-[10px]" aria-hidden="true"></i>
+                                    <span class="text-xs text-sunstone-deep font-semibold tabular-nums">45</span>
+                                    <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">5 open</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex flex-col min-w-0">
+                                    <span class="text-sm text-charcoal font-medium truncate">Set wieldoppen 16 inch</span>
+                                    <span class="text-[11px] text-gravel">C.1</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-xs text-gravel tabular-nums">20</span>
+                                    <i class="fa-solid fa-arrow-right text-gravel text-[10px]" aria-hidden="true"></i>
+                                    <span class="text-xs text-charcoal font-semibold tabular-nums">20</span>
+                                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-center gap-2.5 pt-3 border-t border-chalk-darker">
+                            <span class="inline-flex items-center justify-center h-6 w-6 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                <i class="fa-solid fa-clock-rotate-left text-[0.65rem]" aria-hidden="true"></i>
+                            </span>
+                            <p class="text-[12px] text-charcoal leading-snug">
+                                <span class="font-semibold">14 backorders</span> <span class="text-steel">vrijgegeven, voorraad staat live op alle kanalen.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Wat niet binnen is blijft staan onder Verwacht, klaar voor de volgende ontvangst.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
                     ))
                 }
-            </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Zo loopt een levering</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Van bestelling bij leverancier
+                        <span class="block text-sunstone-deep">tot voorraad op het schap.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Elke inkomende levering doorloopt in ShopLinkr dezelfde vier stappen. Helder voor je magazijn en eenvoudig over te dragen aan je team.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ol class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            workflowSteps.map((step, index) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5 text-sm font-semibold">
+                                        {index + 1}
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mis je een vraag? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
         </div>
     </section>
 

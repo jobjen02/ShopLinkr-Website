@@ -1,77 +1,104 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const stories = [
+const subFeatures = [
     {
-        eyebrow: 'Eén centraal overzicht',
-        heading: 'Alle kanalen bij elkaar op één scherm.',
-        body: 'Verkoop jij via Bol, Shopify en WooCommerce naast elkaar? Dan ken je de pijn van switchen tussen tabbladen om bestellingen te verzamelen. In ShopLinkr komen al je orders binnen op één centrale bestellingenpagina. Je ziet direct welk kanaal de bestelling plaatste, welke producten erin zitten en waar ze in je magazijn liggen. Geen losse exports of CSV gedoe, gewoon één werkplek voor je hele verkoop.',
+        eyebrow: 'Bulk verwerken',
+        heading: 'Grote volumes in één beweging.',
+        body: 'Selecteer een groep bestellingen, verwerk ze als batch en download de verzendlabels en picklijst in één keer.',
         icon: 'fa-duotone fa-solid fa-layer-group',
     },
     {
-        eyebrow: 'Batches verwerken',
-        heading: 'Grote volumes in één vloeiende beweging.',
-        body: 'Honderden orders op een drukke maandag? Selecteer een batch bestellingen en verwerk ze in één keer. ShopLinkr bundelt de pickwerkzaamheden, genereert labels in bulk en zet de status automatisch door. Wat eerst een halve dag kostte, doe je nu in een uurtje. Lekker efficiënt als de pieken in je verkoop oplopen.',
-        icon: 'fa-duotone fa-solid fa-boxes-stacked',
+        eyebrow: 'Bestellingen samenvoegen',
+        heading: 'Eén pakket voor dezelfde klant.',
+        body: 'Heeft een klant meerdere orders geplaatst, eventueel op verschillende kanalen? Voeg ze samen tot één zending. De track en trace gaat terug naar elk origineel kanaal.',
+        icon: 'fa-duotone fa-solid fa-code-merge',
     },
     {
-        eyebrow: 'Losse bestellingen',
-        heading: 'Volledige controle voor uitzonderingen.',
-        body: 'Soms wil je een order net even anders behandelen. Een spoedlevering, een aangepast verzendadres of een cadeaubon die mee moet. Naast batchverwerking pak je elke bestelling ook los op. Pas details aan, kies een andere vervoerder of voeg een notitie toe voor je magazijn. Je houdt de controle waar dat nodig is.',
-        icon: 'fa-duotone fa-solid fa-hand-pointer',
+        eyebrow: 'Backorders',
+        heading: 'Vrijgegeven zodra de voorraad er is.',
+        body: 'Niet genoeg voorraad? De bestelling krijgt de status Backorder. Zodra je een levering ontvangt, springt de order automatisch terug naar Open. Daar heb je geen omkijken naar.',
+        icon: 'fa-duotone fa-solid fa-clock-rotate-left',
     },
     {
-        eyebrow: 'Verzendlabels',
-        heading: 'Direct labels printen bij je favoriete vervoerder.',
-        body: 'Vanuit ShopLinkr maak je in een paar klikken verzendlabels aan bij de vervoerder die jij gebruikt. Sluit je accounts aan en de juiste labels rollen er meteen uit. Geen handmatig invoeren van adressen, geen heen en weer schakelen tussen portalen. Plakken en wegsturen, klaar.',
-        icon: 'fa-duotone fa-solid fa-print',
-    },
-    {
-        eyebrow: 'Meerdere vervoerders',
-        heading: 'Zoveel keuze als je magazijn nodig heeft.',
-        body: 'Werk je met PostNL voor de standaard pakketten, DPD voor de zwaardere zendingen en MyParcel of Sendcloud voor het buitenland? ShopLinkr koppelt met meerdere carriers tegelijk zodat je per bestelling de slimste keuze maakt. Zo houd je je verzendkosten scherp en geef je je klanten de leverbelofte die past.',
-        icon: 'fa-duotone fa-solid fa-truck-fast',
-    },
-    {
-        eyebrow: 'Statussen terugkoppelen',
-        heading: 'Track en trace direct terug naar je kanalen.',
-        body: 'Zodra een label is aangemaakt en de order is verstuurd, gaat de status realtime terug naar het verkoopkanaal waar de bestelling vandaan kwam. De klant ontvangt zijn track en trace, jouw winkel toont de juiste status en jij hoeft niets handmatig bij te werken. Een rustig achtergrondproces dat continu loopt.',
-        icon: 'fa-duotone fa-solid fa-arrows-rotate',
+        eyebrow: 'Handmatige zendingen',
+        heading: 'Ook orders buiten je kanaal om.',
+        body: 'Telefonische bestellingen of B2B-zendingen. Vul de klantgegevens en het afleveradres in, kies een vervoerder en ShopLinkr genereert het verzendlabel.',
+        icon: 'fa-duotone fa-solid fa-pen-to-square',
     },
 ];
 
 const workflowSteps = [
     {
         title: 'Bestelling komt binnen',
-        body: 'Een order vanuit Bol, Shopify of WooCommerce verschijnt direct in je centrale overzicht, compleet met de besteldetails en magazijnlocatie.',
+        body: 'Een order vanuit een van je verkoopkanalen verschijnt direct in je centrale overzicht, met de productdetails en voorraadlocaties al klaargezet.',
     },
     {
         title: 'Picken en inpakken',
-        body: 'Pak je losse orders of stel een batch samen. Je picklijst toont precies waar in je magazijn elk product ligt.',
+        body: 'Pak losse orders, stel een batch samen of werk met picklijsten en inpakstations. De picklijst toont precies waar elk product in je magazijn ligt.',
     },
     {
         title: 'Label en verzenden',
-        body: 'Kies je vervoerder, print je label en de status loopt automatisch terug naar het kanaal waar de bestelling vandaan kwam.',
+        body: 'Kies je vervoerder en print het label. De status loopt automatisch terug naar het kanaal waar de bestelling vandaan kwam.',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Bestellingen verwerken met ShopLinkr',
-    description: 'Eenvoudig bestellingen verwerken met ShopLinkr. Verzendlabels aanmaken bij je favoriete vervoerder. Eenvoudig batches verwerken, maar natuurlijk ook losse bestellingen.',
-};
+const faqs = [
+    {
+        question: 'Kan ik bestellingen van verschillende verkoopkanalen samenvoegen?',
+        answer: 'Ja. Heeft één klant op zowel Bol als Shopify een order geplaatst? Dan voeg je die samen tot één zending. ShopLinkr signaleert dat er meerdere open bestellingen voor hetzelfde afleveradres staan en biedt de samenvoeging direct aan.',
+    },
+    {
+        question: 'Kan ik telefonische orders of B2B-zendingen ook in ShopLinkr maken?',
+        answer: 'Ja, met handmatige zendingen. Je vult de klantgegevens en het afleveradres in, kiest een vervoerder en ShopLinkr genereert het verzendlabel. De zending hoeft niet gekoppeld te zijn aan een bestelling uit je verkoopkanaal.',
+    },
+    {
+        question: 'Wat gebeurt er als een klant iets bestelt dat niet op voorraad ligt?',
+        answer: 'De bestelling krijgt automatisch de status <strong>Backorder</strong> en wacht op voorraad. Zodra je een levering ontvangt en de voorraad weer aanvult, gaat de bestelling automatisch over naar <strong>Open</strong> en kun je hem op de normale manier verwerken. Je kunt backorders aanzetten of uitzetten per bedrijf, per verkoopkanaal of per product.',
+    },
+    {
+        question: 'Welke vervoerders worden ondersteund?',
+        answer: 'ShopLinkr ondersteunt onder andere PostNL, DPD en GLS. Je koppelt zoveel vervoerders als je nodig hebt en kiest per bestelling de juiste. <a href="/integraties">Bekijk de volledige lijst op de integraties-pagina</a>.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Bestellingen', '/functionaliteiten/bestellingen'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Bestellingen verwerken met ShopLinkr',
+        description: 'Verwerk bestellingen uit al je verkoopkanalen op één plek. Maak verzendlabels bij je favoriete vervoerder, werk in batches of pak losse orders tussendoor.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Bestellingen verwerken met ShopLinkr"
-    description="Eenvoudig bestellingen verwerken met ShopLinkr. Verzendlabels aanmaken bij je favoriete vervoerder. Eenvoudig batches verwerken, maar natuurlijk ook losse bestellingen."
+    description="Verwerk bestellingen uit al je verkoopkanalen op één plek. Maak verzendlabels bij je favoriete vervoerder, werk in batches of pak losse orders tussendoor."
     eyebrow="Bestellingen"
     heading="Alles verwerken op één plek."
-    subheading="Bestellingen uit Bol, Shopify en WooCommerce komen samen in één centraal overzicht. Verwerk ze in batches, kies je vervoerder en stuur de status automatisch terug naar je kanalen."
+    subheading="Bestellingen vanuit al je verkoopkanalen komen samen in één overzicht. Verwerk losse orders of grote batches, print labels van elke vervoerder en de status wordt automatisch teruggekoppeld."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -98,47 +125,92 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="bg-paper">
-        <div class="container-prose">
-            {
-                stories.map((story, index) => {
-                    const isReversed = index % 2 === 1;
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Eén centraal overzicht</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Al jouw verkoopkanalen
+                            <span class="block">op één werkplek.</span>
+                        </h2>
+                    </div>
 
-                    return (
-                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
-                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
-                                    <div
-                                        class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-sunstone-mist via-paper to-chalk-light ring-1 ring-chalk-dark"
-                                        style="aspect-ratio: 4 / 3;"
-                                    >
-                                        <div class="absolute inset-0 opacity-40 pointer-events-none" style="background: radial-gradient(circle at 30% 30%, var(--color-sunstone-soft) 0%, transparent 55%);"></div>
-                                        <div class="absolute inset-0 flex items-center justify-center p-10">
-                                            <div class="flex items-center justify-center h-28 w-28 md:h-32 md:w-32 rounded-3xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_18px_40px_-18px_rgba(25,25,25,0.18)]">
-                                                <i class={`${story.icon} text-5xl md:text-6xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">Open bestellingen</p>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel tabular-nums">4 orders</span>
+                        </div>
 
-                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
-                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
-                                        {story.heading}
-                                    </h2>
-                                    <p class="text-lg text-steel leading-relaxed">
-                                        {story.body}
-                                    </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#0000A4] text-paper">Bol</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">Bluetooth oortjes</p>
+                                    <p class="text-[11px] text-gravel tabular-nums">#12384</p>
                                 </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel">Open</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#95BF47] text-paper">Shopify</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">Set wieldoppen</p>
+                                    <p class="text-[11px] text-sunstone-deep font-semibold tabular-nums">#12385 + #12388 samengevoegd</p>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">Picken</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#7F54B3] text-paper">WooComm</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">Houten tafellamp</p>
+                                    <p class="text-[11px] text-gravel tabular-nums">#12386</p>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel">Verwerken</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#E10915] text-paper">Kaufland</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">Notitieboek A5</p>
+                                    <p class="text-[11px] text-gravel tabular-nums">#12387</p>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-charcoal">Afgehandeld</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-center justify-between gap-3 pt-4 mt-4 border-t border-chalk-darker">
+                            <span class="text-sm font-semibold text-charcoal">Selecteer en verwerk</span>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-sunstone-deep font-semibold">
+                                <i class="fa-solid fa-layer-group text-[0.65rem]" aria-hidden="true"></i>
+                                In één batch
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Geen losse exports, geen geschakel tussen tabbladen. Filter op kanaal, status of vervoerder en verwerk alles vanuit hetzelfde scherm.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
                             </div>
                         </article>
-                    );
-                })
-            }
+                    ))
+                }
+            </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light">
+    <section class="py-20 md:py-28 bg-chalk-light">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-5">
@@ -148,7 +220,7 @@ export const prerender = true;
                         <span class="block text-sunstone-deep">geen losse eindjes.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Een bestelling die binnenkomt doorloopt in ShopLinkr altijd dezelfde heldere route. Voorspelbaar voor jou, snel voor je klant.
+                        Elke bestelling volgt in ShopLinkr dezelfde heldere route. Voorspelbaar voor jou, snel voor je klant.
                     </p>
                 </div>
 
@@ -168,6 +240,31 @@ export const prerender = true;
                             ))
                         }
                     </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mis je een vraag? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
                 </div>
             </div>
         </div>

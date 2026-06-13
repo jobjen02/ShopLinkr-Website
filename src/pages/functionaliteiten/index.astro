@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
 interface Pillar {
     eyebrow: string;
@@ -19,7 +20,7 @@ const pillars: Array<Pillar> = [
     {
         eyebrow: 'Orders & verzending',
         heading: 'Van bestelling binnen tot pakket de deur uit.',
-        body: 'Verwerk orders uit Bol, Shopify en WooCommerce vanuit één scherm. Pick efficiënt, print labels van alle Nederlandse vervoerders en handel retouren netjes af.',
+        body: 'Bestellingen uit al je verkoopkanalen komen binnen in één overzicht. Pick met een slimme route door je magazijn, print labels bij elke gekoppelde vervoerder en verwerk retouren zonder de rommel.',
         accent: 'paper',
         features: [
             {
@@ -29,7 +30,7 @@ const pillars: Array<Pillar> = [
             },
             {
                 title: 'Picklijsten',
-                href: '/functionaliteiten/pick-en-pack',
+                href: '/functionaliteiten/picklijsten',
                 icon: 'fa-solid fa-clipboard-list',
             },
             {
@@ -47,7 +48,7 @@ const pillars: Array<Pillar> = [
     {
         eyebrow: 'Voorraad & magazijn',
         heading: 'Realtime grip op je producten en je magazijn.',
-        body: 'Eén voorraadbron voor al je verkoopkanalen. Slim inkoopadvies, voorraadmeldingen, magazijnlocaties per product en bundels die zelf de voorraad afrekenen.',
+        body: 'Eén voorraadbron voor al je verkoopkanalen. Magazijnlocaties per product, inkoopadvies op basis van verkoopdata, leveringen die je voorraad direct laten meegroeien en bundels die zichzelf bijhouden.',
         accent: 'chalk',
         features: [
             {
@@ -71,11 +72,6 @@ const pillars: Array<Pillar> = [
                 icon: 'fa-solid fa-lightbulb',
             },
             {
-                title: 'Productbundels',
-                href: '/functionaliteiten/productbundels',
-                icon: 'fa-solid fa-cubes',
-            },
-            {
                 title: 'Leveringen',
                 href: '/functionaliteiten/leveringen',
                 icon: 'fa-solid fa-truck-ramp-box',
@@ -84,8 +80,8 @@ const pillars: Array<Pillar> = [
     },
     {
         eyebrow: 'Automatiseren & beheren',
-        heading: 'Laat ShopLinkr het werk doen.',
-        body: 'Automatiseer terugkerend werk met slimme regels, krijg inzicht in je cijfers, beheer klanten centraal en geef je team toegang met de juiste rechten.',
+        heading: 'Automatiseren, rapporten en gebruikersbeheer.',
+        body: 'Stel regels in voor terugkerend werk, lees je cijfers af in vaste rapporten, beheer klantgegevens vanuit één plek en nodig collega\'s uit met de rol die bij ze past.',
         accent: 'paper',
         features: [
             {
@@ -112,21 +108,27 @@ const pillars: Array<Pillar> = [
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Functionaliteiten | ShopLinkr',
-    description: 'Alle functionaliteiten van ShopLinkr op een rij. Alles wat je nodig hebt om je bestellingen en voorraad goed te beheren.',
-};
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Functionaliteiten | ShopLinkr',
+        description: 'Alle functionaliteiten van ShopLinkr op een rij. Van orderverwerking en verzending tot voorraad, inkoop en automatisering.',
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Functionaliteiten | ShopLinkr"
-    description="Alle functionaliteiten van ShopLinkr op een rij. Alles wat je nodig hebt om je bestellingen en voorraad goed te beheren."
+    description="Alle functionaliteiten van ShopLinkr op een rij. Van orderverwerking en verzending tot voorraad, inkoop en automatisering."
     eyebrow="Het volledige platform"
     heading="Alles wat je nodig hebt, in één systeem."
-    subheading="Van bestelling tot pakket, en van voorraad tot inkoop. ShopLinkr brengt je hele magazijnoperatie samen op één plek."
+    subheading="Orders verwerken, voorraad synchroniseren, inkoop plannen en je team aansturen. ShopLinkr bundelt je hele magazijnoperatie in één werkomgeving."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">

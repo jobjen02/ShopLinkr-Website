@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import { externalLinks } from '../data/externalLinks';
+import { breadcrumbs } from '../utils/seo';
 
 const team = [
     {
@@ -77,34 +78,40 @@ const values = [
     },
 ];
 
-const jsonLd = {
-    '@type': 'AboutPage',
-    name: 'Team | ShopLinkr',
-    description: 'Maak kennis met het team achter ShopLinkr. Een klein, betrokken team dat magazijnsoftware bouwt voor Nederlandse webshops.',
-    mainEntity: {
-        '@type': 'Organization',
-        name: 'ShopLinkr',
-        url: 'https://shoplinkr.com',
-        foundingDate: '2022',
-        founder: {
-            '@type': 'Person',
-            name: 'Job',
-        },
-        employee: realTeam.map((member) => ({
-            '@type': 'Person',
-            name: member.name,
-            jobTitle: member.role,
-            description: member.bio,
-            ...(member.photo && {
-                image: `https://shoplinkr.com${member.photo}`,
-            }),
-            worksFor: {
-                '@type': 'Organization',
-                name: 'ShopLinkr',
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Team', '/team'],
+    ]),
+    {
+        '@type': 'AboutPage',
+        name: 'Team | ShopLinkr',
+        description: 'Maak kennis met het team achter ShopLinkr. Een klein, betrokken team dat magazijnsoftware bouwt voor Nederlandse webshops.',
+        mainEntity: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            url: 'https://shoplinkr.com',
+            foundingDate: '2022',
+            founder: {
+                '@type': 'Person',
+                name: 'Job',
             },
-        })),
+            employee: realTeam.map((member) => ({
+                '@type': 'Person',
+                name: member.name,
+                jobTitle: member.role,
+                description: member.bio,
+                ...(member.photo && {
+                    image: `https://shoplinkr.com${member.photo}`,
+                }),
+                worksFor: {
+                    '@type': 'Organization',
+                    name: 'ShopLinkr',
+                },
+            })),
+        },
     },
-};
+];
 
 export const prerender = true;
 ---

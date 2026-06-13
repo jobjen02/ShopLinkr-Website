@@ -7,7 +7,7 @@
 - [Bestellingen](https://shoplinkr.com/functionaliteiten/bestellingen): Centraal verwerken van bestellingen uit Bol, Shopify, WooCommerce en Kaufland.
 - [Voorraad](https://shoplinkr.com/functionaliteiten/voorraad): Realtime voorraadbeheer over al je verkoopkanalen, met prognose en fictieve voorraad.
 - [Producten](https://shoplinkr.com/functionaliteiten/producten): Centraal productoverzicht voor voorraad, varianten en bundels.
-- [Picklijsten](https://shoplinkr.com/functionaliteiten/pick-en-pack): Slimme pick-routes door je magazijn met barcode scannen en label printing.
+- [Picklijsten](https://shoplinkr.com/functionaliteiten/picklijsten): Slimme pick-routes door je magazijn met barcode scannen en label printing.
 - [Regels](https://shoplinkr.com/functionaliteiten/regels): Automatiseer terugkerend werk met condities en acties.
 - [Inkoopadvies](https://shoplinkr.com/functionaliteiten/inkoopadvies): Slim inkoopadvies op basis van verkoopdata en levertijden.
 - [Locatiebeheer](https://shoplinkr.com/functionaliteiten/locatiebeheer): Hiërarchische magazijnlocaties gekoppeld aan producten.

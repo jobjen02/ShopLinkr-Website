@@ -2,21 +2,28 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import { externalLinks } from '../data/externalLinks';
+import { breadcrumbs } from '../utils/seo';
 
-const jsonLd = {
-    '@type': 'AboutPage',
-    name: 'Over ShopLinkr',
-    description: 'ShopLinkr is in 2022 opgericht door Job vanuit zijn eigen webshop. Inmiddels verwerken we meer dan 1 miljoen bestellingen voor Nederlandse webshops, met een pay as you go model dat voor elk bedrijf betaalbaar blijft.',
-    mainEntity: {
-        '@type': 'Organization',
-        name: 'ShopLinkr',
-        foundingDate: '2022',
-        founder: {
-            '@type': 'Person',
-            name: 'Job',
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Over ons', '/over-ons'],
+    ]),
+    {
+        '@type': 'AboutPage',
+        name: 'Over ShopLinkr',
+        description: 'ShopLinkr is in 2022 opgericht door Job vanuit zijn eigen webshop. Inmiddels verwerken we meer dan 1 miljoen bestellingen voor Nederlandse webshops, met een pay as you go model dat voor elk bedrijf betaalbaar blijft.',
+        mainEntity: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            foundingDate: '2022',
+            founder: {
+                '@type': 'Person',
+                name: 'Job',
+            },
         },
     },
-};
+];
 
 export const prerender = true;
 ---

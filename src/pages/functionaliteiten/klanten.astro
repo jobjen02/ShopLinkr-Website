@@ -1,56 +1,108 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const rows = [
+const subFeatures = [
     {
-        eyebrow: 'Klantoverzicht',
-        heading: 'Eén profiel per klant, ongeacht het kanaal.',
-        body: 'Bestelt een klant vandaag via Bol en morgen via je webshop, dan zie je dat samen in één profiel. Geen losse lijstjes per kanaal en geen klanten die dubbel in je systeem staan.',
-        icon: 'fa-solid fa-user',
+        eyebrow: 'Adressen bewerken',
+        heading: 'Snel een typefout herstellen.',
+        body: 'Pas een verzend- of factuuradres direct aan in ShopLinkr. De nieuwe gegevens gaan mee in het verzendlabel en de bezorgopties worden meteen opnieuw opgehaald.',
+        icon: 'fa-duotone fa-solid fa-location-dot',
     },
     {
-        eyebrow: 'Adressen',
-        heading: 'Verzend- en factuuradressen direct bewerken.',
-        body: 'Een typefout of een nieuw adres voor een vaste klant pas je rechtstreeks aan in ShopLinkr. Je hoeft niet langer per marketplace in een andere omgeving te duiken om iets recht te zetten.',
-        icon: 'fa-solid fa-location-dot',
+        eyebrow: 'Verzend en factuur apart',
+        heading: 'Twee adressen per bestelling.',
+        body: 'Elke bestelling heeft een eigen verzend- en factuurprofiel. Wijken ze af, dan houd je ze los van elkaar bij. Komen ze overeen, dan kopieer je het ene profiel met één klik naar het andere.',
+        icon: 'fa-duotone fa-solid fa-copy',
     },
     {
-        eyebrow: 'Klantinformatie',
-        heading: 'Alles wat je nodig hebt in één scherm.',
-        body: 'Open een klantkaart en je ziet meteen contactgegevens, bestelhistorie en openstaande zaken. Vragen over een bestelling beantwoord je sneller en je voorkomt fouten in adressen of verzending.',
-        icon: 'fa-solid fa-id-card',
+        eyebrow: 'Handmatige aanpassing behouden',
+        heading: 'Je correctie blijft staan.',
+        body: 'Pas je zelf een veld aan op een klant of adres, dan laat een latere sync vanuit het verkoopkanaal dat veld met rust. Wat jij aanpast, blijft staan.',
+        icon: 'fa-duotone fa-solid fa-shield-halved',
     },
     {
-        eyebrow: 'Trouwe klanten',
-        heading: 'Herken je topklanten in een oogopslag.',
-        body: 'Zie meteen via welke kanalen een klant eerder besteld heeft en hoe vaak. Zo behandel je je beste klant als een beste klant, ongeacht waar de eerste bestelling vandaan kwam.',
-        icon: 'fa-solid fa-layer-group',
-    },
-    {
-        eyebrow: 'Bestelhistorie',
-        heading: 'Direct afhandelen vanuit het klantbeeld.',
-        body: 'Vanuit hetzelfde scherm waar je de klant ziet, handel je openstaande orders af en stuur je een correctie door. Geen schakelen tussen klanten- en bestellingenoverzicht.',
-        icon: 'fa-solid fa-clock-rotate-left',
+        eyebrow: 'Gevoelige data versleuteld',
+        heading: 'Klantgegevens blijven veilig.',
+        body: 'Naam, contactgegevens, bedrijfsgegevens en adres worden versleuteld opgeslagen. Onleesbaar in de database en alleen zichtbaar voor gebruikers met het juiste recht.',
+        icon: 'fa-duotone fa-solid fa-lock',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Klanten | ShopLinkr',
-    description: 'Efficiënt klantbeheer in ShopLinkr. Beheer verzendadressen, bekijk klantinformatie en handel orders naadloos af vanuit één klantkaart over al je kanalen heen.',
-};
+const fieldGroups = [
+    {
+        title: 'Persoons en contactgegevens',
+        body: 'Aanhef, voornaam, tussenvoegsel, achternaam, e-mailadres en telefoonnummer. Genoeg om de klant snel te bereiken bij vragen over een bestelling of retour.',
+    },
+    {
+        title: 'Bedrijfsgegevens',
+        body: 'Bedrijfsnaam, btw-nummer en KvK-nummer. Handig voor zakelijke bestellingen en voor facturen die kloppend in je administratie landen.',
+    },
+    {
+        title: 'Verzend en factuuradres',
+        body: 'Straat, huisnummer met toevoeging, extra adresregel, postcode, plaats en land. Verzending en facturatie staan los van elkaar, zodat je ze afzonderlijk kunt bewerken.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Kan ik klantgegevens en adressen rechtstreeks in ShopLinkr aanpassen?',
+        answer: 'Ja. Vanuit een bestelling open je het verzend- of factuurprofiel en werk je naam, contactgegevens, bedrijfsgegevens en adres direct bij. De nieuwe gegevens komen meteen op het verzendlabel en de bezorgopties worden opnieuw opgehaald.',
+    },
+    {
+        question: 'Gaat een wijziging die ik in ShopLinkr maak terug naar het verkoopkanaal?',
+        answer: 'Nee. Aanpassingen aan klantgegevens en adressen blijven binnen ShopLinkr en worden gebruikt voor jouw verzending en administratie.',
+    },
+    {
+        question: 'Worden mijn aanpassingen niet overschreven door een sync van het kanaal?',
+        answer: 'Nee. Zodra je een veld handmatig aanpast, laat een latere sync vanuit het verkoopkanaal dat veld met rust. Wat jij aanpast, blijft staan.',
+    },
+    {
+        question: 'Welke gegevens van een klant zie ik per bestelling?',
+        answer: 'Aanhef, voor- en achternaam met eventueel tussenvoegsel, e-mailadres, telefoonnummer, bedrijfsnaam, btw- en KvK-nummer, plus een volledig adres met straat, huisnummer, postcode, plaats en land. Alle persoonsgegevens worden versleuteld opgeslagen.',
+    },
+    {
+        question: 'Kan ik orders van dezelfde klant samenvoegen tot één zending?',
+        answer: 'Ja, op basis van het afleveradres. Hebben meerdere openstaande bestellingen hetzelfde verzendadres, dan herkent ShopLinkr dat en kun je ze samenvoegen tot één zending. Dat werkt ook als de orders van verschillende verkoopkanalen komen.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Klanten', '/functionaliteiten/klanten'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Klanten beheren met ShopLinkr',
+        description: 'Beheer klantgegevens en adressen rechtstreeks in ShopLinkr. Bewerk verzend- en factuurprofielen vanuit de bestelling en houd persoonsgegevens veilig achter encryptie.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Klanten beheren met ShopLinkr"
-    description="Efficiënt klantbeheer in ShopLinkr. Beheer verzendadressen, bekijk klantinformatie en handel orders naadloos af vanuit één klantkaart over al je kanalen heen."
+    description="Beheer klantgegevens en adressen rechtstreeks in ShopLinkr. Bewerk verzend- en factuurprofielen vanuit de bestelling en houd persoonsgegevens veilig achter encryptie."
     eyebrow="Klantbeheer"
-    heading="Alle klanten op één plek."
-    subheading="Of een bestelling nu via je eigen webshop, Bol of een andere marketplace binnenkomt: in ShopLinkr werk je vanuit één klantbeeld en handel je orders snel en netjes af."
+    heading="Klantgegevens onder controle."
+    subheading="Bewerk verzend- en factuurprofielen vanuit de bestelling, voeg orders met hetzelfde afleveradres samen tot één zending en houd gevoelige gegevens veilig achter encryptie."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -77,46 +129,150 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-paper">
-        <div class="container-prose">
-            <div class="max-w-3xl mb-12 md:mb-16">
-                <p class="eyebrow mb-4">Multi-channel klantbeeld</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                    Eén centraal beeld van iedere klant.
-                </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
-                    Klanten bestellen niet meer via één kanaal. Vandaag via je webshop, morgen via Bol. ShopLinkr brengt al die contactmomenten samen in één klantkaart, zonder te schakelen tussen platformen.
-                </p>
-            </div>
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Eén plek voor klantgegevens</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Adres aanpassen
+                            <span class="block">vanuit de bestelling.</span>
+                        </h2>
+                    </div>
 
-            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
-                {
-                    rows.map((row) => (
-                        <li class="py-10 md:py-12">
-                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
-                                <div class="md:col-span-4 flex md:items-start gap-4">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
-                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
-                                    </div>
-                                    <div class="md:hidden">
-                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
-                                    </div>
-                                    <div class="hidden md:block">
-                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
-                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
-                                    </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <span class="text-sm font-semibold text-charcoal">Bestelling #4821</span>
+                            <span class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">
+                                <i class="fa-solid fa-lock text-[0.65rem] text-sunstone-deep" aria-hidden="true"></i>
+                                Versleuteld
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="rounded-md bg-chalk-light ring-1 ring-chalk-dark p-3">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="inline-flex items-center justify-center h-5 w-5 rounded bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                        <i class="fa-solid fa-truck text-[0.6rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Verzendadres</span>
                                 </div>
-                                <div class="md:col-span-8">
-                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
-                                        {row.body}
-                                    </p>
-                                </div>
+                                <p class="text-sm font-medium text-charcoal leading-snug">Lotte de Vries</p>
+                                <p class="text-xs text-steel leading-snug mt-0.5">Kerkstraat 18</p>
+                                <p class="text-xs text-steel leading-snug">3811 CV, Amersfoort</p>
+                                <p class="text-xs text-gravel leading-snug mt-1.5 tabular-nums">+31 6 24 11 88 02</p>
                             </div>
-                        </li>
+                            <div class="rounded-md bg-chalk-light ring-1 ring-chalk-dark p-3">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="inline-flex items-center justify-center h-5 w-5 rounded bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                        <i class="fa-solid fa-file-invoice text-[0.6rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Factuuradres</span>
+                                </div>
+                                <p class="text-sm font-medium text-charcoal leading-snug">De Vries Studio B.V.</p>
+                                <p class="text-xs text-steel leading-snug mt-0.5">Wilhelminapark 4</p>
+                                <p class="text-xs text-steel leading-snug">3581 NE, Utrecht</p>
+                                <p class="text-xs text-gravel leading-snug mt-1.5 tabular-nums">BTW NL862514730B01</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 mt-4 pt-4 border-t border-chalk-dark">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-charcoal">
+                                <i class="fa-solid fa-pen-to-square text-sunstone-deep text-[0.7rem]" aria-hidden="true"></i>
+                                Adres aanpassen
+                            </span>
+                            <span class="text-gravel font-mono text-xs">→</span>
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-sunstone-deep">
+                                <span class="relative inline-flex h-1.5 w-1.5">
+                                    <span class="absolute inline-flex h-full w-full rounded-full bg-sunstone-deep opacity-60 animate-ping"></span>
+                                    <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-sunstone-deep"></span>
+                                </span>
+                                Bezorgopties opnieuw opgehaald
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Eén veld aanpassen en label en bezorgopties lopen mee. Geen tabwissel naar het verkoopkanaal nodig.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
                     ))
                 }
-            </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Wat je per klant ziet</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Alle gegevens netjes
+                        <span class="block text-sunstone-deep">bij elkaar.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Per bestelling beheer je een volledig verzend- en factuurprofiel. Genoeg om de klant goed te helpen, een kloppend label te draaien en een nette factuur in je administratie te krijgen.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            fieldGroups.map((group) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-id-card text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{group.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{group.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mis je een vraag? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw werkwijze.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
         </div>
     </section>
 

@@ -1,56 +1,102 @@
 ---
+import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const rows = [
+const carriers = (await getCollection('integrations'))
+    .filter((i) => i.data.category === 'carrier')
+    .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const subFeatures = [
     {
-        eyebrow: 'Labels printen',
-        heading: 'Print vanuit één werkstroom.',
-        body: 'Of een bestelling nu binnenkomt via Bol, je eigen webshop of een andere marketplace, je verzendlabel print je direct vanuit ShopLinkr. Geen schakelen tussen marketplace-portalen en losse tools.',
-        icon: 'fa-solid fa-print',
+        eyebrow: 'AutoPrint',
+        heading: 'Labels rollen direct uit je printer.',
+        body: 'AutoPrint stuurt het label via PrintNode naar de printer bij je inpakstation. Jij verwerkt de bestelling, het label rolt eruit. Geen PDFs openen, geen handmatige printopdrachten.',
+        icon: 'fa-duotone fa-solid fa-print',
     },
     {
-        eyebrow: 'Track en trace',
-        heading: 'Klant en marketplace meteen op de hoogte.',
-        body: 'Zodra je labelt, schiet de track en trace code automatisch terug naar je verkoopkanaal en je klant. Geen handmatig knip- en plakwerk, en geen klanten die in het ongewisse blijven.',
-        icon: 'fa-solid fa-location-arrow',
+        eyebrow: 'Per bestelling kiezen',
+        heading: 'Wissel van vervoerder waar nodig.',
+        body: 'Een standaard vervoerder voor je dagelijkse pakketten, een snellere voor spoedorders, een ander voor het buitenland. Per bestelling kies je welke koppeling het label maakt.',
+        icon: 'fa-duotone fa-solid fa-shuffle',
     },
     {
-        eyebrow: 'Multi-carrier',
-        heading: 'PostNL, DPD, MyParcel, Sendcloud en meer.',
-        body: 'Koppel de vervoerders en verzendplatformen die je toch al gebruikt. Eén integratie aanzetten en je print direct labels, zonder gedoe met API-keys of losse plug-ins.',
-        icon: 'fa-solid fa-truck-fast',
+        eyebrow: 'Track en trace terug',
+        heading: 'Automatisch terug naar je kanaal.',
+        body: 'Zodra je labelt, gaat de track en trace code terug naar het kanaal waar de bestelling vandaan kwam. Je klant krijgt de melding via dat kanaal.',
+        icon: 'fa-duotone fa-solid fa-location-arrow',
     },
     {
-        eyebrow: 'Slimme regels',
+        eyebrow: 'Verzendregels',
         heading: 'De juiste vervoerder kiest zichzelf.',
-        body: 'Op basis van bestemming, gewicht, afmeting of waarde bepaalt ShopLinkr automatisch welke vervoerder bij de bestelling past. Zo gaat altijd de goedkoopste of snelste optie naar je klant.',
-        icon: 'fa-solid fa-route',
-    },
-    {
-        eyebrow: 'Bulk',
-        heading: 'Honderden labels in één handeling.',
-        body: 'Tijdens piekdagen verwerk je een hele stapel bestellingen in één keer. Selecteren, printen, klaar. Zo blijft je werkstroom soepel, ook als de orders binnenstromen.',
-        icon: 'fa-solid fa-layer-group',
+        body: 'Stel een regel in op gewicht, land, kanaal of waarde. ShopLinkr selecteert dan automatisch de bijbehorende vervoerder. Eén keer inrichten en je hoeft er niet meer over na te denken.',
+        icon: 'fa-duotone fa-solid fa-route',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Vervoerders | ShopLinkr',
-    description: 'Vervoerdersopties in ShopLinkr. Ontdek hoe je verzendlabels genereert en track en trace beheert, ongeacht het verkoopkanaal. Verbeter je logistiek met de vervoerdersintegraties van ShopLinkr.',
-};
+const faqs = [
+    {
+        question: 'Welke vervoerders worden ondersteund?',
+        answer: 'Een breed aanbod, waaronder PostNL, DPD, GLS, Sendcloud, MyParcel, Innosend, QLS, ParcelPro, Sendy, PakketMail, DeliveryMatch, EctaroShip, TransMission en Zineps. Je koppelt zoveel vervoerders als je nodig hebt en kiest per bestelling de juiste. De volledige lijst en de koppelinstructies per vervoerder vind je op de integraties-pagina.',
+    },
+    {
+        question: 'Kun je meerdere accounts van dezelfde vervoerder koppelen?',
+        answer: 'Ja. Per koppeling vul je eigen inloggegevens of API-keys in, dus je kunt bijvoorbeeld twee DPD-contracten of meerdere Sendcloud-accounts naast elkaar koppelen. Handig als je werkt met verschillende verzendlocaties of merken die elk een eigen contract hebben.',
+    },
+    {
+        question: 'Wat doet AutoPrint precies?',
+        answer: 'AutoPrint stuurt verzendlabels automatisch naar de printer bij je inpakstation zodra je een bestelling verwerkt. Daarvoor gebruiken we PrintNode, een softwaretool die je installeert op een computer in je magazijn. PrintNode draait op de achtergrond en pikt elk nieuw label op, zodat je niet meer per order op print hoeft te klikken.',
+    },
+    {
+        question: 'Kun je per bestelling een andere vervoerder kiezen?',
+        answer: 'Ja. Zolang de vervoerder gekoppeld is, kies je per bestelling welke je gebruikt. Wil je dat niet handmatig doen? Met een verzendregel laat je ShopLinkr automatisch de juiste vervoerder selecteren op basis van gewicht, bestemming, kanaal of producttype.',
+    },
+    {
+        question: 'Werkt track en trace automatisch terug naar je kanaal?',
+        answer: 'Ja. Zodra het label is aangemaakt, stuurt ShopLinkr de track en trace code automatisch terug naar het kanaal waar de bestelling vandaan kwam. Je verkoopkanaal ontvangt de code en je klant krijgt op de bekende manier de bezorgupdate.',
+    },
+    {
+        question: 'Wat als je vervoerder niet in de lijst staat?',
+        answer: 'Laat het ons weten. We breiden de koppelingen geregeld uit en kijken graag of we jouw vervoerder kunnen toevoegen. Vaak werkt het ook al via een verzendplatform als Sendcloud, MyParcel of ParcelPro: één koppeling geeft je toegang tot tientallen vervoerders.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Vervoerders', '/functionaliteiten/vervoerders'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Vervoerders koppelen met ShopLinkr',
+        description: 'Print verzendlabels bij elke vervoerder die je gebruikt, kies per bestelling de juiste en stuur track en trace automatisch terug naar je kanaal.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Vervoerders koppelen met ShopLinkr"
-    description="Vervoerdersopties in ShopLinkr. Ontdek hoe je verzendlabels genereert en track en trace beheert, ongeacht het verkoopkanaal. Verbeter je logistiek met de vervoerdersintegraties van ShopLinkr."
+    description="Print verzendlabels bij elke vervoerder die je gebruikt. Kies per bestelling de juiste en stuur track en trace automatisch terug naar je verkoopkanaal."
     eyebrow="Verzending"
-    heading="Print labels voor elke vervoerder die je gebruikt."
-    subheading="Of een bestelling nu via Bol, je eigen webshop of een andere marketplace binnenkomt, vanuit ShopLinkr print je het label en regel je track en trace in één werkstroom."
+    heading="Print labels bij elke vervoerder die je gebruikt."
+    subheading="Of een bestelling nu via Bol, je eigen webshop of een andere marketplace binnenkomt: vanuit ShopLinkr print je het label en regel je track en trace in dezelfde stap."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -77,46 +123,193 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-paper">
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Van bestelling tot label</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            De juiste vervoerder,
+                            <span class="block">automatisch gekozen.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 flex flex-col gap-4 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-bag-shopping text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Bestelling #28411</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Bol</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 text-xs">
+                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal tabular-nums">1,4 kg</span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">Nederland</span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">Brievenbus</span>
+                        </div>
+
+                        <div class="flex items-center gap-3 py-1">
+                            <span class="flex-1 h-px bg-chalk-dark"></span>
+                            <span class="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep">
+                                <i class="fa-solid fa-route text-[0.65rem]" aria-hidden="true"></i>
+                                Regel kiest
+                            </span>
+                            <span class="flex-1 h-px bg-chalk-dark"></span>
+                        </div>
+
+                        <div class="rounded-lg ring-1 ring-charcoal/15 bg-paper p-4 flex flex-col gap-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] uppercase tracking-[0.14em] font-semibold text-gravel">Verzendlabel</span>
+                                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep text-[10px] uppercase tracking-[0.08em] font-semibold ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-print text-[0.55rem]" aria-hidden="true"></i>
+                                    AutoPrint
+                                </span>
+                            </div>
+                            <div class="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-xs">
+                                <span class="text-gravel">Vervoerder</span>
+                                <span class="text-charcoal font-semibold">PostNL Brievenbuspakket</span>
+                                <span class="text-gravel">Naar</span>
+                                <span class="text-charcoal">L. de Vries, 1015 NL Amsterdam</span>
+                            </div>
+                            <div class="flex items-center justify-between gap-3 pt-2 border-t border-chalk-dark">
+                                <span class="text-[11px] text-gravel">T&amp;T</span>
+                                <span class="font-mono text-[11px] text-charcoal tabular-nums">3SLINKR0428411NL</span>
+                            </div>
+                            <div class="flex gap-[2px] h-7 mt-1">
+                                <span class="w-px bg-charcoal"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/70"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/60"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/70"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/60"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/70"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/60"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/70"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/70"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/60"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                                <span class="w-[2px] bg-charcoal"></span>
+                                <span class="w-px bg-charcoal/70"></span>
+                                <span class="w-[3px] bg-charcoal"></span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 text-[11px] text-gravel">
+                            <i class="fa-solid fa-arrow-turn-up rotate-180 text-sunstone-deep text-[0.65rem]" aria-hidden="true"></i>
+                            <span>T&amp;T direct terug naar Bol, klant krijgt de melding.</span>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Regel kiest de vervoerder, AutoPrint stuurt het label naar je printer en de track en trace gaat terug naar het kanaal. Jij verwerkt, ShopLinkr doet de rest.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
         <div class="container-prose">
-            <div class="max-w-3xl mb-12 md:mb-16">
-                <p class="eyebrow mb-4">Eén werkwijze, elk kanaal</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                    Labels printen los van het verkoopkanaal.
-                </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
-                    Je hoeft niet langer per marketplace in een ander scherm te werken. ShopLinkr verzamelt je bestellingen op één plek, zodat je in dezelfde flow je labels print, je picklijst draait en je track en trace verstuurt.
-                </p>
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-12 md:mb-14">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Vervoerders die je koppelt</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Eén integratie aanzetten,
+                        <span class="block text-sunstone-deep">direct labels printen.</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-7">
+                    <p class="text-base text-steel leading-relaxed">
+                        Koppel zoveel vervoerders als je wilt, met je eigen contract of via een verzendplatform. Zit jouw vervoerder bij Sendcloud, MyParcel of ParcelPro? Dan bereik je hem vaak al via die ene koppeling.
+                    </p>
+                    <a href="/integraties" class="group mt-6 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Bekijk alle integraties
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
 
-            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+            <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
                 {
-                    rows.map((row) => (
-                        <li class="py-10 md:py-12">
-                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
-                                <div class="md:col-span-4 flex md:items-start gap-4">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
-                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
-                                    </div>
-                                    <div class="md:hidden">
-                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
-                                    </div>
-                                    <div class="hidden md:block">
-                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
-                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
-                                    </div>
+                    carriers.map((carrier) => (
+                        <li>
+                            <a
+                                href={`/integraties/${carrier.data.slug}`}
+                                class="group flex flex-col items-center justify-center gap-3 h-full rounded-2xl bg-paper ring-1 ring-chalk-dark p-5 md:p-6 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                            >
+                                <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                    <img
+                                        src={carrier.data.logo}
+                                        alt={`${carrier.data.name} logo`}
+                                        class="h-full w-full object-contain p-1.5"
+                                        loading="lazy"
+                                    />
                                 </div>
-                                <div class="md:col-span-8">
-                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
-                                        {row.body}
-                                    </p>
-                                </div>
-                            </div>
+                                <span class="text-sm font-semibold text-charcoal tracking-tight text-center">
+                                    {carrier.data.name}
+                                </span>
+                            </a>
                         </li>
                     ))
                 }
             </ul>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Staat je vraag er niet bij? Plan een gesprek of stuur ons een bericht, we denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
         </div>
     </section>
 

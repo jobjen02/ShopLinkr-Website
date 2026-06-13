@@ -1,50 +1,108 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const rows = [
+const subFeatures = [
     {
-        eyebrow: 'Hiërarchie',
-        heading: 'Bouw locaties op zoals je magazijn echt is.',
-        body: 'Maak een hiërarchische structuur van gang, stelling, schap en vak. Aan elk niveau koppel je producten, zodat je in één oogopslag weet waar iets ligt zonder eindeloos te zoeken.',
-        icon: 'fa-solid fa-sitemap',
+        eyebrow: 'Pick locaties eerst',
+        heading: 'Eerst het schap, dan pas de pallet.',
+        body: 'ShopLinkr pakt voorraad eerst van je picklocatie. Pas als die leeg is, schakelt het door naar de bulklocatie. Geen onnodige loopjes naar de hoogste stelling.',
+        icon: 'fa-duotone fa-solid fa-hand-pointer',
     },
     {
-        eyebrow: 'Picklijst',
-        heading: 'Locatie staat direct op de picklijst.',
-        body: 'Op de bestellingenpagina en op de picklijst zie je per product meteen de locatie. Je picker loopt de meest efficiënte route en haalt in één keer alles op voor je bestellingen.',
-        icon: 'fa-solid fa-list-check',
+        eyebrow: 'Locatie op picklijst',
+        heading: 'Direct zien waar je moet zijn.',
+        body: 'Op de bestellingenpagina en de picklijst staat per product de locatie erbij. Je picker loopt een logische route en haalt in één keer alles op voor zijn batch.',
+        icon: 'fa-duotone fa-solid fa-list-check',
     },
     {
-        eyebrow: 'Pick locatie',
-        heading: 'Eerst de voorraad uit het schap.',
-        body: 'De voorraad van een pick locatie gebruik je als eerst. Hier loopt je picker langs voor de dagelijkse orders, zodat je magazijnvloer altijd in beweging blijft.',
-        icon: 'fa-solid fa-hand-pointer',
+        eyebrow: 'Voorraad verplaatsen',
+        heading: 'Bulk aanvullen naar je picklocatie.',
+        body: 'Schuif voorraad in een paar klikken van de ene locatie naar de andere. Bronlocatie, doellocatie, aantal, klaar. De mutatie staat meteen in je voorraadhistorie.',
+        icon: 'fa-duotone fa-solid fa-arrow-right-arrow-left',
     },
     {
-        eyebrow: 'Voorraad locatie',
-        heading: 'Bulk pas aanspreken als het schap leeg is.',
-        body: 'Is de pick locatie leeg, dan gaat ShopLinkr automatisch over op de voorraad locatie. Zo houd je je bulkvoorraad apart en spreek je hem pas aan wanneer het nodig is.',
-        icon: 'fa-solid fa-warehouse',
+        eyebrow: 'Bulk toewijzen',
+        heading: 'Je hele magazijn in één keer inrichten.',
+        body: 'Via Tools koppel je meerdere producten in één beweging aan locaties. Ideaal bij de start of na een herindeling, zodat je niet product voor product langs hoeft.',
+        icon: 'fa-duotone fa-solid fa-layer-group',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Locaties beheren met ShopLinkr',
-    description: 'Locatiebeheer in ShopLinkr. Je kunt een hiërarchie aanmaken van locaties en hier producten aan koppelen. Overzichtelijk, gemakkelijk en efficiënt!',
-};
+const locationTypes = [
+    {
+        title: 'Picklocatie',
+        body: 'De plek waar je dagelijkse picks vandaan komen. Goed bereikbaar, op ooghoogte en dicht bij het inpakstation. ShopLinkr pakt deze voorraad als eerste aan.',
+    },
+    {
+        title: 'Bulklocatie',
+        body: 'Reservevoorraad op pallets of in hogere stellingen. Niet bedoeld voor dagelijks pickwerk. Vanuit hier vul je je picklocatie aan zodra die leegloopt.',
+    },
+    {
+        title: 'Bulk als reservevoorraad',
+        body: 'In de bedrijfsinstellingen zet je aan dat orders naar backorder gaan als de voorraad alleen nog op een bulklocatie ligt. Eerst aanvullen, dan verwerken.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Hoe diep gaat de hiërarchie van locaties?',
+        answer: 'Zo diep als je magazijn vraagt. Je maakt een locatie aan en kiest optioneel een bovenliggende locatie. Een veelgebruikte opbouw is gangpad, stelling, plank en bak, eventueel met een zone als bovenste niveau. Producten koppel je aan de onderste laag, zodat je picker meteen ziet waar hij moet zijn.',
+    },
+    {
+        question: 'Wat is het verschil tussen een picklocatie en een bulklocatie?',
+        answer: 'Een picklocatie is de plek waar je dagelijks uit pickt, meestal goed bereikbaar en dicht bij het inpakstation. Een bulklocatie is reservevoorraad op pallets of in hoge stellingen. ShopLinkr pakt eerst de picklocatie aan en gaat pas door naar de bulklocatie als die leeg is. Zo houd je je magazijn in beweging zonder pickers naar moeilijke plekken te sturen.',
+    },
+    {
+        question: 'Wat als een product op meerdere locaties ligt?',
+        answer: 'Geen probleem. Een product mag op meerdere locaties tegelijk staan, bijvoorbeeld een paar stuks op de picklocatie en de rest in de bulk. In het productoverzicht zie je per locatie hoeveel stuks er liggen, en op de picklijst krijgt je picker de juiste locatie te zien op basis van de pick-volgorde.',
+    },
+    {
+        question: 'Zie ik de locatie ook tijdens het verwerken van een bestelling?',
+        answer: 'Ja. Op de bestellingenpagina staat per regel de locatie van het product, en op de picklijst zie je voor elk artikel waar het ligt. Of je nu losse orders verwerkt, een batch samenstelt of via een inpakstation werkt: de locatie reist mee.',
+    },
+    {
+        question: 'Hoe verplaats ik voorraad van de ene locatie naar de andere?',
+        answer: 'Open het product, klik op Voorraad bijwerken en kies Verplaatsen. Selecteer de bronlocatie, de doellocatie en het aantal stuks. Wil je alles overzetten? Zet dan de schakelaar Alle voorraad verplaatsen aan. De mutatie verschijnt meteen in de voorraadhistorie van het product.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Locatiebeheer', '/functionaliteiten/locatiebeheer'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Locaties beheren met ShopLinkr',
+        description: 'Locatiebeheer in ShopLinkr. Bouw een hiërarchie van magazijnlocaties, scheid je picklocaties van je bulk en zie per product direct waar het ligt op de picklijst en in je bestellingen.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Locaties beheren met ShopLinkr"
-    description="Locatiebeheer in ShopLinkr. Je kunt een hiërarchie aanmaken van locaties en hier producten aan koppelen. Overzichtelijk, gemakkelijk en efficiënt!"
+    description="Locatiebeheer in ShopLinkr. Bouw een hiërarchie van magazijnlocaties, scheid je picklocaties van je bulk en zie per product direct waar het ligt op de picklijst en in je bestellingen."
     eyebrow="Locatiebeheer"
-    heading="Beheer eenvoudig de locaties van je producten."
-    subheading="Een goed magazijn begint bij goede locaties. Met ShopLinkr zie je direct waar elk product ligt en hoeveel stuks je nodig hebt voor je bestelling."
+    heading="Een plek voor elk product."
+    subheading="Bouw je magazijn op in de hiërarchie die bij je past. De juiste locatie reist mee tot in de picklijst en het inpakstation."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -71,46 +129,160 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-paper">
-        <div class="container-prose">
-            <div class="max-w-3xl mb-12 md:mb-16">
-                <p class="eyebrow mb-4">Magazijn op orde</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                    Een plek voor elk product, zonder ruis.
-                </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
-                    Locaties zijn de stille kracht van een vlot magazijn. In ShopLinkr leg je vast waar elk product hoort en zie je tijdens het picken direct waar je moet zijn, zonder zoeken of dubbele looplijnen.
-                </p>
-            </div>
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Hiërarchisch opgebouwd</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Van gangpad tot
+                            <span class="block">bak A.1.3.2.</span>
+                        </h2>
+                    </div>
 
-            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
-                {
-                    rows.map((row) => (
-                        <li class="py-10 md:py-12">
-                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
-                                <div class="md:col-span-4 flex md:items-start gap-4">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
-                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
-                                    </div>
-                                    <div class="md:hidden">
-                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
-                                    </div>
-                                    <div class="hidden md:block">
-                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
-                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
-                                    </div>
-                                </div>
-                                <div class="md:col-span-8">
-                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
-                                        {row.body}
-                                    </p>
-                                </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-5">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-warehouse text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Hoofdmagazijn</span>
                             </div>
-                        </li>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Magazijn</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-sm">
+                            <li class="flex items-center gap-2 pl-1">
+                                <i class="fa-solid fa-folder-open text-gravel text-[0.7rem]" aria-hidden="true"></i>
+                                <span class="text-charcoal font-medium">Gang A</span>
+                            </li>
+                            <li class="flex items-center gap-2 pl-6">
+                                <span class="text-chalk-dark font-mono text-xs">└─</span>
+                                <i class="fa-solid fa-folder-open text-gravel text-[0.7rem]" aria-hidden="true"></i>
+                                <span class="text-charcoal font-medium">Stelling 1</span>
+                            </li>
+                            <li class="flex items-center gap-2 pl-12">
+                                <span class="text-chalk-dark font-mono text-xs">└─</span>
+                                <i class="fa-solid fa-folder-open text-gravel text-[0.7rem]" aria-hidden="true"></i>
+                                <span class="text-charcoal font-medium">Plank 3</span>
+                            </li>
+                            <li class="flex items-center gap-2 pl-[4.5rem]">
+                                <span class="text-chalk-dark font-mono text-xs">└─</span>
+                                <span class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                    <i class="fa-solid fa-box text-sunstone-deep text-[0.7rem]" aria-hidden="true"></i>
+                                    <span class="text-charcoal font-semibold">Bak 2</span>
+                                    <span class="text-sunstone-deep font-mono text-[11px] font-semibold">A.1.3.2</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">
+                                    <i class="fa-solid fa-hand-pointer text-[0.6rem]" aria-hidden="true"></i>
+                                    Pick
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-4 pt-4 border-t border-chalk-dark">
+                            <div class="flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="inline-flex items-center justify-center h-8 w-8 rounded-md bg-chalk-light ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-headphones text-charcoal text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="min-w-0">
+                                        <p class="text-sm font-semibold text-charcoal truncate">Bluetooth oortjes</p>
+                                        <p class="text-[11px] text-gravel">12 stuks op deze locatie</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel flex-shrink-0">Gekoppeld</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-paper/70 rounded-xl ring-1 ring-chalk-dark px-4 py-3 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-2 text-[11px]">
+                            <i class="fa-solid fa-pallet text-gravel text-xs" aria-hidden="true"></i>
+                            <span class="uppercase tracking-[0.12em] font-semibold text-gravel">Bulk</span>
+                            <span class="font-mono text-charcoal font-semibold">B.4.1.1</span>
+                            <span class="text-gravel">48 stuks reserve</span>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Reserve</span>
+                    </div>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
                     ))
                 }
-            </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Pick en bulk</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Twee soorten locaties,
+                        <span class="block text-sunstone-deep">één slimme volgorde.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Markeer je locaties als pick of bulk en je picker blijft op de plekken waar het werk snel gaat. ShopLinkr opent de bulk pas zodra je picklocatie leeg is.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            locationTypes.map((type) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-warehouse text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Antwoorden op de vragen
+                        <span class="block text-sunstone-deep">die vaak terugkomen.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Staat jouw vraag er niet bij? Plan een gesprek of stuur ons een bericht, we denken graag met je mee.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
         </div>
     </section>
 

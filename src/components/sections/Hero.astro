@@ -1,5 +1,5 @@
 ---
-import PicklistPickPreview from '../product/PicklistPickPreview.vue';
+import HeroOrder from '../product/HeroOrder.vue';
 import { externalLinks } from '../../data/externalLinks';
 ---
 
@@ -9,7 +9,7 @@ import { externalLinks } from '../../data/externalLinks';
     </div>
 
     <div class="container-prose">
-        <div class="grid lg:grid-cols-[1.1fr_1fr] gap-14 lg:gap-20 items-center">
+        <div class="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-16 items-center">
             <div>
                 <p class="inline-flex items-center gap-2 text-xs font-medium text-gravel mb-6">
                     <span class="h-1.5 w-1.5 rounded-full bg-sunstone" aria-hidden="true"></span>
@@ -50,7 +50,7 @@ import { externalLinks } from '../../data/externalLinks';
             </div>
 
             <div class="relative mt-4 lg:mt-0">
-                <PicklistPickPreview client:visible />
+                <HeroOrder client:visible />
             </div>
         </div>
     </div>

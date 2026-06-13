@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import { externalLinks } from '../data/externalLinks';
+import { breadcrumbs } from '../utils/seo';
 
 const story = {
     company: 'Schoongedaan.nl',
@@ -39,30 +40,36 @@ const voices = [
     },
 ];
 
-const jsonLd = {
-    '@type': 'Article',
-    headline: `Klantverhaal: ${story.company}`,
-    description: story.metric,
-    about: {
-        '@type': 'Organization',
-        name: story.company,
-        url: 'https://schoongedaan.nl',
-    },
-    author: {
-        '@type': 'Organization',
-        name: 'ShopLinkr',
-        url: 'https://shoplinkr.com',
-    },
-    publisher: {
-        '@type': 'Organization',
-        name: 'ShopLinkr',
-        logo: {
-            '@type': 'ImageObject',
-            url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Klantverhalen', '/referenties'],
+    ]),
+    {
+        '@type': 'Article',
+        headline: `Klantverhaal: ${story.company}`,
+        description: story.metric,
+        about: {
+            '@type': 'Organization',
+            name: story.company,
+            url: 'https://schoongedaan.nl',
         },
+        author: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            url: 'https://shoplinkr.com',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+            },
+        },
+        image: `https://shoplinkr.com${story.logo}`,
     },
-    image: `https://shoplinkr.com${story.logo}`,
-};
+];
 
 export const prerender = true;
 ---

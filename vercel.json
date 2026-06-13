@@ -1,0 +1,14 @@
+{
+    "redirects": [
+        {
+            "source": "/functionaliteiten/pick-en-pack",
+            "destination": "/functionaliteiten/picklijsten",
+            "permanent": true
+        },
+        {
+            "source": "/functionaliteiten/productbundels",
+            "destination": "/functionaliteiten/producten",
+            "permanent": true
+        }
+    ]
+}

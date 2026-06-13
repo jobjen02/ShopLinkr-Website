@@ -1,0 +1,306 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
+
+const subFeatures = [
+    {
+        eyebrow: 'Bakken-systeem',
+        heading: 'Elke bestelling in de juiste bak.',
+        body: 'Tijdens het picken koppelt ShopLinkr elk product aan een bak met unieke barcode. Bij het inpakken scan je de bak en de juiste bestelling opent automatisch. Een extra controlemoment dat fouten voorkomt.',
+        icon: 'fa-duotone fa-solid fa-boxes-stacked',
+    },
+    {
+        eyebrow: 'Inpakstations',
+        heading: 'Elke werkplek z\'n eigen printer.',
+        body: 'Koppel een vaste printer aan elk inpakstation. Verzendlabels rollen automatisch uit op de printer naast je medewerker, niet drie meter verderop op een andere werkplek.',
+        icon: 'fa-duotone fa-solid fa-print',
+    },
+    {
+        eyebrow: 'Auto Print',
+        heading: 'Labels printen zonder klik.',
+        body: 'Verwerk een bestelling en het verzendlabel ligt klaar op de printer. Geen aparte download, geen handmatige printopdracht, gewoon plakken en versturen.',
+        icon: 'fa-duotone fa-solid fa-bolt',
+    },
+    {
+        eyebrow: 'Opgeslagen filters',
+        heading: 'Vaste pickrondes met één klik.',
+        body: 'Gebruik je vaak dezelfde combinatie van kanaal, locatie of pakkettype? Sla de filterset op onder een herkenbare naam en start volgende keer je picklijst met één klik.',
+        icon: 'fa-duotone fa-solid fa-filter',
+    },
+];
+
+const pickMethods = [
+    {
+        title: 'Single bestellingen',
+        body: 'Bestellingen met maar één type product. Filter er apart op en verwerk ze achter elkaar. Geen uitzoekwerk, weinig kans op fouten, ideaal voor brievenbuspakketten.',
+    },
+    {
+        title: 'Picklijst zonder bakken',
+        body: 'Verzamel alle producten van meerdere bestellingen in één grote bak. Bij het inpakken scan je een willekeurig product en ShopLinkr opent direct de juiste bestelling. Snel en zonder extra spullen.',
+    },
+    {
+        title: 'Picklijst met bakken',
+        body: 'Elke bestelling krijgt een eigen bak met barcode. Tijdens het picken scan je eerst het product en daarna de bak. Bij het inpakken scan je de bak en je weet zeker dat alles klopt.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Wanneer kies ik voor single bestellingen, een picklijst zonder bakken of een picklijst met bakken?',
+        answer: 'Heb je veel orders met maar één product, zoals brievenbuspakketten? Dan filter je apart op single bestellingen en verwerk je ze in bulk. Een picklijst zonder bakken werkt prima bij kleinere batches waar je alles in één grote bak verzamelt. Bij grotere volumes of orders met meerdere producten geven bakken net die extra controle die fouten voorkomt.',
+    },
+    {
+        question: 'Werkt Auto Print met elke printer?',
+        answer: 'Auto Print werkt met vrijwel elke printer en herkent je apparaten automatisch zodra je de koppeling installeert. Je koppelt elke printer aan een inpakstation, zodat de labels altijd op de juiste plek uitrollen. Voor Zebra-printers raden we ZPL-modus aan met snelheid 2 en densiteit 5 voor de beste afdrukkwaliteit.',
+    },
+    {
+        question: 'Wat zijn bakken en wanneer is het de moeite waard om ermee te werken?',
+        answer: 'Bakken zijn fysieke kratten met een unieke barcode die je tijdens het picken aan een bestelling koppelt. Je maakt ze in bulk aan via de wizard en print de barcodelabels uit ShopLinkr. Werk je met orders die uit meerdere producten bestaan of pick je in grotere batches, dan voorkomt het bakkensysteem dat producten in de verkeerde doos belanden.',
+    },
+    {
+        question: 'Welke hardware heb ik nodig om te kunnen picken?',
+        answer: 'Een handscanner. Je ziet per stap welk product je moet pakken en waar het ligt in je magazijn, en na elke succesvolle scan verschijnt het volgende product. Een tablet of computer werkt prima om de picklijst weer te geven, maar voor de scans zelf is een echte handscanner nodig.',
+    },
+    {
+        question: 'Hoe stel ik een vaste filtercombinatie in voor terugkerende pickrondes?',
+        answer: 'Ga naar Picklijsten, klik op Picklijst genereren en stel de filters in die je vaak gebruikt, bijvoorbeeld verkoopkanaal, pakkettype en locatie. Klik rechtsboven op Opgeslagen filters en daarna op Filters opslaan, geef de set een herkenbare naam zoals "Brievenbuspakketten webshop" en sla op. De volgende keer staat de combinatie als snelkeuze klaar voor je hele team.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Picklijsten', '/functionaliteiten/picklijsten'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Picklijsten maken met ShopLinkr',
+        description: 'Genereer picklijsten met een slimme route door je magazijn, verwerk batches met of zonder bakken en print verzendlabels automatisch via Auto Print. Een magazijnoperatie die meegroeit met je verkoop.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = true;
+---
+
+<PageLayout
+    title="Picklijsten maken met ShopLinkr"
+    description="Genereer picklijsten met een slimme route door je magazijn, verwerk batches met of zonder bakken en print verzendlabels automatisch via Auto Print. Een magazijnoperatie die meegroeit met je verkoop."
+    eyebrow="Picklijsten"
+    heading="Sneller picken, minder fouten."
+    subheading="Picklijsten met een slimme route door je magazijn, een scanflow die je per stap door de bestelling leidt en verzendlabels die meteen uit de printer rollen bij je inpakstation. Eén doorlopende workflow van bestelling tot verzendklare doos."
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gratis starten
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Demo inplannen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Slimme picklijst</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Eén route door je magazijn,
+                            <span class="block">geen omwegen.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-route text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Picklijst PL-2418</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">8 bestellingen</span>
+                        </div>
+
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <i class="fa-solid fa-check text-sunstone-deep text-[0.7rem] flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-charcoal font-medium truncate">Linnen theedoek, naturel</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">A.1.04</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-charcoal text-paper text-[10px] font-semibold">A</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <i class="fa-solid fa-check text-sunstone-deep text-[0.7rem] flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-charcoal font-medium truncate">Koffieblik, klein</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">A.3.02</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-charcoal text-paper text-[10px] font-semibold">C</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/70 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <span class="relative flex items-center justify-center h-3 w-3 flex-shrink-0">
+                                        <span class="absolute inline-flex h-full w-full rounded-full bg-sunstone-deep/50 animate-ping"></span>
+                                        <span class="relative inline-flex h-2 w-2 rounded-full bg-sunstone-deep"></span>
+                                    </span>
+                                    <span class="text-charcoal font-semibold truncate">Houten kruidenrek</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-sunstone-deep font-mono font-semibold tabular-nums">B.2.11</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-sunstone-deep text-paper text-[10px] font-semibold">F</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-paper ring-1 ring-chalk-dark/70">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <span class="inline-block h-2 w-2 rounded-full bg-chalk-dark flex-shrink-0"></span>
+                                    <span class="text-steel truncate">Glazen vaas, helder</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">C.1.08</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-chalk-light ring-1 ring-chalk-dark text-gravel text-[10px] font-semibold">B</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-paper ring-1 ring-chalk-dark/70">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <span class="inline-block h-2 w-2 rounded-full bg-chalk-dark flex-shrink-0"></span>
+                                    <span class="text-steel truncate">Set placemats, set van 4</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">C.4.03</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-chalk-light ring-1 ring-chalk-dark text-gravel text-[10px] font-semibold">D</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="pt-3 border-t border-chalk-dark">
+                            <div class="flex items-center justify-between gap-3 mb-2">
+                                <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">Voortgang</span>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums">3 van 8</span>
+                            </div>
+                            <div class="h-1.5 rounded-full bg-chalk-light overflow-hidden">
+                                <div class="h-full bg-sunstone-deep rounded-full" style="width: 37.5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        De slimste volgorde door je magazijn, een scan per stap en de juiste bak per bestelling. Aan het einde rolt het verzendlabel vanzelf uit de printer.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Drie manieren van picken</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Single, batch of bakken,
+                        <span class="block text-sunstone-deep">jij kiest de werkwijze.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Elk magazijn werkt anders. ShopLinkr ondersteunt drie pickmethoden, zodat je per type bestelling de snelste route kiest. Combineer ze gerust binnen één werkdag.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            pickMethods.map((method) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-route text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{method.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{method.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Staat je vraag er niet tussen? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

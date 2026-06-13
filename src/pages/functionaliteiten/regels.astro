@@ -1,50 +1,111 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const stories = [
+const subFeatures = [
     {
-        eyebrow: 'Acties uitvoeren',
-        heading: 'Laat ShopLinkr de juiste keuze maken.',
-        body: 'Een regel koppelt een actie aan een gebeurtenis rondom een bestelling. Denk aan automatisch een verzendmethode selecteren, een label aan een order hangen, bestellingen in een batch zetten of de prioriteit verhogen. Wat jij anders handmatig zou doen, doet ShopLinkr in een fractie van een seconde. Sneller verwerken zonder de fouten die bij handwerk horen.',
-        icon: 'fa-duotone fa-solid fa-wand-magic-sparkles',
-    },
-    {
-        eyebrow: 'Condities combineren',
+        eyebrow: 'Voorwaarden',
         heading: 'Bepaal zelf wanneer een regel triggert.',
-        body: 'Stel condities in op gewicht, postcode, kanaal, producttype of klantgroep. Combineer ze zoals je wil: álle moeten kloppen, of één is al voldoende. Zo bouw je regels die exact passen bij hoe jouw magazijn werkt. Brievenbuspakketten onder de 2 kilo? Spoedlevering voor zakelijke klanten? Je vangt het allemaal in slimme regels.',
+        body: 'Stel voorwaarden in op verkoopkanaal, gewicht, totaalbedrag, land, postcode, Waddeneilanden, specifiek product, tag, verzendmethode en tientallen andere velden.',
         icon: 'fa-duotone fa-solid fa-filter',
     },
     {
-        eyebrow: 'Praktijkvoorbeelden',
-        heading: 'Regels die je vandaag kunt instellen.',
-        body: 'Een paar concrete startpunten. Alles onder 2 kilo automatisch via PostNL Brievenbus naar Nederland. Bol-bestellingen krijgen altijd een hoge prioriteit zodat ze als eerste de deur uit gaan. Producten in de categorie glas gaan in een aparte batch met een verzekerde vervoerder. Drie regels, drie verschillende winsten op je werkdag.',
-        icon: 'fa-duotone fa-solid fa-lightbulb',
+        eyebrow: 'Acties',
+        heading: 'Negen acties die je kunt automatiseren.',
+        body: 'Een verzendoptie kiezen, tags toevoegen, een notitie plaatsen, uitstellen, markeren als hoge prioriteit of afhaalbestelling, een uiterste verwerkingsdatum zetten, een product meesturen of automatische verwerking in de picklijst uitzetten.',
+        icon: 'fa-duotone fa-solid fa-bolt',
     },
     {
-        eyebrow: 'Schaalbare automatisering',
-        heading: 'Eén keer instellen, blijvend voordeel.',
-        body: 'Een regel die je vandaag bouwt, doet vanaf morgen elke dag zijn werk. Of je nu tien orders per dag verwerkt of duizend, de regel draait voor elke bestelling die binnenkomt. Hoe meer regels je inricht, hoe meer keuzes ShopLinkr van je overneemt. Je houdt zelf tijd over voor waar je verschil maakt: groei, marketing en je klanten.',
-        icon: 'fa-duotone fa-solid fa-infinity',
+        eyebrow: 'Combineren',
+        heading: 'Alles moet kloppen, of één is genoeg.',
+        body: 'Groepeer voorwaarden zoals jij wil. Per groep kies je of alle voorwaarden moeten kloppen, of dat één al genoeg is. Zo vang je een specifieke combinatie af, of juist meerdere situaties tegelijk.',
+        icon: 'fa-duotone fa-solid fa-diagram-project',
+    },
+    {
+        eyebrow: 'Volgorde',
+        heading: 'Jij bepaalt welke regel voorgaat.',
+        body: 'Regels worden afgewerkt in de volgorde die jij instelt. Per regel kies je of de volgende nog gecontroleerd wordt, of dat het hierbij stopt zodra deze regel raakt.',
+        icon: 'fa-duotone fa-solid fa-list-ol',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Automatische regels instellen',
-    description: 'Eenvoudig regels instellen met ShopLinkr. Automatisch een verzendmethode selecteren bij een bestelling. Bestellingen verwerken wordt nu nog eenvoudiger.',
-};
+const ruleExamples = [
+    {
+        title: 'PostNL voor brievenbuspakketten',
+        condition: 'Totaalgewicht lager dan 2 kilo en land gelijk aan Nederland.',
+        action: 'Stel de verzendoptie in op PostNL Brievenbus.',
+    },
+    {
+        title: 'Waddeneilanden apart houden',
+        condition: 'Afleveradres ligt op de Waddeneilanden.',
+        action: 'Stel de bestelling 1 dag uit en voeg de tag "Wadden" toe.',
+    },
+    {
+        title: 'Bol-orders met voorrang',
+        condition: 'Verkoopkanaal gelijk aan Bol.',
+        action: 'Markeer als hoge prioriteit, zodat ze als eerste de deur uit gaan.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Op welke voorwaarden kan ik een regel laten triggeren?',
+        answer: 'Op tientallen velden, verdeeld over klantgegevens en bestelling. Denk aan verkoopkanaal, totaalgewicht, totaalbedrag, aantal producten, verpakkingstype, specifiek product, tag, servicepunt, verzendmethode en besteldatum. Voor klantgegevens kies je per veld of het om het verzendadres of factuuradres gaat, en daarbinnen om naam, e-mail, postcode, land, Waddeneilanden en meer.',
+    },
+    {
+        question: 'Welke acties kan ShopLinkr automatisch uitvoeren?',
+        answer: 'Negen verschillende. Een verzendoptie instellen, tags toevoegen, een notitie plaatsen, de bestelling uitstellen, markeren als hoge prioriteit of als afhaalbestelling, een uiterste verwerkingsdatum zetten, een product aan de bestelling toevoegen, of automatische verwerking in de picklijst uitschakelen. Je kunt meerdere acties combineren binnen één regel.',
+    },
+    {
+        question: 'Kan ik meerdere voorwaarden in één regel combineren?',
+        answer: 'Ja. Binnen een groep voorwaarden bepaal je of alle voorwaarden moeten kloppen, of dat één voorwaarde al voldoende is. Zo maak je een regel die alleen triggert bij een specifieke combinatie, of juist een regel die meerdere situaties tegelijk afvangt.',
+    },
+    {
+        question: 'Wat gebeurt er als twee regels op dezelfde bestelling van toepassing zijn?',
+        answer: 'Regels worden afgewerkt in de volgorde waarin ze staan. Per regel kies je of het hierbij stopt zodra deze raakt, of dat ShopLinkr de volgende regels nog blijft controleren. Zo bepaal je zelf welke regel voorgaat bij overlap.',
+    },
+    {
+        question: 'Worden regels ook toegepast op bestaande bestellingen?',
+        answer: 'Nee, alleen op nieuwe bestellingen die binnenkomen nadat je de regel hebt opgeslagen. De regel is direct actief en wordt vanaf dat moment toegepast op elke nieuwe bestelling die aan de voorwaarden voldoet.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Regels', '/functionaliteiten/regels'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Automatische regels instellen met ShopLinkr',
+        description: 'Automatiseer je orderverwerking met regels. Stel voorwaarden in op verkoopkanaal, gewicht of land en laat ShopLinkr bij elke nieuwe bestelling de juiste acties uitvoeren.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Regels instellen met ShopLinkr"
-    description="Eenvoudig regels instellen met ShopLinkr. Automatisch een verzendmethode selecteren bij een bestelling. Bestellingen verwerken wordt nu nog eenvoudiger."
+    description="Automatiseer je orderverwerking met regels. Stel voorwaarden in op verkoopkanaal, gewicht of land en laat ShopLinkr bij elke nieuwe bestelling de juiste acties uitvoeren."
     eyebrow="Automatisering"
     heading="Laat ShopLinkr het werk doen."
-    subheading="Stel regels in die bij elke bestelling automatisch de juiste actie uitvoeren. Sneller verwerken, minder handmatige keuzes, geen fouten."
+    subheading="Bouw een regel met voorwaarden en acties. Bij elke nieuwe bestelling kiest ShopLinkr de juiste vervoerder, plakt de juiste tag erop of zet de bestelling op hoge prioriteit. Eén keer instellen, daarna geen handmatige keuze meer."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -71,43 +132,138 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="bg-paper">
-        <div class="container-prose">
-            {
-                stories.map((story, index) => {
-                    const isReversed = index % 2 === 1;
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Automatiseer beslissingen</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Wat jij anders bij elke
+                            <span class="block">bestelling kiest.</span>
+                        </h2>
+                    </div>
 
-                    return (
-                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
-                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
-                                    <div
-                                        class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-sunstone-mist via-paper to-chalk-light ring-1 ring-chalk-dark"
-                                        style="aspect-ratio: 4 / 3;"
-                                    >
-                                        <div class="absolute inset-0 opacity-40 pointer-events-none" style="background: radial-gradient(circle at 30% 30%, var(--color-sunstone-soft) 0%, transparent 55%);"></div>
-                                        <div class="absolute inset-0 flex items-center justify-center p-10">
-                                            <div class="flex items-center justify-center h-28 w-28 md:h-32 md:w-32 rounded-3xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_18px_40px_-18px_rgba(25,25,25,0.18)]">
-                                                <i class={`${story.icon} text-5xl md:text-6xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 flex flex-col gap-5 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class="fa-solid fa-filter text-[0.7rem]" aria-hidden="true"></i>
+                            </span>
+                            <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">Als</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 text-sm">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">Totaalgewicht</span>
+                            <span class="text-gravel font-mono text-xs">&lt;</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal tabular-nums">2 kilo</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">en</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">Land</span>
+                            <span class="text-gravel font-mono text-xs">=</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">Nederland</span>
+                        </div>
 
-                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
-                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
-                                        {story.heading}
-                                    </h2>
-                                    <p class="text-lg text-steel leading-relaxed">
-                                        {story.body}
-                                    </p>
-                                </div>
+                        <div class="flex justify-center py-1">
+                            <i class="fa-solid fa-arrow-down text-gravel text-sm" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class="fa-solid fa-bolt text-[0.7rem]" aria-hidden="true"></i>
+                            </span>
+                            <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">Dan</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 text-sm">
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-charcoal text-paper font-medium">Verzendoptie</span>
+                            <span class="text-gravel font-mono text-xs">→</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-charcoal text-paper font-medium">PostNL Brievenbus</span>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Eén keer instellen. Vanaf dan op elke nieuwe bestelling.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
                             </div>
                         </article>
-                    );
-                })
-            }
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Veelgebruikte regels</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Drie voorbeelden
+                        <span class="block text-sunstone-deep">om mee te beginnen.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Een regel bestaat uit een voorwaarde en een actie. Dit zijn drie regels die veel klanten meteen na hun start aanzetten.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            ruleExamples.map((example) => (
+                                <li class="py-7 flex flex-col gap-4">
+                                    <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{example.title}</h3>
+                                    <div class="grid sm:grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-[0.975rem]">
+                                        <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel pt-1">
+                                            <i class="fa-solid fa-filter text-sunstone-deep text-xs" aria-hidden="true"></i>
+                                            Als
+                                        </span>
+                                        <p class="text-steel leading-relaxed">{example.condition}</p>
+                                        <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel pt-1">
+                                            <i class="fa-solid fa-bolt text-sunstone-deep text-xs" aria-hidden="true"></i>
+                                            Dan
+                                        </span>
+                                        <p class="text-steel leading-relaxed">{example.action}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mis je een vraag? Plan een gesprek of stuur een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
         </div>
     </section>
 

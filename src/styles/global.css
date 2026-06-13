@@ -61,7 +61,7 @@
         font-family: var(--font-display);
         font-weight: 600;
         letter-spacing: -0.02em;
-        color: var(--color-charcoal);
+        color: inherit;
     }
 
     h1 {
@@ -72,6 +72,12 @@
 @layer components {
     .container-prose {
         max-width: 76rem;
+        margin-inline: auto;
+        padding-inline: 1.5rem;
+    }
+
+    .container-wide {
+        max-width: 88rem;
         margin-inline: auto;
         padding-inline: 1.5rem;
     }

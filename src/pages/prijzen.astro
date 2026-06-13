@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PricingCalculator from '../components/pricing/PricingCalculator.vue';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import FaqList from '../components/template/FaqList.astro';
+import { breadcrumbs } from '../utils/seo';
 
 const pricingExamples = [
     {
@@ -100,6 +101,10 @@ const faqs = [
 ];
 
 const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Prijzen', '/prijzen'],
+    ]),
     {
         '@type': 'Product',
         name: 'ShopLinkr',
@@ -171,7 +176,7 @@ export const prerender = true;
                                 Vast maandtarief.
                             </p>
                             <p class="mt-4 text-sm text-steel leading-relaxed">
-                                Elk kanaal dat je koppelt, kost hetzelfde. Of het nu Bol, Shopify, WooCommerce of Kaufland is, het tarief blijft gelijk per kanaal per maand.
+                                Elk kanaal dat je koppelt, kost hetzelfde. Welk kanaal je ook koppelt, het tarief blijft hetzelfde per maand.
                             </p>
                         </article>
 

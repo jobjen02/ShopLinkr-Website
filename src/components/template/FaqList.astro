@@ -23,9 +23,7 @@ const { items } = Astro.props;
                         <i class="fa-solid fa-plus text-xs" aria-hidden="true"></i>
                     </span>
                 </summary>
-                <div class="mt-4 pr-12 text-steel leading-relaxed text-[0.975rem]">
-                    {faq.answer}
-                </div>
+                <div class="mt-4 pr-12 text-steel leading-relaxed text-[0.975rem] [&_a]:text-sunstone-deep [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-charcoal" set:html={faq.answer}></div>
             </details>
         ))
     }

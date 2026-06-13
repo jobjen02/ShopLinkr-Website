@@ -1,56 +1,112 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const rows = [
-    {
-        eyebrow: 'Uitnodigen',
-        heading: 'Nodig je team uit via e-mail.',
-        body: 'Voer het e-mailadres van je collega in en klik op uitnodigen. ShopLinkr stuurt automatisch een uitnodiging waarmee diegene in een paar klikken aan boord is. Geen accountgedoe, geen handmatige koppelingen.',
-        icon: 'fa-solid fa-envelope-open-text',
-    },
-    {
-        eyebrow: 'Onboarding',
-        heading: 'Direct in dezelfde bedrijfsomgeving.',
-        body: 'Klikt je collega op de uitnodiging, dan wordt het account meteen gekoppeld aan jouw omgeving. Even een wachtwoord kiezen en de nieuwe gebruiker ziet dezelfde producten, voorraad en bestellingen als jij.',
-        icon: 'fa-solid fa-user-plus',
-    },
-    {
-        eyebrow: 'Samenwerken',
-        heading: 'Iedereen werkt in dezelfde data.',
-        body: 'Geen losse accounts om handmatig aan elkaar te knopen, geen versies die uit elkaar lopen. Wat de één invoert ziet de ander direct, zo bouw je echt samen aan hetzelfde magazijn.',
-        icon: 'fa-solid fa-people-roof',
-    },
+const subFeatures = [
     {
         eyebrow: 'Rollen en rechten',
-        heading: 'Iedere rol krijgt de juiste toegang.',
-        body: 'Geef je magazijnmedewerker andere toegang dan je inkoper of administratief medewerker. Je bepaalt zelf wie wat mag zien en aanpassen, zodat iedereen precies de juiste tools in handen heeft.',
-        icon: 'fa-solid fa-user-shield',
+        heading: 'Iedereen ziet wat bij het werk hoort.',
+        body: 'Vijf standaardrollen voor beheer, magazijn, administratie, klantenservice en inkoop. Maak daarnaast je eigen rollen aan en bepaal per onderdeel wie mag bekijken, aanmaken, bewerken of verwijderen.',
+        icon: 'fa-duotone fa-solid fa-user-shield',
     },
     {
-        eyebrow: 'Audit trail',
-        heading: 'Per gebruiker terugzien wat er is gebeurd.',
-        body: 'Wie heeft die voorraadcorrectie doorgevoerd? Wie heeft de bestelling van gisteren bewerkt? Je ziet per gebruiker terug welke handelingen er gedaan zijn, zodat je altijd grip houdt op je data.',
-        icon: 'fa-solid fa-list-timeline',
+        eyebrow: 'Uitnodigen via e-mail',
+        heading: 'Een collega werkt binnen een paar klikken mee.',
+        body: 'Vul het e-mailadres in, kies een rol en klik op uitnodigen. Je collega ontvangt een mail, kiest een wachtwoord en logt direct in op dezelfde omgeving.',
+        icon: 'fa-duotone fa-solid fa-envelope-open-text',
+    },
+    {
+        eyebrow: 'QR-login voor magazijn',
+        heading: 'Snel wisselen op een gedeeld station.',
+        body: 'Magazijnmedewerkers scannen hun persoonlijke QR-code en voeren een pincode in. Ideaal voor inpakstations waar meerdere mensen achter dezelfde computer werken.',
+        icon: 'fa-duotone fa-solid fa-qrcode',
+    },
+    {
+        eyebrow: 'Tweefactorauthenticatie',
+        heading: 'Een extra slot op gevoelige accounts.',
+        body: 'Schakel 2FA per gebruiker in met Google Authenticator, Microsoft Authenticator, Authy of 1Password. Te combineren met QR-login voor extra zekerheid op de werkvloer.',
+        icon: 'fa-duotone fa-solid fa-shield-halved',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Gebruikers toevoegen aan ShopLinkr',
-    description: 'Eenvoudig samen werken met je hele team doe je met ShopLinkr. Nodig eenvoudig gebruikers uit voor je account en werk makkelijk samen. Het is nog nooit zo leuk geweest!',
-};
+const permissionTypes = [
+    {
+        title: 'Bekijken',
+        body: 'De gebruiker mag gegevens inzien, maar er niets aan wijzigen. Handig voor rollen die alleen hoeven mee te kijken, zoals een stagiair of een externe boekhouder.',
+    },
+    {
+        title: 'Aanmaken',
+        body: 'De gebruiker mag nieuwe items toevoegen binnen een onderdeel. Bijvoorbeeld een nieuwe bestelling aanmaken, een product toevoegen of een leverancier vastleggen.',
+    },
+    {
+        title: 'Bewerken',
+        body: 'De gebruiker mag bestaande gegevens wijzigen. Denk aan een productomschrijving aanpassen, een bestelling bijwerken of een voorraadcorrectie doorvoeren.',
+    },
+    {
+        title: 'Verwijderen',
+        body: 'De gebruiker mag items definitief uit ShopLinkr halen. Dit recht geef je meestal alleen aan rollen die volledige controle nodig hebben.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Kost een extra gebruiker iets?',
+        answer: 'Nee. Bij ShopLinkr betaal je niet per gebruiker. Of je nu met z\'n tweeën werkt of met een team van twintig, je rekening blijft hetzelfde. Nodig dus gerust iedereen uit die meewerkt in je magazijn.',
+    },
+    {
+        question: 'Welke standaardrollen zitten er in ShopLinkr?',
+        answer: 'Er staan vijf rollen klaar: Beheerder (volledige toegang), Magazijn (bestellingen verwerken en voorraad bijwerken), Administratie (rapporten en exports), Klantenservice (bestellingen en retouren) en Inkoop (leveranciers en leveringen). De Beheerder-rol kun je niet wijzigen of verwijderen, de andere standaardrollen wel.',
+    },
+    {
+        question: 'Kan ik zelf rollen aanmaken?',
+        answer: 'Ja. Via Instellingen > Rollen klik je op Rol aanmaken, geef je een naam zoals Teamleider of Stagiair en vink je per onderdeel aan wat deze rol mag. Of dupliceer een standaardrol en pas hem aan, zo hoef je niet vanaf nul te beginnen.',
+    },
+    {
+        question: 'Welke rechten kun je per rol toekennen?',
+        answer: 'Rechten zijn gegroepeerd per onderdeel: bestellingen, producten, voorraad, instellingen en meer. Per onderdeel kies je of een gebruiker mag bekijken, aanmaken, bewerken of verwijderen. Daarnaast zijn er specifieke rechten, zoals bestellingen verwerken, producten exporteren of financiële inzichten bekijken.',
+    },
+    {
+        question: 'Werken tweefactorauthenticatie en QR-login samen?',
+        answer: 'Ja. Tweefactorauthenticatie zet je per gebruiker aan via Instellingen > Beveiliging en werkt met Google Authenticator, Microsoft Authenticator, Authy of 1Password. QR-login is bedoeld voor snel wisselen op gedeelde stations. Heb je 2FA aan staan, dan vraagt ShopLinkr na de QR-scan ook nog om de 6-cijferige code.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Gebruikers', '/functionaliteiten/gebruikers'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Gebruikersbeheer, rollen en rechten met ShopLinkr',
+        description: 'Werk samen met je hele team in ShopLinkr. Nodig collega\'s uit, ken ze een rol toe en bepaal per onderdeel wie wat mag. Onbeperkt gebruikers, zonder kosten per gebruiker.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
-    title="Gebruikers toevoegen met ShopLinkr"
-    description="Eenvoudig samen werken met je hele team doe je met ShopLinkr. Nodig eenvoudig gebruikers uit voor je account en werk makkelijk samen. Het is nog nooit zo leuk geweest!"
+    title="Gebruikers, rollen en rechten met ShopLinkr"
+    description="Werk samen met je hele team in ShopLinkr. Nodig collega's uit, ken ze een rol toe en bepaal per onderdeel wie wat mag. Onbeperkt gebruikers, zonder kosten per gebruiker."
     eyebrow="Team & toegang"
     heading="Werk samen met je hele team."
-    subheading="Nodig collega's uit, geef ze de juiste rechten en werk samen in dezelfde omgeving. Je magazijn draait pas echt soepel als je niet de enige bent die het ziet."
+    subheading="Nodig collega's uit, geef ze de juiste rol en werk samen in dezelfde omgeving. Iedereen ziet en doet precies wat bij zijn taak hoort."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -77,46 +133,199 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-paper">
-        <div class="container-prose">
-            <div class="max-w-3xl mb-12 md:mb-16">
-                <p class="eyebrow mb-4">Meer handen, één werkplek</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                    Je magazijn draait beter met meer ogen.
-                </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
-                    Eén persoon die alles doet werkt op de korte termijn. Maar als je groeit wil je je team meenemen. ShopLinkr maakt het simpel om collega's aan je account toe te voegen, zodat iedereen vanuit zijn eigen rol bijdraagt aan dezelfde voorraad, bestellingen en producten.
-                </p>
-            </div>
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Wie mag wat?</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Iedereen erbij,
+                            <span class="block">elk met eigen rechten.</span>
+                        </h2>
+                    </div>
 
-            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
-                {
-                    rows.map((row) => (
-                        <li class="py-10 md:py-12">
-                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
-                                <div class="md:col-span-4 flex md:items-start gap-4">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
-                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
-                                    </div>
-                                    <div class="md:hidden">
-                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
-                                    </div>
-                                    <div class="hidden md:block">
-                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
-                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
-                                    </div>
-                                </div>
-                                <div class="md:col-span-8">
-                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
-                                        {row.body}
-                                    </p>
-                                </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">
+                                Rechten per rol
+                            </p>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Voorbeeld</span>
+                        </div>
+
+                        <div class="grid grid-cols-[1fr_auto_auto_auto_auto] items-center gap-x-3 gap-y-2 text-sm">
+                            <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel"></span>
+                            <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel text-center" title="Bekijken">Bek.</span>
+                            <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel text-center" title="Aanmaken">Aan.</span>
+                            <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel text-center" title="Bewerken">Bew.</span>
+                            <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel text-center" title="Verwijderen">Ver.</span>
+
+                            <div class="flex items-center gap-2 py-2 border-t border-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-6 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-user-shield text-[0.65rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-charcoal font-medium">Beheerder</span>
                             </div>
-                        </li>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Bekijken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Aanmaken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Bewerken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Verwijderen toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+
+                            <div class="flex items-center gap-2 py-2 border-t border-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-6 rounded-md bg-chalk-light text-steel ring-1 ring-chalk-dark">
+                                    <i class="fa-solid fa-boxes-packing text-[0.65rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-charcoal font-medium">Magazijn</span>
+                            </div>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Bekijken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Aanmaken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Bewerken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-gravel/60" aria-label="Verwijderen niet toegestaan">
+                                <i class="fa-solid fa-minus text-[0.65rem]" aria-hidden="true"></i>
+                            </span>
+
+                            <div class="flex items-center gap-2 py-2 border-t border-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-6 rounded-md bg-chalk-light text-steel ring-1 ring-chalk-dark">
+                                    <i class="fa-solid fa-headset text-[0.65rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-charcoal font-medium">Klantenservice</span>
+                            </div>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Bekijken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Aanmaken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Bewerken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-gravel/60" aria-label="Verwijderen niet toegestaan">
+                                <i class="fa-solid fa-minus text-[0.65rem]" aria-hidden="true"></i>
+                            </span>
+
+                            <div class="flex items-center gap-2 py-2 border-t border-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-6 rounded-md bg-sunstone-mist/60 text-sunstone-deep ring-1 ring-sunstone-soft/60">
+                                    <i class="fa-solid fa-user-plus text-[0.65rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-charcoal font-medium">Stagiair <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep ml-1">eigen rol</span></span>
+                            </div>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-sunstone-deep" aria-label="Bekijken toegestaan">
+                                <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-gravel/60" aria-label="Aanmaken niet toegestaan">
+                                <i class="fa-solid fa-minus text-[0.65rem]" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-gravel/60" aria-label="Bewerken niet toegestaan">
+                                <i class="fa-solid fa-minus text-[0.65rem]" aria-hidden="true"></i>
+                            </span>
+                            <span class="flex items-center justify-center py-2 border-t border-chalk-dark text-gravel/60" aria-label="Verwijderen niet toegestaan">
+                                <i class="fa-solid fa-minus text-[0.65rem]" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-3 pt-4 mt-4 border-t border-chalk-darker">
+                            <span class="text-sm font-semibold text-charcoal">Gebruikers</span>
+                            <span class="inline-flex items-baseline gap-1.5">
+                                <i class="fa-solid fa-infinity text-sunstone-deep text-base" aria-hidden="true"></i>
+                                <span class="text-sm font-semibold text-sunstone-deep">geen kosten per gebruiker</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Begin met vijf standaardrollen en maak daarnaast eigen rollen aan voor iedereen die net iets anders nodig heeft.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
                     ))
                 }
-            </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Rechten per onderdeel</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vier soorten rechten,
+                        <span class="block text-sunstone-deep">precies de juiste toegang.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Per onderdeel van ShopLinkr, zoals bestellingen, producten, voorraad en instellingen, bepaal je wat een rol mag. Combineer de rechten tot een rol die past bij de verantwoordelijkheid van je medewerker.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            permissionTypes.map((type) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-key text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Staat je vraag er niet bij? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
         </div>
     </section>
 

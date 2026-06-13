@@ -1,56 +1,112 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const rows = [
+const subFeatures = [
     {
-        eyebrow: 'Bestsellers',
-        heading: 'Zie welke producten het verschil maken.',
-        body: 'Welke artikelen lopen er als een trein en welke zijn de stille winnaars die je over het hoofd ziet? In je rapportage zie je in één oogopslag je best verkochte producten over elke periode die je kiest.',
-        icon: 'fa-solid fa-trophy',
-    },
-    {
-        eyebrow: 'Dode voorraad',
-        heading: 'Spoor producten op die geld kosten.',
-        body: 'Producten die al maanden in je magazijn liggen zonder verkoop kosten je ruimte, geld en aandacht. Het overzicht van nooit-verkochte artikelen vertelt je precies welke voorraad je moet afprijzen of niet meer bestelt.',
-        icon: 'fa-solid fa-box-archive',
-    },
-    {
-        eyebrow: 'Inkoop',
-        heading: 'Bestel op basis van data, niet op gevoel.',
-        body: 'Je rapporten vertellen je welke producten je nodig hebt, hoeveel je er nodig hebt en wanneer. In plaats van ruwweg inschatten wat je gaat verkopen, baseer je je inkoop op cijfers die echt iets zeggen.',
-        icon: 'fa-solid fa-cart-circle-check',
-    },
-    {
-        eyebrow: 'Voorraadwaarde',
-        heading: 'Weet wat er nu in je magazijn ligt.',
-        body: 'Je voorraadwaarde rapport laat zien hoeveel kapitaal er op dit moment in je voorraad zit. Handig voor je boekhouding, voor financieringsaanvragen en voor het strakke gevoel dat je grip hebt op de cijfers.',
-        icon: 'fa-solid fa-coins',
+        eyebrow: 'Product prestaties',
+        heading: 'Zie per product wat het oplevert.',
+        body: 'Omzet, winst, marge, inkoopkosten, commissie en retouren in een overzicht. Sorteer op winst om je toppers boven te halen, of spoor margedruk op voordat het pijn doet.',
+        icon: 'fa-duotone fa-solid fa-trophy',
     },
     {
         eyebrow: 'ABC-analyse',
-        heading: 'Focus op wat het verschil maakt.',
-        body: 'Met een ABC of Pareto analyse zie je welke twintig procent van je producten tachtig procent van je omzet doen. Verdeel je aandacht slim en behandel je topproducten met de prioriteit die ze verdienen.',
-        icon: 'fa-solid fa-chart-pie-simple',
+        heading: 'Focus op je hardlopers.',
+        body: 'ShopLinkr deelt je producten elke nacht in A, B en C op basis van pickfrequentie over de laatste 90 dagen. Leg je A-producten dicht bij het inpakstation en bespaar je team flink wat loopwerk.',
+        icon: 'fa-duotone fa-solid fa-chart-pie-simple',
+    },
+    {
+        eyebrow: 'Voorraadwaarde',
+        heading: 'Weet wat er in je magazijn ligt.',
+        body: 'Per product en in totaal: hoeveel stuks op een gekozen datum en wat dat waard is op basis van je inkoopprijzen. Handig voor je boekhouding, financieringsaanvragen of een trendanalyse.',
+        icon: 'fa-duotone fa-solid fa-coins',
+    },
+    {
+        eyebrow: 'Nooit verkochte producten',
+        heading: 'Spoor producten op die geld kosten.',
+        body: 'Welke artikelen hadden geen enkele verkoop in een periode, ook niet als onderdeel van een bundel? Vink alleen-met-voorraad aan en je ziet direct waar kapitaal vastzit.',
+        icon: 'fa-duotone fa-solid fa-box-archive',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Rapporten en inzicht in ShopLinkr',
-    description: 'Krijg inzicht in je shop met de rapportages van ShopLinkr. Zie welke producten verkopen, welke nooit verkocht zijn, en ontdek waar je kansen laat liggen.',
-};
+const workflowSteps = [
+    {
+        title: 'Periode of datum kiezen',
+        body: 'Stel per rapport de periode of peildatum in. Product prestaties en nooit verkochte producten kijken naar een tijdvak, voorraadwaarde naar een specifieke datum, zodat je ook historische waarden terugziet.',
+    },
+    {
+        title: 'Filteren tot je hebt wat je zoekt',
+        body: 'Filter op tags, verpakkingstype, verkoopkanaal of alleen-met-voorraad. Zo zoom je in op een productgroep, een specifiek kanaal of de producten waar je echt iets mee kunt.',
+    },
+    {
+        title: 'Exporteren naar je inbox',
+        body: 'Klik op exporteren en ShopLinkr stuurt het bestand naar je e-mailadres zodra het klaar is. Geen wachtschermen, geen zware downloads in je browser.',
+    },
+    {
+        title: 'Rechten per medewerker',
+        body: 'Wie rapporten mag bekijken bepaal je met een aparte permissie. Zo houd je financiële cijfers bij de mensen die ermee werken en blijft de rest van het team erbuiten.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Welke rapporten zijn standaard beschikbaar in ShopLinkr?',
+        answer: 'Je vindt vier vaste rapporten onder Rapporten in het menu: Product prestaties, Nooit verkochte producten, Voorraadwaarde en ABC-analyse. Elk rapport heeft eigen filters en beantwoordt een specifieke vraag over je assortiment, je voorraad of je verkoop.',
+    },
+    {
+        question: 'Kun je rapporten exporteren?',
+        answer: 'Ja, elk rapport heeft een exportknop. Je krijgt het bestand per e-mail zodra het klaar is, zodat zware exports je browser niet bezighouden. Handig om door te sturen naar je boekhouder of mee te nemen in je eigen analyse.',
+    },
+    {
+        question: 'Hoe vaak wordt de ABC-analyse bijgewerkt en waar kijkt hij naar?',
+        answer: 'De analyse draait elke nacht automatisch over de pickfrequentie van de afgelopen 90 dagen. Werk je met picklijsten, dan telt elke keer dat een product op een lijst staat als een pick. Werk je zonder picklijsten, dan kijkt ShopLinkr naar hoe vaak een product in bestellingen voorkomt. Het gaat om hoe vaak een medewerker naar een product toe moet lopen, niet om de aantallen die gepickt worden.',
+    },
+    {
+        question: 'Kan ik in het rapport Nooit verkochte producten filteren op verkoopkanaal?',
+        answer: 'Ja. Naast periode, tags en verpakkingstype kun je in dit rapport filteren op verkoopkanaal. Zo zie je bijvoorbeeld welke producten in je Shopify-shop niet bewegen terwijl ze op Bol wel verkopen, of andersom.',
+    },
+    {
+        question: 'Waarom verschilt het voorraadwaarde-rapport van de voorraadwaarde bij een product zelf?',
+        answer: 'In het productscherm zie je de actuele voorraadwaarde van dat ene product. Het rapport zet je hele assortiment naast elkaar op een gekozen datum, inclusief de totaalwaarde over alles, en je kunt naar historische datums springen om trends te zien. Producten zonder inkoopprijs krijgen in beide gevallen waarde nul. Bundels tellen in het rapport niet apart mee, omdat hun waarde uit de losse producten komt.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Rapporten', '/functionaliteiten/rapporten'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Rapporten en inzicht met ShopLinkr',
+        description: 'Krijg inzicht in je shop met de rapporten van ShopLinkr. Bekijk per product de omzet en marge, spoor dode voorraad op, zie de waarde van je magazijn en optimaliseer je indeling met een ABC-analyse.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Rapporten en inzicht met ShopLinkr"
-    description="Krijg inzicht in je shop met de rapportages van ShopLinkr. Zie welke producten verkopen, welke nooit verkocht zijn, en ontdek waar je kansen laat liggen."
-    eyebrow="Inzicht & data"
-    heading="Begrijp je shop op cijferniveau."
-    subheading="Welke producten brengen geld in het laatje en welke liggen stof te vergaren? Met de rapportages van ShopLinkr maak je beslissingen op basis van wat er écht gebeurt in je shop."
+    description="Krijg inzicht in je shop met de rapporten van ShopLinkr. Bekijk per product de omzet en marge, spoor dode voorraad op, zie de waarde van je magazijn en optimaliseer je indeling met een ABC-analyse."
+    eyebrow="Rapporten en inzicht"
+    heading="Beslissen met cijfers, niet op gevoel."
+    subheading="Vier vaste rapporten brengen je omzet, marge, voorraadwaarde en magazijnefficiëntie samen op één plek. Filteren, exporteren en grip houden, zonder los te knutselen in Excel."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -77,46 +133,175 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-paper">
-        <div class="container-prose">
-            <div class="max-w-3xl mb-12 md:mb-16">
-                <p class="eyebrow mb-4">Beslissen met cijfers</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                    Stop met gokken, begin met weten.
-                </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
-                    Veel webshopondernemers vertrouwen op hun gevoel. Met de rapportages van ShopLinkr krijg je harde cijfers over je producten, je voorraad en je omzet. Geen losse exports, geen Excel-acrobatiek. Gewoon één plek waar de antwoorden klaarliggen.
-                </p>
-            </div>
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Vier rapporten, één plek</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Stop met gokken,
+                            <span class="block">begin met weten.</span>
+                        </h2>
+                    </div>
 
-            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
-                {
-                    rows.map((row) => (
-                        <li class="py-10 md:py-12">
-                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
-                                <div class="md:col-span-4 flex md:items-start gap-4">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
-                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
-                                    </div>
-                                    <div class="md:hidden">
-                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
-                                    </div>
-                                    <div class="hidden md:block">
-                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
-                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
-                                    </div>
-                                </div>
-                                <div class="md:col-span-8">
-                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
-                                        {row.body}
-                                    </p>
-                                </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-trophy text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Product prestaties</span>
                             </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Top 3 op winst</span>
+                        </div>
+
+                        <div class="grid grid-cols-[1fr_auto_auto_auto] gap-x-4 gap-y-2 text-xs items-center">
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Product</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">Omzet</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">Winst</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">Marge</span>
+
+                            <div class="col-span-4 h-px bg-chalk-dark"></div>
+
+                            <span class="text-charcoal font-medium truncate">Bluetooth oortjes Pro</span>
+                            <span class="text-charcoal tabular-nums text-right">&euro;3.420</span>
+                            <span class="text-charcoal font-semibold tabular-nums text-right">&euro;1.180</span>
+                            <span class="inline-flex items-center justify-end gap-1.5">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                    <span class="block h-full w-[80%] bg-sunstone-deep rounded-full"></span>
+                                </span>
+                                <span class="text-charcoal font-semibold tabular-nums">34%</span>
+                            </span>
+
+                            <span class="text-charcoal font-medium truncate">T-shirt classic wit</span>
+                            <span class="text-charcoal tabular-nums text-right">&euro;2.180</span>
+                            <span class="text-charcoal font-semibold tabular-nums text-right">&euro;720</span>
+                            <span class="inline-flex items-center justify-end gap-1.5">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                    <span class="block h-full w-[78%] bg-sunstone-soft rounded-full"></span>
+                                </span>
+                                <span class="text-charcoal font-semibold tabular-nums">33%</span>
+                            </span>
+
+                            <span class="text-steel truncate">Wandelset compact</span>
+                            <span class="text-steel tabular-nums text-right">&euro;1.640</span>
+                            <span class="text-steel font-semibold tabular-nums text-right">&euro;248</span>
+                            <span class="inline-flex items-center justify-end gap-1.5">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                    <span class="block h-full w-[35%] bg-chalk-darker rounded-full"></span>
+                                </span>
+                                <span class="text-steel font-semibold tabular-nums">15%</span>
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-between gap-2 mt-5 pt-4 border-t border-chalk-dark">
+                            <div class="flex items-center gap-2 text-[11px] text-gravel">
+                                <i class="fa-solid fa-calendar-days text-[0.65rem]" aria-hidden="true"></i>
+                                <span>Periode: laatste 90 dagen</span>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-charcoal px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <i class="fa-solid fa-envelope text-[0.65rem]" aria-hidden="true"></i>
+                                Exporteren per mail
+                            </span>
+                        </div>
+                    </div>
+
+                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-medium text-charcoal">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Vier vaste rapporten
                         </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Filteren per periode
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Exporteren per mail
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Rechten per gebruiker
+                        </li>
+                    </ul>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
                     ))
                 }
-            </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Zo werk je met je rapporten</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Dezelfde aanpak,
+                        <span class="block text-sunstone-deep">voor elk rapport.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Of je nu naar prestaties, voorraadwaarde of dode voorraad kijkt, je werkt steeds via dezelfde route. Periode kiezen, filteren, exporteren en de juiste mensen toegang geven.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ol class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            workflowSteps.map((step, index) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5 text-sm font-semibold">
+                                        {index + 1}
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Staat je vraag er niet bij? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
         </div>
     </section>
 

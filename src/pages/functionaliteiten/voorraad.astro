@@ -1,43 +1,33 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const stories = [
-    {
-        eyebrow: 'Realtime synchronisatie',
-        heading: 'Nooit meer misgrijpen op een product.',
-        body: 'Een klant die zijn pakket morgen verwacht maar het ligt niet op je schap. Die situatie wil je voorkomen. ShopLinkr haalt elke minuut je bestellingen op uit al je kanalen en houdt zo een accuraat beeld van je voorraad. Die voorraad wordt direct teruggekoppeld naar je verkoopkanalen, zodat wat je verkoopt ook echt klaarligt.',
-        icon: 'fa-duotone fa-solid fa-arrows-rotate',
-    },
+const subFeatures = [
     {
         eyebrow: 'Voorraadprognose',
-        heading: 'Weet op tijd wanneer je moet inkopen.',
-        body: 'Wanneer raakt een populair product uitverkocht? ShopLinkr berekent het voor je op basis van je verkoopsnelheid van de afgelopen weken. Je ziet per product precies hoeveel dagen voorraad je nog hebt, zodat je je inkoop op tijd in gang zet en geen omzet misloopt.',
+        heading: 'Zie op tijd dat je moet bijbestellen.',
+        body: 'ShopLinkr kijkt naar je gemiddelde verkoop per dag en rekent uit hoeveel je nodig hebt. Levertijd van je leverancier telt automatisch mee in het advies.',
         icon: 'fa-duotone fa-solid fa-chart-line',
     },
     {
         eyebrow: 'Voorraadhistorie',
-        heading: 'Zie precies waarom je voorraad zo laag is.',
-        body: 'Soms duikt een product opeens op nul en weet je niet meer hoe dat kwam. In ShopLinkr zie je per artikel een complete tijdlijn van mutaties: verkopen, retouren, leveringen en handmatige correcties. Geen verrassingen meer, alles is herleidbaar.',
+        heading: 'Elke mutatie terug te vinden per product.',
+        body: 'Per product zie je elke verkoop, pick, retour, levering, correctie en telling. Compleet met oude en nieuwe voorraad, locatie, datum en wie de wijziging deed.',
         icon: 'fa-duotone fa-solid fa-magnifying-glass-chart',
     },
     {
-        eyebrow: 'Magazijnlocaties',
-        heading: 'Een goede basis begint bij locaties.',
-        body: 'Klein magazijn of groot magazijn, het begint allebei bij dezelfde basis: weten waar je producten liggen. In ShopLinkr bouw je een hiërarchie van gangen, stellingen, schappen en vakken en koppel je producten aan de juiste locatie. Op de bestellingenpagina en op de pick en pack lijst staat de locatie meteen in beeld, zodat ook nieuwe medewerkers direct meedoen.',
-        icon: 'fa-duotone fa-solid fa-location-dot',
-    },
-    {
         eyebrow: 'Fictieve voorraad',
-        heading: 'Houd je concurrenten in het ongewisse.',
-        body: 'Concurrenten die meekijken hoeveel je verkoopt, of spiders die continu je voorraadstand scannen. Met fictieve voorraad geef je een afgesproken aantal door, bijvoorbeeld 300 stuks, zolang je eigen voorraad boven een drempel blijft. Daalt je echte voorraad onder die drempel? Dan schakelt ShopLinkr automatisch over op je werkelijke aantallen, zodat je nooit meer verkoopt dan je hebt.',
+        heading: 'Verberg je voorraad voor concurrenten.',
+        body: 'Stel een vast aantal in (bijvoorbeeld 400) plus een drempel (bijvoorbeeld 20). Zit je boven de drempel, dan zien je kanalen het fictieve aantal. Eronder schakelt ShopLinkr over op je echte voorraad, zodat je nooit een product verkoopt dat je niet hebt.',
         icon: 'fa-duotone fa-solid fa-eye-slash',
     },
     {
         eyebrow: 'LVB switch',
-        heading: 'Automatisch overschakelen naar je eigen magazijn.',
-        body: 'Je LVB-voorraad raakt op en je product staat op het kanaal direct op uitverkocht, terwijl het bij jou nog gewoon op het schap ligt. Frustrerend, en zonder ShopLinkr lastig te ondervangen. Met de slimme LVB switch zet ShopLinkr de verzendlocatie automatisch over naar je eigen magazijn zodra de LVB-voorraad nul nadert, inclusief jouw levertijd. Je product blijft beschikbaar, jij houdt de omzet.',
+        heading: 'Automatisch terug naar eigen magazijn.',
+        body: 'Raakt je LVB-voorraad op? ShopLinkr zet de verzendlocatie automatisch om naar je eigen magazijn, inclusief jouw levertijd.',
         icon: 'fa-duotone fa-solid fa-shuffle',
     },
 ];
@@ -45,33 +35,66 @@ const stories = [
 const stockTypes = [
     {
         title: 'Beschikbare voorraad',
-        body: 'Dit is de voorraad die beschikbaar is voor verkoop.',
+        body: 'Wat je nog kunt verkopen. Dit aantal sturen we door naar je verkoopkanalen.',
     },
     {
         title: 'Gereserveerde voorraad',
-        body: 'Dit is de voorraad die gereserveerd is voor openstaande bestellingen.',
+        body: 'Voorraad die al vastligt voor bestellingen die nog verwerkt moeten worden.',
     },
     {
         title: 'Totale voorraad',
-        body: 'Dit is de som van de beschikbare en gereserveerde voorraad. Loop je in je magazijn naar dit product, dan zie je deze voorraad liggen.',
+        body: 'Beschikbaar plus gereserveerd. Wat je tegenkomt als je naar het schap loopt.',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Voorraad beheren met ShopLinkr',
-    description: 'Verbeter je voorraadbeheer met ShopLinkr. Beheer en synchroniseer je voorraad vanuit één plek. Ontdek handige functies zoals productbundels, voorraadmeldingen, voorraadprognoses en fictieve voorraad.',
-};
+const faqs = [
+    {
+        question: 'Kan ik terugzien waarom de voorraad van een product is veranderd?',
+        answer: 'Ja. Per product vind je een complete voorraadhistorie met elke mutatie: verkopen, picks, retouren, leveringen, handmatige correcties en voorraadtellingen. Per mutatie zie je de reden, het oude en nieuwe aantal, de locatie, de datum en wie de mutatie heeft gedaan.',
+    },
+    {
+        question: 'Kunnen concurrenten zien hoeveel voorraad ik heb?',
+        answer: 'Niet als je fictieve voorraad gebruikt. Je stelt een vast aantal in (bijvoorbeeld 400) plus een drempel (bijvoorbeeld 20). Zolang je werkelijke voorraad boven de drempel zit, stuurt ShopLinkr het fictieve aantal naar je kanalen. Komt je voorraad onder de drempel, dan schakelt ShopLinkr automatisch over op je echte aantallen, zodat je nooit een product verkoopt dat je niet hebt.',
+    },
+    {
+        question: 'Wat gebeurt er met de voorraad bij een retour?',
+        answer: 'Bij het verwerken van een retour vink je per item aan of het terug op voorraad moet en kies je de locatie. ShopLinkr werkt de voorraad bij en synchroniseert de mutatie direct naar het gekoppelde kanaal.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Voorraad', '/functionaliteiten/voorraad'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Voorraad beheren met ShopLinkr',
+        description: 'Beheer en synchroniseer je voorraad vanuit één plek. Met voorraadmutaties, notificaties, prognose en fictieve voorraad houd je grip op wat er ligt en wat er nog beschikbaar is.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Voorraad beheren met ShopLinkr"
-    description="Verbeter je voorraadbeheer met ShopLinkr. Beheer en synchroniseer je voorraad vanuit één plek. Ontdek handige functies zoals productbundels, voorraadmeldingen, voorraadprognoses en fictieve voorraad."
+    description="Beheer en synchroniseer je voorraad vanuit één plek. Met voorraadmutaties, notificaties, prognose en fictieve voorraad houd je grip op wat er ligt en wat er nog beschikbaar is."
     eyebrow="Voorraadbeheer"
     heading="Op één plek al je voorraad beheren."
-    subheading="Realtime synchronisatie tussen ShopLinkr en je verkoopkanalen. Geen oversells, geen handmatige correcties, altijd een accuraat beeld van wat er ligt."
+    subheading="Realtime synchronisatie tussen ShopLinkr en je verkoopkanalen, zodat je altijd ziet wat er werkelijk ligt en wat er nog te verkopen is."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -98,47 +121,158 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="bg-paper">
-        <div class="container-prose">
-            {
-                stories.map((story, index) => {
-                    const isReversed = index % 2 === 1;
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Realtime synchronisatie</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Eén voorraad,
+                            <span class="block">overal in sync.</span>
+                        </h2>
+                    </div>
 
-                    return (
-                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
-                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
-                                    <div
-                                        class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-sunstone-mist via-paper to-chalk-light ring-1 ring-chalk-dark"
-                                        style="aspect-ratio: 4 / 3;"
-                                    >
-                                        <div class="absolute inset-0 opacity-40 pointer-events-none" style="background: radial-gradient(circle at 30% 30%, var(--color-sunstone-soft) 0%, transparent 55%);"></div>
-                                        <div class="absolute inset-0 flex items-center justify-center p-10">
-                                            <div class="flex items-center justify-center h-28 w-28 md:h-32 md:w-32 rounded-3xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_18px_40px_-18px_rgba(25,25,25,0.18)]">
-                                                <i class={`${story.icon} text-5xl md:text-6xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-5">
+                            <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">Sync-tijdlijn</p>
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunstone-deep opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sunstone-deep"></span>
+                                </span>
+                                <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep">live</span>
+                            </div>
+                        </div>
+
+                        <ol class="space-y-0">
+                            <li class="grid grid-cols-[auto_1fr] gap-x-4">
+                                <p class="text-[11px] font-mono tabular-nums text-gravel pt-1 text-right">14:32:18</p>
+                                <div class="border-l-2 border-chalk-dark pl-5 pb-5 relative">
+                                    <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-chalk-darker ring-2 ring-paper"></span>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#0000A4] text-paper">Bol</span>
+                                        <p class="text-sm font-semibold text-charcoal">Verkocht 1 stuk</p>
                                     </div>
+                                    <p class="text-[11px] text-gravel">Bestelling binnengekomen</p>
                                 </div>
+                            </li>
 
-                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
-                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
-                                        {story.heading}
-                                    </h2>
-                                    <p class="text-lg text-steel leading-relaxed">
-                                        {story.body}
-                                    </p>
+                            <li class="grid grid-cols-[auto_1fr] gap-x-4">
+                                <p class="text-[11px] font-mono tabular-nums text-gravel pt-1 text-right">14:32:24</p>
+                                <div class="border-l-2 border-chalk-dark pl-5 pb-5 relative">
+                                    <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-chalk-darker ring-2 ring-paper"></span>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-charcoal text-paper">ShopLinkr</span>
+                                        <p class="text-sm font-semibold text-charcoal">Voorraad bijgewerkt</p>
+                                    </div>
+                                    <p class="text-[11px] text-gravel">Beschikbaar: 11 stuks</p>
                                 </div>
+                            </li>
+
+                            <li class="grid grid-cols-[auto_1fr] gap-x-4">
+                                <p class="text-[11px] font-mono tabular-nums text-sunstone-deep font-semibold pt-1 text-right">14:32:31</p>
+                                <div class="pl-5 relative">
+                                    <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-sunstone-deep ring-2 ring-paper"></span>
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#5A8A1F] text-paper">Shop</span>
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#674399] text-paper">Woo</span>
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#E10915] text-paper">Kaufland</span>
+                                        <p class="text-sm font-semibold text-charcoal">in sync</p>
+                                    </div>
+                                    <p class="text-[11px] text-gravel">Alle kanalen op 11 stuks</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <div class="mt-5 flex items-center justify-center gap-2 px-3 py-3 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                            <i class="fa-solid fa-bolt text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep">Totaal</span>
+                            <span class="text-base font-semibold text-sunstone-deep tabular-nums">13 seconden</span>
+                        </div>
+                    </div>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
                             </div>
                         </article>
-                    );
-                })
-            }
+                    ))
+                }
+            </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light">
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Fictieve voorraad</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Verberg je voorraad
+                        <span class="block text-sunstone-deep">voor concurrenten.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Sommige tools laten concurrenten precies zien hoeveel voorraad je hebt liggen. Met fictieve voorraad stuurt ShopLinkr een vast getal naar je kanalen in plaats van je echte aantallen. Pas wanneer je voorraad onder een ingestelde drempel zakt, schakelt ShopLinkr automatisch over op de echte aantallen, zodat je nooit een product verkoopt dat je niet hebt.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Voorbeeld met fictief 400 en drempel 20
+                    </p>
+                    <ul class="space-y-2.5">
+                        <li class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 rounded-xl bg-chalk-light ring-1 ring-chalk-dark">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">Werkelijk in magazijn</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">850</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-gravel text-sm" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">Op je kanalen</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">400</p>
+                            </div>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 rounded-xl bg-chalk-light ring-1 ring-chalk-dark">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">Werkelijk in magazijn</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">350</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-gravel text-sm" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">Op je kanalen</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">400</p>
+                            </div>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 rounded-xl bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep mb-1">Werkelijk in magazijn</p>
+                                <p class="text-xl font-semibold text-sunstone-deep tabular-nums">15</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep mb-1">Op je kanalen</p>
+                                <p class="text-xl font-semibold text-sunstone-deep tabular-nums">15</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                        Boven de drempel laat ShopLinkr het fictieve aantal zien. Onder de drempel schakelt het automatisch over op de echte aantallen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-5">
@@ -168,6 +302,31 @@ export const prerender = true;
                             ))
                         }
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mis je een vraag? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
                 </div>
             </div>
         </div>

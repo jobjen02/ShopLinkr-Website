@@ -3,6 +3,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import ContactForm from '../components/islands/ContactForm.vue';
 import FaqList from '../components/template/FaqList.astro';
 import { externalLinks } from '../data/externalLinks';
+import { breadcrumbs } from '../utils/seo';
 
 const channels = [
     {
@@ -72,6 +73,10 @@ const faqs = [
 ];
 
 const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Contact', '/contact'],
+    ]),
     {
         '@type': 'ContactPage',
         name: 'Contact | ShopLinkr',

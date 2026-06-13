@@ -1,87 +1,124 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../../components/sections/CtaBanner.astro';
+import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
 
-const stories = [
+const subFeatures = [
     {
-        eyebrow: 'Centraal productoverzicht',
-        heading: 'Al je producten samen op één plek.',
-        body: 'ShopLinkr haalt je producten op uit Bol, Shopify, WooCommerce en Kaufland en zet ze samen in één overzicht. Vanuit dat overzicht beheer je voorraad, magazijnlocaties, barcodes en bundels en verwerk je je orders. Eén centrale plek voor alles wat met je magazijn te maken heeft.',
-        icon: 'fa-duotone fa-solid fa-cubes',
-    },
-    {
-        eyebrow: 'Voorraad per variant',
-        heading: 'Maten, kleuren en smaken nauwkeurig bijhouden.',
-        body: 'Verkoop je hetzelfde product in meerdere varianten? ShopLinkr houdt de voorraad per variant bij en zet die voorraad per variant terug naar je verkoopkanalen. Zo zie je in één oogopslag welke variant goed loopt en welke nog op het schap ligt.',
+        eyebrow: 'Variantgroepen',
+        heading: 'Maten, kleuren en hoeveelheden netjes gegroepeerd.',
+        body: 'Groepeer hetzelfde product in andere maten, kleuren of verpakkingen onder één hoofdproduct. Elke variant houdt zijn eigen voorraad, het overzicht toont de gecombineerde stand.',
         icon: 'fa-duotone fa-solid fa-shapes',
     },
     {
         eyebrow: 'Productbundels',
-        heading: 'Meerdere artikelen, één verkoopeenheid.',
-        body: 'Stel een bundel samen door losse artikelen te koppelen tot één verkoopproduct. Verkoop je een cadeauset of combideal, dan trekt ShopLinkr automatisch de juiste hoeveelheid af van elk component. De voorraad van de bundel rekent vanzelf op het minst beschikbare onderdeel.',
+        heading: 'Combineer losse producten tot één verkoopeenheid.',
+        body: 'Verkoop een cadeauset of combideal als bundel. ShopLinkr berekent de bundelvoorraad op basis van het scharste onderdeel en boekt elk component af zodra de bundel verkocht wordt.',
         icon: 'fa-duotone fa-solid fa-boxes-packing',
     },
     {
-        eyebrow: 'Voorraadmeldingen',
-        heading: 'Krijg een seintje voordat je misgrijpt.',
-        body: 'Stel per product een drempelwaarde in en ontvang automatisch een melding zodra de voorraad daaronder zakt. Zo weet je op tijd wanneer je moet inkopen en voorkom je dat een topverkoper opeens uitverkocht raakt.',
-        icon: 'fa-duotone fa-solid fa-bell',
+        eyebrow: 'Voorraadbronnen',
+        heading: 'Eén bron, meerdere varianten op gewicht of lengte.',
+        body: 'Houd je basisvoorraad bij in kilo, meter of liter en koppel varianten van bijvoorbeeld 500 gram of 1 meter. ShopLinkr berekent per variant hoeveel er nog beschikbaar is.',
+        icon: 'fa-duotone fa-solid fa-scale-balanced',
     },
     {
-        eyebrow: 'Fictieve voorraad',
-        heading: 'Houd je echte cijfers privé.',
-        body: 'Wil je niet dat concurrenten kunnen zien hoeveel je verkoopt? Stel een fictief aantal in dat ShopLinkr doorgeeft aan je verkoopkanalen. Zolang je werkelijke voorraad boven de drempel blijft, communiceren we het fictieve aantal. Daalt je echte voorraad? Dan schakelen we automatisch over, zodat je nooit meer verkoopt dan je hebt.',
-        icon: 'fa-duotone fa-solid fa-eye-slash',
-    },
-    {
-        eyebrow: 'Barcodes en EAN',
-        heading: 'Elke variant met een eigen scancode.',
-        body: 'Leg per product en per variant de barcode of EAN vast en gebruik die overal terug in ShopLinkr. Tijdens het picken scant je medewerker het juiste artikel, bij inkomende leveringen vink je producten af op code. Eén scan, en je weet zeker dat je de goede pakt.',
-        icon: 'fa-duotone fa-solid fa-barcode',
-    },
-    {
-        eyebrow: 'Magazijnlocaties',
-        heading: 'Direct weten waar elk product ligt.',
-        body: 'Koppel een magazijnlocatie aan je producten en zie tijdens het picken precies waar je moet zijn. Werkt naadloos samen met de pick & pack lijsten en bespaart elke picker minuten per order.',
-        icon: 'fa-duotone fa-solid fa-location-dot',
+        eyebrow: 'ABC-analyse',
+        heading: 'Zie welke producten je magazijn draaiende houden.',
+        body: 'ShopLinkr classificeert je assortiment op pickfrequentie van de afgelopen 90 dagen. Plaats A-producten dicht bij je inpakstation en houd je magazijnindeling actueel.',
+        icon: 'fa-duotone fa-solid fa-chart-pie',
     },
 ];
 
-const channels = [
+const productTypes = [
     {
-        title: 'Bol',
-        body: 'We importeren je Bol-aanbod in ShopLinkr en houden de voorraad realtime kloppend, inclusief slimme LVB-switch zodra je eigen magazijn de verkoop overneemt.',
+        title: 'Losse producten',
+        body: 'De standaard. Elk product heeft een eigen EAN, voorraad en magazijnlocatie. Geschikt voor verreweg de meeste artikelen die je los inkoopt en los verkoopt.',
+        icon: 'fa-solid fa-cube',
     },
     {
-        title: 'Shopify',
-        body: 'ShopLinkr leest je Shopify-producten in en houdt de voorraad in je shop accuraat, ook als er via andere kanalen wordt verkocht.',
+        title: 'Bundelproducten',
+        body: 'Meerdere artikelen samengevoegd tot één verkoopeenheid. De bundelvoorraad volgt automatisch het scharste onderdeel en bij elke verkoop wordt elk component afgeboekt.',
+        icon: 'fa-solid fa-boxes-packing',
     },
     {
-        title: 'WooCommerce',
-        body: 'Je WooCommerce-producten komen automatisch in je ShopLinkr-omgeving terecht. De voorraad blijft realtime synchroon met je shop.',
+        title: 'Voorraadbronproducten',
+        body: 'Houd voorraad bij in een meeteenheid zoals gewicht, lengte of volume. Vanuit die ene bron verkoop je varianten van bijvoorbeeld 500 gram, 1 kilo of 3 meter.',
+        icon: 'fa-solid fa-scale-balanced',
     },
     {
-        title: 'Kaufland',
-        body: 'Breid uit naar de Duitse markt zonder dubbel voorraadwerk. ShopLinkr koppelt met Kaufland en houdt de voorraad daar net zo nauwkeurig als op je andere kanalen.',
+        title: 'Onbeperkte voorraad',
+        body: 'Voor producten die altijd beschikbaar zijn, zoals softwarelicenties of digitale downloads. Geen afboeking bij verkoop, geen telling, altijd leverbaar op je kanalen.',
+        icon: 'fa-solid fa-infinity',
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Productbeheer met ShopLinkr',
-    description: 'Beheer je producten, varianten, bundels en magazijnlocaties centraal in ShopLinkr. Eén overzicht voor al je verkoopkanalen.',
-};
+const faqs = [
+    {
+        question: 'Hoe gaat ShopLinkr om met varianten van hetzelfde product, zoals maten of kleuren?',
+        answer: 'Je groepeert die producten in een variantgroep. Elke variant blijft een zelfstandig product met eigen EAN, voorraad en listing, maar in het productoverzicht zie je het hoofdproduct met de gecombineerde voorraad en het aantal varianten. Een product kan maar in één variantgroep tegelijk zitten.',
+    },
+    {
+        question: 'Wat gebeurt er met de bundelvoorraad als ik een los onderdeel verkoop?',
+        answer: 'De bundelvoorraad volgt altijd het scharste onderdeel. Verkoop je een component los, dan zakt de bundelvoorraad mee, zodat je nooit meer bundels aanbiedt dan je kunt samenstellen. Een product mag in meerdere bundels tegelijk voorkomen en blijft daarnaast los verkoopbaar.',
+    },
+    {
+        question: 'Werkt ShopLinkr ook voor producten die ik op gewicht of lengte verkoop, zoals brokken of stof?',
+        answer: 'Ja, met voorraadbronnen. Je houdt de basisvoorraad bij in kilo, meter of liter en koppelt varianten zoals 500 gram of 1 meter aan die bron. Bij elke verkoop gaat de juiste hoeveelheid van de bron af en berekent ShopLinkr per variant hoeveel er nog beschikbaar is.',
+    },
+    {
+        question: 'Krijgt een bundel automatisch onbeperkte voorraad als alle sub-producten dat hebben?',
+        answer: 'Ja. Zodra elk sub-product in de bundel op onbeperkte voorraad staat, krijgt de bundel die status automatisch. Je hoeft dat niet handmatig in te stellen. Komt één van de sub-producten weer op normale voorraad, dan verliest de bundel die status ook weer.',
+    },
+    {
+        question: 'Kan hetzelfde product in meerdere bundels tegelijk zitten?',
+        answer: 'Ja. Een sub-product kan in meerdere bundels tegelijk voorkomen en je bepaalt per bundel hoe vaak het meegaat. Elke bundel rekent zijn beschikbaarheid zelfstandig uit op basis van de gedeelde voorraad, dus de aantallen blijven altijd in balans.',
+    },
+    {
+        question: 'Worden bundels meegenomen in een voorraadtelling?',
+        answer: 'Nee. Een bundel is een afgeleide van zijn sub-producten en heeft geen eigen fysieke voorraad. Tijdens een voorraadtelling tel je alleen de losse producten. De bundelvoorraad wordt daarna automatisch herberekend op basis van de getelde aantallen.',
+    },
+    {
+        question: 'Wat gebeurt er als ik een product archiveer dat in een bundel of variantgroep zit?',
+        answer: 'Het product wordt losgekoppeld van bundels. Zit het in een variantgroep, dan wijst ShopLinkr automatisch een ander product als hoofdproduct aan. Komt het product later weer binnen via een kanaal, dan herstelt ShopLinkr het op basis van de EAN-code.',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Functionaliteiten', '/functionaliteiten'],
+        ['Producten', '/functionaliteiten/producten'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Producten beheren met ShopLinkr',
+        description: 'Eén centraal productoverzicht voor al je verkoopkanalen. Werk met variantgroepen, bundels, voorraadbronnen en ABC-analyse vanuit dezelfde plek.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
 
 export const prerender = true;
 ---
 
 <PageLayout
     title="Producten beheren met ShopLinkr"
-    description="Beheer je producten, varianten, bundels en magazijnlocaties centraal in ShopLinkr. Eén overzicht voor al je verkoopkanalen."
+    description="Eén centraal productoverzicht voor al je verkoopkanalen. Werk met variantgroepen, bundels, voorraadbronnen en ABC-analyse vanuit dezelfde plek."
     eyebrow="Producten"
-    heading="Al je producten in één centraal overzicht."
-    subheading="ShopLinkr haalt je producten op uit Bol, Shopify, WooCommerce en Kaufland en zet ze in één centraal overzicht. Vanuit die plek beheer je voorraad, varianten, bundels en magazijnlocaties voor je hele assortiment."
+    heading="Al je producten in één overzicht."
+    subheading="ShopLinkr haalt producten op uit al je verkoopkanalen. Vanuit één overzicht beheer je voorraad, varianten, bundels en voorraadlocaties."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -108,76 +145,352 @@ export const prerender = true;
         </div>
     </section>
 
-    <section class="bg-paper">
-        <div class="container-prose">
-            {
-                stories.map((story, index) => {
-                    const isReversed = index % 2 === 1;
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Je centrale overzicht</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Eén overzicht
+                            <span class="block">voor je hele assortiment.</span>
+                        </h2>
+                    </div>
 
-                    return (
-                        <article class="py-20 md:py-28 border-b border-chalk-dark last:border-b-0">
-                            <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                                <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
-                                    <div
-                                        class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-sunstone-mist via-paper to-chalk-light ring-1 ring-chalk-dark"
-                                        style="aspect-ratio: 4 / 3;"
-                                    >
-                                        <div class="absolute inset-0 opacity-40 pointer-events-none" style="background: radial-gradient(circle at 30% 30%, var(--color-sunstone-soft) 0%, transparent 55%);"></div>
-                                        <div class="absolute inset-0 flex items-center justify-center p-10">
-                                            <div class="flex items-center justify-center h-28 w-28 md:h-32 md:w-32 rounded-3xl bg-paper text-sunstone-deep ring-1 ring-chalk-dark shadow-[0_18px_40px_-18px_rgba(25,25,25,0.18)]">
-                                                <i class={`${story.icon} text-5xl md:text-6xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-chalk-dark">
+                            <span class="text-sm font-semibold text-charcoal">Producten</span>
+                            <span class="text-[11px] text-gravel tabular-nums">5 van 2.847</span>
+                        </div>
 
-                                <div class={`lg:col-span-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                                    <p class="eyebrow mb-5">{story.eyebrow}</p>
-                                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-6">
-                                        {story.heading}
-                                    </h2>
-                                    <p class="text-lg text-steel leading-relaxed">
-                                        {story.body}
-                                    </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-cube text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Bidon RVS 750ml</span>
                                 </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">240 stuks</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class="fa-solid fa-shapes text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">T-shirt classic</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Variantgroep</span>
+                                </div>
+                                <span class="text-xs text-sunstone-deep font-semibold tabular-nums whitespace-nowrap">140 stuks</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-boxes-packing text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Cadeauset Tech Starter</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Bundel</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">6 sets</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-scale-balanced text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Hondenbrokken premium</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Bron</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">85 kg</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-infinity text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Softwarelicentie Pro</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Onbeperkt</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">∞</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Losse producten, variantgroepen, bundels, voorraadbronnen en digitale producten staan naast elkaar in hetzelfde overzicht.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
                             </div>
                         </article>
-                    );
-                })
-            }
+                    ))
+                }
+            </div>
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light">
+    <section class="py-20 md:py-28 bg-chalk-light">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-5">
-                    <p class="eyebrow mb-4">Multi-channel</p>
+                    <p class="eyebrow mb-4">Soorten producten</p>
                     <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                        Eén voorraad,
-                        <span class="block text-sunstone-deep">op elk verkoopkanaal.</span>
+                        Vier producttypes,
+                        <span class="block text-sunstone-deep">één manier van werken.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Verkoop je via meerdere kanalen, dan houd je je voorraad niet meer op elk platform apart bij. ShopLinkr importeert je producten uit je verkoopkanalen en stuurt voorraadupdates realtime terug. Zo voorkom je oversells zonder dat je iets dubbel hoeft te doen.
+                        Niet elk product werkt hetzelfde. Een bundel telt door op zijn losse onderdelen, een voorraadbron werkt vanuit een meeteenheid en digitale producten hebben helemaal geen voorraad nodig. ShopLinkr ondersteunt elk type vanuit hetzelfde overzicht.
                     </p>
                 </div>
 
                 <div class="lg:col-span-7">
                     <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
                         {
-                            channels.map((channel) => (
+                            productTypes.map((type) => (
                                 <li class="py-7 flex items-start gap-5">
                                     <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
-                                        <i class="fa-solid fa-plug text-xs" aria-hidden="true"></i>
+                                        <i class={`${type.icon} text-xs`} aria-hidden="true"></i>
                                     </span>
                                     <div>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{channel.title}</h3>
-                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{channel.body}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
                                     </div>
                                 </li>
                             ))
                         }
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Productbundels</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Combineer losse producten
+                        <span class="block text-sunstone-deep">tot één bundel.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Een bundel is een nieuw product dat je samenstelt uit producten die je al verkoopt. Geef de bundel een eigen titel, prijs en foto, en bepaal welke sub-producten met welk aantal erin zitten.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        Stel je verkoopt een cadeauset met 1 telefoon, 1 oplader en 2 hoesjes. ShopLinkr berekent de bundelvoorraad automatisch op basis van het sub-product dat het schaarste beschikbaar is. Verkoop je los een hoesje? Dan zakt ook de bundelvoorraad meteen mee.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Voorbeeld: cadeauset
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-boxes-packing text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Cadeauset</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Bundel</span>
+                        </div>
+
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">Telefoon</span>
+                                    <span class="text-gravel">× 1</span>
+                                </div>
+                                <span class="text-xs text-gravel tabular-nums">10 op voorraad → <span class="text-charcoal font-semibold">10 sets</span></span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">Oplader</span>
+                                    <span class="text-gravel">× 1</span>
+                                </div>
+                                <span class="text-xs text-gravel tabular-nums">8 op voorraad → <span class="text-charcoal font-semibold">8 sets</span></span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">Hoesje</span>
+                                    <span class="text-gravel">× 2</span>
+                                </div>
+                                <span class="text-xs text-sunstone-deep font-semibold tabular-nums">12 op voorraad → 6 sets</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-baseline justify-between gap-3 pt-3 border-t border-chalk-darker">
+                            <span class="text-sm font-semibold text-charcoal">Bundelvoorraad</span>
+                            <span class="text-xl font-semibold text-sunstone-deep tabular-nums">6 sets</span>
+                        </div>
+                        <p class="text-[11px] text-gravel mt-2 leading-relaxed">
+                            Hoesje is hier de beperkende factor. Elke bundel heeft er 2 nodig, dus 12 hoesjes maken 6 complete sets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Voorraadbronnen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Eén bron,
+                        <span class="block text-sunstone-deep">meerdere varianten.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Verkoop je op gewicht, lengte of volume? Houd dan één basisvoorraad bij in kilo, meter of liter. ShopLinkr herberekent automatisch hoeveel er van elke variant beschikbaar is, zonder dat je per variant apart hoeft te tellen.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        Stel je hebt 100 kilo hondenbrokken in een grote bak liggen. Bij elke bestelling vul je de juiste hoeveelheid af uit die ene bron, of dat nu 500 gram of 5 kilo is. Het gewicht dat je afvult gaat direct van de bronvoorraad af en alle varianten worden meteen opnieuw berekend.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        Hetzelfde werkt voor stof per meter of parfum per milliliter.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Voorbeeld: hondenbrokken
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="grid grid-cols-4 gap-3 text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel border-b border-chalk-dark pb-3 mb-3">
+                            <span>Situatie</span>
+                            <span class="text-right">Bron</span>
+                            <span class="text-right">500 gram</span>
+                            <span class="text-right">1 kilo</span>
+                        </div>
+
+                        <ul class="space-y-2">
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="text-sm text-charcoal font-medium">Start</span>
+                                <span class="text-sm text-charcoal font-semibold tabular-nums text-right">100 kilo</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">200</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">100</span>
+                            </li>
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="text-sm text-charcoal font-medium">Na verkoop 1× 1 kilo</span>
+                                <span class="text-sm text-charcoal font-semibold tabular-nums text-right">99 kilo</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">198</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">99</span>
+                            </li>
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <span class="text-sm text-charcoal font-medium">Na verkoop 1× 500 gram</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">98,5 kilo</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">197</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">98</span>
+                            </li>
+                        </ul>
+
+                        <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                            Bij elke verkoop gaat de juiste hoeveelheid van de bron af en alle varianten worden automatisch herberekend.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Onbeperkte voorraad</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Producten die
+                        <span class="block text-sunstone-deep">altijd beschikbaar zijn.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Verkoop je digitale producten zoals softwarelicenties, downloads of toegangscodes? Dan hoef je geen voorraad bij te houden. Zet onbeperkte voorraad aan en het product blijft altijd leverbaar op je kanalen, zonder afboeking bij verkoop en zonder telling.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        Bestaat je bundel uit producten die allemaal op onbeperkte voorraad staan? Dan krijgt de bundel die status automatisch ook.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Voorbeeld: softwarelicentie
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-5 pb-4 border-b border-chalk-dark">
+                            <div class="flex items-center gap-3">
+                                <span class="inline-flex items-center justify-center h-9 w-9 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-infinity text-sm" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <p class="text-sm font-semibold text-charcoal leading-tight">Software licentie</p>
+                                    <p class="text-[11px] text-gravel mt-0.5">Onbeperkte voorraad aan</p>
+                                </div>
+                            </div>
+                            <p class="text-2xl font-semibold text-sunstone-deep tabular-nums leading-none">∞</p>
+                        </div>
+
+                        <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                            Wat je kanalen zien
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#5A8A1F] text-paper flex-shrink-0">Shopify</span>
+                                <span class="text-sm text-charcoal flex-1">Altijd op voorraad</span>
+                                <i class="fa-solid fa-infinity text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#674399] text-paper flex-shrink-0">Woo</span>
+                                <span class="text-sm text-charcoal flex-1">Altijd op voorraad</span>
+                                <i class="fa-solid fa-infinity text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/50 ring-1 ring-sunstone-soft/60">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#0000A4] text-paper flex-shrink-0">Bol</span>
+                                <span class="text-sm text-charcoal flex-1">Voorraad: 1000</span>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">fallback</span>
+                            </li>
+                        </ul>
+
+                        <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                            Bij kanalen die de instelling "geen voorraadbeheer" niet ondersteunen, stuurt ShopLinkr automatisch een hoog getal door zodat het product nooit als uitverkocht verschijnt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Veelgestelde vragen</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Vragen die vaak terugkomen,
+                        <span class="block text-sunstone-deep">helder beantwoord.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mis je een vraag? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
+                    </p>
+                    <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Stel je vraag
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
                 </div>
             </div>
         </div>

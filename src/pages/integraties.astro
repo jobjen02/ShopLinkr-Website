@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import PageLayout from '../layouts/PageLayout.astro';
 import IntegrationCard from '../components/template/IntegrationCard.astro';
 import CtaBanner from '../components/sections/CtaBanner.astro';
+import { breadcrumbs } from '../utils/seo';
 
 const all = await getCollection('integrations');
 
@@ -47,11 +48,17 @@ const popularCombinations = [
     },
 ];
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: 'Integraties | ShopLinkr',
-    description: 'ShopLinkr werkt met bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in een paar klikken koppelt.',
-};
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Integraties', '/integraties'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Integraties | ShopLinkr',
+        description: 'ShopLinkr werkt met bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud en meer. Bekijk alle verkoopkanalen en vervoerders die je in een paar klikken koppelt.',
+    },
+];
 
 export const prerender = true;
 ---
