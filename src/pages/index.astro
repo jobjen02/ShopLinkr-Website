@@ -29,7 +29,9 @@ const jsonLd = {
     },
 };
 
-export const prerender = true;
+// SSR (not prerendered) so the edge middleware can read Accept and return
+// markdown to agents. Cached at the CDN via the middleware's Cache-Control.
+export const prerender = false;
 ---
 
 <BaseLayout

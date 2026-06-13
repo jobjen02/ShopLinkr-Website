@@ -9,7 +9,9 @@ import vercel from '@astrojs/vercel';
 export default defineConfig({
     site: 'https://shoplinkr.com',
     output: 'server',
-    adapter: vercel(),
+    adapter: vercel({
+        edgeMiddleware: true,
+    }),
     i18n: {
         locales: ['nl', 'en'],
         defaultLocale: 'nl',
