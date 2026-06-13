@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -47,24 +48,7 @@ const workflowSteps = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Kan ik bestellingen van verschillende verkoopkanalen samenvoegen?',
-        answer: 'Ja. Heeft één klant op zowel Bol als Shopify een order geplaatst? Dan voeg je die samen tot één zending. ShopLinkr signaleert dat er meerdere open bestellingen voor hetzelfde afleveradres staan en biedt de samenvoeging direct aan.',
-    },
-    {
-        question: 'Kan ik telefonische orders of B2B-zendingen ook in ShopLinkr maken?',
-        answer: 'Ja, met handmatige zendingen. Je vult de klantgegevens en het afleveradres in, kiest een vervoerder en ShopLinkr genereert het verzendlabel. De zending hoeft niet gekoppeld te zijn aan een bestelling uit je verkoopkanaal.',
-    },
-    {
-        question: 'Wat gebeurt er als een klant iets bestelt dat niet op voorraad ligt?',
-        answer: 'De bestelling krijgt automatisch de status <strong>Backorder</strong> en wacht op voorraad. Zodra je een levering ontvangt en de voorraad weer aanvult, gaat de bestelling automatisch over naar <strong>Open</strong> en kun je hem op de normale manier verwerken. Je kunt backorders aanzetten of uitzetten per bedrijf, per verkoopkanaal of per product.',
-    },
-    {
-        question: 'Welke vervoerders worden ondersteund?',
-        answer: 'ShopLinkr ondersteunt onder andere PostNL, DPD en GLS. Je koppelt zoveel vervoerders als je nodig hebt en kiest per bestelling de juiste. <a href="/integraties">Bekijk de volledige lijst op de integraties-pagina</a>.',
-    },
-];
+const faqs = faqsByPage.bestellingen;
 
 const jsonLd = [
     breadcrumbs([

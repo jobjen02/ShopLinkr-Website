@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -55,36 +56,7 @@ const productTypes = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Hoe gaat ShopLinkr om met varianten van hetzelfde product, zoals maten of kleuren?',
-        answer: 'Je groepeert die producten in een variantgroep. Elke variant blijft een zelfstandig product met eigen EAN, voorraad en listing, maar in het productoverzicht zie je het hoofdproduct met de gecombineerde voorraad en het aantal varianten. Een product kan maar in één variantgroep tegelijk zitten.',
-    },
-    {
-        question: 'Wat gebeurt er met de bundelvoorraad als ik een los onderdeel verkoop?',
-        answer: 'De bundelvoorraad volgt altijd het scharste onderdeel. Verkoop je een component los, dan zakt de bundelvoorraad mee, zodat je nooit meer bundels aanbiedt dan je kunt samenstellen. Een product mag in meerdere bundels tegelijk voorkomen en blijft daarnaast los verkoopbaar.',
-    },
-    {
-        question: 'Werkt ShopLinkr ook voor producten die ik op gewicht of lengte verkoop, zoals brokken of stof?',
-        answer: 'Ja, met voorraadbronnen. Je houdt de basisvoorraad bij in kilo, meter of liter en koppelt varianten zoals 500 gram of 1 meter aan die bron. Bij elke verkoop gaat de juiste hoeveelheid van de bron af en berekent ShopLinkr per variant hoeveel er nog beschikbaar is.',
-    },
-    {
-        question: 'Krijgt een bundel automatisch onbeperkte voorraad als alle sub-producten dat hebben?',
-        answer: 'Ja. Zodra elk sub-product in de bundel op onbeperkte voorraad staat, krijgt de bundel die status automatisch. Je hoeft dat niet handmatig in te stellen. Komt één van de sub-producten weer op normale voorraad, dan verliest de bundel die status ook weer.',
-    },
-    {
-        question: 'Kan hetzelfde product in meerdere bundels tegelijk zitten?',
-        answer: 'Ja. Een sub-product kan in meerdere bundels tegelijk voorkomen en je bepaalt per bundel hoe vaak het meegaat. Elke bundel rekent zijn beschikbaarheid zelfstandig uit op basis van de gedeelde voorraad, dus de aantallen blijven altijd in balans.',
-    },
-    {
-        question: 'Worden bundels meegenomen in een voorraadtelling?',
-        answer: 'Nee. Een bundel is een afgeleide van zijn sub-producten en heeft geen eigen fysieke voorraad. Tijdens een voorraadtelling tel je alleen de losse producten. De bundelvoorraad wordt daarna automatisch herberekend op basis van de getelde aantallen.',
-    },
-    {
-        question: 'Wat gebeurt er als ik een product archiveer dat in een bundel of variantgroep zit?',
-        answer: 'Het product wordt losgekoppeld van bundels. Zit het in een variantgroep, dan wijst ShopLinkr automatisch een ander product als hoofdproduct aan. Komt het product later weer binnen via een kanaal, dan herstelt ShopLinkr het op basis van de EAN-code.',
-    },
-];
+const faqs = faqsByPage.producten;
 
 const jsonLd = [
     breadcrumbs([

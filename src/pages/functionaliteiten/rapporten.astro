@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -51,28 +52,7 @@ const workflowSteps = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Welke rapporten zijn standaard beschikbaar in ShopLinkr?',
-        answer: 'Je vindt vier vaste rapporten onder Rapporten in het menu: Product prestaties, Nooit verkochte producten, Voorraadwaarde en ABC-analyse. Elk rapport heeft eigen filters en beantwoordt een specifieke vraag over je assortiment, je voorraad of je verkoop.',
-    },
-    {
-        question: 'Kun je rapporten exporteren?',
-        answer: 'Ja, elk rapport heeft een exportknop. Je krijgt het bestand per e-mail zodra het klaar is, zodat zware exports je browser niet bezighouden. Handig om door te sturen naar je boekhouder of mee te nemen in je eigen analyse.',
-    },
-    {
-        question: 'Hoe vaak wordt de ABC-analyse bijgewerkt en waar kijkt hij naar?',
-        answer: 'De analyse draait elke nacht automatisch over de pickfrequentie van de afgelopen 90 dagen. Werk je met picklijsten, dan telt elke keer dat een product op een lijst staat als een pick. Werk je zonder picklijsten, dan kijkt ShopLinkr naar hoe vaak een product in bestellingen voorkomt. Het gaat om hoe vaak een medewerker naar een product toe moet lopen, niet om de aantallen die gepickt worden.',
-    },
-    {
-        question: 'Kan ik in het rapport Nooit verkochte producten filteren op verkoopkanaal?',
-        answer: 'Ja. Naast periode, tags en verpakkingstype kun je in dit rapport filteren op verkoopkanaal. Zo zie je bijvoorbeeld welke producten in je Shopify-shop niet bewegen terwijl ze op Bol wel verkopen, of andersom.',
-    },
-    {
-        question: 'Waarom verschilt het voorraadwaarde-rapport van de voorraadwaarde bij een product zelf?',
-        answer: 'In het productscherm zie je de actuele voorraadwaarde van dat ene product. Het rapport zet je hele assortiment naast elkaar op een gekozen datum, inclusief de totaalwaarde over alles, en je kunt naar historische datums springen om trends te zien. Producten zonder inkoopprijs krijgen in beide gevallen waarde nul. Bundels tellen in het rapport niet apart mee, omdat hun waarde uit de losse producten komt.',
-    },
-];
+const faqs = faqsByPage.rapporten;
 
 const jsonLd = [
     breadcrumbs([

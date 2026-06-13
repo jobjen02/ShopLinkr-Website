@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -47,28 +48,7 @@ const fieldGroups = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Kan ik klantgegevens en adressen rechtstreeks in ShopLinkr aanpassen?',
-        answer: 'Ja. Vanuit een bestelling open je het verzend- of factuurprofiel en werk je naam, contactgegevens, bedrijfsgegevens en adres direct bij. De nieuwe gegevens komen meteen op het verzendlabel en de bezorgopties worden opnieuw opgehaald.',
-    },
-    {
-        question: 'Gaat een wijziging die ik in ShopLinkr maak terug naar het verkoopkanaal?',
-        answer: 'Nee. Aanpassingen aan klantgegevens en adressen blijven binnen ShopLinkr en worden gebruikt voor jouw verzending en administratie.',
-    },
-    {
-        question: 'Worden mijn aanpassingen niet overschreven door een sync van het kanaal?',
-        answer: 'Nee. Zodra je een veld handmatig aanpast, laat een latere sync vanuit het verkoopkanaal dat veld met rust. Wat jij aanpast, blijft staan.',
-    },
-    {
-        question: 'Welke gegevens van een klant zie ik per bestelling?',
-        answer: 'Aanhef, voor- en achternaam met eventueel tussenvoegsel, e-mailadres, telefoonnummer, bedrijfsnaam, btw- en KvK-nummer, plus een volledig adres met straat, huisnummer, postcode, plaats en land. Alle persoonsgegevens worden versleuteld opgeslagen.',
-    },
-    {
-        question: 'Kan ik orders van dezelfde klant samenvoegen tot één zending?',
-        answer: 'Ja, op basis van het afleveradres. Hebben meerdere openstaande bestellingen hetzelfde verzendadres, dan herkent ShopLinkr dat en kun je ze samenvoegen tot één zending. Dat werkt ook als de orders van verschillende verkoopkanalen komen.',
-    },
-];
+const faqs = faqsByPage.klanten;
 
 const jsonLd = [
     breadcrumbs([

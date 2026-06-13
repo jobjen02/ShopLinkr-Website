@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -47,20 +48,7 @@ const stockTypes = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Kan ik terugzien waarom de voorraad van een product is veranderd?',
-        answer: 'Ja. Per product vind je een complete voorraadhistorie met elke mutatie: verkopen, picks, retouren, leveringen, handmatige correcties en voorraadtellingen. Per mutatie zie je de reden, het oude en nieuwe aantal, de locatie, de datum en wie de mutatie heeft gedaan.',
-    },
-    {
-        question: 'Kunnen concurrenten zien hoeveel voorraad ik heb?',
-        answer: 'Niet als je fictieve voorraad gebruikt. Je stelt een vast aantal in (bijvoorbeeld 400) plus een drempel (bijvoorbeeld 20). Zolang je werkelijke voorraad boven de drempel zit, stuurt ShopLinkr het fictieve aantal naar je kanalen. Komt je voorraad onder de drempel, dan schakelt ShopLinkr automatisch over op je echte aantallen, zodat je nooit een product verkoopt dat je niet hebt.',
-    },
-    {
-        question: 'Wat gebeurt er met de voorraad bij een retour?',
-        answer: 'Bij het verwerken van een retour vink je per item aan of het terug op voorraad moet en kies je de locatie. ShopLinkr werkt de voorraad bij en synchroniseert de mutatie direct naar het gekoppelde kanaal.',
-    },
-];
+const faqs = faqsByPage.voorraad;
 
 const jsonLd = [
     breadcrumbs([

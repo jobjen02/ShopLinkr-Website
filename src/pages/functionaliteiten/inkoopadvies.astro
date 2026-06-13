@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -55,28 +56,7 @@ const signals = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Op basis van welke periode rekent het inkoopadvies?',
-        answer: 'Bij het onderdeel Verwachte verkoop kies je de adviesperiode: 14 dagen, 28 dagen, 3 maanden of een eigen periode. ShopLinkr pakt de gemiddelde verkoop per dag van een product en rekent uit hoeveel je in die periode nodig hebt. De snelkeuze Slim inkopen combineert die prognose met backorders, drempels en de levertijd van je leverancier.',
-    },
-    {
-        question: 'Houdt het advies rekening met de levertijd van mijn leverancier?',
-        answer: 'Ja, als je het onderdeel Levertijd meetellen aanzet. De levertijd wordt dan opgeteld bij de adviesperiode. Heb je 14 dagen adviesperiode en 3 dagen levertijd, dan rekent het advies met 17 dagen aan verwachte verkoop. De levertijd komt uit het product zelf, of valt terug op de standaard levertijd uit je bedrijfsinstellingen.',
-    },
-    {
-        question: 'Werkt het inkoopadvies ook als ik per doos of in vaste veelvouden inkoop?',
-        answer: 'Ja. Heb je op een product een minimale inkoophoeveelheid of een veelvoud ingesteld? Dan rondt het advies daar automatisch op af. Een berekend advies van 17 stuks bij dozen van 12 wordt 24 stuks. Het geadviseerde aantal kan daardoor iets afwijken van een pure berekening.',
-    },
-    {
-        question: 'Wat is het verschil met voorraadnotificaties?',
-        answer: 'Voorraadnotificaties sturen je een e-mail zodra een product onder een ingestelde grens komt: een signaal per product, op het moment dat het nodig is. Het inkoopadvies kijkt breder en rekent door: voor de leveranciers die je selecteert bepaalt ShopLinkr hoeveel van elk product je het beste kunt bijbestellen, inclusief backorders, drempels, verwachte verkoop en levertijd. Beide werken prima naast elkaar.',
-    },
-    {
-        question: 'Kan ik het advies handmatig aanpassen voordat ik het omzet?',
-        answer: 'Ja. Op de advies-detailpagina zie je per regel het geadviseerde aantal en de reden waarom het product is opgenomen. Je kunt regels aanpassen, verwijderen of zelf toevoegen voordat je het advies omzet naar leveringen. De leveringen krijgen vervolgens de status <strong>Concept</strong>, dus ook daarna kun je nog bijwerken.',
-    },
-];
+const faqs = faqsByPage.inkoopadvies;
 
 const jsonLd = [
     breadcrumbs([

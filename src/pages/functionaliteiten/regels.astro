@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -50,28 +51,7 @@ const ruleExamples = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Op welke voorwaarden kan ik een regel laten triggeren?',
-        answer: 'Op tientallen velden, verdeeld over klantgegevens en bestelling. Denk aan verkoopkanaal, totaalgewicht, totaalbedrag, aantal producten, verpakkingstype, specifiek product, tag, servicepunt, verzendmethode en besteldatum. Voor klantgegevens kies je per veld of het om het verzendadres of factuuradres gaat, en daarbinnen om naam, e-mail, postcode, land, Waddeneilanden en meer.',
-    },
-    {
-        question: 'Welke acties kan ShopLinkr automatisch uitvoeren?',
-        answer: 'Negen verschillende. Een verzendoptie instellen, tags toevoegen, een notitie plaatsen, de bestelling uitstellen, markeren als hoge prioriteit of als afhaalbestelling, een uiterste verwerkingsdatum zetten, een product aan de bestelling toevoegen, of automatische verwerking in de picklijst uitschakelen. Je kunt meerdere acties combineren binnen één regel.',
-    },
-    {
-        question: 'Kan ik meerdere voorwaarden in één regel combineren?',
-        answer: 'Ja. Binnen een groep voorwaarden bepaal je of alle voorwaarden moeten kloppen, of dat één voorwaarde al voldoende is. Zo maak je een regel die alleen triggert bij een specifieke combinatie, of juist een regel die meerdere situaties tegelijk afvangt.',
-    },
-    {
-        question: 'Wat gebeurt er als twee regels op dezelfde bestelling van toepassing zijn?',
-        answer: 'Regels worden afgewerkt in de volgorde waarin ze staan. Per regel kies je of het hierbij stopt zodra deze raakt, of dat ShopLinkr de volgende regels nog blijft controleren. Zo bepaal je zelf welke regel voorgaat bij overlap.',
-    },
-    {
-        question: 'Worden regels ook toegepast op bestaande bestellingen?',
-        answer: 'Nee, alleen op nieuwe bestellingen die binnenkomen nadat je de regel hebt opgeslagen. De regel is direct actief en wordt vanaf dat moment toegepast op elke nieuwe bestelling die aan de voorwaarden voldoet.',
-    },
-];
+const faqs = faqsByPage.regels;
 
 const jsonLd = [
     breadcrumbs([

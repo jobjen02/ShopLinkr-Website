@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -51,28 +52,7 @@ const workflowSteps = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Kun je een levering vanuit een inkoopadvies aanmaken?',
-        answer: 'Ja. Het inkoopadvies berekent op basis van je voorraad, backorders en verwachte verkoop wat je per leverancier moet bestellen. Ben je tevreden met het advies, dan zet je het in één klik om naar leveringen. ShopLinkr maakt per leverancier een levering aan met de geadviseerde producten en aantallen, met status <strong>Concept</strong> en klaar om te bestellen.',
-    },
-    {
-        question: 'Hoe verwerk je een levering waarvan je minder ontvangt dan besteld?',
-        answer: 'Tijdens het ontvangen vul je per regel het werkelijke aantal in. Het verschil blijft staan onder Verwacht, zodat je het later alsnog kunt ontvangen als er nog wat nakomt. Rond je de levering af terwijl er regels openstaan, dan vind je die terug onder Niet ontvangen.',
-    },
-    {
-        question: 'Wat gebeurt er met backorders zodra je een levering ontvangt?',
-        answer: 'Backorders voor producten in de levering komen automatisch vrij zodra je de voorraad ontvangt. De bestellingen springen terug naar <strong>Open</strong> en je kunt ze gewoon picken en verzenden. Je hoeft niet eerst alle backorders zelf na te lopen.',
-    },
-    {
-        question: 'Kun je een ontvangst ongedaan maken?',
-        answer: 'Ja. Heb je per ongeluk een product ontvangen of de verkeerde locatie gekozen, dan kun je de ontvangst ongedaan maken. De voorraad wordt weer afgeschreven van de locatie en het product schuift terug naar Verwacht, zodat je het opnieuw kunt ontvangen.',
-    },
-    {
-        question: 'Hoe koppel je een levering aan een specifieke opslaglocatie?',
-        answer: 'Per ontvangen regel kies je de locatie waar het product naartoe gaat. Zo kun je een levering verdelen over meerdere locaties of zones in je magazijn. Elke ontvangst wordt vastgelegd als voorraadmutatie met de reden Levering ontvangen, zodat je later precies kunt terugzien welke stuks naar welke locatie zijn gegaan.',
-    },
-];
+const faqs = faqsByPage.leveringen;
 
 const jsonLd = [
     breadcrumbs([

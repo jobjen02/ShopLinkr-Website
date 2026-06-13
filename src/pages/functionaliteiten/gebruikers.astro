@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -51,28 +52,7 @@ const permissionTypes = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Kost een extra gebruiker iets?',
-        answer: 'Nee. Bij ShopLinkr betaal je niet per gebruiker. Of je nu met z\'n tweeën werkt of met een team van twintig, je rekening blijft hetzelfde. Nodig dus gerust iedereen uit die meewerkt in je magazijn.',
-    },
-    {
-        question: 'Welke standaardrollen zitten er in ShopLinkr?',
-        answer: 'Er staan vijf rollen klaar: Beheerder (volledige toegang), Magazijn (bestellingen verwerken en voorraad bijwerken), Administratie (rapporten en exports), Klantenservice (bestellingen en retouren) en Inkoop (leveranciers en leveringen). De Beheerder-rol kun je niet wijzigen of verwijderen, de andere standaardrollen wel.',
-    },
-    {
-        question: 'Kan ik zelf rollen aanmaken?',
-        answer: 'Ja. Via Instellingen > Rollen klik je op Rol aanmaken, geef je een naam zoals Teamleider of Stagiair en vink je per onderdeel aan wat deze rol mag. Of dupliceer een standaardrol en pas hem aan, zo hoef je niet vanaf nul te beginnen.',
-    },
-    {
-        question: 'Welke rechten kun je per rol toekennen?',
-        answer: 'Rechten zijn gegroepeerd per onderdeel: bestellingen, producten, voorraad, instellingen en meer. Per onderdeel kies je of een gebruiker mag bekijken, aanmaken, bewerken of verwijderen. Daarnaast zijn er specifieke rechten, zoals bestellingen verwerken, producten exporteren of financiële inzichten bekijken.',
-    },
-    {
-        question: 'Werken tweefactorauthenticatie en QR-login samen?',
-        answer: 'Ja. Tweefactorauthenticatie zet je per gebruiker aan via Instellingen > Beveiliging en werkt met Google Authenticator, Microsoft Authenticator, Authy of 1Password. QR-login is bedoeld voor snel wisselen op gedeelde stations. Heb je 2FA aan staan, dan vraagt ShopLinkr na de QR-scan ook nog om de 6-cijferige code.',
-    },
-];
+const faqs = faqsByPage.gebruikers;
 
 const jsonLd = [
     breadcrumbs([

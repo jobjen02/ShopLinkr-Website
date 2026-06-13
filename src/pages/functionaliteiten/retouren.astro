@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -51,28 +52,7 @@ const workflowSteps = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Welke verkoopkanalen worden ondersteund voor retouren?',
-        answer: 'Retouren verwerk je op dit moment voor Bol. Je bestellingen en voorraad blijven uiteraard synchroon op al je andere kanalen.',
-    },
-    {
-        question: 'Kan ik per item bepalen of het terug op voorraad gaat?',
-        answer: "Ja. Tijdens het verwerken zet je per item de schakelaar Toevoegen aan voorraad aan of uit en kies je de magazijnlocatie. Bij bundelproducten stel je per subproduct apart een locatie in. Zet je een item niet terug op voorraad, dan blijft het buiten je verkoopbare voorraad.",
-    },
-    {
-        question: "Kan ik foto's toevoegen aan een retour?",
-        answer: "Ja, je voegt maximaal drie foto's per retouritem toe. Handig als bewijs bij beschadigde of incomplete retouren, bijvoorbeeld bij een geschil met een klant of om intern vast te leggen in welke staat een product binnenkwam.",
-    },
-    {
-        question: 'Kan ik de retourstatus zelf kiezen, bijvoorbeeld gegrond of ongegrond?',
-        answer: "Ja, je kiest per retouritem de retourstatus. Welke opties je krijgt, wordt bepaald door Bol, zodat je altijd binnen hun regels blijft.",
-    },
-    {
-        question: 'Wat gebeurt er met de status op het verkoopkanaal?',
-        answer: 'Zodra je een retour verwerkt, koppelt ShopLinkr de verwerking automatisch terug naar Bol. Jij hoeft daarvoor niet apart in te loggen. Je voorraad gaat in dezelfde beweging mee, zodat al je gekoppelde kanalen meteen de actuele aantallen zien.',
-    },
-];
+const faqs = faqsByPage.retouren;
 
 const jsonLd = [
     breadcrumbs([

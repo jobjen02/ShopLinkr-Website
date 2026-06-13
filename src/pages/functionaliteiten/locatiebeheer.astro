@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -47,28 +48,7 @@ const locationTypes = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Hoe diep gaat de hiërarchie van locaties?',
-        answer: 'Zo diep als je magazijn vraagt. Je maakt een locatie aan en kiest optioneel een bovenliggende locatie. Een veelgebruikte opbouw is gangpad, stelling, plank en bak, eventueel met een zone als bovenste niveau. Producten koppel je aan de onderste laag, zodat je picker meteen ziet waar hij moet zijn.',
-    },
-    {
-        question: 'Wat is het verschil tussen een picklocatie en een bulklocatie?',
-        answer: 'Een picklocatie is de plek waar je dagelijks uit pickt, meestal goed bereikbaar en dicht bij het inpakstation. Een bulklocatie is reservevoorraad op pallets of in hoge stellingen. ShopLinkr pakt eerst de picklocatie aan en gaat pas door naar de bulklocatie als die leeg is. Zo houd je je magazijn in beweging zonder pickers naar moeilijke plekken te sturen.',
-    },
-    {
-        question: 'Wat als een product op meerdere locaties ligt?',
-        answer: 'Geen probleem. Een product mag op meerdere locaties tegelijk staan, bijvoorbeeld een paar stuks op de picklocatie en de rest in de bulk. In het productoverzicht zie je per locatie hoeveel stuks er liggen, en op de picklijst krijgt je picker de juiste locatie te zien op basis van de pick-volgorde.',
-    },
-    {
-        question: 'Zie ik de locatie ook tijdens het verwerken van een bestelling?',
-        answer: 'Ja. Op de bestellingenpagina staat per regel de locatie van het product, en op de picklijst zie je voor elk artikel waar het ligt. Of je nu losse orders verwerkt, een batch samenstelt of via een inpakstation werkt: de locatie reist mee.',
-    },
-    {
-        question: 'Hoe verplaats ik voorraad van de ene locatie naar de andere?',
-        answer: 'Open het product, klik op Voorraad bijwerken en kies Verplaatsen. Selecteer de bronlocatie, de doellocatie en het aantal stuks. Wil je alles overzetten? Zet dan de schakelaar Alle voorraad verplaatsen aan. De mutatie verschijnt meteen in de voorraadhistorie van het product.',
-    },
-];
+const faqs = faqsByPage.locatiebeheer;
 
 const jsonLd = [
     breadcrumbs([

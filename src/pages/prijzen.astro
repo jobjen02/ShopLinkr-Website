@@ -4,6 +4,7 @@ import PricingCalculator from '../components/pricing/PricingCalculator.vue';
 import CtaBanner from '../components/sections/CtaBanner.astro';
 import FaqList from '../components/template/FaqList.astro';
 import { breadcrumbs } from '../utils/seo';
+import { faqsByPage } from '../data/faqs';
 
 const pricingExamples = [
     {
@@ -69,36 +70,7 @@ const inclusions = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Wat als ik in een maand meer orders heb dan verwacht?',
-        answer: 'Je rekening schaalt automatisch mee. Elke order valt binnen een staffel met een eigen tarief, en je betaalt netjes per staffel die je raakt. De maand erop reken je weer af op basis van dat volume. Geen contractwijzigingen, geen verrassingen.',
-    },
-    {
-        question: 'Kan ik mijn abonnement pauzeren of opzeggen?',
-        answer: 'Opzeggen kan elke maand zonder opzegtermijn. Pauzeren is mogelijk, bijvoorbeeld in een rustig seizoen. Stuur ons een bericht en we regelen het.',
-    },
-    {
-        question: 'Welke verkoopkanalen en vervoerders worden ondersteund?',
-        answer: 'Bol, Shopify, WooCommerce, Lightspeed, Kaufland en koppelingen met PostNL, DPD, GLS, MyParcel, Sendcloud, Sendy, QLS, ParcelPro en Innosend. We breiden het aanbod continu uit op basis van klantvraag.',
-    },
-    {
-        question: 'Hoe werkt de gratis trial van 14 dagen?',
-        answer: 'Je krijgt twee weken volledige toegang tot alle features. Je hoeft geen creditcard achter te laten. Na de trial bepaal je zelf of je doorgaat. Doe je niets, dan stopt het account automatisch.',
-    },
-    {
-        question: 'Is migratie van een ander systeem inbegrepen?',
-        answer: 'Ja. We zetten samen met jou de eerste setup op, importeren je producten en voorraad en helpen met de koppelingen naar je kanalen. Daar betaal je niets extra voor.',
-    },
-    {
-        question: 'Wat is er inbegrepen in de support?',
-        answer: 'Toegang tot onze chat en mail support, met een reactietijd van doorgaans onder de 24 uur. Geen tickets in een wachtrij, geen losse support-pakketten. Voor inrichtingsvragen plannen we ook graag een korte call.',
-    },
-    {
-        question: 'Wat als ik later vragen heb of meer wil weten?',
-        answer: 'Plan een demo of stuur ons een bericht. We denken graag mee over de inrichting voor jouw magazijn, vrijblijvend.',
-    },
-];
+const faqs = faqsByPage.prijzen;
 
 const jsonLd = [
     breadcrumbs([

@@ -23,12 +23,14 @@
 - [Kaufland](https://shoplinkr.com/integraties/kaufland): Verkoop op Kaufland met realtime voorraadsync.
 
 ## Support
+- [Veelgestelde vragen](https://shoplinkr.com/veelgestelde-vragen): Antwoord op de meestgestelde vragen over voorraad, orderverwerking, verzending, prijzen en meer.
 - [Helpcentrum](https://shoplinkr.com/support): Documentatie en handleidingen.
 - [Aan de slag](https://shoplinkr.com/support/categorieen/aan-de-slag): Start-gids voor nieuwe gebruikers.
 - [Voorraadbeheer support](https://shoplinkr.com/support/categorieen/voorraadbeheer): Help-artikelen over voorraadbeheer.
 - [Orderverwerking support](https://shoplinkr.com/support/categorieen/orderverwerking): Help-artikelen over orderverwerking.
 
 ## Resources
+- [Volledige sitegegevens](https://shoplinkr.com/llms-full.txt): Alle kernfeiten, functionaliteiten, het prijsmodel en veelgestelde vragen in één markdown-bestand.
 - [Blog](https://shoplinkr.com/blogs): Artikelen over voorraadbeheer, magazijnoptimalisatie en e-commerce.
 - [Gratis Excel template](https://shoplinkr.com/voorraadbeheer-excel-template): Voorraadbeheer Excel template om gratis te downloaden.
 

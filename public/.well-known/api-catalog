@@ -1,0 +1,21 @@
+{
+    "linkset": [
+        {
+            "anchor": "https://api.shoplinkr.com/api/v1",
+            "service-desc": [
+                {
+                    "href": "https://api.shoplinkr.com/openapi.yaml",
+                    "type": "application/yaml",
+                    "title": "ShopLinkr API OpenAPI specification"
+                }
+            ],
+            "service-doc": [
+                {
+                    "href": "https://api.shoplinkr.com/api/docs",
+                    "type": "text/html",
+                    "title": "ShopLinkr API documentation"
+                }
+            ]
+        }
+    ]
+}

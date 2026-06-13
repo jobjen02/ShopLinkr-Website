@@ -5,6 +5,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const carriers = (await getCollection('integrations'))
     .filter((i) => i.data.category === 'carrier')
@@ -37,32 +38,7 @@ const subFeatures = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Welke vervoerders worden ondersteund?',
-        answer: 'Een breed aanbod, waaronder PostNL, DPD, GLS, Sendcloud, MyParcel, Innosend, QLS, ParcelPro, Sendy, PakketMail, DeliveryMatch, EctaroShip, TransMission en Zineps. Je koppelt zoveel vervoerders als je nodig hebt en kiest per bestelling de juiste. De volledige lijst en de koppelinstructies per vervoerder vind je op de integraties-pagina.',
-    },
-    {
-        question: 'Kun je meerdere accounts van dezelfde vervoerder koppelen?',
-        answer: 'Ja. Per koppeling vul je eigen inloggegevens of API-keys in, dus je kunt bijvoorbeeld twee DPD-contracten of meerdere Sendcloud-accounts naast elkaar koppelen. Handig als je werkt met verschillende verzendlocaties of merken die elk een eigen contract hebben.',
-    },
-    {
-        question: 'Wat doet AutoPrint precies?',
-        answer: 'AutoPrint stuurt verzendlabels automatisch naar de printer bij je inpakstation zodra je een bestelling verwerkt. Daarvoor gebruiken we PrintNode, een softwaretool die je installeert op een computer in je magazijn. PrintNode draait op de achtergrond en pikt elk nieuw label op, zodat je niet meer per order op print hoeft te klikken.',
-    },
-    {
-        question: 'Kun je per bestelling een andere vervoerder kiezen?',
-        answer: 'Ja. Zolang de vervoerder gekoppeld is, kies je per bestelling welke je gebruikt. Wil je dat niet handmatig doen? Met een verzendregel laat je ShopLinkr automatisch de juiste vervoerder selecteren op basis van gewicht, bestemming, kanaal of producttype.',
-    },
-    {
-        question: 'Werkt track en trace automatisch terug naar je kanaal?',
-        answer: 'Ja. Zodra het label is aangemaakt, stuurt ShopLinkr de track en trace code automatisch terug naar het kanaal waar de bestelling vandaan kwam. Je verkoopkanaal ontvangt de code en je klant krijgt op de bekende manier de bezorgupdate.',
-    },
-    {
-        question: 'Wat als je vervoerder niet in de lijst staat?',
-        answer: 'Laat het ons weten. We breiden de koppelingen geregeld uit en kijken graag of we jouw vervoerder kunnen toevoegen. Vaak werkt het ook al via een verzendplatform als Sendcloud, MyParcel of ParcelPro: één koppeling geeft je toegang tot tientallen vervoerders.',
-    },
-];
+const faqs = faqsByPage.vervoerders;
 
 const jsonLd = [
     breadcrumbs([

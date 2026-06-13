@@ -4,6 +4,7 @@ import ContactForm from '../components/islands/ContactForm.vue';
 import FaqList from '../components/template/FaqList.astro';
 import { externalLinks } from '../data/externalLinks';
 import { breadcrumbs } from '../utils/seo';
+import { faqsByPage } from '../data/faqs';
 
 const channels = [
     {
@@ -53,24 +54,7 @@ const expectations = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Hoe snel krijg ik antwoord?',
-        answer: 'Tijdens kantooruren reageren we doorgaans binnen een uur. Stuur je iets in het weekend? Dan hoor je vrijwel altijd op maandagochtend van ons.',
-    },
-    {
-        question: 'Kan ik ook bellen of via WhatsApp?',
-        answer: 'Bellen kan op +31 6 49 78 12 12, maandag tot en met vrijdag van 08:30 tot 17:00. Voor korte vragen werkt mailen of het formulier vaak sneller, omdat we dan direct kunnen meekijken.',
-    },
-    {
-        question: 'Ik ben nog geen klant. Kan ik toch contact opnemen?',
-        answer: 'Absoluut. Of je nu oriënteert, twijfelt tussen tools of een specifieke vraag hebt, we denken graag mee. Helemaal vrijblijvend.',
-    },
-    {
-        question: 'Wat als ik liever eerst zelf rondkijk?',
-        answer: 'Je kan 14 dagen gratis ShopLinkr proberen, zonder creditcard. Lopen we ergens samen tegenaan, dan staan we klaar.',
-    },
-];
+const faqs = faqsByPage.contact;
 
 const jsonLd = [
     breadcrumbs([

@@ -4,6 +4,7 @@ import CtaBanner from '../../components/sections/CtaBanner.astro';
 import FaqList from '../../components/template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
@@ -47,28 +48,7 @@ const pickMethods = [
     },
 ];
 
-const faqs = [
-    {
-        question: 'Wanneer kies ik voor single bestellingen, een picklijst zonder bakken of een picklijst met bakken?',
-        answer: 'Heb je veel orders met maar één product, zoals brievenbuspakketten? Dan filter je apart op single bestellingen en verwerk je ze in bulk. Een picklijst zonder bakken werkt prima bij kleinere batches waar je alles in één grote bak verzamelt. Bij grotere volumes of orders met meerdere producten geven bakken net die extra controle die fouten voorkomt.',
-    },
-    {
-        question: 'Werkt Auto Print met elke printer?',
-        answer: 'Auto Print werkt met vrijwel elke printer en herkent je apparaten automatisch zodra je de koppeling installeert. Je koppelt elke printer aan een inpakstation, zodat de labels altijd op de juiste plek uitrollen. Voor Zebra-printers raden we ZPL-modus aan met snelheid 2 en densiteit 5 voor de beste afdrukkwaliteit.',
-    },
-    {
-        question: 'Wat zijn bakken en wanneer is het de moeite waard om ermee te werken?',
-        answer: 'Bakken zijn fysieke kratten met een unieke barcode die je tijdens het picken aan een bestelling koppelt. Je maakt ze in bulk aan via de wizard en print de barcodelabels uit ShopLinkr. Werk je met orders die uit meerdere producten bestaan of pick je in grotere batches, dan voorkomt het bakkensysteem dat producten in de verkeerde doos belanden.',
-    },
-    {
-        question: 'Welke hardware heb ik nodig om te kunnen picken?',
-        answer: 'Een handscanner. Je ziet per stap welk product je moet pakken en waar het ligt in je magazijn, en na elke succesvolle scan verschijnt het volgende product. Een tablet of computer werkt prima om de picklijst weer te geven, maar voor de scans zelf is een echte handscanner nodig.',
-    },
-    {
-        question: 'Hoe stel ik een vaste filtercombinatie in voor terugkerende pickrondes?',
-        answer: 'Ga naar Picklijsten, klik op Picklijst genereren en stel de filters in die je vaak gebruikt, bijvoorbeeld verkoopkanaal, pakkettype en locatie. Klik rechtsboven op Opgeslagen filters en daarna op Filters opslaan, geef de set een herkenbare naam zoals "Brievenbuspakketten webshop" en sla op. De volgende keer staat de combinatie als snelkeuze klaar voor je hele team.',
-    },
-];
+const faqs = faqsByPage.picklijsten;
 
 const jsonLd = [
     breadcrumbs([
