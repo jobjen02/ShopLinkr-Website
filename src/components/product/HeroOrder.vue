@@ -22,9 +22,17 @@ const reduced = ref(false);
 const visible = ref(true); // whole card fade for a clean loop restart
 const instant = ref(false); // kill child transitions during the reset snap
 
+// Each step is an equal-width flex column (flex-1), so the circle centers sit at
+// (i + 0.5) / N of the row, independent of label width. The track spans from the
+// first to the last center; inset and fill use that even grid so the green line
+// lands exactly on every circle (the old justify-between let wider labels like
+// "Verzonden" shift the centers, so the fill overshot).
+const N = steps.length;
+const trackInset = `${100 / (2 * N)}%`; // half a column = first/last circle center
+
 const fillWidth = computed(() => {
     const segs = Math.max(0, done.value - 1);
-    return `${(segs / (steps.length - 1)) * 100}%`;
+    return `${(segs / N) * 100}%`;
 });
 
 const reset = () => {
@@ -183,13 +191,13 @@ onUnmounted(() => window.clearTimeout(stepTimer));
 
             <!-- Steps -->
             <div class="relative mt-7">
-                <div class="absolute top-[10px] left-[10px] right-[10px] h-0.5 bg-chalk-dark"></div>
+                <div class="absolute top-[9px] h-0.5 bg-chalk-dark" :style="{ left: trackInset, right: trackInset }"></div>
                 <div
-                    class="absolute top-[10px] left-[10px] h-0.5 bg-green transition-[width] duration-700 ease-out"
-                    :style="{ width: fillWidth }"
+                    class="absolute top-[9px] h-0.5 bg-green transition-[width] duration-700 ease-out"
+                    :style="{ left: trackInset, width: fillWidth }"
                 ></div>
-                <div class="relative flex justify-between">
-                    <div v-for="(label, i) in steps" :key="label" class="flex flex-col items-center gap-2">
+                <div class="relative flex">
+                    <div v-for="(label, i) in steps" :key="label" class="flex-1 flex flex-col items-center gap-2">
                         <span
                             class="h-5 w-5 rounded-full flex items-center justify-center transition-colors duration-300 border-[1.5px]"
                             :class="i < done ? 'bg-green border-green' : 'bg-paper border-chalk-darker'"
