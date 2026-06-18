@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { useTranslations } from '../../i18n/ui';
+import { localizeHref, type Locale } from '../../i18n/routes';
 
 interface SearchItem {
     title: string;
@@ -11,9 +13,13 @@ interface SearchItem {
     href: string;
 }
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
     articles: Array<SearchItem>;
-}>();
+    locale?: Locale;
+}>(), { locale: 'nl' });
+
+const t = computed(() => useTranslations(props.locale).supportSearch);
+const contactHref = computed(() => localizeHref('/contact', props.locale));
 
 const query = ref('');
 const isFocused = ref(false);
@@ -250,8 +256,8 @@ onBeforeUnmount(() => {
                 ref="inputRef"
                 v-model="query"
                 type="search"
-                placeholder="Zoek in helpartikelen..."
-                aria-label="Zoek in helpartikelen"
+                :placeholder="t.placeholder"
+                :aria-label="t.ariaLabel"
                 aria-autocomplete="list"
                 aria-controls="support-search-results"
                 :aria-activedescendant="selectedIndex >= 0 ? `support-search-result-${selectedIndex}` : undefined"
@@ -268,7 +274,7 @@ onBeforeUnmount(() => {
             <button
                 v-if="query.length > 0"
                 type="button"
-                aria-label="Wis zoekopdracht"
+                :aria-label="t.clear"
                 class="absolute right-4 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full text-gravel hover:text-charcoal hover:bg-chalk-light transition"
                 @mousedown.prevent
                 @click="clearQuery"
@@ -320,16 +326,16 @@ onBeforeUnmount(() => {
                 class="px-5 py-8 text-center"
             >
                 <p class="text-sm text-charcoal font-medium mb-1">
-                    Geen artikelen gevonden
+                    {{ t.noResults }}
                 </p>
                 <p class="text-xs text-gravel mb-3">
-                    Probeer een ander zoekwoord of blader hieronder door de categorieën.
+                    {{ t.noResultsHint }}
                 </p>
                 <a
-                    href="/contact"
+                    :href="contactHref"
                     class="inline-flex items-center gap-1.5 text-xs font-semibold text-sunstone-deep hover:text-sunstone transition-colors"
                 >
-                    Of neem contact op
+                    {{ t.contactCta }}
                     <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
                 </a>
             </div>

@@ -1,0 +1,19 @@
+{
+    "name": "Bol",
+    "slug": "bol-com",
+    "translationKey": "bol-com",
+    "category": "marketplace",
+    "status": "live",
+    "logo": "/assets/marketplaces/bol.jpeg",
+    "summary": "Sync stock and orders with Bol. Automatic order import, stock updates and shipping labels.",
+    "url": "https://www.bol.com",
+    "supportSlug": "bol-com-koppelen",
+    "tagline": "Manage all your Bol stores in one place.",
+    "about": "Bol is the largest online marketplace in the Netherlands and Belgium. Alongside its own range, Bol also offers a platform where external sellers, known as partners, can list their products. Customers order easily through the website or app, and delivery is handled by Bol or the partners themselves.",
+    "faqs": [
+        {
+            "q": "Are paused products imported into ShopLinkr?",
+            "a": "Yes, all products in your Bol environment are imported into ShopLinkr. Is a product paused? Then in ShopLinkr you will see that the product is marked as \"inactive\". You can easily reactivate the product from within ShopLinkr and take it off pause right away."
+        }
+    ]
+}

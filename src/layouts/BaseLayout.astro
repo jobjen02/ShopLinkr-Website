@@ -6,6 +6,7 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import CookieBanner from '../components/islands/CookieBanner.vue';
 import type { Locale, RouteKey } from '../i18n/routes';
+import { useTranslations } from '../i18n/ui';
 
 interface Props {
     title: string;
@@ -13,6 +14,7 @@ interface Props {
     image?: string;
     locale?: Locale;
     routeKey?: RouteKey;
+    alternates?: { nl?: string; en?: string };
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
@@ -22,12 +24,14 @@ const {
     image,
     locale: localeProp,
     routeKey,
+    alternates,
     jsonLd,
 } = Astro.props;
 
 // Locale is derived from the URL (NL at root, EN under /en/) so pages don't
 // have to pass it. An explicit prop still wins if a page needs to override.
 const locale: Locale = localeProp ?? (Astro.currentLocale as Locale) ?? 'nl';
+const t = useTranslations(locale);
 
 const organizationSchema = {
     '@context': 'https://schema.org',
@@ -35,7 +39,7 @@ const organizationSchema = {
     name: 'ShopLinkr',
     url: 'https://shoplinkr.com',
     logo: 'https://shoplinkr.com/logo/logo-charcoal.svg',
-    description: 'De Nederlandse magazijnsoftware voor webshops die door willen groeien. Eén platform voor voorraad, orders, labels en verzending.',
+    description: t.footer.description,
     email: 'contact@shoplinkr.com',
     telephone: '+31649781212',
     address: {
@@ -75,6 +79,7 @@ const websiteSchema = {
             image={image}
             locale={locale}
             routeKey={routeKey}
+            alternates={alternates}
         />
         <JsonLd schema={organizationSchema} />
         <JsonLd schema={websiteSchema} />
@@ -85,9 +90,9 @@ const websiteSchema = {
             href="#main"
             class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:inline-flex focus:items-center focus:gap-2 focus:px-4 focus:py-2.5 focus:rounded-lg focus:bg-charcoal focus:text-paper focus:text-sm focus:font-semibold focus:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.40)]"
         >
-            Ga naar hoofdinhoud
+            {t.common.skipToContent}
         </a>
-        <Header />
+        <Header alternates={alternates} />
         <main id="main" class="flex-1" tabindex="-1">
             <slot />
         </main>

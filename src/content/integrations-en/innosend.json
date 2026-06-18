@@ -1,0 +1,18 @@
+{
+    "name": "Innosend",
+    "slug": "innosend",
+    "translationKey": "innosend",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/Innosend.jpg",
+    "summary": "Create Innosend labels from any pick list. Ship quickly within the Netherlands and abroad.",
+    "supportSlug": "innosend-koppelen",
+    "tagline": "Complete shipping software to send your parcels with ease.",
+    "about": "Innosend is user-friendly shipping software for all types of webshops. You can ship parcels with multiple carriers, so you always get the sharpest shipping rate. Thanks to smart shipping rules, orders are automatically matched to the right carrier. With Innosend your shipping process becomes a lot easier and clearer. Innosend helps you set up an account free of charge, so you can get started right away.",
+    "faqs": [
+        {
+            "q": "Are address details added to the shipping label automatically?",
+            "a": "Yes, based on the shipping details of an order we request a shipping label from Innosend. You can adjust the address details manually if you wish."
+        }
+    ]
+}

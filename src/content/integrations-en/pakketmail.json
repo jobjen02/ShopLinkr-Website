@@ -1,0 +1,17 @@
+{
+    "name": "PakketMail",
+    "slug": "pakketmail",
+    "translationKey": "pakketmail",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/PakketMail.png",
+    "summary": "Ship at PakketMail rates across multiple carriers. One dashboard, one integration.",
+    "tagline": "Simple, affordable and worry-free shipping!",
+    "about": "PakketMail is shipping software for webshops and retailers. The platform supports connections with webshop platforms and marketplaces and works with multiple carriers, such as PostNL, DHL, DPD, GLS and UPS. With PakketMail you can easily create shipping labels, send Track & Trace emails and manage returns.",
+    "faqs": [
+        {
+            "q": "Are address details added to the shipping label automatically?",
+            "a": "Yes, based on an order's shipping details we request a shipping label from PakketMail. You can adjust the address details manually if needed."
+        }
+    ]
+}

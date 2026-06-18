@@ -1,0 +1,269 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { localizeHref } from '../../../i18n/routes';
+
+const locale = 'en';
+
+const rows = [
+    {
+        eyebrow: 'ShopLinkr as the bridge',
+        heading: 'One platform for two webshops running side by side.',
+        body: 'Running a WooCommerce shop and a Shopify shop at the same time? ShopLinkr ties them together. You connect both to ShopLinkr, and from that moment everything sits in a single overview. No separate tools, no double admin.',
+        icon: 'fa-solid fa-arrows-left-right-to-line',
+    },
+    {
+        eyebrow: 'Matching on EAN',
+        heading: 'Products are linked to each other automatically.',
+        body: 'ShopLinkr links products in WooCommerce and Shopify to each other based on EAN. Set it up once, and the system always knows which variant belongs to which channel. New products are added in just a few clicks.',
+        icon: 'fa-solid fa-barcode',
+    },
+    {
+        eyebrow: 'Stock in sync in real time',
+        heading: 'Sell on one shop, stock drops in both.',
+        body: 'Sell a product on Shopify and ShopLinkr adjusts the stock on WooCommerce straight away. And the other way around. That way you keep one source of truth for your stock, even when you are actively selling on both channels at once. Each shop keeps its own brand, your warehouse works from a single stock level.',
+        icon: 'fa-solid fa-arrows-rotate',
+    },
+    {
+        eyebrow: 'Orders in one place',
+        heading: 'All orders in the same order list.',
+        body: 'Orders from WooCommerce and Shopify show up together in ShopLinkr. You pick, pack and ship from the same flow, no matter where the order came from. Your warehouse team works the same way every day.',
+        icon: 'fa-solid fa-list-check',
+    },
+    {
+        eyebrow: 'No oversells',
+        heading: 'Never sell what you do not have in stock again.',
+        body: 'Because stock moves along instantly, you avoid selling the same last item twice. Fewer cancellations, fewer customer questions and a consistent experience for everyone who orders from you.',
+        icon: 'fa-solid fa-shield-check',
+    },
+];
+
+const useCases = [
+    {
+        icon: 'fa-solid fa-store',
+        title: 'Two brands, one warehouse',
+        body: 'You have a main webshop on WooCommerce and a second brand on Shopify, with the same products. Your stock physically sits in one place, and that is how you want it digitally too.',
+    },
+    {
+        icon: 'fa-solid fa-globe',
+        title: 'Migrate without downtime',
+        body: 'You are migrating from WooCommerce to Shopify, but you do not want to switch everything over in one go. With ShopLinkr you can run side by side for a while without stock chaos.',
+    },
+    {
+        icon: 'fa-solid fa-language',
+        title: 'Split B2B and B2C',
+        body: 'Your B2C sells through Shopify, your B2B through WooCommerce or the other way around. Different prices, the same warehouse. ShopLinkr keeps both channels on a single stock level.',
+    },
+    {
+        icon: 'fa-solid fa-flask',
+        title: 'Test a new niche',
+        body: 'Your main shop runs steadily and you want to tap into a niche audience on a second platform, without having to set up separate stock administration.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Which shop becomes the "leading" one?',
+        answer: 'Neither. ShopLinkr treats both your shops as equal sources. A change anywhere in WooCommerce or Shopify is picked up and pushed through to the other channel. Your warehouse stays the physical truth, and ShopLinkr makes sure both shops stay in line with it.',
+    },
+    {
+        question: 'Does this also work if I sell the same products at different prices?',
+        answer: 'Yes, no problem. Each shop keeps its own price list. ShopLinkr focuses on stock changes and orders, so your pricing strategy per channel stays entirely up to you.',
+    },
+    {
+        question: 'And what if I also sell on a marketplace?',
+        answer: 'Add it on. ShopLinkr is built to run multiple channels at once. Add bol, Kaufland or another marketplace and your stock level stays aligned across all those channels.',
+    },
+];
+
+const jsonLd = [
+    {
+        '@type': 'WebPage',
+        name: 'Connect WooCommerce to Shopify via ShopLinkr',
+        description: 'Running WooCommerce and Shopify side by side? ShopLinkr keeps your stock in sync in real time between both shops and gathers every order in one flow.',
+        url: 'https://shoplinkr.com/en/integrations/connect-woocommerce-to-shopify',
+    },
+    {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://shoplinkr.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Integrations',
+                item: 'https://shoplinkr.com/en/integrations',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Connect WooCommerce to Shopify',
+                item: 'https://shoplinkr.com/en/integrations/connect-woocommerce-to-shopify',
+            },
+        ],
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Connect WooCommerce to Shopify via ShopLinkr | Integrations"
+    description="Running WooCommerce and Shopify side by side? ShopLinkr keeps your stock in sync in real time between both shops and gathers every order in one flow."
+    eyebrow="WooCommerce and Shopify"
+    heading="Connect WooCommerce to Shopify via ShopLinkr."
+    subheading="Selling through WooCommerce and Shopify at the same time? ShopLinkr syncs your stock in real time between both shops and gathers every order in one place."
+    routeKey="integrations.wooShopify"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <nav aria-label="Breadcrumb" class="mb-8">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                    <li>
+                        <a href={localizeHref('/', locale)} class="hover:text-charcoal transition-colors">Home</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li>
+                        <a href={localizeHref('/integraties', locale)} class="hover:text-charcoal transition-colors">Integrations</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li class="text-charcoal font-medium" aria-current="page">
+                        Connect WooCommerce to Shopify
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Stock synchronization</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    One stock source for WooCommerce and Shopify.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    ShopLinkr connects your WooCommerce shop with your Shopify shop. Stock changes go both ways, and orders come together in a single overview. Below you can see exactly what the connection does for you.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light/60">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-14">
+                <p class="eyebrow mb-4">When this is smart</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    Why shops choose WooCommerce and Shopify together.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Running two shops is not a choice you make on a whim. Below are a few familiar situations where ShopLinkr makes the difference.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4 md:gap-5">
+                {
+                    useCases.map((useCase) => (
+                        <div class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                            <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-4">
+                                <i class={`${useCase.icon} text-base`} aria-hidden="true"></i>
+                            </div>
+                            <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight mb-2">
+                                {useCase.title}
+                            </h3>
+                            <p class="text-sm text-steel leading-relaxed">
+                                {useCase.body}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="eyebrow mb-4">Frequently asked questions</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-10">
+                    Two shops, one stock.
+                </h2>
+
+                <FaqList items={faqs} />
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

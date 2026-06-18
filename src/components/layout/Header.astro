@@ -4,6 +4,11 @@ import LanguageSwitcher from '../LanguageSwitcher.astro';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
+interface Props {
+    alternates?: { nl?: string; en?: string };
+}
+const { alternates } = Astro.props;
+
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const L = (href: string) => localizeHref(href, locale);
@@ -213,7 +218,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
 
         <div class="flex items-center gap-3 sm:gap-5">
             <div class="hidden md:block">
-                <LanguageSwitcher />
+                <LanguageSwitcher alternates={alternates} />
             </div>
             <a
                 href={externalLinks.login}
@@ -330,7 +335,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                     {t.common.login}
                 </a>
                 <div class="py-2.5">
-                    <LanguageSwitcher variant="inline" />
+                    <LanguageSwitcher variant="inline" alternates={alternates} />
                 </div>
             </li>
         </ul>

@@ -1,0 +1,154 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import BlogCard from '../../../components/template/BlogCard.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+
+export async function getStaticPaths() {
+    const blogs = await getCollection('blogsEn');
+    const visibleBlogs = blogs.filter((b) => b.data.isBlog);
+
+    return blogs.map((blog) => {
+        const others = visibleBlogs.filter((b) => b.id !== blog.id);
+
+        const sameCategory = blog.data.category
+            ? others.filter((b) => b.data.category === blog.data.category)
+            : [];
+
+        const otherIds = new Set(sameCategory.map((b) => b.id));
+        const fallback = others.filter((b) => !otherIds.has(b.id));
+
+        const related = [...sameCategory, ...fallback]
+            .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+            .slice(0, 3);
+
+        return {
+            params: {
+                slug: blog.id,
+            },
+            props: {
+                blog,
+                related,
+            },
+        };
+    });
+}
+
+const { blog, related } = Astro.props;
+const { Content } = await render(blog);
+
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+}).format(blog.data.publishedAt);
+
+const canonicalUrl = `https://shoplinkr.com/en/blog/${blog.id}`;
+
+const alternates = blog.data.translationKey
+    ? { nl: `/blogs/${blog.data.translationKey}`, en: `/en/blog/${blog.id}` }
+    : { en: `/en/blog/${blog.id}` };
+
+const articleSchema = {
+    '@type': 'BlogPosting',
+    headline: blog.data.title,
+    description: blog.data.excerpt,
+    datePublished: blog.data.publishedAt.toISOString(),
+    dateModified: blog.data.publishedAt.toISOString(),
+    inLanguage: 'en-US',
+    mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+    },
+    author: {
+        '@type': 'Organization',
+        name: blog.data.author || 'ShopLinkr',
+        url: 'https://shoplinkr.com',
+    },
+    publisher: {
+        '@type': 'Organization',
+        name: 'ShopLinkr',
+        logo: {
+            '@type': 'ImageObject',
+            url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+        },
+    },
+    ...(blog.data.image && {
+        image: `https://shoplinkr.com${blog.data.image}`,
+    }),
+    ...(blog.data.category && {
+        articleSection: blog.data.category,
+    }),
+};
+
+const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://shoplinkr.com/en',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://shoplinkr.com/en/blog',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: blog.data.title,
+            item: canonicalUrl,
+        },
+    ],
+};
+
+const jsonLd = [articleSchema, breadcrumbSchema];
+
+export const prerender = true;
+---
+
+<ArticleLayout
+    title={`${blog.data.title} | ShopLinkr Blog`}
+    description={blog.data.excerpt}
+    heading={blog.data.title}
+    eyebrow={blog.data.category}
+    meta={`${blog.data.author} · ${formattedDate}`}
+    image={blog.data.image}
+    imageAlt={blog.data.imageAlt}
+    backHref="/en/blog"
+    backLabel="All blog posts"
+    alternates={alternates}
+    jsonLd={jsonLd}
+>
+    <Content />
+
+    <Fragment slot="after">
+        {related.length > 0 && (
+            <section class="py-20 md:py-24 bg-chalk-light border-t border-chalk-dark">
+                <div class="container-prose">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-10">
+                        Related articles
+                    </h2>
+                    <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                        {related.map((b) => (
+                            <BlogCard
+                                title={b.data.title}
+                                excerpt={b.data.excerpt}
+                                publishedAt={b.data.publishedAt}
+                                image={b.data.image}
+                                imageAlt={b.data.imageAlt}
+                                slug={b.id}
+                                category={b.data.category}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+        )}
+
+        <CtaBanner />
+    </Fragment>
+</ArticleLayout>

@@ -19,11 +19,54 @@ export const defaultLang: Locale = 'nl';
 // switcher and out of the reciprocal hreflang set (no hreflang to a 404).
 export const routes = {
     home: { nl: '', en: '' },
+
+    // Core marketing
     pricing: { nl: 'prijzen', en: 'pricing' },
     contact: { nl: 'contact', en: 'contact' },
+    about: { nl: 'over-ons', en: 'about' },
+    team: { nl: 'team', en: 'team' },
+    customerStories: { nl: 'referenties', en: 'customer-stories' },
+    faq: { nl: 'veelgestelde-vragen', en: 'faq' },
+    cookies: { nl: 'cookies', en: 'cookies' },
+    integrations: { nl: 'integraties', en: 'integrations' },
+    blog: { nl: 'blogs', en: 'blog' },
+    support: { nl: 'support', en: 'support' },
+
+    // Features (functionaliteiten)
     features: { nl: 'functionaliteiten', en: 'features' },
-    'features.inventory': { nl: 'functionaliteiten/voorraad', en: 'features/inventory' },
     'features.orders': { nl: 'functionaliteiten/bestellingen', en: 'features/orders' },
+    'features.inventory': { nl: 'functionaliteiten/voorraad', en: 'features/inventory' },
+    'features.products': { nl: 'functionaliteiten/producten', en: 'features/products' },
+    'features.picklists': { nl: 'functionaliteiten/picklijsten', en: 'features/pick-lists' },
+    'features.rules': { nl: 'functionaliteiten/regels', en: 'features/rules' },
+    'features.purchasing': { nl: 'functionaliteiten/inkoopadvies', en: 'features/purchase-advice' },
+    'features.locations': { nl: 'functionaliteiten/locatiebeheer', en: 'features/locations' },
+    'features.carriers': { nl: 'functionaliteiten/vervoerders', en: 'features/carriers' },
+    'features.returns': { nl: 'functionaliteiten/retouren', en: 'features/returns' },
+    'features.customers': { nl: 'functionaliteiten/klanten', en: 'features/customers' },
+    'features.deliveries': { nl: 'functionaliteiten/leveringen', en: 'features/deliveries' },
+    'features.users': { nl: 'functionaliteiten/gebruikers', en: 'features/users' },
+    'features.reports': { nl: 'functionaliteiten/rapporten', en: 'features/reports' },
+
+    // Integration combo landing pages
+    'integrations.shopifyBol': { nl: 'integraties/shopify-koppelen-aan-bol-com', en: 'integrations/connect-shopify-to-bol-com' },
+    'integrations.wooBol': { nl: 'integraties/woocommerce-koppelen-aan-bol-com', en: 'integrations/connect-woocommerce-to-bol-com' },
+    'integrations.wooShopify': { nl: 'integraties/woocommerce-koppelen-aan-shopify', en: 'integrations/connect-woocommerce-to-shopify' },
+
+    // SEO landing pages
+    inventoryManagement: { nl: 'voorraadbeheer', en: 'inventory-management' },
+    inventorySoftware: { nl: 'voorraadbeheer-software', en: 'inventory-management-software' },
+    inventorySystem: { nl: 'voorraadbeheer-systeem', en: 'inventory-management-system' },
+    inventoryWebshop: { nl: 'voorraadbeheer-webshop', en: 'webshop-inventory-management' },
+    inventoryExcel: { nl: 'voorraadbeheer-excel-template', en: 'inventory-excel-template' },
+    bolInventory: { nl: 'bol-voorraadbeheer', en: 'bol-inventory-management' },
+    multipleBolAccounts: { nl: 'meerdere-bol-accounts', en: 'multiple-bol-accounts' },
+    simpleInventory: { nl: 'simpel-vooraadbeheer', en: 'simple-inventory-management' },
+    efficientWebshop: { nl: 'efficient-webshopbeheer', en: 'efficient-webshop-management' },
+    wooInventorySync: { nl: 'woocommerce-voorraad-synchronisatie', en: 'woocommerce-inventory-sync' },
+    shoplinkerOrShoplinkr: { nl: 'shoplinker-of-shoplinkr', en: 'shoplinker-or-shoplinkr' },
+    webwinkelVakdagen: { nl: 'webwinkelvakdagen2026', en: 'webwinkel-vakdagen-2026' },
+    returnFormTemplate: { nl: 'retourformulier-template', en: 'return-form-template' },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteKey = keyof typeof routes;

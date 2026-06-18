@@ -1,0 +1,245 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { breadcrumbs } from '../../../utils/seo';
+import { faqsByPageEn } from '../../../data/faqs-en';
+import { localizeHref } from '../../../i18n/routes';
+const locale = 'en';
+
+const subFeatures = [
+    {
+        eyebrow: 'Three quick choices',
+        heading: 'From covering backorders to buying smart.',
+        body: 'Choose in a single click whether you only want to cover backorders, keep your stock levels topped up, or buy smart based on forecast and lead time. After that you can still switch individual parts on or off.',
+        icon: 'fa-duotone fa-solid fa-sliders',
+    },
+    {
+        eyebrow: 'Per supplier',
+        heading: 'One advice, neatly split per supplier.',
+        body: 'Select one or more suppliers and ShopLinkr works out what to order for each one separately. Only products linked to those suppliers are counted.',
+        icon: 'fa-duotone fa-solid fa-truck-fast',
+    },
+    {
+        eyebrow: 'Convert in one click',
+        heading: 'From advice to draft delivery.',
+        body: 'Happy with the advice? One click on Convert to deliveries and ShopLinkr creates a delivery per supplier with the status Draft, ready to order from your supplier.',
+        icon: 'fa-duotone fa-solid fa-arrow-right-arrow-left',
+    },
+    {
+        eyebrow: 'Slow movers out',
+        heading: 'No dead capital in your advice.',
+        body: 'Set a minimum number of sales. Products below that stay out of the advice automatically, so one-off sales do not steer your purchasing.',
+        icon: 'fa-duotone fa-solid fa-filter',
+    },
+];
+
+const signals = [
+    {
+        title: 'Cover backorders',
+        body: 'Products with open backorders show up in the advice, so you can actually fulfil the orders you have already accepted.',
+    },
+    {
+        title: 'Stock thresholds',
+        body: 'For each product you set a purchase threshold and a purchase target. If available stock drops below the threshold, the advice tops it up to the target.',
+    },
+    {
+        title: 'Expected sales',
+        body: 'Based on average sales per day, ShopLinkr calculates how much you need for the advice period. Choose from 14 days, 28 days, 3 months or a custom period.',
+    },
+    {
+        title: 'Factor in lead time',
+        body: 'Optionally ShopLinkr adds your supplier lead time on top of the advice period, so you do not run out of stock while your order is still on its way.',
+    },
+    {
+        title: 'Subtract open deliveries',
+        body: 'Whatever you have already ordered from a supplier is subtracted from the advice. No double purchasing, even if an earlier delivery is still on its way.',
+    },
+];
+
+const faqs = faqsByPageEn.inkoopadvies;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Features', '/en/features'],
+        ['Purchase advice', '/en/features/purchase-advice'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Purchase advice with ShopLinkr',
+        description: 'Let ShopLinkr work out per supplier what you should reorder, based on stock, backorders and expected sales. Turn the advice into draft deliveries in a single click.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Purchase advice with ShopLinkr"
+    description="Let ShopLinkr work out per supplier what you should reorder, based on stock, backorders and expected sales. Turn the advice into draft deliveries in a single click."
+    eyebrow="Buy smart"
+    heading="Know when to buy what."
+    subheading="ShopLinkr works out per supplier what you should reorder, based on your stock, backorders and expected sales. Turn the advice into draft deliveries in a single click."
+    jsonLd={jsonLd}
+    routeKey="features.purchasing"
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Proactive purchasing</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            How the advice
+                            <span class="block">comes together.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-4">
+                            Example calculation
+                        </p>
+                        <dl class="divide-y divide-chalk-dark text-sm">
+                            <div class="flex items-baseline justify-between py-2.5">
+                                <dt class="text-steel">
+                                    Expected sales
+                                    <span class="block text-[11px] text-gravel mt-0.5">17 days × 2.3 per day, lead time included</span>
+                                </dt>
+                                <dd class="text-charcoal font-semibold tabular-nums">39 units</dd>
+                            </div>
+                            <div class="flex items-baseline justify-between py-2.5">
+                                <dt class="text-steel">+ Backorders</dt>
+                                <dd class="text-charcoal font-semibold tabular-nums">12 units</dd>
+                            </div>
+                            <div class="flex items-baseline justify-between py-2.5">
+                                <dt class="text-steel">- Available stock</dt>
+                                <dd class="text-charcoal font-semibold tabular-nums">5 units</dd>
+                            </div>
+                            <div class="flex items-baseline justify-between py-3 mt-1 border-t border-chalk-darker">
+                                <dt class="text-charcoal font-semibold">Reorder</dt>
+                                <dd class="text-sunstone-deep font-semibold text-xl tabular-nums">46 units</dd>
+                            </div>
+                        </dl>
+                        <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                            Buying in boxes of 12? Then the advice rounds up to <span class="text-charcoal font-semibold">48 units</span>.
+                        </p>
+                    </div>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">How does the advice calculate?</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Five signals,
+                        <span class="block text-sunstone-deep">one concrete advice.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Switch each part on or off individually, or pick a quick choice that sets the right combination for you. Backorders, stock thresholds and expected sales all weigh in together. Open deliveries are subtracted, so you do not buy twice.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            signals.map((signal) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{signal.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{signal.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Frequently asked questions</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Questions that come up often,
+                        <span class="block text-sunstone-deep">clearly answered.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Missing a question? Book a call or send us a message. We are happy to think along with your situation.
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Ask your question
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

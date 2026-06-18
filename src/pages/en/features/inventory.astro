@@ -1,0 +1,328 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { breadcrumbs } from '../../../utils/seo';
+import { faqsByPageEn } from '../../../data/faqs-en';
+import { localizeHref } from '../../../i18n/routes';
+
+const locale = 'en';
+
+const subFeatures = [
+    {
+        eyebrow: 'Stock forecasting',
+        heading: 'See in time when you need to reorder.',
+        body: 'ShopLinkr looks at your average daily sales and works out how much you need. Your supplier lead time is automatically factored into the advice.',
+        icon: 'fa-duotone fa-solid fa-chart-line',
+    },
+    {
+        eyebrow: 'Stock history',
+        heading: 'Every change traceable per product.',
+        body: 'For each product you see every sale, pick, return, delivery, correction and count. Complete with old and new stock, location, date and who made the change.',
+        icon: 'fa-duotone fa-solid fa-magnifying-glass-chart',
+    },
+    {
+        eyebrow: 'Fictional stock',
+        heading: 'Hide your stock from competitors.',
+        body: 'Competitors do not need to see how much you have in stock. With fictional stock your channels show a fixed number instead of your real quantities, without ever selling a product you do not have.',
+        icon: 'fa-duotone fa-solid fa-eye-slash',
+    },
+    {
+        eyebrow: 'LVB switch',
+        heading: 'Automatically back to your own warehouse.',
+        body: 'Running out of LVB stock? ShopLinkr automatically switches the shipping location to your own warehouse, including your lead time.',
+        icon: 'fa-duotone fa-solid fa-shuffle',
+    },
+];
+
+const stockTypes = [
+    {
+        title: 'Available stock',
+        body: 'What you can still sell. This is the number we send to your sales channels.',
+    },
+    {
+        title: 'Reserved stock',
+        body: 'Stock already committed to orders that still need to be processed.',
+    },
+    {
+        title: 'Total stock',
+        body: 'Available + reserved. This is the number that is actually on the shelf.',
+    },
+];
+
+const faqs = faqsByPageEn.voorraad;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Features', '/en/features'],
+        ['Inventory', '/en/features/inventory'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Manage inventory with ShopLinkr',
+        description: 'Manage and sync your stock from one place. With stock changes, notifications, forecasting and fictional stock you stay on top of what is in stock and what is still available.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Manage inventory with ShopLinkr"
+    description="Manage and sync your stock from one place. With stock changes, notifications, forecasting and fictional stock you stay on top of what is in stock and what is still available."
+    eyebrow="Inventory management"
+    heading="Manage all your stock in one place."
+    subheading="Real-time sync between ShopLinkr and your sales channels, so you always see what is actually in stock and what is still left to sell."
+    routeKey="features.inventory"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Real-time sync</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            One stock,
+                            <span class="block">in sync everywhere.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-5">
+                            <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">Sync timeline</p>
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunstone-deep opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sunstone-deep"></span>
+                                </span>
+                                <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep">live</span>
+                            </div>
+                        </div>
+
+                        <ol class="space-y-0">
+                            <li class="grid grid-cols-[auto_1fr] gap-x-4">
+                                <p class="text-[11px] font-mono tabular-nums text-gravel pt-1 text-right">14:32:18</p>
+                                <div class="border-l-2 border-chalk-dark pl-5 pb-5 relative">
+                                    <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-chalk-darker ring-2 ring-paper"></span>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#0000A4] text-paper">Bol</span>
+                                        <p class="text-sm font-semibold text-charcoal">Sold 1 unit</p>
+                                    </div>
+                                    <p class="text-[11px] text-gravel">Order received</p>
+                                </div>
+                            </li>
+
+                            <li class="grid grid-cols-[auto_1fr] gap-x-4">
+                                <p class="text-[11px] font-mono tabular-nums text-gravel pt-1 text-right">14:32:24</p>
+                                <div class="border-l-2 border-chalk-dark pl-5 pb-5 relative">
+                                    <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-chalk-darker ring-2 ring-paper"></span>
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-charcoal text-paper">ShopLinkr</span>
+                                        <p class="text-sm font-semibold text-charcoal">Stock updated</p>
+                                    </div>
+                                    <p class="text-[11px] text-gravel">Available: 11 units</p>
+                                </div>
+                            </li>
+
+                            <li class="grid grid-cols-[auto_1fr] gap-x-4">
+                                <p class="text-[11px] font-mono tabular-nums text-sunstone-deep font-semibold pt-1 text-right">14:32:31</p>
+                                <div class="pl-5 relative">
+                                    <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-sunstone-deep ring-2 ring-paper"></span>
+                                    <div class="flex items-center gap-2 mb-1 flex-wrap">
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#5A8A1F] text-paper">Shopify</span>
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#674399] text-paper">WooCommerce</span>
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#E10915] text-paper">Kaufland</span>
+                                        <p class="text-sm font-semibold text-charcoal">in sync</p>
+                                    </div>
+                                    <p class="text-[11px] text-gravel">All channels at 11 units</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <div class="mt-5 flex items-center justify-center gap-2 px-3 py-3 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                            <i class="fa-solid fa-bolt text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep">Total</span>
+                            <span class="text-base font-semibold text-sunstone-deep tabular-nums">13 seconds</span>
+                        </div>
+                    </div>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Fictional stock</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Hide your stock
+                        <span class="block text-sunstone-deep">from competitors.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Some tools show competitors exactly how much stock you have on hand. With fictional stock, ShopLinkr sends a fixed number to your channels instead of your real quantities. Only when your stock drops below a set threshold does ShopLinkr automatically switch to the real quantities, so you never sell a product you do not have.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Example with fictional 400 and threshold 20
+                    </p>
+                    <ul class="space-y-2.5">
+                        <li class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 rounded-xl bg-chalk-light ring-1 ring-chalk-dark">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">Actual in warehouse</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">850</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-gravel text-sm" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">On your channels</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">400</p>
+                            </div>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 rounded-xl bg-chalk-light ring-1 ring-chalk-dark">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">Actual in warehouse</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">350</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-gravel text-sm" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel mb-1">On your channels</p>
+                                <p class="text-xl font-semibold text-charcoal tabular-nums">400</p>
+                            </div>
+                        </li>
+                        <li class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 rounded-xl bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep mb-1">Actual in warehouse</p>
+                                <p class="text-xl font-semibold text-sunstone-deep tabular-nums">15</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.12em] font-semibold text-sunstone-deep mb-1">On your channels</p>
+                                <p class="text-xl font-semibold text-sunstone-deep tabular-nums">15</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                        Above the threshold, ShopLinkr shows the fictional number. Below the threshold, it automatically switches to the real quantities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Types of stock</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Three types of stock,
+                        <span class="block text-sunstone-deep">one clear overview.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        In ShopLinkr we work with three types of stock so you know exactly what is available, what is already reserved and what is actually on your shelf.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            stockTypes.map((type) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-boxes-stacked text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Frequently asked questions</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        The questions that keep coming up,
+                        <span class="block text-sunstone-deep">clearly answered.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Missing a question? Book a call or send us a message. We are happy to think along with your situation.
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Ask your question
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

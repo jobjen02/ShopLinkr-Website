@@ -1,0 +1,125 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'Connection',
+        heading: 'Connect once, then it runs on its own.',
+        body: 'You link your WooCommerce store to ShopLinkr in just a few clicks. Your products are imported and your stock flows in automatically. From that moment on, ShopLinkr keeps your WooCommerce inventory in real-time sync with all your other channels.',
+        icon: 'fa-solid fa-plug',
+    },
+    {
+        eyebrow: 'Real-time',
+        heading: 'Updates within seconds.',
+        body: 'Sell something on WooCommerce and ShopLinkr instantly adjusts your stock on Bol, Shopify and your other channels. It works the other way around too: an order on Bol immediately reduces your stock in WooCommerce, so you never sell the same item twice.',
+        icon: 'fa-solid fa-bolt',
+    },
+    {
+        eyebrow: 'No manual work',
+        heading: 'Stop retyping numbers.',
+        body: 'Updating stock by hand is a thing of the past. ShopLinkr handles the entire sync for you, so you no longer lose time on admin. You spend that time on products, content or marketing for your WooCommerce store instead.',
+        icon: 'fa-solid fa-keyboard',
+    },
+    {
+        eyebrow: 'No oversells',
+        heading: 'Stop selling what you do not have.',
+        body: 'An oversell is costly: you lose a customer and you get a bad review. Because your stock is always in sync, you never again show customers a quantity you do not actually have in house.',
+        icon: 'fa-solid fa-shield-check',
+    },
+    {
+        eyebrow: 'Ready to grow',
+        heading: 'Multi-channel without the headache.',
+        body: 'Want to expand from WooCommerce to Bol, Shopify or Kaufland? ShopLinkr makes that a whole lot simpler all at once. One inventory source, every channel served at the same time, and you keep the overview no matter how big you get.',
+        icon: 'fa-solid fa-chart-line',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'WooCommerce inventory synchronization - ShopLinkr',
+    description: 'Looking for a simple way to manage your WooCommerce stock? With our tool you sync your WooCommerce inventory in real time with all your other sales channels.',
+};
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="WooCommerce inventory synchronization - ShopLinkr"
+    description="Looking for a simple way to manage your WooCommerce stock? With our tool you sync your WooCommerce inventory in real time with all your other sales channels."
+    eyebrow="WooCommerce inventory synchronization"
+    heading="WooCommerce inventory synchronization, sorted with ease."
+    subheading="Manage your WooCommerce webshop inventory in ShopLinkr. In real-time sync with all your other sales channels, without any manual work."
+    routeKey="wooInventorySync"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">For WooCommerce stores</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    The benefits of automatic synchronization.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    WooCommerce is powerful, but without proper inventory synchronization you get stuck the moment you sell across multiple channels. ShopLinkr takes that complexity away and keeps everything in line with what is really on the shelf.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

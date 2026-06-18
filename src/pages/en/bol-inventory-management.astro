@@ -1,0 +1,125 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+
+const rows = [
+    {
+        eyebrow: 'For Bol sellers',
+        heading: 'Always in control of your stock on Bol.',
+        body: 'As a Bol seller you simply cannot afford to run out of stock without seeing it coming. ShopLinkr connects your Bol account and keeps your inventory accurate in real time, even when you also sell on Shopify, WooCommerce or your own webshop.',
+        icon: 'fa-solid fa-store',
+    },
+    {
+        eyebrow: 'Higher ranking',
+        heading: 'Stock that works in your favour.',
+        body: 'Bol factors in how reliably you sell. An empty stock level or a cancelled order pushes your ranking down, and that is the last thing you want. By keeping your inventory accurate at all times, you avoid negative signals and steadily build your position within the platform.',
+        icon: 'fa-solid fa-arrow-trend-up',
+    },
+    {
+        eyebrow: 'Real-time updates',
+        heading: 'Stock updates through your Bol connection.',
+        body: 'Sell something through your webshop and ShopLinkr adjusts your Bol stock right away. The same goes the other way around: a sale on Bol instantly deducts stock from your other channels. You always communicate the right quantities, without ever stepping in manually.',
+        icon: 'fa-solid fa-arrows-rotate',
+    },
+    {
+        eyebrow: 'VVB and LVB',
+        heading: 'Works with both Shipping via Bol and Fulfilment by Bol.',
+        body: 'Do you ship yourself using Bol shipping labels (VVB), or do you let Bol handle your orders from their warehouse (LVB)? ShopLinkr supports both. You keep sight of what sits with you and what sits with Bol, together in one overview, including the smart stock switch between your own shipping and Bol fulfilment.',
+        icon: 'fa-solid fa-warehouse',
+    },
+    {
+        eyebrow: 'No contracts',
+        heading: 'Sign up today, start working today.',
+        body: 'Try ShopLinkr free for 14 days, no credit card, no commitments. Connect your Bol account, import your products and you are running your first orders through the system right away. Cancel monthly if it turns out not to be the right fit.',
+        icon: 'fa-solid fa-bolt',
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Bol inventory management - ShopLinkr',
+    description: 'Inventory management for Bol sellers who want to prevent oversells and protect their ranking. ShopLinkr connects your Bol account and keeps your stock accurate in real time across all your channels.',
+};
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Bol inventory management - ShopLinkr"
+    description="Inventory management for Bol sellers who want to prevent oversells and protect their ranking. ShopLinkr connects your Bol account and keeps your stock accurate in real time across all your channels."
+    eyebrow="Bol inventory management"
+    heading="Bol inventory management that never lets you down again."
+    subheading="Inventory management for Bol sellers who never want another oversell, who want to protect their ranking and who want to run their sales across multiple channels at once."
+    routeKey="bolInventory"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">For Bol sellers</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    What ShopLinkr does for your Bol account.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    ShopLinkr is built by Bol sellers, for Bol sellers. We know what you run into, from oversells to ranking dips, and we have the tool that solves it for good.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import { useTranslations } from '../../i18n/ui';
+import type { Locale } from '../../i18n/routes';
+
+const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
+const t = computed(() => useTranslations(props.locale).contactForm);
 
 interface FormState {
     name: string;
@@ -18,20 +23,21 @@ const MAX_PHONE_LENGTH = 40;
 const MAX_SUBJECT_LENGTH = 200;
 const MAX_MESSAGE_LENGTH = 5000;
 
-const FRIENDLY_ERRORS: Record<string, string> = {
-    'Name too short': 'Vul je naam in, minstens 2 letters.',
-    'Invalid email': 'Het e-mailadres ziet er niet helemaal goed uit.',
-    'Message too short': 'Je bericht is wat aan de korte kant, geef ons iets meer context.',
-    'Consent required': 'Vink eerst akkoord aan om door te kunnen.',
-    'Server is niet juist geconfigureerd': 'We hebben hier iets om te fixen. Mail ons even op contact@shoplinkr.com.',
-    'Mail kon niet verstuurd worden': 'Het versturen lukte niet. Probeer het zo nog eens of mail ons direct op contact@shoplinkr.com.',
-    'Invalid content type': 'Er ging iets mis bij het versturen. Probeer het zo nog eens.',
-    'Payload too large': 'Je bericht is te lang. Maak het wat korter en probeer het nog eens.',
-    'Invalid JSON': 'Er ging iets mis bij het versturen. Probeer het zo nog eens.',
-    'Invalid payload': 'Er ging iets mis bij het versturen. Probeer het zo nog eens.',
-};
+// Maps raw server error strings to a dictionary key; anything unknown falls back to sendFailed.
+type ErrorKey = 'nameTooShort' | 'invalidEmail' | 'messageTooShort' | 'consentRequired' | 'notConfigured' | 'sendFailed' | 'generic' | 'tooLong';
 
-const FALLBACK_ERROR = 'Het versturen lukte niet. Probeer het zo nog eens of mail ons direct op contact@shoplinkr.com.';
+const ERROR_KEYS: Record<string, ErrorKey> = {
+    'Name too short': 'nameTooShort',
+    'Invalid email': 'invalidEmail',
+    'Message too short': 'messageTooShort',
+    'Consent required': 'consentRequired',
+    'Server is niet juist geconfigureerd': 'notConfigured',
+    'Mail kon niet verstuurd worden': 'sendFailed',
+    'Invalid content type': 'generic',
+    'Payload too large': 'tooLong',
+    'Invalid JSON': 'generic',
+    'Invalid payload': 'generic',
+};
 
 const state = ref<FormState>({
     name: '',
@@ -56,11 +62,9 @@ const isValid = computed(() => {
 const characterCount = computed(() => state.value.message.length);
 
 function friendlyError(raw: string | undefined): string {
-    if (!raw) {
-        return FALLBACK_ERROR;
-    }
-
-    return FRIENDLY_ERRORS[raw] ?? FALLBACK_ERROR;
+    const errors = t.value.errors;
+    const key: ErrorKey = (raw && ERROR_KEYS[raw]) || 'sendFailed';
+    return errors[key];
 }
 
 async function handleSubmit(): Promise<void> {
@@ -136,10 +140,10 @@ function reset(): void {
             <i class="fa-solid fa-check text-xl" aria-hidden="true"></i>
         </div>
         <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-3">
-            Bericht verzonden!
+            {{ t.successTitle }}
         </h2>
         <p class="text-steel leading-relaxed max-w-md mx-auto">
-            Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op, doorgaans binnen 2 uur tijdens kantooruren.
+            {{ t.successBody }}
         </p>
         <button
             type="button"
@@ -147,7 +151,7 @@ function reset(): void {
             @click="reset"
         >
             <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
-            Nieuw bericht sturen
+            {{ t.newMessage }}
         </button>
     </div>
 
@@ -155,12 +159,12 @@ function reset(): void {
         v-else
         class="bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10"
     >
-        <p class="eyebrow mb-3">Formulier</p>
+        <p class="eyebrow mb-3">{{ t.eyebrow }}</p>
         <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-2">
-            Stuur een bericht!
+            {{ t.heading }}
         </h2>
         <p class="text-steel text-[15px] leading-relaxed mb-8">
-            Vul je gegevens in en we nemen snel contact met je op.
+            {{ t.intro }}
         </p>
 
         <form
@@ -187,7 +191,7 @@ function reset(): void {
             <div class="grid sm:grid-cols-2 gap-5">
                 <div>
                     <label for="contact-name" class="block text-sm font-medium text-charcoal mb-2">
-                        Naam <span class="text-sunstone-deep">*</span>
+                        {{ t.name }} <span class="text-sunstone-deep">*</span>
                     </label>
                     <input
                         id="contact-name"
@@ -196,14 +200,14 @@ function reset(): void {
                         required
                         autocomplete="name"
                         :maxlength="MAX_NAME_LENGTH"
-                        placeholder="Jouw naam"
+                        :placeholder="t.namePlaceholder"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
 
                 <div>
                     <label for="contact-email" class="block text-sm font-medium text-charcoal mb-2">
-                        E-mail <span class="text-sunstone-deep">*</span>
+                        {{ t.email }} <span class="text-sunstone-deep">*</span>
                     </label>
                     <input
                         id="contact-email"
@@ -213,7 +217,7 @@ function reset(): void {
                         autocomplete="email"
                         :maxlength="MAX_EMAIL_LENGTH"
                         inputmode="email"
-                        placeholder="naam@bedrijf.nl"
+                        :placeholder="t.emailPlaceholder"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
@@ -222,8 +226,8 @@ function reset(): void {
             <div class="grid sm:grid-cols-2 gap-5">
                 <div>
                     <label for="contact-phone" class="block text-sm font-medium text-charcoal mb-2">
-                        Telefoon
-                        <span class="text-gravel text-xs font-normal">(optioneel)</span>
+                        {{ t.phone }}
+                        <span class="text-gravel text-xs font-normal">{{ t.optional }}</span>
                     </label>
                     <input
                         id="contact-phone"
@@ -232,22 +236,22 @@ function reset(): void {
                         autocomplete="tel"
                         :maxlength="MAX_PHONE_LENGTH"
                         inputmode="tel"
-                        placeholder="+31 6 12 34 56 78"
+                        :placeholder="t.phonePlaceholder"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
 
                 <div>
                     <label for="contact-subject" class="block text-sm font-medium text-charcoal mb-2">
-                        Onderwerp
-                        <span class="text-gravel text-xs font-normal">(optioneel)</span>
+                        {{ t.subject }}
+                        <span class="text-gravel text-xs font-normal">{{ t.optional }}</span>
                     </label>
                     <input
                         id="contact-subject"
                         v-model="state.subject"
                         type="text"
                         :maxlength="MAX_SUBJECT_LENGTH"
-                        placeholder="Waar gaat het over?"
+                        :placeholder="t.subjectPlaceholder"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
@@ -256,7 +260,7 @@ function reset(): void {
             <div>
                 <div class="flex items-end justify-between mb-2">
                     <label for="contact-message" class="block text-sm font-medium text-charcoal">
-                        Bericht <span class="text-sunstone-deep">*</span>
+                        {{ t.message }} <span class="text-sunstone-deep">*</span>
                     </label>
                     <span class="text-xs text-gravel" aria-live="polite">
                         {{ characterCount }} / {{ MAX_MESSAGE_LENGTH }}
@@ -269,7 +273,7 @@ function reset(): void {
                     rows="5"
                     minlength="10"
                     :maxlength="MAX_MESSAGE_LENGTH"
-                    placeholder="Waar kunnen we je mee helpen?"
+                    :placeholder="t.messagePlaceholder"
                     class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition resize-y min-h-[140px]"
                 ></textarea>
             </div>
@@ -282,7 +286,7 @@ function reset(): void {
                     class="mt-1 h-4 w-4 rounded ring-1 ring-chalk-dark text-sunstone-deep focus:ring-2 focus:ring-sunstone-deep"
                 />
                 <span class="text-sm text-steel leading-relaxed">
-                    Ik ga ermee akkoord dat ShopLinkr mijn gegevens gebruikt om contact met mij op te nemen. <span class="text-sunstone-deep">*</span>
+                    {{ t.consent }} <span class="text-sunstone-deep">*</span>
                 </span>
             </label>
 
@@ -303,16 +307,16 @@ function reset(): void {
             >
                 <span v-if="status === 'submitting'" class="inline-flex items-center gap-2">
                     <i class="fa-solid fa-circle-notch fa-spin text-sm" aria-hidden="true"></i>
-                    Versturen...
+                    {{ t.submitting }}
                 </span>
                 <span v-else class="inline-flex items-center gap-2">
-                    Verstuur je bericht
+                    {{ t.submit }}
                     <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                 </span>
             </button>
 
             <p id="contact-form-help" class="text-xs text-gravel mt-3">
-                We reageren doorgaans binnen 2 uur tijdens kantooruren (ma-vr 08:30-17:00).
+                {{ t.help }}
             </p>
         </form>
     </div>

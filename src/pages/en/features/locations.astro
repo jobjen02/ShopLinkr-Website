@@ -1,0 +1,273 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { breadcrumbs } from '../../../utils/seo';
+import { faqsByPageEn } from '../../../data/faqs-en';
+import { localizeHref } from '../../../i18n/routes';
+
+const locale = 'en';
+
+const subFeatures = [
+    {
+        eyebrow: 'Pick location first',
+        heading: 'The shelf first, the pallet last.',
+        body: 'ShopLinkr pulls stock from your pick location first. If stock is only left on a bulk location, you can set the order to go to backorder. No needless trips to the top rack.',
+        icon: 'fa-duotone fa-solid fa-hand-pointer',
+    },
+    {
+        eyebrow: 'Location while picking',
+        heading: 'See exactly where to go.',
+        body: 'The pick list shows the location next to each product. Your picker walks a logical route and grabs everything for the round in one go.',
+        icon: 'fa-duotone fa-solid fa-list-check',
+    },
+    {
+        eyebrow: 'Move stock',
+        heading: 'Replenish your pick location from the bulk.',
+        body: 'Move stock from one location to another in a few clicks. Source location, target location, quantity, done. The move shows up in your stock movements right away.',
+        icon: 'fa-duotone fa-solid fa-arrow-right-arrow-left',
+    },
+    {
+        eyebrow: 'Bulk assign',
+        heading: 'Set up your entire warehouse in one go.',
+        body: 'Through Tools you link multiple products to locations at once. Ideal when starting out or after a reorganisation, so you do not have to go product by product.',
+        icon: 'fa-duotone fa-solid fa-layer-group',
+    },
+];
+
+const locationTypes = [
+    {
+        title: 'Pick location',
+        body: 'The spot your daily picks come from. Easy to reach, at eye level and close to the packing station. ShopLinkr uses this stock first.',
+    },
+    {
+        title: 'Bulk location',
+        body: 'Bulk stock on pallets or in higher racks, not meant for daily pick work. From here you replenish your pick location once it runs empty.',
+    },
+    {
+        title: 'Backorder when bulk only',
+        body: 'Turn this on and an order goes to backorder when stock is only left on a bulk location. You replenish the pick location first, then process the order.',
+    },
+];
+
+const faqs = faqsByPageEn.locatiebeheer;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Features', '/en/features'],
+        ['Locations', '/en/features/locations'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Manage locations with ShopLinkr',
+        description: 'Location management in ShopLinkr. Build a hierarchy of warehouse locations, separate your pick locations from your bulk and see exactly where each product sits, on the orders page, the product overview and the pick list.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Manage locations with ShopLinkr"
+    description="Location management in ShopLinkr. Build a hierarchy of warehouse locations, separate your pick locations from your bulk and see exactly where each product sits, on the orders page, the product overview and the pick list."
+    eyebrow="Location management"
+    heading="A fixed spot for every product."
+    subheading="Lay out your warehouse with the hierarchy that fits you. For each product you see exactly where it sits, on the orders page, the product overview and the pick list."
+    routeKey="features.locations"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Built as a hierarchy</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            From aisle to
+                            <span class="block">bin A.1.3.2.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-5">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-warehouse text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Main warehouse</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Warehouse</span>
+                        </div>
+
+                        <ul class="space-y-1.5 text-sm">
+                            <li class="flex items-center gap-2 pl-1">
+                                <i class="fa-solid fa-folder-open text-gravel text-[0.7rem]" aria-hidden="true"></i>
+                                <span class="text-charcoal font-medium">Aisle A</span>
+                            </li>
+                            <li class="flex items-center gap-2 pl-6">
+                                <span class="text-chalk-dark font-mono text-xs">└─</span>
+                                <i class="fa-solid fa-folder-open text-gravel text-[0.7rem]" aria-hidden="true"></i>
+                                <span class="text-charcoal font-medium">Rack 1</span>
+                            </li>
+                            <li class="flex items-center gap-2 pl-12">
+                                <span class="text-chalk-dark font-mono text-xs">└─</span>
+                                <i class="fa-solid fa-folder-open text-gravel text-[0.7rem]" aria-hidden="true"></i>
+                                <span class="text-charcoal font-medium">Shelf 3</span>
+                            </li>
+                            <li class="flex items-center gap-2 pl-[4.5rem]">
+                                <span class="text-chalk-dark font-mono text-xs">└─</span>
+                                <span class="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                    <i class="fa-solid fa-box text-sunstone-deep text-[0.7rem]" aria-hidden="true"></i>
+                                    <span class="text-charcoal font-semibold">Bin 2</span>
+                                    <span class="text-sunstone-deep font-mono text-[11px] font-semibold">A.1.3.2</span>
+                                </span>
+                                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">
+                                    <i class="fa-solid fa-hand-pointer text-[0.6rem]" aria-hidden="true"></i>
+                                    Pick
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-4 pt-4 border-t border-chalk-dark">
+                            <div class="flex items-center justify-between gap-3">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <span class="inline-flex items-center justify-center h-8 w-8 rounded-md bg-chalk-light ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-headphones text-charcoal text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div class="min-w-0">
+                                        <p class="text-sm font-semibold text-charcoal truncate">Bluetooth earbuds</p>
+                                        <p class="text-[11px] text-gravel">12 units at this location</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel flex-shrink-0">Linked</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-paper/70 rounded-xl ring-1 ring-chalk-dark px-4 py-3 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-2 text-[11px]">
+                            <i class="fa-solid fa-pallet text-gravel text-xs" aria-hidden="true"></i>
+                            <span class="font-mono text-charcoal font-semibold">B.4.1.1</span>
+                            <span class="text-gravel">48 units</span>
+                        </div>
+                        <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Bulk</span>
+                    </div>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Pick and bulk</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Two kinds of locations,
+                        <span class="block text-sunstone-deep">one smart order.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Mark your locations as pick or bulk and your picker stays in the spots where the work goes fast. ShopLinkr uses your pick location first, so nobody has to walk to a pallet or high rack.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            locationTypes.map((type) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-warehouse text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Frequently asked questions</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Answers to the questions
+                        <span class="block text-sunstone-deep">that keep coming up.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Question not listed here? Book a call or send us a message, we are happy to think along with you.
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Ask your question
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

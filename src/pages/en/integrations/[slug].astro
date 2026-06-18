@@ -1,0 +1,456 @@
+---
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import IntegrationCard from '../../../components/template/IntegrationCard.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+    const integrations = await getCollection('integrationsEn');
+    const supportArticles = await getCollection('supportArticlesEn');
+    return integrations.map((integration) => ({
+        params: {
+            slug: integration.data.slug,
+        },
+        props: {
+            integration,
+            allIntegrations: integrations,
+            supportArticles,
+        },
+    }));
+};
+
+const { integration, allIntegrations, supportArticles } = Astro.props;
+const {
+    name,
+    category,
+    logo,
+    summary,
+    status,
+    url,
+    supportSlug,
+    tagline,
+    about,
+    faqs,
+} = integration.data;
+
+// Resolve the NL supportSlug to its EN support article slug via translationKey.
+const enSupportSlug = supportSlug
+    ? supportArticles.find((a) => a.data.translationKey === supportSlug)?.id.split('/').pop()
+    : undefined;
+const supportHref = enSupportSlug ? `/en/support/${enSupportSlug}` : '/en/support';
+
+const alternates = {
+    nl: `/integraties/${integration.data.slug}`,
+    en: `/en/integrations/${integration.data.slug}`,
+};
+
+const categoryLabels: Record<string, string> = {
+    webshop: 'Webshop',
+    marketplace: 'Marketplace',
+    carrier: 'Carrier',
+    other: 'Other',
+};
+
+const categoryLabel = categoryLabels[category] ?? category;
+const isCarrier = category === 'carrier';
+const isComingSoon = status === 'coming-soon';
+
+const relatedHeading = isCarrier
+    ? 'Other carriers'
+    : category === 'marketplace'
+        ? 'Other marketplaces'
+        : category === 'webshop'
+            ? 'Other webshops'
+            : 'Other integrations';
+
+const related = allIntegrations
+    .filter((i) => i.data.category === category && i.data.slug !== integration.data.slug)
+    .slice(0, 3);
+
+const effectiveTagline = tagline ?? `Connect ${name} to ShopLinkr in a few minutes.`;
+
+const aboutFallback = isCarrier
+    ? `${name} is one of the carriers you can drive directly through ShopLinkr. Print labels in seconds, send tracking back to your customers automatically, and process your shipments from the same pick list.`
+    : category === 'webshop'
+        ? `${name} is a popular webshop platform. With the ShopLinkr connection you sync stock, import orders automatically and print labels from the same flow.`
+        : `${name} is a sales channel that fits seamlessly into your ShopLinkr setup. Orders come in automatically and your stock stays accurate in real time.`;
+
+const effectiveAbout = about ?? aboutFallback;
+
+const benefits = isCarrier
+    ? [
+        {
+            icon: 'fa-duotone fa-solid fa-print',
+            title: 'Labels in seconds',
+            body: `Print ${name} labels straight from your pick list. Address, weight and order lines are already filled in, so you do not have to retype anything.`,
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-route',
+            title: 'Tracking back to the customer',
+            body: 'As soon as the label is printed, the track and trace goes back to your webshop and marketplaces automatically. Your customer sees the status without you lifting a finger.',
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-bolt',
+            title: 'Smart choice per order',
+            body: 'Set up rules so ShopLinkr automatically picks the right carrier per order. By weight, postcode, channel or product type.',
+        },
+    ]
+    : [
+        {
+            icon: 'fa-duotone fa-solid fa-arrows-rotate',
+            title: 'Real-time order import',
+            body: `Orders from ${name} appear in ShopLinkr automatically within a minute of being placed. No more manual exports.`,
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-boxes-stacked',
+            title: 'Stock always in sync',
+            body: `Whether you sell through ${name} or elsewhere, ShopLinkr keeps your stock in sync in real time across every sales channel. No more overselling.`,
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-truck-fast',
+            title: 'Shipping labels from the same flow',
+            body: `Pick your order and print the label with your preferred carrier. ${name} imports the track and trace automatically.`,
+        },
+    ];
+
+const syncLabel = isCarrier
+    ? 'Tracking sent back automatically'
+    : 'Stock and orders in sync';
+
+const quickFacts = [
+    {
+        icon: 'fa-solid fa-circle-check',
+        label: isComingSoon ? 'Coming soon' : 'Live integration',
+    },
+    {
+        icon: 'fa-solid fa-arrows-rotate',
+        label: syncLabel,
+    },
+    {
+        icon: 'fa-solid fa-money-bill-wave',
+        label: 'No setup costs',
+    },
+    {
+        icon: 'fa-solid fa-stopwatch',
+        label: 'Ready in 2 minutes',
+    },
+];
+
+const integrationSchema = {
+    '@type': 'WebPage',
+    name: `Connect ${name} to ShopLinkr`,
+    description: summary,
+    url: `https://shoplinkr.com/en/integrations/${integration.data.slug}`,
+    inLanguage: 'en-US',
+};
+
+const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://shoplinkr.com/en',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Integrations',
+            item: 'https://shoplinkr.com/en/integrations',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: `Connect ${name} to ShopLinkr`,
+            item: `https://shoplinkr.com/en/integrations/${integration.data.slug}`,
+        },
+    ],
+};
+
+const faqSchema = faqs && faqs.length > 0
+    ? {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.a,
+            },
+        })),
+    }
+    : null;
+
+const jsonLd = faqSchema
+    ? [integrationSchema, breadcrumbSchema, faqSchema]
+    : [integrationSchema, breadcrumbSchema];
+
+export const prerender = true;
+---
+
+<BaseLayout
+    title={`Connect ${name} to ShopLinkr | Integrations`}
+    description={summary}
+    alternates={alternates}
+    jsonLd={jsonLd}
+>
+    <section class="relative bg-paper overflow-hidden">
+        <div class="absolute inset-x-0 top-0 -z-0 pointer-events-none h-[600px]">
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] opacity-60"></div>
+        </div>
+
+        <div class="container-prose pt-10 md:pt-14 pb-20 md:pb-28 relative">
+            <nav aria-label="Breadcrumb" class="mb-10">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                    <li>
+                        <a href="/en" class="hover:text-charcoal transition-colors">Home</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li>
+                        <a href="/en/integrations" class="hover:text-charcoal transition-colors">Integrations</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li class="text-charcoal font-medium" aria-current="page">
+                        {name}
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <aside class="lg:col-span-4 order-2">
+                    <div class="lg:sticky lg:top-24 space-y-5">
+                        <div class="bg-chalk-light/60 rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="h-16 w-16 rounded-xl bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                    <img
+                                        src={logo}
+                                        alt={`${name} logo`}
+                                        class="h-full w-full object-contain p-2.5"
+                                    />
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-[11px] uppercase tracking-[0.18em] text-gravel font-semibold mb-1">
+                                        {categoryLabel}
+                                    </p>
+                                    {isComingSoon ? (
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
+                                            Coming soon
+                                        </span>
+                                    ) : (
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-paper text-charcoal text-[10px] font-semibold uppercase tracking-wider ring-1 ring-chalk-dark">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                            Live
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            <ul class="space-y-2.5 pb-5 mb-5 border-b border-chalk-dark">
+                                {
+                                    quickFacts.map((fact) => (
+                                        <li class="flex items-center gap-2.5 text-[13px] text-charcoal">
+                                            <i class={`${fact.icon} text-xs text-sunstone-deep`} aria-hidden="true"></i>
+                                            {fact.label}
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+
+                            <div class="space-y-2">
+                                {supportSlug && (
+                                    <a
+                                        href={supportHref}
+                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-sunstone-soft hover:bg-sunstone-mist/30 px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                    >
+                                        <span class="inline-flex items-center gap-2.5">
+                                            <i class="fa-solid fa-book-open text-xs text-sunstone-deep" aria-hidden="true"></i>
+                                            Read the guide
+                                        </span>
+                                        <i class="fa-solid fa-arrow-right text-[10px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                                {url && (
+                                    <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-chalk-darker px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                    >
+                                        <span class="inline-flex items-center gap-2.5">
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gravel" aria-hidden="true"></i>
+                                            Visit {name}
+                                        </span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 px-1">
+                            <a
+                                href={externalLinks.register}
+                                class="btn btn-sunstone text-sm w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Start for free
+                                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                            <a
+                                href={externalLinks.demoBooking}
+                                class="btn btn-secondary text-sm w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Book a demo
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="lg:col-span-8 order-1">
+                    <header class="pb-14 md:pb-16">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                            Connect with {name}.
+                        </h1>
+                        <p class="mt-5 text-base md:text-lg text-steel leading-relaxed max-w-2xl">
+                            {effectiveTagline}
+                        </p>
+                        <p class="mt-3 text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                            {summary}
+                        </p>
+                    </header>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">About {name}</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5">
+                            What is {name}?
+                        </h2>
+                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                            {effectiveAbout}
+                        </p>
+                    </section>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">What you get</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                            Three pillars you benefit from every day.
+                        </h2>
+
+                        <ul class="space-y-5 md:space-y-6">
+                            {
+                                benefits.map((benefit) => (
+                                    <li class="flex items-start gap-5">
+                                        <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                            <i class={`${benefit.icon} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pt-0.5">
+                                            <h3 class="text-base md:text-lg font-semibold text-charcoal mb-1.5 tracking-tight leading-snug">
+                                                {benefit.title}
+                                            </h3>
+                                            <p class="text-sm md:text-[15px] text-steel leading-relaxed max-w-2xl">
+                                                {benefit.body}
+                                            </p>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </section>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">Get started</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5 max-w-2xl">
+                            Ready to connect {name}?
+                        </h2>
+                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl mb-8">
+                            The connection is set up in a few minutes and you do not need any technical knowledge. We have written a complete guide that walks you through the process step by step, including screenshots and answers to the most common questions.
+                        </p>
+
+                        {supportSlug ? (
+                            <a
+                                href={supportHref}
+                                class="group flex items-center gap-5 bg-charcoal text-paper rounded-xl p-6 md:p-7 hover:bg-charcoal/95 transition-all duration-200"
+                            >
+                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-paper/10 text-paper flex-shrink-0">
+                                    <i class="fa-solid fa-book-open text-base" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-[10px] uppercase tracking-[0.18em] text-paper/60 font-semibold mb-0.5">
+                                        Guide
+                                    </p>
+                                    <p class="text-base md:text-lg font-semibold leading-snug">
+                                        Open the step-by-step guide for {name}
+                                    </p>
+                                </div>
+                                <i class="fa-solid fa-arrow-right text-sm text-paper/70 group-hover:text-paper group-hover:translate-x-0.5 transition-all" aria-hidden="true"></i>
+                            </a>
+                        ) : (
+                            <a
+                                href="/en/support"
+                                class="group inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                            >
+                                Browse our guides in the help center
+                                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+                            </a>
+                        )}
+                    </section>
+
+                    {faqs && faqs.length > 0 && (
+                        <section class="border-t border-chalk-dark py-14 md:py-16">
+                            <p class="eyebrow mb-3">Frequently asked questions</p>
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                                Questions about the {name} integration.
+                            </h2>
+
+                            <FaqList
+                                items={faqs.map((faq) => ({
+                                    question: faq.q,
+                                    answer: faq.a,
+                                }))}
+                            />
+                        </section>
+                    )}
+
+                    {related.length > 0 && (
+                        <section class="border-t border-chalk-dark pt-14 md:pt-16">
+                            <p class="eyebrow mb-3">More integrations</p>
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10">
+                                {relatedHeading}.
+                            </h2>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                {related.map((i) => (
+                                    <IntegrationCard
+                                        {...i.data}
+                                        href={`/en/integrations/${i.data.slug}`}
+                                    />
+                                ))}
+                            </div>
+
+                            <div class="mt-8">
+                                <a
+                                    href="/en/integrations"
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                >
+                                    See all integrations
+                                    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </section>
+                    )}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</BaseLayout>

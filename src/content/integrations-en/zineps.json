@@ -1,0 +1,17 @@
+{
+    "name": "Zineps",
+    "slug": "zineps",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/Zineps.svg",
+    "summary": "Print Zineps labels right inside your normal order flow, including tracking updates sent back to your webshop.",
+    "tagline": "Logistics integration software.",
+    "about": "Zineps is shipping software that lets you easily create shipping labels for various carriers. The platform helps webshops and logistics systems automate their shipping process. Through Zineps you can generate shipping labels for carriers such as PostNL, DHL and international partners, so parcels can be shipped quickly and efficiently.",
+    "faqs": [
+        {
+            "q": "Are address details placed on the shipping label automatically?",
+            "a": "Yes, we request a shipping label from Zineps based on an order's shipping details. You can adjust the address details manually if needed."
+        }
+    ],
+    "translationKey": "zineps"
+}

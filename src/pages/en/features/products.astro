@@ -1,0 +1,476 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { breadcrumbs } from '../../../utils/seo';
+import { faqsByPageEn } from '../../../data/faqs-en';
+import { localizeHref } from '../../../i18n/routes';
+
+const locale = 'en';
+
+const subFeatures = [
+    {
+        eyebrow: 'Variant groups',
+        heading: 'Sizes, colors and quantities neatly grouped.',
+        body: 'Group the same product in different sizes, colors or quantities under one parent product. Each variant keeps its own stock, and the overview shows the combined total.',
+        icon: 'fa-duotone fa-solid fa-shapes',
+    },
+    {
+        eyebrow: 'Product bundles',
+        heading: 'Combine separate products into one sales unit.',
+        body: 'Sell a gift set or combo deal as a bundle. ShopLinkr calculates the bundle stock based on the scarcest component and deducts each component as soon as the bundle is sold.',
+        icon: 'fa-duotone fa-solid fa-boxes-packing',
+    },
+    {
+        eyebrow: 'Stock sources',
+        heading: 'One source, multiple variants by weight or length.',
+        body: 'Track your base stock in kilos, meters or liters and link variants of, for example, 500 grams or 1 meter. ShopLinkr works out per variant how much is still available.',
+        icon: 'fa-duotone fa-solid fa-scale-balanced',
+    },
+    {
+        eyebrow: 'ABC analysis',
+        heading: 'See which products keep your warehouse running.',
+        body: 'ShopLinkr classifies your assortment by pick frequency over the past 90 days. That way you place your A products close to your packing station and keep your warehouse layout up to date.',
+        icon: 'fa-duotone fa-solid fa-chart-pie',
+    },
+];
+
+const productTypes = [
+    {
+        title: 'Single products',
+        body: 'The standard. Each product has its own EAN, stock and warehouse location. Suitable for most items you buy and sell individually.',
+        icon: 'fa-solid fa-cube',
+    },
+    {
+        title: 'Bundle products',
+        body: 'Several products combined into one sales unit. The bundle stock automatically follows the scarcest component, and with every sale each component is deducted.',
+        icon: 'fa-solid fa-boxes-packing',
+    },
+    {
+        title: 'Stock source products',
+        body: 'Track stock in a unit of measure such as weight, length or volume. From that one source you sell variants of, for example, 500 grams, 1 kilo or 3 meters.',
+        icon: 'fa-solid fa-scale-balanced',
+    },
+    {
+        title: 'Unlimited stock',
+        body: 'For products that are always available, such as software licenses or downloads. No deduction on sale, no counting, always in stock on your channels.',
+        icon: 'fa-solid fa-infinity',
+    },
+];
+
+const faqs = faqsByPageEn.producten;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Features', '/en/features'],
+        ['Products', '/en/features/products'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Manage products with ShopLinkr',
+        description: 'One central product overview for all your sales channels. Work with variant groups, bundles, stock sources and ABC analysis from the same place.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Manage products with ShopLinkr"
+    description="One central product overview for all your sales channels. Work with variant groups, bundles, stock sources and ABC analysis from the same place."
+    eyebrow="Products"
+    heading="All your products in one overview."
+    subheading="Your products from every sales channel come together in one overview. From there you manage stock, variants, bundles and stock sources."
+    routeKey="features.products"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Your central overview</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            One overview
+                            <span class="block">for your entire assortment.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-chalk-dark">
+                            <span class="text-sm font-semibold text-charcoal">Products</span>
+                            <span class="text-[11px] text-gravel tabular-nums">5 of 2,847</span>
+                        </div>
+
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-cube text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Bottle stainless steel 750ml</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">240 units</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class="fa-solid fa-shapes text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">T-shirt classic</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Variant group</span>
+                                </div>
+                                <span class="text-xs text-sunstone-deep font-semibold tabular-nums whitespace-nowrap">140 units</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-boxes-packing text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Gift set Tech Starter</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Bundle</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">6 sets</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-scale-balanced text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Dog kibble premium</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Source</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">85 kg</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-infinity text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">Software license Pro</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">Unlimited</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">∞</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        Single products, variant groups, bundles, stock sources and products with unlimited stock sit side by side in the same overview.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Types of products</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Four product types,
+                        <span class="block text-sunstone-deep">one way of working.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Not every product works the same. A bundle settles its stock against the separate components, a stock source works from a unit of measure and products with unlimited stock keep no quantities at all. ShopLinkr supports every type from the same overview.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            productTypes.map((type) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class={`${type.icon} text-xs`} aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Product bundles</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Combine separate products
+                        <span class="block text-sunstone-deep">into one bundle.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        A bundle is a new product that you assemble from products you already sell. Give the bundle its own title, price and image, and decide which components go in it and in what quantity.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        Say you sell a gift set with 1 phone, 1 charger and 2 cases. ShopLinkr automatically calculates the bundle stock based on the component that is least available. Sell a case on its own? Then the bundle stock drops along with it right away.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Example: gift set
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-boxes-packing text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Gift set</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Bundle</span>
+                        </div>
+
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">Phone</span>
+                                    <span class="text-gravel">× 1</span>
+                                </div>
+                                <span class="text-xs text-gravel tabular-nums">10 in stock → <span class="text-charcoal font-semibold">10 sets</span></span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">Charger</span>
+                                    <span class="text-gravel">× 1</span>
+                                </div>
+                                <span class="text-xs text-gravel tabular-nums">8 in stock → <span class="text-charcoal font-semibold">8 sets</span></span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">Case</span>
+                                    <span class="text-gravel">× 2</span>
+                                </div>
+                                <span class="text-xs text-sunstone-deep font-semibold tabular-nums">12 in stock → 6 sets</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-baseline justify-between gap-3 pt-3 border-t border-chalk-darker">
+                            <span class="text-sm font-semibold text-charcoal">Bundle stock</span>
+                            <span class="text-xl font-semibold text-sunstone-deep tabular-nums">6 sets</span>
+                        </div>
+                        <p class="text-[11px] text-gravel mt-2 leading-relaxed">
+                            The case is the limiting factor here. Each bundle needs 2 of them, so 12 cases make 6 complete sets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Stock sources</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        One source,
+                        <span class="block text-sunstone-deep">multiple variants.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Selling by weight, length or volume? Then keep a single base stock in kilos, meters or liters. ShopLinkr automatically recalculates how much of each variant is available, without you having to count each variant separately.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        Say you have 100 kilos of dog kibble in a large bin. With every order you scoop the right amount from that one source, whether that is 500 grams or 5 kilos. The weight you scoop comes straight off the source stock and all variants are recalculated right away.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        The same works for fabric per meter or perfume per milliliter.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Example: dog kibble
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="grid grid-cols-4 gap-3 text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel border-b border-chalk-dark pb-3 mb-3">
+                            <span>Situation</span>
+                            <span class="text-right">Source</span>
+                            <span class="text-right">500 grams</span>
+                            <span class="text-right">1 kilo</span>
+                        </div>
+
+                        <ul class="space-y-2">
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="text-sm text-charcoal font-medium">Start</span>
+                                <span class="text-sm text-charcoal font-semibold tabular-nums text-right">100 kilos</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">200</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">100</span>
+                            </li>
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="text-sm text-charcoal font-medium">After selling 1× 1 kilo</span>
+                                <span class="text-sm text-charcoal font-semibold tabular-nums text-right">99 kilos</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">198</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">99</span>
+                            </li>
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <span class="text-sm text-charcoal font-medium">After selling 1× 500 grams</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">98.5 kilos</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">197</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">98</span>
+                            </li>
+                        </ul>
+
+                        <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                            With every sale the right amount comes off the source and all variants are recalculated automatically.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Unlimited stock</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Products that are
+                        <span class="block text-sunstone-deep">always available.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Selling digital products such as software licenses, downloads or access codes? Then you do not need to track stock. Turn on unlimited stock and the product stays in stock on your channels at all times, with no deduction on sale and no counting.
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        Is your bundle made up of products that are all set to unlimited stock? Then the bundle automatically gets that status too.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        Example: software license
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-5 pb-4 border-b border-chalk-dark">
+                            <div class="flex items-center gap-3">
+                                <span class="inline-flex items-center justify-center h-9 w-9 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-infinity text-sm" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <p class="text-sm font-semibold text-charcoal leading-tight">Software license</p>
+                                    <p class="text-[11px] text-gravel mt-0.5">Unlimited stock on</p>
+                                </div>
+                            </div>
+                            <p class="text-2xl font-semibold text-sunstone-deep tabular-nums leading-none">∞</p>
+                        </div>
+
+                        <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                            What your channels see
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#5A8A1F] text-paper flex-shrink-0">Shopify</span>
+                                <span class="text-sm text-charcoal flex-1">Always in stock</span>
+                                <i class="fa-solid fa-infinity text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#674399] text-paper flex-shrink-0">Woo</span>
+                                <span class="text-sm text-charcoal flex-1">Always in stock</span>
+                                <i class="fa-solid fa-infinity text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/50 ring-1 ring-sunstone-soft/60">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#0000A4] text-paper flex-shrink-0">Bol</span>
+                                <span class="text-sm text-charcoal flex-1">Stock: 1000</span>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">fallback</span>
+                            </li>
+                        </ul>
+
+                        <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                            Does a channel not support the "no stock tracking" setting? Then ShopLinkr automatically sends through a stock of 1000, so the product never shows up as sold out.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Frequently asked questions</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Questions that come up often,
+                        <span class="block text-sunstone-deep">clearly answered.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Missing a question? Schedule a call or send us a message. We are happy to think along about your situation.
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Ask your question
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

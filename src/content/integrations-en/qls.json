@@ -1,0 +1,18 @@
+{
+    "name": "QLS",
+    "slug": "qls",
+    "translationKey": "qls",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/QLS.jpg",
+    "summary": "Print QLS labels straight from your picklist, including automatic tracking back to your webshop.",
+    "supportSlug": "qls-koppelen",
+    "tagline": "Passion for e-commerce",
+    "about": "QLS is one of the fastest growing companies in e-commerce logistics in the Benelux. By taking the full logistics burden off webshops with fulfilment, a parcel service and smart software (my.QLS), QLS helps entrepreneurs optimise their logistics and scale up effortlessly. More than 1,500 webshops have already chosen QLS as their strategic partner. QLS offers complete e-commerce logistics: Fulfilment, Parcel service, Software.",
+    "faqs": [
+        {
+            "q": "Are address details added to the shipping label automatically?",
+            "a": "Yes, based on an order's shipping details we request a shipping label from QLS. You can adjust the address details manually if you want."
+        }
+    ]
+}

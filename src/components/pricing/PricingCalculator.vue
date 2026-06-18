@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
 import { externalLinks } from '../../data/externalLinks';
+import { useTranslations } from '../../i18n/ui';
+import { localizeHref, type Locale } from '../../i18n/routes';
+
+const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
+const t = computed(() => useTranslations(props.locale).pricingCalculator);
+const contactHref = computed(() => localizeHref('/contact', props.locale));
 
 interface OrderTier {
     min: number;
@@ -243,33 +249,33 @@ const totalPrice = computed(() => {
 });
 
 const formattedTotal = computed(() => {
-    return new Intl.NumberFormat('nl-NL', {
+    return new Intl.NumberFormat(t.value.numberLocale, {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
     }).format(totalPrice.value);
 });
 
 const formattedChannelCost = computed(() => {
-    return new Intl.NumberFormat('nl-NL', {
+    return new Intl.NumberFormat(t.value.numberLocale, {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
     }).format(channelCost.value);
 });
 
 const formattedOrderCost = computed(() => {
-    return new Intl.NumberFormat('nl-NL', {
+    return new Intl.NumberFormat(t.value.numberLocale, {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
     }).format(orderCost.value);
 });
 
 const formattedOrders = computed(() => {
-    return new Intl.NumberFormat('nl-NL').format(orders.value);
+    return new Intl.NumberFormat(t.value.numberLocale).format(orders.value);
 });
 
 const ordersLabel = computed(() => {
     if (isMaxOrders.value) {
-        return '100.000+';
+        return t.value.ordersMax;
     }
 
     return formattedOrders.value;
@@ -277,42 +283,42 @@ const ordersLabel = computed(() => {
 
 const ordersAriaText = computed(() => {
     if (isMaxOrders.value) {
-        return '100.000 of meer bestellingen per maand';
+        return t.value.ordersAriaMax;
     }
 
     if (orders.value === 0) {
-        return '0 bestellingen per maand';
+        return t.value.ordersAriaZero;
     }
 
     if (orders.value === 1) {
-        return '1 bestelling per maand';
+        return t.value.ordersAriaOne;
     }
 
-    return `${formattedOrders.value} bestellingen per maand`;
+    return t.value.ordersAriaMany.replace('{n}', formattedOrders.value);
 });
 
 const channelLabel = computed(() => {
     if (isMaxChannels.value) {
-        return '100+ verkoopkanalen';
+        return t.value.channelsMaxLabel;
     }
 
     if (channels.value === 1) {
-        return '1 verkoopkanaal';
+        return t.value.channelOne;
     }
 
-    return `${channels.value} verkoopkanalen`;
+    return t.value.channelMany.replace('{n}', String(channels.value));
 });
 
 const salesNoticeText = computed(() => {
     if (isEnterprise.value) {
-        return 'Werk je op enterprise schaal? Plan een gesprek met sales voor een offerte op maat.';
+        return t.value.salesEnterprise;
     }
 
     if (isMaxOrders.value) {
-        return 'Boven 100.000 bestellingen per maand? Plan een gesprek met sales voor enterprise pricing.';
+        return t.value.salesOrders;
     }
 
-    return 'Meer dan 100 verkoopkanalen? Plan een gesprek met sales voor enterprise pricing.';
+    return t.value.salesChannels;
 });
 
 watch(channelSliderValue, (newValue) => {
@@ -337,15 +343,15 @@ watch(orderSliderValue, (newValue) => {
         <div class="container-prose">
             <div class="grid lg:grid-cols-5 gap-8 lg:gap-12">
                 <div class="lg:col-span-3 bg-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-12">
-                    <p class="eyebrow mb-3">Bereken jouw maandprijs</p>
+                    <p class="eyebrow mb-3">{{ t.eyebrow }}</p>
                     <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-tight mb-10">
-                        Je betaalt alleen voor wat je gebruikt.
+                        {{ t.heading }}
                     </h2>
 
                     <div class="mb-10">
                         <div class="flex items-baseline justify-between mb-4">
                             <label for="channels-input" class="text-sm font-semibold text-charcoal">
-                                Aantal verkoopkanalen
+                                {{ t.channelsLabel }}
                             </label>
                             <span class="text-base font-semibold text-charcoal tabular-nums">
                                 {{ channelLabel }}
@@ -393,7 +399,7 @@ watch(orderSliderValue, (newValue) => {
                     <div class="mb-10">
                         <div class="flex items-baseline justify-between mb-4">
                             <label for="orders-input" class="text-sm font-semibold text-charcoal">
-                                Bestellingen per maand
+                                {{ t.ordersLabel }}
                             </label>
                             <span class="text-base font-semibold text-charcoal tabular-nums">
                                 {{ ordersLabel }}
@@ -427,23 +433,23 @@ watch(orderSliderValue, (newValue) => {
                         <div class="relative text-xs text-gravel mt-1 tabular-nums h-4 mx-[11px]">
                             <span class="absolute left-0 top-0">0</span>
                             <span
-                                v-for="tick in orderTickPositions"
+                                v-for="(tick, i) in orderTickPositions"
                                 :key="`label-${tick.value}`"
                                 class="absolute top-0 -translate-x-1/2"
                                 :style="{ left: `${tick.percent}%` }"
                             >
-                                {{ tick.label }}
+                                {{ t.tickOrders[i] }}
                             </span>
                             <span class="absolute right-0 top-0">100k+</span>
                         </div>
                     </div>
 
                     <div class="pt-8 border-t border-chalk-dark">
-                        <p class="eyebrow mb-5">Prijsopbouw</p>
+                        <p class="eyebrow mb-5">{{ t.breakdown }}</p>
                         <dl class="space-y-3 text-sm">
                             <div class="flex items-baseline justify-between gap-4">
                                 <dt class="text-steel">
-                                    Verkoopkanalen
+                                    {{ t.channelsRow }}
                                     <span class="text-gravel">
                                         ({{ channels }})
                                     </span>
@@ -454,7 +460,7 @@ watch(orderSliderValue, (newValue) => {
                             </div>
                             <div class="flex items-baseline justify-between gap-4">
                                 <dt class="text-steel">
-                                    Bestellingen
+                                    {{ t.ordersRow }}
                                     <span v-if="orders > 0" class="text-gravel">
                                         ({{ formattedOrders }})
                                     </span>
@@ -469,18 +475,18 @@ watch(orderSliderValue, (newValue) => {
 
                 <aside class="lg:col-span-2 bg-charcoal text-paper rounded-2xl p-8 md:p-12 flex flex-col">
                     <p class="text-xs uppercase tracking-[0.08em] font-semibold text-sunstone mb-4">
-                        Jouw maandprijs
+                        {{ t.monthlyPrice }}
                     </p>
 
                     <div class="flex items-baseline gap-2 mb-2">
                         <span class="text-5xl md:text-6xl font-semibold tabular-nums tracking-tight leading-none">
                             &euro;{{ formattedTotal }}
                         </span>
-                        <span class="text-base text-chalk-darker">/ maand</span>
+                        <span class="text-base text-chalk-darker">{{ t.perMonth }}</span>
                     </div>
 
                     <p class="text-sm text-chalk-darker leading-relaxed mb-6">
-                        Pay as you go. Geen verborgen kosten. Maandelijks opzegbaar.
+                        {{ t.payg }}
                     </p>
 
                     <div
@@ -494,10 +500,10 @@ watch(orderSliderValue, (newValue) => {
                                     {{ salesNoticeText }}
                                 </p>
                                 <a
-                                    href="/contact"
+                                    :href="contactHref"
                                     class="inline-flex items-center gap-1.5 text-sunstone font-semibold hover:text-paper transition-colors"
                                 >
-                                    Contact sales
+                                    {{ t.contactSales }}
                                     <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -505,21 +511,13 @@ watch(orderSliderValue, (newValue) => {
                     </div>
 
                     <ul class="space-y-3 mb-10">
-                        <li class="flex items-start gap-3 text-sm text-chalk">
+                        <li
+                            v-for="perk in t.perks"
+                            :key="perk"
+                            class="flex items-start gap-3 text-sm text-chalk"
+                        >
                             <i class="fa-solid fa-check text-sunstone text-xs mt-1" aria-hidden="true"></i>
-                            <span>Alle features inbegrepen</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-chalk">
-                            <i class="fa-solid fa-check text-sunstone text-xs mt-1" aria-hidden="true"></i>
-                            <span>Ongelimiteerde gebruikers</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-chalk">
-                            <i class="fa-solid fa-check text-sunstone text-xs mt-1" aria-hidden="true"></i>
-                            <span>Snelle support via chat en mail</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-chalk">
-                            <i class="fa-solid fa-check text-sunstone text-xs mt-1" aria-hidden="true"></i>
-                            <span>Gratis migratie en onboarding</span>
+                            <span>{{ perk }}</span>
                         </li>
                     </ul>
 
@@ -530,7 +528,7 @@ watch(orderSliderValue, (newValue) => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Start 14 dagen gratis
+                            {{ t.startTrial }}
                             <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                         </a>
                         <a
@@ -539,7 +537,7 @@ watch(orderSliderValue, (newValue) => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Liever eerst een demo? Plan een gesprek
+                            {{ t.preferDemo }}
                         </a>
                     </div>
                 </aside>

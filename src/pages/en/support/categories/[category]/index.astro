@@ -1,0 +1,181 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import SupportHero from '../../../../../components/support/SupportHero.astro';
+import {
+    supportCategoriesEn,
+    supportCategoriesEnBySlug,
+    CATEGORY_SLUG_NL_TO_EN,
+} from '../../../../../data/supportCategories-en';
+
+export async function getStaticPaths() {
+    return supportCategoriesEn.map((c) => ({
+        params: {
+            category: c.slug,
+        },
+    }));
+}
+
+const { category } = Astro.params;
+const categoryInfo = supportCategoriesEnBySlug[category as string];
+
+if (!categoryInfo) {
+    throw new Error(`Unknown support category: ${category}`);
+}
+
+// EN -> NL category slug for the hreflang/switch counterpart.
+const nlCategorySlug = Object.entries(CATEGORY_SLUG_NL_TO_EN).find(([, en]) => en === category)?.[0];
+const alternates = nlCategorySlug
+    ? { nl: `/support/categorieen/${nlCategorySlug}`, en: `/en/support/categories/${categoryInfo.slug}` }
+    : { en: `/en/support/categories/${categoryInfo.slug}` };
+
+const allArticles = await getCollection('supportArticlesEn');
+const articlesInCategory = allArticles
+    .filter((a) => a.data.category === category)
+    .sort((a, b) => a.data.order - b.data.order);
+
+interface SubcategoryGroup {
+    slug: string;
+    label: string;
+    summary?: string;
+    articles: typeof articlesInCategory;
+}
+
+const subcategoryGroups: Array<SubcategoryGroup> = categoryInfo.subcategories.map((s) => {
+    const articles = articlesInCategory.filter((a) => a.data.subcategory === s.slug);
+    return {
+        slug: s.slug,
+        label: s.label,
+        summary: s.summary,
+        articles,
+    };
+});
+
+const otherCategories = supportCategoriesEn.filter((c) => c.slug !== category);
+
+const collectionSchema = {
+    '@type': 'CollectionPage',
+    name: `${categoryInfo.label} | ShopLinkr Support`,
+    description: categoryInfo.summary,
+    url: `https://shoplinkr.com/en/support/categories/${categoryInfo.slug}`,
+    inLanguage: 'en-US',
+};
+
+const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://shoplinkr.com/en',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Support',
+            item: 'https://shoplinkr.com/en/support',
+        },
+        {
+            '@type': 'ListItem',
+            position: 3,
+            name: categoryInfo.label,
+            item: `https://shoplinkr.com/en/support/categories/${categoryInfo.slug}`,
+        },
+    ],
+};
+
+const jsonLd = [collectionSchema, breadcrumbSchema];
+
+export const prerender = true;
+---
+
+<BaseLayout
+    title={`${categoryInfo.label} | ShopLinkr Support`}
+    description={categoryInfo.summary}
+    alternates={alternates}
+    jsonLd={jsonLd}
+>
+    <SupportHero
+        title={categoryInfo.label}
+        subtitle={categoryInfo.summary}
+    />
+
+    <section class="bg-paper">
+        <div class="container-prose py-12 md:py-16">
+            <nav aria-label="Breadcrumb" class="mb-10">
+                <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-gravel">
+                    <li>
+                        <a href="/en/support" class="hover:text-charcoal transition-colors">
+                            Support
+                        </a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
+                    </li>
+                    <li class="text-charcoal">
+                        {categoryInfo.label}
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="max-w-3xl">
+                <h2 class="text-[26px] md:text-[32px] font-semibold text-charcoal tracking-tight mb-7">
+                    Topics
+                </h2>
+
+                <ul class="flex flex-col gap-3">
+                    {subcategoryGroups.map((sub) => (
+                        <li>
+                            <a
+                                href={`/en/support/categories/${categoryInfo.slug}/${sub.slug}`}
+                                class="group block bg-paper rounded-[14px] border border-chalk-dark/70 hover:border-chalk-dark hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-6 py-5"
+                            >
+                                <div class="flex items-start justify-between gap-4">
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="text-[17px] font-semibold text-charcoal tracking-tight group-hover:text-sunstone-deep transition-colors">
+                                            {sub.label}
+                                        </h3>
+                                        {sub.summary && (
+                                            <p class="mt-1 text-[14px] text-steel leading-relaxed">
+                                                {sub.summary}
+                                            </p>
+                                        )}
+                                    </div>
+                                    {sub.articles.length > 0 && (
+                                        <span class="flex-none text-[12px] font-semibold text-gravel bg-chalk-light rounded-full px-2.5 py-1 leading-none mt-1">
+                                            {sub.articles.length}
+                                        </span>
+                                    )}
+                                </div>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            {otherCategories.length > 0 && (
+                <div class="mt-16 md:mt-20 max-w-3xl">
+                    <div class="rounded-[18px] bg-chalk-light px-7 md:px-9 py-8 md:py-10">
+                        <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal tracking-tight mb-6">
+                            Other topics
+                        </h2>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {otherCategories.map((c) => (
+                                <li>
+                                    <a
+                                        href={`/en/support/categories/${c.slug}`}
+                                        class="flex items-center justify-between gap-3 rounded-[10px] bg-paper px-5 py-3 text-[15px] font-medium text-charcoal hover:bg-sunstone-mist/60 hover:text-sunstone-deep transition-colors"
+                                    >
+                                        <span>{c.label}</span>
+                                        <i class="fa-solid fa-chevron-right text-[11px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
+        </div>
+    </section>
+</BaseLayout>

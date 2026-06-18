@@ -1,0 +1,18 @@
+{
+    "name": "DPD",
+    "slug": "dpd",
+    "translationKey": "dpd",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/dpd.jpeg",
+    "summary": "Generate DPD shipping labels and pickup locations straight from your order flow. Track and trace is synced back automatically.",
+    "supportSlug": "dpd-koppelen",
+    "tagline": "Climate neutral, sustainable and innovative: all in one parcel.",
+    "about": "DPD is a parcel delivery service that delivers packages quickly and reliably. They operate in many countries and offer services for both businesses and consumers. Their track-and-trace system lets you follow your parcel with ease. DPD stands for \"Dynamic Parcel Distribution\" and is known for its focus on sustainability and customer-friendly delivery options.",
+    "faqs": [
+        {
+            "q": "Are address details added to the shipping label automatically?",
+            "a": "Yes, we request a shipping label from DPD based on an order's shipping details. You can adjust the address details manually if you want."
+        }
+    ]
+}

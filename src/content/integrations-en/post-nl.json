@@ -1,0 +1,17 @@
+{
+    "name": "PostNL",
+    "slug": "post-nl",
+    "translationKey": "post-nl",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/PostNL.jpg",
+    "summary": "Ship with PostNL using your own contract. Print labels straight from ShopLinkr and get tracking directly in your system.",
+    "tagline": "PostNL is the national postal service of the Netherlands",
+    "about": "PostNL is the national postal service of the Netherlands. They deliver letters and parcels in the Netherlands and across the rest of the Benelux. PostNL also offers logistics solutions for e-commerce and has a history spanning more than 225 years.",
+    "faqs": [
+        {
+            "q": "Are address details added to the shipping label automatically?",
+            "a": "Yes, we request a shipping label from PostNL based on the shipping details of an order. You can adjust the address details manually if you want."
+        }
+    ]
+}

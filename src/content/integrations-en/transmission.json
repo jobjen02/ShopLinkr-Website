@@ -1,0 +1,17 @@
+{
+    "name": "TransMission",
+    "slug": "transmission",
+    "translationKey": "transmission",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/TransMission.png",
+    "summary": "Built for larger shipments and pallets with TransMission. Labels and tracking in the same flow as your parcels.",
+    "tagline": "Freight and pallet shipments across Europe.",
+    "about": "TransMission is a Dutch carrier focused on freight and pallet shipments, both within the Netherlands and across Europe. Through a European network of regional carriers, TransMission excels at shipments that a regular parcel service can't handle. Think large boxes, pallets and shipments with agreed delivery times.",
+    "faqs": [
+        {
+            "q": "Does TransMission also work for regular parcel shipments?",
+            "a": "TransMission focuses mainly on freight and pallet shipments. For regular parcels you'll usually use a carrier like PostNL, DPD or GLS in ShopLinkr. With a shipping rule you can easily pick a different carrier per order type."
+        }
+    ]
+}

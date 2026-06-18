@@ -1,0 +1,19 @@
+{
+    "name": "Shopify",
+    "slug": "shopify",
+    "category": "webshop",
+    "status": "live",
+    "logo": "/assets/webshops/Shopify.jpg",
+    "summary": "Sync your stock and orders with Shopify. Centralize your entire order flow across channels, with real-time stock syncing.",
+    "url": "https://www.shopify.com",
+    "supportSlug": "shopify-koppelen",
+    "tagline": "Shopify handles everything, from payment all the way to the returns process.",
+    "about": "Shopify is a platform that lets you easily set up and manage a webshop. It helps you sell products, process payments, and design your store without needing any technical knowledge. You can use it to sell both online and offline, for example through a physical store or a pop-up shop.",
+    "translationKey": "shopify",
+    "faqs": [
+        {
+            "q": "Are draft products imported?",
+            "a": "You can set this yourself. While connecting your Shopify store, you can indicate whether you want this. You can easily change it afterwards."
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "name": "GLS",
+    "slug": "gls",
+    "translationKey": "gls",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/GLS.png",
+    "summary": "Generate GLS labels straight from ShopLinkr. Ship quickly across Europe with live tracking.",
+    "tagline": "Parcels to people",
+    "about": "GLS (General Logistics Systems) is an international parcel service that operates across Europe and beyond. GLS delivers parcels for webshops, businesses and consumers and is known for its reliable delivery network, fast delivery and extensive Track & Trace options. With GLS you can ship parcels within the Netherlands, throughout Europe and to international destinations.",
+    "faqs": [
+        {
+            "q": "Are the address details added to the shipping label automatically?",
+            "a": "Yes, based on an order's shipping details we request a shipping label from GLS. You can adjust the address details manually if you want."
+        }
+    ]
+}

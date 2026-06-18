@@ -1,0 +1,18 @@
+{
+    "name": "Lightspeed C-Series",
+    "slug": "lightspeed-c-series",
+    "translationKey": "lightspeed-c-series",
+    "category": "webshop",
+    "status": "live",
+    "logo": "/assets/webshops/Lightspeed.png",
+    "summary": "Connect your Lightspeed C-Series webshop to ShopLinkr. Stock sync and order import in one central place.",
+    "url": "https://www.lightspeedhq.nl",
+    "tagline": "Easily process your Lightspeed orders with your preferred carrier straight from ShopLinkr.",
+    "about": "Lightspeed eCom C-Series is a powerful e-commerce platform that lets you easily launch and grow a professional webshop. With this webshop software you manage products, stock and orders in one central place. On top of that, integrations are available with payment providers, shipping services and external sales channels, so you can expand your reach. Lightspeed C-Series suits both small webshops and larger brands, and forms a solid foundation for a successful online sales strategy.",
+    "faqs": [
+        {
+            "q": "Which Lightspeed version do you support?",
+            "a": "At the moment we support the Lightspeed eCom C-Series version. Are you using a different Lightspeed version? Get in touch with us and we will look together at what is possible."
+        }
+    ]
+}

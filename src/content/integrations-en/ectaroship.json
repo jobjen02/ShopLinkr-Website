@@ -1,0 +1,17 @@
+{
+    "name": "EctaroShip",
+    "slug": "ectaroship",
+    "translationKey": "ectaroship",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/EctaroShip.png",
+    "summary": "Ship through EctaroShip at competitive rates. Labels and tracking are fully automated.",
+    "tagline": "Ship with confidence. Faster and easier",
+    "about": "EctaroShip is shipping software that lets you easily create shipping labels for a range of carriers. The platform helps webshops and logistics systems centralise their shipping process and handle it more efficiently. With EctaroShip you can send parcels, generate labels and manage shipments from a single environment, without having to manually transfer orders between systems.",
+    "faqs": [
+        {
+            "q": "Are address details added to the shipping label automatically?",
+            "a": "Yes, based on the shipping details of an order we request a shipping label from EctaroShip. You can adjust the address details manually if needed."
+        }
+    ]
+}

@@ -1,0 +1,269 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { localizeHref } from '../../../i18n/routes';
+
+const locale = 'en';
+
+const rows = [
+    {
+        eyebrow: 'ShopLinkr as the bridge',
+        heading: 'A reliable link between WooCommerce and bol.',
+        body: 'You connect your WooCommerce webshop to ShopLinkr, and your bol sales account too. From that moment on, ShopLinkr keeps everything aligned. No separate plugins to maintain per channel, no exports in between.',
+        icon: 'fa-solid fa-arrows-left-right-to-line',
+    },
+    {
+        eyebrow: 'Matching on EAN',
+        heading: 'Products are linked together automatically.',
+        body: 'Based on the EAN number, ShopLinkr recognizes which WooCommerce product is the same as a bol listing. Set it up properly once, and you never have to match SKUs by hand again. New products are added in a few clicks.',
+        icon: 'fa-solid fa-barcode',
+    },
+    {
+        eyebrow: 'Stock in sync in real time',
+        heading: 'One stock view for both your channels.',
+        body: 'Sell a product on bol, and ShopLinkr adjusts your WooCommerce stock instantly. Get an order through your own webshop, and the stock on bol goes down. One stock source, the same reliable level on every channel.',
+        icon: 'fa-solid fa-arrows-rotate',
+    },
+    {
+        eyebrow: 'Orders in one place',
+        heading: 'All orders in the same flow.',
+        body: 'WooCommerce orders and bol orders appear in the same order list. You pick, pack and ship from one environment. It no longer matters where the order comes from, your warehouse always works the same way.',
+        icon: 'fa-solid fa-list-check',
+    },
+    {
+        eyebrow: 'Prevent oversells',
+        heading: 'Never sell what you do not have in stock again.',
+        body: 'Because stock moves between channels at lightning speed, you avoid selling the same last item in two places at once. Fewer cancellations, no bol sales penalties and happier customers.',
+        icon: 'fa-solid fa-shield-check',
+    },
+];
+
+const setupSteps = [
+    {
+        label: 'Step 1',
+        title: 'Connect WooCommerce',
+        body: 'Install our WooCommerce plugin on your WordPress site, copy an API key from ShopLinkr and your shop talks along right away. No developer needed.',
+    },
+    {
+        label: 'Step 2',
+        title: 'Get your EAN in order',
+        body: 'WooCommerce has no EAN field by default. We support the EAN Barcode Generator plugin from WPFactory. No EAN? Then ShopLinkr uses your SKU field as a fallback.',
+    },
+    {
+        label: 'Step 3',
+        title: 'Add bol',
+        body: 'Open your bol sales account and authorize ShopLinkr in a few clicks. Your listings are pulled in and matched with your WooCommerce products on EAN.',
+    },
+    {
+        label: 'Step 4',
+        title: 'Sync is live',
+        body: 'Done. From now on, stock and orders run between both channels through ShopLinkr. You handle everything from one environment, and your warehouse no longer notices the difference between channels.',
+    },
+];
+
+const faqs = [
+    {
+        question: 'Do I need a special WooCommerce plugin?',
+        answer: 'Yes, to let your shop talk to ShopLinkr you install our WooCommerce plugin. It pulls in orders and pushes stock updates back. For EAN codes we recommend the "EAN Barcode Generator for WooCommerce" plugin from WPFactory, because WooCommerce itself has no EAN field.',
+    },
+    {
+        question: 'What if my products have no EAN?',
+        answer: 'Then ShopLinkr falls back on the SKU field for matching. One thing to note: products without an EAN and without an SKU are not imported, because we cannot reliably link them to a bol listing in that case.',
+    },
+    {
+        question: 'Does the connection work with WooCommerce variations?',
+        answer: 'Yes. Each variation is treated as a separate SKU and gets its own stock level on bol. As long as every variation has a unique EAN or SKU, we can match them without any trouble.',
+    },
+];
+
+const jsonLd = [
+    {
+        '@type': 'WebPage',
+        name: 'Connect WooCommerce to bol via ShopLinkr',
+        description: 'Selling through WooCommerce and bol? ShopLinkr synchronizes your stock in real time between both channels and collects all your orders in one place.',
+        url: 'https://shoplinkr.com/en/integrations/connect-woocommerce-to-bol-com',
+    },
+    {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://shoplinkr.com',
+            },
+            {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Integrations',
+                item: 'https://shoplinkr.com/en/integrations',
+            },
+            {
+                '@type': 'ListItem',
+                position: 3,
+                name: 'Connect WooCommerce to bol',
+                item: 'https://shoplinkr.com/en/integrations/connect-woocommerce-to-bol-com',
+            },
+        ],
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Connect WooCommerce to bol via ShopLinkr | Integrations"
+    description="Selling through WooCommerce and bol? ShopLinkr synchronizes your stock in real time between both channels and collects all your orders in one place."
+    eyebrow="WooCommerce and bol"
+    heading="Connect WooCommerce with bol via ShopLinkr."
+    subheading="Selling through WooCommerce and through bol? ShopLinkr synchronizes your stock in real time and collects all orders in one place. One workflow, no oversells."
+    routeKey="integrations.wooBol"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <nav aria-label="Breadcrumb" class="mb-8">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                    <li>
+                        <a href={localizeHref('/', locale)} class="hover:text-charcoal transition-colors">Home</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li>
+                        <a href={localizeHref('/integraties', locale)} class="hover:text-charcoal transition-colors">Integrations</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li class="text-charcoal font-medium" aria-current="page">
+                        Connect WooCommerce to bol
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-16">
+                <p class="eyebrow mb-4">Stock synchronization</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    One stock source for WooCommerce and bol.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    ShopLinkr connects your WooCommerce webshop with your bol sales account. Stock moves both ways, orders come together in one overview. Below you can see exactly what the connection does for you.
+                </p>
+            </div>
+
+            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                {
+                    rows.map((row) => (
+                        <li class="py-10 md:py-12">
+                            <div class="grid md:grid-cols-12 gap-6 md:gap-10">
+                                <div class="md:col-span-4 flex md:items-start gap-4">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class={`${row.icon} text-base`} aria-hidden="true" />
+                                    </div>
+                                    <div class="md:hidden">
+                                        <p class="eyebrow mb-1">{row.eyebrow}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                    </div>
+                                    <div class="hidden md:block">
+                                        <p class="eyebrow mb-2">{row.eyebrow}</p>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-8">
+                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                        {row.body}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light/60">
+        <div class="container-prose">
+            <div class="max-w-3xl mb-12 md:mb-14">
+                <p class="eyebrow mb-4">How to set it up</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    From plugin to selling, in four steps.
+                </h2>
+                <p class="mt-6 text-lg text-steel leading-relaxed">
+                    Connecting WooCommerce and bol calls for a few specific choices, especially around EAN and SKU. We have laid out the steps so you know what to expect.
+                </p>
+            </div>
+
+            <ol class="grid sm:grid-cols-2 gap-4 md:gap-5">
+                {
+                    setupSteps.map((step) => (
+                        <li class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                            <p class="text-[11px] uppercase tracking-[0.18em] text-sunstone-deep font-semibold mb-2">
+                                {step.label}
+                            </p>
+                            <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight mb-2">
+                                {step.title}
+                            </h3>
+                            <p class="text-sm text-steel leading-relaxed">
+                                {step.body}
+                            </p>
+                        </li>
+                    ))
+                }
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="eyebrow mb-4">Frequently asked questions</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-10">
+                    What WooCommerce shops often ask.
+                </h2>
+
+                <FaqList items={faqs} />
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

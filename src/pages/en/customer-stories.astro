@@ -1,0 +1,250 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
+import { localizeHref } from '../../i18n/routes';
+const locale = 'en';
+
+const story = {
+    company: 'Schoongedaan.nl',
+    logo: '/testimonials/Schoongedaan.png',
+    intro: 'Jasper started Schoongedaan in 2023 from a little cabinet next to his desk. Today he runs a fast-growing company in Nieuwegein, specialised in cleaning products for floors, kitchens, swimming pools and much more. Through bol, Kaufland and his own webshop he ships hundreds of orders every day.',
+    challenge: 'Rapid growth quickly turned the old warehouse into chaos. Products were mixed up and order picking took a lot of time. Jasper could process at most 60 orders a day and kept running into mistakes, returns and frustration.',
+    solution: 'With ShopLinkr, Jasper brought structure to his warehouse and connected all of his sales channels. Thanks to smart pick lists and mobile barcode scanners, the pick-and-pack process is now fully automated. He handles orders, inventory, shipping and even returns from a single system, which lets Jasper process hundreds of orders a day without errors.',
+    metric: 'From 60 orders a day to 150 to 250 orders, with peaks of 500 orders on Mondays.',
+};
+
+const voices = [
+    {
+        quote: 'Met ShopLinkr besparen we dagelijks enorm veel tijd. We hebben nu maar 1 medewerker in dienst in plaats van 5, en het gaat nu nog steeds efficiënter.',
+        author: 'Jasper de Waard',
+        company: 'Schoongedaan',
+        logo: '/testimonials/Schoongedaan.png',
+    },
+    {
+        quote: 'Super software met een eerlijke prijs. Sterke communicatie en korte lijntjes. Aanrader!',
+        author: 'Tijn Zuijdervliet',
+        company: 'Cryptoken',
+        logo: '/testimonials/Cryptoken.svg',
+    },
+    {
+        quote: 'Fijne software! Zeer gebruiksvriendelijk en perfect geschikt voor zowel kleine als grotere webshops met meerdere verkoopkanalen.',
+        author: 'Nabodhi van der Lind',
+        company: 'Cozy Design',
+        logo: '/testimonials/CozyDesign.jpg',
+    },
+    {
+        quote: 'Zeer tevreden over ShopLinkr! De service is top en het team staat altijd klaar om snel en vriendelijk te helpen. Vragen worden duidelijk beantwoord en je merkt dat ze echt met je meedenken.',
+        author: 'Nick Siep',
+        company: 'Voordelig Inslaan',
+        logo: '/testimonials/VoordeligInslaan.jpg',
+    },
+];
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Customer stories', localizeHref('/referenties', locale)],
+    ]),
+    {
+        '@type': 'Article',
+        headline: `Customer story: ${story.company}`,
+        description: story.metric,
+        about: {
+            '@type': 'Organization',
+            name: story.company,
+            url: 'https://schoongedaan.nl',
+        },
+        author: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            url: 'https://shoplinkr.com',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            logo: {
+                '@type': 'ImageObject',
+                url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+            },
+        },
+        image: `https://shoplinkr.com${story.logo}`,
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Customer stories | ShopLinkr"
+    description="How Dutch webshops use ShopLinkr to get their warehouse, inventory and order processing in order. Read the Schoongedaan story and what other customers say about us."
+    eyebrow="Customer stories"
+    heading="Webshops that take their warehouse seriously."
+    subheading="From solo founders to teams with multiple warehouses. Below you'll find a featured story and what other customers have to say."
+    routeKey="customerStories"
+    jsonLd={jsonLd}
+>
+    <section class="py-16 md:py-24">
+        <div class="container-prose">
+            <div class="max-w-2xl mb-10 md:mb-14">
+                <p class="eyebrow mb-3">Featured story</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    From 60 to 500 orders a day.
+                </h2>
+            </div>
+
+            <article class="max-w-4xl bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
+                <header class="px-8 md:px-14 pt-10 md:pt-14 pb-8 md:pb-10 text-center border-b border-chalk-dark">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-paper ring-1 ring-chalk-dark mb-6 overflow-hidden">
+                        <img
+                            src={story.logo}
+                            alt={story.company}
+                            class="h-full w-full object-contain p-2"
+                            loading="lazy"
+                        />
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight">
+                        {story.company}
+                    </h3>
+                </header>
+
+                <div class="px-8 md:px-14 pt-8 md:pt-10">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-chalk-dark bg-charcoal">
+                        <iframe
+                            class="h-full w-full"
+                            src="https://www.youtube-nocookie.com/embed/PZq1V6Unp_U"
+                            title="Schoongedaan over ShopLinkr"
+                            loading="lazy"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
+
+                <div class="px-8 md:px-14 py-10 md:py-14 space-y-10">
+                    <div>
+                        <p class="eyebrow mb-3">About Schoongedaan</p>
+                        <p class="text-charcoal leading-relaxed text-[1.0625rem]">
+                            {story.intro}
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="eyebrow mb-3">The challenge</p>
+                        <p class="text-steel leading-relaxed text-[1.0625rem]">
+                            {story.challenge}
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="eyebrow mb-3">The solution</p>
+                        <p class="text-steel leading-relaxed text-[1.0625rem]">
+                            {story.solution}
+                        </p>
+                    </div>
+
+                    <div class="bg-sunstone-mist/50 ring-1 ring-sunstone-soft/50 rounded-2xl px-7 py-7 md:px-9 md:py-8">
+                        <p class="eyebrow mb-3">The result</p>
+                        <p class="text-charcoal leading-snug text-lg md:text-xl font-semibold tracking-tight">
+                            {story.metric}
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-chalk-light">
+        <div class="container-prose">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
+                <div class="max-w-2xl">
+                    <p class="eyebrow mb-3">What customers say</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Voices from the warehouse.
+                    </h2>
+                </div>
+
+                <div class="flex items-center gap-3 text-sm">
+                    <span class="inline-flex items-center gap-0.5 text-sunstone-deep">
+                        {Array.from({ length: 5 }).map(() => (
+                            <i class="fa-solid fa-star text-[0.95rem]" aria-hidden="true"></i>
+                        ))}
+                    </span>
+                    <span class="font-semibold text-charcoal">4.9</span>
+                    <span class="text-gravel">on Trustpilot</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5 md:gap-6">
+                {
+                    voices.map((voice) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark hover:ring-chalk-darker transition-colors p-8 md:p-10 flex flex-col">
+                            <p class="text-charcoal leading-relaxed text-[1.0625rem] mb-8 flex-1">
+                                {voice.quote}
+                            </p>
+
+                            <div class="flex items-center gap-4">
+                                <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                    <img
+                                        src={voice.logo}
+                                        alt={voice.company}
+                                        class="h-full w-full object-contain p-1.5"
+                                        loading="lazy"
+                                    />
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="font-semibold text-charcoal text-sm">{voice.author}</p>
+                                    <p class="text-xs text-gravel mt-0.5">{voice.company}</p>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+
+            <div class="mt-12 flex justify-center">
+                <a
+                    href="https://nl.trustpilot.com/review/shoplinkr.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5"
+                >
+                    All reviews on Trustpilot
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20">
+        <div class="container-prose">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="eyebrow mb-3">Will you be next?</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight">
+                    Try ShopLinkr with your own warehouse.
+                </h2>
+                <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href={externalLinks.register}
+                        class="btn btn-sunstone text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Start for free
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-secondary text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Book a demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>

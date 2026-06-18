@@ -8,6 +8,7 @@ interface Props {
     canonical?: string;
     locale?: 'nl' | 'en';
     routeKey?: RouteKey;
+    alternates?: { nl?: string; en?: string };
 }
 
 const {
@@ -17,6 +18,7 @@ const {
     canonical,
     locale = 'nl',
     routeKey,
+    alternates: altUrls,
 } = Astro.props;
 
 const canonicalURL = canonical
@@ -29,13 +31,19 @@ const ogLocale = locale === 'nl' ? 'nl_NL' : 'en_US';
 // the map). x-default points to NL so brand/language-agnostic searches land on
 // the Dutch version. Pages without an EN twin keep a self-referencing nl +
 // x-default, which is correct for an NL-only page.
-const hasAlternates = routeKey != null && routeKey in routes;
-const alternates = hasAlternates
-    ? {
-          nl: new URL(localizedPath(routeKey, 'nl'), Astro.site),
-          en: new URL(localizedPath(routeKey, 'en'), Astro.site),
-      }
-    : null;
+// Explicit per-page alternates (dynamic pages) win over the static routeKey map.
+let altSet: { nl: URL | null; en: URL | null } | null = null;
+if (altUrls && (altUrls.nl || altUrls.en)) {
+    altSet = {
+        nl: altUrls.nl ? new URL(altUrls.nl, Astro.site) : null,
+        en: altUrls.en ? new URL(altUrls.en, Astro.site) : null,
+    };
+} else if (routeKey != null && routeKey in routes) {
+    altSet = {
+        nl: new URL(localizedPath(routeKey, 'nl'), Astro.site),
+        en: new URL(localizedPath(routeKey, 'en'), Astro.site),
+    };
+}
 ---
 
 <meta charset="UTF-8" />
@@ -62,11 +70,11 @@ const alternates = hasAlternates
 <meta name="twitter:image" content={new URL(image, Astro.site)} />
 
 {
-    alternates ? (
+    altSet ? (
         <>
-            <link rel="alternate" hreflang="nl" href={alternates.nl} />
-            <link rel="alternate" hreflang="en" href={alternates.en} />
-            <link rel="alternate" hreflang="x-default" href={alternates.nl} />
+            {altSet.nl && <link rel="alternate" hreflang="nl" href={altSet.nl} />}
+            {altSet.en && <link rel="alternate" hreflang="en" href={altSet.en} />}
+            <link rel="alternate" hreflang="x-default" href={altSet.nl ?? altSet.en} />
         </>
     ) : (
         <>

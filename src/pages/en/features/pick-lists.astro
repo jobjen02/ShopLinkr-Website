@@ -1,0 +1,289 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { breadcrumbs } from '../../../utils/seo';
+import { faqsByPageEn } from '../../../data/faqs-en';
+import { localizeHref } from '../../../i18n/routes';
+const locale = 'en';
+
+const subFeatures = [
+    {
+        eyebrow: 'Bin system',
+        heading: 'Work with bins for extra control.',
+        body: 'Want extra certainty? Link each product to a bin with a unique barcode while picking. When packing, you scan the bin and the right order opens automatically. Working with bins is not mandatory.',
+        icon: 'fa-duotone fa-solid fa-boxes-stacked',
+    },
+    {
+        eyebrow: 'Packing stations',
+        heading: 'A printer at every workstation.',
+        body: 'Each packing station has its own printer. An employee indicates which packing station they are working at, so the shipping label comes out of the right printer automatically. This makes it easy to work with several colleagues at the same time.',
+        icon: 'fa-duotone fa-solid fa-print',
+    },
+    {
+        eyebrow: 'AutoPrint',
+        heading: 'Print labels automatically.',
+        body: 'As soon as you process an order, AutoPrint sends the shipping label straight to the right printer. No separate download, no manual print job. The label is ready to stick on the box right away.',
+        icon: 'fa-duotone fa-solid fa-bolt',
+    },
+    {
+        eyebrow: 'Saved filters',
+        heading: 'Fixed picking rounds in one click.',
+        body: 'Do you often use the same combination of channel, location or parcel type? Save the filter set under a recognisable name and start your picking list with one click next time.',
+        icon: 'fa-duotone fa-solid fa-filter',
+    },
+];
+
+const pickMethods = [
+    {
+        title: 'Single orders',
+        body: 'Orders with just one type of product. Filter for them separately and process them one after another. No sorting work and little chance of mistakes.',
+    },
+    {
+        title: 'Picking list without bins',
+        body: 'Collect all the products from several orders in one big bin. When packing, you scan any product and ShopLinkr instantly opens the right order. Fast and without extra supplies.',
+    },
+    {
+        title: 'Picking list with bins',
+        body: 'Each order gets its own bin with a barcode. While picking you first scan the product and then the bin. When packing you scan the bin and you know for sure everything is correct.',
+    },
+];
+
+const faqs = faqsByPageEn.picklijsten;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Features', '/en/features'],
+        ['Pick lists', '/en/features/pick-lists'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Creating pick lists with ShopLinkr',
+        description: 'Generate pick lists with a smart route through your warehouse, process batches with or without bins and print shipping labels automatically with AutoPrint. A warehouse operation that grows with your sales.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Creating pick lists with ShopLinkr"
+    description="Generate pick lists with a smart route through your warehouse, process batches with or without bins and print shipping labels automatically with AutoPrint. A warehouse operation that grows with your sales."
+    eyebrow="Pick lists"
+    heading="Pick faster, make fewer mistakes."
+    subheading="Pick lists with a smart route through your warehouse, a scan flow that guides you through the order step by step and shipping labels that print right at your packing station. One continuous workflow from order to packed box."
+    routeKey="features.picklists"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Book a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Smart picking list</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            One route through your warehouse,
+                            <span class="block">no detours.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-route text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Picking list PL-2418</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">8 orders</span>
+                        </div>
+
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <i class="fa-solid fa-check text-sunstone-deep text-[0.7rem] flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-charcoal font-medium truncate">Linen tea towel, natural</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">A.1.04</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-charcoal text-paper text-[10px] font-semibold">A</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <i class="fa-solid fa-check text-sunstone-deep text-[0.7rem] flex-shrink-0" aria-hidden="true"></i>
+                                    <span class="text-charcoal font-medium truncate">Coffee tin, small</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">A.3.02</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-charcoal text-paper text-[10px] font-semibold">C</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/70 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <span class="relative flex items-center justify-center h-3 w-3 flex-shrink-0">
+                                        <span class="absolute inline-flex h-full w-full rounded-full bg-sunstone-deep/50 animate-ping"></span>
+                                        <span class="relative inline-flex h-2 w-2 rounded-full bg-sunstone-deep"></span>
+                                    </span>
+                                    <span class="text-charcoal font-semibold truncate">Wooden spice rack</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-sunstone-deep font-mono font-semibold tabular-nums">B.2.11</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-sunstone-deep text-paper text-[10px] font-semibold">F</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-paper ring-1 ring-chalk-dark/70">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <span class="inline-block h-2 w-2 rounded-full bg-chalk-dark flex-shrink-0"></span>
+                                    <span class="text-steel truncate">Glass vase, clear</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">C.1.08</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-chalk-light ring-1 ring-chalk-dark text-gravel text-[10px] font-semibold">B</span>
+                                </div>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-paper ring-1 ring-chalk-dark/70">
+                                <div class="flex items-center gap-3 text-sm min-w-0">
+                                    <span class="inline-block h-2 w-2 rounded-full bg-chalk-dark flex-shrink-0"></span>
+                                    <span class="text-steel truncate">Placemat set, set of 4</span>
+                                </div>
+                                <div class="flex items-center gap-2 flex-shrink-0">
+                                    <span class="text-[11px] text-gravel font-mono tabular-nums">C.4.03</span>
+                                    <span class="inline-flex items-center justify-center min-w-[1.5rem] h-5 px-1.5 rounded bg-chalk-light ring-1 ring-chalk-dark text-gravel text-[10px] font-semibold">D</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="pt-3 border-t border-chalk-dark">
+                            <div class="flex items-center justify-between gap-3 mb-2">
+                                <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">Progress</span>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums">3 of 8</span>
+                            </div>
+                            <div class="h-1.5 rounded-full bg-chalk-light overflow-hidden">
+                                <div class="h-full bg-sunstone-deep rounded-full" style="width: 37.5%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        The smartest order through your warehouse, a scan per step and the right bin per order. At the end the shipping label is printed automatically.
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">Three ways of picking</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Single, batch or bins,
+                        <span class="block text-sunstone-deep">you choose the method.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Every warehouse works differently. ShopLinkr supports three picking methods, so you can choose the fastest route per type of order. Feel free to combine them within a single working day.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            pickMethods.map((method) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class="fa-solid fa-route text-xs" aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{method.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{method.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Frequently asked questions</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Questions that come up often,
+                        <span class="block text-sunstone-deep">clearly answered.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Not seeing your question? Book a call or send us a message. We are happy to think along about your situation.
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Ask your question
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

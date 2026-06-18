@@ -1,0 +1,132 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const lastUpdated = '2026-05-28';
+
+const categories = [
+    {
+        title: 'Necessary cookies',
+        eyebrow: 'Always on',
+        body: 'These cookies are required for the site to work properly. Think of logging in, submitting forms and remembering your session. Without them, the site does not work correctly.',
+        items: [
+            {
+                name: 'shoplinkr-cookie-consent',
+                purpose: 'Remembers your cookie preferences',
+                duration: '12 months',
+            },
+            {
+                name: 'session',
+                purpose: 'Keeps your session on the site active',
+                duration: 'Until you close the browser',
+            },
+        ],
+    },
+    {
+        title: 'Analytics cookies',
+        eyebrow: 'Optional',
+        body: 'These cookies help us understand how you use the site, which pages are popular and where people get stuck. We use these insights to improve the site. Fully anonymous.',
+        items: [
+            {
+                name: '_ga, _ga_*',
+                purpose: 'Google Analytics 4: visitors and behavior (anonymous)',
+                duration: '2 years',
+            },
+        ],
+    },
+    {
+        title: 'Marketing cookies',
+        eyebrow: 'Optional',
+        body: 'These cookies are used to show you relevant content on other platforms (LinkedIn, Meta) and to measure how effective our ads are. You can switch them off at any time.',
+        items: [
+            {
+                name: '_fbp',
+                purpose: 'Meta Pixel: for remarketing on Facebook and Instagram',
+                duration: '3 months',
+            },
+            {
+                name: 'li_*',
+                purpose: 'LinkedIn Insight Tag: for remarketing on LinkedIn',
+                duration: '90 days',
+            },
+        ],
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: 'Cookie policy | ShopLinkr',
+    description: 'Which cookies we use, why we use them and how you manage them.',
+};
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Cookie policy | ShopLinkr"
+    description="Which cookies we use, why we use them and how you manage them."
+    eyebrow="Legal"
+    heading="Cookie policy."
+    subheading="Which cookies we use, why, and how you manage them."
+    routeKey="cookies"
+    jsonLd={jsonLd}
+>
+    <section class="py-16 md:py-24 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="text-sm text-gravel mb-10">
+                    Last updated: {lastUpdated}
+                </p>
+
+                <p class="text-lg text-steel leading-relaxed mb-12">
+                    On your first visit to our site, our cookie banner asks which cookies you accept. Below you can read, per category, which cookies we use and what for. You can change your preferences at any time through the cookie banner.
+                </p>
+
+                <div class="space-y-12">
+                    {
+                        categories.map((category) => (
+                            <article>
+                                <p class="eyebrow mb-3">{category.eyebrow}</p>
+                                <h2 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight mb-4">
+                                    {category.title}
+                                </h2>
+                                <p class="text-steel leading-relaxed text-[15px] md:text-base mb-6">
+                                    {category.body}
+                                </p>
+
+                                <div class="overflow-x-auto rounded-xl ring-1 ring-chalk-dark">
+                                    <table class="w-full text-sm">
+                                        <thead class="bg-chalk-light text-xs uppercase tracking-wider text-gravel">
+                                            <tr>
+                                                <th class="px-4 py-3 text-left font-semibold">Name</th>
+                                                <th class="px-4 py-3 text-left font-semibold">Purpose</th>
+                                                <th class="px-4 py-3 text-left font-semibold">Duration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-chalk-dark">
+                                            {category.items.map((item) => (
+                                                <tr>
+                                                    <td class="px-4 py-3 font-mono text-charcoal">{item.name}</td>
+                                                    <td class="px-4 py-3 text-steel">{item.purpose}</td>
+                                                    <td class="px-4 py-3 text-steel">{item.duration}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </article>
+                        ))
+                    }
+                </div>
+
+                <div class="mt-16 pt-10 border-t border-chalk-dark">
+                    <h2 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight mb-4">
+                        Changing your preferences
+                    </h2>
+                    <p class="text-steel leading-relaxed text-[15px] md:text-base mb-4">
+                        Clear the cookie settings in your browser to see the cookie banner again. Or send us an email at <a href="mailto:contact@shoplinkr.com" class="text-charcoal font-semibold hover:text-sunstone-deep transition-colors">contact@shoplinkr.com</a> if you need help.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>

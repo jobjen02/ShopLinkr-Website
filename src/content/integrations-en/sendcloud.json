@@ -1,0 +1,19 @@
+{
+    "name": "Sendcloud",
+    "slug": "sendcloud",
+    "translationKey": "sendcloud",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/Sendcloud.png",
+    "summary": "Ship through more than 100 carriers with Sendcloud. Print labels straight from ShopLinkr and push tracking back to your channels.",
+    "url": "https://www.sendcloud.nl",
+    "supportSlug": "sendcloud-koppelen",
+    "tagline": "Europe's #1 shipping software",
+    "about": "Sendcloud is a shipping platform for webshops that automates and streamlines the shipping process. It offers integrations with more than 100 carriers, such as PostNL, DHL and DPD, and supports a wide range of shop systems. With Sendcloud you can easily create shipping labels, share tracking information and manage returns, which saves time and cuts costs.",
+    "faqs": [
+        {
+            "q": "Are address details added to the shipping label automatically?",
+            "a": "Yes, based on an order's shipping details we request a shipping label from Sendcloud. You can adjust the address details manually if needed."
+        }
+    ]
+}

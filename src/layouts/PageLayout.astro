@@ -11,6 +11,7 @@ interface Props {
     image?: string;
     locale?: Locale;
     routeKey?: RouteKey;
+    alternates?: { nl?: string; en?: string };
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
@@ -23,6 +24,7 @@ const {
     image,
     locale,
     routeKey,
+    alternates,
     jsonLd,
 } = Astro.props;
 ---
@@ -33,6 +35,7 @@ const {
     image={image}
     locale={locale}
     routeKey={routeKey}
+    alternates={alternates}
     jsonLd={jsonLd}
 >
     <section class="relative bg-paper overflow-hidden">

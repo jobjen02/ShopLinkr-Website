@@ -13,9 +13,12 @@ import { languages, useTranslations } from '../i18n/ui';
 
 interface Props {
     variant?: 'dropdown' | 'inline';
+    // Explicit per-page locale URLs (dynamic pages, e.g. blog/support articles).
+    // When given, they win over the static route-map lookup.
+    alternates?: { nl?: string; en?: string };
 }
 
-const { variant = 'dropdown' } = Astro.props;
+const { variant = 'dropdown', alternates } = Astro.props;
 
 const current = (Astro.currentLocale ?? 'nl') as Locale;
 const match = routeKeyFromPath(Astro.url.pathname);
@@ -26,11 +29,18 @@ const flags: Record<Locale, string> = {
     en: 'https://flagcdn.com/48x36/gb.png',
 };
 
+function hrefFor(loc: Locale): string {
+    if (alternates && alternates[loc]) {
+        return alternates[loc] as string;
+    }
+    return localizedPath(match ? match.key : 'home', loc);
+}
+
 const items = locales.map((loc) => ({
     loc,
     name: languages[loc],
     flag: flags[loc],
-    href: localizedPath(match ? match.key : 'home', loc),
+    href: hrefFor(loc),
     isCurrent: loc === current,
 }));
 ---

@@ -1,0 +1,17 @@
+{
+    "name": "DeliveryMatch",
+    "slug": "deliverymatch",
+    "translationKey": "deliverymatch",
+    "category": "carrier",
+    "status": "live",
+    "logo": "/assets/carriers/DeliveryMatch.jpg",
+    "summary": "Smart rule-based carrier selection through DeliveryMatch. Best rate, fastest route, right service.",
+    "tagline": "Optimize shipping, lower costs and increase customer satisfaction with DeliveryMatch",
+    "about": "DeliveryMatch is a powerful Transport Management Platform suitable for any business that ships, from B2C e-commerce to B2B distribution. DeliveryMatch automates and optimizes your logistics chain, from check-out all the way to the front door. With DeliveryMatch you can easily book shipments with more than 160 carriers worldwide (both international transporters and local providers such as Ampère).",
+    "faqs": [
+        {
+            "q": "Are address details placed on the shipping label automatically?",
+            "a": "Yes, based on the shipping details of an order we request a shipping label from DeliveryMatch. You can adjust the address details manually if you want."
+        }
+    ]
+}

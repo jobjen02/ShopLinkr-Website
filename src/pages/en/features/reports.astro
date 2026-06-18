@@ -1,0 +1,292 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CtaBanner from '../../../components/sections/CtaBanner.astro';
+import FaqList from '../../../components/template/FaqList.astro';
+import { externalLinks } from '../../../data/externalLinks';
+import { breadcrumbs } from '../../../utils/seo';
+import { faqsByPageEn } from '../../../data/faqs-en';
+import { localizeHref } from '../../../i18n/routes';
+const locale = 'en';
+
+const subFeatures = [
+    {
+        eyebrow: 'Product performance',
+        heading: 'See what each product earns you.',
+        body: 'Revenue, profit, margin, purchase costs, commission and returns sit side by side in one overview. Sort by revenue or profit to surface your top performers, or track down the products where your margin is under pressure.',
+        icon: 'fa-duotone fa-solid fa-trophy',
+    },
+    {
+        eyebrow: 'ABC analysis',
+        heading: 'Focus on your fast movers.',
+        body: 'Every night ShopLinkr sorts your products into A, B and C based on how often they get picked, measured over the past 90 days. Put your A products in the easiest spots to reach and you save your team a lot of walking.',
+        icon: 'fa-duotone fa-solid fa-chart-pie-simple',
+    },
+    {
+        eyebrow: 'Stock value',
+        heading: 'Know what is sitting in your warehouse.',
+        body: 'Per product and in total: how many units you held on a chosen date and what that is worth based on your purchase prices. Handy for your bookkeeping, and by comparing dates you can see whether your stock is growing or shrinking.',
+        icon: 'fa-duotone fa-solid fa-coins',
+    },
+    {
+        eyebrow: 'Never sold products',
+        heading: 'Track down dead stock.',
+        body: 'Which products had no sales at all in a period? Tick the option for products with stock only and you instantly see where capital is sitting idle.',
+        icon: 'fa-duotone fa-solid fa-box-archive',
+    },
+];
+
+const workflowSteps = [
+    {
+        title: 'Pick a period or date',
+        body: 'Set the period or date per report. Product performance and never sold products look at a period, stock value at a single date, so you also see historical values.',
+    },
+    {
+        title: 'Filter until you have what you need',
+        body: 'Filter by tags, packaging type, sales channel or products with stock only. That way you zoom in on a product group, a specific channel or the products you can actually do something with.',
+    },
+    {
+        title: 'Export to Excel',
+        body: 'Click export and you get the report as an Excel file. Ready to forward to your accountant or feed into your own analysis.',
+    },
+    {
+        title: 'Permissions per employee',
+        body: 'Who gets to view reports is set with a separate permission. That keeps your financial figures with the people who work with them and leaves the rest of the team out of it.',
+    },
+];
+
+const faqs = faqsByPageEn.rapporten;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Features', '/en/features'],
+        ['Reports', '/en/features/reports'],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: 'Reports and insight with ShopLinkr',
+        description: 'Get insight into your shop with the reports from ShopLinkr. See revenue and margin per product, track down dead stock, view the value of your warehouse and optimise your layout with an ABC analysis.',
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title="Reports and insight with ShopLinkr"
+    description="Get insight into your shop with the reports from ShopLinkr. See revenue and margin per product, track down dead stock, view the value of your warehouse and optimise your layout with an ABC analysis."
+    eyebrow="Reports and insight"
+    heading="Decide on numbers, not on gut feeling."
+    subheading="Four fixed reports bring your revenue, margin, stock value and warehouse efficiency together in one place. Filter, export and stay in control, without endless tinkering in Excel."
+    routeKey="features.reports"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start for free
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Schedule a demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">Four reports, one place</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            Insight into your numbers,
+                            <span class="block">no more guesswork.</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-trophy text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">Product performance</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Top 3 by profit</span>
+                        </div>
+
+                        <div class="grid grid-cols-[1fr_auto_auto_auto] gap-x-4 gap-y-2 text-xs items-center">
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">Product</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">Revenue</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">Profit</span>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">Margin</span>
+
+                            <div class="col-span-4 h-px bg-chalk-dark"></div>
+
+                            <span class="text-charcoal font-medium truncate">Bluetooth earbuds Pro</span>
+                            <span class="text-charcoal tabular-nums text-right">&euro;3.420</span>
+                            <span class="text-charcoal font-semibold tabular-nums text-right">&euro;1.180</span>
+                            <span class="inline-flex items-center justify-end gap-1.5">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                    <span class="block h-full w-[80%] bg-sunstone-deep rounded-full"></span>
+                                </span>
+                                <span class="text-charcoal font-semibold tabular-nums">34%</span>
+                            </span>
+
+                            <span class="text-charcoal font-medium truncate">T-shirt classic white</span>
+                            <span class="text-charcoal tabular-nums text-right">&euro;2.180</span>
+                            <span class="text-charcoal font-semibold tabular-nums text-right">&euro;720</span>
+                            <span class="inline-flex items-center justify-end gap-1.5">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                    <span class="block h-full w-[78%] bg-sunstone-soft rounded-full"></span>
+                                </span>
+                                <span class="text-charcoal font-semibold tabular-nums">33%</span>
+                            </span>
+
+                            <span class="text-steel truncate">Hiking set compact</span>
+                            <span class="text-steel tabular-nums text-right">&euro;1.640</span>
+                            <span class="text-steel font-semibold tabular-nums text-right">&euro;248</span>
+                            <span class="inline-flex items-center justify-end gap-1.5">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                    <span class="block h-full w-[35%] bg-chalk-darker rounded-full"></span>
+                                </span>
+                                <span class="text-steel font-semibold tabular-nums">15%</span>
+                            </span>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-between gap-2 mt-5 pt-4 border-t border-chalk-dark">
+                            <div class="flex items-center gap-2 text-[11px] text-gravel">
+                                <i class="fa-solid fa-calendar-days text-[0.65rem]" aria-hidden="true"></i>
+                                <span>Period: last 90 days</span>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-charcoal px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <i class="fa-solid fa-file-excel text-[0.65rem]" aria-hidden="true"></i>
+                                Export to Excel
+                            </span>
+                        </div>
+                    </div>
+
+                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-medium text-charcoal">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Four fixed reports
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Filter by period
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Export to Excel
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            Permissions per user
+                        </li>
+                    </ul>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-28 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">How you work with your reports</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        The same approach,
+                        <span class="block text-sunstone-deep">for every report.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Whether you are looking at your product performance, your stock value or your dead stock, you always follow the same route. Pick a period or date, filter, export and give the right people access.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ol class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            workflowSteps.map((step, index) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5 text-sm font-semibold">
+                                        {index + 1}
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">Frequently asked questions</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        Questions that keep coming up,
+                        <span class="block text-sunstone-deep">answered clearly.</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        Not seeing your question? Schedule a call or send us a message. We are happy to think along about your situation.
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        Ask your question
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

@@ -1,4 +1,7 @@
 ---
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
 interface Props {
     title: string;
     excerpt: string;
@@ -19,13 +22,16 @@ const {
     category,
 } = Astro.props;
 
-const formatter = new Intl.DateTimeFormat('nl-NL', {
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+
+const formatter = new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'nl-NL', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
 });
 const formattedDate = formatter.format(publishedAt);
-const href = `/blogs/${slug}`;
+const href = locale === 'en' ? `/en/blog/${slug}` : `/blogs/${slug}`;
 ---
 
 <article class="group relative flex flex-col">
@@ -73,7 +79,7 @@ const href = `/blogs/${slug}`;
         class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep group-hover:gap-2.5 transition-all"
         aria-hidden="true"
     >
-        Lees verder
+        {t.common.readMore}
         <i class="fa-solid fa-arrow-right text-xs"></i>
     </span>
 </article>
