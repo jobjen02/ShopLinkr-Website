@@ -10,25 +10,25 @@ const subFeatures = [
     {
         eyebrow: 'Retourstatus per item',
         heading: 'Beoordeel elk item apart.',
-        body: 'Per retouritem kies je de retourstatus, bijvoorbeeld gegrond of ongegrond. De beschikbare opties volgen wat Bol toelaat, dus je hoeft de regels niet uit je hoofd te kennen.',
+        body: 'Een retour bevat soms meerdere producten, en niet elk product handel je hetzelfde af. Je geeft ze stuk voor stuk een eigen retourstatus, met precies de opties die je verkoopkanaal aanbiedt.',
         icon: 'fa-duotone fa-solid fa-list-check',
     },
     {
         eyebrow: "Foto's als bewijs",
         heading: 'Leg vast wat je binnenkrijgt.',
-        body: "Voeg tot drie foto's per retouritem toe. Handig bij beschadigde of incomplete retouren, als bewijs richting de klant of om intern vast te leggen wat je hebt ontvangen.",
+        body: "Voeg meerdere foto's per retouritem toe. Handig bij beschadigde of incomplete retouren, als bewijs richting de klant of om intern vast te leggen wat je hebt ontvangen.",
         icon: 'fa-duotone fa-solid fa-camera',
     },
     {
-        eyebrow: 'Terug op voorraad',
-        heading: 'Per item terugplaatsen, met locatie.',
-        body: 'Vink aan welke items terug de verkoopbare voorraad in gaan en kies de magazijnlocatie. Bij bundelproducten stel je per subproduct de locatie in.',
+        eyebrow: 'Restock',
+        heading: 'Terug op voorraad, of niet.',
+        body: 'Bepaal per item of het terug op voorraad gaat en kies de magazijnlocatie. Bij bundels stel je per subproduct een locatie in.',
         icon: 'fa-duotone fa-solid fa-boxes-stacked',
     },
     {
         eyebrow: 'T&T scannen',
-        heading: 'Pakket binnen, retour open.',
-        body: 'Scan de track en trace code op het retourpakket en ShopLinkr opent direct de bijbehorende retour. Geen zoeken in lijsten, je gaat meteen aan de slag.',
+        heading: 'Eén scan, de juiste retour.',
+        body: 'Pak het retourpakket, scan de track en trace code en de bijbehorende retour staat meteen voor je open. Geen lijsten doorzoeken, gewoon verwerken.',
         icon: 'fa-duotone fa-solid fa-barcode-read',
     },
 ];
@@ -44,11 +44,11 @@ const workflowSteps = [
     },
     {
         title: 'Terug op voorraad zetten',
-        body: 'Bepaal per item of het weer verkocht kan worden en kies de magazijnlocatie. Bij bundels stel je per subproduct in waar het terugkomt.',
+        body: 'Bepaal per item of het weer verkocht kan worden en kies de magazijnlocatie.',
     },
     {
         title: 'Retour afronden',
-        body: 'Zodra je alle items hebt verwerkt, krijgt de retour de status Afgehandeld en koppelt ShopLinkr de verwerking automatisch terug naar Bol.',
+        body: 'Je handelt de retour in één keer af. ShopLinkr zet de retour op Afgehandeld en koppelt de verwerking automatisch terug naar je verkoopkanaal.',
     },
 ];
 
@@ -63,7 +63,7 @@ const jsonLd = [
     {
         '@type': 'WebPage',
         name: 'Retouren verwerken met ShopLinkr',
-        description: 'Verwerk retouren gestructureerd in ShopLinkr. Beoordeel per item, voeg foto\'s toe als bewijs en boek items terug op de juiste magazijnlocatie. Volledig ingericht voor Bol-retouren.',
+        description: 'Verwerk retouren gestructureerd in ShopLinkr. Beoordeel per item, voeg foto\'s toe als bewijs en boek items terug op de juiste magazijnlocatie. Je voorraad en kanalen blijven automatisch in sync.',
     },
     {
         '@type': 'FAQPage',
@@ -83,10 +83,10 @@ export const prerender = false;
 
 <PageLayout
     title="Retouren verwerken met ShopLinkr"
-    description="Verwerk retouren gestructureerd in ShopLinkr. Beoordeel per item, voeg foto's toe als bewijs en boek items terug op de juiste magazijnlocatie. Volledig ingericht voor Bol-retouren."
+    description="Verwerk retouren gestructureerd in ShopLinkr. Beoordeel per item, voeg foto's toe als bewijs en boek items terug op de juiste magazijnlocatie. Je voorraad en kanalen blijven automatisch in sync."
     eyebrow="Retourbeheer"
     heading="Retouren afhandelen, in een vast ritme."
-    subheading="Retouren horen erbij, het verwerken hoeft geen gedoe te zijn. Beoordeel per item, leg vast met foto's en boek terug op voorraad. Door naar de volgende."
+    subheading="Retouren horen erbij, de verwerking hoeft geen gedoe te zijn. Beoordeel per item, leg vast met foto's en boek terug op voorraad. Door naar de volgende."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -118,10 +118,10 @@ export const prerender = false;
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
                 <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
                     <div>
-                        <p class="eyebrow mb-3">Ingericht voor Bol</p>
+                        <p class="eyebrow mb-3">Retouren onder controle</p>
                         <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
-                            Volledig ingericht
-                            <span class="block">voor Bol-retouren.</span>
+                            Retouren gestructureerd
+                            <span class="block">verwerken.</span>
                         </h2>
                     </div>
 
@@ -133,7 +133,7 @@ export const prerender = false;
                                 </span>
                                 <div class="flex flex-col">
                                     <span class="text-sm font-semibold text-charcoal">Retour #R-48217</span>
-                                    <span class="text-[11px] text-gravel">Bol · 2 items</span>
+                                    <span class="text-[11px] text-gravel">Webshop · 2 items</span>
                                 </div>
                             </div>
                             <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">In verwerking</span>
@@ -153,7 +153,7 @@ export const prerender = false;
                                         <span class="inline-flex items-center h-4 w-7 rounded-full bg-sunstone-deep relative">
                                             <span class="absolute right-0.5 h-3 w-3 rounded-full bg-paper"></span>
                                         </span>
-                                        <span class="text-charcoal font-medium">Terug op voorraad</span>
+                                        <span class="text-charcoal font-medium">Toevoegen aan voorraad</span>
                                     </div>
                                     <span class="text-gravel tabular-nums">A.3</span>
                                 </div>
@@ -171,7 +171,7 @@ export const prerender = false;
                                         <span class="inline-flex items-center h-4 w-7 rounded-full bg-chalk-dark relative">
                                             <span class="absolute left-0.5 h-3 w-3 rounded-full bg-paper"></span>
                                         </span>
-                                        <span class="text-charcoal font-medium">Niet terugplaatsen</span>
+                                        <span class="text-charcoal font-medium">Toevoegen aan voorraad</span>
                                     </div>
                                     <span class="text-gravel">Afgeschreven</span>
                                 </div>
@@ -179,14 +179,14 @@ export const prerender = false;
                         </ul>
 
                         <div class="flex items-center justify-between gap-3 pt-3 border-t border-chalk-darker">
-                            <span class="text-sm font-semibold text-charcoal">Status naar Bol</span>
+                            <span class="text-sm font-semibold text-charcoal">Status naar kanaal</span>
                             <span class="inline-flex items-center gap-1.5 text-sunstone-deep font-semibold text-sm">
                                 Teruggekoppeld
                                 <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
                             </span>
                         </div>
                         <p class="text-[11px] text-gravel mt-2 leading-relaxed">
-                            Per item een eigen beoordeling, je voorraad gaat in dezelfde beweging mee.
+                            Elk item krijgt een eigen beoordeling en je voorraad wordt meteen bijgewerkt.
                         </p>
                     </div>
                 </article>
@@ -216,7 +216,7 @@ export const prerender = false;
                     <p class="eyebrow mb-4">Zo verwerk je een retour</p>
                     <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
                         Vier stappen,
-                        <span class="block text-sunstone-deep">van pakket naar afgerond.</span>
+                        <span class="block text-sunstone-deep">van binnenkomst tot afgehandeld.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
                         Elke retour volgt dezelfde route in ShopLinkr. Voorspelbaar voor jou en snel uit te leggen aan nieuwe collega's.

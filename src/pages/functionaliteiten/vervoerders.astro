@@ -14,20 +14,20 @@ const carriers = (await getCollection('integrations'))
 const subFeatures = [
     {
         eyebrow: 'AutoPrint',
-        heading: 'Labels rollen direct uit je printer.',
-        body: 'AutoPrint stuurt het label via PrintNode naar de printer bij je inpakstation. Jij verwerkt de bestelling, het label rolt eruit. Geen PDFs openen, geen handmatige printopdrachten.',
+        heading: 'Labels meteen uit de printer.',
+        body: 'AutoPrint stuurt het label via PrintNode naar de printer bij je inpakstation. Jij verwerkt de bestelling, het label wordt meteen geprint. Geen PDF\'s openen, geen handmatige printopdrachten.',
         icon: 'fa-duotone fa-solid fa-print',
     },
     {
         eyebrow: 'Per bestelling kiezen',
         heading: 'Wissel van vervoerder waar nodig.',
-        body: 'Een standaard vervoerder voor je dagelijkse pakketten, een snellere voor spoedorders, een ander voor het buitenland. Per bestelling kies je welke koppeling het label maakt.',
+        body: 'Een standaard vervoerder voor je dagelijkse pakketten, een snellere voor spoedorders, een ander voor het buitenland. Per bestelling kies je eenvoudig de juiste vervoerder.',
         icon: 'fa-duotone fa-solid fa-shuffle',
     },
     {
         eyebrow: 'Track en trace terug',
         heading: 'Automatisch terug naar je kanaal.',
-        body: 'Zodra je labelt, gaat de track en trace code terug naar het kanaal waar de bestelling vandaan kwam. Je klant krijgt de melding via dat kanaal.',
+        body: 'Zodra je het label aanmaakt, koppelen wij de track & trace direct terug naar je verkoopkanaal, zodat alles direct bijgewerkt is.',
         icon: 'fa-duotone fa-solid fa-location-arrow',
     },
     {
@@ -72,7 +72,7 @@ export const prerender = false;
     description="Print verzendlabels bij elke vervoerder die je gebruikt. Kies per bestelling de juiste en stuur track en trace automatisch terug naar je verkoopkanaal."
     eyebrow="Verzending"
     heading="Print labels bij elke vervoerder die je gebruikt."
-    subheading="Of een bestelling nu via Bol, je eigen webshop of een andere marketplace binnenkomt: vanuit ShopLinkr print je het label en regel je track en trace in dezelfde stap."
+    subheading="Of een bestelling nu via Bol, je eigen webshop of een andere marketplace binnenkomt: je print het label vanuit ShopLinkr en de track en trace gaat automatisch terug naar het verkoopkanaal."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -228,7 +228,7 @@ export const prerender = false;
                 </div>
                 <div class="lg:col-span-7">
                     <p class="text-base text-steel leading-relaxed">
-                        Koppel zoveel vervoerders als je wilt, met je eigen contract of via een verzendplatform. Zit jouw vervoerder bij Sendcloud, MyParcel of ParcelPro? Dan bereik je hem vaak al via die ene koppeling.
+                        Koppel zoveel vervoerders als je wilt, met je eigen contract of via een verzendplatform zoals Sendcloud, MyParcel of ParcelPro. Via zo'n platform koppel je vaak in één keer meerdere vervoerders tegelijk.
                     </p>
                     <a href="/integraties" class="group mt-6 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
                         Bekijk alle integraties

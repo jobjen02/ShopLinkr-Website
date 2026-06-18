@@ -9,26 +9,26 @@ import { faqsByPage } from '../../data/faqs';
 const subFeatures = [
     {
         eyebrow: 'Adressen bewerken',
-        heading: 'Snel een typefout herstellen.',
-        body: 'Pas een verzend- of factuuradres direct aan in ShopLinkr. De nieuwe gegevens gaan mee in het verzendlabel en de bezorgopties worden meteen opnieuw opgehaald.',
+        heading: 'Een typefout snel rechtzetten.',
+        body: 'Pas een verzend- of factuuradres direct aan in ShopLinkr. De nieuwe gegevens komen mee op het verzendlabel en de bezorgopties worden meteen opnieuw opgehaald.',
         icon: 'fa-duotone fa-solid fa-location-dot',
     },
     {
         eyebrow: 'Verzend en factuur apart',
         heading: 'Twee adressen per bestelling.',
-        body: 'Elke bestelling heeft een eigen verzend- en factuurprofiel. Wijken ze af, dan houd je ze los van elkaar bij. Komen ze overeen, dan kopieer je het ene profiel met één klik naar het andere.',
+        body: 'Elke bestelling heeft een eigen verzend- en factuurprofiel. Wijkt het factuuradres af van het afleveradres, dan houd je ze los van elkaar bij. Handig voor cadeauzendingen en zakelijke bestellingen.',
         icon: 'fa-duotone fa-solid fa-copy',
     },
     {
-        eyebrow: 'Handmatige aanpassing behouden',
+        eyebrow: 'Aanpassingen behouden',
         heading: 'Je correctie blijft staan.',
-        body: 'Pas je zelf een veld aan op een klant of adres, dan laat een latere sync vanuit het verkoopkanaal dat veld met rust. Wat jij aanpast, blijft staan.',
+        body: 'Pas je een veld handmatig aan, dan houdt ShopLinkr dat zo. Een volgende sync vanuit je verkoopkanaal overschrijft jouw wijziging niet.',
         icon: 'fa-duotone fa-solid fa-shield-halved',
     },
     {
-        eyebrow: 'Gevoelige data versleuteld',
-        heading: 'Klantgegevens blijven veilig.',
-        body: 'Naam, contactgegevens, bedrijfsgegevens en adres worden versleuteld opgeslagen. Onleesbaar in de database en alleen zichtbaar voor gebruikers met het juiste recht.',
+        eyebrow: 'Versleuteld opgeslagen',
+        heading: 'Persoonsgegevens goed beveiligd.',
+        body: 'Naam, contactgegevens, bedrijfsgegevens en adres worden versleuteld opgeslagen. Wie de gegevens te zien krijgt, bepaal je zelf met rollen en rechten per gebruiker.',
         icon: 'fa-duotone fa-solid fa-lock',
     },
 ];
@@ -36,7 +36,7 @@ const subFeatures = [
 const fieldGroups = [
     {
         title: 'Persoons en contactgegevens',
-        body: 'Aanhef, voornaam, tussenvoegsel, achternaam, e-mailadres en telefoonnummer. Genoeg om de klant snel te bereiken bij vragen over een bestelling of retour.',
+        body: 'Aanhef, voornaam, tussenvoegsel, achternaam, e-mailadres en telefoonnummer. Genoeg om de klant snel te bereiken als er iets is met een bestelling of retour.',
     },
     {
         title: 'Bedrijfsgegevens',
@@ -44,7 +44,7 @@ const fieldGroups = [
     },
     {
         title: 'Verzend en factuuradres',
-        body: 'Straat, huisnummer met toevoeging, extra adresregel, postcode, plaats en land. Verzending en facturatie staan los van elkaar, zodat je ze afzonderlijk kunt bewerken.',
+        body: 'Straat, huisnummer met toevoeging, een extra adresregel, postcode, plaats en land. Verzend- en factuuradres staan los van elkaar, dus je past ze afzonderlijk aan.',
     },
 ];
 
@@ -82,7 +82,7 @@ export const prerender = false;
     description="Beheer klantgegevens en adressen rechtstreeks in ShopLinkr. Bewerk verzend- en factuurprofielen vanuit de bestelling en houd persoonsgegevens veilig achter encryptie."
     eyebrow="Klantbeheer"
     heading="Klantgegevens onder controle."
-    subheading="Bewerk verzend- en factuurprofielen vanuit de bestelling, voeg orders met hetzelfde afleveradres samen tot één zending en houd gevoelige gegevens veilig achter encryptie."
+    subheading="Bewerk verzend- en factuurprofielen vanuit de bestelling, voeg bestellingen met hetzelfde afleveradres samen tot één zending en houd persoonsgegevens veilig achter encryptie."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -114,10 +114,10 @@ export const prerender = false;
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
                 <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
                     <div>
-                        <p class="eyebrow mb-3">Eén plek voor klantgegevens</p>
+                        <p class="eyebrow mb-3">Bewerken vanuit de bestelling</p>
                         <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
                             Adres aanpassen
-                            <span class="block">vanuit de bestelling.</span>
+                            <span class="block">zonder gedoe.</span>
                         </h2>
                     </div>
 
@@ -141,7 +141,7 @@ export const prerender = false;
                                 <p class="text-sm font-medium text-charcoal leading-snug">Lotte de Vries</p>
                                 <p class="text-xs text-steel leading-snug mt-0.5">Kerkstraat 18</p>
                                 <p class="text-xs text-steel leading-snug">3811 CV, Amersfoort</p>
-                                <p class="text-xs text-gravel leading-snug mt-1.5 tabular-nums">+31 6 24 11 88 02</p>
+                                <p class="text-xs text-gravel leading-snug mt-1.5 tabular-nums">+31 6 12 34 56 78</p>
                             </div>
                             <div class="rounded-md bg-chalk-light ring-1 ring-chalk-dark p-3">
                                 <div class="flex items-center gap-2 mb-2">
@@ -174,7 +174,7 @@ export const prerender = false;
                     </div>
 
                     <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
-                        Eén veld aanpassen en label en bezorgopties lopen mee. Geen tabwissel naar het verkoopkanaal nodig.
+                        Pas je een veld aan, dan lopen het label en de bezorgopties meteen mee. Geen heen-en-weer geklik naar het verkoopkanaal.
                     </p>
                 </article>
 
@@ -200,13 +200,13 @@ export const prerender = false;
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-5">
-                    <p class="eyebrow mb-4">Wat je per klant ziet</p>
+                    <p class="eyebrow mb-4">Gegevens per bestelling</p>
                     <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                        Alle gegevens netjes
-                        <span class="block text-sunstone-deep">bij elkaar.</span>
+                        Alle klantgegevens
+                        <span class="block text-sunstone-deep">op een rij.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Per bestelling beheer je een volledig verzend- en factuurprofiel. Genoeg om de klant goed te helpen, een kloppend label te draaien en een nette factuur in je administratie te krijgen.
+                        Bij elke bestelling hoort een volledig verzend- en factuurprofiel. Genoeg om de klant goed te helpen, een kloppend label te maken en een nette factuur in je administratie te krijgen.
                     </p>
                 </div>
 

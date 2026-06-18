@@ -15,14 +15,14 @@ const subFeatures = [
     },
     {
         eyebrow: 'Per leverancier',
-        heading: 'Eén advies, gescheiden per leverancier.',
-        body: 'Selecteer een of meerdere leveranciers. ShopLinkr rekent per leverancier uit wat je moet bestellen. Alleen producten die aan die leveranciers gekoppeld zijn tellen mee.',
+        heading: 'Eén advies, netjes per leverancier.',
+        body: 'Selecteer een of meerdere leveranciers en ShopLinkr rekent voor elk apart uit wat je moet bestellen. Alleen producten die aan die leveranciers gekoppeld zijn, tellen mee.',
         icon: 'fa-duotone fa-solid fa-truck-fast',
     },
     {
         eyebrow: 'Omzetten in één klik',
         heading: 'Van advies naar concept-levering.',
-        body: 'Tevreden met het advies? Eén klik op Omzetten naar leveringen en ShopLinkr maakt per leverancier een concept-levering aan, klaar om te bestellen.',
+        body: 'Tevreden met het advies? Eén klik op Omzetten naar leveringen en ShopLinkr maakt per leverancier een levering aan met de status Concept, klaar om bij je leverancier te bestellen.',
         icon: 'fa-duotone fa-solid fa-arrow-right-arrow-left',
     },
     {
@@ -48,7 +48,7 @@ const signals = [
     },
     {
         title: 'Levertijd meetellen',
-        body: 'Tel de levertijd van je leverancier optioneel op bij de adviesperiode, zodat je niet zonder voorraad zit terwijl je inkoop nog onderweg is.',
+        body: 'Optioneel telt ShopLinkr de levertijd van je leverancier op bij de adviesperiode, zodat je niet zonder voorraad zit terwijl je inkoop nog onderweg is.',
     },
     {
         title: 'Openstaande leveringen aftrekken',
@@ -135,34 +135,27 @@ export const prerender = false;
                         </p>
                         <dl class="divide-y divide-chalk-dark text-sm">
                             <div class="flex items-baseline justify-between py-2.5">
-                                <dt class="text-steel">Voorraad nu</dt>
-                                <dd class="text-charcoal font-semibold tabular-nums">5 stuks</dd>
+                                <dt class="text-steel">
+                                    Verwachte verkoop
+                                    <span class="block text-[11px] text-gravel mt-0.5">17 dagen × 2,3 per dag, levertijd meegeteld</span>
+                                </dt>
+                                <dd class="text-charcoal font-semibold tabular-nums">39 stuks</dd>
                             </div>
                             <div class="flex items-baseline justify-between py-2.5">
                                 <dt class="text-steel">+ Backorders</dt>
                                 <dd class="text-charcoal font-semibold tabular-nums">12 stuks</dd>
                             </div>
                             <div class="flex items-baseline justify-between py-2.5">
-                                <dt class="text-steel">
-                                    + Verwachte verkoop
-                                    <span class="block text-[11px] text-gravel mt-0.5">14 dagen × 2,3 per dag</span>
-                                </dt>
-                                <dd class="text-charcoal font-semibold tabular-nums">32 stuks</dd>
-                            </div>
-                            <div class="flex items-baseline justify-between py-2.5">
-                                <dt class="text-steel">
-                                    + Levertijd meetellen
-                                    <span class="block text-[11px] text-gravel mt-0.5">3 dagen × 2,3 per dag</span>
-                                </dt>
-                                <dd class="text-charcoal font-semibold tabular-nums">7 stuks</dd>
+                                <dt class="text-steel">- Beschikbare voorraad</dt>
+                                <dd class="text-charcoal font-semibold tabular-nums">5 stuks</dd>
                             </div>
                             <div class="flex items-baseline justify-between py-3 mt-1 border-t border-chalk-darker">
-                                <dt class="text-charcoal font-semibold">Bestel</dt>
+                                <dt class="text-charcoal font-semibold">Bijbestellen</dt>
                                 <dd class="text-sunstone-deep font-semibold text-xl tabular-nums">46 stuks</dd>
                             </div>
                         </dl>
                         <p class="text-[11px] text-gravel mt-3 leading-relaxed">
-                            Afgerond op dozen van 12 wordt het advies <span class="text-charcoal font-semibold">48 stuks</span>.
+                            Koop je in dozen van 12 in? Dan rondt het advies af op <span class="text-charcoal font-semibold">48 stuks</span>.
                         </p>
                     </div>
                 </article>
@@ -230,7 +223,7 @@ export const prerender = false;
                         <span class="block text-sunstone-deep">helder beantwoord.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Mis je een vraag? Plan een gesprek of stuur ons een bericht, we denken graag mee over jouw situatie.
+                        Mis je een vraag? Plan een gesprek of stuur ons een bericht. We denken graag mee over jouw situatie.
                     </p>
                     <a href="/contact" class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
                         Stel je vraag

@@ -10,25 +10,25 @@ const subFeatures = [
     {
         eyebrow: 'Product prestaties',
         heading: 'Zie per product wat het oplevert.',
-        body: 'Omzet, winst, marge, inkoopkosten, commissie en retouren in een overzicht. Sorteer op winst om je toppers boven te halen, of spoor margedruk op voordat het pijn doet.',
+        body: 'Omzet, winst, marge, inkoopkosten, commissie en retouren staan naast elkaar in één overzicht. Sorteer op omzet of winst om je toppers boven te halen, of spoor producten op waar je marge onder druk staat.',
         icon: 'fa-duotone fa-solid fa-trophy',
     },
     {
         eyebrow: 'ABC-analyse',
         heading: 'Focus op je hardlopers.',
-        body: 'ShopLinkr deelt je producten elke nacht in A, B en C op basis van pickfrequentie over de laatste 90 dagen. Leg je A-producten dicht bij het inpakstation en bespaar je team flink wat loopwerk.',
+        body: 'ShopLinkr deelt je producten elke nacht in A, B en C op basis van hoe vaak ze gepickt worden, gemeten over de afgelopen 90 dagen. Leg je A-producten op de best bereikbare plekken, dat scheelt je team een hoop loopwerk.',
         icon: 'fa-duotone fa-solid fa-chart-pie-simple',
     },
     {
         eyebrow: 'Voorraadwaarde',
         heading: 'Weet wat er in je magazijn ligt.',
-        body: 'Per product en in totaal: hoeveel stuks op een gekozen datum en wat dat waard is op basis van je inkoopprijzen. Handig voor je boekhouding, financieringsaanvragen of een trendanalyse.',
+        body: 'Per product en in totaal: hoeveel stuks je op een gekozen datum had en wat dat waard is op basis van je inkoopprijzen. Handig voor je boekhouding, en door datums te vergelijken zie je of je voorraad groeit of krimpt.',
         icon: 'fa-duotone fa-solid fa-coins',
     },
     {
         eyebrow: 'Nooit verkochte producten',
-        heading: 'Spoor producten op die geld kosten.',
-        body: 'Welke artikelen hadden geen enkele verkoop in een periode, ook niet als onderdeel van een bundel? Vink alleen-met-voorraad aan en je ziet direct waar kapitaal vastzit.',
+        heading: 'Spoor dode voorraad op.',
+        body: 'Welke producten hadden geen enkele verkoop in een periode? Vink alleen met voorraad aan en je ziet meteen waar kapitaal stil blijft staan.',
         icon: 'fa-duotone fa-solid fa-box-archive',
     },
 ];
@@ -36,19 +36,19 @@ const subFeatures = [
 const workflowSteps = [
     {
         title: 'Periode of datum kiezen',
-        body: 'Stel per rapport de periode of peildatum in. Product prestaties en nooit verkochte producten kijken naar een tijdvak, voorraadwaarde naar een specifieke datum, zodat je ook historische waarden terugziet.',
+        body: 'Stel per rapport de periode of datum in. Product prestaties en nooit verkochte producten kijken naar een periode, voorraadwaarde naar één datum, zodat je ook historische waarden terugziet.',
     },
     {
         title: 'Filteren tot je hebt wat je zoekt',
-        body: 'Filter op tags, verpakkingstype, verkoopkanaal of alleen-met-voorraad. Zo zoom je in op een productgroep, een specifiek kanaal of de producten waar je echt iets mee kunt.',
+        body: 'Filter op tags, verpakkingstype, verkoopkanaal of alleen producten met voorraad. Zo zoom je in op een productgroep, een specifiek kanaal of de producten waar je echt iets mee kunt.',
     },
     {
-        title: 'Exporteren naar je inbox',
-        body: 'Klik op exporteren en ShopLinkr stuurt het bestand naar je e-mailadres zodra het klaar is. Geen wachtschermen, geen zware downloads in je browser.',
+        title: 'Exporteren naar Excel',
+        body: 'Klik op exporteren en je krijgt het rapport als Excel-bestand. Klaar om door te sturen naar je boekhouder of mee te nemen in je eigen analyse.',
     },
     {
         title: 'Rechten per medewerker',
-        body: 'Wie rapporten mag bekijken bepaal je met een aparte permissie. Zo houd je financiële cijfers bij de mensen die ermee werken en blijft de rest van het team erbuiten.',
+        body: 'Wie rapporten mag bekijken bepaal je met een aparte permissie. Zo houd je je financiële cijfers bij de mensen die ermee werken en blijft de rest van het team erbuiten.',
     },
 ];
 
@@ -86,7 +86,7 @@ export const prerender = false;
     description="Krijg inzicht in je shop met de rapporten van ShopLinkr. Bekijk per product de omzet en marge, spoor dode voorraad op, zie de waarde van je magazijn en optimaliseer je indeling met een ABC-analyse."
     eyebrow="Rapporten en inzicht"
     heading="Beslissen met cijfers, niet op gevoel."
-    subheading="Vier vaste rapporten brengen je omzet, marge, voorraadwaarde en magazijnefficiëntie samen op één plek. Filteren, exporteren en grip houden, zonder los te knutselen in Excel."
+    subheading="Vier vaste rapporten brengen je omzet, marge, voorraadwaarde en magazijnefficiëntie samen op één plek. Filteren, exporteren en grip houden, zonder eindeloos te knutselen in Excel."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -120,8 +120,8 @@ export const prerender = false;
                     <div>
                         <p class="eyebrow mb-3">Vier rapporten, één plek</p>
                         <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
-                            Stop met gokken,
-                            <span class="block">begin met weten.</span>
+                            Inzicht in je cijfers,
+                            <span class="block">geen aannames meer.</span>
                         </h2>
                     </div>
 
@@ -181,8 +181,8 @@ export const prerender = false;
                                 <span>Periode: laatste 90 dagen</span>
                             </div>
                             <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-charcoal px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
-                                <i class="fa-solid fa-envelope text-[0.65rem]" aria-hidden="true"></i>
-                                Exporteren per mail
+                                <i class="fa-solid fa-file-excel text-[0.65rem]" aria-hidden="true"></i>
+                                Exporteren naar Excel
                             </span>
                         </div>
                     </div>
@@ -198,7 +198,7 @@ export const prerender = false;
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                            Exporteren per mail
+                            Exporteren naar Excel
                         </li>
                         <li class="flex items-center gap-2">
                             <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
@@ -235,7 +235,7 @@ export const prerender = false;
                         <span class="block text-sunstone-deep">voor elk rapport.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Of je nu naar prestaties, voorraadwaarde of dode voorraad kijkt, je werkt steeds via dezelfde route. Periode kiezen, filteren, exporteren en de juiste mensen toegang geven.
+                        Of je nu naar je productprestaties, je voorraadwaarde of je dode voorraad kijkt, je werkt steeds via dezelfde route. Periode of datum kiezen, filteren, exporteren en de juiste mensen toegang geven.
                     </p>
                 </div>
 

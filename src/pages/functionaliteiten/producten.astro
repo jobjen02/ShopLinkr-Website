@@ -10,25 +10,25 @@ const subFeatures = [
     {
         eyebrow: 'Variantgroepen',
         heading: 'Maten, kleuren en hoeveelheden netjes gegroepeerd.',
-        body: 'Groepeer hetzelfde product in andere maten, kleuren of verpakkingen onder één hoofdproduct. Elke variant houdt zijn eigen voorraad, het overzicht toont de gecombineerde stand.',
+        body: 'Groepeer hetzelfde product in andere maten, kleuren of hoeveelheden onder één hoofdproduct. Elke variant houdt zijn eigen voorraad, in het overzicht zie je de gecombineerde stand.',
         icon: 'fa-duotone fa-solid fa-shapes',
     },
     {
         eyebrow: 'Productbundels',
         heading: 'Combineer losse producten tot één verkoopeenheid.',
-        body: 'Verkoop een cadeauset of combideal als bundel. ShopLinkr berekent de bundelvoorraad op basis van het scharste onderdeel en boekt elk component af zodra de bundel verkocht wordt.',
+        body: 'Verkoop een cadeauset of combideal als bundel. ShopLinkr berekent de bundelvoorraad op basis van het schaarste onderdeel en boekt elk onderdeel af zodra de bundel verkocht wordt.',
         icon: 'fa-duotone fa-solid fa-boxes-packing',
     },
     {
         eyebrow: 'Voorraadbronnen',
         heading: 'Eén bron, meerdere varianten op gewicht of lengte.',
-        body: 'Houd je basisvoorraad bij in kilo, meter of liter en koppel varianten van bijvoorbeeld 500 gram of 1 meter. ShopLinkr berekent per variant hoeveel er nog beschikbaar is.',
+        body: 'Houd je basisvoorraad bij in kilo, meter of liter en koppel varianten van bijvoorbeeld 500 gram of 1 meter. ShopLinkr rekent per variant uit hoeveel er nog beschikbaar is.',
         icon: 'fa-duotone fa-solid fa-scale-balanced',
     },
     {
         eyebrow: 'ABC-analyse',
         heading: 'Zie welke producten je magazijn draaiende houden.',
-        body: 'ShopLinkr classificeert je assortiment op pickfrequentie van de afgelopen 90 dagen. Plaats A-producten dicht bij je inpakstation en houd je magazijnindeling actueel.',
+        body: 'ShopLinkr classificeert je assortiment op pickfrequentie van de afgelopen 90 dagen. Zo plaats je je A-producten dicht bij je inpakstation en houd je je magazijnindeling actueel.',
         icon: 'fa-duotone fa-solid fa-chart-pie',
     },
 ];
@@ -36,12 +36,12 @@ const subFeatures = [
 const productTypes = [
     {
         title: 'Losse producten',
-        body: 'De standaard. Elk product heeft een eigen EAN, voorraad en magazijnlocatie. Geschikt voor verreweg de meeste artikelen die je los inkoopt en los verkoopt.',
+        body: 'De standaard. Elk product heeft een eigen EAN, voorraad en magazijnlocatie. Geschikt voor de meeste artikelen die je los inkoopt en los verkoopt.',
         icon: 'fa-solid fa-cube',
     },
     {
         title: 'Bundelproducten',
-        body: 'Meerdere artikelen samengevoegd tot één verkoopeenheid. De bundelvoorraad volgt automatisch het scharste onderdeel en bij elke verkoop wordt elk component afgeboekt.',
+        body: 'Meerdere producten samengevoegd tot één verkoopeenheid. De bundelvoorraad volgt automatisch het schaarste onderdeel en bij elke verkoop wordt elk onderdeel afgeboekt.',
         icon: 'fa-solid fa-boxes-packing',
     },
     {
@@ -51,7 +51,7 @@ const productTypes = [
     },
     {
         title: 'Onbeperkte voorraad',
-        body: 'Voor producten die altijd beschikbaar zijn, zoals softwarelicenties of digitale downloads. Geen afboeking bij verkoop, geen telling, altijd leverbaar op je kanalen.',
+        body: 'Voor producten die altijd beschikbaar zijn, zoals softwarelicenties of downloads. Geen afboeking bij verkoop, geen telling, altijd leverbaar op je kanalen.',
         icon: 'fa-solid fa-infinity',
     },
 ];
@@ -90,7 +90,7 @@ export const prerender = false;
     description="Eén centraal productoverzicht voor al je verkoopkanalen. Werk met variantgroepen, bundels, voorraadbronnen en ABC-analyse vanuit dezelfde plek."
     eyebrow="Producten"
     heading="Al je producten in één overzicht."
-    subheading="ShopLinkr haalt producten op uit al je verkoopkanalen. Vanuit één overzicht beheer je voorraad, varianten, bundels en voorraadlocaties."
+    subheading="Je producten uit elk verkoopkanaal komen samen in één overzicht. Vanuit daar beheer je voorraad, varianten, bundels en voorraadbronnen."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -189,7 +189,7 @@ export const prerender = false;
                     </div>
 
                     <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
-                        Losse producten, variantgroepen, bundels, voorraadbronnen en digitale producten staan naast elkaar in hetzelfde overzicht.
+                        Losse producten, variantgroepen, bundels, voorraadbronnen en producten met onbeperkte voorraad staan naast elkaar in hetzelfde overzicht.
                     </p>
                 </article>
 
@@ -221,7 +221,7 @@ export const prerender = false;
                         <span class="block text-sunstone-deep">één manier van werken.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Niet elk product werkt hetzelfde. Een bundel telt door op zijn losse onderdelen, een voorraadbron werkt vanuit een meeteenheid en digitale producten hebben helemaal geen voorraad nodig. ShopLinkr ondersteunt elk type vanuit hetzelfde overzicht.
+                        Niet elk product werkt hetzelfde. Een bundel rekent zijn voorraad af op de losse onderdelen, een voorraadbron werkt vanuit een meeteenheid en producten met onbeperkte voorraad houden helemaal geen aantallen bij. ShopLinkr ondersteunt elk type vanuit hetzelfde overzicht.
                     </p>
                 </div>
 
@@ -255,10 +255,10 @@ export const prerender = false;
                         <span class="block text-sunstone-deep">tot één bundel.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Een bundel is een nieuw product dat je samenstelt uit producten die je al verkoopt. Geef de bundel een eigen titel, prijs en foto, en bepaal welke sub-producten met welk aantal erin zitten.
+                        Een bundel is een nieuw product dat je samenstelt uit producten die je al verkoopt. Geef de bundel een eigen titel, prijs en afbeelding, en bepaal welke onderdelen er met welk aantal in zitten.
                     </p>
                     <p class="mt-4 text-base text-steel leading-relaxed">
-                        Stel je verkoopt een cadeauset met 1 telefoon, 1 oplader en 2 hoesjes. ShopLinkr berekent de bundelvoorraad automatisch op basis van het sub-product dat het schaarste beschikbaar is. Verkoop je los een hoesje? Dan zakt ook de bundelvoorraad meteen mee.
+                        Stel je verkoopt een cadeauset met 1 telefoon, 1 oplader en 2 hoesjes. ShopLinkr berekent de bundelvoorraad automatisch op basis van het onderdeel dat het minst beschikbaar is. Verkoop je een hoesje los? Dan zakt de bundelvoorraad meteen mee.
                     </p>
                 </div>
 
@@ -406,7 +406,7 @@ export const prerender = false;
                                     <i class="fa-solid fa-infinity text-sm" aria-hidden="true"></i>
                                 </span>
                                 <div>
-                                    <p class="text-sm font-semibold text-charcoal leading-tight">Software licentie</p>
+                                    <p class="text-sm font-semibold text-charcoal leading-tight">Softwarelicentie</p>
                                     <p class="text-[11px] text-gravel mt-0.5">Onbeperkte voorraad aan</p>
                                 </div>
                             </div>
@@ -435,7 +435,7 @@ export const prerender = false;
                         </ul>
 
                         <p class="text-[11px] text-gravel mt-3 leading-relaxed">
-                            Bij kanalen die de instelling "geen voorraadbeheer" niet ondersteunen, stuurt ShopLinkr automatisch een hoog getal door zodat het product nooit als uitverkocht verschijnt.
+                            Ondersteunt een kanaal de instelling "geen voorraadbeheer" niet? Dan stuurt ShopLinkr automatisch een voorraad van 1000 door, zodat het product nooit als uitverkocht verschijnt.
                         </p>
                     </div>
                 </div>

@@ -9,25 +9,25 @@ import { faqsByPage } from '../../data/faqs';
 const subFeatures = [
     {
         eyebrow: 'Bulk verwerken',
-        heading: 'Grote volumes in één beweging.',
-        body: 'Selecteer een groep bestellingen, verwerk ze als batch en download de verzendlabels en picklijst in één keer.',
+        heading: 'Veel bestellingen tegelijk.',
+        body: 'Selecteer meerdere bestellingen, verwerk ze in bulk en download de pick- en packlijst + verzendlabels in één keer.',
         icon: 'fa-duotone fa-solid fa-layer-group',
     },
     {
         eyebrow: 'Bestellingen samenvoegen',
         heading: 'Eén pakket voor dezelfde klant.',
-        body: 'Heeft een klant meerdere orders geplaatst, eventueel op verschillende kanalen? Voeg ze samen tot één zending. De track en trace gaat terug naar elk origineel kanaal.',
+        body: 'Heeft een klant meerdere bestellingen geplaatst, eventueel op verschillende kanalen? Voeg ze samen tot één zending. Dezelfde track en trace gaat terug naar elk betrokken kanaal.',
         icon: 'fa-duotone fa-solid fa-code-merge',
     },
     {
         eyebrow: 'Backorders',
         heading: 'Vrijgegeven zodra de voorraad er is.',
-        body: 'Niet genoeg voorraad? De bestelling krijgt de status Backorder. Zodra je een levering ontvangt, springt de order automatisch terug naar Open. Daar heb je geen omkijken naar.',
+        body: 'Niet genoeg voorraad? De bestelling krijgt de status Backorder. Zodra je de voorraad bijboekt, springt de order automatisch terug naar Open. Daar heb je geen omkijken meer naar.',
         icon: 'fa-duotone fa-solid fa-clock-rotate-left',
     },
     {
         eyebrow: 'Handmatige zendingen',
-        heading: 'Ook orders buiten je kanaal om.',
+        heading: 'Ook bestellingen zonder verkoopkanaal.',
         body: 'Telefonische bestellingen of B2B-zendingen. Vul de klantgegevens en het afleveradres in, kies een vervoerder en ShopLinkr genereert het verzendlabel.',
         icon: 'fa-duotone fa-solid fa-pen-to-square',
     },
@@ -36,15 +36,15 @@ const subFeatures = [
 const workflowSteps = [
     {
         title: 'Bestelling komt binnen',
-        body: 'Een order vanuit een van je verkoopkanalen verschijnt direct in je centrale overzicht, met de productdetails en voorraadlocaties al klaargezet.',
+        body: 'Een bestelling uit een van je verkoopkanalen verschijnt meteen in je centrale overzicht, met de productdetails en voorraadlocaties al klaargezet.',
     },
     {
         title: 'Picken en inpakken',
-        body: 'Pak losse orders, stel een batch samen of werk met picklijsten en inpakstations. De picklijst toont precies waar elk product in je magazijn ligt.',
+        body: 'Pick interactief met een handscanner of verwerk meerdere bestellingen in bulk. Bij elk product zie je direct waar het in je magazijn ligt, dus je werkt sneller en met minder fouten.',
     },
     {
         title: 'Label en verzenden',
-        body: 'Kies je vervoerder en print het label. De status loopt automatisch terug naar het kanaal waar de bestelling vandaan kwam.',
+        body: 'De juiste verzendmethode staat al klaar, dus je print het label direct. ShopLinkr koppelt de status en track en trace automatisch terug naar het juiste verkoopkanaal.',
     },
 ];
 
@@ -59,7 +59,7 @@ const jsonLd = [
     {
         '@type': 'WebPage',
         name: 'Bestellingen verwerken met ShopLinkr',
-        description: 'Verwerk bestellingen uit al je verkoopkanalen op één plek. Maak verzendlabels bij je favoriete vervoerder, werk in batches of pak losse orders tussendoor.',
+        description: 'Verwerk bestellingen uit al je verkoopkanalen op één plek. Maak verzendlabels bij je favoriete vervoerder, werk in batches of pak losse bestellingen tussendoor.',
     },
     {
         '@type': 'FAQPage',
@@ -79,10 +79,10 @@ export const prerender = false;
 
 <PageLayout
     title="Bestellingen verwerken met ShopLinkr"
-    description="Verwerk bestellingen uit al je verkoopkanalen op één plek. Maak verzendlabels bij je favoriete vervoerder, werk in batches of pak losse orders tussendoor."
+    description="Verwerk bestellingen uit al je verkoopkanalen op één plek. Maak verzendlabels bij je favoriete vervoerder, werk in batches of pak losse bestellingen tussendoor."
     eyebrow="Bestellingen"
     heading="Alles verwerken op één plek."
-    subheading="Bestellingen vanuit al je verkoopkanalen komen samen in één overzicht. Verwerk losse orders of grote batches, print labels van elke vervoerder en de status wordt automatisch teruggekoppeld."
+    subheading="Bestellingen vanuit al je verkoopkanalen komen samen in één overzicht. Verwerk ze los of in grote batches, print labels van elke vervoerder en de status wordt automatisch teruggekoppeld."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -201,10 +201,10 @@ export const prerender = false;
                     <p class="eyebrow mb-4">Zo loopt een bestelling</p>
                     <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
                         Drie stappen,
-                        <span class="block text-sunstone-deep">geen losse eindjes.</span>
+                        <span class="block text-sunstone-deep">niks blijft liggen.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Elke bestelling volgt in ShopLinkr dezelfde heldere route. Voorspelbaar voor jou, snel voor je klant.
+                        Elke bestelling volgt in ShopLinkr dezelfde vaste route. Voorspelbaar voor jou, snel bezorgd voor je klant.
                     </p>
                 </div>
 

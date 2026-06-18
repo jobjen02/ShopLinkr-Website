@@ -9,20 +9,20 @@ import { faqsByPage } from '../../data/faqs';
 const subFeatures = [
     {
         eyebrow: 'Bakken-systeem',
-        heading: 'Elke bestelling in de juiste bak.',
-        body: 'Tijdens het picken koppelt ShopLinkr elk product aan een bak met unieke barcode. Bij het inpakken scan je de bak en de juiste bestelling opent automatisch. Een extra controlemoment dat fouten voorkomt.',
+        heading: 'Werk met bakken voor extra controle.',
+        body: 'Wil je extra zekerheid? Koppel tijdens het picken elk product aan een bak met unieke barcode. Bij het inpakken scan je de bak en de juiste bestelling opent automatisch. Met bakken werken is niet verplicht.',
         icon: 'fa-duotone fa-solid fa-boxes-stacked',
     },
     {
         eyebrow: 'Inpakstations',
         heading: 'Elke werkplek z\'n eigen printer.',
-        body: 'Koppel een vaste printer aan elk inpakstation. Verzendlabels rollen automatisch uit op de printer naast je medewerker, niet drie meter verderop op een andere werkplek.',
+        body: 'Elk inpakstation heeft een eigen printer. Een medewerker geeft aan op welk inpakstation hij werkt, zodat het verzendlabel automatisch uit de juiste printer komt. Je kunt hierdoor eenvoudig met meerdere collega\'s tegelijk werken.',
         icon: 'fa-duotone fa-solid fa-print',
     },
     {
-        eyebrow: 'Auto Print',
-        heading: 'Labels printen zonder klik.',
-        body: 'Verwerk een bestelling en het verzendlabel ligt klaar op de printer. Geen aparte download, geen handmatige printopdracht, gewoon plakken en versturen.',
+        eyebrow: 'AutoPrint',
+        heading: 'Automatisch labels printen.',
+        body: 'Zodra je een bestelling verwerkt, stuurt AutoPrint het verzendlabel meteen naar de juiste printer. Geen losse download, geen handmatige printopdracht. Het label is meteen klaar om op de doos te plakken.',
         icon: 'fa-duotone fa-solid fa-bolt',
     },
     {
@@ -36,7 +36,7 @@ const subFeatures = [
 const pickMethods = [
     {
         title: 'Single bestellingen',
-        body: 'Bestellingen met maar één type product. Filter er apart op en verwerk ze achter elkaar. Geen uitzoekwerk, weinig kans op fouten, ideaal voor brievenbuspakketten.',
+        body: 'Bestellingen met maar één type product. Filter er apart op en verwerk ze achter elkaar. Geen uitzoekwerk en weinig kans op fouten.',
     },
     {
         title: 'Picklijst zonder bakken',
@@ -59,7 +59,7 @@ const jsonLd = [
     {
         '@type': 'WebPage',
         name: 'Picklijsten maken met ShopLinkr',
-        description: 'Genereer picklijsten met een slimme route door je magazijn, verwerk batches met of zonder bakken en print verzendlabels automatisch via Auto Print. Een magazijnoperatie die meegroeit met je verkoop.',
+        description: 'Genereer picklijsten met een slimme route door je magazijn, verwerk batches met of zonder bakken en print verzendlabels automatisch via AutoPrint. Een magazijnoperatie die meegroeit met je verkoop.',
     },
     {
         '@type': 'FAQPage',
@@ -79,10 +79,10 @@ export const prerender = false;
 
 <PageLayout
     title="Picklijsten maken met ShopLinkr"
-    description="Genereer picklijsten met een slimme route door je magazijn, verwerk batches met of zonder bakken en print verzendlabels automatisch via Auto Print. Een magazijnoperatie die meegroeit met je verkoop."
+    description="Genereer picklijsten met een slimme route door je magazijn, verwerk batches met of zonder bakken en print verzendlabels automatisch via AutoPrint. Een magazijnoperatie die meegroeit met je verkoop."
     eyebrow="Picklijsten"
     heading="Sneller picken, minder fouten."
-    subheading="Picklijsten met een slimme route door je magazijn, een scanflow die je per stap door de bestelling leidt en verzendlabels die meteen uit de printer rollen bij je inpakstation. Eén doorlopende workflow van bestelling tot verzendklare doos."
+    subheading="Picklijsten met een slimme route door je magazijn, een scanflow die je per stap door de bestelling leidt en verzendlabels die meteen bij je inpakstation worden geprint. Eén doorlopende workflow van bestelling tot verzendklare doos."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -200,7 +200,7 @@ export const prerender = false;
                     </div>
 
                     <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
-                        De slimste volgorde door je magazijn, een scan per stap en de juiste bak per bestelling. Aan het einde rolt het verzendlabel vanzelf uit de printer.
+                        De slimste volgorde door je magazijn, een scan per stap en de juiste bak per bestelling. Aan het einde wordt het verzendlabel automatisch geprint.
                     </p>
                 </article>
 

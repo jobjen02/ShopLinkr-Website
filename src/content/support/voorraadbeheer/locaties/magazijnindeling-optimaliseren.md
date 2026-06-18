@@ -64,7 +64,7 @@ lastUpdated: "2026-05-28"
 </table>
 </figure>
 <h3>Scheid pick- en bulklocaties</h3>
-<p>Gebruik <a href="/support/locatiebeheer">picklocaties</a> voor de voorraad die je dagelijks nodig hebt en bulklocaties voor grotere hoeveelheden die je in reserve houdt. Zo voorkom je dat orderpickers naar pallets of hoge stellingen moeten lopen.</p>
+<p>Gebruik <a href="/support/locatiebeheer">picklocaties</a> voor de voorraad die je dagelijks nodig hebt en bulklocaties voor grotere hoeveelheden die je niet dagelijks nodig hebt. Zo voorkom je dat orderpickers naar pallets of hoge stellingen moeten lopen.</p>
 <p>In ShopLinkr kun je instellen dat bestellingen naar <a href="/support/backorders">backorder</a> gaan wanneer de voorraad alleen op een bulklocatie beschikbaar is. Je vult dan eerst de picklocatie aan voordat je de bestellingen verwerkt.</p>
 <h3>Groepeer logisch</h3>
 <p>Producten die vaak samen besteld worden, kun je het beste dicht bij elkaar leggen. Zo loopt de picker een kortere route. Denk aan:</p>

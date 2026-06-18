@@ -9,14 +9,14 @@ import { faqsByPage } from '../../data/faqs';
 const subFeatures = [
     {
         eyebrow: 'Voorwaarden',
-        heading: 'Bepaal zelf wanneer een regel triggert.',
-        body: 'Stel voorwaarden in op verkoopkanaal, gewicht, totaalbedrag, land, postcode, Waddeneilanden, specifiek product, tag, verzendmethode en tientallen andere velden.',
+        heading: 'Bepaal zelf wanneer een regel geldt.',
+        body: 'Kies uit tientallen voorwaarden, zoals verkoopkanaal, totaalgewicht, totaalbedrag, aantal producten, land, postcode, een specifiek product, een tag of de verzendmethode.',
         icon: 'fa-duotone fa-solid fa-filter',
     },
     {
         eyebrow: 'Acties',
-        heading: 'Negen acties die je kunt automatiseren.',
-        body: 'Een verzendoptie kiezen, tags toevoegen, een notitie plaatsen, uitstellen, markeren als hoge prioriteit of afhaalbestelling, een uiterste verwerkingsdatum zetten, een product meesturen of automatische verwerking in de picklijst uitzetten.',
+        heading: 'Bepaal wat er automatisch gebeurt.',
+        body: 'Denk aan een verzendoptie instellen, een tag toevoegen of een bestelling op hoge prioriteit zetten. En nog veel meer.',
         icon: 'fa-duotone fa-solid fa-bolt',
     },
     {
@@ -28,7 +28,7 @@ const subFeatures = [
     {
         eyebrow: 'Volgorde',
         heading: 'Jij bepaalt welke regel voorgaat.',
-        body: 'Regels worden afgewerkt in de volgorde die jij instelt. Per regel kies je of de volgende nog gecontroleerd wordt, of dat het hierbij stopt zodra deze regel raakt.',
+        body: 'Regels worden afgewerkt in de volgorde die jij instelt. Per regel kies je of de volgende regels nog gecontroleerd worden, of dat het hierbij stopt zodra deze regel van toepassing is.',
         icon: 'fa-duotone fa-solid fa-list-ol',
     },
 ];
@@ -36,18 +36,18 @@ const subFeatures = [
 const ruleExamples = [
     {
         title: 'PostNL voor brievenbuspakketten',
-        condition: 'Totaalgewicht lager dan 2 kilo en land gelijk aan Nederland.',
+        condition: 'Het totaalgewicht is lager dan 2 kilo en het land is Nederland.',
         action: 'Stel de verzendoptie in op PostNL Brievenbus.',
     },
     {
-        title: 'Waddeneilanden apart houden',
-        condition: 'Afleveradres ligt op de Waddeneilanden.',
-        action: 'Stel de bestelling 1 dag uit en voeg de tag "Wadden" toe.',
+        title: 'Cadeautje bij grote bestellingen',
+        condition: 'Het totaalbedrag is hoger dan € 75.',
+        action: 'Voeg automatisch een gratis sample toe aan de bestelling.',
     },
     {
-        title: 'Bol-orders met voorrang',
-        condition: 'Verkoopkanaal gelijk aan Bol.',
-        action: 'Markeer als hoge prioriteit, zodat ze als eerste de deur uit gaan.',
+        title: 'Bestellingen met veel producten',
+        condition: 'De bestelling bevat meer dan 10 producten.',
+        action: 'Houd de bestelling uit de automatische verwerking, zodat je hem eerst zelf controleert.',
     },
 ];
 
@@ -62,7 +62,7 @@ const jsonLd = [
     {
         '@type': 'WebPage',
         name: 'Automatische regels instellen met ShopLinkr',
-        description: 'Automatiseer je orderverwerking met regels. Stel voorwaarden in op verkoopkanaal, gewicht of land en laat ShopLinkr bij elke nieuwe bestelling de juiste acties uitvoeren.',
+        description: 'Automatiseer je orderverwerking met regels. Stel voorwaarden in op verkoopkanaal, totaalgewicht of land en laat ShopLinkr bij elke nieuwe bestelling de juiste acties uitvoeren.',
     },
     {
         '@type': 'FAQPage',
@@ -82,10 +82,10 @@ export const prerender = false;
 
 <PageLayout
     title="Regels instellen met ShopLinkr"
-    description="Automatiseer je orderverwerking met regels. Stel voorwaarden in op verkoopkanaal, gewicht of land en laat ShopLinkr bij elke nieuwe bestelling de juiste acties uitvoeren."
+    description="Automatiseer je orderverwerking met regels. Stel voorwaarden in op verkoopkanaal, totaalgewicht of land en laat ShopLinkr bij elke nieuwe bestelling de juiste acties uitvoeren."
     eyebrow="Automatisering"
     heading="Laat ShopLinkr het werk doen."
-    subheading="Bouw een regel met voorwaarden en acties. Bij elke nieuwe bestelling kiest ShopLinkr de juiste vervoerder, plakt de juiste tag erop of zet de bestelling op hoge prioriteit. Eén keer instellen, daarna geen handmatige keuze meer."
+    subheading="Bouw een regel met voorwaarden en acties. Bij elke nieuwe bestelling kiest ShopLinkr de juiste vervoerder, plakt de juiste tag erop of zet de bestelling op hoge prioriteit. Je richt het één keer in en daarna gaat het vanzelf."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -119,8 +119,8 @@ export const prerender = false;
                     <div>
                         <p class="eyebrow mb-3">Automatiseer beslissingen</p>
                         <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
-                            Wat jij anders bij elke
-                            <span class="block">bestelling kiest.</span>
+                            Een voorwaarde, een actie,
+                            <span class="block">ShopLinkr regelt de rest.</span>
                         </h2>
                     </div>
 
@@ -191,7 +191,7 @@ export const prerender = false;
                         <span class="block text-sunstone-deep">om mee te beginnen.</span>
                     </h2>
                     <p class="mt-6 text-base text-steel leading-relaxed">
-                        Een regel bestaat uit een voorwaarde en een actie. Dit zijn drie regels die veel klanten meteen na hun start aanzetten.
+                        Een regel bestaat uit een voorwaarde en een actie. Dit zijn drie voorbeelden waarmee je meteen na je start aan de slag kunt.
                     </p>
                 </div>
 

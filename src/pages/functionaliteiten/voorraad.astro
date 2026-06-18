@@ -22,7 +22,7 @@ const subFeatures = [
     {
         eyebrow: 'Fictieve voorraad',
         heading: 'Verberg je voorraad voor concurrenten.',
-        body: 'Stel een vast aantal in (bijvoorbeeld 400) plus een drempel (bijvoorbeeld 20). Zit je boven de drempel, dan zien je kanalen het fictieve aantal. Eronder schakelt ShopLinkr over op je echte voorraad, zodat je nooit een product verkoopt dat je niet hebt.',
+        body: 'Concurrenten hoeven niet te zien hoeveel je op voorraad hebt. Met fictieve voorraad tonen je kanalen een vast getal in plaats van je echte aantallen, zonder dat je ooit een product verkoopt dat je niet hebt.',
         icon: 'fa-duotone fa-solid fa-eye-slash',
     },
     {
@@ -44,7 +44,7 @@ const stockTypes = [
     },
     {
         title: 'Totale voorraad',
-        body: 'Beschikbaar plus gereserveerd. Wat je tegenkomt als je naar het schap loopt.',
+        body: 'Beschikbaar + gereserveerd. Dit is het aantal dat op de plank ligt.',
     },
 ];
 
@@ -163,8 +163,8 @@ export const prerender = false;
                                 <div class="pl-5 relative">
                                     <span class="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-sunstone-deep ring-2 ring-paper"></span>
                                     <div class="flex items-center gap-2 mb-1 flex-wrap">
-                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#5A8A1F] text-paper">Shop</span>
-                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#674399] text-paper">Woo</span>
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#5A8A1F] text-paper">Shopify</span>
+                                        <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#674399] text-paper">WooCommerce</span>
                                         <span class="inline-flex items-center justify-center h-5 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#E10915] text-paper">Kaufland</span>
                                         <p class="text-sm font-semibold text-charcoal">in sync</p>
                                     </div>

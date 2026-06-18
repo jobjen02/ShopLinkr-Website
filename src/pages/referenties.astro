@@ -1,13 +1,12 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import CtaBanner from '../components/sections/CtaBanner.astro';
 import { externalLinks } from '../data/externalLinks';
 import { breadcrumbs } from '../utils/seo';
 
 const story = {
     company: 'Schoongedaan.nl',
     logo: '/testimonials/Schoongedaan.png',
-    intro: 'Jasper startte Schoongedaan twee jaar geleden vanuit een kastje naast zijn bureau. Inmiddels runt hij een snelgroeiend bedrijf in Nieuwegein, gespecialiseerd in schoonmaakmiddelen voor vloeren, keukens, zwembaden en nog veel meer. Via bol, Kaufland en zijn eigen webshop levert hij dagelijks honderden bestellingen.',
+    intro: 'Jasper startte Schoongedaan in 2023 vanuit een kastje naast zijn bureau. Inmiddels runt hij een snelgroeiend bedrijf in Nieuwegein, gespecialiseerd in schoonmaakmiddelen voor vloeren, keukens, zwembaden en nog veel meer. Via bol, Kaufland en zijn eigen webshop levert hij dagelijks honderden bestellingen.',
     challenge: 'Door snelle groei raakte het oude magazijn al snel chaotisch. Producten stonden door elkaar en orderpicken kostte veel tijd. Jasper kon maximaal 60 bestellingen per dag verwerken en liep tegen fouten, retouren en frustratie aan.',
     solution: 'Met ShopLinkr bracht Jasper structuur in zijn magazijn en koppelde hij al zijn verkoopkanalen. Dankzij slimme picklijsten en mobiele barcodescanners is het pick- en pack proces nu volledig geautomatiseerd. Bestellingen, voorraad, verzending en zelfs retouren regelt hij vanuit één systeem, waardoor Jasper dagelijks honderden bestellingen foutloos verwerkt.',
     metric: 'Van 60 bestellingen per dag naar 150 tot 250 bestellingen, met pieken van 500 orders op maandag.',
@@ -105,6 +104,21 @@ export const prerender = false;
                         {story.company}
                     </h3>
                 </header>
+
+                <div class="px-8 md:px-14 pt-8 md:pt-10">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-chalk-dark bg-charcoal">
+                        <iframe
+                            class="h-full w-full"
+                            src="https://www.youtube-nocookie.com/embed/PZq1V6Unp_U"
+                            title="Schoongedaan over ShopLinkr"
+                            loading="lazy"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                </div>
 
                 <div class="px-8 md:px-14 py-10 md:py-14 space-y-10">
                     <div>
@@ -230,6 +244,4 @@ export const prerender = false;
             </div>
         </div>
     </section>
-
-    <CtaBanner />
 </PageLayout>

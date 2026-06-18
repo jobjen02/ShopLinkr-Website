@@ -8,27 +8,27 @@ import { faqsByPage } from '../../data/faqs';
 
 const subFeatures = [
     {
-        eyebrow: 'Verschillen signaleren',
+        eyebrow: 'Verschillen zien',
         heading: 'Zie meteen waar de pakbon niet klopt.',
-        body: 'Tijdens het ontvangen zet je verwachte en ontvangen aantallen naast elkaar. Een tekort, een teveel of een verkeerd artikel valt direct op, zodat je het op kunt nemen met je leverancier.',
+        body: 'Tijdens het ontvangen staan het verwachte en het werkelijke aantal naast elkaar. Krijg je minder binnen dan besteld, dan valt dat meteen op en kun je contact opnemen met je leverancier.',
         icon: 'fa-duotone fa-solid fa-scale-balanced',
     },
     {
-        eyebrow: 'Locatie per item',
+        eyebrow: 'Locatie per regel',
         heading: 'Bepaal per regel waar de voorraad heen gaat.',
-        body: 'Per regel kies je de opslaglocatie waar de voorraad terechtkomt. Handig als je een levering verdeelt over meerdere magazijnplekken of zones.',
+        body: 'Niet alles van één levering komt op dezelfde plek in je magazijn. Tijdens het ontvangen wijs je elke regel een eigen magazijnlocatie of zone toe, zodat de voorraad meteen op de juiste plekken belandt.',
         icon: 'fa-duotone fa-solid fa-warehouse',
     },
     {
-        eyebrow: 'Backorders mee',
-        heading: 'Openstaande bestellingen automatisch vrijgegeven.',
-        body: 'Staan er backorders open voor producten in de levering? Zodra je ontvangt, springen die orders terug naar Open en kun je ze gewoon picken en verzenden.',
+        eyebrow: 'Backorders vrijgeven',
+        heading: 'Backorders komen vanzelf vrij.',
+        body: 'Staan er backorders open voor producten in de levering? Zodra je ze ontvangt, springen die bestellingen automatisch terug naar Open en kun je ze gewoon picken en verzenden.',
         icon: 'fa-duotone fa-solid fa-clock-rotate-left',
     },
     {
         eyebrow: 'Vanuit inkoopadvies',
-        heading: 'Van advies naar concept-levering in één klik.',
-        body: 'Werk je met inkoopadvies? Zet het in één keer om naar concept-leveringen per leverancier, klaar om te bestellen.',
+        heading: 'Van advies naar levering in één klik.',
+        body: 'Werk je met inkoopadvies? Zet het in één keer om naar leveringen per leverancier. Die staan als concept klaar om bij je leverancier te bestellen.',
         icon: 'fa-duotone fa-solid fa-wand-magic-sparkles',
     },
 ];
@@ -36,19 +36,19 @@ const subFeatures = [
 const workflowSteps = [
     {
         title: 'Levering aanmaken',
-        body: 'Kies de leverancier, vul een referentie en verwachte leverdatum in en voeg de producten toe die je verwacht. Of zet een inkoopadvies in één klik om naar concept-leveringen per leverancier.',
+        body: 'Kies de leverancier, vul een referentie en verwachte leverdatum in en voeg de producten toe die je verwacht. Of zet een inkoopadvies in één klik om naar leveringen per leverancier.',
     },
     {
         title: 'Markeren als ingekocht',
-        body: 'Bestelling geplaatst bij je leverancier? Zet de levering op Ingekocht. Vanaf dat moment staat de levering klaar om ontvangen te worden.',
+        body: 'Besteld bij je leverancier? Zet de levering op Ingekocht. Vanaf dat moment staat hij klaar om ontvangen te worden.',
     },
     {
         title: 'Producten ontvangen',
-        body: 'Vink per regel af wat er binnen is en kies de opslaglocatie. De voorraad wordt direct bijgewerkt in al je verkoopkanalen. Een barcodescanner werkt ook: ShopLinkr herkent het product aan de EAN-code en telt automatisch mee.',
+        body: 'Per regel geef je aan wat er binnen is en op welke locatie het komt. Wil je scannen? Met een barcodescanner herkent ShopLinkr het product aan de EAN-code en telt het automatisch mee. Je voorraad wordt meteen bijgewerkt op al je verkoopkanalen.',
     },
     {
         title: 'Levering afronden',
-        body: 'Klaar met inboeken? Markeer de levering als Verwerkt. Wat niet binnen is gekomen blijft zichtbaar onder Niet ontvangen, zodat je later kunt terugzien wat er miste.',
+        body: 'Klaar met ontvangen? Markeer de levering als Verwerkt. Producten die niet zijn binnengekomen blijven zichtbaar onder Niet ontvangen, zodat je later kunt terugzien wat er miste.',
     },
 ];
 
@@ -85,8 +85,8 @@ export const prerender = false;
     title="Leveringen bijhouden met ShopLinkr"
     description="Beheer inkomende leveringen in ShopLinkr. Registreer wat je verwacht, controleer aantallen bij ontvangst en zie je voorraad direct bijwerken in al je verkoopkanalen."
     eyebrow="Inkomende leveringen"
-    heading="Van pakbon naar voorraad in één flow."
-    subheading="Registreer wat je bij je leveranciers verwacht, vink de regels af tijdens het ontvangen en zie je voorraad direct bijwerken in al je verkoopkanalen."
+    heading="Van pakbon naar voorraad zonder telwerk."
+    subheading="Leg vast wat er van je leverancier aankomt, ontvang het regel voor regel en je voorraad gaat meteen mee naar al je verkoopkanalen."
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -118,10 +118,10 @@ export const prerender = false;
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
                 <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
                     <div>
-                        <p class="eyebrow mb-3">Inboeken op de werkvloer</p>
+                        <p class="eyebrow mb-3">Controle bij ontvangst</p>
                         <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
-                            Verwacht naast ontvangen,
-                            <span class="block">verschil meteen zichtbaar.</span>
+                            Verwacht en ontvangen,
+                            <span class="block">naast elkaar in beeld.</span>
                         </h2>
                     </div>
 
@@ -164,7 +164,7 @@ export const prerender = false;
                                     <span class="text-xs text-gravel tabular-nums">50</span>
                                     <i class="fa-solid fa-arrow-right text-gravel text-[10px]" aria-hidden="true"></i>
                                     <span class="text-xs text-sunstone-deep font-semibold tabular-nums">45</span>
-                                    <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">5 open</span>
+                                    <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">nog 5</span>
                                 </div>
                             </li>
                             <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
@@ -186,7 +186,7 @@ export const prerender = false;
                                 <i class="fa-solid fa-clock-rotate-left text-[0.65rem]" aria-hidden="true"></i>
                             </span>
                             <p class="text-[12px] text-charcoal leading-snug">
-                                <span class="font-semibold">14 backorders</span> <span class="text-steel">vrijgegeven, voorraad staat live op alle kanalen.</span>
+                                <span class="font-semibold">14 backorders</span> <span class="text-steel">vrijgegeven, voorraad staat meteen op alle kanalen.</span>
                             </p>
                         </div>
                     </div>

@@ -139,7 +139,7 @@ function reset(): void {
             Bericht verzonden!
         </h2>
         <p class="text-steel leading-relaxed max-w-md mx-auto">
-            Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op, meestal binnen een uur tijdens kantooruren.
+            Bedankt voor je bericht. We nemen zo snel mogelijk contact met je op, doorgaans binnen 2 uur tijdens kantooruren.
         </p>
         <button
             type="button"
@@ -312,7 +312,7 @@ function reset(): void {
             </button>
 
             <p id="contact-form-help" class="text-xs text-gravel mt-3">
-                We reageren meestal binnen een uur tijdens kantooruren (ma-vr 08:30-17:00).
+                We reageren doorgaans binnen 2 uur tijdens kantooruren (ma-vr 08:30-17:00).
             </p>
         </form>
     </div>

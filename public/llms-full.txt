@@ -86,7 +86,7 @@ Je groepeert die producten in een variantgroep. Elke variant blijft een zelfstan
 
 **Wat gebeurt er met de bundelvoorraad als ik een los onderdeel verkoop?**
 
-De bundelvoorraad volgt altijd het scharste onderdeel. Verkoop je een component los, dan zakt de bundelvoorraad mee, zodat je nooit meer bundels aanbiedt dan je kunt samenstellen. Een product mag in meerdere bundels tegelijk voorkomen en blijft daarnaast los verkoopbaar.
+De bundelvoorraad volgt altijd het schaarste onderdeel. Verkoop je een onderdeel los, dan zakt de bundelvoorraad mee, zodat je nooit meer bundels aanbiedt dan je kunt samenstellen. Een product mag in meerdere bundels tegelijk voorkomen en blijft daarnaast los verkoopbaar.
 
 **Werkt ShopLinkr ook voor producten die ik op gewicht of lengte verkoop, zoals brokken of stof?**
 
@@ -114,7 +114,7 @@ Zo diep als je magazijn vraagt. Je maakt een locatie aan en kiest optioneel een 
 
 **Wat is het verschil tussen een picklocatie en een bulklocatie?**
 
-Een picklocatie is de plek waar je dagelijks uit pickt, meestal goed bereikbaar en dicht bij het inpakstation. Een bulklocatie is reservevoorraad op pallets of in hoge stellingen. ShopLinkr pakt eerst de picklocatie aan en gaat pas door naar de bulklocatie als die leeg is. Zo houd je je magazijn in beweging zonder pickers naar moeilijke plekken te sturen.
+Een picklocatie is de plek waar je dagelijks uit pickt, meestal goed bereikbaar en dicht bij het inpakstation. Een bulklocatie houdt grotere hoeveelheden op pallets of in hoge stellingen. ShopLinkr pakt eerst de picklocatie aan en gaat pas door naar de bulklocatie als die leeg is. Zo houd je je magazijn in beweging zonder pickers naar moeilijke plekken te sturen.
 
 **Wat als een product op meerdere locaties ligt?**
 
@@ -122,11 +122,11 @@ Geen probleem. Een product mag op meerdere locaties tegelijk staan, bijvoorbeeld
 
 **Zie ik de locatie ook tijdens het verwerken van een bestelling?**
 
-Ja. Op de bestellingenpagina staat per regel de locatie van het product, en op de picklijst zie je voor elk artikel waar het ligt. Of je nu losse orders verwerkt, een batch samenstelt of via een inpakstation werkt: de locatie reist mee.
+Ja. Op de bestellingenpagina staat per regel de locatie van het product, op de picklijst zie je voor elk product waar het ligt en op het productoverzicht staat per locatie hoeveel stuks er beschikbaar zijn. Of je nu losse bestellingen verwerkt of een ronde samenstelt, je picker weet meteen waar hij moet zijn.
 
 **Hoe verplaats ik voorraad van de ene locatie naar de andere?**
 
-Open het product, klik op Voorraad bijwerken en kies Verplaatsen. Selecteer de bronlocatie, de doellocatie en het aantal stuks. Wil je alles overzetten? Zet dan de schakelaar Alle voorraad verplaatsen aan. De mutatie verschijnt meteen in de voorraadhistorie van het product.
+Open het product, klik op Voorraad bijwerken en kies Verplaatsen. Selecteer de bronlocatie, de doellocatie en het aantal stuks. Wil je alles overzetten? Zet dan de schakelaar Alle voorraad verplaatsen aan. De verplaatsing verschijnt meteen in de voorraadmutaties van het product.
 
 **Op basis van welke periode rekent het inkoopadvies?**
 
@@ -208,7 +208,7 @@ Per ontvangen regel kies je de locatie waar het product naartoe gaat. Zo kun je 
 
 **Welke vervoerders worden ondersteund?**
 
-Een breed aanbod, waaronder PostNL, DPD, GLS, Sendcloud, MyParcel, Innosend, QLS, ParcelPro, Sendy, PakketMail, DeliveryMatch, EctaroShip, TransMission en Zineps. Je koppelt zoveel vervoerders als je nodig hebt en kiest per bestelling de juiste. De volledige lijst en de koppelinstructies per vervoerder vind je op de integraties-pagina.
+Alle bekende vervoerders en verzendplatformen, zoals PostNL, DPD en GLS. Je koppelt er zoveel als je nodig hebt en kiest per bestelling de juiste. Bekijk de volledige lijst en de koppelinstructies op de integraties-pagina (/integraties).
 
 **Kun je meerdere accounts van dezelfde vervoerder koppelen?**
 
@@ -216,13 +216,13 @@ Ja. Per koppeling vul je eigen inloggegevens of API-keys in, dus je kunt bijvoor
 
 **Wat doet AutoPrint precies?**
 
-AutoPrint stuurt verzendlabels automatisch naar de printer bij je inpakstation zodra je een bestelling verwerkt. Daarvoor gebruiken we PrintNode, een softwaretool die je installeert op een computer in je magazijn. PrintNode draait op de achtergrond en pikt elk nieuw label op, zodat je niet meer per order op print hoeft te klikken.
+AutoPrint stuurt verzendlabels automatisch naar de printer bij je inpakstation zodra je een bestelling verwerkt. Daarvoor gebruiken we PrintNode, een softwaretool die je installeert op een computer in je magazijn. PrintNode draait op de achtergrond en pikt elk nieuw label op, zodat je niet meer per order op print hoeft te klikken. Lees hoe je AutoPrint instelt (/support/auto-print-instellen).
 
 **Kun je per bestelling een andere vervoerder kiezen?**
 
-Ja. Zolang de vervoerder gekoppeld is, kies je per bestelling welke je gebruikt. Wil je dat niet handmatig doen? Met een verzendregel laat je ShopLinkr automatisch de juiste vervoerder selecteren op basis van gewicht, bestemming, kanaal of producttype.
+Ja. Zolang de vervoerder gekoppeld is, kies je per bestelling welke je gebruikt. Wil je dat niet handmatig doen? Met onze regelsfunctie (/support/wat-zijn-regels) laat je ShopLinkr automatisch de juiste vervoerder selecteren op basis van gewicht, bestemming, kanaal of producttype.
 
-**Werkt track en trace automatisch terug naar je kanaal?**
+**Gaat de track en trace automatisch terug naar je verkoopkanaal?**
 
 Ja. Zodra het label is aangemaakt, stuurt ShopLinkr de track en trace code automatisch terug naar het kanaal waar de bestelling vandaan kwam. Je verkoopkanaal ontvangt de code en je klant krijgt op de bekende manier de bezorgupdate.
 
@@ -230,39 +230,35 @@ Ja. Zodra het label is aangemaakt, stuurt ShopLinkr de track en trace code autom
 
 Laat het ons weten. We breiden de koppelingen geregeld uit en kijken graag of we jouw vervoerder kunnen toevoegen. Vaak werkt het ook al via een verzendplatform als Sendcloud, MyParcel of ParcelPro: één koppeling geeft je toegang tot tientallen vervoerders.
 
-**Welke verkoopkanalen worden ondersteund voor retouren?**
+**Hoe komen retouren binnen in ShopLinkr?**
 
-Retouren verwerk je op dit moment voor Bol. Je bestellingen en voorraad blijven uiteraard synchroon op al je andere kanalen.
+Retouren komen automatisch vanuit je gekoppelde verkoopkanaal binnen in ShopLinkr. Je verwerkt ze op één plek en de status en voorraad gaan daarna automatisch terug naar het kanaal.
 
 **Kan ik per item bepalen of het terug op voorraad gaat?**
 
-Ja. Tijdens het verwerken zet je per item de schakelaar Toevoegen aan voorraad aan of uit en kies je de magazijnlocatie. Bij bundelproducten stel je per subproduct apart een locatie in. Zet je een item niet terug op voorraad, dan blijft het buiten je verkoopbare voorraad.
+Ja, dat bepaal je per item. Met de schakelaar Toevoegen aan voorraad zet je een product terug de verkoopbare voorraad in en kies je de magazijnlocatie, bij bundels per subproduct. Laat je die schakelaar uit, dan telt het item niet mee als verkoopbaar.
 
 **Kan ik foto's toevoegen aan een retour?**
 
-Ja, je voegt maximaal drie foto's per retouritem toe. Handig als bewijs bij beschadigde of incomplete retouren, bijvoorbeeld bij een geschil met een klant of om intern vast te leggen in welke staat een product binnenkwam.
-
-**Kan ik de retourstatus zelf kiezen, bijvoorbeeld gegrond of ongegrond?**
-
-Ja, je kiest per retouritem de retourstatus. Welke opties je krijgt, wordt bepaald door Bol, zodat je altijd binnen hun regels blijft.
+Ja, je voegt foto's toe per retouritem. Handig als bewijs bij beschadigde of incomplete retouren, bijvoorbeeld bij een geschil met een klant of om intern vast te leggen in welke staat een product binnenkwam.
 
 **Wat gebeurt er met de status op het verkoopkanaal?**
 
-Zodra je een retour verwerkt, koppelt ShopLinkr de verwerking automatisch terug naar Bol. Jij hoeft daarvoor niet apart in te loggen. Je voorraad gaat in dezelfde beweging mee, zodat al je gekoppelde kanalen meteen de actuele aantallen zien.
+Zodra je een retour verwerkt, koppelt ShopLinkr de verwerking automatisch terug naar je verkoopkanaal. Jij hoeft daarvoor niet apart in te loggen. Tegelijk wordt je voorraad aangepast, zodat elk gekoppeld kanaal direct de juiste aantallen laat zien.
 
 ### Automatisering, klanten en team
 
-**Op welke voorwaarden kan ik een regel laten triggeren?**
+**Op welke voorwaarden kan ik een regel laten reageren?**
 
-Op tientallen velden, verdeeld over klantgegevens en bestelling. Denk aan verkoopkanaal, totaalgewicht, totaalbedrag, aantal producten, verpakkingstype, specifiek product, tag, servicepunt, verzendmethode en besteldatum. Voor klantgegevens kies je per veld of het om het verzendadres of factuuradres gaat, en daarbinnen om naam, e-mail, postcode, land, Waddeneilanden en meer.
+Op tientallen velden, verdeeld over klantgegevens en bestelling. Denk aan verkoopkanaal, totaalgewicht, totaalbedrag, aantal producten, verpakkingstype, specifiek product, tag, servicepunt, verzendmethode en besteldatum. Voor klantgegevens kies je per veld of het om het verzendadres of factuuradres gaat, en daarbinnen om naam, e-mail, postcode, land en meer.
 
 **Welke acties kan ShopLinkr automatisch uitvoeren?**
 
-Negen verschillende. Een verzendoptie instellen, tags toevoegen, een notitie plaatsen, de bestelling uitstellen, markeren als hoge prioriteit of als afhaalbestelling, een uiterste verwerkingsdatum zetten, een product aan de bestelling toevoegen, of automatische verwerking in de picklijst uitschakelen. Je kunt meerdere acties combineren binnen één regel.
+Een ruime set acties. Denk aan een verzendoptie instellen, een tag toevoegen of een bestelling op hoge prioriteit zetten. Je kunt meerdere acties combineren binnen één regel.
 
 **Kan ik meerdere voorwaarden in één regel combineren?**
 
-Ja. Binnen een groep voorwaarden bepaal je of alle voorwaarden moeten kloppen, of dat één voorwaarde al voldoende is. Zo maak je een regel die alleen triggert bij een specifieke combinatie, of juist een regel die meerdere situaties tegelijk afvangt.
+Ja. Binnen een groep voorwaarden bepaal je of alle voorwaarden moeten kloppen, of dat één voorwaarde al voldoende is. Zo maak je een regel die alleen geldt bij een specifieke combinatie, of juist een regel die meerdere situaties tegelijk afvangt.
 
 **Wat gebeurt er als twee regels op dezelfde bestelling van toepassing zijn?**
 
@@ -286,11 +282,15 @@ Nee. Zodra je een veld handmatig aanpast, laat een latere sync vanuit het verkoo
 
 **Welke gegevens van een klant zie ik per bestelling?**
 
-Aanhef, voor- en achternaam met eventueel tussenvoegsel, e-mailadres, telefoonnummer, bedrijfsnaam, btw- en KvK-nummer, plus een volledig adres met straat, huisnummer, postcode, plaats en land. Alle persoonsgegevens worden versleuteld opgeslagen.
+Aanhef, voor- en achternaam met eventueel tussenvoegsel, e-mailadres, telefoonnummer, bedrijfsnaam, btw- en KvK-nummer, plus een volledig adres met straat, huisnummer, postcode, plaats en land.
 
-**Kan ik orders van dezelfde klant samenvoegen tot één zending?**
+**Hoe veilig worden klantgegevens opgeslagen?**
 
-Ja, op basis van het afleveradres. Hebben meerdere openstaande bestellingen hetzelfde verzendadres, dan herkent ShopLinkr dat en kun je ze samenvoegen tot één zending. Dat werkt ook als de orders van verschillende verkoopkanalen komen.
+Alle persoonsgegevens, zoals namen, adressen en contactgegevens, worden versleuteld opgeslagen in onze database. Daarnaast bepaal je met rollen en rechten per gebruiker wie de klantgegevens mag inzien, zodat alleen de juiste mensen erbij kunnen.
+
+**Kan ik bestellingen van dezelfde klant samenvoegen tot één zending?**
+
+Ja, op basis van het afleveradres. Hebben meerdere openstaande bestellingen hetzelfde verzendadres, dan herkent ShopLinkr dat en kun je ze samenvoegen tot één zending. Dat werkt ook als de bestellingen van verschillende verkoopkanalen komen.
 
 **Kost een extra gebruiker iets?**
 
@@ -298,7 +298,7 @@ Nee. Bij ShopLinkr betaal je niet per gebruiker. Of je nu met z'n tweeën werkt 
 
 **Welke standaardrollen zitten er in ShopLinkr?**
 
-Er staan vijf rollen klaar: Beheerder (volledige toegang), Magazijn (bestellingen verwerken en voorraad bijwerken), Administratie (rapporten en exports), Klantenservice (bestellingen en retouren) en Inkoop (leveranciers en leveringen). De Beheerder-rol kun je niet wijzigen of verwijderen, de andere standaardrollen wel.
+Er staan vijf rollen klaar: Beheerder (volledige toegang), Magazijn (bestellingen verwerken en voorraad bijwerken), Administratie (rapporten en exports), Klantenservice (bestellingen en retouren) en Inkoop (leveranciers en leveringen). De Beheerder-rol kun je niet wijzigen of verwijderen, de andere standaardrollen pas je naar wens aan.
 
 **Kan ik zelf rollen aanmaken?**
 
@@ -318,7 +318,7 @@ Je vindt vier vaste rapporten onder Rapporten in het menu: Product prestaties, N
 
 **Kun je rapporten exporteren?**
 
-Ja, elk rapport heeft een exportknop. Je krijgt het bestand per e-mail zodra het klaar is, zodat zware exports je browser niet bezighouden. Handig om door te sturen naar je boekhouder of mee te nemen in je eigen analyse.
+Ja, elk rapport heeft een exportknop en je krijgt het als Excel-bestand. Handig om door te sturen naar je boekhouder of mee te nemen in je eigen analyse.
 
 **Hoe vaak wordt de ABC-analyse bijgewerkt en waar kijkt hij naar?**
 
@@ -356,7 +356,7 @@ Ja. We zetten samen met jou de eerste setup op, importeren je producten en voorr
 
 **Wat is er inbegrepen in de support?**
 
-Toegang tot onze chat en mail support, met een reactietijd van doorgaans onder de 24 uur. Geen tickets in een wachtrij, geen losse support-pakketten. Voor inrichtingsvragen plannen we ook graag een korte call.
+Toegang tot onze chat en mail support, met een reactietijd van doorgaans binnen 2 uur tijdens kantooruren. Geen tickets in een wachtrij, geen losse support-pakketten. Voor inrichtingsvragen plannen we ook graag een korte call.
 
 **Wat als ik later vragen heb of meer wil weten?**
 
@@ -364,11 +364,11 @@ Plan een demo of stuur ons een bericht. We denken graag mee over de inrichting v
 
 **Hoe snel krijg ik antwoord?**
 
-Tijdens kantooruren reageren we doorgaans binnen een uur. Stuur je iets in het weekend? Dan hoor je vrijwel altijd op maandagochtend van ons.
+Tijdens kantooruren reageren we doorgaans binnen 2 uur. Stuur je iets in het weekend? Dan hoor je vrijwel altijd op maandagochtend van ons.
 
 **Kan ik ook bellen of via WhatsApp?**
 
-Bellen kan op +31 6 49 78 12 12, maandag tot en met vrijdag van 08:30 tot 17:00. Voor korte vragen werkt mailen of het formulier vaak sneller, omdat we dan direct kunnen meekijken.
+Bellen of een WhatsApp sturen kan op +31 6 49 78 12 12, maandag tot en met vrijdag van 08:30 tot 17:00. Voor korte vragen werkt WhatsApp, mail of het formulier vaak het snelst, omdat we dan direct kunnen meekijken.
 
 **Ik ben nog geen klant. Kan ik toch contact opnemen?**
 
@@ -376,5 +376,5 @@ Absoluut. Of je nu oriënteert, twijfelt tussen tools of een specifieke vraag he
 
 **Wat als ik liever eerst zelf rondkijk?**
 
-Je kan 14 dagen gratis ShopLinkr proberen, zonder creditcard. Lopen we ergens samen tegenaan, dan staan we klaar.
+Je kunt ShopLinkr 14 dagen gratis proberen, zonder creditcard. Loop je ergens tegenaan, dan staan we voor je klaar.
 

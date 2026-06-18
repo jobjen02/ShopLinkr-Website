@@ -27,6 +27,7 @@ interface NavMegaItem {
 interface NavMega {
     type: 'mega';
     label: string;
+    href: string;
     items: Array<NavMegaItem>;
 }
 
@@ -36,6 +37,7 @@ const navigation: Array<NavEntry> = [
     {
         type: 'mega',
         label: 'Functionaliteiten',
+        href: '/functionaliteiten',
         items: [
             {
                 label: 'Bestellingen',
@@ -189,21 +191,20 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                         );
                     }
 
-                    const megaActive = isActiveDropdown(entry.items);
+                    const megaActive = isActiveLink(entry.href) || isActiveDropdown(entry.items);
                     return (
                         <li class="relative group">
-                            <button
-                                type="button"
+                            <a
+                                href={entry.href}
                                 class:list={[
                                     'inline-flex items-center gap-1.5 hover:text-charcoal transition-colors py-2',
                                     megaActive && 'text-charcoal',
                                 ]}
-                                aria-haspopup="true"
-                                aria-expanded="false"
+                                aria-current={megaActive ? 'page' : undefined}
                             >
                                 {entry.label}
                                 <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
-                            </button>
+                            </a>
                             <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-opacity duration-150">
                                 <div class="w-[760px] rounded-2xl border border-chalk-dark bg-paper shadow-[0_24px_60px_-20px_rgb(25_25_25_/_0.22)] p-3">
                                     <div class="grid grid-cols-3 gap-1">
@@ -317,6 +318,12 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                     <i class="fa-solid fa-chevron-down text-[11px] text-gravel transition-transform duration-200 group-open:rotate-180" />
                                 </summary>
                                 <div class="pl-3 pb-2">
+                                    <a
+                                        href={entry.href}
+                                        class="block py-2 text-[14px] font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                    >
+                                        Alle functionaliteiten
+                                    </a>
                                     {entry.items.map((item) => (
                                         <a
                                             href={item.href}
