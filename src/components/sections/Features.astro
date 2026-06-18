@@ -1,94 +1,71 @@
 ---
+import { localizedPath, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+
 const channels = [
-    {
-        name: 'Bol',
-        src: '/assets/marketplaces/bol.jpeg',
-    },
-    {
-        name: 'Shopify',
-        src: '/assets/webshops/Shopify.jpg',
-    },
-    {
-        name: 'WooCommerce',
-        src: '/assets/webshops/WooCommerce.png',
-    },
-    {
-        name: 'Kaufland',
-        src: '/assets/marketplaces/kaufland.jpg',
-    },
+    { name: 'Bol', src: '/assets/marketplaces/bol.jpeg' },
+    { name: 'Shopify', src: '/assets/webshops/Shopify.jpg' },
+    { name: 'WooCommerce', src: '/assets/webshops/WooCommerce.png' },
+    { name: 'Kaufland', src: '/assets/marketplaces/kaufland.jpg' },
 ];
 
 const carriers = [
-    {
-        name: 'PostNL',
-        src: '/assets/carriers/PostNL.jpg',
-    },
-    {
-        name: 'DPD',
-        src: '/assets/carriers/dpd.jpeg',
-    },
-    {
-        name: 'GLS',
-        src: '/assets/carriers/GLS.png',
-    },
-    {
-        name: 'MyParcel',
-        src: '/assets/carriers/MyParcel.jpg',
-    },
-    {
-        name: 'Sendcloud',
-        src: '/assets/carriers/Sendcloud.png',
-    },
+    { name: 'PostNL', src: '/assets/carriers/PostNL.jpg' },
+    { name: 'DPD', src: '/assets/carriers/dpd.jpeg' },
+    { name: 'GLS', src: '/assets/carriers/GLS.png' },
+    { name: 'MyParcel', src: '/assets/carriers/MyParcel.jpg' },
+    { name: 'Sendcloud', src: '/assets/carriers/Sendcloud.png' },
 ];
 
 const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
+
+// Mapped routes link to their localized URL; routes without an EN page yet keep
+// their Dutch URL (an EN visitor lands on the NL page until it is translated).
+const inventoryHref = localizedPath('features.inventory', locale);
+const pricingHref = localizedPath('pricing', locale);
+const f = t.features;
 ---
 
 <section class="py-24 md:py-32">
     <div class="container-prose">
         <div class="max-w-2xl mb-14 md:mb-16">
-            <p class="eyebrow mb-4">Wat je krijgt</p>
+            <p class="eyebrow mb-4">{f.eyebrow}</p>
             <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                Eén platform voor je hele magazijnoperatie.
+                {f.heading}
             </h2>
             <p class="mt-6 text-lg text-steel leading-relaxed">
-                Geen losse tools die elkaar niet kennen. ShopLinkr brengt voorraad, orders, picken, labelen en verzenden samen in één systeem.
+                {f.intro}
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-            <a href="/functionaliteiten/voorraad" class:list={[cardLinkClass, 'md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col justify-between gap-8 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={inventoryHref} class:list={[cardLinkClass, 'md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col justify-between gap-8 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div>
-                    <p class="eyebrow mb-3">Voorraadsynchronisatie</p>
+                    <p class="eyebrow mb-3">{f.stock.eyebrow}</p>
                     <h3 class="text-3xl md:text-[2.5rem] font-semibold text-charcoal tracking-tight leading-[1.05] mb-5">
-                        Eén voorraad, alle kanalen.
+                        {f.stock.heading}
                     </h3>
                     <p class="text-steel leading-relaxed text-base md:text-lg max-w-md">
-                        ShopLinkr houdt je voorraad altijd actueel. Verkocht op Bol? Shopify, WooCommerce en Kaufland zien het binnen seconden.
+                        {f.stock.body}
                     </p>
                 </div>
                 <ul class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-medium text-charcoal">
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                        Geen nee-verkoop
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                        Geen handwerk
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                        Realtime updates
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                        Onbeperkt kanalen
-                    </li>
+                    {
+                        f.stock.bullets.map((bullet) => (
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                                {bullet}
+                            </li>
+                        ))
+                    }
                 </ul>
             </a>
 
             <a href="/integraties" class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <p class="eyebrow">Verkoopkanalen</p>
+                <p class="eyebrow">{f.channels.eyebrow}</p>
                 <div class="flex items-center gap-3 flex-wrap">
                     {
                         channels.map((channel) => (
@@ -105,7 +82,7 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                         ))
                     }
                 </div>
-                <p class="text-sm text-steel mt-auto">Beheer al je orders en voorraad vanuit één omgeving.</p>
+                <p class="text-sm text-steel mt-auto">{f.channels.body}</p>
             </a>
 
             <a href="/functionaliteiten/gebruikers" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
@@ -113,8 +90,8 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-users text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Onbeperkt gebruikers.</p>
-                    <p class="text-sm text-steel mt-1.5">Voeg je hele team toe, zonder extra kosten per gebruiker.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.users.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.users.body}</p>
                 </div>
             </a>
 
@@ -123,8 +100,8 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-store text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Gemaakt door bol-verkopers.</p>
-                    <p class="text-sm text-steel mt-1.5">Ontstaan uit onze eigen webshop, dagelijks getoetst aan de praktijk.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.bolSellers.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.bolSellers.body}</p>
                 </div>
             </a>
 
@@ -133,8 +110,8 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-wand-magic-sparkles text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Slimme regels.</p>
-                    <p class="text-sm text-steel mt-1.5">Wijs vervoerders, labels en flows automatisch toe op basis van je eigen logica.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.rules.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.rules.body}</p>
                 </div>
             </a>
 
@@ -143,13 +120,13 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-location-dot text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Magazijnlocaties.</p>
-                    <p class="text-sm text-steel mt-1.5">Per product zie je direct waar het ligt. Picken zonder zoeken.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.locations.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.locations.body}</p>
                 </div>
             </a>
 
             <a href="/functionaliteiten/vervoerders" class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <p class="eyebrow">Vervoerders</p>
+                <p class="eyebrow">{f.carriers.eyebrow}</p>
                 <div class="flex items-center gap-3 flex-wrap">
                     {
                         carriers.map((carrier) => (
@@ -166,7 +143,7 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                         ))
                     }
                 </div>
-                <p class="text-sm text-steel mt-auto">Print labels van elke vervoerder, de track en trace gaat automatisch naar je verkoopkanaal.</p>
+                <p class="text-sm text-steel mt-auto">{f.carriers.body}</p>
             </a>
 
             <a href="/functionaliteiten/picklijsten" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
@@ -174,8 +151,8 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-route text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Picklijst met looproute.</p>
-                    <p class="text-sm text-steel mt-1.5">Werkt op je telefoon, tablet en scanner.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.pickRoute.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.pickRoute.body}</p>
                 </div>
             </a>
 
@@ -184,8 +161,8 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-chart-line text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Winst per order.</p>
-                    <p class="text-sm text-steel mt-1.5">Inkoopprijzen erin, marges per order en kanaal eruit.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.profit.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.profit.body}</p>
                 </div>
             </a>
 
@@ -194,8 +171,8 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-barcode-read text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Barcodescanner.</p>
-                    <p class="text-sm text-steel mt-1.5">Scan elk product en pick zonder fouten.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.scanner.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.scanner.body}</p>
                 </div>
             </a>
 
@@ -204,27 +181,27 @@ const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
                     <i class="fa-duotone fa-solid fa-print text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">Autoprint.</p>
-                    <p class="text-sm text-steel mt-1.5">Verzendlabels worden automatisch geprint.</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.autoprint.title}</p>
+                    <p class="text-sm text-steel mt-1.5">{f.autoprint.body}</p>
                 </div>
             </a>
 
             <article class="md:col-span-4 bg-charcoal text-paper rounded-2xl p-6 md:p-8 transition duration-300 ease-out hover:bg-charcoal/95">
                 <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5">
                     <div class="flex-1">
-                        <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/50 mb-2">Hoe wij rekenen</p>
+                        <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/50 mb-2">{f.pricing.eyebrow}</p>
                         <h3 class="text-2xl md:text-3xl font-semibold tracking-tight leading-snug">
-                            Geen vaste maandprijs.
+                            {f.pricing.heading}
                         </h3>
                         <p class="text-paper/70 mt-2 text-[0.975rem] max-w-2xl">
-                            Je betaalt voor de kanalen en orders die je echt gebruikt. Klein beginnen kan, meegroeien ook.
+                            {f.pricing.body}
                         </p>
                     </div>
                     <a
-                        href="/prijzen"
+                        href={pricingHref}
                         class="btn btn-sunstone text-sm whitespace-nowrap"
                     >
-                        Bekijk prijzen
+                        {f.pricing.cta}
                         <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                     </a>
                 </div>

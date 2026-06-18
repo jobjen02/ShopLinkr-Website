@@ -5,12 +5,14 @@ import JsonLd from '../components/seo/JsonLd.astro';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 import CookieBanner from '../components/islands/CookieBanner.vue';
+import type { Locale, RouteKey } from '../i18n/routes';
 
 interface Props {
     title: string;
     description: string;
     image?: string;
-    locale?: 'nl' | 'en';
+    locale?: Locale;
+    routeKey?: RouteKey;
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
@@ -18,9 +20,14 @@ const {
     title,
     description,
     image,
-    locale = 'nl',
+    locale: localeProp,
+    routeKey,
     jsonLd,
 } = Astro.props;
+
+// Locale is derived from the URL (NL at root, EN under /en/) so pages don't
+// have to pass it. An explicit prop still wins if a page needs to override.
+const locale: Locale = localeProp ?? (Astro.currentLocale as Locale) ?? 'nl';
 
 const organizationSchema = {
     '@context': 'https://schema.org',
@@ -67,6 +74,7 @@ const websiteSchema = {
             description={description}
             image={image}
             locale={locale}
+            routeKey={routeKey}
         />
         <JsonLd schema={organizationSchema} />
         <JsonLd schema={websiteSchema} />
@@ -84,6 +92,6 @@ const websiteSchema = {
             <slot />
         </main>
         <Footer />
-        <CookieBanner client:idle />
+        <CookieBanner client:idle locale={locale} />
     </body>
 </html>

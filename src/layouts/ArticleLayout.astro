@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import type { Locale, RouteKey } from '../i18n/routes';
 
 interface Props {
     title: string;
@@ -11,7 +12,8 @@ interface Props {
     meta?: string;
     backHref?: string;
     backLabel?: string;
-    locale?: 'nl' | 'en';
+    locale?: Locale;
+    routeKey?: RouteKey;
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
@@ -26,6 +28,7 @@ const {
     backHref,
     backLabel,
     locale,
+    routeKey,
     jsonLd,
 } = Astro.props;
 ---
@@ -35,6 +38,7 @@ const {
     description={description}
     image={image}
     locale={locale}
+    routeKey={routeKey}
     jsonLd={jsonLd}
 >
     <article class="pt-12 md:pt-16 pb-24 md:pb-32 bg-paper">

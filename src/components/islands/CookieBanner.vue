@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { useTranslations } from '../../i18n/ui';
+import { localizeHref, type Locale } from '../../i18n/routes';
+
+const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
+const t = computed(() => useTranslations(props.locale).cookies);
+const cookiesHref = computed(() => localizeHref('/cookies', props.locale));
 
 interface CookieConsent {
     necessary: true;
@@ -97,18 +103,18 @@ function toggleDetails(): void {
 
 const summary = computed(() => {
     if (analyticsEnabled.value && marketingEnabled.value) {
-        return 'Je accepteert alle cookies.';
+        return t.value.summaryAll;
     }
 
     if (!analyticsEnabled.value && !marketingEnabled.value) {
-        return 'Je accepteert alleen noodzakelijke cookies.';
+        return t.value.summaryNecessary;
     }
 
     if (analyticsEnabled.value && !marketingEnabled.value) {
-        return 'Je accepteert noodzakelijke en analytische cookies.';
+        return t.value.summaryAnalytics;
     }
 
-    return 'Je accepteert noodzakelijke en marketing cookies.';
+    return t.value.summaryMarketing;
 });
 
 function onReopen(): void {
@@ -172,10 +178,10 @@ onBeforeUnmount(() => {
                     </span>
                     <div>
                         <h2 id="cookie-banner-title" class="text-base font-semibold text-charcoal tracking-tight">
-                            Cookies
+                            {{ t.title }}
                         </h2>
                         <p id="cookie-banner-desc" class="mt-1 text-sm text-steel leading-relaxed">
-                            We gebruiken cookies om de site te laten werken en je ervaring te verbeteren. Kies wat je accepteert.
+                            {{ t.desc }}
                         </p>
                     </div>
                 </div>
@@ -187,24 +193,24 @@ onBeforeUnmount(() => {
                     <div class="flex items-start justify-between gap-4">
                         <div>
                             <p class="text-sm font-semibold text-charcoal">
-                                Noodzakelijk
+                                {{ t.necessary }}
                             </p>
                             <p class="text-xs text-gravel leading-relaxed mt-0.5">
-                                Nodig om de site te laten functioneren. Altijd aan.
+                                {{ t.necessaryDesc }}
                             </p>
                         </div>
                         <span class="flex-shrink-0 text-xs font-medium text-gravel mt-1">
-                            Altijd aan
+                            {{ t.alwaysOn }}
                         </span>
                     </div>
 
                     <label class="flex items-start justify-between gap-4 cursor-pointer">
                         <div>
                             <p class="text-sm font-semibold text-charcoal">
-                                Analytisch
+                                {{ t.analytics }}
                             </p>
                             <p class="text-xs text-gravel leading-relaxed mt-0.5">
-                                Helpt ons begrijpen hoe je de site gebruikt, zodat we hem kunnen verbeteren.
+                                {{ t.analyticsDesc }}
                             </p>
                         </div>
                         <span
@@ -220,17 +226,17 @@ onBeforeUnmount(() => {
                             v-model="analyticsEnabled"
                             type="checkbox"
                             class="sr-only"
-                            aria-label="Analytische cookies"
+                            :aria-label="t.analyticsAria"
                         />
                     </label>
 
                     <label class="flex items-start justify-between gap-4 cursor-pointer">
                         <div>
                             <p class="text-sm font-semibold text-charcoal">
-                                Marketing
+                                {{ t.marketing }}
                             </p>
                             <p class="text-xs text-gravel leading-relaxed mt-0.5">
-                                Voor gepersonaliseerde content en advertenties.
+                                {{ t.marketingDesc }}
                             </p>
                         </div>
                         <span
@@ -246,7 +252,7 @@ onBeforeUnmount(() => {
                             v-model="marketingEnabled"
                             type="checkbox"
                             class="sr-only"
-                            aria-label="Marketing cookies"
+                            :aria-label="t.marketingAria"
                         />
                     </label>
 
@@ -256,10 +262,10 @@ onBeforeUnmount(() => {
                 </div>
 
                 <p class="mt-4 text-xs text-gravel">
-                    Lees meer in ons
-                    <a href="/cookies" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">cookiebeleid</a>
-                    en
-                    <a href="https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf" target="_blank" rel="noopener noreferrer" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">privacyverklaring</a>.
+                    {{ t.readMoreBefore }}
+                    <a :href="cookiesHref" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">{{ t.cookiePolicy }}</a>
+                    {{ t.readMoreMiddle }}
+                    <a href="https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf" target="_blank" rel="noopener noreferrer" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">{{ t.privacyStatement }}</a>.
                 </p>
 
                 <div class="mt-5 flex flex-col gap-2">
@@ -268,7 +274,7 @@ onBeforeUnmount(() => {
                         class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-charcoal text-paper text-sm font-semibold hover:bg-charcoal/90 transition-colors"
                         @click="acceptAll"
                     >
-                        Accepteer alle
+                        {{ t.acceptAll }}
                     </button>
 
                     <div class="grid grid-cols-2 gap-2">
@@ -278,7 +284,7 @@ onBeforeUnmount(() => {
                             class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark bg-paper text-charcoal text-sm font-medium hover:bg-chalk-light transition-colors"
                             @click="toggleDetails"
                         >
-                            Instellen
+                            {{ t.configure }}
                         </button>
                         <button
                             v-else
@@ -286,14 +292,14 @@ onBeforeUnmount(() => {
                             class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark bg-paper text-charcoal text-sm font-medium hover:bg-chalk-light transition-colors"
                             @click="saveCustom"
                         >
-                            Voorkeuren opslaan
+                            {{ t.savePrefs }}
                         </button>
                         <button
                             type="button"
                             class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark bg-paper text-steel text-sm font-medium hover:bg-chalk-light hover:text-charcoal transition-colors"
                             @click="rejectAll"
                         >
-                            Alleen noodzakelijk
+                            {{ t.necessaryOnly }}
                         </button>
                     </div>
                 </div>

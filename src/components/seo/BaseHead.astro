@@ -1,10 +1,13 @@
 ---
+import { localizedPath, routes, type RouteKey } from '../../i18n/routes';
+
 interface Props {
     title: string;
     description: string;
     image?: string;
     canonical?: string;
     locale?: 'nl' | 'en';
+    routeKey?: RouteKey;
 }
 
 const {
@@ -13,6 +16,7 @@ const {
     image = '/og-default.svg',
     canonical,
     locale = 'nl',
+    routeKey,
 } = Astro.props;
 
 const canonicalURL = canonical
@@ -20,6 +24,18 @@ const canonicalURL = canonical
     : new URL(Astro.url.pathname, Astro.site);
 
 const ogLocale = locale === 'nl' ? 'nl_NL' : 'en_US';
+
+// Reciprocal hreflang only when the page exists in both locales (routeKey is in
+// the map). x-default points to NL so brand/language-agnostic searches land on
+// the Dutch version. Pages without an EN twin keep a self-referencing nl +
+// x-default, which is correct for an NL-only page.
+const hasAlternates = routeKey != null && routeKey in routes;
+const alternates = hasAlternates
+    ? {
+          nl: new URL(localizedPath(routeKey, 'nl'), Astro.site),
+          en: new URL(localizedPath(routeKey, 'en'), Astro.site),
+      }
+    : null;
 ---
 
 <meta charset="UTF-8" />
@@ -45,8 +61,20 @@ const ogLocale = locale === 'nl' ? 'nl_NL' : 'en_US';
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.site)} />
 
-<link rel="alternate" hreflang="nl" href={canonicalURL} />
-<link rel="alternate" hreflang="x-default" href={canonicalURL} />
+{
+    alternates ? (
+        <>
+            <link rel="alternate" hreflang="nl" href={alternates.nl} />
+            <link rel="alternate" hreflang="en" href={alternates.en} />
+            <link rel="alternate" hreflang="x-default" href={alternates.nl} />
+        </>
+    ) : (
+        <>
+            <link rel="alternate" hreflang="nl" href={canonicalURL} />
+            <link rel="alternate" hreflang="x-default" href={canonicalURL} />
+        </>
+    )
+}
 
 <link rel="preconnect" href="https://rsms.me/" />
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />

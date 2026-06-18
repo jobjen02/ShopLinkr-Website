@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/sections/Hero.astro';
+import TrustBar from '../../components/sections/TrustBar.astro';
+import Features from '../../components/sections/Features.astro';
+import Showcase from '../../components/sections/Showcase.astro';
+import DashboardSection from '../../components/sections/DashboardSection.astro';
+import Testimonials from '../../components/sections/Testimonials.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+
+const jsonLd = {
+    '@type': 'SoftwareApplication',
+    name: 'ShopLinkr',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description: 'Warehouse software for webshops. Inventory, pick lists, labels and order processing in one platform.',
+    url: 'https://shoplinkr.com/en',
+    offers: {
+        '@type': 'Offer',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: 'https://shoplinkr.com/en/pricing',
+    },
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        bestRating: '5',
+        ratingCount: '47',
+    },
+};
+
+// SSR (not prerendered) so the edge middleware can read Accept and return
+// markdown to agents. Cached at the CDN via the middleware's Cache-Control.
+export const prerender = false;
+---
+
+<BaseLayout
+    title="ShopLinkr | Warehouse software for webshops"
+    description="Run your warehouse without the chaos. Inventory, pick lists, labels and order processing in one platform. Pay-as-you-go and a 14-day free trial."
+    routeKey="home"
+    jsonLd={jsonLd}
+>
+    <Hero />
+    <TrustBar />
+    <Features />
+    <Showcase />
+    <DashboardSection />
+    <Testimonials />
+    <CtaBanner />
+</BaseLayout>

@@ -1,25 +1,31 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import { useTranslations } from '../../i18n/ui';
+import type { Locale } from '../../i18n/routes';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
+
+const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
+const t = computed(() => useTranslations(props.locale).newsletter);
 
 const MAX_NAME_LENGTH = 80;
 const MAX_EMAIL_LENGTH = 254;
 
-const FRIENDLY_ERRORS: Record<string, string> = {
-    'First name too short': 'Vul je voornaam in, minstens 2 letters.',
-    'Invalid email': 'Het e-mailadres ziet er niet helemaal goed uit.',
-    'Newsletter is niet juist geconfigureerd': 'Aanmelden lukt nu niet. Probeer het later nog eens.',
-    'Aanmelden lukte niet': 'Aanmelden lukte niet. Probeer het zo nog eens.',
-    'Aanmelden duurde te lang': 'Het duurde wat te lang. Probeer het zo nog eens.',
-    'Onverwachte fout bij aanmelden': 'Aanmelden lukte niet. Probeer het zo nog eens.',
-    'Invalid content type': 'Aanmelden lukte niet. Probeer het zo nog eens.',
-    'Payload too large': 'Aanmelden lukte niet. Probeer het zo nog eens.',
-    'Invalid JSON': 'Aanmelden lukte niet. Probeer het zo nog eens.',
-    'Invalid payload': 'Aanmelden lukte niet. Probeer het zo nog eens.',
-};
+// Maps raw server error strings to a dictionary key; anything unknown is generic.
+type ErrorKey = 'tooShort' | 'invalidEmail' | 'notConfigured' | 'timeout' | 'generic';
 
-const FALLBACK_ERROR = 'Aanmelden lukte niet. Probeer het zo nog eens.';
+const ERROR_KEYS: Record<string, ErrorKey> = {
+    'First name too short': 'tooShort',
+    'Invalid email': 'invalidEmail',
+    'Newsletter is niet juist geconfigureerd': 'notConfigured',
+    'Aanmelden lukte niet': 'generic',
+    'Aanmelden duurde te lang': 'timeout',
+    'Onverwachte fout bij aanmelden': 'generic',
+    'Invalid content type': 'generic',
+    'Payload too large': 'generic',
+    'Invalid JSON': 'generic',
+    'Invalid payload': 'generic',
+};
 
 const firstName = ref('');
 const email = ref('');
@@ -33,11 +39,9 @@ const isValid = computed(() => {
 });
 
 function friendlyError(raw: string | undefined): string {
-    if (!raw) {
-        return FALLBACK_ERROR;
-    }
-
-    return FRIENDLY_ERRORS[raw] ?? FALLBACK_ERROR;
+    const errors = t.value.errors;
+    const key: ErrorKey = (raw && ERROR_KEYS[raw]) || 'generic';
+    return errors[key];
 }
 
 async function handleSubmit(): Promise<void> {
@@ -97,19 +101,19 @@ async function handleSubmit(): Promise<void> {
                 <i class="fa-solid fa-check text-sm" aria-hidden="true"></i>
             </div>
             <p class="text-sm font-semibold text-charcoal mb-1">
-                Bedankt voor je aanmelding!
+                {{ t.successTitle }}
             </p>
             <p class="text-xs text-gravel">
-                Je hoort snel van ons.
+                {{ t.successBody }}
             </p>
         </div>
 
         <div v-else>
             <p class="text-sm font-semibold text-charcoal mb-1">
-                Blijf op de hoogte
+                {{ t.heading }}
             </p>
             <p class="text-xs text-gravel mb-4 leading-relaxed">
-                Maandelijks updates over nieuwe features, integraties en tips voor je magazijn.
+                {{ t.body }}
             </p>
 
             <form
@@ -139,8 +143,8 @@ async function handleSubmit(): Promise<void> {
                         required
                         autocomplete="given-name"
                         :maxlength="MAX_NAME_LENGTH"
-                        placeholder="Je voornaam"
-                        aria-label="Voornaam voor newsletter"
+                        :placeholder="t.firstNamePlaceholder"
+                        :aria-label="t.firstNameAria"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-3.5 py-2.5 text-sm text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                         :disabled="status === 'submitting'"
                     />
@@ -154,8 +158,8 @@ async function handleSubmit(): Promise<void> {
                         autocomplete="email"
                         :maxlength="MAX_EMAIL_LENGTH"
                         inputmode="email"
-                        placeholder="naam@bedrijf.nl"
-                        aria-label="E-mailadres voor newsletter"
+                        :placeholder="t.emailPlaceholder"
+                        :aria-label="t.emailAria"
                         class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-3.5 py-2.5 text-sm text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                         :disabled="status === 'submitting'"
                     />
@@ -169,10 +173,10 @@ async function handleSubmit(): Promise<void> {
                 >
                     <span v-if="status === 'submitting'" class="inline-flex items-center gap-2">
                         <i class="fa-solid fa-circle-notch fa-spin text-xs" aria-hidden="true"></i>
-                        Aanmelden...
+                        {{ t.submitting }}
                     </span>
                     <span v-else class="inline-flex items-center gap-2">
-                        Aanmelden
+                        {{ t.submit }}
                         <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                     </span>
                 </button>
@@ -187,7 +191,7 @@ async function handleSubmit(): Promise<void> {
                 </p>
 
                 <p v-else class="text-[11px] text-gravel mt-2 leading-relaxed">
-                    We sturen je geen spam. Uitschrijven kan altijd.
+                    {{ t.noSpam }}
                 </p>
             </form>
         </div>

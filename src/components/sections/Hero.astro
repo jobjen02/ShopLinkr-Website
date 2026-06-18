@@ -1,6 +1,11 @@
 ---
 import HeroOrder from '../product/HeroOrder.vue';
 import { externalLinks } from '../../data/externalLinks';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
 ---
 
 <section class="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden">
@@ -13,15 +18,15 @@ import { externalLinks } from '../../data/externalLinks';
             <div>
                 <p class="inline-flex items-center gap-2 text-xs font-medium text-gravel mb-6">
                     <span class="h-1.5 w-1.5 rounded-full bg-sunstone" aria-hidden="true"></span>
-                    Binnenkort ook voor fulfilmentbedrijven
+                    {t.hero.badge}
                 </p>
 
                 <h1 class="text-[2.25rem] sm:text-[2.75rem] md:text-[3.5rem] font-semibold text-charcoal leading-[1.05] tracking-tight">
-                    Magazijnsoftware voor webshops.
+                    {t.hero.heading}
                 </h1>
 
                 <p class="mt-6 text-lg md:text-xl text-steel leading-relaxed max-w-xl">
-                    Eén platform voor voorraad, picklijsten, labels en orderverwerking. Run je magazijn zonder chaos.
+                    {t.hero.sub}
                 </p>
 
                 <div class="mt-9 flex flex-col sm:flex-row gap-3">
@@ -31,7 +36,7 @@ import { externalLinks } from '../../data/externalLinks';
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Gratis starten
+                        {t.common.register}
                         <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                     </a>
                     <a
@@ -40,17 +45,17 @@ import { externalLinks } from '../../data/externalLinks';
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Demo inplannen
+                        {t.common.demo}
                     </a>
                 </div>
 
                 <p class="mt-5 text-sm text-gravel">
-                    14 dagen gratis. Geen creditcard. Maandelijks opzegbaar.
+                    {t.hero.fineprint}
                 </p>
             </div>
 
             <div class="relative mt-4 lg:mt-0">
-                <HeroOrder client:visible />
+                <HeroOrder client:visible locale={locale} />
             </div>
         </div>
     </div>

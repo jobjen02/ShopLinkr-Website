@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue';
+import { useTranslations } from '../../i18n/ui';
+import type { Locale } from '../../i18n/routes';
 
 const channels = [
     { key: 'bol', name: 'Bol', logo: '/assets/marketplaces/bol.jpeg' },
@@ -8,7 +10,10 @@ const channels = [
     { key: 'kaufland', name: 'Kaufland', logo: '/assets/marketplaces/kaufland.jpg' },
 ];
 
-const steps = ['Besteld', 'Gepikt', 'Ingepakt', 'Verzonden'];
+const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
+
+const t = computed(() => useTranslations(props.locale).heroOrder);
+const steps = computed(() => t.value.steps);
 
 const done = ref(0); // completed steps (0..5)
 const stock = ref(10);
@@ -27,7 +32,7 @@ const instant = ref(false); // kill child transitions during the reset snap
 // first to the last center; inset and fill use that even grid so the green line
 // lands exactly on every circle (the old justify-between let wider labels like
 // "Verzonden" shift the centers, so the fill overshot).
-const N = steps.length;
+const N = useTranslations('nl').heroOrder.steps.length;
 const trackInset = `${100 / (2 * N)}%`; // half a column = first/last circle center
 
 const fillWidth = computed(() => {
@@ -153,7 +158,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             v-if="!reduced"
             type="button"
             @click="togglePause"
-            :aria-label="paused ? 'Animatie afspelen' : 'Animatie pauzeren'"
+            :aria-label="paused ? t.play : t.pause"
             class="absolute top-1 left-1 z-40 h-7 w-7 rounded-full bg-paper/90 backdrop-blur ring-1 ring-chalk-dark text-gravel hover:text-charcoal hover:ring-chalk-darker flex items-center justify-center transition-colors"
         >
             <svg v-if="paused" viewBox="0 0 12 12" class="h-3 w-3 ml-0.5" aria-hidden="true">
@@ -172,8 +177,8 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                     <img src="/assets/marketplaces/bol.jpeg" alt="Bol" class="h-7 w-7 object-contain" />
                 </span>
                 <div class="min-w-0">
-                    <p class="text-[0.95rem] font-semibold text-charcoal leading-tight">Bestelling #1042</p>
-                    <p class="text-xs text-gravel">via Bol</p>
+                    <p class="text-[0.95rem] font-semibold text-charcoal leading-tight">{{ t.orderTitle }}</p>
+                    <p class="text-xs text-gravel">{{ t.viaBol }}</p>
                 </div>
             </div>
 
@@ -185,7 +190,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                 </span>
                 <div>
                     <p class="text-sm font-semibold text-charcoal">Omega 3 capsules</p>
-                    <p class="text-xs text-gravel mt-0.5">SUP-OMG3-120 · 1 stuk</p>
+                    <p class="text-xs text-gravel mt-0.5">SUP-OMG3-120 · {{ t.unit }}</p>
                 </div>
             </div>
 
@@ -220,7 +225,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             class="absolute top-0 right-1 z-20 w-[12.5rem] bg-paper rounded-xl ring-1 ring-chalk-dark shadow-[0_16px_36px_-22px_rgba(25,25,25,0.28)] px-4 py-3 transition-all duration-500 ease-out"
             :class="stockShown ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3 pointer-events-none'"
         >
-            <p class="text-[0.6rem] font-semibold tracking-[0.14em] text-gravel uppercase">Voorraad</p>
+            <p class="text-[0.6rem] font-semibold tracking-[0.14em] text-gravel uppercase">{{ t.stock }}</p>
             <div class="flex items-center gap-2 mt-0.5">
                 <span :key="stock" class="hero-pop text-3xl font-bold text-charcoal tabular-nums leading-none">{{ stock }}</span>
                 <span
@@ -228,7 +233,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                     :class="synced ? 'opacity-100' : 'opacity-0'"
                 >
                     <span class="h-1.5 w-1.5 rounded-full bg-green"></span>
-                    Voorraad bijgewerkt
+                    {{ t.stockUpdated }}
                 </span>
             </div>
             <div class="flex items-center gap-1.5 mt-2.5">
@@ -263,7 +268,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                 </span>
                 <div class="min-w-0 flex-1">
                     <div class="flex items-center justify-between gap-2">
-                        <p class="text-[0.82rem] font-semibold text-charcoal leading-tight">Gescand</p>
+                        <p class="text-[0.82rem] font-semibold text-charcoal leading-tight">{{ t.scanned }}</p>
                         <span class="h-4 w-4 rounded-full bg-green flex items-center justify-center flex-shrink-0">
                             <svg viewBox="0 0 12 12" class="h-2.5 w-2.5" aria-hidden="true">
                                 <path d="M2.5,6 l2.2,2.2 l4.2,-4.8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -271,7 +276,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                         </span>
                     </div>
                     <p class="text-[0.68rem] text-gravel mt-0.5">
-                        Locatie <span class="font-semibold text-charcoal tabular-nums">A.1.4</span>
+                        {{ t.location }} <span class="font-semibold text-charcoal tabular-nums">A.1.4</span>
                     </p>
                 </div>
             </div>
@@ -291,7 +296,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                     </svg>
                 </span>
                 <div class="min-w-0">
-                    <p class="text-[0.82rem] font-semibold text-charcoal leading-tight">Label klaar</p>
+                    <p class="text-[0.82rem] font-semibold text-charcoal leading-tight">{{ t.labelReady }}</p>
                     <p class="text-[0.64rem] text-gravel whitespace-nowrap">PostNL · 3SABCD1234567</p>
                 </div>
             </div>
@@ -313,7 +318,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             <span class="h-6 w-6 rounded-md bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img src="/assets/marketplaces/bol.jpeg" alt="Bol" class="h-4 w-4 object-contain" />
             </span>
-            <span class="text-[0.72rem] font-semibold text-charcoal leading-none">Track &amp; trace naar Bol</span>
+            <span class="text-[0.72rem] font-semibold text-charcoal leading-none">{{ t.ttToBol }}</span>
             <span class="h-4 w-4 rounded-full bg-green flex items-center justify-center flex-shrink-0">
                 <svg viewBox="0 0 12 12" class="h-2.5 w-2.5" aria-hidden="true">
                     <path d="M2.5,6 l2.2,2.2 l4.2,-4.8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />

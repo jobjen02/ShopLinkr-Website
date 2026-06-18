@@ -1,4 +1,12 @@
 ---
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+
+// Real customer quotes stay in their original language; only the chrome around
+// them is translated.
 const testimonials = [
     {
         quote: 'Met ShopLinkr besparen we dagelijks enorm veel tijd. We hebben nu maar 1 medewerker in dienst in plaats van 5, en het gaat nu nog steeds efficiënter.',
@@ -31,9 +39,9 @@ const testimonials = [
     <div class="container-prose">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 md:mb-16">
             <div class="max-w-2xl">
-                <p class="eyebrow mb-3">Wat klanten zeggen</p>
+                <p class="eyebrow mb-3">{t.testimonials.eyebrow}</p>
                 <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight">
-                    Geliefd door Nederlandse webshops.
+                    {t.testimonials.heading}
                     <img
                         src="https://flagcdn.com/160x120/nl.png"
                         loading="lazy"
@@ -41,7 +49,7 @@ const testimonials = [
                     />
                 </h2>
                 <p class="mt-5 text-lg text-steel leading-relaxed">
-                    Van eenpitters tot teams met meerdere magazijnen.
+                    {t.testimonials.sub}
                 </p>
             </div>
 
@@ -51,8 +59,8 @@ const testimonials = [
                         <i class="fa-solid fa-star text-[0.95rem]" aria-hidden="true"></i>
                     ))}
                 </span>
-                <span class="font-semibold text-charcoal">4,9</span>
-                <span class="text-gravel">op Trustpilot</span>
+                <span class="font-semibold text-charcoal">{t.testimonials.rating}</span>
+                <span class="text-gravel">{t.testimonials.ratingSuffix}</span>
             </div>
         </div>
 
@@ -90,7 +98,7 @@ const testimonials = [
                 rel="noopener noreferrer"
                 class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5"
             >
-                Alle reviews op Trustpilot
+                {t.testimonials.allReviews}
                 <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
             </a>
         </div>

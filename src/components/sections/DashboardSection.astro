@@ -1,16 +1,21 @@
 ---
 import DashboardPreview from '../product/DashboardPreview.astro';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
 ---
 
 <section class="py-24 md:py-32 bg-chalk-light">
     <div class="container-prose">
         <div class="max-w-3xl mb-12 md:mb-16">
-            <p class="eyebrow mb-3">Eén dashboard</p>
+            <p class="eyebrow mb-3">{t.dashboard.eyebrow}</p>
             <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight">
-                Zie in één oogopslag <span class="text-gravel">hoe je magazijn draait.</span>
+                {t.dashboard.headingLead} <span class="text-gravel">{t.dashboard.headingTail}</span>
             </h2>
             <p class="mt-5 text-lg text-steel leading-relaxed">
-                Open bestellingen, bestellingen vandaag, retouren, omzet. ShopLinkr laat realtime de getallen zien die ertoe doen, met grafieken voor verkoopvolume, financiën, marges en verdeling per kanaal. Eén overzicht in plaats van tien losse tabbladen.
+                {t.dashboard.intro}
             </p>
         </div>
     </div>

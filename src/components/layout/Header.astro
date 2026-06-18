@@ -1,5 +1,12 @@
 ---
 import { externalLinks } from '../../data/externalLinks';
+import LanguageSwitcher from '../LanguageSwitcher.astro';
+import { localizeHref, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const L = (href: string) => localizeHref(href, locale);
 
 interface NavLink {
     type: 'link';
@@ -36,73 +43,40 @@ type NavEntry = NavLink | NavDropdown | NavMega;
 const navigation: Array<NavEntry> = [
     {
         type: 'mega',
-        label: 'Functionaliteiten',
-        href: '/functionaliteiten',
+        label: t.nav.features,
+        href: L('/functionaliteiten'),
         items: [
-            {
-                label: 'Bestellingen',
-                tagline: 'Verwerk al je orders op één plek',
-                href: '/functionaliteiten/bestellingen',
-            },
-            {
-                label: 'Voorraad',
-                tagline: 'Voorkom oversells en houd realtime grip',
-                href: '/functionaliteiten/voorraad',
-            },
-            {
-                label: 'Producten',
-                tagline: 'Eén centraal overzicht van al je producten',
-                href: '/functionaliteiten/producten',
-            },
-            {
-                label: 'Picklijsten',
-                tagline: 'Sneller picken met minder fouten',
-                href: '/functionaliteiten/picklijsten',
-            },
-            {
-                label: 'Regels',
-                tagline: 'Automatiseer terugkerend werk',
-                href: '/functionaliteiten/regels',
-            },
-            {
-                label: 'Inkoopadvies',
-                tagline: 'Weet wanneer je wat moet inkopen',
-                href: '/functionaliteiten/inkoopadvies',
-            },
+            { label: t.nav.mega.orders.label, tagline: t.nav.mega.orders.tagline, href: L('/functionaliteiten/bestellingen') },
+            { label: t.nav.mega.inventory.label, tagline: t.nav.mega.inventory.tagline, href: L('/functionaliteiten/voorraad') },
+            { label: t.nav.mega.products.label, tagline: t.nav.mega.products.tagline, href: L('/functionaliteiten/producten') },
+            { label: t.nav.mega.picklists.label, tagline: t.nav.mega.picklists.tagline, href: L('/functionaliteiten/picklijsten') },
+            { label: t.nav.mega.rules.label, tagline: t.nav.mega.rules.tagline, href: L('/functionaliteiten/regels') },
+            { label: t.nav.mega.purchasing.label, tagline: t.nav.mega.purchasing.tagline, href: L('/functionaliteiten/inkoopadvies') },
         ],
     },
     {
         type: 'link',
-        label: 'Integraties',
-        href: '/integraties',
+        label: t.nav.integrations,
+        href: L('/integraties'),
     },
     {
         type: 'link',
-        label: 'Prijzen',
-        href: '/prijzen',
+        label: t.nav.pricing,
+        href: L('/prijzen'),
     },
     {
         type: 'dropdown',
-        label: 'Over',
+        label: t.nav.about,
         items: [
-            {
-                href: '/referenties',
-                label: 'Klantverhalen',
-            },
-            {
-                href: '/team',
-                label: 'Team',
-            },
-            {
-                href: '/contact',
-                label: 'Contact',
-            },
+            { href: L('/referenties'), label: t.nav.customerStories },
+            { href: L('/team'), label: t.nav.team },
+            { href: L('/contact'), label: t.nav.contact },
         ],
     },
     {
         type: 'link',
-        label: 'Support',
-        href: '/support',
+        label: t.nav.support,
+        href: L('/support'),
     },
 ];
 
@@ -128,7 +102,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
     class="sticky top-0 z-50 bg-paper/80 backdrop-blur-md border-b border-transparent transition-[border-color,box-shadow] duration-200"
 >
     <nav class="container-prose flex items-center justify-between h-16">
-        <a href="/" class="flex items-center" aria-label="ShopLinkr home">
+        <a href={L('/')} class="flex items-center" aria-label="ShopLinkr home">
             <img
                 src="/logo/logo.svg"
                 alt="ShopLinkr"
@@ -238,13 +212,16 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
         </ul>
 
         <div class="flex items-center gap-3 sm:gap-5">
+            <div class="hidden md:block">
+                <LanguageSwitcher />
+            </div>
             <a
                 href={externalLinks.login}
                 class="hidden md:inline text-[14px] font-medium text-steel hover:text-charcoal transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Inloggen
+                {t.common.login}
             </a>
             <a
                 href={externalLinks.register}
@@ -252,7 +229,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Gratis starten
+                {t.common.register}
             </a>
             <button
                 id="mobile-menu-toggle"
@@ -322,7 +299,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                         href={entry.href}
                                         class="block py-2 text-[14px] font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
                                     >
-                                        Alle functionaliteiten
+                                        {t.nav.allFeatures}
                                     </a>
                                     {entry.items.map((item) => (
                                         <a
@@ -350,8 +327,11 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Inloggen
+                    {t.common.login}
                 </a>
+                <div class="py-2.5">
+                    <LanguageSwitcher variant="inline" />
+                </div>
             </li>
         </ul>
     </div>

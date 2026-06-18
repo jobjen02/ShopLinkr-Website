@@ -1,131 +1,42 @@
 ---
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const dp = useTranslations(locale).dashboardPreview;
+
 const sidebarItems = [
-    {
-        icon: 'fa-magnifying-glass',
-        label: 'Zoeken',
-        hotkey: true,
-    },
-    {
-        icon: 'fa-house',
-        label: 'Dashboard',
-        active: true,
-    },
-    {
-        icon: 'fa-cart-shopping',
-        label: 'Bestellingen',
-        badge: '1',
-        hasChevron: true,
-    },
-    {
-        icon: 'fa-shirt',
-        label: 'Producten',
-        hasChevron: true,
-    },
-    {
-        icon: 'fa-arrow-right-arrow-left',
-        label: 'Retouren',
-        badge: '15',
-    },
-    {
-        icon: 'fa-paper-plane',
-        label: 'Inkoop',
-        badge: '3',
-        hasChevron: true,
-    },
-    {
-        icon: 'fa-truck',
-        label: 'Zendingen',
-    },
-    {
-        icon: 'fa-chart-column',
-        label: 'Rapporten',
-    },
-    {
-        icon: 'fa-gear',
-        label: 'Instellingen',
-    },
+    { icon: 'fa-magnifying-glass', label: dp.sidebar.search, hotkey: true },
+    { icon: 'fa-house', label: dp.sidebar.dashboard, active: true },
+    { icon: 'fa-cart-shopping', label: dp.sidebar.orders, badge: '1', hasChevron: true },
+    { icon: 'fa-shirt', label: dp.sidebar.products, hasChevron: true },
+    { icon: 'fa-arrow-right-arrow-left', label: dp.sidebar.returns, badge: '15' },
+    { icon: 'fa-paper-plane', label: dp.sidebar.purchasing, badge: '3', hasChevron: true },
+    { icon: 'fa-truck', label: dp.sidebar.shipments },
+    { icon: 'fa-chart-column', label: dp.sidebar.reports },
+    { icon: 'fa-gear', label: dp.sidebar.settings },
 ];
 
 const counters = [
-    {
-        icon: 'fa-cart-shopping',
-        label: 'Open bestellingen',
-        value: '12',
-    },
-    {
-        icon: 'fa-cart-shopping',
-        label: 'Bestellingen vandaag',
-        value: '87',
-    },
-    {
-        icon: 'fa-arrow-right-arrow-left',
-        label: 'Open retouren',
-        value: '5',
-    },
-    {
-        icon: 'fa-arrow-right-arrow-left',
-        label: 'Retouren vandaag',
-        value: '2',
-    },
-    {
-        icon: 'fa-chart-line',
-        label: 'Omzet vandaag',
-        value: '€ 3,24K',
-    },
+    { icon: 'fa-cart-shopping', ...dp.counters.openOrders },
+    { icon: 'fa-cart-shopping', ...dp.counters.ordersToday },
+    { icon: 'fa-arrow-right-arrow-left', ...dp.counters.openReturns },
+    { icon: 'fa-arrow-right-arrow-left', ...dp.counters.returnsToday },
+    { icon: 'fa-chart-line', ...dp.counters.revenueToday },
 ];
 
 const statsRow1 = [
-    {
-        label: 'Totaal bestellingen',
-        value: '4.847',
-        delta: '5,4%',
-        positive: true,
-    },
-    {
-        label: 'Totaal verkochte stuks',
-        value: '7.821',
-        delta: '1,9%',
-        positive: true,
-    },
-    {
-        label: 'Gem. orderwaarde',
-        value: '€ 38,50',
-        delta: '4,9%',
-        positive: true,
-    },
-    {
-        label: 'Retourpercentage',
-        value: '2,1%',
-        delta: '0,3%',
-        positive: true,
-    },
+    { ...dp.statsRow1.totalOrders, positive: true },
+    { ...dp.statsRow1.totalUnits, positive: true },
+    { ...dp.statsRow1.avgOrderValue, positive: true },
+    { ...dp.statsRow1.returnRate, positive: true },
 ];
 
 const statsRow2 = [
-    {
-        label: 'Omzet incl. BTW',
-        value: '€ 186,40K',
-        delta: '4,6%',
-        positive: true,
-    },
-    {
-        label: 'Omzet excl. BTW',
-        value: '€ 154,05K',
-        delta: '4,6%',
-        positive: true,
-    },
-    {
-        label: 'Winst',
-        value: '€ 28,90K',
-        delta: '16,6%',
-        positive: true,
-    },
-    {
-        label: 'Winstmarge %',
-        value: '18,7%',
-        delta: '1,4%',
-        positive: true,
-    },
+    { ...dp.statsRow2.revenueInclVat, positive: true },
+    { ...dp.statsRow2.revenueExclVat, positive: true },
+    { ...dp.statsRow2.profit, positive: true },
+    { ...dp.statsRow2.profitMargin, positive: true },
 ];
 
 const buildAreaPath = (points: Array<number>, width: number, height: number) => {
@@ -165,7 +76,7 @@ const commissiePath = buildAreaPath(financialCommissie, volumeWidth, volumeHeigh
 const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
 ---
 
-<div class="dashboard-preview relative bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]" role="img" aria-label="Voorbeeld van het ShopLinkr dashboard met counters, kerncijfers en grafieken voor verkoopvolume, financiën, marges en verdeling per kanaal.">
+<div class="dashboard-preview relative bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]" role="img" aria-label={dp.aria}>
     <aside class="w-60 bg-sunstone flex flex-col flex-shrink-0">
         <div class="px-5 pt-5 pb-5">
             <img src="/logo/logo-white.svg" alt="ShopLinkr" class="h-6 w-auto" />
@@ -210,8 +121,8 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                     DW
                 </div>
                 <div class="flex-1 min-w-0">
-                    <p class="text-xs font-semibold text-charcoal truncate leading-tight">Demo gebruiker</p>
-                    <p class="text-[10px] text-charcoal/60 truncate leading-tight mt-0.5">demowebshop.nl</p>
+                    <p class="text-xs font-semibold text-charcoal truncate leading-tight">{dp.userName}</p>
+                    <p class="text-[10px] text-charcoal/60 truncate leading-tight mt-0.5">{dp.userShop}</p>
                 </div>
                 <i class="fa-solid fa-chevron-down text-[10px] text-charcoal/50"></i>
             </div>
@@ -235,12 +146,12 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
 
         <div class="flex items-center gap-2 mb-4">
             <div class="bg-paper ring-1 ring-chalk rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal">
-                <span>Laatste 30 dagen</span>
+                <span>{dp.dateRangeLabel}</span>
                 <i class="fa-solid fa-chevron-down text-[10px] text-gravel"></i>
             </div>
             <div class="bg-paper ring-1 ring-chalk rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal">
                 <i class="fa-regular fa-calendar text-gravel"></i>
-                <span class="tabular-nums">29-04-2026 - 28-05-2026</span>
+                <span class="tabular-nums">{dp.dateRange}</span>
             </div>
         </div>
 
@@ -281,15 +192,15 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         <div class="grid grid-cols-2 gap-3 mb-3">
             <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
                 <div class="flex items-center justify-between mb-3">
-                    <p class="text-sm font-semibold text-charcoal">Verkoopvolume</p>
+                    <p class="text-sm font-semibold text-charcoal">{dp.charts.volumeTitle}</p>
                     <div class="flex items-center gap-3 text-[11px]">
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-sunstone"></span>
-                            <span class="text-gravel">Verkochte stuks</span>
+                            <span class="text-gravel">{dp.charts.volumeUnits}</span>
                         </span>
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-blue"></span>
-                            <span class="text-gravel">Bestellingen</span>
+                            <span class="text-gravel">{dp.charts.volumeOrders}</span>
                         </span>
                     </div>
                 </div>
@@ -303,19 +214,19 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
 
             <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
                 <div class="flex items-center justify-between mb-3">
-                    <p class="text-sm font-semibold text-charcoal">Financieel overzicht</p>
+                    <p class="text-sm font-semibold text-charcoal">{dp.charts.financialTitle}</p>
                     <div class="flex items-center gap-3 text-[11px]">
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-sunstone"></span>
-                            <span class="text-gravel">Omzet</span>
+                            <span class="text-gravel">{dp.charts.financialRevenue}</span>
                         </span>
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-green"></span>
-                            <span class="text-gravel">Winst</span>
+                            <span class="text-gravel">{dp.charts.financialProfit}</span>
                         </span>
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-red-light"></span>
-                            <span class="text-gravel">Commissie</span>
+                            <span class="text-gravel">{dp.charts.financialCommission}</span>
                         </span>
                     </div>
                 </div>
@@ -332,19 +243,19 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         <div class="grid grid-cols-2 gap-3">
             <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
                 <div class="flex items-center justify-between mb-3">
-                    <p class="text-sm font-semibold text-charcoal">Marges, Retouren & Annuleringen</p>
+                    <p class="text-sm font-semibold text-charcoal">{dp.charts.marginsTitle}</p>
                     <div class="flex items-center gap-3 text-[11px]">
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-green"></span>
-                            <span class="text-gravel">Winstmarge</span>
+                            <span class="text-gravel">{dp.charts.marginsMargin}</span>
                         </span>
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-red-light"></span>
-                            <span class="text-gravel">Retouren</span>
+                            <span class="text-gravel">{dp.charts.marginsReturns}</span>
                         </span>
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-sunstone"></span>
-                            <span class="text-gravel">Annuleringen</span>
+                            <span class="text-gravel">{dp.charts.marginsCancellations}</span>
                         </span>
                     </div>
                 </div>
@@ -356,11 +267,11 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
 
             <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
                 <div class="flex items-center justify-between mb-4">
-                    <p class="text-sm font-semibold text-charcoal">Verdeling per verkoopkanaal</p>
+                    <p class="text-sm font-semibold text-charcoal">{dp.charts.channelsTitle}</p>
                     <div class="inline-flex items-center bg-chalk rounded-md p-0.5 text-[10px] font-medium">
-                        <span class="px-2 py-1 bg-paper text-charcoal rounded">Omzet</span>
-                        <span class="px-2 py-1 text-gravel">Winst</span>
-                        <span class="px-2 py-1 text-gravel">Bestellingen</span>
+                        <span class="px-2 py-1 bg-paper text-charcoal rounded">{dp.charts.channelsTabRevenue}</span>
+                        <span class="px-2 py-1 text-gravel">{dp.charts.channelsTabProfit}</span>
+                        <span class="px-2 py-1 text-gravel">{dp.charts.channelsTabOrders}</span>
                     </div>
                 </div>
                 <div class="flex items-center gap-6">
@@ -372,29 +283,29 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                             <circle cx="50" cy="50" r="36" fill="none" stroke="#f87171" stroke-width="14" stroke-dasharray="18 226" stroke-dashoffset="-208" stroke-linecap="butt" transform="rotate(-90 50 50)" />
                         </svg>
                         <div class="absolute inset-0 flex flex-col items-center justify-center">
-                            <p class="text-[10px] text-gravel leading-none">Totaal</p>
-                            <p class="text-sm font-semibold text-charcoal tabular-nums leading-tight mt-1">€ 186K</p>
+                            <p class="text-[10px] text-gravel leading-none">{dp.charts.channelsTotal}</p>
+                            <p class="text-sm font-semibold text-charcoal tabular-nums leading-tight mt-1">{dp.charts.channelsTotalValue}</p>
                         </div>
                     </div>
                     <ul class="space-y-2.5 text-xs flex-1">
                         <li class="flex items-center justify-between gap-2">
                             <span class="inline-flex items-center gap-2">
                                 <span class="h-2 w-2 rounded-full bg-sunstone"></span>
-                                <span class="text-gravel">Eigen webshop</span>
+                                <span class="text-gravel">{dp.charts.channelsOwnShop}</span>
                             </span>
                             <span class="text-charcoal font-medium tabular-nums">70%</span>
                         </li>
                         <li class="flex items-center justify-between gap-2">
                             <span class="inline-flex items-center gap-2">
                                 <span class="h-2 w-2 rounded-full bg-green"></span>
-                                <span class="text-gravel">Bol</span>
+                                <span class="text-gravel">{dp.charts.channelsBol}</span>
                             </span>
                             <span class="text-charcoal font-medium tabular-nums">22%</span>
                         </li>
                         <li class="flex items-center justify-between gap-2">
                             <span class="inline-flex items-center gap-2">
                                 <span class="h-2 w-2 rounded-full bg-red-light"></span>
-                                <span class="text-gravel">Marketplace</span>
+                                <span class="text-gravel">{dp.charts.channelsMarketplace}</span>
                             </span>
                             <span class="text-charcoal font-medium tabular-nums">8%</span>
                         </li>
@@ -404,4 +315,3 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         </div>
     </div>
 </div>
-

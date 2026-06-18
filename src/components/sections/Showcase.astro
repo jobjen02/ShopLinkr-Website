@@ -1,43 +1,29 @@
 ---
-const features = [
-    {
-        icon: 'fa-duotone fa-solid fa-route',
-        title: 'Efficiëntste route',
-        body: 'Automatisch de meest efficiënte volgorde door je magazijn op basis van locaties.',
-    },
-    {
-        icon: 'fa-duotone fa-solid fa-layer-group',
-        title: 'Single of batch',
-        body: 'Pick één order tegelijk of bundel tientallen bestellingen in dezelfde ronde.',
-    },
-    {
-        icon: 'fa-duotone fa-solid fa-barcode-read',
-        title: 'Scan elk product',
-        body: 'Pak het juiste product, altijd. Valideer per stuk op EAN.',
-    },
-    {
-        icon: 'fa-duotone fa-solid fa-print',
-        title: 'Label aan het einde',
-        body: 'Zodra je klaar bent met picken, wordt het verzendlabel automatisch uitgeprint.',
-    },
-];
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+
+// /functionaliteiten/picklijsten has no EN page yet; link stays on NL for now.
+const picklistsHref = '/functionaliteiten/picklijsten';
 ---
 
 <section class="py-24 md:py-32 bg-chalk-light">
     <div class="container-prose">
         <div class="max-w-2xl mb-14 md:mb-16">
-            <p class="eyebrow mb-4">Picklijsten</p>
+            <p class="eyebrow mb-4">{t.showcase.eyebrow}</p>
             <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
-                Picklijsten die meedenken.
+                {t.showcase.heading}
             </h2>
             <p class="mt-6 text-lg text-steel leading-relaxed">
-                ShopLinkr bundelt orders tot één picklijst, berekent de efficiëntste route en print het label automatisch zodra je klaar bent. Zo verwerk je meer bestellingen in dezelfde tijd, met minder fouten.
+                {t.showcase.intro}
             </p>
         </div>
 
         <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {
-                features.map((feature) => (
+                t.showcase.features.map((feature) => (
                     <li class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-7 md:p-8 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-6">
                             <i class={`${feature.icon} text-2xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
@@ -53,8 +39,8 @@ const features = [
             }
         </ul>
 
-        <a href="/functionaliteiten/picklijsten" class="group mt-10 inline-flex items-center gap-2 text-charcoal font-semibold">
-            Lees meer over picklijsten
+        <a href={picklistsHref} class="group mt-10 inline-flex items-center gap-2 text-charcoal font-semibold">
+            {t.showcase.link}
             <i class="fa-solid fa-arrow-right text-sm transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
         </a>
     </div>

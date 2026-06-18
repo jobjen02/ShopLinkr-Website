@@ -1,5 +1,10 @@
 ---
 import { externalLinks } from '../../data/externalLinks';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
 ---
 
 <section class="relative py-24 md:py-32 overflow-hidden">
@@ -9,13 +14,13 @@ import { externalLinks } from '../../data/externalLinks';
 
     <div class="container-prose">
         <div class="max-w-3xl mx-auto text-center">
-            <p class="eyebrow mb-5">Beginnen met ShopLinkr</p>
+            <p class="eyebrow mb-5">{t.cta.eyebrow}</p>
             <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-charcoal leading-[1.05]">
-                Vandaag nog
-                <span class="block text-sunstone-deep">efficiënter werken.</span>
+                {t.cta.headingTop}
+                <span class="block text-sunstone-deep">{t.cta.headingBottom}</span>
             </h2>
             <p class="mt-7 text-lg text-steel leading-relaxed max-w-xl mx-auto">
-                Probeer ShopLinkr 14 dagen gratis. Geen creditcard, geen verplichtingen. Eén platform voor voorraad, picklijsten en verzending.
+                {t.cta.intro}
             </p>
 
             <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
@@ -25,7 +30,7 @@ import { externalLinks } from '../../data/externalLinks';
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Gratis starten
+                    {t.common.register}
                     <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                 </a>
                 <a
@@ -34,23 +39,19 @@ import { externalLinks } from '../../data/externalLinks';
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Demo inplannen
+                    {t.common.demo}
                 </a>
             </div>
 
             <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-sm text-gravel">
-                <span class="inline-flex items-center gap-2">
-                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                    14 dagen gratis
-                </span>
-                <span class="inline-flex items-center gap-2">
-                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                    Geen creditcard
-                </span>
-                <span class="inline-flex items-center gap-2">
-                    <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
-                    Maandelijks opzegbaar
-                </span>
+                {
+                    t.cta.checks.map((check) => (
+                        <span class="inline-flex items-center gap-2">
+                            <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
+                            {check}
+                        </span>
+                    ))
+                }
             </div>
         </div>
     </div>

@@ -1,114 +1,55 @@
 ---
 import NewsletterSignup from '../islands/NewsletterSignup.vue';
 import { externalLinks } from '../../data/externalLinks';
+import { localizeHref, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const L = (href: string) => localizeHref(href, locale);
+const fl = t.footer.links;
 
 const sections = [
     {
-        title: 'Product',
+        title: t.footer.groups.product,
         links: [
-            {
-                href: '/functionaliteiten/bestellingen',
-                label: 'Bestellingen',
-            },
-            {
-                href: '/functionaliteiten/voorraad',
-                label: 'Voorraad',
-            },
-            {
-                href: '/functionaliteiten/producten',
-                label: 'Producten',
-            },
-            {
-                href: '/functionaliteiten/picklijsten',
-                label: 'Picklijsten',
-            },
-            {
-                href: '/functionaliteiten/regels',
-                label: 'Regels',
-            },
-            {
-                href: '/functionaliteiten/inkoopadvies',
-                label: 'Inkoopadvies',
-            },
-            {
-                href: '/integraties',
-                label: 'Integraties',
-            },
+            { href: L('/functionaliteiten/bestellingen'), label: fl.orders },
+            { href: L('/functionaliteiten/voorraad'), label: fl.inventory },
+            { href: L('/functionaliteiten/producten'), label: fl.products },
+            { href: L('/functionaliteiten/picklijsten'), label: fl.picklists },
+            { href: L('/functionaliteiten/regels'), label: fl.rules },
+            { href: L('/functionaliteiten/inkoopadvies'), label: fl.purchasing },
+            { href: L('/integraties'), label: fl.integrations },
         ],
     },
     {
-        title: 'Meer functies',
+        title: t.footer.groups.moreFeatures,
         links: [
-            {
-                href: '/functionaliteiten/locatiebeheer',
-                label: 'Locatiebeheer',
-            },
-            {
-                href: '/functionaliteiten/vervoerders',
-                label: 'Vervoerders',
-            },
-            {
-                href: '/functionaliteiten/retouren',
-                label: 'Retouren',
-            },
-            {
-                href: '/functionaliteiten/klanten',
-                label: 'Klanten',
-            },
-            {
-                href: '/functionaliteiten/leveringen',
-                label: 'Leveringen',
-            },
-            {
-                href: '/functionaliteiten/gebruikers',
-                label: 'Gebruikers',
-            },
-            {
-                href: '/functionaliteiten/rapporten',
-                label: 'Rapporten',
-            },
+            { href: L('/functionaliteiten/locatiebeheer'), label: fl.locations },
+            { href: L('/functionaliteiten/vervoerders'), label: fl.carriers },
+            { href: L('/functionaliteiten/retouren'), label: fl.returns },
+            { href: L('/functionaliteiten/klanten'), label: fl.customers },
+            { href: L('/functionaliteiten/leveringen'), label: fl.deliveries },
+            { href: L('/functionaliteiten/gebruikers'), label: fl.users },
+            { href: L('/functionaliteiten/rapporten'), label: fl.reports },
         ],
     },
     {
-        title: 'Bedrijf',
+        title: t.footer.groups.company,
         links: [
-            {
-                href: '/referenties',
-                label: 'Klantverhalen',
-            },
-            {
-                href: '/team',
-                label: 'Team',
-            },
-            {
-                href: '/blogs',
-                label: 'Blog',
-            },
-            {
-                href: '/contact',
-                label: 'Contact',
-            },
+            { href: L('/referenties'), label: fl.customerStories },
+            { href: L('/team'), label: fl.team },
+            { href: L('/blogs'), label: fl.blog },
+            { href: L('/contact'), label: fl.contact },
         ],
     },
     {
-        title: 'Resources',
+        title: t.footer.groups.resources,
         links: [
-            {
-                href: '/support',
-                label: 'Helpcentrum',
-            },
-            {
-                href: '/functionaliteiten',
-                label: 'Alle functionaliteiten',
-            },
-            {
-                href: '/veelgestelde-vragen',
-                label: 'Veelgestelde vragen',
-            },
-            {
-                href: '/prijzen',
-                label: 'Prijzen',
-            },
+            { href: L('/support'), label: fl.helpCenter },
+            { href: L('/functionaliteiten'), label: fl.allFeatures },
+            { href: L('/veelgestelde-vragen'), label: fl.faq },
+            { href: L('/prijzen'), label: fl.pricing },
         ],
     },
 ];
@@ -138,7 +79,7 @@ const year = new Date().getFullYear();
     <div class="container-prose pt-20 pb-10">
         <div class="grid grid-cols-2 md:grid-cols-12 gap-x-8 gap-y-12 mb-16">
             <div class="col-span-2 md:col-span-4 md:pr-8">
-                <a href="/" class="inline-block mb-5" aria-label="ShopLinkr home">
+                <a href={L('/')} class="inline-block mb-5" aria-label="ShopLinkr home">
                     <img
                         src="/logo/logo-charcoal.svg"
                         alt="ShopLinkr"
@@ -148,10 +89,10 @@ const year = new Date().getFullYear();
                     />
                 </a>
                 <p class="text-sm leading-relaxed max-w-sm text-steel mb-7">
-                    De Nederlandse magazijnsoftware voor webshops die door willen groeien. Eén platform voor voorraad, orders, labels en verzending.
+                    {t.footer.description}
                 </p>
 
-                <NewsletterSignup client:visible />
+                <NewsletterSignup client:visible locale={locale} />
 
                 <div class="mt-6 flex items-center gap-2">
                     {
@@ -201,14 +142,14 @@ const year = new Date().getFullYear();
 
         <div class="pt-8 border-t border-chalk-dark flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gravel">
             <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-                <p>© {year} ShopLinkr. Alle rechten voorbehouden.</p>
+                <p>© {year} ShopLinkr. {t.footer.rights}</p>
                 <a
                     href={externalLinks.privacyPdf}
                     target="_blank"
                     rel="noopener noreferrer"
                     class="hover:text-charcoal transition-colors"
                 >
-                    Privacyverklaring
+                    {t.footer.privacy}
                 </a>
                 <a
                     href={externalLinks.termsPdf}
@@ -216,17 +157,17 @@ const year = new Date().getFullYear();
                     rel="noopener noreferrer"
                     class="hover:text-charcoal transition-colors"
                 >
-                    Algemene voorwaarden
+                    {t.footer.terms}
                 </a>
                 <a
-                    href="/cookies"
+                    href={L('/cookies')}
                     class="hover:text-charcoal transition-colors"
                 >
-                    Cookies
+                    {t.footer.cookies}
                 </a>
             </div>
             <p class="inline-flex items-center gap-1.5">
-                Gemaakt in Nederland
+                {t.footer.madeIn}
                 <img
                     src="https://flagcdn.com/160x120/nl.png"
                     width="16"

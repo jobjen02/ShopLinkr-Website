@@ -1,0 +1,101 @@
+---
+// Language switcher. Trigger shows the current language's flag; on hover a
+// dropdown (styled like the Header "Over" menu) lists every language with its
+// flag + name. Uses the route-slug map so /prijzen links to /en/pricing.
+//
+// variant="dropdown" (default) = desktop hover menu.
+// variant="inline" = a flat row of language links for the mobile menu.
+//
+// On routes that are not in the map yet, switching falls back to that locale's
+// home so the switcher is always usable.
+import { locales, localizedPath, routeKeyFromPath, type Locale } from '../i18n/routes';
+import { languages, useTranslations } from '../i18n/ui';
+
+interface Props {
+    variant?: 'dropdown' | 'inline';
+}
+
+const { variant = 'dropdown' } = Astro.props;
+
+const current = (Astro.currentLocale ?? 'nl') as Locale;
+const match = routeKeyFromPath(Astro.url.pathname);
+const navLabel = useTranslations(current).common.languageNav;
+
+const flags: Record<Locale, string> = {
+    nl: 'https://flagcdn.com/48x36/nl.png',
+    en: 'https://flagcdn.com/48x36/gb.png',
+};
+
+const items = locales.map((loc) => ({
+    loc,
+    name: languages[loc],
+    flag: flags[loc],
+    href: localizedPath(match ? match.key : 'home', loc),
+    isCurrent: loc === current,
+}));
+---
+
+{
+    variant === 'inline' ? (
+        <div class="flex items-center gap-2" aria-label={navLabel}>
+            {items.map((item) => (
+                <a
+                    href={item.href}
+                    hreflang={item.loc}
+                    lang={item.loc}
+                    aria-current={item.isCurrent ? 'true' : undefined}
+                    class:list={[
+                        'inline-flex items-center gap-2 rounded-md px-3 py-2 text-[14px] font-medium transition-colors',
+                        item.isCurrent
+                            ? 'bg-sunstone-mist/40 text-charcoal'
+                            : 'text-steel hover:bg-chalk-light hover:text-charcoal',
+                    ]}
+                >
+                    <img src={item.flag} alt="" width="20" height="15" class="h-3.5 w-auto rounded-[1px]" loading="lazy" />
+                    {item.name}
+                </a>
+            ))}
+        </div>
+    ) : (
+        <div class="relative group">
+            <button
+                type="button"
+                class="inline-flex items-center gap-1.5 py-2 text-steel hover:text-charcoal transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label={navLabel}
+            >
+                <img
+                    src={flags[current]}
+                    alt={languages[current]}
+                    width="22"
+                    height="17"
+                    class="h-4 w-auto rounded-[1px] ring-1 ring-chalk-dark"
+                    loading="lazy"
+                />
+                <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+            </button>
+            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute right-0 top-full pt-3 transition-opacity duration-150">
+                <div class="min-w-[170px] rounded-xl border border-chalk-dark bg-paper shadow-[0_12px_40px_-12px_rgb(25_25_25_/_0.18)] p-2">
+                    {items.map((item) => (
+                        <a
+                            href={item.href}
+                            hreflang={item.loc}
+                            lang={item.loc}
+                            aria-current={item.isCurrent ? 'true' : undefined}
+                            class:list={[
+                                'flex items-center gap-2.5 rounded-md px-3 py-2 text-[14px] font-medium transition-colors',
+                                item.isCurrent
+                                    ? 'bg-sunstone-mist/30 text-charcoal'
+                                    : 'text-steel hover:bg-chalk-light hover:text-charcoal',
+                            ]}
+                        >
+                            <img src={item.flag} alt="" width="22" height="17" class="h-4 w-auto rounded-[1px] ring-1 ring-chalk-dark" loading="lazy" />
+                            {item.name}
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}

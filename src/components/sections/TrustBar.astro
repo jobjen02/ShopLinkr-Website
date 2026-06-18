@@ -1,5 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
 
 const all = (await getCollection('integrations'))
     .map((entry) => entry.data)
@@ -34,7 +39,7 @@ const integrations = [
 <section class="border-y border-chalk-dark bg-paper py-14 md:py-16">
     <div class="container-prose">
         <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold text-center mb-14">
-            Werkt met de tools die je al gebruikt
+            {t.trustBar.heading}
         </p>
     </div>
 
