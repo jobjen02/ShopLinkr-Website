@@ -53,7 +53,7 @@ export const prerender = false;
     jsonLd={jsonLd}
 >
     {featured && (
-        <section class="pb-16 md:pb-20 bg-paper">
+        <section class="pb-12 md:pb-16 bg-paper">
             <div class="container-prose">
                 <a
                     href={`/blogs/${featured.id}`}
@@ -94,7 +94,7 @@ export const prerender = false;
                             {featured.data.title}
                         </h2>
 
-                        <p class="mt-5 text-base md:text-lg text-steel leading-relaxed">
+                        <p class="mt-6 text-base md:text-lg text-steel leading-relaxed">
                             {featured.data.excerpt}
                         </p>
 
