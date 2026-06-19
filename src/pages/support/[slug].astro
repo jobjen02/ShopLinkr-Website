@@ -32,6 +32,17 @@ const subcategoryInfo = categoryInfo && article.data.subcategory
 const articleSlug = article.id.split('/').pop();
 const canonicalUrl = `https://shoplinkr.com/support/${articleSlug}`;
 
+const enArticles = await getCollection('supportArticlesEn');
+const enSlugByTk = new Map(
+    enArticles
+        .filter((a) => a.data.translationKey)
+        .map((a) => [a.data.translationKey, a.id.split('/').pop()]),
+);
+const enSlug = enSlugByTk.get(articleSlug);
+const alternates = enSlug
+    ? { nl: `/support/${articleSlug}`, en: `/en/support/${enSlug}` }
+    : undefined;
+
 const articleId = article.id;
 const sameSubcategoryArticles = allArticles
     .filter((a) => {
@@ -148,6 +159,7 @@ export const prerender = true;
     title={`${article.data.title} | ShopLinkr Support`}
     description={article.data.summary}
     jsonLd={jsonLd}
+    alternates={alternates}
 >
     <SupportHero
         title={article.data.title}

@@ -8,6 +8,11 @@ export async function getStaticPaths() {
     const blogs = await getCollection('blogs');
     const visibleBlogs = blogs.filter((b) => b.data.isBlog);
 
+    const blogsEn = await getCollection('blogsEn');
+    const enByNlId = new Map(
+        blogsEn.filter((b) => b.data.translationKey).map((b) => [b.data.translationKey, b.id]),
+    );
+
     return blogs.map((blog) => {
         const others = visibleBlogs.filter((b) => b.id !== blog.id);
 
@@ -29,13 +34,18 @@ export async function getStaticPaths() {
             props: {
                 blog,
                 related,
+                enSlug: enByNlId.get(blog.id) ?? null,
             },
         };
     });
 }
 
-const { blog, related } = Astro.props;
+const { blog, related, enSlug } = Astro.props;
 const { Content } = await render(blog);
+
+const alternates = enSlug
+    ? { nl: `/blogs/${blog.id}`, en: `/en/blog/${enSlug}` }
+    : undefined;
 
 const formattedDate = new Intl.DateTimeFormat('nl-NL', {
     year: 'numeric',
@@ -117,6 +127,7 @@ export const prerender = true;
     backHref="/blogs"
     backLabel="Alle blogs"
     jsonLd={jsonLd}
+    alternates={alternates}
 >
     <Content />
 

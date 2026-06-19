@@ -45,7 +45,7 @@ const faqs = faqsByPageEn.vervoerders;
 
 const jsonLd = [
     breadcrumbs([
-        ['Home', '/'],
+        ['Home', '/en'],
         ['Features', '/en/features'],
         ['Carriers', '/en/features/carriers'],
     ]),
@@ -246,7 +246,7 @@ export const prerender = false;
                     carriers.map((carrier) => (
                         <li>
                             <a
-                                href={`/integraties/${carrier.data.slug}`}
+                                href={`${localizeHref('/integraties', locale)}/${carrier.data.slug}`}
                                 class="group flex flex-col items-center justify-center gap-3 h-full rounded-2xl bg-paper ring-1 ring-chalk-dark p-5 md:p-6 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                             >
                                 <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">

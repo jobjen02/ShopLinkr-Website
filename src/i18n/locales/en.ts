@@ -12,6 +12,8 @@ const en: Dictionary = {
         languageNav: 'Choose language',
         skipToContent: 'Skip to main content',
         readMore: 'Read more',
+        openMenu: 'Open menu',
+        closeMenu: 'Close menu',
     },
     hero: {
         badge: 'Coming soon for fulfilment companies too',
@@ -35,6 +37,7 @@ const en: Dictionary = {
     },
     trustBar: {
         heading: 'Works with the tools you already use',
+        itemLabel: 'integration',
     },
     features: {
         eyebrow: 'What you get',

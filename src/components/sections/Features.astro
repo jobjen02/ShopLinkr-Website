@@ -1,5 +1,5 @@
 ---
-import { localizedPath, type Locale } from '../../i18n/routes';
+import { localizedPath, localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
@@ -64,7 +64,7 @@ const f = t.features;
                 </ul>
             </a>
 
-            <a href="/integraties" class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/integraties', locale)} class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <p class="eyebrow">{f.channels.eyebrow}</p>
                 <div class="flex items-center gap-3 flex-wrap">
                     {
@@ -85,7 +85,7 @@ const f = t.features;
                 <p class="text-sm text-steel mt-auto">{f.channels.body}</p>
             </a>
 
-            <a href="/functionaliteiten/gebruikers" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/gebruikers', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-users text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
@@ -95,7 +95,7 @@ const f = t.features;
                 </div>
             </a>
 
-            <a href="/team" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/team', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-store text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
@@ -105,7 +105,7 @@ const f = t.features;
                 </div>
             </a>
 
-            <a href="/functionaliteiten/regels" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/regels', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-wand-magic-sparkles text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
@@ -115,7 +115,7 @@ const f = t.features;
                 </div>
             </a>
 
-            <a href="/functionaliteiten/locatiebeheer" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/locatiebeheer', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-location-dot text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
@@ -125,7 +125,7 @@ const f = t.features;
                 </div>
             </a>
 
-            <a href="/functionaliteiten/vervoerders" class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/vervoerders', locale)} class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <p class="eyebrow">{f.carriers.eyebrow}</p>
                 <div class="flex items-center gap-3 flex-wrap">
                     {
@@ -146,7 +146,7 @@ const f = t.features;
                 <p class="text-sm text-steel mt-auto">{f.carriers.body}</p>
             </a>
 
-            <a href="/functionaliteiten/picklijsten" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-route text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
@@ -156,7 +156,7 @@ const f = t.features;
                 </div>
             </a>
 
-            <a href="/functionaliteiten/rapporten" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/rapporten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-chart-line text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
@@ -166,7 +166,7 @@ const f = t.features;
                 </div>
             </a>
 
-            <a href="/functionaliteiten/picklijsten" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-barcode-read text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
@@ -176,7 +176,7 @@ const f = t.features;
                 </div>
             </a>
 
-            <a href="/functionaliteiten/picklijsten" class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
                 <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
                     <i class="fa-duotone fa-solid fa-print text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>

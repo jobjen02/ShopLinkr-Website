@@ -62,7 +62,7 @@ const faqs = faqsByPageEn.inkoopadvies;
 
 const jsonLd = [
     breadcrumbs([
-        ['Home', '/'],
+        ['Home', '/en'],
         ['Features', '/en/features'],
         ['Purchase advice', '/en/features/purchase-advice'],
     ]),
@@ -136,7 +136,7 @@ export const prerender = false;
                         <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-4">
                             Example calculation
                         </p>
-                        <dl class="divide-y divide-chalk-dark text-sm">
+                        <dl class="text-sm">
                             <div class="flex items-baseline justify-between py-2.5">
                                 <dt class="text-steel">
                                     Expected sales
@@ -144,11 +144,11 @@ export const prerender = false;
                                 </dt>
                                 <dd class="text-charcoal font-semibold tabular-nums">39 units</dd>
                             </div>
-                            <div class="flex items-baseline justify-between py-2.5">
+                            <div class="flex items-baseline justify-between py-2.5 border-t border-chalk-dark">
                                 <dt class="text-steel">+ Backorders</dt>
                                 <dd class="text-charcoal font-semibold tabular-nums">12 units</dd>
                             </div>
-                            <div class="flex items-baseline justify-between py-2.5">
+                            <div class="flex items-baseline justify-between py-2.5 border-t border-chalk-dark">
                                 <dt class="text-steel">- Available stock</dt>
                                 <dd class="text-charcoal font-semibold tabular-nums">5 units</dd>
                             </div>

@@ -7,6 +7,7 @@ interface Props {
     summary: string;
     status?: 'live' | 'coming-soon';
     href?: string;
+    locale?: 'nl' | 'en';
 }
 
 const {
@@ -17,15 +18,25 @@ const {
     summary,
     status = 'live',
     href,
+    locale = 'nl',
 } = Astro.props;
 
-const categoryLabels: Record<string, string> = {
-    webshop: 'Webshop',
-    marketplace: 'Marketplace',
-    carrier: 'Vervoerder',
-    other: 'Overig',
+const categoryLabelsByLocale: Record<'nl' | 'en', Record<string, string>> = {
+    nl: {
+        webshop: 'Webshop',
+        marketplace: 'Marketplace',
+        carrier: 'Vervoerder',
+        other: 'Overig',
+    },
+    en: {
+        webshop: 'Webshop',
+        marketplace: 'Marketplace',
+        carrier: 'Carrier',
+        other: 'Other',
+    },
 };
 
+const categoryLabels = categoryLabelsByLocale[locale];
 const categoryLabel = categoryLabels[category] ?? category;
 const isComingSoon = status === 'coming-soon';
 const Tag = href ? 'a' : 'article';
@@ -55,7 +66,7 @@ const linkProps = href
                 <p class="eyebrow !text-gravel">{categoryLabel}</p>
                 {isComingSoon && (
                     <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
-                        Binnenkort
+                        {locale === 'en' ? 'Coming soon' : 'Binnenkort'}
                     </span>
                 )}
             </div>

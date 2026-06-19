@@ -240,7 +240,9 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                 id="mobile-menu-toggle"
                 type="button"
                 class="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-md text-charcoal hover:bg-chalk transition-colors"
-                aria-label="Menu openen"
+                aria-label={t.common.openMenu}
+                data-label-open={t.common.openMenu}
+                data-label-close={t.common.closeMenu}
                 aria-expanded="false"
                 aria-controls="mobile-menu"
             >
@@ -363,9 +365,13 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
     const menu = document.getElementById('mobile-menu');
 
     if (toggle && menu) {
+        const openLabel = toggle.getAttribute('data-label-open') ?? '';
+        const closeLabel = toggle.getAttribute('data-label-close') ?? '';
+
         toggle.addEventListener('click', () => {
             const expanded = toggle.getAttribute('aria-expanded') === 'true';
             toggle.setAttribute('aria-expanded', String(!expanded));
+            toggle.setAttribute('aria-label', expanded ? openLabel : closeLabel);
             menu.classList.toggle('hidden');
             const icon = toggle.querySelector('i');
 

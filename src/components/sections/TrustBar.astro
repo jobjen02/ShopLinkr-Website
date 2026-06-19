@@ -1,12 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
-import { type Locale } from '../../i18n/routes';
+import { type Locale, localizedPath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 
-const all = (await getCollection('integrations'))
+const integrationsBase = localizedPath('integrations', locale);
+
+const all = (await getCollection(locale === 'en' ? 'integrationsEn' : 'integrations'))
     .map((entry) => entry.data)
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -48,9 +50,9 @@ const integrations = [
             {
                 [...integrations, ...integrations].map((integration) => (
                     <a
-                        href={`/integraties/${integration.slug}`}
+                        href={`${integrationsBase}/${integration.slug}`}
                         class="marquee-item"
-                        aria-label={`${integration.name} integratie`}
+                        aria-label={`${integration.name} ${t.trustBar.itemLabel}`}
                     >
                         <img
                             src={integration.logo}

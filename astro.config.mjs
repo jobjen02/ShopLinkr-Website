@@ -33,9 +33,9 @@ export default defineConfig({
             },
             filter: (page) => !page.includes('/404'),
             serialize(item) {
-                const url = item.url;
+                const path = new URL(item.url).pathname.replace(/^\/en(?=\/|$)/, '') || '/';
 
-                if (url === 'https://shoplinkr.com/') {
+                if (path === '/') {
                     return {
                         ...item,
                         priority: 1.0,
@@ -43,7 +43,7 @@ export default defineConfig({
                     };
                 }
 
-                if (url.includes('/functionaliteiten') || url.includes('/integraties') || url === 'https://shoplinkr.com/prijzen') {
+                if (path.includes('/functionaliteiten') || path.includes('/features') || path.includes('/integraties') || path.includes('/integrations') || path === '/prijzen' || path === '/pricing') {
                     return {
                         ...item,
                         priority: 0.9,
@@ -51,7 +51,7 @@ export default defineConfig({
                     };
                 }
 
-                if (url.includes('/blogs/') || url.includes('/support/')) {
+                if (path.includes('/blogs/') || path.includes('/blog/') || path.includes('/support/')) {
                     return {
                         ...item,
                         priority: 0.7,
@@ -59,7 +59,7 @@ export default defineConfig({
                     };
                 }
 
-                if (url.includes('/cookies')) {
+                if (path.includes('/cookies')) {
                     return {
                         ...item,
                         priority: 0.3,

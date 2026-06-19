@@ -91,6 +91,7 @@ export const prerender = false;
     eyebrow="Slim inkopen"
     heading="Weet wanneer je wat moet inkopen."
     subheading="ShopLinkr rekent per leverancier uit wat je moet bijbestellen, op basis van je voorraad, backorders en verwachte verkoop. Zet het advies in één klik om naar concept-leveringen."
+    routeKey="features.purchasing"
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper">
@@ -133,7 +134,7 @@ export const prerender = false;
                         <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-4">
                             Voorbeeld berekening
                         </p>
-                        <dl class="divide-y divide-chalk-dark text-sm">
+                        <dl class="text-sm">
                             <div class="flex items-baseline justify-between py-2.5">
                                 <dt class="text-steel">
                                     Verwachte verkoop
@@ -141,11 +142,11 @@ export const prerender = false;
                                 </dt>
                                 <dd class="text-charcoal font-semibold tabular-nums">39 stuks</dd>
                             </div>
-                            <div class="flex items-baseline justify-between py-2.5">
+                            <div class="flex items-baseline justify-between py-2.5 border-t border-chalk-dark">
                                 <dt class="text-steel">+ Backorders</dt>
                                 <dd class="text-charcoal font-semibold tabular-nums">12 stuks</dd>
                             </div>
-                            <div class="flex items-baseline justify-between py-2.5">
+                            <div class="flex items-baseline justify-between py-2.5 border-t border-chalk-dark">
                                 <dt class="text-steel">- Beschikbare voorraad</dt>
                                 <dd class="text-charcoal font-semibold tabular-nums">5 stuks</dd>
                             </div>

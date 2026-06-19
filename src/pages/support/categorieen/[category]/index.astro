@@ -6,6 +6,7 @@ import {
     supportCategories,
     supportCategoriesBySlug,
 } from '../../../../data/supportCategories';
+import { CATEGORY_SLUG_NL_TO_EN } from '../../../../data/supportCategories-en';
 
 export async function getStaticPaths() {
     return supportCategories.map((c) => ({
@@ -21,6 +22,11 @@ const categoryInfo = supportCategoriesBySlug[category as string];
 if (!categoryInfo) {
     throw new Error(`Unknown support category: ${category}`);
 }
+
+const enCategorySlug = CATEGORY_SLUG_NL_TO_EN[category];
+const alternates = enCategorySlug
+    ? { nl: `/support/categorieen/${category}`, en: `/en/support/categories/${enCategorySlug}` }
+    : undefined;
 
 const allArticles = await getCollection('supportArticles');
 const articlesInCategory = allArticles
@@ -85,6 +91,7 @@ export const prerender = true;
 <BaseLayout
     title={`${categoryInfo.label} | ShopLinkr Support`}
     description={categoryInfo.summary}
+    alternates={alternates}
     jsonLd={jsonLd}
 >
     <SupportHero

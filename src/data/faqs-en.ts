@@ -65,7 +65,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Which carriers are supported?",
-            answer: "ShopLinkr supports PostNL, DPD and GLS among others. You link as many carriers as you need and pick the right one per order. <a href=\"/integraties\">See the full list on the integrations page</a>.",
+            answer: "ShopLinkr supports PostNL, DPD and GLS among others. You link as many carriers as you need and pick the right one per order. <a href=\"/en/integrations\">See the full list on the integrations page</a>.",
         },
     ],
     picklijsten: [
@@ -133,7 +133,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
     vervoerders: [
         {
             question: "Which carriers are supported?",
-            answer: "All the well-known carriers and shipping platforms, such as PostNL, DPD and GLS. You link as many as you need and pick the right one per order. <a href=\"/integraties\">See the full list and the connection instructions on the integrations page</a>.",
+            answer: "All the well-known carriers and shipping platforms, such as PostNL, DPD and GLS. You link as many as you need and pick the right one per order. <a href=\"/en/integrations\">See the full list and the connection instructions on the integrations page</a>.",
         },
         {
             question: "Can you link multiple accounts from the same carrier?",
@@ -141,11 +141,11 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
         },
         {
             question: "What exactly does AutoPrint do?",
-            answer: "AutoPrint sends shipping labels to the printer at your packing station automatically as soon as you process an order. For that we use PrintNode, a software tool you install on a computer in your warehouse. PrintNode runs in the background and picks up every new label, so you no longer have to click print per order. <a href=\"/support/auto-print-instellen\">Read how to set up AutoPrint</a>.",
+            answer: "AutoPrint sends shipping labels to the printer at your packing station automatically as soon as you process an order. For that we use PrintNode, a software tool you install on a computer in your warehouse. PrintNode runs in the background and picks up every new label, so you no longer have to click print per order. <a href=\"/en/support/setting-up-autoprint\">Read how to set up AutoPrint</a>.",
         },
         {
             question: "Can you choose a different carrier per order?",
-            answer: "Yes. As long as the carrier is linked, you choose which one to use per order. Don't want to do that manually? With our <a href=\"/support/wat-zijn-regels\">rules feature</a> you let ShopLinkr select the right carrier automatically based on weight, destination, channel or product type.",
+            answer: "Yes. As long as the carrier is linked, you choose which one to use per order. Don't want to do that manually? With our <a href=\"/en/support/what-are-rules\">rules feature</a> you let ShopLinkr select the right carrier automatically based on weight, destination, channel or product type.",
         },
         {
             question: "What if your carrier isn't on the list?",

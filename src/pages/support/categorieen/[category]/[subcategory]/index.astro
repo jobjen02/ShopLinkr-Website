@@ -7,6 +7,10 @@ import {
     supportCategoriesBySlug,
     findSubcategoryBySlug,
 } from '../../../../../data/supportCategories';
+import {
+    CATEGORY_SLUG_NL_TO_EN,
+    SUBCATEGORY_SLUG_NL_TO_EN,
+} from '../../../../../data/supportCategories-en';
 
 export async function getStaticPaths() {
     return supportCategories.flatMap((c) => c.subcategories.map((s) => ({
@@ -24,6 +28,12 @@ const subcategoryInfo = categoryInfo ? findSubcategoryBySlug(categoryInfo, subca
 if (!categoryInfo || !subcategoryInfo) {
     throw new Error(`Unknown support path: ${category}/${subcategory}`);
 }
+
+const enCategorySlug = CATEGORY_SLUG_NL_TO_EN[category];
+const enSubSlug = SUBCATEGORY_SLUG_NL_TO_EN[subcategory];
+const alternates = (enCategorySlug && enSubSlug)
+    ? { nl: `/support/categorieen/${category}/${subcategory}`, en: `/en/support/categories/${enCategorySlug}/${enSubSlug}` }
+    : undefined;
 
 const allArticles = await getCollection('supportArticles');
 const articlesInSubcategory = allArticles
@@ -93,6 +103,7 @@ export const prerender = true;
 <BaseLayout
     title={`${subcategoryInfo.label} | ${categoryInfo.label} | ShopLinkr Support`}
     description={subcategoryInfo.summary ?? `Support artikelen over ${subcategoryInfo.label}.`}
+    alternates={alternates}
     jsonLd={jsonLd}
 >
     <SupportHero

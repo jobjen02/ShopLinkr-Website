@@ -1,12 +1,11 @@
 ---
-import { type Locale } from '../../i18n/routes';
+import { type Locale, localizedPath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 
-// /functionaliteiten/picklijsten has no EN page yet; link stays on NL for now.
-const picklistsHref = '/functionaliteiten/picklijsten';
+const picklistsHref = localizedPath('features.picklists', locale);
 ---
 
 <section class="py-24 md:py-32 bg-chalk-light">

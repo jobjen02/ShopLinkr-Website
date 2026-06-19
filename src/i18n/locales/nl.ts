@@ -14,6 +14,8 @@ const nl = {
         languageNav: 'Taal kiezen',
         skipToContent: 'Ga naar hoofdinhoud',
         readMore: 'Lees verder',
+        openMenu: 'Menu openen',
+        closeMenu: 'Menu sluiten',
     },
     hero: {
         badge: 'Binnenkort ook voor fulfilmentbedrijven',
@@ -37,6 +39,7 @@ const nl = {
     },
     trustBar: {
         heading: 'Werkt met de tools die je al gebruikt',
+        itemLabel: 'integratie',
     },
     features: {
         eyebrow: 'Wat je krijgt',
