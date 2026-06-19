@@ -1,0 +1,80 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FaqList from '../template/FaqList.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import { faqsByPage, faqCategories as faqCategoriesNl } from '../../data/faqs';
+import { faqsByPageEn, faqCategories as faqCategoriesEn } from '../../data/faqs-en';
+import { breadcrumbs } from '../../utils/seo';
+import { localizeHref, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.faq;
+
+const faqsByPageLocale = locale === 'en' ? faqsByPageEn : faqsByPage;
+const faqCategories = locale === 'en' ? faqCategoriesEn : faqCategoriesNl;
+
+const allFaqs = faqCategories.flatMap((cat) =>
+    cat.pages.flatMap((page) => faqsByPageLocale[page] ?? []),
+);
+
+const jsonLd = [
+    breadcrumbs([
+        [p.breadcrumbHome, localizeHref('/', locale)],
+        [p.breadcrumbLeaf, localizeHref('/veelgestelde-vragen', locale)],
+    ]),
+    {
+        '@type': 'FAQPage',
+        mainEntity: allFaqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title={p.title}
+    description={p.description}
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    subheading={p.subheading}
+    routeKey="faq"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose space-y-14 md:space-y-20">
+            {
+                faqCategories.map((cat) => {
+                    const items = cat.pages.flatMap(
+                        (page) => faqsByPageLocale[page] ?? [],
+                    );
+                    return (
+                        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                            <div class="lg:col-span-4 lg:sticky lg:top-28">
+                                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                                    {cat.title}
+                                </h2>
+                                <p class="mt-4 text-base text-steel leading-relaxed">
+                                    {cat.intro}
+                                </p>
+                            </div>
+                            <div class="lg:col-span-8">
+                                <FaqList items={items} />
+                            </div>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

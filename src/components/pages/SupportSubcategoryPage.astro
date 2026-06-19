@@ -1,0 +1,141 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SupportHero from '../support/SupportHero.astro';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+interface OtherTopic {
+    categorySlug: string;
+    subSlug: string;
+    label: string;
+}
+
+interface Props {
+    categoryInfo: { slug: string; label: string };
+    subcategoryInfo: { slug: string; label: string; summary?: string };
+    articlesInSubcategory: Array<CollectionEntry<'supportArticles'> | CollectionEntry<'supportArticlesEn'>>;
+    otherTopics: Array<OtherTopic>;
+    alternates?: Record<string, string>;
+    jsonLd: unknown;
+}
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.supportSubcategory;
+
+const {
+    categoryInfo,
+    subcategoryInfo,
+    articlesInSubcategory,
+    otherTopics,
+    alternates,
+    jsonLd,
+} = Astro.props;
+
+const supportBase = locale === 'en' ? '/en/support' : '/support';
+const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/categorieen';
+
+const metaDescription = subcategoryInfo.summary ?? p.descriptionFallback.replace('{label}', subcategoryInfo.label);
+---
+
+<BaseLayout
+    title={`${subcategoryInfo.label} | ${categoryInfo.label} | ShopLinkr Support`}
+    description={metaDescription}
+    alternates={alternates}
+    jsonLd={jsonLd}
+>
+    <SupportHero
+        title={subcategoryInfo.label}
+        subtitle={subcategoryInfo.summary}
+    />
+
+    <section class="bg-paper">
+        <div class="container-prose py-12 md:py-16">
+            <nav aria-label="Breadcrumb" class="mb-10">
+                <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-gravel">
+                    <li>
+                        <a href={supportBase} class="hover:text-charcoal transition-colors">
+                            {p.breadcrumbSupport}
+                        </a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
+                    </li>
+                    <li>
+                        <a href={`${categoriesBase}/${categoryInfo.slug}`} class="hover:text-charcoal transition-colors">
+                            {categoryInfo.label}
+                        </a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
+                    </li>
+                    <li class="text-charcoal">
+                        {subcategoryInfo.label}
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="max-w-3xl">
+                <h2 class="text-[26px] md:text-[32px] font-semibold text-charcoal tracking-tight mb-7">
+                    {p.articlesHeading}
+                </h2>
+
+                {articlesInSubcategory.length === 0 && (
+                    <div class="rounded-[14px] bg-chalk-light border border-chalk-dark/70 p-8 md:p-10 text-center">
+                        <p class="text-charcoal font-semibold mb-1">{p.emptyTitle}</p>
+                        <p class="text-sm text-steel">
+                            {p.emptyBody}
+                        </p>
+                    </div>
+                )}
+
+                {articlesInSubcategory.length > 0 && (
+                    <ul class="flex flex-col gap-3">
+                        {articlesInSubcategory.map((a) => {
+                            const slug = a.id.split('/').pop() ?? a.id;
+                            return (
+                                <li>
+                                    <a
+                                        href={`${supportBase}/${slug}`}
+                                        class="group block bg-paper rounded-[14px] border border-chalk-dark/70 hover:border-chalk-dark hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-6 py-5"
+                                    >
+                                        <h3 class="text-[17px] font-semibold text-charcoal tracking-tight group-hover:text-sunstone-deep transition-colors">
+                                            {a.data.title}
+                                        </h3>
+                                        <p class="mt-1 text-[14px] text-steel leading-relaxed">
+                                            {a.data.summary}
+                                        </p>
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                )}
+            </div>
+
+            {otherTopics.length > 0 && (
+                <div class="mt-16 md:mt-20 max-w-3xl">
+                    <div class="rounded-[18px] bg-chalk-light px-7 md:px-9 py-8 md:py-10">
+                        <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal tracking-tight mb-6">
+                            {p.otherTopicsHeading}
+                        </h2>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {otherTopics.map((s) => (
+                                <li>
+                                    <a
+                                        href={`${categoriesBase}/${s.categorySlug}/${s.subSlug}`}
+                                        class="flex items-center justify-between gap-3 rounded-[10px] bg-paper px-5 py-3 text-[15px] font-medium text-charcoal hover:bg-sunstone-mist/60 hover:text-sunstone-deep transition-colors"
+                                    >
+                                        <span>{s.label}</span>
+                                        <i class="fa-solid fa-chevron-right text-[11px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            )}
+        </div>
+    </section>
+</BaseLayout>

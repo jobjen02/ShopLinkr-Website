@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../sections/Hero.astro';
+import TrustBar from '../sections/TrustBar.astro';
+import Features from '../sections/Features.astro';
+import Showcase from '../sections/Showcase.astro';
+import DashboardSection from '../sections/DashboardSection.astro';
+import Testimonials from '../sections/Testimonials.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import { localizeHref, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+
+const origin = 'https://shoplinkr.com';
+// Locale-general: works for any language in the route map, not just en.
+const homePath = localizeHref('/', locale);
+const homeUrl = homePath === '/' ? origin : `${origin}${homePath}`;
+const pricingUrl = `${origin}${localizeHref('/prijzen', locale)}`;
+
+const jsonLd = {
+    '@type': 'SoftwareApplication',
+    name: 'ShopLinkr',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description: t.pages.home.jsonLdDescription,
+    url: homeUrl,
+    offers: {
+        '@type': 'Offer',
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: pricingUrl,
+    },
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        bestRating: '5',
+        ratingCount: '47',
+    },
+};
+---
+
+<BaseLayout
+    title={t.pages.home.title}
+    description={t.pages.home.description}
+    routeKey="home"
+    jsonLd={jsonLd}
+>
+    <Hero />
+    <TrustBar />
+    <Features />
+    <Showcase />
+    <DashboardSection />
+    <Testimonials />
+    <CtaBanner />
+</BaseLayout>

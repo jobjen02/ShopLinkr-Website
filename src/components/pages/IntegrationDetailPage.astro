@@ -1,0 +1,415 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import IntegrationCard from '../template/IntegrationCard.astro';
+import FaqList from '../template/FaqList.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+type IntegrationEntry =
+    | CollectionEntry<'integrations'>
+    | CollectionEntry<'integrationsEn'>;
+
+interface Props {
+    integration: IntegrationEntry;
+    related: IntegrationEntry[];
+    relatedHref: (slug: string) => string;
+    supportHref: string;
+    homeHref: string;
+    integrationsHref: string;
+    title: string;
+    description: string;
+    alternates?: { nl?: string; en?: string };
+    jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.integrationDetail;
+
+const {
+    integration,
+    related,
+    relatedHref,
+    supportHref,
+    homeHref,
+    integrationsHref,
+    title,
+    description,
+    alternates,
+    jsonLd,
+} = Astro.props;
+
+const {
+    name,
+    category,
+    logo,
+    summary,
+    status,
+    url,
+    supportSlug,
+    tagline,
+    about,
+    faqs,
+} = integration.data;
+
+const withName = (template: string) => template.replaceAll('{name}', name);
+
+const categoryLabels: Record<string, string> = {
+    webshop: p.categoryWebshop,
+    marketplace: p.categoryMarketplace,
+    carrier: p.categoryCarrier,
+    other: p.categoryOther,
+};
+
+const categoryLabel = categoryLabels[category] ?? category;
+const isCarrier = category === 'carrier';
+const isComingSoon = status === 'coming-soon';
+
+const relatedHeading = isCarrier
+    ? p.relatedHeadingCarriers
+    : category === 'marketplace'
+        ? p.relatedHeadingMarketplaces
+        : category === 'webshop'
+            ? p.relatedHeadingWebshops
+            : p.relatedHeadingDefault;
+
+const effectiveTagline = tagline ?? withName(p.taglineFallback);
+
+const aboutFallback = isCarrier
+    ? withName(p.aboutFallbackCarrier)
+    : category === 'webshop'
+        ? withName(p.aboutFallbackWebshop)
+        : withName(p.aboutFallbackDefault);
+
+const effectiveAbout = about ?? aboutFallback;
+
+const benefits = isCarrier
+    ? [
+        {
+            icon: 'fa-duotone fa-solid fa-print',
+            title: p.benefitCarrier1Title,
+            body: withName(p.benefitCarrier1Body),
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-route',
+            title: p.benefitCarrier2Title,
+            body: p.benefitCarrier2Body,
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-bolt',
+            title: p.benefitCarrier3Title,
+            body: p.benefitCarrier3Body,
+        },
+    ]
+    : [
+        {
+            icon: 'fa-duotone fa-solid fa-arrows-rotate',
+            title: p.benefitDefault1Title,
+            body: withName(p.benefitDefault1Body),
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-boxes-stacked',
+            title: p.benefitDefault2Title,
+            body: withName(p.benefitDefault2Body),
+        },
+        {
+            icon: 'fa-duotone fa-solid fa-truck-fast',
+            title: p.benefitDefault3Title,
+            body: withName(p.benefitDefault3Body),
+        },
+    ];
+
+const syncLabel = isCarrier
+    ? p.syncLabelCarrier
+    : p.syncLabelDefault;
+
+const quickFacts = [
+    {
+        icon: 'fa-solid fa-circle-check',
+        label: isComingSoon ? p.quickFactComingSoon : p.quickFactLive,
+    },
+    {
+        icon: 'fa-solid fa-arrows-rotate',
+        label: syncLabel,
+    },
+    {
+        icon: 'fa-solid fa-money-bill-wave',
+        label: p.quickFactNoSetup,
+    },
+    {
+        icon: 'fa-solid fa-stopwatch',
+        label: p.quickFactReady,
+    },
+];
+---
+
+<BaseLayout
+    title={title}
+    description={description}
+    alternates={alternates}
+    jsonLd={jsonLd}
+>
+    <section class="relative bg-paper overflow-clip">
+        <div class="absolute inset-x-0 top-0 -z-0 pointer-events-none h-[600px]">
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] opacity-60"></div>
+        </div>
+
+        <div class="container-prose pt-10 md:pt-14 pb-20 md:pb-28 relative">
+            <nav aria-label="Breadcrumb" class="mb-10">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                    <li>
+                        <a href={homeHref} class="hover:text-charcoal transition-colors">{p.breadcrumbHome}</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li>
+                        <a href={integrationsHref} class="hover:text-charcoal transition-colors">{p.breadcrumbIntegrations}</a>
+                    </li>
+                    <li aria-hidden="true">
+                        <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    </li>
+                    <li class="text-charcoal font-medium" aria-current="page">
+                        {name}
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-8 lg:col-start-1 lg:row-start-1">
+                    <header class="pb-14 md:pb-16">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                            {p.h1Prefix} {name}.
+                        </h1>
+                        <p class="mt-6 text-base md:text-lg text-steel leading-relaxed max-w-2xl">
+                            {effectiveTagline}
+                        </p>
+                        <p class="mt-3 text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                            {summary}
+                        </p>
+                    </header>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">{p.aboutEyebrow} {name}</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5">
+                            {p.aboutHeadingPrefix} {name}?
+                        </h2>
+                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                            {effectiveAbout}
+                        </p>
+                    </section>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">{p.benefitsEyebrow}</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                            {p.benefitsHeading}
+                        </h2>
+
+                        <ul class="space-y-5 md:space-y-6">
+                            {
+                                benefits.map((benefit) => (
+                                    <li class="flex items-start gap-5">
+                                        <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                            <i class={`${benefit.icon} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="pt-0.5">
+                                            <h3 class="text-base md:text-lg font-semibold text-charcoal mb-1.5 tracking-tight leading-snug">
+                                                {benefit.title}
+                                            </h3>
+                                            <p class="text-sm md:text-[15px] text-steel leading-relaxed max-w-2xl">
+                                                {benefit.body}
+                                            </p>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </section>
+
+                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <p class="eyebrow mb-3">{p.getStartedEyebrow}</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5 max-w-2xl">
+                            {p.getStartedHeadingPrefix} {name}{p.getStartedHeadingSuffix}
+                        </h2>
+                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl mb-8">
+                            {p.getStartedBody}
+                        </p>
+
+                        {supportSlug ? (
+                            <a
+                                href={supportHref}
+                                class="group flex items-center gap-5 bg-charcoal text-paper rounded-xl p-6 md:p-7 hover:bg-charcoal/95 transition-all duration-200"
+                            >
+                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-paper/10 text-paper flex-shrink-0">
+                                    <i class="fa-solid fa-book-open text-base" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-[10px] uppercase tracking-[0.18em] text-paper/60 font-semibold mb-0.5">
+                                        {p.guideLabel}
+                                    </p>
+                                    <p class="text-base md:text-lg font-semibold leading-snug">
+                                        {p.guideCardTitlePrefix} {name}
+                                    </p>
+                                </div>
+                                <i class="fa-solid fa-arrow-right text-sm text-paper/70 group-hover:text-paper group-hover:translate-x-0.5 transition-all" aria-hidden="true"></i>
+                            </a>
+                        ) : (
+                            <a
+                                href={supportHref}
+                                class="group inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                            >
+                                {p.guideFallbackLink}
+                                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+                            </a>
+                        )}
+                    </section>
+                </div>
+
+                <aside class="lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-2">
+                    <div class="lg:sticky lg:top-24 space-y-5">
+                        <div class="bg-chalk-light/60 rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                            <div class="flex items-center gap-4 mb-5">
+                                <div class="h-16 w-16 rounded-xl bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                    <img
+                                        src={logo}
+                                        alt={`${name} logo`}
+                                        class="h-full w-full object-contain p-2.5"
+                                    />
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="text-[11px] uppercase tracking-[0.18em] text-gravel font-semibold mb-1">
+                                        {categoryLabel}
+                                    </p>
+                                    {isComingSoon ? (
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
+                                            {p.badgeComingSoon}
+                                        </span>
+                                    ) : (
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-paper text-charcoal text-[10px] font-semibold uppercase tracking-wider ring-1 ring-chalk-dark">
+                                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                            {p.badgeLive}
+                                        </span>
+                                    )}
+                                </div>
+                            </div>
+
+                            <ul class="space-y-2.5 pb-5 mb-5 border-b border-chalk-dark">
+                                {
+                                    quickFacts.map((fact) => (
+                                        <li class="flex items-center gap-2.5 text-[13px] text-charcoal">
+                                            <i class={`${fact.icon} text-xs text-sunstone-deep`} aria-hidden="true"></i>
+                                            {fact.label}
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+
+                            <div class="space-y-2">
+                                {supportSlug && (
+                                    <a
+                                        href={supportHref}
+                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-sunstone-soft hover:bg-sunstone-mist/30 px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                    >
+                                        <span class="inline-flex items-center gap-2.5">
+                                            <i class="fa-solid fa-book-open text-xs text-sunstone-deep" aria-hidden="true"></i>
+                                            {p.sidebarReadGuide}
+                                        </span>
+                                        <i class="fa-solid fa-arrow-right text-[10px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                                {url && (
+                                    <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-chalk-darker px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                    >
+                                        <span class="inline-flex items-center gap-2.5">
+                                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gravel" aria-hidden="true"></i>
+                                            {p.sidebarVisit} {name}
+                                        </span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-gravel" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 px-1">
+                            <a
+                                href={externalLinks.register}
+                                class="btn btn-sunstone text-sm w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t.common.register}
+                                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                            </a>
+                            <a
+                                href={externalLinks.demoBooking}
+                                class="btn btn-secondary text-sm w-full"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {t.common.demo}
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+                <div class="lg:col-span-8 lg:col-start-1 lg:row-start-2">
+                    {faqs && faqs.length > 0 && (
+                        <section class="border-t border-chalk-dark py-14 md:py-16">
+                            <p class="eyebrow mb-3">{p.faqEyebrow}</p>
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                                {p.faqHeadingPrefix}{name}{p.faqHeadingSuffix}
+                            </h2>
+
+                            <FaqList
+                                items={faqs.map((faq) => ({
+                                    question: faq.q,
+                                    answer: faq.a,
+                                }))}
+                            />
+                        </section>
+                    )}
+
+                    {related.length > 0 && (
+                        <section class="border-t border-chalk-dark pt-14 md:pt-16">
+                            <p class="eyebrow mb-3">{p.relatedEyebrow}</p>
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10">
+                                {relatedHeading}.
+                            </h2>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                {related.map((i) => (
+                                    <IntegrationCard
+                                        {...i.data}
+                                        href={relatedHref(i.data.slug)}
+                                        locale={locale}
+                                    />
+                                ))}
+                            </div>
+
+                            <div class="mt-8">
+                                <a
+                                    href={integrationsHref}
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                >
+                                    {p.relatedSeeAll}
+                                    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </section>
+                    )}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</BaseLayout>
+</content>
+</invoke>

@@ -1,0 +1,85 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.shoplinkerOrShoplinkr;
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: p.jsonLdName,
+    description: p.jsonLdDescription,
+    ...(locale === 'nl' ? {} : { inLanguage: 'en-US' }),
+};
+---
+
+<PageLayout
+    title={p.title}
+    description={p.description}
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    subheading={p.subheading}
+    routeKey="shoplinkerOrShoplinkr"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {t.common.register}
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {t.common.demo}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="eyebrow mb-4">{p.spellingEyebrow}</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-8">
+                    {p.spellingHeading}
+                </h2>
+                <div class="text-lg text-steel leading-relaxed space-y-6">
+                    <p>
+                        {p.spellingPara1}
+                    </p>
+                    <p>
+                        {p.spellingPara2}
+                    </p>
+                    <p>
+                        {p.spellingPara3}
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 md:mt-20 max-w-3xl">
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-tight mb-6">
+                    {p.whatHeading}
+                </h2>
+                <p class="text-base text-steel leading-relaxed">
+                    {p.whatBody}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

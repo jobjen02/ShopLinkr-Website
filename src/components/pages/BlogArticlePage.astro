@@ -1,0 +1,68 @@
+---
+import { render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import BlogCard from '../template/BlogCard.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import { type Locale, localizeHref } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+    blog: any;
+    related: any[];
+    formattedDate: string;
+    alternates?: { nl?: string; en?: string };
+    jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.blogArticle;
+
+const { blog, related, formattedDate, alternates, jsonLd } = Astro.props;
+const { Content } = await render(blog);
+
+const backHref = localizeHref('/blogs', locale);
+---
+
+<ArticleLayout
+    title={`${blog.data.title} | ShopLinkr Blog`}
+    description={blog.data.excerpt}
+    heading={blog.data.title}
+    eyebrow={blog.data.category}
+    meta={`${blog.data.author} · ${formattedDate}`}
+    image={blog.data.image}
+    imageAlt={blog.data.imageAlt}
+    backHref={backHref}
+    backLabel={p.backLabel}
+    jsonLd={jsonLd}
+    alternates={alternates}
+>
+    <Content />
+
+    <Fragment slot="after">
+        {related.length > 0 && (
+            <section class="py-24 md:py-32 bg-chalk-light border-t border-chalk-dark">
+                <div class="container-prose">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-10">
+                        {p.relatedHeading}
+                    </h2>
+                    <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                        {related.map((b) => (
+                            <BlogCard
+                                title={b.data.title}
+                                excerpt={b.data.excerpt}
+                                publishedAt={b.data.publishedAt}
+                                image={b.data.image}
+                                imageAlt={b.data.imageAlt}
+                                slug={b.id}
+                                category={b.data.category}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </section>
+        )}
+
+        <CtaBanner />
+    </Fragment>
+</ArticleLayout>

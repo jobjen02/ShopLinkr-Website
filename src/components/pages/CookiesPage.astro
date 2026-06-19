@@ -1,0 +1,137 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.cookies;
+
+const lastUpdated = '2026-05-28';
+
+const categories = [
+    {
+        title: p.categories[0].title,
+        eyebrow: p.categories[0].eyebrow,
+        body: p.categories[0].body,
+        items: [
+            {
+                name: 'shoplinkr-cookie-consent',
+                purpose: p.categories[0].items[0].purpose,
+                duration: p.categories[0].items[0].duration,
+            },
+            {
+                name: 'session',
+                purpose: p.categories[0].items[1].purpose,
+                duration: p.categories[0].items[1].duration,
+            },
+        ],
+    },
+    {
+        title: p.categories[1].title,
+        eyebrow: p.categories[1].eyebrow,
+        body: p.categories[1].body,
+        items: [
+            {
+                name: '_ga, _ga_*',
+                purpose: p.categories[1].items[0].purpose,
+                duration: p.categories[1].items[0].duration,
+            },
+        ],
+    },
+    {
+        title: p.categories[2].title,
+        eyebrow: p.categories[2].eyebrow,
+        body: p.categories[2].body,
+        items: [
+            {
+                name: '_fbp',
+                purpose: p.categories[2].items[0].purpose,
+                duration: p.categories[2].items[0].duration,
+            },
+            {
+                name: 'li_*',
+                purpose: p.categories[2].items[1].purpose,
+                duration: p.categories[2].items[1].duration,
+            },
+        ],
+    },
+];
+
+const jsonLd = {
+    '@type': 'WebPage',
+    name: p.jsonLdName,
+    description: p.jsonLdDescription,
+};
+
+export const prerender = false;
+---
+
+<PageLayout
+    title={p.title}
+    description={p.description}
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    subheading={p.subheading}
+    routeKey="cookies"
+    jsonLd={jsonLd}
+>
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="text-sm text-gravel mb-10">
+                    {p.lastUpdatedLabel} {lastUpdated}
+                </p>
+
+                <p class="text-lg text-steel leading-relaxed mb-12">
+                    {p.intro}
+                </p>
+
+                <div class="space-y-12">
+                    {
+                        categories.map((category) => (
+                            <article>
+                                <p class="eyebrow mb-3">{category.eyebrow}</p>
+                                <h2 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight mb-4">
+                                    {category.title}
+                                </h2>
+                                <p class="text-steel leading-relaxed text-[15px] md:text-base mb-6">
+                                    {category.body}
+                                </p>
+
+                                <div class="overflow-x-auto rounded-xl ring-1 ring-chalk-dark">
+                                    <table class="w-full text-sm">
+                                        <thead class="bg-chalk-light text-xs uppercase tracking-wider text-gravel">
+                                            <tr>
+                                                <th class="px-4 py-3 text-left font-semibold">{p.tableName}</th>
+                                                <th class="px-4 py-3 text-left font-semibold">{p.tablePurpose}</th>
+                                                <th class="px-4 py-3 text-left font-semibold">{p.tableDuration}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-chalk-dark">
+                                            {category.items.map((item) => (
+                                                <tr>
+                                                    <td class="px-4 py-3 font-mono text-charcoal">{item.name}</td>
+                                                    <td class="px-4 py-3 text-steel">{item.purpose}</td>
+                                                    <td class="px-4 py-3 text-steel">{item.duration}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </article>
+                        ))
+                    }
+                </div>
+
+                <div class="mt-16 pt-10 border-t border-chalk-dark">
+                    <h2 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight mb-4">
+                        {p.preferencesHeading}
+                    </h2>
+                    <p class="text-steel leading-relaxed text-[15px] md:text-base mb-4" set:html={p.preferencesBody}>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>

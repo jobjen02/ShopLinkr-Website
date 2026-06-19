@@ -1,0 +1,235 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import FaqList from '../template/FaqList.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
+import { faqsByPageEn } from '../../data/faqs-en';
+import { localizeHref, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.featureOrders;
+
+// Icons are locale-invariant; merge them with the per-locale card copy by index.
+const subFeatureIcons = [
+    'fa-duotone fa-solid fa-layer-group',
+    'fa-duotone fa-solid fa-code-merge',
+    'fa-duotone fa-solid fa-clock-rotate-left',
+    'fa-duotone fa-solid fa-pen-to-square',
+];
+const subFeatures = p.subFeatures.map((feature, i) => ({ ...feature, icon: subFeatureIcons[i] }));
+
+const workflowSteps = p.workflowSteps;
+
+const faqs = locale === 'en' ? faqsByPageEn.bestellingen : faqsByPage.bestellingen;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', localizeHref('/', locale)],
+        [p.breadcrumbParent, localizeHref('/functionaliteiten', locale)],
+        [p.breadcrumbLeaf, localizeHref('/functionaliteiten/bestellingen', locale)],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: p.title,
+        description: p.description,
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title={p.title}
+    description={p.description}
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    subheading={p.subheading}
+    routeKey="features.orders"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {t.common.register}
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {t.common.demo}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">{p.overviewEyebrow}</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            {p.overviewHeadingLine1}
+                            <span class="block">{p.overviewHeadingLine2}</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">{p.mockupOpenOrders}</p>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel tabular-nums">{p.mockupOrderCount}</span>
+                        </div>
+
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#0000A4] text-paper">Bol</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">{p.mockupRow1Product}</p>
+                                    <p class="text-[11px] text-gravel tabular-nums">#12384</p>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel">{p.mockupRow1Status}</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#95BF47] text-paper">Shopify</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">{p.mockupRow2Product}</p>
+                                    <p class="text-[11px] text-sunstone-deep font-semibold tabular-nums">{p.mockupRow2Order}</p>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">{p.mockupRow2Status}</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#7F54B3] text-paper">WooComm</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">{p.mockupRow3Product}</p>
+                                    <p class="text-[11px] text-gravel tabular-nums">#12386</p>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-gravel">{p.mockupRow3Status}</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 px-2 rounded text-[10px] font-semibold tracking-tight bg-[#E10915] text-paper">Kaufland</span>
+                                <div class="flex-1 min-w-0">
+                                    <p class="text-sm text-charcoal font-medium truncate">{p.mockupRow4Product}</p>
+                                    <p class="text-[11px] text-gravel tabular-nums">#12387</p>
+                                </div>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-charcoal">{p.mockupRow4Status}</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-center justify-between gap-3 pt-4 mt-4 border-t border-chalk-darker">
+                            <span class="text-sm font-semibold text-charcoal">{p.mockupSelectProcess}</span>
+                            <span class="inline-flex items-center gap-1.5 text-xs text-sunstone-deep font-semibold">
+                                <i class="fa-solid fa-layer-group text-[0.65rem]" aria-hidden="true"></i>
+                                {p.mockupInOneBatch}
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        {p.overviewBody}
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">{p.flowEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        {p.flowHeadingLine1}
+                        <span class="block text-sunstone-deep">{p.flowHeadingLine2}</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        {p.flowIntro}
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ol class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            workflowSteps.map((step, index) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5 text-sm font-semibold">
+                                        {index + 1}
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">{p.faqEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        {p.faqHeadingLine1}
+                        <span class="block text-sunstone-deep">{p.faqHeadingLine2}</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        {p.faqIntro}
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        {p.faqCta}
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

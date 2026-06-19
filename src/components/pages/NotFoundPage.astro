@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { localizeHref, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.notFound;
+
+// Icons and target paths are locale-invariant; merge per-locale copy by index.
+const icons = [
+    'fa-solid fa-grid-2',
+    'fa-solid fa-plug',
+    'fa-solid fa-life-ring',
+    'fa-solid fa-tag',
+];
+const hrefs = [
+    '/functionaliteiten',
+    '/integraties',
+    '/support',
+    '/prijzen',
+];
+const quickLinks = p.quickLinks.map((link, i) => ({
+    ...link,
+    href: localizeHref(hrefs[i], locale),
+    icon: icons[i],
+}));
+
+export const prerender = true;
+---
+
+<BaseLayout
+    title={p.title}
+    description={p.description}
+>
+    <section class="py-20 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="eyebrow mb-5">404</p>
+                <h1 class="text-4xl md:text-6xl font-semibold text-charcoal tracking-tight leading-[1.05]">
+                    {p.headingLead}
+                    <span class="block text-sunstone-deep">{p.headingHighlight}</span>
+                </h1>
+                <p class="mt-7 text-lg text-steel leading-relaxed max-w-xl mx-auto">
+                    {p.intro}
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href={localizeHref('/', locale)}
+                        class="btn btn-sunstone text-base"
+                    >
+                        {p.backHome}
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-secondary text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {p.demoCta}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto">
+                <p class="eyebrow mb-4 text-center">{p.quickEyebrow}</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] text-center mb-10">
+                    {p.quickHeading}
+                </h2>
+
+                <ul class="grid sm:grid-cols-2 gap-3">
+                    {
+                        quickLinks.map((link) => (
+                            <li>
+                                <a
+                                    href={link.href}
+                                    class="group flex items-start gap-4 bg-paper rounded-xl ring-1 ring-chalk-dark hover:ring-sunstone-soft hover:bg-sunstone-mist/30 px-5 py-5 transition-all duration-200"
+                                >
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-lg bg-chalk-light text-gravel group-hover:bg-sunstone-mist group-hover:text-sunstone-deep transition-colors">
+                                        <i class={`${link.icon} text-sm`} aria-hidden="true"></i>
+                                    </span>
+                                    <div class="flex-1">
+                                        <p class="text-[15px] font-semibold text-charcoal group-hover:text-sunstone-deep transition-colors">
+                                            {link.title}
+                                        </p>
+                                        <p class="mt-0.5 text-sm text-gravel">
+                                            {link.body}
+                                        </p>
+                                    </div>
+                                    <i class="fa-solid fa-arrow-right text-xs text-gravel group-hover:text-sunstone-deep group-hover:translate-x-0.5 transition-all mt-3" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

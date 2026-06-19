@@ -1,8 +1,6 @@
 ---
-import { getCollection, render } from 'astro:content';
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import BlogCard from '../../components/template/BlogCard.astro';
-import CtaBanner from '../../components/sections/CtaBanner.astro';
+import { getCollection } from 'astro:content';
+import BlogArticlePage from '../../components/pages/BlogArticlePage.astro';
 
 export async function getStaticPaths() {
     const blogs = await getCollection('blogs');
@@ -41,7 +39,6 @@ export async function getStaticPaths() {
 }
 
 const { blog, related, enSlug } = Astro.props;
-const { Content } = await render(blog);
 
 const alternates = enSlug
     ? { nl: `/blogs/${blog.id}`, en: `/en/blog/${enSlug}` }
@@ -116,45 +113,10 @@ const jsonLd = [articleSchema, breadcrumbSchema];
 export const prerender = true;
 ---
 
-<ArticleLayout
-    title={`${blog.data.title} | ShopLinkr Blog`}
-    description={blog.data.excerpt}
-    heading={blog.data.title}
-    eyebrow={blog.data.category}
-    meta={`${blog.data.author} · ${formattedDate}`}
-    image={blog.data.image}
-    imageAlt={blog.data.imageAlt}
-    backHref="/blogs"
-    backLabel="Alle blogs"
-    jsonLd={jsonLd}
+<BlogArticlePage
+    blog={blog}
+    related={related}
+    formattedDate={formattedDate}
     alternates={alternates}
->
-    <Content />
-
-    <Fragment slot="after">
-        {related.length > 0 && (
-            <section class="py-24 md:py-32 bg-chalk-light border-t border-chalk-dark">
-                <div class="container-prose">
-                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-10">
-                        Gerelateerde artikelen
-                    </h2>
-                    <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-                        {related.map((b) => (
-                            <BlogCard
-                                title={b.data.title}
-                                excerpt={b.data.excerpt}
-                                publishedAt={b.data.publishedAt}
-                                image={b.data.image}
-                                imageAlt={b.data.imageAlt}
-                                slug={b.id}
-                                category={b.data.category}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
-        )}
-
-        <CtaBanner />
-    </Fragment>
-</ArticleLayout>
+    jsonLd={jsonLd}
+/>

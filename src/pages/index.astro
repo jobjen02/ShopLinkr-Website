@@ -1,50 +1,9 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Hero from '../components/sections/Hero.astro';
-import TrustBar from '../components/sections/TrustBar.astro';
-import Features from '../components/sections/Features.astro';
-import Showcase from '../components/sections/Showcase.astro';
-import DashboardSection from '../components/sections/DashboardSection.astro';
-import Testimonials from '../components/sections/Testimonials.astro';
-import CtaBanner from '../components/sections/CtaBanner.astro';
-
-const jsonLd = {
-    '@type': 'SoftwareApplication',
-    name: 'ShopLinkr',
-    applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Web',
-    description: 'Magazijnsoftware voor webshops. Voorraad, picklijsten, labels en orderverwerking in één platform.',
-    url: 'https://shoplinkr.com',
-    offers: {
-        '@type': 'Offer',
-        priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
-        url: 'https://shoplinkr.com/prijzen',
-    },
-    aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        bestRating: '5',
-        ratingCount: '47',
-    },
-};
+import HomePage from '../components/pages/HomePage.astro';
 
 // SSR (not prerendered) so the edge middleware can read Accept and return
 // markdown to agents. Cached at the CDN via the middleware's Cache-Control.
 export const prerender = false;
 ---
 
-<BaseLayout
-    title="ShopLinkr | Magazijnsoftware voor Nederlandse webshops"
-    description="Run je magazijn zonder chaos. Voorraad, picklijsten, labels en orderverwerking in één platform. Pay-as-you-go en 14 dagen gratis proberen."
-    routeKey="home"
-    jsonLd={jsonLd}
->
-    <Hero />
-    <TrustBar />
-    <Features />
-    <Showcase />
-    <DashboardSection />
-    <Testimonials />
-    <CtaBanner />
-</BaseLayout>
+<HomePage />

@@ -1,0 +1,96 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
+import { localizeHref, type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.about;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', localizeHref('/', locale)],
+        [p.breadcrumbLeaf, localizeHref('/over-ons', locale)],
+    ]),
+    {
+        '@type': 'AboutPage',
+        name: p.jsonLdName,
+        description: p.jsonLdDescription,
+        mainEntity: {
+            '@type': 'Organization',
+            name: 'ShopLinkr',
+            foundingDate: '2022',
+            founder: {
+                '@type': 'Person',
+                name: 'Job',
+            },
+        },
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title={p.title}
+    description={p.description}
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    subheading={p.subheading}
+    routeKey="about"
+    jsonLd={jsonLd}
+>
+    <section class="py-24 md:py-32">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto space-y-6 text-charcoal leading-relaxed text-[1.0625rem]">
+                <p>
+                    {p.para1}
+                </p>
+                <p>
+                    {p.para2}
+                </p>
+                <p>
+                    {p.para3}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="eyebrow mb-4">{p.moreEyebrow}</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight">
+                    {p.moreHeading}
+                </h2>
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href={localizeHref('/team', locale)}
+                        class="btn btn-secondary text-base"
+                    >
+                        {p.teamCta}
+                    </a>
+                    <a
+                        href={localizeHref('/referenties', locale)}
+                        class="btn btn-secondary text-base"
+                    >
+                        {p.storiesCta}
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-sunstone text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {p.demoCta}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

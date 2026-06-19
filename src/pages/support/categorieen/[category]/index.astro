@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '../../../../layouts/BaseLayout.astro';
-import SupportHero from '../../../../components/support/SupportHero.astro';
+import SupportCategoryPage from '../../../../components/pages/SupportCategoryPage.astro';
 import {
     supportCategories,
     supportCategoriesBySlug,
@@ -88,92 +87,10 @@ const jsonLd = [collectionSchema, breadcrumbSchema];
 export const prerender = true;
 ---
 
-<BaseLayout
-    title={`${categoryInfo.label} | ShopLinkr Support`}
-    description={categoryInfo.summary}
+<SupportCategoryPage
+    categoryInfo={categoryInfo}
+    subcategoryGroups={subcategoryGroups}
+    otherCategories={otherCategories}
     alternates={alternates}
     jsonLd={jsonLd}
->
-    <SupportHero
-        title={categoryInfo.label}
-        subtitle={categoryInfo.summary}
-    />
-
-    <section class="bg-paper">
-        <div class="container-prose py-12 md:py-16">
-            <nav aria-label="Breadcrumb" class="mb-10">
-                <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-gravel">
-                    <li>
-                        <a href="/support" class="hover:text-charcoal transition-colors">
-                            Support
-                        </a>
-                    </li>
-                    <li aria-hidden="true">
-                        <i class="fa-solid fa-chevron-right text-[10px]" aria-hidden="true"></i>
-                    </li>
-                    <li class="text-charcoal">
-                        {categoryInfo.label}
-                    </li>
-                </ol>
-            </nav>
-
-            <div class="max-w-3xl">
-                <h2 class="text-[26px] md:text-[32px] font-semibold text-charcoal tracking-tight mb-7">
-                    Onderwerpen
-                </h2>
-
-                <ul class="flex flex-col gap-3">
-                    {subcategoryGroups.map((sub) => (
-                        <li>
-                            <a
-                                href={`/support/categorieen/${categoryInfo.slug}/${sub.slug}`}
-                                class="group block bg-paper rounded-[14px] border border-chalk-dark/70 hover:border-chalk-dark hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-6 py-5"
-                            >
-                                <div class="flex items-start justify-between gap-4">
-                                    <div class="flex-1 min-w-0">
-                                        <h3 class="text-[17px] font-semibold text-charcoal tracking-tight group-hover:text-sunstone-deep transition-colors">
-                                            {sub.label}
-                                        </h3>
-                                        {sub.summary && (
-                                            <p class="mt-1 text-[14px] text-steel leading-relaxed">
-                                                {sub.summary}
-                                            </p>
-                                        )}
-                                    </div>
-                                    {sub.articles.length > 0 && (
-                                        <span class="flex-none text-[12px] font-semibold text-gravel bg-chalk-light rounded-full px-2.5 py-1 leading-none mt-1">
-                                            {sub.articles.length}
-                                        </span>
-                                    )}
-                                </div>
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-
-            {otherCategories.length > 0 && (
-                <div class="mt-16 md:mt-20 max-w-3xl">
-                    <div class="rounded-[18px] bg-chalk-light px-7 md:px-9 py-8 md:py-10">
-                        <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal tracking-tight mb-6">
-                            Andere onderwerpen
-                        </h2>
-                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            {otherCategories.map((c) => (
-                                <li>
-                                    <a
-                                        href={`/support/categorieen/${c.slug}`}
-                                        class="flex items-center justify-between gap-3 rounded-[10px] bg-paper px-5 py-3 text-[15px] font-medium text-charcoal hover:bg-sunstone-mist/60 hover:text-sunstone-deep transition-colors"
-                                    >
-                                        <span>{c.label}</span>
-                                        <i class="fa-solid fa-chevron-right text-[11px] text-gravel" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            )}
-        </div>
-    </section>
-</BaseLayout>
+/>

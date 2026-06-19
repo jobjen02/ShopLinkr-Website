@@ -21,8 +21,8 @@ const t = useTranslations(locale);
     </div>
 
     <div class="dashboard-shell">
-        <div class="dashboard-scroll">
-            <div class="dashboard-frame">
+        <div class="dashboard-viewport" data-dashboard-viewport>
+            <div class="dashboard-frame" data-dashboard-frame>
                 <DashboardPreview />
             </div>
         </div>
@@ -30,44 +30,54 @@ const t = useTranslations(locale);
 </section>
 
 <style>
-    /* Desktop: centered, capped at 1320px, with normal page padding.
-       Mobile/tablet: horizontal scroll so the dashboard keeps its native proportions
-       (sidebar + multi-column charts) instead of collapsing and looking like a different UI. */
+    /* Desktop (>=1100px available): the 1100px dashboard fits, centered.
+       Mobile/tablet: scale the whole dashboard down to fit the screen so it stays
+       fully visible in its native proportions, with no horizontal scroll. */
     .dashboard-shell {
         position: relative;
-    }
-
-    .dashboard-scroll {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
         padding-inline: 1rem;
     }
 
-    .dashboard-scroll::-webkit-scrollbar {
-        display: none;
+    .dashboard-viewport {
+        overflow: hidden;
     }
 
     .dashboard-frame {
-        max-width: 1320px;
+        width: 1100px;
         margin-inline: auto;
+        transform-origin: top left;
     }
 
     @media (min-width: 768px) {
-        .dashboard-scroll {
+        .dashboard-shell {
             padding-inline: 2rem;
         }
     }
+</style>
 
-    @media (max-width: 1199px) {
-        .dashboard-shell::after {
-            content: "";
-            position: absolute;
-            inset: 0 0 0 auto;
-            width: 3rem;
-            background: linear-gradient(to right, transparent, var(--color-chalk-light));
-            pointer-events: none;
+<script>
+    function fitDashboard() {
+        const frame = document.querySelector('[data-dashboard-frame]') as HTMLElement | null;
+        const viewport = document.querySelector('[data-dashboard-viewport]') as HTMLElement | null;
+        if (!frame || !viewport) return;
+        const design = 1100;
+        const avail = viewport.clientWidth;
+        const scale = Math.min(1, avail / design);
+        if (scale < 1) {
+            frame.style.transform = `scale(${scale})`;
+            // offsetHeight is the un-scaled layout height; reserve the scaled height.
+            viewport.style.height = `${frame.offsetHeight * scale}px`;
+        } else {
+            frame.style.transform = '';
+            viewport.style.height = '';
         }
     }
-</style>
+
+    fitDashboard();
+    window.addEventListener('load', fitDashboard);
+    window.addEventListener('resize', fitDashboard);
+    const vp = document.querySelector('[data-dashboard-viewport]');
+    if (vp && 'ResizeObserver' in window) {
+        new ResizeObserver(fitDashboard).observe(vp);
+    }
+</script>

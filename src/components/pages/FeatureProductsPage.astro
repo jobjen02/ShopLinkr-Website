@@ -1,0 +1,447 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import FaqList from '../template/FaqList.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
+import { faqsByPage } from '../../data/faqs';
+import { faqsByPageEn } from '../../data/faqs-en';
+import { type Locale, localizeHref } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.featureProducts;
+
+// Icons are locale-invariant; merge them with the per-locale card copy by index.
+const subFeatureIcons = [
+    'fa-duotone fa-solid fa-shapes',
+    'fa-duotone fa-solid fa-boxes-packing',
+    'fa-duotone fa-solid fa-scale-balanced',
+    'fa-duotone fa-solid fa-chart-pie',
+];
+const subFeatures = p.subFeatures.map((feature, i) => ({ ...feature, icon: subFeatureIcons[i] }));
+
+const productTypeIcons = [
+    'fa-solid fa-cube',
+    'fa-solid fa-boxes-packing',
+    'fa-solid fa-scale-balanced',
+    'fa-solid fa-infinity',
+];
+const productTypes = p.productTypes.map((type, i) => ({ ...type, icon: productTypeIcons[i] }));
+
+const faqs = locale === 'en' ? faqsByPageEn.producten : faqsByPage.producten;
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', localizeHref('/', locale)],
+        [p.breadcrumbParent, localizeHref('/functionaliteiten', locale)],
+        [p.breadcrumbLeaf, localizeHref('/functionaliteiten/producten', locale)],
+    ]),
+    {
+        '@type': 'WebPage',
+        name: p.title,
+        description: p.description,
+    },
+    {
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+            },
+        })),
+    },
+];
+
+export const prerender = false;
+---
+
+<PageLayout
+    title={p.title}
+    description={p.description}
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    subheading={p.subheading}
+    routeKey="features.products"
+    jsonLd={jsonLd}
+>
+    <section class="pb-12 md:pb-16 bg-paper">
+        <div class="container-prose">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {t.common.register}
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
+                <a
+                    href={externalLinks.demoBooking}
+                    class="btn btn-secondary text-base"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {t.common.demo}
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-paper">
+        <div class="container-wide">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                    <div>
+                        <p class="eyebrow mb-3">{p.overviewEyebrow}</p>
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                            {p.overviewHeadingLine1}
+                            <span class="block">{p.overviewHeadingLine2}</span>
+                        </h2>
+                    </div>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-chalk-dark">
+                            <span class="text-sm font-semibold text-charcoal">{p.mockupProductsLabel}</span>
+                            <span class="text-[11px] text-gravel tabular-nums">{p.mockupProductsCount}</span>
+                        </div>
+
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-cube text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">{p.mockupBottleName}</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">{p.mockupBottleStock}</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <i class="fa-solid fa-shapes text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">{p.mockupTshirtName}</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">{p.mockupTshirtTag}</span>
+                                </div>
+                                <span class="text-xs text-sunstone-deep font-semibold tabular-nums whitespace-nowrap">{p.mockupTshirtStock}</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-boxes-packing text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">{p.mockupGiftsetName}</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">{p.mockupGiftsetTag}</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">{p.mockupGiftsetStock}</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-scale-balanced text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">{p.mockupKibbleName}</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">{p.mockupKibbleTag}</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">85 kg</span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2.5 text-sm min-w-0">
+                                    <span class="inline-flex items-center justify-center h-6 w-6 rounded bg-paper text-gravel ring-1 ring-chalk-dark flex-shrink-0">
+                                        <i class="fa-solid fa-infinity text-[0.65rem]" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="text-charcoal font-medium truncate">{p.mockupLicenseName}</span>
+                                    <span class="text-[10px] uppercase tracking-[0.1em] font-semibold text-gravel flex-shrink-0">{p.mockupLicenseTag}</span>
+                                </div>
+                                <span class="text-xs text-charcoal font-semibold tabular-nums whitespace-nowrap">∞</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                        {p.overviewCaption}
+                    </p>
+                </article>
+
+                {
+                    subFeatures.map((feature) => (
+                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                            </div>
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">{p.typesEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        {p.typesHeadingLine1}
+                        <span class="block text-sunstone-deep">{p.typesHeadingLine2}</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        {p.typesBody}
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                        {
+                            productTypes.map((type) => (
+                                <li class="py-7 flex items-start gap-5">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                                        <i class={`${type.icon} text-xs`} aria-hidden="true"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{type.title}</h3>
+                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{type.body}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">{p.bundlesEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        {p.bundlesHeadingLine1}
+                        <span class="block text-sunstone-deep">{p.bundlesHeadingLine2}</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        {p.bundlesBody1}
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        {p.bundlesBody2}
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        {p.bundleExampleLabel}
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-4">
+                            <div class="flex items-center gap-2.5">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-boxes-packing text-[0.7rem]" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-sm font-semibold text-charcoal">{p.bundleCardTitle}</span>
+                            </div>
+                            <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">{p.bundleCardTag}</span>
+                        </div>
+
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">{p.bundlePhoneName}</span>
+                                    <span class="text-gravel">× 1</span>
+                                </div>
+                                <span class="text-xs text-gravel tabular-nums">{p.bundlePhoneStock} → <span class="text-charcoal font-semibold">{p.bundlePhoneResult}</span></span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">{p.bundleChargerName}</span>
+                                    <span class="text-gravel">× 1</span>
+                                </div>
+                                <span class="text-xs text-gravel tabular-nums">{p.bundleChargerStock} → <span class="text-charcoal font-semibold">{p.bundleChargerResult}</span></span>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <div class="flex items-center gap-2 text-sm">
+                                    <span class="text-charcoal font-medium">{p.bundleCaseName}</span>
+                                    <span class="text-gravel">× 2</span>
+                                </div>
+                                <span class="text-xs text-sunstone-deep font-semibold tabular-nums">{p.bundleCaseLine}</span>
+                            </li>
+                        </ul>
+
+                        <div class="flex items-baseline justify-between gap-3 pt-3 border-t border-chalk-darker">
+                            <span class="text-sm font-semibold text-charcoal">{p.bundleTotalLabel}</span>
+                            <span class="text-xl font-semibold text-sunstone-deep tabular-nums">{p.bundleTotalValue}</span>
+                        </div>
+                        <p class="text-[11px] text-gravel mt-2 leading-relaxed">
+                            {p.bundleNote}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 md:py-32 bg-chalk-light">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">{p.sourcesEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        {p.sourcesHeadingLine1}
+                        <span class="block text-sunstone-deep">{p.sourcesHeadingLine2}</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        {p.sourcesBody1}
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        {p.sourcesBody2}
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        {p.sourcesBody3}
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        {p.sourceExampleLabel}
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="grid grid-cols-4 gap-3 text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel border-b border-chalk-dark pb-3 mb-3">
+                            <span>{p.sourceColSituation}</span>
+                            <span class="text-right">{p.sourceColSource}</span>
+                            <span class="text-right">{p.sourceCol500}</span>
+                            <span class="text-right">{p.sourceCol1kg}</span>
+                        </div>
+
+                        <ul class="space-y-2">
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="text-sm text-charcoal font-medium">{p.sourceRow1Situation}</span>
+                                <span class="text-sm text-charcoal font-semibold tabular-nums text-right">{p.sourceRow1Source}</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">200</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">100</span>
+                            </li>
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="text-sm text-charcoal font-medium">{p.sourceRow2Situation}</span>
+                                <span class="text-sm text-charcoal font-semibold tabular-nums text-right">{p.sourceRow2Source}</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">198</span>
+                                <span class="text-sm text-charcoal tabular-nums text-right">99</span>
+                            </li>
+                            <li class="grid grid-cols-4 gap-3 items-baseline px-2 py-2 rounded-md bg-sunstone-mist/60 ring-1 ring-sunstone-soft/60">
+                                <span class="text-sm text-charcoal font-medium">{p.sourceRow3Situation}</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">{p.sourceRow3Source}</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">197</span>
+                                <span class="text-sm text-sunstone-deep font-semibold tabular-nums text-right">98</span>
+                            </li>
+                        </ul>
+
+                        <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                            {p.sourceNote}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <p class="eyebrow mb-4">{p.unlimitedEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        {p.unlimitedHeadingLine1}
+                        <span class="block text-sunstone-deep">{p.unlimitedHeadingLine2}</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        {p.unlimitedBody1}
+                    </p>
+                    <p class="mt-4 text-base text-steel leading-relaxed">
+                        {p.unlimitedBody2}
+                    </p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                        {p.unlimitedExampleLabel}
+                    </p>
+
+                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-between gap-3 mb-5 pb-4 border-b border-chalk-dark">
+                            <div class="flex items-center gap-3">
+                                <span class="inline-flex items-center justify-center h-9 w-9 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                    <i class="fa-solid fa-infinity text-sm" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <p class="text-sm font-semibold text-charcoal leading-tight">{p.unlimitedCardTitle}</p>
+                                    <p class="text-[11px] text-gravel mt-0.5">{p.unlimitedCardStatus}</p>
+                                </div>
+                            </div>
+                            <p class="text-2xl font-semibold text-sunstone-deep tabular-nums leading-none">∞</p>
+                        </div>
+
+                        <p class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel mb-3">
+                            {p.unlimitedChannelsLabel}
+                        </p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#5A8A1F] text-paper flex-shrink-0">Shopify</span>
+                                <span class="text-sm text-charcoal flex-1">{p.unlimitedChannelShopify}</span>
+                                <i class="fa-solid fa-infinity text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#674399] text-paper flex-shrink-0">Woo</span>
+                                <span class="text-sm text-charcoal flex-1">{p.unlimitedChannelWoo}</span>
+                                <i class="fa-solid fa-infinity text-sunstone-deep text-sm" aria-hidden="true"></i>
+                            </li>
+                            <li class="flex items-center justify-between gap-3 px-3 py-2 rounded-md bg-sunstone-mist/50 ring-1 ring-sunstone-soft/60">
+                                <span class="inline-flex items-center justify-center h-6 w-16 rounded text-[10px] font-semibold tracking-tight bg-[#0000A4] text-paper flex-shrink-0">Bol</span>
+                                <span class="text-sm text-charcoal flex-1">{p.unlimitedChannelBol}</span>
+                                <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">fallback</span>
+                            </li>
+                        </ul>
+
+                        <p class="text-[11px] text-gravel mt-3 leading-relaxed">
+                            {p.unlimitedNote}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 bg-paper">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+                <div class="lg:col-span-4">
+                    <p class="eyebrow mb-4">{p.faqEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        {p.faqHeadingLine1}
+                        <span class="block text-sunstone-deep">{p.faqHeadingLine2}</span>
+                    </h2>
+                    <p class="mt-6 text-base text-steel leading-relaxed">
+                        {p.faqBody}
+                    </p>
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                        {p.faqCta}
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <FaqList items={faqs} />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

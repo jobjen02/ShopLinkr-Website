@@ -25,8 +25,8 @@ const match = routeKeyFromPath(Astro.url.pathname);
 const navLabel = useTranslations(current).common.languageNav;
 
 const flags: Record<Locale, string> = {
-    nl: 'https://flagcdn.com/48x36/nl.png',
-    en: 'https://flagcdn.com/48x36/gb.png',
+    nl: '/flags/nl.png',
+    en: '/flags/gb.png',
 };
 
 function hrefFor(loc: Locale): string {
@@ -80,7 +80,7 @@ const items = locales.map((loc) => ({
                     alt={languages[current]}
                     width="22"
                     height="17"
-                    class="h-4 w-auto rounded-[1px] ring-1 ring-chalk-dark"
+                    class="h-4 w-auto rounded-[1px]"
                     loading="lazy"
                 />
                 <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
@@ -100,7 +100,7 @@ const items = locales.map((loc) => ({
                                     : 'text-steel hover:bg-chalk-light hover:text-charcoal',
                             ]}
                         >
-                            <img src={item.flag} alt="" width="22" height="17" class="h-4 w-auto rounded-[1px] ring-1 ring-chalk-dark" loading="lazy" />
+                            <img src={item.flag} alt="" width="22" height="17" class="h-4 w-auto rounded-[1px]" loading="lazy" />
                             {item.name}
                         </a>
                     ))}
