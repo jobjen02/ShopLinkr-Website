@@ -60,7 +60,7 @@ export const prerender = false;
                     href={`/en/blog/${featured.id}`}
                     class="group grid gap-8 lg:grid-cols-12 lg:gap-12 items-center"
                 >
-                    <div class="lg:col-span-7 overflow-hidden rounded-2xl bg-chalk-light ring-1 ring-chalk-dark aspect-video lg:aspect-[16/10]">
+                    <div class="order-2 lg:order-1 lg:col-span-7 overflow-hidden rounded-2xl bg-chalk-light ring-1 ring-chalk-dark aspect-video lg:aspect-[16/10]">
                         {featured.data.image ? (
                             <img
                                 src={featured.data.image}
@@ -75,7 +75,7 @@ export const prerender = false;
                         )}
                     </div>
 
-                    <div class="lg:col-span-5">
+                    <div class="order-1 lg:order-2 lg:col-span-5">
                         <div class="flex items-center gap-2.5 text-xs">
                             {featured.data.category && (
                                 <>

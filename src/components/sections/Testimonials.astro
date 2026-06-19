@@ -5,29 +5,25 @@ import { useTranslations } from '../../i18n/ui';
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 
-// Real customer quotes stay in their original language; only the chrome around
-// them is translated.
+// Quote text is translated per locale via the dictionary (t.testimonials.quotes),
+// indexed to this array; author/company/logo are locale-invariant.
 const testimonials = [
     {
-        quote: 'Met ShopLinkr besparen we dagelijks enorm veel tijd. We hebben nu maar 1 medewerker in dienst in plaats van 5, en het gaat nu nog steeds efficiënter.',
         author: 'Jasper de Waard',
         company: 'Schoongedaan',
         logo: '/testimonials/Schoongedaan.png',
     },
     {
-        quote: 'Super software met een eerlijke prijs. Sterke communicatie en korte lijntjes. Aanrader!',
         author: 'Tijn Zuijdervliet',
         company: 'Cryptoken',
         logo: '/testimonials/Cryptoken.svg',
     },
     {
-        quote: 'Fijne software! Zeer gebruiksvriendelijk en perfect geschikt voor zowel kleine als grotere webshops met meerdere verkoopkanalen.',
         author: 'Nabodhi van der Lind',
         company: 'Cozy Design',
         logo: '/testimonials/CozyDesign.jpg',
     },
     {
-        quote: 'Zeer tevreden over ShopLinkr! De service is top en het team staat altijd klaar om snel en vriendelijk te helpen. Vragen worden duidelijk beantwoord en je merkt dat ze echt met je meedenken.',
         author: 'Nick Siep',
         company: 'Voordelig Inslaan',
         logo: '/testimonials/VoordeligInslaan.jpg',
@@ -66,10 +62,10 @@ const testimonials = [
 
         <div class="grid md:grid-cols-2 gap-5 md:gap-6">
             {
-                testimonials.map((testimonial) => (
+                testimonials.map((testimonial, i) => (
                     <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark hover:ring-chalk-darker transition-colors p-8 md:p-10 flex flex-col">
                         <p class="text-charcoal leading-relaxed text-[1.0625rem] mb-8 flex-1">
-                            {testimonial.quote}
+                            {t.testimonials.quotes[i]}
                         </p>
 
                         <div class="flex items-center gap-4">
@@ -96,7 +92,7 @@ const testimonials = [
                 href="https://nl.trustpilot.com/review/shoplinkr.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5"
+                class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5 min-h-11 py-2.5"
             >
                 {t.testimonials.allReviews}
                 <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>

@@ -230,7 +230,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
             </a>
             <a
                 href={externalLinks.register}
-                class="btn btn-sunstone text-sm"
+                class="hidden md:inline-flex btn btn-sunstone text-sm"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -325,10 +325,19 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                     );
                 })
             }
-            <li class="border-t border-chalk-dark mt-2 pt-3">
+            <li class="border-t border-chalk-dark mt-2 pt-4">
+                <a
+                    href={externalLinks.register}
+                    class="btn btn-sunstone w-full justify-center text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {t.common.register}
+                    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                </a>
                 <a
                     href={externalLinks.login}
-                    class="block py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors"
+                    class="block py-2.5 mt-1 text-[15px] font-medium text-steel hover:text-charcoal transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

@@ -118,6 +118,12 @@ const en: Dictionary = {
         rating: '4.9',
         ratingSuffix: 'on Trustpilot',
         allReviews: 'All reviews on Trustpilot',
+        quotes: [
+            'With ShopLinkr we save a huge amount of time every day. We now run with just 1 employee instead of 5, and it still works more efficiently than before.',
+            'Great software at a fair price. Strong communication and short lines. Highly recommended!',
+            'Lovely software! Really easy to use and a perfect fit for both small and larger webshops with multiple sales channels.',
+            'Very happy with ShopLinkr! The service is top-notch and the team is always there to help quickly and kindly. Questions get clear answers and you can tell they genuinely think along with you.',
+        ],
     },
     cta: {
         eyebrow: 'Get started with ShopLinkr',

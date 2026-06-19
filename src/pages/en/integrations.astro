@@ -74,18 +74,19 @@ export const prerender = false;
 >
     <section class="py-24 md:py-32">
         <div class="container-prose">
-            <div class="flex items-baseline justify-between flex-wrap gap-4 mb-12">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-baseline sm:justify-between mb-12">
                 <p class="text-sm text-gravel" aria-live="polite" data-result-count>
                     {totalCount} integrations available
                 </p>
+                <div class="-mx-6 overflow-x-auto px-6 sm:mx-0 sm:px-0 sm:overflow-visible">
                 <div
-                    class="inline-flex items-center gap-1 rounded-full bg-chalk-light ring-1 ring-chalk-dark p-1 text-sm"
+                    class="inline-flex w-max items-center gap-1 rounded-full bg-chalk-light ring-1 ring-chalk-dark p-1 text-sm"
                     role="group"
                     aria-label="Filter integrations by type"
                 >
                     <button
                         type="button"
-                        class="filter-tab is-active px-4 py-1.5 rounded-full font-medium text-charcoal transition-colors"
+                        class="filter-tab is-active px-4 py-2 min-h-11 inline-flex items-center justify-center rounded-full font-medium text-charcoal transition-colors"
                         data-filter="all"
                         aria-pressed="true"
                     >
@@ -93,7 +94,7 @@ export const prerender = false;
                     </button>
                     <button
                         type="button"
-                        class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
+                        class="filter-tab px-4 py-2 min-h-11 inline-flex items-center justify-center rounded-full font-medium text-gravel transition-colors"
                         data-filter="webshop"
                         aria-pressed="false"
                     >
@@ -101,7 +102,7 @@ export const prerender = false;
                     </button>
                     <button
                         type="button"
-                        class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
+                        class="filter-tab px-4 py-2 min-h-11 inline-flex items-center justify-center rounded-full font-medium text-gravel transition-colors"
                         data-filter="marketplace"
                         aria-pressed="false"
                     >
@@ -109,12 +110,13 @@ export const prerender = false;
                     </button>
                     <button
                         type="button"
-                        class="filter-tab px-4 py-1.5 rounded-full font-medium text-gravel transition-colors"
+                        class="filter-tab px-4 py-2 min-h-11 inline-flex items-center justify-center rounded-full font-medium text-gravel transition-colors"
                         data-filter="carrier"
                         aria-pressed="false"
                     >
                         Carriers
                     </button>
+                </div>
                 </div>
             </div>
 
@@ -233,7 +235,7 @@ export const prerender = false;
 
     <section class="pb-20 md:pb-28">
         <div class="container-prose">
-            <div class="max-w-2xl mx-auto text-center rounded-2xl ring-1 ring-chalk-dark bg-chalk-light px-8 py-12">
+            <div class="max-w-2xl mx-auto text-center rounded-2xl ring-1 ring-chalk-dark bg-chalk-light p-8 md:p-12">
                 <p class="eyebrow mb-4">Missing an integration?</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight">
                     Let us know.

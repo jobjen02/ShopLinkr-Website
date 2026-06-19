@@ -141,13 +141,13 @@ const year = new Date().getFullYear();
         </div>
 
         <div class="pt-8 border-t border-chalk-dark flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gravel">
-            <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-1">
                 <p>© {year} ShopLinkr. {t.footer.rights}</p>
                 <a
                     href={externalLinks.privacyPdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="hover:text-charcoal transition-colors"
+                    class="-my-1.5 py-3 hover:text-charcoal transition-colors"
                 >
                     {t.footer.privacy}
                 </a>
@@ -155,13 +155,13 @@ const year = new Date().getFullYear();
                     href={externalLinks.termsPdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="hover:text-charcoal transition-colors"
+                    class="-my-1.5 py-3 hover:text-charcoal transition-colors"
                 >
                     {t.footer.terms}
                 </a>
                 <a
                     href={L('/cookies')}
-                    class="hover:text-charcoal transition-colors"
+                    class="-my-1.5 py-3 hover:text-charcoal transition-colors"
                 >
                     {t.footer.cookies}
                 </a>

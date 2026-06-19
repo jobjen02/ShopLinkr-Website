@@ -120,6 +120,12 @@ const nl = {
         rating: '4,9',
         ratingSuffix: 'op Trustpilot',
         allReviews: 'Alle reviews op Trustpilot',
+        quotes: [
+            'Met ShopLinkr besparen we dagelijks enorm veel tijd. We hebben nu maar 1 medewerker in dienst in plaats van 5, en het gaat nu nog steeds efficiënter.',
+            'Super software met een eerlijke prijs. Sterke communicatie en korte lijntjes. Aanrader!',
+            'Fijne software! Zeer gebruiksvriendelijk en perfect geschikt voor zowel kleine als grotere webshops met meerdere verkoopkanalen.',
+            'Zeer tevreden over ShopLinkr! De service is top en het team staat altijd klaar om snel en vriendelijk te helpen. Vragen worden duidelijk beantwoord en je merkt dat ze echt met je meedenken.',
+        ],
     },
     cta: {
         eyebrow: 'Beginnen met ShopLinkr',
