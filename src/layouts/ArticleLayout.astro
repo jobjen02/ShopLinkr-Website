@@ -44,12 +44,12 @@ const {
     alternates={alternates}
     jsonLd={jsonLd}
 >
-    <article class="pt-12 md:pt-16 pb-24 md:pb-32 bg-paper">
+    <article class="pt-12 md:pt-16 pb-24 md:pb-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             {backHref && backLabel && (
                 <a
                     href={backHref}
-                    class="inline-flex items-center gap-2 text-sm text-gravel hover:text-charcoal transition-colors mb-10"
+                    class="inline-flex items-center gap-2 text-sm text-gravel hover:text-charcoal dark:hover:text-paper transition-colors mb-10"
                 >
                     <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
                     {backLabel}
@@ -58,7 +58,7 @@ const {
 
             <header class="max-w-3xl">
                 {eyebrow && <p class="eyebrow mb-4">{eyebrow}</p>}
-                <h1 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                <h1 class="text-4xl md:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                     {heading}
                 </h1>
                 {meta && (
@@ -73,7 +73,7 @@ const {
                     <img
                         src={image}
                         alt={imageAlt ?? ''}
-                        class="w-full aspect-video object-cover rounded-2xl ring-1 ring-chalk-dark"
+                        class="w-full aspect-video object-cover rounded-2xl ring-1 ring-chalk-dark dark:ring-flint"
                         loading="eager"
                     />
                 </div>
@@ -229,5 +229,41 @@ const {
         border: 0;
         border-top: 1px solid var(--color-chalk-dark);
         margin: 2.5em 0;
+    }
+
+    .dark .prose-shoplinkr {
+        color: var(--color-gravel);
+    }
+
+    .dark .prose-shoplinkr h2,
+    .dark .prose-shoplinkr h3,
+    .dark .prose-shoplinkr h4,
+    .dark .prose-shoplinkr strong,
+    .dark .prose-shoplinkr blockquote {
+        color: var(--color-paper);
+    }
+
+    .dark .prose-shoplinkr code {
+        background-color: var(--color-flint);
+        color: var(--color-paper);
+    }
+
+    .dark .prose-shoplinkr pre {
+        background-color: var(--color-graphite);
+        color: var(--color-chalk);
+    }
+
+    .dark .prose-shoplinkr hr {
+        border-top-color: var(--color-flint);
+    }
+
+    .dark .prose-shoplinkr th {
+        background-color: var(--color-graphite);
+        color: var(--color-paper);
+        border-color: var(--color-flint);
+    }
+
+    .dark .prose-shoplinkr td {
+        border-color: var(--color-flint);
     }
 </style>

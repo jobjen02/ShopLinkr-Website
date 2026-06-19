@@ -31,12 +31,12 @@ const testimonials = [
 ];
 ---
 
-<section class="py-24 md:py-32 bg-chalk-light">
+<section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
     <div class="container-prose">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 md:mb-16">
             <div class="max-w-2xl">
                 <p class="eyebrow mb-3">{t.testimonials.eyebrow}</p>
-                <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight">
+                <h2 class="text-4xl md:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight">
                     {t.testimonials.heading}
                     <img
                         src="/flags/nl.png"
@@ -46,7 +46,7 @@ const testimonials = [
                         class="inline-block h-6 md:h-8 w-auto ml-3"
                     />
                 </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
+                <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
                     {t.testimonials.sub}
                 </p>
             </div>
@@ -57,7 +57,7 @@ const testimonials = [
                         <i class="fa-solid fa-star text-[0.95rem]" aria-hidden="true"></i>
                     ))}
                 </span>
-                <span class="font-semibold text-charcoal">{t.testimonials.rating}</span>
+                <span class="font-semibold text-charcoal dark:text-paper">{t.testimonials.rating}</span>
                 <span class="text-gravel">{t.testimonials.ratingSuffix}</span>
             </div>
         </div>
@@ -65,13 +65,13 @@ const testimonials = [
         <div class="grid md:grid-cols-2 gap-5 md:gap-6">
             {
                 testimonials.map((testimonial, i) => (
-                    <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark hover:ring-chalk-darker transition-colors p-8 md:p-10 flex flex-col">
-                        <p class="text-charcoal leading-relaxed text-[1.0625rem] mb-8 flex-1">
+                    <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel transition-colors p-8 md:p-10 flex flex-col">
+                        <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem] mb-8 flex-1">
                             {t.testimonials.quotes[i]}
                         </p>
 
                         <div class="flex items-center gap-4">
-                            <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                            <div class="h-10 w-10 rounded-lg bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <img
                                     src={testimonial.logo}
                                     alt={testimonial.company}
@@ -80,7 +80,7 @@ const testimonials = [
                                 />
                             </div>
                             <div class="min-w-0">
-                                <p class="font-semibold text-charcoal text-sm">{testimonial.author}</p>
+                                <p class="font-semibold text-charcoal dark:text-paper text-sm">{testimonial.author}</p>
                                 <p class="text-xs text-gravel mt-0.5">{testimonial.company}</p>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ const testimonials = [
                 href="https://nl.trustpilot.com/review/shoplinkr.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5 min-h-11 py-2.5"
+                class="text-sm text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors inline-flex items-center gap-1.5 min-h-11 py-2.5"
             >
                 {t.testimonials.allReviews}
                 <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>

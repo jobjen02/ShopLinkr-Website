@@ -90,7 +90,7 @@ async function handleSubmit(): Promise<void> {
 </script>
 
 <template>
-    <div class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6">
+    <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6">
         <div
             v-if="status === 'success'"
             role="status"
@@ -100,7 +100,7 @@ async function handleSubmit(): Promise<void> {
             <div class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-3">
                 <i class="fa-solid fa-check text-sm" aria-hidden="true"></i>
             </div>
-            <p class="text-sm font-semibold text-charcoal mb-1">
+            <p class="text-sm font-semibold text-charcoal dark:text-paper mb-1">
                 {{ t.successTitle }}
             </p>
             <p class="text-xs text-gravel">
@@ -109,7 +109,7 @@ async function handleSubmit(): Promise<void> {
         </div>
 
         <div v-else>
-            <p class="text-sm font-semibold text-charcoal mb-1">
+            <p class="text-sm font-semibold text-charcoal dark:text-paper mb-1">
                 {{ t.heading }}
             </p>
             <p class="text-xs text-gravel mb-4 leading-relaxed">
@@ -145,7 +145,7 @@ async function handleSubmit(): Promise<void> {
                         :maxlength="MAX_NAME_LENGTH"
                         :placeholder="t.firstNamePlaceholder"
                         :aria-label="t.firstNameAria"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-3.5 py-2.5 text-sm text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-3.5 py-2.5 text-sm text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                         :disabled="status === 'submitting'"
                     />
                 </div>
@@ -160,7 +160,7 @@ async function handleSubmit(): Promise<void> {
                         inputmode="email"
                         :placeholder="t.emailPlaceholder"
                         :aria-label="t.emailAria"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-3.5 py-2.5 text-sm text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-3.5 py-2.5 text-sm text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                         :disabled="status === 'submitting'"
                     />
                 </div>
@@ -169,7 +169,7 @@ async function handleSubmit(): Promise<void> {
                     type="submit"
                     :disabled="!isValid || status === 'submitting'"
                     :aria-busy="status === 'submitting'"
-                    class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-charcoal text-paper text-sm font-semibold hover:bg-charcoal/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-sunstone text-charcoal text-sm font-semibold hover:bg-sunstone/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     <span v-if="status === 'submitting'" class="inline-flex items-center gap-2">
                         <i class="fa-solid fa-circle-notch fa-spin text-xs" aria-hidden="true"></i>

@@ -92,14 +92,14 @@ const jsonLd = [
         <div class="container-prose">
             <div class="max-w-2xl mb-12 md:mb-16">
                 <p class="eyebrow mb-4">{p.featuredEyebrow}</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                     {p.featuredHeading}
                 </h2>
             </div>
 
-            <article class="max-w-4xl bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
-                <header class="px-8 md:px-14 pt-10 md:pt-14 pb-8 md:pb-10 text-center border-b border-chalk-dark">
-                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-paper ring-1 ring-chalk-dark mb-6 overflow-hidden">
+            <article class="max-w-4xl bg-paper dark:bg-charcoal rounded-3xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
+                <header class="px-8 md:px-14 pt-10 md:pt-14 pb-8 md:pb-10 text-center border-b border-chalk-dark dark:border-flint">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint mb-6 overflow-hidden">
                         <img
                             src={story.logo}
                             alt={story.company}
@@ -107,13 +107,13 @@ const jsonLd = [
                             loading="lazy"
                         />
                     </div>
-                    <h3 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight">
+                    <h3 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight">
                         {story.company}
                     </h3>
                 </header>
 
                 <div class="px-8 md:px-14 pt-8 md:pt-10">
-                    <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-chalk-dark bg-charcoal">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-chalk-dark dark:ring-flint bg-charcoal">
                         <iframe
                             class="h-full w-full"
                             src="https://www.youtube-nocookie.com/embed/PZq1V6Unp_U"
@@ -130,28 +130,28 @@ const jsonLd = [
                 <div class="px-8 md:px-14 py-10 md:py-14 space-y-10">
                     <div>
                         <p class="eyebrow mb-3">{p.aboutLabel}</p>
-                        <p class="text-charcoal leading-relaxed text-[1.0625rem]">
+                        <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem]">
                             {story.intro}
                         </p>
                     </div>
 
                     <div>
                         <p class="eyebrow mb-3">{p.challengeLabel}</p>
-                        <p class="text-steel leading-relaxed text-[1.0625rem]">
+                        <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem]">
                             {story.challenge}
                         </p>
                     </div>
 
                     <div>
                         <p class="eyebrow mb-3">{p.solutionLabel}</p>
-                        <p class="text-steel leading-relaxed text-[1.0625rem]">
+                        <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem]">
                             {story.solution}
                         </p>
                     </div>
 
-                    <div class="bg-sunstone-mist/50 ring-1 ring-sunstone-soft/50 rounded-2xl px-7 py-7 md:px-9 md:py-8">
+                    <div class="bg-sunstone-mist/50 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 rounded-2xl px-7 py-7 md:px-9 md:py-8">
                         <p class="eyebrow mb-3">{p.resultLabel}</p>
-                        <p class="text-charcoal leading-snug text-lg md:text-xl font-semibold tracking-tight">
+                        <p class="text-charcoal dark:text-paper leading-snug text-lg md:text-xl font-semibold tracking-tight">
                             {story.metric}
                         </p>
                     </div>
@@ -160,12 +160,12 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light">
+    <section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
                 <div class="max-w-2xl">
                     <p class="eyebrow mb-4">{p.voicesEyebrow}</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                         {p.voicesHeading}
                     </h2>
                 </div>
@@ -176,7 +176,7 @@ const jsonLd = [
                             <i class="fa-solid fa-star text-[0.95rem]" aria-hidden="true"></i>
                         ))}
                     </span>
-                    <span class="font-semibold text-charcoal">{p.rating}</span>
+                    <span class="font-semibold text-charcoal dark:text-paper">{p.rating}</span>
                     <span class="text-gravel">{p.ratingSuffix}</span>
                 </div>
             </div>
@@ -184,13 +184,13 @@ const jsonLd = [
             <div class="grid md:grid-cols-2 gap-5 md:gap-6">
                 {
                     voices.map((voice) => (
-                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark hover:ring-chalk-darker transition-colors p-8 md:p-10 flex flex-col">
-                            <p class="text-charcoal leading-relaxed text-[1.0625rem] mb-8 flex-1">
+                        <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel transition-colors p-8 md:p-10 flex flex-col">
+                            <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem] mb-8 flex-1">
                                 {voice.quote}
                             </p>
 
                             <div class="flex items-center gap-4">
-                                <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <div class="h-10 w-10 rounded-lg bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                     <img
                                         src={voice.logo}
                                         alt={voice.company}
@@ -199,7 +199,7 @@ const jsonLd = [
                                     />
                                 </div>
                                 <div class="min-w-0">
-                                    <p class="font-semibold text-charcoal text-sm">{voice.author}</p>
+                                    <p class="font-semibold text-charcoal dark:text-paper text-sm">{voice.author}</p>
                                     <p class="text-xs text-gravel mt-0.5">{voice.company}</p>
                                 </div>
                             </div>
@@ -213,7 +213,7 @@ const jsonLd = [
                     href="https://nl.trustpilot.com/review/shoplinkr.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-sm text-steel hover:text-charcoal transition-colors inline-flex items-center gap-1.5"
+                    class="text-sm text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors inline-flex items-center gap-1.5"
                 >
                     {p.allReviews}
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
@@ -226,7 +226,7 @@ const jsonLd = [
         <div class="container-prose">
             <div class="max-w-2xl mx-auto text-center">
                 <p class="eyebrow mb-4">{p.ctaEyebrow}</p>
-                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight">
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight">
                     {p.ctaHeading}
                 </h2>
                 <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">

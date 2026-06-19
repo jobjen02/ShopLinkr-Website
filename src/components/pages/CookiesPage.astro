@@ -76,14 +76,14 @@ export const prerender = false;
     routeKey="cookies"
     jsonLd={jsonLd}
 >
-    <section class="py-24 md:py-32 bg-paper">
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="max-w-3xl">
                 <p class="text-sm text-gravel mb-10">
                     {p.lastUpdatedLabel} {lastUpdated}
                 </p>
 
-                <p class="text-lg text-steel leading-relaxed mb-12">
+                <p class="text-lg text-steel dark:text-gravel leading-relaxed mb-12">
                     {p.intro}
                 </p>
 
@@ -92,28 +92,28 @@ export const prerender = false;
                         categories.map((category) => (
                             <article>
                                 <p class="eyebrow mb-3">{category.eyebrow}</p>
-                                <h2 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight mb-4">
+                                <h2 class="text-xl md:text-2xl font-semibold text-charcoal dark:text-paper tracking-tight mb-4">
                                     {category.title}
                                 </h2>
-                                <p class="text-steel leading-relaxed text-[15px] md:text-base mb-6">
+                                <p class="text-steel dark:text-gravel leading-relaxed text-[15px] md:text-base mb-6">
                                     {category.body}
                                 </p>
 
-                                <div class="overflow-x-auto rounded-xl ring-1 ring-chalk-dark">
+                                <div class="overflow-x-auto rounded-xl ring-1 ring-chalk-dark dark:ring-flint">
                                     <table class="w-full text-sm">
-                                        <thead class="bg-chalk-light text-xs uppercase tracking-wider text-gravel">
+                                        <thead class="bg-chalk-light dark:bg-graphite text-xs uppercase tracking-wider text-gravel">
                                             <tr>
                                                 <th class="px-4 py-3 text-left font-semibold">{p.tableName}</th>
                                                 <th class="px-4 py-3 text-left font-semibold">{p.tablePurpose}</th>
                                                 <th class="px-4 py-3 text-left font-semibold">{p.tableDuration}</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="divide-y divide-chalk-dark">
+                                        <tbody class="divide-y divide-chalk-dark dark:divide-flint">
                                             {category.items.map((item) => (
                                                 <tr>
-                                                    <td class="px-4 py-3 font-mono text-charcoal">{item.name}</td>
-                                                    <td class="px-4 py-3 text-steel">{item.purpose}</td>
-                                                    <td class="px-4 py-3 text-steel">{item.duration}</td>
+                                                    <td class="px-4 py-3 font-mono text-charcoal dark:text-paper">{item.name}</td>
+                                                    <td class="px-4 py-3 text-steel dark:text-gravel">{item.purpose}</td>
+                                                    <td class="px-4 py-3 text-steel dark:text-gravel">{item.duration}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -124,11 +124,11 @@ export const prerender = false;
                     }
                 </div>
 
-                <div class="mt-16 pt-10 border-t border-chalk-dark">
-                    <h2 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight mb-4">
+                <div class="mt-16 pt-10 border-t border-chalk-dark dark:border-flint">
+                    <h2 class="text-xl md:text-2xl font-semibold text-charcoal dark:text-paper tracking-tight mb-4">
                         {p.preferencesHeading}
                     </h2>
-                    <p class="text-steel leading-relaxed text-[15px] md:text-base mb-4" set:html={p.preferencesBody}>
+                    <p class="text-steel dark:text-gravel leading-relaxed text-[15px] md:text-base mb-4" set:html={p.preferencesBody}>
                     </p>
                 </div>
             </div>

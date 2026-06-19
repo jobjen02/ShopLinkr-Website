@@ -65,7 +65,7 @@ export const prerender = false;
         subtitle={p.heroSubtitle}
     />
 
-    <section class="bg-paper">
+    <section class="bg-paper dark:bg-charcoal">
         <div class="container-prose py-12 md:py-16">
             <div class="max-w-3xl mx-auto mb-12 md:mb-16">
                 <SupportSearch articles={searchData} locale={locale} client:visible />
@@ -73,20 +73,20 @@ export const prerender = false;
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
                 {categories.map((c) => (
-                    <article class="group relative flex flex-col bg-paper rounded-[20px] border border-chalk-dark/60 shadow-[0_2px_8px_rgba(25,25,25,0.03)] hover:shadow-[0_16px_40px_-16px_rgba(232,182,121,0.30)] hover:border-sunstone-soft/60 transition-all duration-300 p-7 md:p-8 overflow-hidden">
-                        <div class="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-sunstone-mist/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                    <article class="group relative flex flex-col bg-paper dark:bg-graphite rounded-[20px] border border-chalk-dark/60 dark:border-flint shadow-[0_2px_8px_rgba(25,25,25,0.03)] hover:shadow-[0_16px_40px_-16px_rgba(232,182,121,0.30)] hover:border-sunstone-soft/60 transition-all duration-300 p-7 md:p-8 overflow-hidden">
+                        <div class="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-sunstone-mist/40 dark:bg-sunstone/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-                        <header class="relative flex items-start gap-5 pb-6 mb-6 border-b border-chalk-dark/60">
+                        <header class="relative flex items-start gap-5 pb-6 mb-6 border-b border-chalk-dark/60 dark:border-flint">
                             <div class="flex-none">
                                 <i class={`${c.icon} text-[36px] text-sunstone-deep`} style="--fa-primary-color: var(--color-sunstone-deep); --fa-secondary-color: var(--color-sunstone); --fa-secondary-opacity: 0.45;" aria-hidden="true"></i>
                             </div>
                             <div class="flex-1 min-w-0">
-                                <h2 class="text-[22px] md:text-[24px] font-semibold text-charcoal leading-[1.15] tracking-tight">
+                                <h2 class="text-[22px] md:text-[24px] font-semibold text-charcoal dark:text-paper leading-[1.15] tracking-tight">
                                     <a href={`${categoriesBase}/${c.slug}`} class="after:absolute after:inset-0 hover:text-sunstone-deep transition-colors">
                                         {c.label}
                                     </a>
                                 </h2>
-                                <p class="mt-2 text-[14px] text-steel leading-relaxed">
+                                <p class="mt-2 text-[14px] text-steel dark:text-gravel leading-relaxed">
                                     {c.summary}
                                 </p>
                             </div>
@@ -97,7 +97,7 @@ export const prerender = false;
                                 <li>
                                     <a
                                         href={`${categoriesBase}/${c.slug}/${s.slug}`}
-                                        class="relative z-10 flex items-center justify-between gap-3 bg-chalk-light hover:bg-sunstone-mist/60 rounded-[10px] px-4 py-3 text-[13.5px] font-medium text-charcoal hover:text-sunstone-deep transition-colors"
+                                        class="relative z-10 flex items-center justify-between gap-3 bg-chalk-light dark:bg-flint hover:bg-sunstone-mist/60 dark:hover:bg-sunstone/10 rounded-[10px] px-4 py-3 text-[13.5px] font-medium text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
                                     >
                                         <span>{s.label}</span>
                                         <i class="fa-solid fa-chevron-right text-[10px] text-gravel" aria-hidden="true"></i>

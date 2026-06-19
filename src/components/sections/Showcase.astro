@@ -8,14 +8,14 @@ const t = useTranslations(locale);
 const picklistsHref = localizedPath('features.picklists', locale);
 ---
 
-<section class="py-24 md:py-32 bg-chalk-light">
+<section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
     <div class="container-prose">
         <div class="max-w-2xl mb-12 md:mb-16">
             <p class="eyebrow mb-4">{t.showcase.eyebrow}</p>
-            <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+            <h2 class="text-4xl md:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                 {t.showcase.heading}
             </h2>
-            <p class="mt-6 text-lg text-steel leading-relaxed">
+            <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
                 {t.showcase.intro}
             </p>
         </div>
@@ -23,14 +23,14 @@ const picklistsHref = localizedPath('features.picklists', locale);
         <ul class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {
                 t.showcase.features.map((feature) => (
-                    <li class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-7 md:p-8 transition duration-300 ease-out hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
-                        <div class="flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-6">
+                    <li class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-7 md:p-8 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                        <div class="flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mb-6">
                             <i class={`${feature.icon} text-2xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug mb-2">
+                        <h3 class="text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug mb-2">
                             {feature.title}
                         </h3>
-                        <p class="text-sm text-steel leading-relaxed">
+                        <p class="text-sm text-steel dark:text-gravel leading-relaxed">
                             {feature.body}
                         </p>
                     </li>
@@ -38,7 +38,7 @@ const picklistsHref = localizedPath('features.picklists', locale);
             }
         </ul>
 
-        <a href={picklistsHref} class="group mt-10 inline-flex items-center gap-2 text-charcoal font-semibold min-h-11 py-2">
+        <a href={picklistsHref} class="group mt-10 inline-flex items-center gap-2 text-charcoal dark:text-paper font-semibold min-h-11 py-2">
             {t.showcase.link}
             <i class="fa-solid fa-arrow-right text-sm transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
         </a>

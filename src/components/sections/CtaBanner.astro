@@ -9,17 +9,17 @@ const t = useTranslations(locale);
 
 <section class="relative py-24 md:py-32 overflow-hidden">
     <div class="absolute inset-0 -z-10 pointer-events-none">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-[radial-gradient(circle_at_center,#faedd5,transparent_60%)] opacity-50"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-[radial-gradient(circle_at_center,#faedd5,transparent_60%)] opacity-50 dark:bg-[radial-gradient(circle_at_center,rgba(247,148,30,0.06),transparent_60%)] dark:opacity-100"></div>
     </div>
 
     <div class="container-prose">
         <div class="max-w-3xl mx-auto text-center">
             <p class="eyebrow mb-5">{t.cta.eyebrow}</p>
-            <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-charcoal leading-[1.05]">
+            <h2 class="text-4xl md:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-charcoal dark:text-paper leading-[1.05]">
                 {t.cta.headingTop}
                 <span class="block text-sunstone-deep">{t.cta.headingBottom}</span>
             </h2>
-            <p class="mt-7 text-lg text-steel leading-relaxed max-w-xl mx-auto">
+            <p class="mt-7 text-lg text-steel dark:text-gravel leading-relaxed max-w-xl mx-auto">
                 {t.cta.intro}
             </p>
 

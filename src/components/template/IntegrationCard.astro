@@ -49,7 +49,7 @@ const linkProps = href
 
 <Tag
     {...linkProps}
-    class={`group relative block bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 transition duration-300 ease-out ${href ? 'hover:ring-chalk-darker hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]' : ''}`}
+    class={`group relative block bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out ${href ? 'hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]' : ''}`}
     data-integration={slug}
 >
     <div class="flex items-start gap-4">
@@ -65,18 +65,18 @@ const linkProps = href
             <div class="flex items-center gap-2 flex-wrap">
                 <p class="eyebrow !text-gravel">{categoryLabel}</p>
                 {isComingSoon && (
-                    <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
                         {locale === 'en' ? 'Coming soon' : 'Binnenkort'}
                     </span>
                 )}
             </div>
-            <h3 class="mt-1.5 text-base font-semibold text-charcoal tracking-tight">
+            <h3 class="mt-1.5 text-base font-semibold text-charcoal dark:text-paper tracking-tight">
                 {name}
             </h3>
         </div>
     </div>
 
-    <p class="mt-4 text-sm text-steel leading-relaxed">
+    <p class="mt-4 text-sm text-steel dark:text-gravel leading-relaxed">
         {summary}
     </p>
 </Tag>

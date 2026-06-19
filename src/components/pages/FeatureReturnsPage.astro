@@ -60,7 +60,7 @@ const jsonLd = [
     routeKey="features.returns"
     jsonLd={jsonLd}
 >
-    <section class="pb-12 md:pb-16 bg-paper">
+    <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="flex flex-col sm:flex-row gap-3">
                 <a
@@ -84,26 +84,26 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-12 md:py-16 bg-paper">
+    <section class="py-12 md:py-16 bg-paper dark:bg-charcoal">
         <div class="container-wide">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                     <div>
                         <p class="eyebrow mb-3">{p.mockupEyebrow}</p>
-                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05]">
                             {p.mockupHeadingLine1}
                             <span class="block">{p.mockupHeadingLine2}</span>
                         </h2>
                     </div>
 
-                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                    <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center justify-between gap-3 mb-4">
                             <div class="flex items-center gap-2.5">
-                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                     <i class="fa-solid fa-rotate-left text-[0.7rem]" aria-hidden="true"></i>
                                 </span>
                                 <div class="flex flex-col">
-                                    <span class="text-sm font-semibold text-charcoal">{p.mockupReturnLabel}</span>
+                                    <span class="text-sm font-semibold text-charcoal dark:text-paper">{p.mockupReturnLabel}</span>
                                     <span class="text-[11px] text-gravel">{p.mockupReturnMeta}</span>
                                 </div>
                             </div>
@@ -111,10 +111,10 @@ const jsonLd = [
                         </div>
 
                         <ul class="space-y-3 mb-4">
-                            <li class="px-3 py-3 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                            <li class="px-3 py-3 rounded-md bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint">
                                 <div class="flex items-center justify-between gap-3 mb-2.5">
-                                    <span class="text-sm font-medium text-charcoal">{p.mockupItem1Name}</span>
-                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 text-[11px] font-semibold">
+                                    <span class="text-sm font-medium text-charcoal dark:text-paper">{p.mockupItem1Name}</span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 text-[11px] font-semibold">
                                         <i class="fa-solid fa-check text-[9px]" aria-hidden="true"></i>
                                         {p.mockupItem1Status}
                                     </span>
@@ -124,33 +124,33 @@ const jsonLd = [
                                         <span class="inline-flex items-center h-4 w-7 rounded-full bg-sunstone-deep relative">
                                             <span class="absolute right-0.5 h-3 w-3 rounded-full bg-paper"></span>
                                         </span>
-                                        <span class="text-charcoal font-medium">{p.mockupAddToStock}</span>
+                                        <span class="text-charcoal dark:text-paper font-medium">{p.mockupAddToStock}</span>
                                     </div>
                                     <span class="text-gravel tabular-nums">A.3</span>
                                 </div>
                             </li>
-                            <li class="px-3 py-3 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                            <li class="px-3 py-3 rounded-md bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint">
                                 <div class="flex items-center justify-between gap-3 mb-2.5">
-                                    <span class="text-sm font-medium text-charcoal">{p.mockupItem2Name}</span>
-                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-chalk-dark text-charcoal ring-1 ring-chalk-darker text-[11px] font-semibold">
+                                    <span class="text-sm font-medium text-charcoal dark:text-paper">{p.mockupItem2Name}</span>
+                                    <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-chalk-dark dark:bg-flint text-charcoal dark:text-paper ring-1 ring-chalk-darker dark:ring-flint text-[11px] font-semibold">
                                         <i class="fa-solid fa-triangle-exclamation text-[9px]" aria-hidden="true"></i>
                                         {p.mockupItem2Status}
                                     </span>
                                 </div>
                                 <div class="flex items-center justify-between gap-3 text-xs">
                                     <div class="flex items-center gap-2">
-                                        <span class="inline-flex items-center h-4 w-7 rounded-full bg-chalk-dark relative">
+                                        <span class="inline-flex items-center h-4 w-7 rounded-full bg-chalk-dark dark:bg-flint relative">
                                             <span class="absolute left-0.5 h-3 w-3 rounded-full bg-paper"></span>
                                         </span>
-                                        <span class="text-charcoal font-medium">{p.mockupAddToStock}</span>
+                                        <span class="text-charcoal dark:text-paper font-medium">{p.mockupAddToStock}</span>
                                     </div>
                                     <span class="text-gravel">{p.mockupItem2Restock}</span>
                                 </div>
                             </li>
                         </ul>
 
-                        <div class="flex items-center justify-between gap-3 pt-3 border-t border-chalk-darker">
-                            <span class="text-sm font-semibold text-charcoal">{p.mockupStatusToChannel}</span>
+                        <div class="flex items-center justify-between gap-3 pt-3 border-t border-chalk-darker dark:border-flint">
+                            <span class="text-sm font-semibold text-charcoal dark:text-paper">{p.mockupStatusToChannel}</span>
                             <span class="inline-flex items-center gap-1.5 text-sunstone-deep font-semibold text-sm">
                                 {p.mockupSyncedBack}
                                 <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
@@ -164,14 +164,14 @@ const jsonLd = [
 
                 {
                     subFeatures.map((feature) => (
-                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                        <article class="bg-paper dark:bg-graphite rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
-                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
-                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel dark:text-gravel leading-relaxed mt-2">{feature.body}</p>
                             </div>
                         </article>
                     ))
@@ -180,31 +180,31 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light">
+    <section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-5">
                     <p class="eyebrow mb-4">{p.workflowEyebrow}</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                         {p.workflowHeadingLine1}
                         <span class="block text-sunstone-deep">{p.workflowHeadingLine2}</span>
                     </h2>
-                    <p class="mt-6 text-base text-steel leading-relaxed">
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                         {p.workflowIntro}
                     </p>
                 </div>
 
                 <div class="lg:col-span-7">
-                    <ol class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                    <ol class="divide-y divide-chalk-dark dark:divide-flint border-y border-chalk-dark dark:border-flint">
                         {
                             workflowSteps.map((step, index) => (
                                 <li class="py-7 flex items-start gap-5">
-                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5 text-sm font-semibold">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mt-0.5 text-sm font-semibold">
                                         {index + 1}
                                     </span>
                                     <div>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
-                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel dark:text-gravel leading-relaxed text-[0.975rem]">{step.body}</p>
                                     </div>
                                 </li>
                             ))
@@ -215,19 +215,19 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-paper">
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
                 <div class="lg:col-span-4">
                     <p class="eyebrow mb-4">{p.faqEyebrow}</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                         {p.faqHeadingLine1}
                         <span class="block text-sunstone-deep">{p.faqHeadingLine2}</span>
                     </h2>
-                    <p class="mt-6 text-base text-steel leading-relaxed">
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                         {p.faqIntro}
                     </p>
-                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal dark:text-paper font-semibold text-sm">
                         {p.faqCta}
                         <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
                     </a>

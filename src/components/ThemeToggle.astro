@@ -1,0 +1,139 @@
+---
+// Theme switcher. Mirrors the Vue app: 3 modes (light / dark / auto), `.dark`
+// class on <html>, persisted in localStorage key `theme` (default auto), with a
+// `prefers-color-scheme` fallback for auto. The no-flash script in BaseLayout
+// sets the initial class; this component reflects + changes it client-side.
+//
+// variant="dropdown" (default) = desktop hover menu (matches LanguageSwitcher).
+// variant="inline" = a flat row of mode buttons for the mobile menu.
+import { type Locale } from '../i18n/routes';
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+    variant?: 'dropdown' | 'inline';
+}
+
+const { variant = 'dropdown' } = Astro.props;
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const th = useTranslations(locale).common.theme;
+
+const options: Array<{ mode: 'light' | 'dark' | 'auto'; label: string; icon: string }> = [
+    { mode: 'light', label: th.light, icon: 'fa-sun-bright' },
+    { mode: 'dark', label: th.dark, icon: 'fa-moon-stars' },
+    { mode: 'auto', label: th.auto, icon: 'fa-eclipse' },
+];
+---
+
+{
+    variant === 'inline' ? (
+        <div class="flex items-center gap-2" aria-label={th.label}>
+            {options.map((o) => (
+                <button
+                    type="button"
+                    data-theme-option={o.mode}
+                    aria-pressed="false"
+                    class="theme-opt inline-flex items-center gap-2 rounded-md px-3 py-2 text-[14px] font-medium text-steel dark:text-gravel hover:bg-chalk-light hover:text-charcoal dark:hover:bg-graphite dark:hover:text-paper transition-colors"
+                >
+                    <i class={`fa-solid ${o.icon} text-[13px]`} aria-hidden="true" />
+                    {o.label}
+                </button>
+            ))}
+        </div>
+    ) : (
+        <div class="relative group">
+            <button
+                type="button"
+                class="inline-flex items-center gap-1.5 py-2 text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label={th.label}
+            >
+                <i data-theme-trigger-icon class="fa-solid fa-sun-bright text-[15px]" aria-hidden="true" />
+                <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" aria-hidden="true" />
+            </button>
+            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute right-0 top-full pt-3 transition-opacity duration-150">
+                <div class="min-w-[160px] rounded-xl border border-chalk-dark dark:border-flint bg-paper dark:bg-charcoal shadow-[0_12px_40px_-12px_rgb(25_25_25_/_0.18)] dark:shadow-[0_12px_40px_-12px_rgb(0_0_0_/_0.6)] p-2">
+                    {options.map((o) => (
+                        <button
+                            type="button"
+                            data-theme-option={o.mode}
+                            aria-pressed="false"
+                            class="theme-opt w-full flex items-center gap-2.5 rounded-md px-3 py-2 text-[14px] font-medium text-steel dark:text-gravel hover:bg-chalk-light hover:text-charcoal dark:hover:bg-graphite dark:hover:text-paper transition-colors"
+                        >
+                            <i class={`fa-solid ${o.icon} text-[13px] w-4 text-center`} aria-hidden="true" />
+                            {o.label}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+<script is:inline>
+    (function () {
+        if (window.__themeToggleInit) return;
+        window.__themeToggleInit = true;
+
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function currentMode() {
+            return localStorage.getItem('theme') || 'light';
+        }
+
+        function effectiveDark(mode) {
+            return mode === 'dark' || (mode === 'auto' && mq.matches);
+        }
+
+        function apply(mode) {
+            document.documentElement.classList.toggle('dark', effectiveDark(mode));
+        }
+
+        // Exactly the LanguageSwitcher / nav-dropdown active + idle classes, so
+        // the two switchers are byte-identical. Driven in JS because the active
+        // mode is only known client-side.
+        var ACTIVE_CLS = ['bg-sunstone-mist/30', 'dark:bg-sunstone/10', 'text-charcoal', 'dark:text-paper'];
+        var IDLE_CLS = ['text-steel', 'dark:text-gravel'];
+
+        function reflect() {
+            var mode = currentMode();
+            document.querySelectorAll('[data-theme-option]').forEach(function (b) {
+                var on = b.getAttribute('data-theme-option') === mode;
+                b.setAttribute('aria-pressed', String(on));
+                if (on) {
+                    b.classList.add.apply(b.classList, ACTIVE_CLS);
+                    b.classList.remove.apply(b.classList, IDLE_CLS);
+                } else {
+                    b.classList.remove.apply(b.classList, ACTIVE_CLS);
+                    b.classList.add.apply(b.classList, IDLE_CLS);
+                }
+            });
+            var icons = { light: 'fa-sun-bright', dark: 'fa-moon-stars', auto: 'fa-eclipse' };
+            document.querySelectorAll('[data-theme-trigger-icon]').forEach(function (el) {
+                el.className = 'fa-solid text-[15px] ' + (icons[mode] || 'fa-eclipse');
+            });
+        }
+
+        function setMode(mode) {
+            localStorage.setItem('theme', mode);
+            apply(mode);
+            reflect();
+        }
+
+        document.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-theme-option]');
+            if (!btn) return;
+            setMode(btn.getAttribute('data-theme-option'));
+        });
+
+        mq.addEventListener('change', function () {
+            if (currentMode() === 'auto') {
+                apply('auto');
+                reflect();
+            }
+        });
+
+        reflect();
+    })();
+</script>

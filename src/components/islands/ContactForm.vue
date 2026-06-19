@@ -134,20 +134,20 @@ function reset(): void {
         v-if="status === 'success'"
         role="status"
         aria-live="polite"
-        class="bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10 text-center"
+        class="bg-paper dark:bg-charcoal rounded-3xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10 text-center"
     >
-        <div class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-5">
+        <div class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-5">
             <i class="fa-solid fa-check text-xl" aria-hidden="true"></i>
         </div>
-        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-3">
+        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-3">
             {{ t.successTitle }}
         </h2>
-        <p class="text-steel leading-relaxed max-w-md mx-auto">
+        <p class="text-steel dark:text-gravel leading-relaxed max-w-md mx-auto">
             {{ t.successBody }}
         </p>
         <button
             type="button"
-            class="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+            class="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
             @click="reset"
         >
             <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
@@ -157,13 +157,13 @@ function reset(): void {
 
     <div
         v-else
-        class="bg-paper rounded-3xl ring-1 ring-chalk-dark shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10"
+        class="bg-paper dark:bg-charcoal rounded-3xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10"
     >
         <p class="eyebrow mb-3">{{ t.eyebrow }}</p>
-        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight mb-2">
+        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-2">
             {{ t.heading }}
         </h2>
-        <p class="text-steel text-[15px] leading-relaxed mb-8">
+        <p class="text-steel dark:text-gravel text-[15px] leading-relaxed mb-8">
             {{ t.intro }}
         </p>
 
@@ -190,7 +190,7 @@ function reset(): void {
 
             <div class="grid sm:grid-cols-2 gap-5">
                 <div>
-                    <label for="contact-name" class="block text-sm font-medium text-charcoal mb-2">
+                    <label for="contact-name" class="block text-sm font-medium text-charcoal dark:text-paper mb-2">
                         {{ t.name }} <span class="text-sunstone-deep">*</span>
                     </label>
                     <input
@@ -201,12 +201,12 @@ function reset(): void {
                         autocomplete="name"
                         :maxlength="MAX_NAME_LENGTH"
                         :placeholder="t.namePlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
 
                 <div>
-                    <label for="contact-email" class="block text-sm font-medium text-charcoal mb-2">
+                    <label for="contact-email" class="block text-sm font-medium text-charcoal dark:text-paper mb-2">
                         {{ t.email }} <span class="text-sunstone-deep">*</span>
                     </label>
                     <input
@@ -218,14 +218,14 @@ function reset(): void {
                         :maxlength="MAX_EMAIL_LENGTH"
                         inputmode="email"
                         :placeholder="t.emailPlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
             </div>
 
             <div class="grid sm:grid-cols-2 gap-5">
                 <div>
-                    <label for="contact-phone" class="block text-sm font-medium text-charcoal mb-2">
+                    <label for="contact-phone" class="block text-sm font-medium text-charcoal dark:text-paper mb-2">
                         {{ t.phone }}
                         <span class="text-gravel text-xs font-normal">{{ t.optional }}</span>
                     </label>
@@ -237,12 +237,12 @@ function reset(): void {
                         :maxlength="MAX_PHONE_LENGTH"
                         inputmode="tel"
                         :placeholder="t.phonePlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
 
                 <div>
-                    <label for="contact-subject" class="block text-sm font-medium text-charcoal mb-2">
+                    <label for="contact-subject" class="block text-sm font-medium text-charcoal dark:text-paper mb-2">
                         {{ t.subject }}
                         <span class="text-gravel text-xs font-normal">{{ t.optional }}</span>
                     </label>
@@ -252,14 +252,14 @@ function reset(): void {
                         type="text"
                         :maxlength="MAX_SUBJECT_LENGTH"
                         :placeholder="t.subjectPlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
             </div>
 
             <div>
                 <div class="flex items-end justify-between mb-2">
-                    <label for="contact-message" class="block text-sm font-medium text-charcoal">
+                    <label for="contact-message" class="block text-sm font-medium text-charcoal dark:text-paper">
                         {{ t.message }} <span class="text-sunstone-deep">*</span>
                     </label>
                     <span class="text-xs text-gravel" aria-live="polite">
@@ -274,7 +274,7 @@ function reset(): void {
                     minlength="10"
                     :maxlength="MAX_MESSAGE_LENGTH"
                     :placeholder="t.messagePlaceholder"
-                    class="w-full rounded-lg ring-1 ring-chalk-dark bg-paper px-4 py-3 text-[15px] text-charcoal placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition resize-y min-h-[140px]"
+                    class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition resize-y min-h-[140px]"
                 ></textarea>
             </div>
 
@@ -283,9 +283,9 @@ function reset(): void {
                     v-model="state.consent"
                     type="checkbox"
                     required
-                    class="mt-1 h-4 w-4 rounded ring-1 ring-chalk-dark text-sunstone-deep focus:ring-2 focus:ring-sunstone-deep"
+                    class="mt-1 h-4 w-4 rounded ring-1 ring-chalk-dark dark:ring-flint text-sunstone-deep focus:ring-2 focus:ring-sunstone-deep"
                 />
-                <span class="text-sm text-steel leading-relaxed">
+                <span class="text-sm text-steel dark:text-gravel leading-relaxed">
                     {{ t.consent }} <span class="text-sunstone-deep">*</span>
                 </span>
             </label>
@@ -294,7 +294,7 @@ function reset(): void {
                 v-if="status === 'error'"
                 role="alert"
                 aria-live="assertive"
-                class="rounded-lg bg-paper ring-1 ring-red-200 px-4 py-3 text-sm text-red-700"
+                class="rounded-lg bg-paper dark:bg-charcoal ring-1 ring-red-200 px-4 py-3 text-sm text-red-700"
             >
                 {{ errorMessage }}
             </div>

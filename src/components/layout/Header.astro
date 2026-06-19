@@ -1,6 +1,7 @@
 ---
 import { externalLinks } from '../../data/externalLinks';
 import LanguageSwitcher from '../LanguageSwitcher.astro';
+import ThemeToggle from '../ThemeToggle.astro';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
@@ -104,7 +105,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
 
 <header
     id="site-header"
-    class="sticky top-0 z-50 bg-paper/80 backdrop-blur-md border-b border-transparent transition-[border-color,box-shadow] duration-200"
+    class="sticky top-0 z-50 bg-paper/80 dark:bg-graphite-soft/80 backdrop-blur-md border-b border-transparent transition-[border-color,box-shadow] duration-200"
 >
     <nav class="container-prose flex items-center justify-between h-16">
         <a href={L('/')} class="flex items-center" aria-label="ShopLinkr home">
@@ -113,11 +114,18 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                 alt="ShopLinkr"
                 width="138"
                 height="28"
-                class="h-7 w-auto"
+                class="h-7 w-auto dark:hidden"
+            />
+            <img
+                src="/logo/logo-white.svg"
+                alt="ShopLinkr"
+                width="138"
+                height="28"
+                class="h-7 w-auto hidden dark:block"
             />
         </a>
 
-        <ul class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-steel">
+        <ul class="hidden lg:flex items-center gap-7 text-[14px] font-medium text-steel dark:text-gravel">
             {
                 navigation.map((entry) => {
                     if (entry.type === 'link') {
@@ -127,8 +135,8 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                 <a
                                     href={entry.href}
                                     class:list={[
-                                        'hover:text-charcoal transition-colors',
-                                        active && 'text-charcoal',
+                                        'hover:text-charcoal dark:hover:text-paper transition-colors',
+                                        active && 'text-charcoal dark:text-paper',
                                     ]}
                                     aria-current={active ? 'page' : undefined}
                                 >
@@ -145,8 +153,8 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                 <button
                                     type="button"
                                     class:list={[
-                                        'inline-flex items-center gap-1.5 hover:text-charcoal transition-colors py-2',
-                                        active && 'text-charcoal',
+                                        'inline-flex items-center gap-1.5 hover:text-charcoal dark:hover:text-paper transition-colors py-2',
+                                        active && 'text-charcoal dark:text-paper',
                                     ]}
                                     aria-haspopup="true"
                                     aria-expanded="false"
@@ -155,7 +163,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                     <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
                                 </button>
                                 <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-opacity duration-150">
-                                    <div class="min-w-[220px] rounded-xl border border-chalk-dark bg-paper shadow-[0_12px_40px_-12px_rgb(25_25_25_/_0.18)] p-2">
+                                    <div class="min-w-[220px] rounded-xl border border-chalk-dark dark:border-flint bg-paper dark:bg-charcoal shadow-[0_12px_40px_-12px_rgb(25_25_25_/_0.18)] dark:shadow-[0_12px_40px_-12px_rgb(0_0_0_/_0.6)] p-2">
                                         {entry.items.map((item) => {
                                             const itemActive = isActiveLink(item.href);
                                             return (
@@ -164,8 +172,8 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                                     class:list={[
                                                         'block rounded-md px-3 py-2 text-[14px] font-medium transition-colors',
                                                         itemActive
-                                                            ? 'bg-sunstone-mist/30 text-charcoal'
-                                                            : 'text-steel hover:bg-chalk-light hover:text-charcoal',
+                                                            ? 'bg-sunstone-mist/30 dark:bg-sunstone/10 text-charcoal dark:text-paper'
+                                                            : 'text-steel dark:text-gravel hover:bg-chalk-light dark:hover:bg-graphite hover:text-charcoal dark:hover:text-paper',
                                                     ]}
                                                     aria-current={itemActive ? 'page' : undefined}
                                                 >
@@ -185,8 +193,8 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                             <a
                                 href={entry.href}
                                 class:list={[
-                                    'inline-flex items-center gap-1.5 hover:text-charcoal transition-colors py-2',
-                                    megaActive && 'text-charcoal',
+                                    'inline-flex items-center gap-1.5 hover:text-charcoal dark:hover:text-paper transition-colors py-2',
+                                    megaActive && 'text-charcoal dark:text-paper',
                                 ]}
                                 aria-current={megaActive ? 'page' : undefined}
                             >
@@ -194,7 +202,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                 <i class="fa-solid fa-chevron-down text-[10px] text-gravel transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
                             </a>
                             <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 absolute left-1/2 -translate-x-1/2 top-full pt-3 transition-opacity duration-150">
-                                <div class="w-[760px] rounded-2xl border border-chalk-dark bg-paper shadow-[0_24px_60px_-20px_rgb(25_25_25_/_0.22)] p-3">
+                                <div class="w-[760px] rounded-2xl border border-chalk-dark dark:border-flint bg-paper dark:bg-charcoal shadow-[0_24px_60px_-20px_rgb(25_25_25_/_0.22)] dark:shadow-[0_24px_60px_-20px_rgb(0_0_0_/_0.6)] p-3">
                                     <div class="grid grid-cols-3 gap-1">
                                         {entry.items.map((item) => {
                                             const itemActive = isActiveLink(item.href);
@@ -202,12 +210,12 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                                 <a
                                                     href={item.href}
                                                     class:list={[
-                                                        'block rounded-xl px-4 py-3.5 hover:bg-chalk-light transition-colors group/item',
-                                                        itemActive && 'bg-sunstone-mist/30',
+                                                        'block rounded-xl px-4 py-3.5 hover:bg-chalk-light dark:hover:bg-graphite transition-colors group/item',
+                                                        itemActive && 'bg-sunstone-mist/30 dark:bg-sunstone/10',
                                                     ]}
                                                     aria-current={itemActive ? 'page' : undefined}
                                                 >
-                                                    <p class="text-[14px] font-semibold text-charcoal group-hover/item:text-sunstone-deep transition-colors mb-0.5">
+                                                    <p class="text-[14px] font-semibold text-charcoal dark:text-paper group-hover/item:text-sunstone-deep transition-colors mb-0.5">
                                                         {item.label}
                                                     </p>
                                                     <p class="text-[12.5px] text-gravel leading-snug">
@@ -227,11 +235,14 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
 
         <div class="flex items-center gap-3 sm:gap-5">
             <div class="hidden lg:block">
+                <ThemeToggle />
+            </div>
+            <div class="hidden lg:block">
                 <LanguageSwitcher alternates={alternates} />
             </div>
             <a
                 href={externalLinks.login}
-                class="hidden lg:inline text-[14px] font-medium text-steel hover:text-charcoal transition-colors"
+                class="hidden lg:inline text-[14px] font-medium text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -248,7 +259,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
             <button
                 id="mobile-menu-toggle"
                 type="button"
-                class="lg:hidden inline-flex items-center justify-center h-9 w-9 rounded-md text-charcoal hover:bg-chalk transition-colors"
+                class="lg:hidden inline-flex items-center justify-center h-9 w-9 rounded-md text-charcoal dark:text-paper hover:bg-chalk dark:hover:bg-graphite transition-colors"
                 aria-label={t.common.openMenu}
                 data-label-open={t.common.openMenu}
                 data-label-close={t.common.closeMenu}
@@ -262,7 +273,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
 
     <div
         id="mobile-menu"
-        class="lg:hidden hidden border-t border-chalk-dark bg-paper"
+        class="lg:hidden hidden border-t border-chalk-dark dark:border-flint bg-paper dark:bg-charcoal"
     >
         <ul class="container-prose flex flex-col py-3">
             {
@@ -272,7 +283,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                             <li>
                                 <a
                                     href={entry.href}
-                                    class="block py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors"
+                                    class="block py-2.5 text-[15px] font-medium text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors"
                                 >
                                     {entry.label}
                                 </a>
@@ -284,7 +295,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                         return (
                             <li>
                                 <details class="group">
-                                    <summary class="flex items-center justify-between py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors cursor-pointer list-none">
+                                    <summary class="flex items-center justify-between py-2.5 text-[15px] font-medium text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors cursor-pointer list-none">
                                         {entry.label}
                                         <i class="fa-solid fa-chevron-down text-[11px] text-gravel transition-transform duration-200 group-open:rotate-180" />
                                     </summary>
@@ -292,7 +303,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                         {entry.items.map((item) => (
                                             <a
                                                 href={item.href}
-                                                class="block py-2 text-[14px] font-medium text-steel hover:text-charcoal transition-colors"
+                                                class="block py-2 text-[14px] font-medium text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors"
                                             >
                                                 {item.label}
                                             </a>
@@ -306,14 +317,14 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                     return (
                         <li>
                             <details class="group">
-                                <summary class="flex items-center justify-between py-2.5 text-[15px] font-medium text-steel hover:text-charcoal transition-colors cursor-pointer list-none">
+                                <summary class="flex items-center justify-between py-2.5 text-[15px] font-medium text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors cursor-pointer list-none">
                                     {entry.label}
                                     <i class="fa-solid fa-chevron-down text-[11px] text-gravel transition-transform duration-200 group-open:rotate-180" />
                                 </summary>
                                 <div class="pl-3 pb-2">
                                     <a
                                         href={entry.href}
-                                        class="block py-2 text-[14px] font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                        class="block py-2 text-[14px] font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
                                     >
                                         {t.nav.allFeatures}
                                     </a>
@@ -322,7 +333,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                                             href={item.href}
                                             class="block py-2"
                                         >
-                                            <p class="text-[14px] font-semibold text-charcoal">
+                                            <p class="text-[14px] font-semibold text-charcoal dark:text-paper">
                                                 {item.label}
                                             </p>
                                             <p class="text-[12.5px] text-gravel leading-snug mt-0.5">
@@ -336,7 +347,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                     );
                 })
             }
-            <li class="border-t border-chalk-dark mt-2 pt-4">
+            <li class="border-t border-chalk-dark dark:border-flint mt-2 pt-4">
                 <a
                     href={externalLinks.register}
                     class="btn btn-sunstone w-full justify-center text-sm"
@@ -348,7 +359,7 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                 </a>
                 <a
                     href={externalLinks.login}
-                    class="block py-2.5 mt-1 text-[15px] font-medium text-steel hover:text-charcoal transition-colors"
+                    class="block py-2.5 mt-1 text-[15px] font-medium text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -356,6 +367,9 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
                 </a>
                 <div class="py-2.5">
                     <LanguageSwitcher variant="inline" alternates={alternates} />
+                </div>
+                <div class="py-2.5">
+                    <ThemeToggle variant="inline" />
                 </div>
             </li>
         </ul>
@@ -366,6 +380,11 @@ function isActiveDropdown(items: Array<{ href: string }>): boolean {
     #site-header.is-scrolled {
         border-bottom-color: var(--color-chalk-dark);
         box-shadow: 0 6px 24px -16px rgb(25 25 25 / 0.18);
+    }
+
+    :global(.dark) #site-header.is-scrolled {
+        border-bottom-color: var(--color-flint);
+        box-shadow: 0 6px 24px -16px rgb(0 0 0 / 0.5);
     }
 </style>
 

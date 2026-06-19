@@ -73,6 +73,20 @@ const websiteSchema = {
 <!doctype html>
 <html lang={locale}>
     <head>
+        <script is:inline>
+            // Set the theme before first paint to avoid a white flash.
+            // localStorage `theme` is light/dark/auto; default is LIGHT (a
+            // first-time visitor always lands in light, regardless of OS).
+            // `auto` is still a selectable option that follows prefers-color-scheme.
+            (function () {
+                try {
+                    var mode = localStorage.getItem('theme') || 'light';
+                    var dark = mode === 'dark'
+                        || (mode === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                    document.documentElement.classList.toggle('dark', dark);
+                } catch (e) {}
+            })();
+        </script>
         <BaseHead
             title={title}
             description={description}
@@ -88,7 +102,7 @@ const websiteSchema = {
     <body class="min-h-screen flex flex-col">
         <a
             href="#main"
-            class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:inline-flex focus:items-center focus:gap-2 focus:px-4 focus:py-2.5 focus:rounded-lg focus:bg-charcoal focus:text-paper focus:text-sm focus:font-semibold focus:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.40)]"
+            class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:inline-flex focus:items-center focus:gap-2 focus:px-4 focus:py-2.5 focus:rounded-lg focus:bg-charcoal focus:text-paper dark:focus:bg-paper dark:focus:text-charcoal focus:text-sm focus:font-semibold focus:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.40)]"
         >
             {t.common.skipToContent}
         </a>

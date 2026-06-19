@@ -11,19 +11,19 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="divide-y divide-chalk-dark">
+<div class="divide-y divide-chalk-dark dark:divide-flint">
     {
         items.map((faq) => (
             <details class="group py-6 first:pt-0">
                 <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
-                    <h3 class="text-base md:text-lg font-semibold text-charcoal leading-snug tracking-tight">
+                    <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper leading-snug tracking-tight">
                         {faq.question}
                     </h3>
-                    <span class="flex-shrink-0 h-7 w-7 rounded-full ring-1 ring-chalk-dark flex items-center justify-center text-gravel transition-transform duration-200 group-open:rotate-45 group-open:ring-charcoal group-open:text-charcoal mt-0.5">
+                    <span class="flex-shrink-0 h-7 w-7 rounded-full ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center text-gravel transition-transform duration-200 group-open:rotate-45 group-open:ring-charcoal dark:group-open:ring-paper group-open:text-charcoal dark:group-open:text-paper mt-0.5">
                         <i class="fa-solid fa-plus text-xs" aria-hidden="true"></i>
                     </span>
                 </summary>
-                <div class="mt-4 pr-12 text-steel leading-relaxed text-[0.975rem] [&_a]:text-sunstone-deep [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-charcoal" set:html={faq.answer}></div>
+                <div class="mt-4 pr-12 text-steel dark:text-gravel leading-relaxed text-[0.975rem] [&_a]:text-sunstone-deep [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-charcoal dark:[&_a:hover]:text-paper" set:html={faq.answer}></div>
             </details>
         ))
     }

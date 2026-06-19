@@ -60,7 +60,7 @@ const jsonLd = [
     routeKey="features.reports"
     jsonLd={jsonLd}
 >
-    <section class="pb-12 md:pb-16 bg-paper">
+    <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="flex flex-col sm:flex-row gap-3">
                 <a
@@ -84,25 +84,25 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-12 md:py-16 bg-paper">
+    <section class="py-12 md:py-16 bg-paper dark:bg-charcoal">
         <div class="container-wide">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                     <div>
                         <p class="eyebrow mb-3">{p.mockupEyebrow}</p>
-                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05]">
                             {p.mockupHeadingLine1}
                             <span class="block">{p.mockupHeadingLine2}</span>
                         </h2>
                     </div>
 
-                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                    <div class="bg-paper dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center justify-between gap-3 mb-4">
                             <div class="flex items-center gap-2.5">
-                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                                <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                     <i class="fa-solid fa-trophy text-[0.7rem]" aria-hidden="true"></i>
                                 </span>
-                                <span class="text-sm font-semibold text-charcoal">{p.mockupReportLabel}</span>
+                                <span class="text-sm font-semibold text-charcoal dark:text-paper">{p.mockupReportLabel}</span>
                             </div>
                             <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">{p.mockupTopBadge}</span>
                         </div>
@@ -113,52 +113,52 @@ const jsonLd = [
                             <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">{p.mockupColProfit}</span>
                             <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel text-right">{p.mockupColMargin}</span>
 
-                            <div class="col-span-4 h-px bg-chalk-dark"></div>
+                            <div class="col-span-4 h-px bg-chalk-dark dark:bg-flint"></div>
 
-                            <span class="text-charcoal font-medium truncate">{p.mockupRow1Name}</span>
-                            <span class="text-charcoal tabular-nums text-right">&euro;3.420</span>
-                            <span class="text-charcoal font-semibold tabular-nums text-right">&euro;1.180</span>
+                            <span class="text-charcoal dark:text-paper font-medium truncate">{p.mockupRow1Name}</span>
+                            <span class="text-charcoal dark:text-paper tabular-nums text-right">&euro;3.420</span>
+                            <span class="text-charcoal dark:text-paper font-semibold tabular-nums text-right">&euro;1.180</span>
                             <span class="inline-flex items-center justify-end gap-1.5">
-                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark dark:bg-flint overflow-hidden">
                                     <span class="block h-full w-[80%] bg-sunstone-deep rounded-full"></span>
                                 </span>
-                                <span class="text-charcoal font-semibold tabular-nums">34%</span>
+                                <span class="text-charcoal dark:text-paper font-semibold tabular-nums">34%</span>
                             </span>
 
-                            <span class="text-charcoal font-medium truncate">{p.mockupRow2Name}</span>
-                            <span class="text-charcoal tabular-nums text-right">&euro;2.180</span>
-                            <span class="text-charcoal font-semibold tabular-nums text-right">&euro;720</span>
+                            <span class="text-charcoal dark:text-paper font-medium truncate">{p.mockupRow2Name}</span>
+                            <span class="text-charcoal dark:text-paper tabular-nums text-right">&euro;2.180</span>
+                            <span class="text-charcoal dark:text-paper font-semibold tabular-nums text-right">&euro;720</span>
                             <span class="inline-flex items-center justify-end gap-1.5">
-                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark dark:bg-flint overflow-hidden">
                                     <span class="block h-full w-[78%] bg-sunstone-soft rounded-full"></span>
                                 </span>
-                                <span class="text-charcoal font-semibold tabular-nums">33%</span>
+                                <span class="text-charcoal dark:text-paper font-semibold tabular-nums">33%</span>
                             </span>
 
-                            <span class="text-steel truncate">{p.mockupRow3Name}</span>
-                            <span class="text-steel tabular-nums text-right">&euro;1.640</span>
-                            <span class="text-steel font-semibold tabular-nums text-right">&euro;248</span>
+                            <span class="text-steel dark:text-gravel truncate">{p.mockupRow3Name}</span>
+                            <span class="text-steel dark:text-gravel tabular-nums text-right">&euro;1.640</span>
+                            <span class="text-steel dark:text-gravel font-semibold tabular-nums text-right">&euro;248</span>
                             <span class="inline-flex items-center justify-end gap-1.5">
-                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark overflow-hidden">
-                                    <span class="block h-full w-[35%] bg-chalk-darker rounded-full"></span>
+                                <span class="inline-block h-1.5 w-10 rounded-full bg-chalk-dark dark:bg-flint overflow-hidden">
+                                    <span class="block h-full w-[35%] bg-chalk-darker dark:bg-flint rounded-full"></span>
                                 </span>
-                                <span class="text-steel font-semibold tabular-nums">15%</span>
+                                <span class="text-steel dark:text-gravel font-semibold tabular-nums">15%</span>
                             </span>
                         </div>
 
-                        <div class="flex flex-wrap items-center justify-between gap-2 mt-5 pt-4 border-t border-chalk-dark">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mt-5 pt-4 border-t border-chalk-dark dark:border-flint">
                             <div class="flex items-center gap-2 text-[11px] text-gravel">
                                 <i class="fa-solid fa-calendar-days text-[0.65rem]" aria-hidden="true"></i>
                                 <span>{p.mockupPeriod}</span>
                             </div>
-                            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-charcoal px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark">
+                            <span class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-charcoal dark:text-paper px-2.5 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint">
                                 <i class="fa-solid fa-file-excel text-[0.65rem]" aria-hidden="true"></i>
                                 {p.mockupExport}
                             </span>
                         </div>
                     </div>
 
-                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-medium text-charcoal">
+                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm font-medium text-charcoal dark:text-paper">
                         <li class="flex items-center gap-2">
                             <i class="fa-solid fa-check text-sunstone-deep text-xs" aria-hidden="true"></i>
                             {p.bullet1}
@@ -180,14 +180,14 @@ const jsonLd = [
 
                 {
                     subFeatures.map((feature) => (
-                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                        <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
-                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
-                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel dark:text-gravel leading-relaxed mt-2">{feature.body}</p>
                             </div>
                         </article>
                     ))
@@ -196,31 +196,31 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light">
+    <section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-5">
                     <p class="eyebrow mb-4">{p.workflowEyebrow}</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                         {p.workflowHeadingLine1}
                         <span class="block text-sunstone-deep">{p.workflowHeadingLine2}</span>
                     </h2>
-                    <p class="mt-6 text-base text-steel leading-relaxed">
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                         {p.workflowIntro}
                     </p>
                 </div>
 
                 <div class="lg:col-span-7">
-                    <ol class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                    <ol class="divide-y divide-chalk-dark dark:divide-flint border-y border-chalk-dark dark:border-flint">
                         {
                             workflowSteps.map((step, index) => (
                                 <li class="py-7 flex items-start gap-5">
-                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5 text-sm font-semibold">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-8 w-8 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mt-0.5 text-sm font-semibold">
                                         {index + 1}
                                     </span>
                                     <div>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{step.title}</h3>
-                                        <p class="mt-2 text-steel leading-relaxed text-[0.975rem]">{step.body}</p>
+                                        <h3 class="text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{step.title}</h3>
+                                        <p class="mt-2 text-steel dark:text-gravel leading-relaxed text-[0.975rem]">{step.body}</p>
                                     </div>
                                 </li>
                             ))
@@ -231,19 +231,19 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-paper">
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
                 <div class="lg:col-span-4">
                     <p class="eyebrow mb-4">{p.faqEyebrow}</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                         {p.faqHeadingLine1}
                         <span class="block text-sunstone-deep">{p.faqHeadingLine2}</span>
                     </h2>
-                    <p class="mt-6 text-base text-steel leading-relaxed">
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                         {p.faqIntro}
                     </p>
-                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal dark:text-paper font-semibold text-sm">
                         {p.faqCta}
                         <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
                     </a>

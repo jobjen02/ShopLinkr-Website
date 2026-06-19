@@ -169,18 +169,18 @@ onBeforeUnmount(() => {
             aria-modal="false"
             aria-labelledby="cookie-banner-title"
             aria-describedby="cookie-banner-desc"
-            class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 md:max-w-md z-[100] bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_24px_60px_-20px_rgba(25,25,25,0.25)] overflow-hidden"
+            class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 md:max-w-md z-[100] bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_24px_60px_-20px_rgba(25,25,25,0.25)] overflow-hidden"
         >
             <div class="p-6">
                 <div class="flex items-start gap-3 mb-3">
-                    <span class="flex-shrink-0 inline-flex items-center justify-center h-9 w-9 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                    <span class="flex-shrink-0 inline-flex items-center justify-center h-9 w-9 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
                         <i class="fa-solid fa-cookie-bite text-sm" aria-hidden="true"></i>
                     </span>
                     <div>
-                        <h2 id="cookie-banner-title" class="text-base font-semibold text-charcoal tracking-tight">
+                        <h2 id="cookie-banner-title" class="text-base font-semibold text-charcoal dark:text-paper tracking-tight">
                             {{ t.title }}
                         </h2>
-                        <p id="cookie-banner-desc" class="mt-1 text-sm text-steel leading-relaxed">
+                        <p id="cookie-banner-desc" class="mt-1 text-sm text-steel dark:text-gravel leading-relaxed">
                             {{ t.desc }}
                         </p>
                     </div>
@@ -188,11 +188,11 @@ onBeforeUnmount(() => {
 
                 <div
                     v-if="showDetails"
-                    class="mt-4 space-y-3 border-t border-chalk-dark pt-4"
+                    class="mt-4 space-y-3 border-t border-chalk-dark dark:border-flint pt-4"
                 >
                     <div class="flex items-start justify-between gap-4">
                         <div>
-                            <p class="text-sm font-semibold text-charcoal">
+                            <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.necessary }}
                             </p>
                             <p class="text-xs text-gravel leading-relaxed mt-0.5">
@@ -206,7 +206,7 @@ onBeforeUnmount(() => {
 
                     <label class="flex items-start justify-between gap-4 cursor-pointer">
                         <div>
-                            <p class="text-sm font-semibold text-charcoal">
+                            <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.analytics }}
                             </p>
                             <p class="text-xs text-gravel leading-relaxed mt-0.5">
@@ -215,7 +215,7 @@ onBeforeUnmount(() => {
                         </div>
                         <span
                             class="flex-shrink-0 inline-flex items-center mt-1 h-5 w-9 rounded-full transition-colors"
-                            :class="analyticsEnabled ? 'bg-sunstone-deep' : 'bg-chalk-dark'"
+                            :class="analyticsEnabled ? 'bg-sunstone-deep' : 'bg-chalk-dark dark:bg-flint'"
                         >
                             <span
                                 class="inline-block h-3.5 w-3.5 bg-paper rounded-full shadow transform transition-transform"
@@ -232,7 +232,7 @@ onBeforeUnmount(() => {
 
                     <label class="flex items-start justify-between gap-4 cursor-pointer">
                         <div>
-                            <p class="text-sm font-semibold text-charcoal">
+                            <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.marketing }}
                             </p>
                             <p class="text-xs text-gravel leading-relaxed mt-0.5">
@@ -241,7 +241,7 @@ onBeforeUnmount(() => {
                         </div>
                         <span
                             class="flex-shrink-0 inline-flex items-center mt-1 h-5 w-9 rounded-full transition-colors"
-                            :class="marketingEnabled ? 'bg-sunstone-deep' : 'bg-chalk-dark'"
+                            :class="marketingEnabled ? 'bg-sunstone-deep' : 'bg-chalk-dark dark:bg-flint'"
                         >
                             <span
                                 class="inline-block h-3.5 w-3.5 bg-paper rounded-full shadow transform transition-transform"
@@ -263,15 +263,15 @@ onBeforeUnmount(() => {
 
                 <p class="mt-4 text-xs text-gravel">
                     {{ t.readMoreBefore }}
-                    <a :href="cookiesHref" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">{{ t.cookiePolicy }}</a>
+                    <a :href="cookiesHref" class="text-charcoal dark:text-paper font-medium hover:text-sunstone-deep transition-colors">{{ t.cookiePolicy }}</a>
                     {{ t.readMoreMiddle }}
-                    <a href="https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf" target="_blank" rel="noopener noreferrer" class="text-charcoal font-medium hover:text-sunstone-deep transition-colors">{{ t.privacyStatement }}</a>.
+                    <a href="https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf" target="_blank" rel="noopener noreferrer" class="text-charcoal dark:text-paper font-medium hover:text-sunstone-deep transition-colors">{{ t.privacyStatement }}</a>.
                 </p>
 
                 <div class="mt-5 flex flex-col gap-2">
                     <button
                         type="button"
-                        class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-charcoal text-paper text-sm font-semibold hover:bg-charcoal/90 transition-colors"
+                        class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-charcoal dark:bg-paper text-paper dark:text-charcoal text-sm font-semibold hover:bg-charcoal/90 dark:hover:bg-paper/90 transition-colors"
                         @click="acceptAll"
                     >
                         {{ t.acceptAll }}
@@ -281,7 +281,7 @@ onBeforeUnmount(() => {
                         <button
                             v-if="!showDetails"
                             type="button"
-                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark bg-paper text-charcoal text-sm font-medium hover:bg-chalk-light transition-colors"
+                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal text-charcoal dark:text-paper text-sm font-medium hover:bg-chalk-light dark:hover:bg-graphite transition-colors"
                             @click="toggleDetails"
                         >
                             {{ t.configure }}
@@ -289,14 +289,14 @@ onBeforeUnmount(() => {
                         <button
                             v-else
                             type="button"
-                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark bg-paper text-charcoal text-sm font-medium hover:bg-chalk-light transition-colors"
+                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal text-charcoal dark:text-paper text-sm font-medium hover:bg-chalk-light dark:hover:bg-graphite transition-colors"
                             @click="saveCustom"
                         >
                             {{ t.savePrefs }}
                         </button>
                         <button
                             type="button"
-                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark bg-paper text-steel text-sm font-medium hover:bg-chalk-light hover:text-charcoal transition-colors"
+                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal text-steel dark:text-gravel text-sm font-medium hover:bg-chalk-light dark:hover:bg-graphite hover:text-charcoal dark:hover:text-paper transition-colors"
                             @click="rejectAll"
                         >
                             {{ t.necessaryOnly }}

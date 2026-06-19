@@ -16,6 +16,12 @@ const nl = {
         readMore: 'Lees verder',
         openMenu: 'Menu openen',
         closeMenu: 'Menu sluiten',
+        theme: {
+            label: 'Thema',
+            light: 'Licht',
+            dark: 'Donker',
+            auto: 'Systeem',
+        },
     },
     hero: {
         badge: 'Binnenkort ook voor fulfilmentbedrijven',

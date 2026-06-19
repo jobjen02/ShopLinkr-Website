@@ -38,18 +38,18 @@ const {
     alternates={alternates}
     jsonLd={jsonLd}
 >
-    <section class="relative bg-paper overflow-hidden">
+    <section class="relative bg-paper dark:bg-charcoal overflow-hidden">
         <div class="absolute inset-x-0 top-0 -z-0 pointer-events-none h-[600px]">
-            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] opacity-60"></div>
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(250,237,213,0.05),transparent_65%)] opacity-60"></div>
         </div>
 
         <div class="container-prose pt-16 md:pt-24 pb-12 md:pb-16 relative">
             {eyebrow && <p class="eyebrow mb-4">{eyebrow}</p>}
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-charcoal tracking-tight leading-[1.05] max-w-4xl">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05] max-w-4xl">
                 {heading}
             </h1>
             {subheading && (
-                <p class="mt-6 text-lg md:text-xl text-steel leading-relaxed max-w-2xl">
+                <p class="mt-6 text-lg md:text-xl text-steel dark:text-gravel leading-relaxed max-w-2xl">
                     {subheading}
                 </p>
             )}

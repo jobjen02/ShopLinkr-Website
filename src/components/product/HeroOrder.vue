@@ -159,7 +159,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             type="button"
             @click="togglePause"
             :aria-label="paused ? t.play : t.pause"
-            class="absolute top-1 left-1 z-40 h-7 w-7 rounded-full bg-paper/90 backdrop-blur ring-1 ring-chalk-dark text-gravel hover:text-charcoal hover:ring-chalk-darker flex items-center justify-center transition-colors"
+            class="absolute top-1 left-1 z-40 h-7 w-7 rounded-full bg-paper/90 dark:bg-charcoal/90 backdrop-blur ring-1 ring-chalk-dark dark:ring-flint text-gravel hover:text-charcoal dark:hover:text-paper hover:ring-chalk-darker dark:hover:ring-steel flex items-center justify-center transition-colors"
         >
             <svg v-if="paused" viewBox="0 0 12 12" class="h-3 w-3 ml-0.5" aria-hidden="true">
                 <path d="M3,2 L10,6 L3,10 Z" fill="currentColor" />
@@ -171,32 +171,32 @@ onUnmounted(() => window.clearTimeout(stepTimer));
         </button>
 
         <!-- Main order card -->
-        <div class="relative z-10 bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_18px_50px_-28px_rgba(25,25,25,0.22)] px-6 py-6">
+        <div class="relative z-10 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_18px_50px_-28px_rgba(25,25,25,0.22)] px-6 py-6">
             <div class="flex items-center gap-3">
-                <span class="h-11 w-11 rounded-xl bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                <span class="h-11 w-11 rounded-xl bg-paper dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                     <img src="/assets/marketplaces/bol.jpeg" alt="Bol" class="h-7 w-7 object-contain" />
                 </span>
                 <div class="min-w-0">
-                    <p class="text-[0.95rem] font-semibold text-charcoal leading-tight">{{ t.orderTitle }}</p>
+                    <p class="text-[0.95rem] font-semibold text-charcoal dark:text-paper leading-tight">{{ t.orderTitle }}</p>
                     <p class="text-xs text-gravel">{{ t.viaBol }}</p>
                 </div>
             </div>
 
-            <div class="my-5 border-t border-chalk-dark"></div>
+            <div class="my-5 border-t border-chalk-dark dark:border-flint"></div>
 
             <div class="flex items-center gap-3.5">
-                <span class="h-14 w-14 rounded-xl bg-chalk-light ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                <span class="h-14 w-14 rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                     <img src="/products/omega_3.png" alt="Omega 3 capsules" class="h-11 w-11 object-contain" />
                 </span>
                 <div>
-                    <p class="text-sm font-semibold text-charcoal">Omega 3 capsules</p>
+                    <p class="text-sm font-semibold text-charcoal dark:text-paper">Omega 3 capsules</p>
                     <p class="text-xs text-gravel mt-0.5">SUP-OMG3-120 · {{ t.unit }}</p>
                 </div>
             </div>
 
             <!-- Steps -->
             <div class="relative mt-7">
-                <div class="absolute top-[9px] h-0.5 bg-chalk-dark" :style="{ left: trackInset, right: trackInset }"></div>
+                <div class="absolute top-[9px] h-0.5 bg-chalk-dark dark:bg-graphite" :style="{ left: trackInset, right: trackInset }"></div>
                 <div
                     class="absolute top-[9px] h-0.5 bg-green transition-[width] duration-700 ease-out"
                     :style="{ left: trackInset, width: fillWidth }"
@@ -205,7 +205,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                     <div v-for="(label, i) in steps" :key="label" class="flex-1 flex flex-col items-center gap-2">
                         <span
                             class="h-5 w-5 rounded-full flex items-center justify-center transition-colors duration-300 border-[1.5px]"
-                            :class="i < done ? 'bg-green border-green' : 'bg-paper border-chalk-darker'"
+                            :class="i < done ? 'bg-green border-green' : 'bg-paper dark:bg-graphite border-chalk-darker dark:border-flint'"
                         >
                             <svg v-if="i < done" viewBox="0 0 12 12" class="h-2.5 w-2.5" aria-hidden="true">
                                 <path d="M2.5,6 l2.2,2.2 l4.2,-4.8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -213,7 +213,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                         </span>
                         <span
                             class="text-[0.66rem] transition-colors duration-300"
-                            :class="i < done ? 'text-steel font-semibold' : 'text-gravel'"
+                            :class="i < done ? 'text-steel dark:text-gravel font-semibold' : 'text-gravel'"
                         >{{ label }}</span>
                     </div>
                 </div>
@@ -222,14 +222,14 @@ onUnmounted(() => window.clearTimeout(stepTimer));
 
         <!-- Floating: stock chip -->
         <div
-            class="absolute top-0 right-1 z-20 w-[12.5rem] bg-paper rounded-xl ring-1 ring-chalk-dark shadow-[0_16px_36px_-22px_rgba(25,25,25,0.28)] px-4 py-3 transition-all duration-500 ease-out"
+            class="absolute top-0 right-1 z-20 w-[12.5rem] bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_16px_36px_-22px_rgba(25,25,25,0.28)] px-4 py-3 transition-all duration-500 ease-out"
             :class="stockShown ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3 pointer-events-none'"
         >
             <p class="text-[0.6rem] font-semibold tracking-[0.14em] text-gravel uppercase">{{ t.stock }}</p>
             <div class="flex items-center gap-2 mt-0.5">
-                <span :key="stock" class="hero-pop text-3xl font-bold text-charcoal tabular-nums leading-none">{{ stock }}</span>
+                <span :key="stock" class="hero-pop text-3xl font-bold text-charcoal dark:text-paper tabular-nums leading-none">{{ stock }}</span>
                 <span
-                    class="inline-flex items-center gap-1 px-2 h-5 rounded-full bg-green-mist text-[#15803d] text-[0.62rem] font-semibold transition-opacity duration-300"
+                    class="inline-flex items-center gap-1 px-2 h-5 rounded-full bg-green-mist dark:bg-green/15 text-[#15803d] text-[0.62rem] font-semibold transition-opacity duration-300"
                     :class="synced ? 'opacity-100' : 'opacity-0'"
                 >
                     <span class="h-1.5 w-1.5 rounded-full bg-green"></span>
@@ -240,7 +240,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                 <span
                     v-for="ch in channels"
                     :key="ch.key"
-                    class="h-5 w-5 rounded-md bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden"
+                    class="h-5 w-5 rounded-md bg-paper dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden"
                 >
                     <img :src="ch.logo" :alt="ch.name" class="h-3.5 w-3.5 object-contain" />
                 </span>
@@ -249,11 +249,11 @@ onUnmounted(() => window.clearTimeout(stepTimer));
 
         <!-- Floating: scan chip (verschijnt bij Gepikt) -->
         <div
-            class="absolute bottom-0 left-0 z-30 w-[13rem] bg-paper rounded-xl ring-1 ring-chalk-dark shadow-[0_16px_36px_-22px_rgba(25,25,25,0.28)] px-4 py-3 transition-all duration-500 ease-out"
+            class="absolute bottom-0 left-0 z-30 w-[13rem] bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_16px_36px_-22px_rgba(25,25,25,0.28)] px-4 py-3 transition-all duration-500 ease-out"
             :class="scanShown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'"
         >
             <div class="flex items-center gap-2.5">
-                <span class="h-9 w-9 rounded-lg bg-sunstone-mist flex items-center justify-center flex-shrink-0">
+                <span class="h-9 w-9 rounded-lg bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center flex-shrink-0">
                     <svg viewBox="0 0 22 22" class="h-5 w-5" aria-hidden="true">
                         <g fill="none" stroke="#d49d5e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M2,6 V3.5 A1.5,1.5 0 0 1 3.5,2 H6" />
@@ -268,7 +268,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                 </span>
                 <div class="min-w-0 flex-1">
                     <div class="flex items-center justify-between gap-2">
-                        <p class="text-[0.82rem] font-semibold text-charcoal leading-tight">{{ t.scanned }}</p>
+                        <p class="text-[0.82rem] font-semibold text-charcoal dark:text-paper leading-tight">{{ t.scanned }}</p>
                         <span class="h-4 w-4 rounded-full bg-green flex items-center justify-center flex-shrink-0">
                             <svg viewBox="0 0 12 12" class="h-2.5 w-2.5" aria-hidden="true">
                                 <path d="M2.5,6 l2.2,2.2 l4.2,-4.8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -276,7 +276,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                         </span>
                     </div>
                     <p class="text-[0.68rem] text-gravel mt-0.5">
-                        {{ t.location }} <span class="font-semibold text-charcoal tabular-nums">A.1.4</span>
+                        {{ t.location }} <span class="font-semibold text-charcoal dark:text-paper tabular-nums">A.1.4</span>
                     </p>
                 </div>
             </div>
@@ -284,11 +284,11 @@ onUnmounted(() => window.clearTimeout(stepTimer));
 
         <!-- Floating: label chip -->
         <div
-            class="absolute bottom-0 left-0 z-20 w-[13.5rem] bg-paper rounded-xl ring-1 ring-chalk-dark shadow-[0_16px_36px_-22px_rgba(25,25,25,0.28)] px-4 py-3 transition-all duration-500 ease-out"
+            class="absolute bottom-0 left-0 z-20 w-[13.5rem] bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_16px_36px_-22px_rgba(25,25,25,0.28)] px-4 py-3 transition-all duration-500 ease-out"
             :class="labelShown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'"
         >
             <div class="flex items-center gap-2.5">
-                <span class="h-9 w-9 rounded-lg bg-sunstone-mist flex items-center justify-center flex-shrink-0">
+                <span class="h-9 w-9 rounded-lg bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center flex-shrink-0">
                     <svg viewBox="0 0 22 22" class="h-5 w-5" aria-hidden="true">
                         <path d="M5,7 V2 H17 V7" fill="none" stroke="#d49d5e" stroke-width="1.7" stroke-linejoin="round" />
                         <rect x="1.5" y="7" width="19" height="9" rx="2" fill="none" stroke="#d49d5e" stroke-width="1.7" />
@@ -296,7 +296,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                     </svg>
                 </span>
                 <div class="min-w-0">
-                    <p class="text-[0.82rem] font-semibold text-charcoal leading-tight">{{ t.labelReady }}</p>
+                    <p class="text-[0.82rem] font-semibold text-charcoal dark:text-paper leading-tight">{{ t.labelReady }}</p>
                     <p class="text-[0.64rem] text-gravel whitespace-nowrap">PostNL · 3SABCD1234567</p>
                 </div>
             </div>
@@ -304,7 +304,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                 <span
                     v-for="(w, i) in [2,1,3,1,2,3,1,2,1,3,2,1,3,1,2,2,1,3,1,2,1,3,2,1]"
                     :key="i"
-                    class="bg-charcoal"
+                    class="bg-charcoal dark:bg-paper"
                     :style="{ width: `${w}px`, height: '100%', opacity: i % 2 === 0 ? 1 : 0 }"
                 ></span>
             </div>
@@ -312,13 +312,13 @@ onUnmounted(() => window.clearTimeout(stepTimer));
 
         <!-- Floating: track & trace chip -->
         <div
-            class="absolute bottom-0 right-2 z-20 inline-flex items-center gap-2 bg-paper rounded-full ring-1 ring-chalk-dark shadow-[0_14px_30px_-20px_rgba(25,25,25,0.28)] pl-2 pr-3 py-1.5 transition-all duration-500 ease-out"
+            class="absolute bottom-0 right-2 z-20 inline-flex items-center gap-2 bg-paper dark:bg-charcoal rounded-full ring-1 ring-chalk-dark dark:ring-flint shadow-[0_14px_30px_-20px_rgba(25,25,25,0.28)] pl-2 pr-3 py-1.5 transition-all duration-500 ease-out"
             :class="ttShown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'"
         >
-            <span class="h-6 w-6 rounded-md bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+            <span class="h-6 w-6 rounded-md bg-paper dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img src="/assets/marketplaces/bol.jpeg" alt="Bol" class="h-4 w-4 object-contain" />
             </span>
-            <span class="text-[0.72rem] font-semibold text-charcoal leading-none">{{ t.ttToBol }}</span>
+            <span class="text-[0.72rem] font-semibold text-charcoal dark:text-paper leading-none">{{ t.ttToBol }}</span>
             <span class="h-4 w-4 rounded-full bg-green flex items-center justify-center flex-shrink-0">
                 <svg viewBox="0 0 12 12" class="h-2.5 w-2.5" aria-hidden="true">
                     <path d="M2.5,6 l2.2,2.2 l4.2,-4.8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />

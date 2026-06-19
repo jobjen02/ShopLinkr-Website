@@ -14,6 +14,12 @@ const en: Dictionary = {
         readMore: 'Read more',
         openMenu: 'Open menu',
         closeMenu: 'Close menu',
+        theme: {
+            label: 'Theme',
+            light: 'Light',
+            dark: 'Dark',
+            auto: 'System',
+        },
     },
     hero: {
         badge: 'Coming soon for fulfilment companies too',

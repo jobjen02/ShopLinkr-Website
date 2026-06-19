@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (mirrors the Vue app: `.dark` on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
     /* ShopLinkr brand palette (mirrors Vue app tailwind.config.ts) */
     --color-sunstone: #e8b679;
@@ -56,6 +59,18 @@
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
         overflow-x: clip;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Dark mode: graphite-soft surface + paper text, mirroring the Vue app
+       (charcoal cards on a graphite-darker body). */
+    html.dark {
+        color-scheme: dark;
+    }
+
+    .dark body {
+        background-color: var(--color-graphite-soft);
+        color: var(--color-paper);
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -131,5 +146,28 @@
         font-size: 0.75rem;
         font-weight: 600;
         color: var(--color-sunstone-deep);
+    }
+
+    /* Dark mode button overrides. The primary (charcoal) button would vanish on
+       a dark surface, so it inverts to a light button; secondary gets a flint
+       border. The sunstone button is brand-fixed and never inverts. */
+    .dark .btn-primary {
+        background-color: var(--color-paper);
+        color: var(--color-charcoal);
+    }
+
+    .dark .btn-primary:hover {
+        background-color: var(--color-chalk-darker);
+        box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.5);
+    }
+
+    .dark .btn-secondary {
+        color: var(--color-paper);
+        border-color: var(--color-flint);
+    }
+
+    .dark .btn-secondary:hover {
+        background-color: var(--color-graphite);
+        border-color: var(--color-steel);
     }
 }

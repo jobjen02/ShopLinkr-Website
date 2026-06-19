@@ -20,7 +20,7 @@ const carriers = [
     { name: 'Sendcloud', src: '/assets/carriers/Sendcloud.png' },
 ];
 
-const cardLinkClass = 'no-underline text-charcoal hover:text-charcoal';
+const cardLinkClass = 'no-underline text-charcoal dark:text-paper hover:text-charcoal dark:hover:text-paper';
 
 // Mapped routes link to their localized URL; routes without an EN page yet keep
 // their Dutch URL (an EN visitor lands on the NL page until it is translated).
@@ -33,26 +33,26 @@ const f = t.features;
     <div class="container-prose">
         <div class="max-w-2xl mb-12 md:mb-16">
             <p class="eyebrow mb-4">{f.eyebrow}</p>
-            <h2 class="text-4xl md:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+            <h2 class="text-4xl md:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                 {f.heading}
             </h2>
-            <p class="mt-6 text-lg text-steel leading-relaxed">
+            <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
                 {f.intro}
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-            <a href={inventoryHref} class:list={[cardLinkClass, 'md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col justify-between gap-8 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={inventoryHref} class:list={[cardLinkClass, 'md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col justify-between gap-8 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
                 <div>
                     <p class="eyebrow mb-3">{f.stock.eyebrow}</p>
-                    <h3 class="text-3xl md:text-[2.5rem] font-semibold text-charcoal tracking-tight leading-[1.05] mb-5">
+                    <h3 class="text-3xl md:text-[2.5rem] font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05] mb-5">
                         {f.stock.heading}
                     </h3>
-                    <p class="text-steel leading-relaxed text-base md:text-lg max-w-md">
+                    <p class="text-steel dark:text-gravel leading-relaxed text-base md:text-lg max-w-md">
                         {f.stock.body}
                     </p>
                 </div>
-                <ul class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-medium text-charcoal">
+                <ul class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-medium text-charcoal dark:text-paper">
                     {
                         f.stock.bullets.map((bullet) => (
                             <li class="flex items-center gap-2">
@@ -64,12 +64,12 @@ const f = t.features;
                 </ul>
             </a>
 
-            <a href={localizeHref('/integraties', locale)} class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/integraties', locale)} class:list={[cardLinkClass, 'md:col-span-2 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
                 <p class="eyebrow">{f.channels.eyebrow}</p>
                 <div class="flex items-center gap-3 flex-wrap">
                     {
                         channels.map((channel) => (
-                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light ring-1 ring-chalk-dark overflow-hidden">
+                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint overflow-hidden">
                                 <img
                                     src={channel.src}
                                     alt={channel.name}
@@ -82,55 +82,55 @@ const f = t.features;
                         ))
                     }
                 </div>
-                <p class="text-sm text-steel mt-auto">{f.channels.body}</p>
+                <p class="text-sm text-steel dark:text-gravel mt-auto">{f.channels.body}</p>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/gebruikers', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/functionaliteiten/gebruikers', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-users text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.users.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.users.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.users.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.users.body}</p>
                 </div>
             </a>
 
-            <a href={localizeHref('/team', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/team', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-store text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.bolSellers.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.bolSellers.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.bolSellers.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.bolSellers.body}</p>
                 </div>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/regels', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/functionaliteiten/regels', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-wand-magic-sparkles text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.rules.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.rules.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.rules.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.rules.body}</p>
                 </div>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/locatiebeheer', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/functionaliteiten/locatiebeheer', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-location-dot text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.locations.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.locations.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.locations.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.locations.body}</p>
                 </div>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/vervoerders', locale)} class:list={[cardLinkClass, 'md:col-span-2 bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
+            <a href={localizeHref('/functionaliteiten/vervoerders', locale)} class:list={[cardLinkClass, 'md:col-span-2 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
                 <p class="eyebrow">{f.carriers.eyebrow}</p>
                 <div class="flex items-center gap-3 flex-wrap">
                     {
                         carriers.map((carrier) => (
-                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light ring-1 ring-chalk-dark overflow-hidden">
+                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint overflow-hidden">
                                 <img
                                     src={carrier.src}
                                     alt={carrier.name}
@@ -143,50 +143,50 @@ const f = t.features;
                         ))
                     }
                 </div>
-                <p class="text-sm text-steel mt-auto">{f.carriers.body}</p>
+                <p class="text-sm text-steel dark:text-gravel mt-auto">{f.carriers.body}</p>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-route text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.pickRoute.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.pickRoute.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.pickRoute.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.pickRoute.body}</p>
                 </div>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/rapporten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/functionaliteiten/rapporten', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-chart-line text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.profit.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.profit.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.profit.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.profit.body}</p>
                 </div>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-barcode-read text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.scanner.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.scanner.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.scanner.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.scanner.body}</p>
                 </div>
             </a>
 
-            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker']}>
-                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+            <a href={localizeHref('/functionaliteiten/picklijsten', locale)} class:list={[cardLinkClass, 'bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col justify-between gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel']}>
+                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/5 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                     <i class="fa-duotone fa-solid fa-print text-xl" style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                 </div>
                 <div>
-                    <p class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{f.autoprint.title}</p>
-                    <p class="text-sm text-steel mt-1.5">{f.autoprint.body}</p>
+                    <p class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{f.autoprint.title}</p>
+                    <p class="text-sm text-steel dark:text-gravel mt-1.5">{f.autoprint.body}</p>
                 </div>
             </a>
 
-            <article class="md:col-span-4 bg-charcoal text-paper rounded-2xl p-6 md:p-8 transition duration-300 ease-out hover:bg-charcoal/95">
+            <article class="md:col-span-4 bg-charcoal dark:bg-graphite text-paper rounded-2xl p-6 md:p-8 transition duration-300 ease-out hover:bg-charcoal/95 dark:hover:bg-graphite/95">
                 <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5">
                     <div class="flex-1">
                         <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/50 mb-2">{f.pricing.eyebrow}</p>

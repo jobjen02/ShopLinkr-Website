@@ -75,7 +75,7 @@ const socials = [
 const year = new Date().getFullYear();
 ---
 
-<footer class="bg-paper border-t border-chalk-dark">
+<footer class="bg-paper dark:bg-charcoal border-t border-chalk-dark dark:border-flint">
     <div class="container-prose pt-20 pb-10">
         <div class="grid grid-cols-2 md:grid-cols-12 gap-x-8 gap-y-12 mb-16">
             <div class="col-span-2 md:col-span-4 md:pr-8">
@@ -85,10 +85,17 @@ const year = new Date().getFullYear();
                         alt="ShopLinkr"
                         width="140"
                         height="32"
-                        class="h-7 w-auto"
+                        class="h-7 w-auto dark:hidden"
+                    />
+                    <img
+                        src="/logo/logo-white.svg"
+                        alt="ShopLinkr"
+                        width="140"
+                        height="32"
+                        class="h-7 w-auto hidden dark:block"
                     />
                 </a>
-                <p class="text-sm leading-relaxed max-w-sm text-steel mb-7">
+                <p class="text-sm leading-relaxed max-w-sm text-steel dark:text-gravel mb-7">
                     {t.footer.description}
                 </p>
 
@@ -102,7 +109,7 @@ const year = new Date().getFullYear();
                                 aria-label={social.label}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="group h-9 w-9 inline-flex items-center justify-center rounded-md ring-1 ring-chalk-dark hover:ring-sunstone-deep/40 hover:bg-sunstone-mist/40 transition-colors"
+                                class="group h-9 w-9 inline-flex items-center justify-center rounded-md ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-deep/40 hover:bg-sunstone-mist/40 dark:hover:bg-sunstone/5 transition-colors"
                             >
                                 <svg
                                     viewBox="0 0 24 24"
@@ -120,7 +127,7 @@ const year = new Date().getFullYear();
             {
                 sections.map((section) => (
                     <div class="md:col-span-2">
-                        <h3 class="text-charcoal font-semibold text-sm mb-5">
+                        <h3 class="text-charcoal dark:text-paper font-semibold text-sm mb-5">
                             {section.title}
                         </h3>
                         <ul class="space-y-3 text-sm">
@@ -128,7 +135,7 @@ const year = new Date().getFullYear();
                                 <li>
                                     <a
                                         href={link.href}
-                                        class="text-steel hover:text-sunstone-deep transition-colors"
+                                        class="text-steel dark:text-gravel hover:text-sunstone-deep transition-colors"
                                     >
                                         {link.label}
                                     </a>
@@ -140,14 +147,14 @@ const year = new Date().getFullYear();
             }
         </div>
 
-        <div class="pt-8 border-t border-chalk-dark flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gravel">
+        <div class="pt-8 border-t border-chalk-dark dark:border-flint flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gravel">
             <div class="flex flex-wrap items-center gap-x-6 gap-y-1">
                 <p>© {year} ShopLinkr. {t.footer.rights}</p>
                 <a
                     href={externalLinks.privacyPdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="-my-1.5 py-3 hover:text-charcoal transition-colors"
+                    class="-my-1.5 py-3 hover:text-charcoal dark:hover:text-paper transition-colors"
                 >
                     {t.footer.privacy}
                 </a>
@@ -155,13 +162,13 @@ const year = new Date().getFullYear();
                     href={externalLinks.termsPdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="-my-1.5 py-3 hover:text-charcoal transition-colors"
+                    class="-my-1.5 py-3 hover:text-charcoal dark:hover:text-paper transition-colors"
                 >
                     {t.footer.terms}
                 </a>
                 <a
                     href={L('/cookies')}
-                    class="-my-1.5 py-3 hover:text-charcoal transition-colors"
+                    class="-my-1.5 py-3 hover:text-charcoal dark:hover:text-paper transition-colors"
                 >
                     {t.footer.cookies}
                 </a>

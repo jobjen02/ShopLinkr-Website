@@ -152,27 +152,27 @@ const quickFacts = [
     alternates={alternates}
     jsonLd={jsonLd}
 >
-    <section class="relative bg-paper overflow-clip">
+    <section class="relative bg-paper dark:bg-charcoal overflow-clip">
         <div class="absolute inset-x-0 top-0 -z-0 pointer-events-none h-[600px]">
-            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] opacity-60"></div>
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(247,148,29,0.05),transparent_65%)] opacity-60"></div>
         </div>
 
         <div class="container-prose pt-10 md:pt-14 pb-20 md:pb-28 relative">
             <nav aria-label="Breadcrumb" class="mb-10">
                 <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
                     <li>
-                        <a href={homeHref} class="hover:text-charcoal transition-colors">{p.breadcrumbHome}</a>
+                        <a href={homeHref} class="hover:text-charcoal dark:hover:text-paper transition-colors">{p.breadcrumbHome}</a>
                     </li>
                     <li aria-hidden="true">
                         <i class="fa-solid fa-chevron-right text-[9px]"></i>
                     </li>
                     <li>
-                        <a href={integrationsHref} class="hover:text-charcoal transition-colors">{p.breadcrumbIntegrations}</a>
+                        <a href={integrationsHref} class="hover:text-charcoal dark:hover:text-paper transition-colors">{p.breadcrumbIntegrations}</a>
                     </li>
                     <li aria-hidden="true">
                         <i class="fa-solid fa-chevron-right text-[9px]"></i>
                     </li>
-                    <li class="text-charcoal font-medium" aria-current="page">
+                    <li class="text-charcoal dark:text-paper font-medium" aria-current="page">
                         {name}
                     </li>
                 </ol>
@@ -181,30 +181,30 @@ const quickFacts = [
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
                 <div class="lg:col-span-8 lg:col-start-1 lg:row-start-1">
                     <header class="pb-14 md:pb-16">
-                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                             {p.h1Prefix} {name}.
                         </h1>
-                        <p class="mt-6 text-base md:text-lg text-steel leading-relaxed max-w-2xl">
+                        <p class="mt-6 text-base md:text-lg text-steel dark:text-gravel leading-relaxed max-w-2xl">
                             {effectiveTagline}
                         </p>
-                        <p class="mt-3 text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                        <p class="mt-3 text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl">
                             {summary}
                         </p>
                     </header>
 
-                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                    <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
                         <p class="eyebrow mb-3">{p.aboutEyebrow} {name}</p>
-                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5">
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-5">
                             {p.aboutHeadingPrefix} {name}?
                         </h2>
-                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl">
+                        <p class="text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl">
                             {effectiveAbout}
                         </p>
                     </section>
 
-                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                    <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
                         <p class="eyebrow mb-3">{p.benefitsEyebrow}</p>
-                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
                             {p.benefitsHeading}
                         </h2>
 
@@ -212,14 +212,14 @@ const quickFacts = [
                             {
                                 benefits.map((benefit) => (
                                     <li class="flex items-start gap-5">
-                                        <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                        <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 flex-shrink-0">
                                             <i class={`${benefit.icon} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                                         </div>
                                         <div class="pt-0.5">
-                                            <h3 class="text-base md:text-lg font-semibold text-charcoal mb-1.5 tracking-tight leading-snug">
+                                            <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper mb-1.5 tracking-tight leading-snug">
                                                 {benefit.title}
                                             </h3>
-                                            <p class="text-sm md:text-[15px] text-steel leading-relaxed max-w-2xl">
+                                            <p class="text-sm md:text-[15px] text-steel dark:text-gravel leading-relaxed max-w-2xl">
                                                 {benefit.body}
                                             </p>
                                         </div>
@@ -229,19 +229,19 @@ const quickFacts = [
                         </ul>
                     </section>
 
-                    <section class="border-t border-chalk-dark py-14 md:py-16">
+                    <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
                         <p class="eyebrow mb-3">{p.getStartedEyebrow}</p>
-                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-5 max-w-2xl">
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-5 max-w-2xl">
                             {p.getStartedHeadingPrefix} {name}{p.getStartedHeadingSuffix}
                         </h2>
-                        <p class="text-sm md:text-base text-steel leading-relaxed max-w-2xl mb-8">
+                        <p class="text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl mb-8">
                             {p.getStartedBody}
                         </p>
 
                         {supportSlug ? (
                             <a
                                 href={supportHref}
-                                class="group flex items-center gap-5 bg-charcoal text-paper rounded-xl p-6 md:p-7 hover:bg-charcoal/95 transition-all duration-200"
+                                class="group flex items-center gap-5 bg-charcoal dark:bg-graphite text-paper rounded-xl p-6 md:p-7 hover:bg-charcoal/95 transition-all duration-200"
                             >
                                 <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-paper/10 text-paper flex-shrink-0">
                                     <i class="fa-solid fa-book-open text-base" aria-hidden="true"></i>
@@ -259,7 +259,7 @@ const quickFacts = [
                         ) : (
                             <a
                                 href={supportHref}
-                                class="group inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                class="group inline-flex items-center gap-2 text-sm font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
                             >
                                 {p.guideFallbackLink}
                                 <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
@@ -270,9 +270,9 @@ const quickFacts = [
 
                 <aside class="lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-2">
                     <div class="lg:sticky lg:top-24 space-y-5">
-                        <div class="bg-chalk-light/60 rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                        <div class="bg-chalk-light/60 dark:bg-graphite rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="h-16 w-16 rounded-xl bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <div class="h-16 w-16 rounded-xl bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                     <img
                                         src={logo}
                                         alt={`${name} logo`}
@@ -284,11 +284,11 @@ const quickFacts = [
                                         {categoryLabel}
                                     </p>
                                     {isComingSoon ? (
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
                                             {p.badgeComingSoon}
                                         </span>
                                     ) : (
-                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-paper text-charcoal text-[10px] font-semibold uppercase tracking-wider ring-1 ring-chalk-dark">
+                                        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-paper dark:bg-flint text-charcoal dark:text-paper text-[10px] font-semibold uppercase tracking-wider ring-1 ring-chalk-dark dark:ring-flint">
                                             <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
                                             {p.badgeLive}
                                         </span>
@@ -296,10 +296,10 @@ const quickFacts = [
                                 </div>
                             </div>
 
-                            <ul class="space-y-2.5 pb-5 mb-5 border-b border-chalk-dark">
+                            <ul class="space-y-2.5 pb-5 mb-5 border-b border-chalk-dark dark:border-flint">
                                 {
                                     quickFacts.map((fact) => (
-                                        <li class="flex items-center gap-2.5 text-[13px] text-charcoal">
+                                        <li class="flex items-center gap-2.5 text-[13px] text-charcoal dark:text-paper">
                                             <i class={`${fact.icon} text-xs text-sunstone-deep`} aria-hidden="true"></i>
                                             {fact.label}
                                         </li>
@@ -311,7 +311,7 @@ const quickFacts = [
                                 {supportSlug && (
                                     <a
                                         href={supportHref}
-                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-sunstone-soft hover:bg-sunstone-mist/30 px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                        class="flex items-center justify-between gap-3 bg-paper dark:bg-flint rounded-lg ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-soft dark:hover:ring-sunstone/30 hover:bg-sunstone-mist/30 dark:hover:bg-sunstone/10 px-4 py-3 text-sm font-medium text-charcoal dark:text-paper transition-all"
                                     >
                                         <span class="inline-flex items-center gap-2.5">
                                             <i class="fa-solid fa-book-open text-xs text-sunstone-deep" aria-hidden="true"></i>
@@ -325,7 +325,7 @@ const quickFacts = [
                                         href={url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        class="flex items-center justify-between gap-3 bg-paper rounded-lg ring-1 ring-chalk-dark hover:ring-chalk-darker px-4 py-3 text-sm font-medium text-charcoal transition-all"
+                                        class="flex items-center justify-between gap-3 bg-paper dark:bg-flint rounded-lg ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel px-4 py-3 text-sm font-medium text-charcoal dark:text-paper transition-all"
                                     >
                                         <span class="inline-flex items-center gap-2.5">
                                             <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gravel" aria-hidden="true"></i>
@@ -361,9 +361,9 @@ const quickFacts = [
 
                 <div class="lg:col-span-8 lg:col-start-1 lg:row-start-2">
                     {faqs && faqs.length > 0 && (
-                        <section class="border-t border-chalk-dark py-14 md:py-16">
+                        <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
                             <p class="eyebrow mb-3">{p.faqEyebrow}</p>
-                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
                                 {p.faqHeadingPrefix}{name}{p.faqHeadingSuffix}
                             </h2>
 
@@ -377,9 +377,9 @@ const quickFacts = [
                     )}
 
                     {related.length > 0 && (
-                        <section class="border-t border-chalk-dark pt-14 md:pt-16">
+                        <section class="border-t border-chalk-dark dark:border-flint pt-14 md:pt-16">
                             <p class="eyebrow mb-3">{p.relatedEyebrow}</p>
-                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-[1.15] mb-8 md:mb-10">
+                            <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-8 md:mb-10">
                                 {relatedHeading}.
                             </h2>
 
@@ -396,7 +396,7 @@ const quickFacts = [
                             <div class="mt-8">
                                 <a
                                     href={integrationsHref}
-                                    class="inline-flex items-center gap-2 text-sm font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                    class="inline-flex items-center gap-2 text-sm font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
                                 >
                                     {p.relatedSeeAll}
                                     <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>

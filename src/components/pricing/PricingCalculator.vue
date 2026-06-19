@@ -342,18 +342,18 @@ watch(orderSliderValue, (newValue) => {
     <section class="py-12 md:py-16">
         <div class="container-prose">
             <div class="grid lg:grid-cols-5 gap-8 lg:gap-12">
-                <div class="lg:col-span-3 bg-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-12">
+                <div class="lg:col-span-3 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-12">
                     <p class="eyebrow mb-3">{{ t.eyebrow }}</p>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal tracking-tight leading-tight mb-10">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-tight mb-10">
                         {{ t.heading }}
                     </h2>
 
                     <div class="mb-10">
                         <div class="flex items-baseline justify-between mb-4">
-                            <label for="channels-input" class="text-sm font-semibold text-charcoal">
+                            <label for="channels-input" class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.channelsLabel }}
                             </label>
-                            <span class="text-base font-semibold text-charcoal tabular-nums">
+                            <span class="text-base font-semibold text-charcoal dark:text-paper tabular-nums">
                                 {{ channelLabel }}
                             </span>
                         </div>
@@ -376,7 +376,7 @@ watch(orderSliderValue, (newValue) => {
                             <span
                                 v-for="tick in channelTickPositions"
                                 :key="`mark-channel-${tick.value}`"
-                                class="absolute top-0 w-px h-1.5 bg-chalk-darker"
+                                class="absolute top-0 w-px h-1.5 bg-chalk-darker dark:bg-flint"
                                 :style="{ left: `${tick.percent}%` }"
                                 aria-hidden="true"
                             ></span>
@@ -398,10 +398,10 @@ watch(orderSliderValue, (newValue) => {
 
                     <div class="mb-10">
                         <div class="flex items-baseline justify-between mb-4">
-                            <label for="orders-input" class="text-sm font-semibold text-charcoal">
+                            <label for="orders-input" class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.ordersLabel }}
                             </label>
-                            <span class="text-base font-semibold text-charcoal tabular-nums">
+                            <span class="text-base font-semibold text-charcoal dark:text-paper tabular-nums">
                                 {{ ordersLabel }}
                             </span>
                         </div>
@@ -424,7 +424,7 @@ watch(orderSliderValue, (newValue) => {
                             <span
                                 v-for="tick in orderTickPositions"
                                 :key="`mark-${tick.value}`"
-                                class="absolute top-0 w-px h-1.5 bg-chalk-darker"
+                                class="absolute top-0 w-px h-1.5 bg-chalk-darker dark:bg-flint"
                                 :style="{ left: `${tick.percent}%` }"
                                 aria-hidden="true"
                             ></span>
@@ -444,28 +444,28 @@ watch(orderSliderValue, (newValue) => {
                         </div>
                     </div>
 
-                    <div class="pt-8 border-t border-chalk-dark">
+                    <div class="pt-8 border-t border-chalk-dark dark:border-flint">
                         <p class="eyebrow mb-5">{{ t.breakdown }}</p>
                         <dl class="space-y-3 text-sm">
                             <div class="flex items-baseline justify-between gap-4">
-                                <dt class="text-steel">
+                                <dt class="text-steel dark:text-gravel">
                                     {{ t.channelsRow }}
                                     <span class="text-gravel">
                                         ({{ channels }})
                                     </span>
                                 </dt>
-                                <dd class="text-charcoal font-medium tabular-nums whitespace-nowrap">
+                                <dd class="text-charcoal dark:text-paper font-medium tabular-nums whitespace-nowrap">
                                     &euro; {{ formattedChannelCost }}
                                 </dd>
                             </div>
                             <div class="flex items-baseline justify-between gap-4">
-                                <dt class="text-steel">
+                                <dt class="text-steel dark:text-gravel">
                                     {{ t.ordersRow }}
                                     <span v-if="orders > 0" class="text-gravel">
                                         ({{ formattedOrders }})
                                     </span>
                                 </dt>
-                                <dd class="text-charcoal font-medium tabular-nums whitespace-nowrap">
+                                <dd class="text-charcoal dark:text-paper font-medium tabular-nums whitespace-nowrap">
                                     &euro; {{ formattedOrderCost }}
                                 </dd>
                             </div>
@@ -473,7 +473,7 @@ watch(orderSliderValue, (newValue) => {
                     </div>
                 </div>
 
-                <aside class="lg:col-span-2 bg-charcoal text-paper rounded-2xl p-8 md:p-12 flex flex-col">
+                <aside class="lg:col-span-2 bg-charcoal dark:bg-graphite text-paper rounded-2xl p-8 md:p-12 flex flex-col">
                     <p class="text-xs uppercase tracking-[0.08em] font-semibold text-sunstone mb-4">
                         {{ t.monthlyPrice }}
                     </p>
@@ -620,5 +620,43 @@ watch(orderSliderValue, (newValue) => {
 
 .pricing-range:focus-visible::-moz-range-thumb {
     box-shadow: 0 0 0 4px var(--color-sunstone-mist);
+}
+
+</style>
+
+<style>
+/* Dark mode (UNSCOPED so the `.dark` class on <html>, outside this component,
+   matches). The slider fill is the primary neutral and inverts exactly like the
+   primary buttons: charcoal (light) -> paper (dark). The unfilled track goes
+   chalk-dark -> flint, and the knob inverts too (paper+charcoal border ->
+   charcoal+paper border) so it stays visible on the now-light fill. */
+.dark .pricing-range::-webkit-slider-runnable-track {
+    background: linear-gradient(
+        to right,
+        var(--color-paper) 0%,
+        var(--color-paper) var(--progress, 0%),
+        var(--color-flint) var(--progress, 0%),
+        var(--color-flint) 100%
+    );
+}
+
+.dark .pricing-range::-moz-range-track {
+    background: var(--color-flint);
+}
+
+.dark .pricing-range::-moz-range-progress {
+    background-color: var(--color-paper);
+}
+
+.dark .pricing-range::-webkit-slider-thumb {
+    background-color: var(--color-charcoal);
+    border-color: var(--color-paper);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dark .pricing-range::-moz-range-thumb {
+    background-color: var(--color-charcoal);
+    border-color: var(--color-paper);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 </style>

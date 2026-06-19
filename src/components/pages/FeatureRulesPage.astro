@@ -60,7 +60,7 @@ const jsonLd = [
     routeKey="features.rules"
     jsonLd={jsonLd}
 >
-    <section class="pb-12 md:pb-16 bg-paper">
+    <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="flex flex-col sm:flex-row gap-3">
                 <a
@@ -84,33 +84,33 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-12 md:py-16 bg-paper">
+    <section class="py-12 md:py-16 bg-paper dark:bg-charcoal">
         <div class="container-wide">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper rounded-2xl ring-1 ring-chalk-dark p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                     <div>
                         <p class="eyebrow mb-3">{p.mockupEyebrow}</p>
-                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal tracking-tight leading-[1.05]">
+                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05]">
                             {p.mockupHeadingLine1}
                             <span class="block">{p.mockupHeadingLine2}</span>
                         </h2>
                     </div>
 
-                    <div class="bg-paper rounded-xl ring-1 ring-chalk-dark p-5 md:p-6 flex flex-col gap-5 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                    <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 flex flex-col gap-5 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center gap-3">
-                            <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                            <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class="fa-solid fa-filter text-[0.7rem]" aria-hidden="true"></i>
                             </span>
                             <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">{p.mockupIf}</span>
                         </div>
                         <div class="flex flex-wrap items-center gap-2 text-sm">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">{p.mockupTotalWeight}</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint font-medium text-charcoal dark:text-paper">{p.mockupTotalWeight}</span>
                             <span class="text-gravel font-mono text-xs">&lt;</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal tabular-nums">{p.mockupWeightValue}</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint font-medium text-charcoal dark:text-paper tabular-nums">{p.mockupWeightValue}</span>
                             <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">{p.mockupAnd}</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">{p.mockupCountry}</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint font-medium text-charcoal dark:text-paper">{p.mockupCountry}</span>
                             <span class="text-gravel font-mono text-xs">=</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light ring-1 ring-chalk-dark font-medium text-charcoal">{p.mockupCountryValue}</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint font-medium text-charcoal dark:text-paper">{p.mockupCountryValue}</span>
                         </div>
 
                         <div class="flex justify-center py-1">
@@ -118,33 +118,33 @@ const jsonLd = [
                         </div>
 
                         <div class="flex items-center gap-3">
-                            <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                            <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class="fa-solid fa-bolt text-[0.7rem]" aria-hidden="true"></i>
                             </span>
                             <span class="text-[11px] uppercase tracking-[0.12em] font-semibold text-gravel">{p.mockupThen}</span>
                         </div>
                         <div class="flex flex-wrap items-center gap-2 text-sm">
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-charcoal text-paper font-medium">{p.mockupShippingOption}</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-charcoal dark:bg-graphite text-paper font-medium">{p.mockupShippingOption}</span>
                             <span class="text-gravel font-mono text-xs">→</span>
-                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-charcoal text-paper font-medium">{p.mockupShippingValue}</span>
+                            <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-charcoal dark:bg-graphite text-paper font-medium">{p.mockupShippingValue}</span>
                         </div>
                     </div>
 
-                    <p class="text-steel leading-relaxed text-sm md:text-[0.95rem]">
+                    <p class="text-steel dark:text-gravel leading-relaxed text-sm md:text-[0.95rem]">
                         {p.mockupFooter}
                     </p>
                 </article>
 
                 {
                     subFeatures.map((feature) => (
-                        <article class="bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40">
+                        <article class="bg-paper dark:bg-graphite rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </div>
                             <div>
                                 <p class="text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel mb-1.5">{feature.eyebrow}</p>
-                                <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight leading-snug">{feature.heading}</h3>
-                                <p class="text-sm text-steel leading-relaxed mt-2">{feature.body}</p>
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{feature.heading}</h3>
+                                <p class="text-sm text-steel dark:text-gravel leading-relaxed mt-2">{feature.body}</p>
                             </div>
                         </article>
                     ))
@@ -153,37 +153,37 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light">
+    <section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                 <div class="lg:col-span-5">
                     <p class="eyebrow mb-4">{p.examplesEyebrow}</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                         {p.examplesHeadingLine1}
                         <span class="block text-sunstone-deep">{p.examplesHeadingLine2}</span>
                     </h2>
-                    <p class="mt-6 text-base text-steel leading-relaxed">
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                         {p.examplesIntro}
                     </p>
                 </div>
 
                 <div class="lg:col-span-7">
-                    <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+                    <ul class="divide-y divide-chalk-dark dark:divide-flint border-y border-chalk-dark dark:border-flint">
                         {
                             ruleExamples.map((example) => (
                                 <li class="py-7 flex flex-col gap-4">
-                                    <h3 class="text-lg font-semibold text-charcoal tracking-tight leading-snug">{example.title}</h3>
+                                    <h3 class="text-lg font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{example.title}</h3>
                                     <div class="grid sm:grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-[0.975rem]">
                                         <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel pt-1">
                                             <i class="fa-solid fa-filter text-sunstone-deep text-xs" aria-hidden="true"></i>
                                             {p.exampleIf}
                                         </span>
-                                        <p class="text-steel leading-relaxed">{example.condition}</p>
+                                        <p class="text-steel dark:text-gravel leading-relaxed">{example.condition}</p>
                                         <span class="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.08em] font-semibold text-gravel pt-1">
                                             <i class="fa-solid fa-bolt text-sunstone-deep text-xs" aria-hidden="true"></i>
                                             {p.exampleThen}
                                         </span>
-                                        <p class="text-steel leading-relaxed">{example.action}</p>
+                                        <p class="text-steel dark:text-gravel leading-relaxed">{example.action}</p>
                                     </div>
                                 </li>
                             ))
@@ -194,19 +194,19 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-paper">
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
                 <div class="lg:col-span-4">
                     <p class="eyebrow mb-4">{p.faqEyebrow}</p>
-                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                         {p.faqHeadingLine1}
                         <span class="block text-sunstone-deep">{p.faqHeadingLine2}</span>
                     </h2>
-                    <p class="mt-6 text-base text-steel leading-relaxed">
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                         {p.faqIntro}
                     </p>
-                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal font-semibold text-sm">
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal dark:text-paper font-semibold text-sm">
                         {p.faqCta}
                         <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
                     </a>

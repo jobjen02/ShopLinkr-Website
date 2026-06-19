@@ -38,7 +38,7 @@ const integrations = [
 ];
 ---
 
-<section class="border-y border-chalk-dark bg-paper py-14 md:py-16">
+<section class="border-y border-chalk-dark dark:border-flint bg-paper dark:bg-charcoal py-14 md:py-16">
     <div class="container-prose">
         <p class="text-[11px] uppercase tracking-[0.22em] text-gravel font-semibold text-center mb-14">
             {t.trustBar.heading}
@@ -115,6 +115,16 @@ const integrations = [
         max-width: 9rem;
         object-fit: contain;
         transition: transform 0.3s ease;
+    }
+
+    /* Dark mode: the raw partner logos are mixed (transparent dark wordmarks +
+       white-background marks), so neither raw-on-dark nor a white-ize filter
+       works. Put each logo on a light chip, exactly like the integration cards,
+       so every logo stays legible and on-brand. */
+    :global(.dark) .marquee-item {
+        background-color: var(--color-paper);
+        border-radius: 0.625rem;
+        padding-inline: 1.25rem;
     }
 
     @media (min-width: 768px) {

@@ -76,7 +76,7 @@ const commissiePath = buildAreaPath(financialCommissie, volumeWidth, volumeHeigh
 const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
 ---
 
-<div class="dashboard-preview relative bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]" role="img" aria-label={dp.aria}>
+<div class="dashboard-preview relative bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]" role="img" aria-label={dp.aria}>
     <aside class="w-60 bg-sunstone flex flex-col flex-shrink-0">
         <div class="px-5 pt-5 pb-5">
             <img src="/logo/logo-white.svg" alt="ShopLinkr" class="h-6 w-auto" />
@@ -129,15 +129,15 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         </div>
     </aside>
 
-    <div class="flex-1 bg-chalk-light p-5 overflow-hidden">
+    <div class="flex-1 bg-chalk-light dark:bg-charcoal p-5 overflow-hidden">
         <div class="grid grid-cols-5 gap-3 mb-4">
             {
                 counters.map((counter) => (
-                    <div class="bg-paper ring-1 ring-chalk rounded-md px-3.5 py-3 flex items-center gap-3">
+                    <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md px-3.5 py-3 flex items-center gap-3">
                         <i class={`fa-regular ${counter.icon} text-[15px] text-gravel flex-shrink-0`}></i>
                         <div class="min-w-0">
                             <p class="text-[12px] text-gravel truncate leading-tight">{counter.label}</p>
-                            <p class="text-sm font-semibold text-charcoal tabular-nums leading-tight mt-0.5">{counter.value}</p>
+                            <p class="text-sm font-semibold text-charcoal dark:text-paper tabular-nums leading-tight mt-0.5">{counter.value}</p>
                         </div>
                     </div>
                 ))
@@ -145,11 +145,11 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         </div>
 
         <div class="flex items-center gap-2 mb-4">
-            <div class="bg-paper ring-1 ring-chalk rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal">
+            <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal dark:text-paper">
                 <span>{dp.dateRangeLabel}</span>
                 <i class="fa-solid fa-chevron-down text-[10px] text-gravel"></i>
             </div>
-            <div class="bg-paper ring-1 ring-chalk rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal">
+            <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md px-3 py-2 flex items-center gap-2 text-sm text-charcoal dark:text-paper">
                 <i class="fa-regular fa-calendar text-gravel"></i>
                 <span class="tabular-nums">{dp.dateRange}</span>
             </div>
@@ -158,10 +158,10 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         <div class="grid grid-cols-4 gap-3 mb-3">
             {
                 statsRow1.map((stat) => (
-                    <div class="bg-paper ring-1 ring-chalk rounded-md px-4 py-3.5">
+                    <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md px-4 py-3.5">
                         <p class="text-[12px] text-gravel mb-1.5">{stat.label}</p>
                         <div class="flex items-baseline gap-2">
-                            <p class="text-xl font-semibold text-charcoal tabular-nums leading-none">{stat.value}</p>
+                            <p class="text-xl font-semibold text-charcoal dark:text-paper tabular-nums leading-none">{stat.value}</p>
                             <div class={`flex items-center gap-0.5 text-[11px] font-semibold tabular-nums ${stat.positive ? 'text-green' : 'text-red'}`}>
                                 <i class={`fa-solid ${stat.positive ? 'fa-arrow-up' : 'fa-arrow-down'} text-[9px]`}></i>
                                 <span>{stat.delta}</span>
@@ -175,10 +175,10 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         <div class="grid grid-cols-4 gap-3 mb-4">
             {
                 statsRow2.map((stat) => (
-                    <div class="bg-paper ring-1 ring-chalk rounded-md px-4 py-3.5">
+                    <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md px-4 py-3.5">
                         <p class="text-[12px] text-gravel mb-1.5">{stat.label}</p>
                         <div class="flex items-baseline gap-2">
-                            <p class="text-xl font-semibold text-charcoal tabular-nums leading-none">{stat.value}</p>
+                            <p class="text-xl font-semibold text-charcoal dark:text-paper tabular-nums leading-none">{stat.value}</p>
                             <div class={`flex items-center gap-0.5 text-[11px] font-semibold tabular-nums ${stat.positive ? 'text-green' : 'text-red'}`}>
                                 <i class={`fa-solid ${stat.positive ? 'fa-arrow-up' : 'fa-arrow-down'} text-[9px]`}></i>
                                 <span>{stat.delta}</span>
@@ -190,9 +190,9 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         </div>
 
         <div class="grid grid-cols-2 gap-3 mb-3">
-            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+            <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md p-4">
                 <div class="flex items-center justify-between mb-3">
-                    <p class="text-sm font-semibold text-charcoal">{dp.charts.volumeTitle}</p>
+                    <p class="text-sm font-semibold text-charcoal dark:text-paper">{dp.charts.volumeTitle}</p>
                     <div class="flex items-center gap-3 text-[11px]">
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-sunstone"></span>
@@ -212,9 +212,9 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                 </svg>
             </div>
 
-            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+            <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md p-4">
                 <div class="flex items-center justify-between mb-3">
-                    <p class="text-sm font-semibold text-charcoal">{dp.charts.financialTitle}</p>
+                    <p class="text-sm font-semibold text-charcoal dark:text-paper">{dp.charts.financialTitle}</p>
                     <div class="flex items-center gap-3 text-[11px]">
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-sunstone"></span>
@@ -241,9 +241,9 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
         </div>
 
         <div class="grid grid-cols-2 gap-3">
-            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+            <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md p-4">
                 <div class="flex items-center justify-between mb-3">
-                    <p class="text-sm font-semibold text-charcoal">{dp.charts.marginsTitle}</p>
+                    <p class="text-sm font-semibold text-charcoal dark:text-paper">{dp.charts.marginsTitle}</p>
                     <div class="flex items-center gap-3 text-[11px]">
                         <span class="inline-flex items-center gap-1.5">
                             <span class="h-2 w-2 rounded-full bg-green"></span>
@@ -265,11 +265,11 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                 </svg>
             </div>
 
-            <div class="bg-paper ring-1 ring-chalk rounded-md p-4">
+            <div class="bg-paper dark:bg-graphite ring-1 ring-chalk dark:ring-flint rounded-md p-4">
                 <div class="flex items-center justify-between mb-4">
-                    <p class="text-sm font-semibold text-charcoal">{dp.charts.channelsTitle}</p>
-                    <div class="inline-flex items-center bg-chalk rounded-md p-0.5 text-[10px] font-medium">
-                        <span class="px-2 py-1 bg-paper text-charcoal rounded">{dp.charts.channelsTabRevenue}</span>
+                    <p class="text-sm font-semibold text-charcoal dark:text-paper">{dp.charts.channelsTitle}</p>
+                    <div class="inline-flex items-center bg-chalk dark:bg-flint rounded-md p-0.5 text-[10px] font-medium">
+                        <span class="px-2 py-1 bg-paper dark:bg-graphite text-charcoal dark:text-paper rounded">{dp.charts.channelsTabRevenue}</span>
                         <span class="px-2 py-1 text-gravel">{dp.charts.channelsTabProfit}</span>
                         <span class="px-2 py-1 text-gravel">{dp.charts.channelsTabOrders}</span>
                     </div>
@@ -277,14 +277,14 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                 <div class="flex items-center gap-6">
                     <div class="relative flex-shrink-0">
                         <svg viewBox="0 0 100 100" class="w-32 h-32">
-                            <circle cx="50" cy="50" r="36" fill="none" stroke="#f3f3f3" stroke-width="14" />
+                            <circle cx="50" cy="50" r="36" fill="none" stroke="#f3f3f3" class="dark:stroke-[#3c3c3c]" stroke-width="14" />
                             <circle cx="50" cy="50" r="36" fill="none" stroke="#e8b679" stroke-width="14" stroke-dasharray="158 226" stroke-linecap="butt" transform="rotate(-90 50 50)" />
                             <circle cx="50" cy="50" r="36" fill="none" stroke="#22c55e" stroke-width="14" stroke-dasharray="50 226" stroke-dashoffset="-158" stroke-linecap="butt" transform="rotate(-90 50 50)" />
                             <circle cx="50" cy="50" r="36" fill="none" stroke="#f87171" stroke-width="14" stroke-dasharray="18 226" stroke-dashoffset="-208" stroke-linecap="butt" transform="rotate(-90 50 50)" />
                         </svg>
                         <div class="absolute inset-0 flex flex-col items-center justify-center">
                             <p class="text-[10px] text-gravel leading-none">{dp.charts.channelsTotal}</p>
-                            <p class="text-sm font-semibold text-charcoal tabular-nums leading-tight mt-1">{dp.charts.channelsTotalValue}</p>
+                            <p class="text-sm font-semibold text-charcoal dark:text-paper tabular-nums leading-tight mt-1">{dp.charts.channelsTotalValue}</p>
                         </div>
                     </div>
                     <ul class="space-y-2.5 text-xs flex-1">
@@ -293,21 +293,21 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                                 <span class="h-2 w-2 rounded-full bg-sunstone"></span>
                                 <span class="text-gravel">{dp.charts.channelsOwnShop}</span>
                             </span>
-                            <span class="text-charcoal font-medium tabular-nums">70%</span>
+                            <span class="text-charcoal dark:text-paper font-medium tabular-nums">70%</span>
                         </li>
                         <li class="flex items-center justify-between gap-2">
                             <span class="inline-flex items-center gap-2">
                                 <span class="h-2 w-2 rounded-full bg-green"></span>
                                 <span class="text-gravel">{dp.charts.channelsBol}</span>
                             </span>
-                            <span class="text-charcoal font-medium tabular-nums">22%</span>
+                            <span class="text-charcoal dark:text-paper font-medium tabular-nums">22%</span>
                         </li>
                         <li class="flex items-center justify-between gap-2">
                             <span class="inline-flex items-center gap-2">
                                 <span class="h-2 w-2 rounded-full bg-red-light"></span>
                                 <span class="text-gravel">{dp.charts.channelsMarketplace}</span>
                             </span>
-                            <span class="text-charcoal font-medium tabular-nums">8%</span>
+                            <span class="text-charcoal dark:text-paper font-medium tabular-nums">8%</span>
                         </li>
                     </ul>
                 </div>

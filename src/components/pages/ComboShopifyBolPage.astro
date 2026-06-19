@@ -82,23 +82,23 @@ const jsonLd = [
     routeKey="integrations.shopifyBol"
     jsonLd={jsonLd}
 >
-    <section class="pb-12 md:pb-16 bg-paper">
+    <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <nav aria-label="Breadcrumb" class="mb-8">
                 <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
                     <li>
-                        <a href={localizeHref('/', locale)} class="hover:text-charcoal transition-colors">{p.crumbHome}</a>
+                        <a href={localizeHref('/', locale)} class="hover:text-charcoal dark:hover:text-paper transition-colors">{p.crumbHome}</a>
                     </li>
                     <li aria-hidden="true">
                         <i class="fa-solid fa-chevron-right text-[9px]"></i>
                     </li>
                     <li>
-                        <a href={localizeHref('/integraties', locale)} class="hover:text-charcoal transition-colors">{p.crumbIntegrations}</a>
+                        <a href={localizeHref('/integraties', locale)} class="hover:text-charcoal dark:hover:text-paper transition-colors">{p.crumbIntegrations}</a>
                     </li>
                     <li aria-hidden="true">
                         <i class="fa-solid fa-chevron-right text-[9px]"></i>
                     </li>
-                    <li class="text-charcoal font-medium" aria-current="page">
+                    <li class="text-charcoal dark:text-paper font-medium" aria-current="page">
                         {p.crumbCurrent}
                     </li>
                 </ol>
@@ -126,38 +126,38 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-paper">
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="max-w-3xl mb-12 md:mb-16">
                 <p class="eyebrow mb-4">{p.stockEyebrow}</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                     {p.stockHeading}
                 </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
+                <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
                     {p.stockIntro}
                 </p>
             </div>
 
-            <ul class="divide-y divide-chalk-dark border-y border-chalk-dark">
+            <ul class="divide-y divide-chalk-dark dark:divide-flint border-y border-chalk-dark dark:border-flint">
                 {
                     rows.map((row) => (
                         <li class="py-10 md:py-12">
                             <div class="grid md:grid-cols-12 gap-6 md:gap-10">
                                 <div class="md:col-span-4 flex md:items-start gap-4">
-                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 flex-shrink-0">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 flex-shrink-0">
                                         <i class={`${row.icon} text-base`} aria-hidden="true" />
                                     </div>
                                     <div class="md:hidden">
                                         <p class="eyebrow mb-1">{row.eyebrow}</p>
-                                        <h3 class="text-lg font-semibold text-charcoal tracking-tight">{row.heading}</h3>
+                                        <h3 class="text-lg font-semibold text-charcoal dark:text-paper tracking-tight">{row.heading}</h3>
                                     </div>
                                     <div class="hidden md:block">
                                         <p class="eyebrow mb-2">{row.eyebrow}</p>
-                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal tracking-tight leading-snug">{row.heading}</h3>
+                                        <h3 class="text-xl md:text-2xl font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">{row.heading}</h3>
                                     </div>
                                 </div>
                                 <div class="md:col-span-8">
-                                    <p class="text-steel leading-relaxed text-[0.975rem] md:text-base">
+                                    <p class="text-steel dark:text-gravel leading-relaxed text-[0.975rem] md:text-base">
                                         {row.body}
                                     </p>
                                 </div>
@@ -169,14 +169,14 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-chalk-light/60">
+    <section class="py-24 md:py-32 bg-chalk-light/60 dark:bg-graphite">
         <div class="container-prose">
             <div class="max-w-3xl mb-12 md:mb-16">
                 <p class="eyebrow mb-4">{p.dayEyebrow}</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1]">
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                     {p.dayHeading}
                 </h2>
-                <p class="mt-6 text-lg text-steel leading-relaxed">
+                <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
                     {p.dayIntro}
                 </p>
             </div>
@@ -184,15 +184,15 @@ const jsonLd = [
             <ol class="grid sm:grid-cols-2 gap-4 md:gap-5">
                 {
                     dayInLife.map((step) => (
-                        <li class="relative bg-paper rounded-2xl ring-1 ring-chalk-dark p-6 md:p-7">
+                        <li class="relative bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
                             <div class="flex items-baseline gap-3 mb-3">
                                 <span class="text-xs font-mono font-semibold text-sunstone-deep tracking-wider">{step.time}</span>
-                                <span class="h-px flex-1 bg-chalk-dark"></span>
+                                <span class="h-px flex-1 bg-chalk-dark dark:bg-flint"></span>
                             </div>
-                            <h3 class="text-base md:text-lg font-semibold text-charcoal tracking-tight mb-2">
+                            <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper tracking-tight mb-2">
                                 {step.title}
                             </h3>
-                            <p class="text-sm text-steel leading-relaxed">
+                            <p class="text-sm text-steel dark:text-gravel leading-relaxed">
                                 {step.body}
                             </p>
                         </li>
@@ -202,11 +202,11 @@ const jsonLd = [
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-paper">
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="max-w-3xl">
                 <p class="eyebrow mb-4">{p.faqEyebrow}</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal tracking-tight leading-[1.1] mb-10">
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1] mb-10">
                     {p.faqHeading}
                 </h2>
 

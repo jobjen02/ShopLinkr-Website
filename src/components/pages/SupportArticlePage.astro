@@ -57,7 +57,7 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
         showCtas={false}
     />
 
-    <section class="bg-paper">
+    <section class="bg-paper dark:bg-charcoal">
         <div class="container-prose py-12 md:py-16">
             <div class="max-w-3xl">
                 <nav aria-label="Breadcrumb" class="mb-10">
@@ -65,7 +65,7 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
                         {breadcrumbItems.map((b) => (
                             <>
                                 <li>
-                                    <a href={b.href} class="hover:text-charcoal transition-colors">
+                                    <a href={b.href} class="hover:text-charcoal dark:hover:text-paper transition-colors">
                                         {b.label}
                                     </a>
                                 </li>
@@ -74,7 +74,7 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
                                 </li>
                             </>
                         ))}
-                        <li class="text-charcoal line-clamp-1 max-w-[28ch] md:max-w-none">
+                        <li class="text-charcoal dark:text-paper line-clamp-1 max-w-[28ch] md:max-w-none">
                             {article.data.title}
                         </li>
                     </ol>
@@ -88,22 +88,22 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
                     {p.lastUpdated} <time datetime={article.data.lastUpdated.toISOString().slice(0, 10)}>{lastUpdatedFormatted}</time>
                 </p>
 
-                <div class="mt-12 rounded-[18px] bg-chalk-light px-7 md:px-9 py-8 md:py-9 border border-chalk-dark/60">
+                <div class="mt-12 rounded-[18px] bg-chalk-light dark:bg-graphite px-7 md:px-9 py-8 md:py-9 border border-chalk-dark/60 dark:border-flint">
                     <div class="flex items-start gap-4">
-                        <div class="flex-none w-10 h-10 rounded-full bg-sunstone-mist flex items-center justify-center">
+                        <div class="flex-none w-10 h-10 rounded-full bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center">
                             <i class="fa-solid fa-headset text-sunstone-deep" aria-hidden="true"></i>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h2 class="text-[19px] md:text-[20px] font-semibold text-charcoal tracking-tight mb-1.5">
+                            <h2 class="text-[19px] md:text-[20px] font-semibold text-charcoal dark:text-paper tracking-tight mb-1.5">
                                 {p.helpTitle}
                             </h2>
-                            <p class="text-[14.5px] text-steel leading-relaxed mb-4">
+                            <p class="text-[14.5px] text-steel dark:text-gravel leading-relaxed mb-4">
                                 {p.helpBody}
                             </p>
                             <div class="flex flex-wrap gap-3">
                                 <a
                                     href={contactHref}
-                                    class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-[10px] bg-paper border border-chalk-dark text-[14px] font-semibold text-charcoal hover:bg-sunstone-mist/60 hover:border-sunstone-soft hover:text-sunstone-deep transition-colors"
+                                    class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-[10px] bg-paper dark:bg-charcoal border border-chalk-dark dark:border-flint text-[14px] font-semibold text-charcoal dark:text-paper hover:bg-sunstone-mist/60 dark:hover:bg-sunstone/10 hover:border-sunstone-soft hover:text-sunstone-deep transition-colors"
                                 >
                                     <i class="fa-solid fa-envelope text-[13px]" aria-hidden="true"></i>
                                     {p.contactCta}
@@ -111,7 +111,7 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
                                 {categoryInfo && (
                                     <a
                                         href={`${categoriesBase}/${categoryInfo.slug}`}
-                                        class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-[10px] text-[14px] font-semibold text-charcoal hover:text-sunstone-deep transition-colors"
+                                        class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-[10px] text-[14px] font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
                                     >
                                         {p.backToPrefix} {categoryInfo.label}
                                         <i class="fa-solid fa-arrow-right text-[12px]" aria-hidden="true"></i>
@@ -125,7 +125,7 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
 
             {relatedArticles.length > 0 && (
                 <div class="max-w-3xl mt-16 md:mt-20">
-                    <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal tracking-tight mb-6">
+                    <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal dark:text-paper tracking-tight mb-6">
                         {p.relatedTitle}
                     </h2>
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -133,17 +133,17 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
                             <li>
                                 <a
                                     href={r.href}
-                                    class="group block bg-paper rounded-[14px] border border-chalk-dark/70 hover:border-chalk-dark hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-5 py-4 h-full"
+                                    class="group block bg-paper dark:bg-graphite rounded-[14px] border border-chalk-dark/70 dark:border-flint hover:border-chalk-dark dark:hover:border-steel hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-5 py-4 h-full"
                                 >
                                     {r.subcategoryLabel && (
                                         <p class="text-[0.6875rem] text-sunstone-deep font-semibold uppercase tracking-wider mb-1.5">
                                             {r.subcategoryLabel}
                                         </p>
                                     )}
-                                    <h3 class="text-[15px] font-semibold text-charcoal tracking-tight group-hover:text-sunstone-deep transition-colors line-clamp-2">
+                                    <h3 class="text-[15px] font-semibold text-charcoal dark:text-paper tracking-tight group-hover:text-sunstone-deep transition-colors line-clamp-2">
                                         {r.title}
                                     </h3>
-                                    <p class="mt-1 text-[13px] text-steel leading-relaxed line-clamp-2">
+                                    <p class="mt-1 text-[13px] text-steel dark:text-gravel leading-relaxed line-clamp-2">
                                         {r.summary}
                                     </p>
                                 </a>
@@ -340,5 +340,42 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
         border: 0;
         border-top: 1px solid var(--color-chalk-dark);
         margin: 2.5em 0;
+    }
+
+    /* Dark mode overrides (markdown body). */
+    .dark .prose-shoplinkr {
+        color: var(--color-gravel);
+    }
+
+    .dark .prose-shoplinkr h2,
+    .dark .prose-shoplinkr h3,
+    .dark .prose-shoplinkr h4,
+    .dark .prose-shoplinkr strong,
+    .dark .prose-shoplinkr blockquote {
+        color: var(--color-paper);
+    }
+
+    .dark .prose-shoplinkr code {
+        background-color: var(--color-flint);
+        color: var(--color-paper);
+    }
+
+    .dark .prose-shoplinkr pre {
+        background-color: var(--color-graphite);
+        color: var(--color-chalk);
+    }
+
+    .dark .prose-shoplinkr th,
+    .dark .prose-shoplinkr td {
+        border-bottom-color: var(--color-flint);
+    }
+
+    .dark .prose-shoplinkr th {
+        background-color: var(--color-graphite);
+        color: var(--color-paper);
+    }
+
+    .dark .prose-shoplinkr hr {
+        border-top-color: var(--color-flint);
     }
 </style>

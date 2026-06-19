@@ -129,8 +129,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="relative bg-paper rounded-2xl ring-1 ring-chalk-dark shadow-[0_12px_32px_-20px_rgba(25,25,25,0.12)] max-w-md mx-auto px-6 sm:px-8 pt-5 pb-8">
-        <div class="h-1 bg-chalk rounded-full overflow-hidden">
+    <div class="relative bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_12px_32px_-20px_rgba(25,25,25,0.12)] max-w-md mx-auto px-6 sm:px-8 pt-5 pb-8">
+        <div class="h-1 bg-chalk dark:bg-flint rounded-full overflow-hidden">
             <div
                 class="h-full bg-green rounded-full transition-all duration-500 ease-out"
                 :style="{
@@ -146,26 +146,26 @@ onUnmounted(() => {
 
             <button
                 type="button"
-                class="inline-flex items-center gap-2 px-2.5 py-1.5 ring-1 ring-chalk-dark rounded-md text-sm text-charcoal hover:ring-chalk-darker transition-colors"
+                class="inline-flex items-center gap-2 px-2.5 py-1.5 ring-1 ring-chalk-dark dark:ring-flint rounded-md text-sm text-charcoal dark:text-paper hover:ring-chalk-darker dark:hover:ring-steel transition-colors"
                 @click="reset"
             >
                 <i class="fa-solid fa-xmark text-gravel" aria-hidden="true"></i>
                 <span>Opnieuw</span>
-                <kbd class="ml-0.5 px-1.5 py-0.5 text-[10px] ring-1 ring-chalk-dark rounded text-steel font-medium font-mono uppercase tracking-wide leading-none">
+                <kbd class="ml-0.5 px-1.5 py-0.5 text-[10px] ring-1 ring-chalk-dark dark:ring-flint rounded text-steel dark:text-gravel font-medium font-mono uppercase tracking-wide leading-none">
                     Esc
                 </kbd>
             </button>
         </div>
 
         <div v-if="isComplete" role="status" aria-live="polite" class="flex flex-col items-center text-center py-8">
-            <div class="h-16 w-16 rounded-full bg-green/10 flex items-center justify-center mb-5">
+            <div class="h-16 w-16 rounded-full bg-green/10 dark:bg-green/15 flex items-center justify-center mb-5">
                 <i class="fa-solid fa-circle-check text-green text-4xl" aria-hidden="true"></i>
             </div>
-            <p class="text-xl font-semibold text-charcoal mb-1">Picklijst voltooid</p>
+            <p class="text-xl font-semibold text-charcoal dark:text-paper mb-1">Picklijst voltooid</p>
             <p class="text-sm text-gravel mb-7">Breng de containers naar de inpakker.</p>
             <button
                 type="button"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-flint text-paper text-sm font-medium rounded-md hover:bg-charcoal transition-colors"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-flint dark:bg-graphite text-paper text-sm font-medium rounded-md hover:bg-charcoal transition-colors"
                 @click="reset"
             >
                 <i class="fa-solid fa-rotate-right text-xs" aria-hidden="true"></i>
@@ -178,12 +178,12 @@ onUnmounted(() => {
             class="transition-opacity duration-200"
             :class="animating ? 'opacity-40' : 'opacity-100'"
         >
-            <h3 class="text-xl text-charcoal font-normal leading-snug text-center line-clamp-2 min-h-[3.5rem]">
+            <h3 class="text-xl text-charcoal dark:text-paper font-normal leading-snug text-center line-clamp-2 min-h-[3.5rem]">
                 {{ currentItem.product }}
             </h3>
 
             <div class="flex justify-center mt-5">
-                <div class="h-32 w-32 rounded-lg bg-chalk-light ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden">
+                <div class="h-32 w-32 rounded-lg bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden">
                     <img
                         :src="currentItem.image"
                         :alt="currentItem.product"
@@ -197,18 +197,18 @@ onUnmounted(() => {
                 {{ currentItem.sku }}
             </p>
 
-            <p class="text-xl font-bold text-center text-charcoal mt-8">
+            <p class="text-xl font-bold text-center text-charcoal dark:text-paper mt-8">
                 {{ currentItem.location }}
             </p>
 
-            <p class="text-2xl font-bold text-center text-charcoal mt-3">
+            <p class="text-2xl font-bold text-center text-charcoal dark:text-paper mt-3">
                 {{ currentItem.quantity }}x
             </p>
 
             <div class="flex items-center justify-center gap-2 mt-6">
                 <button
                     type="button"
-                    class="h-10 w-10 bg-flint text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                     aria-label="Verlaag aantal gepickt"
                     :disabled="currentPicked === 0 || animating"
                     @click="decrease"
@@ -216,15 +216,15 @@ onUnmounted(() => {
                     <i class="fa-solid fa-minus text-sm" aria-hidden="true"></i>
                 </button>
 
-                <div class="h-10 px-4 min-w-[3rem] ring-1 ring-chalk-dark rounded-md flex items-center justify-center text-charcoal tabular-nums font-medium" aria-live="polite">
+                <div class="h-10 px-4 min-w-[3rem] ring-1 ring-chalk-dark dark:ring-flint rounded-md flex items-center justify-center text-charcoal dark:text-paper tabular-nums font-medium" aria-live="polite">
                     {{ currentPicked }}
                 </div>
 
-                <span class="text-charcoal tabular-nums px-1">/ {{ currentItem.quantity }}</span>
+                <span class="text-charcoal dark:text-paper tabular-nums px-1">/ {{ currentItem.quantity }}</span>
 
                 <button
                     type="button"
-                    class="h-10 w-10 bg-flint text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                     aria-label="Verhoog aantal gepickt"
                     :disabled="animating"
                     @click="increase"
