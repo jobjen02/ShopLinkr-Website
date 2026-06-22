@@ -6,7 +6,7 @@ categoryLabel: "Reports & Insights"
 subcategory: "reports"
 subcategoryLabel: "Reports"
 order: 63
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 translationKey: "abc-analyse-rapport"
 ---
 

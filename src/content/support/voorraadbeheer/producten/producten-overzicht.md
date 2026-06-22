@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 39
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 ---
 
 <p>Op de productenpagina vind je al je producten op één plek. Vanuit hier kun je producten bekijken, voorraad bijwerken, importeren en exporteren.</p>

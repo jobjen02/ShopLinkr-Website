@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "access-and-security"
 subcategoryLabel: "Access & Security"
 order: 17
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 translationKey: "inloggen-met-qr-code"
 ---
 

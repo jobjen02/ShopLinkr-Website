@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "locations"
 subcategoryLabel: "Locations"
 order: 55
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 translationKey: "tips-voor-locatienummers"
 ---
 

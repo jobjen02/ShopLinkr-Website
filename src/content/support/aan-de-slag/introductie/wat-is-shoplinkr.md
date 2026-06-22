@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "introductie"
 subcategoryLabel: "Introductie"
 order: 0
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>ShopLinkr is een WMS (warehouse management software) voor webshops waarmee je je volledige orderverwerking, voorraadbeheer en verzending vanuit een platform regelt. Of je nu via een eigen webshop verkoopt of via meerdere verkoopkanalen tegelijk, ShopLinkr brengt alles samen op een centrale plek.</p>

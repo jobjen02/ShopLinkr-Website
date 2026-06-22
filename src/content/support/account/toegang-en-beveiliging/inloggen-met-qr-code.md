@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "toegang-en-beveiliging"
 subcategoryLabel: "Toegang & Beveiliging"
 order: 17
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Met QR-login kunnen medewerkers snel inloggen door een persoonlijke QR-code te scannen en een pincode in te voeren. Dit is ideaal voor magazijnmedewerkers die snel moeten kunnen wisselen tussen accounts, bijvoorbeeld bij een gedeeld <a href="/support/inpakstations-instellen">inpakstation</a>.</p>

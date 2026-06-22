@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "stock"
 subcategoryLabel: "Stock"
 order: 52
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "voorraad-notificaties"
 ---
 

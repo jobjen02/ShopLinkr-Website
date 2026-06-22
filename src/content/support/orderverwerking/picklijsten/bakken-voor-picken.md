@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "picklijsten"
 subcategoryLabel: "Picklijsten"
 order: 33
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met bakken kun je bestellingen ordenen tijdens het pickproces. Elke bak krijgt een unieke barcode zodat je tijdens het picken precies weet in welke bak elk product moet. Bij het inpakken scan je de bak en de juiste bestelling opent automatisch. Dit voorkomt fouten en versnelt het inpakproces.</p>

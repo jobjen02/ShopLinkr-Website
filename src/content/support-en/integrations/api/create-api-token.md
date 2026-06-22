@@ -6,7 +6,7 @@ categoryLabel: "Integrations"
 subcategory: "api"
 subcategoryLabel: "API"
 order: 79
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-18"
 translationKey: "api-token-aanmaken"
 ---
 

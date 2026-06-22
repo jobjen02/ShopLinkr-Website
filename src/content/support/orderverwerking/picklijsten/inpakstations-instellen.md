@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "picklijsten"
 subcategoryLabel: "Picklijsten"
 order: 32
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Een inpakstation is een fysieke werkplek in je magazijn waar bestellingen worden ingepakt en verzendlabels worden geprint. Door inpakstations in te stellen in ShopLinkr, koppel je de juiste printer aan elke werkplek. Zo worden verzendlabels automatisch naar de juiste printer gestuurd.</p>

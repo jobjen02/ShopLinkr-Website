@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "voorbereiding"
 subcategoryLabel: "Voorbereiding"
 order: 8
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>In de bedrijfsinstellingen configureer je instellingen die voor je hele bedrijf gelden. Denk aan hoe backorders worden afgehandeld, wanneer je voorraadmeldingen ontvangt en hoe het pickproces werkt. Je vindt deze instellingen onder <strong>Instellingen &gt; Mijn bedrijf</strong>.</p>

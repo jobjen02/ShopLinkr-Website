@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "facturatie-en-prijzen"
 subcategoryLabel: "Facturatie & Prijzen"
 order: 12
-lastUpdated: "2026-05-28"
+lastUpdated: "2025-12-29"
 ---
 
 <p>Soms verandert je situatie. Wat de reden ook is: bij ShopLinkr bepaal jij zelf wanneer je stopt. Op deze pagina lees je hoe opzeggen werkt, wat er gebeurt met je account en waar je rekening mee moet houden.</p>

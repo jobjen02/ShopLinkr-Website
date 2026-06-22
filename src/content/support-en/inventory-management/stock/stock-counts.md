@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "stock"
 subcategoryLabel: "Stock"
 order: 51
-lastUpdated: "2026-05-28"
+lastUpdated: "2025-07-10"
 translationKey: "voorraadtellingen"
 ---
 

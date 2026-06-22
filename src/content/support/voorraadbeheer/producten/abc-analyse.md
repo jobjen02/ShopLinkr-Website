@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 48
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-03-07"
 ---
 
 <p>De ABC-analyse classificeert je producten op basis van hoe vaak ze gepickt worden in je magazijn. Zo zie je in een oogopslag welke producten het belangrijkst zijn voor je dagelijkse magazijnoperatie.</p>

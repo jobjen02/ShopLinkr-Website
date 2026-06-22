@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "autoprint"
 subcategoryLabel: "AutoPrint"
 order: 77
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-11-15"
 ---
 
 <p>Het afdrukken van labels is een cruciale stap in je verzendproces. Hieronder vind je de meest voorkomende problemen en hoe je ze oplost.</p>

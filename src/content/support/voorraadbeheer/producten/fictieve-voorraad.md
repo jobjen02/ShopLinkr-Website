@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 44
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Met een fictieve voorraad kun je een andere voorraad doorsturen naar je verkoopkanaal dan je werkelijk op voorraad hebt. Dit is handig om te voorkomen dat concurrenten kunnen zien hoeveel voorraad je hebt. Er zijn namelijk tools waarmee de voorraad van producten op bijvoorbeeld bol kan worden uitgelezen om te bepalen of een product goed verkoopt. Met een fictieve voorraad zorg je ervoor dat dit niet werkt voor jouw producten.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Rapportages & Inzicht"
 subcategory: "rapporten"
 subcategoryLabel: "Rapporten"
 order: 59
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met de rapportages in ShopLinkr krijg je inzicht in hoe je producten presteren, wat je voorraad waard is en waar kansen liggen om je magazijn te optimaliseren. Je vindt alle rapporten onder <strong>Rapporten</strong> in het menu.</p>

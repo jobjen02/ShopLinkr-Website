@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "abonnement"
 subcategoryLabel: "Abonnement"
 order: 14
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Al je facturen van ShopLinkr kun je terugvinden op een centrale plek. Handig voor je boekhouding of als je een factuur wilt controleren.</p>

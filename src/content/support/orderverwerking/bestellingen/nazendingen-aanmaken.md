@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 25
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Een nazending maak je aan wanneer je producten opnieuw naar een klant moet sturen. Bijvoorbeeld omdat een pakket beschadigd is aangekomen, een product ontbreekt of de klant het verkeerde artikel heeft ontvangen.</p>

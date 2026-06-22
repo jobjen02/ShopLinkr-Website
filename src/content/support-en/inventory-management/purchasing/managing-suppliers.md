@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "purchasing"
 subcategoryLabel: "Purchasing"
 order: 56
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 translationKey: "leveranciers-beheren"
 ---
 

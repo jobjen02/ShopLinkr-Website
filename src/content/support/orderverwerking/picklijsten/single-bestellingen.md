@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "picklijsten"
 subcategoryLabel: "Picklijsten"
 order: 31
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-11-15"
 ---
 
 <p>Een single bestelling is een bestelling die uit slechts één type product bestaat. Dat product mag wel meerdere keren zijn besteld, maar er zit geen combinatie van verschillende producten in.</p>

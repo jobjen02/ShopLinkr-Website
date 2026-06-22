@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "locaties"
 subcategoryLabel: "Locaties"
 order: 54
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Een goed ingedeeld magazijn bespaart tijd, voorkomt fouten en maakt het pickproces efficiënter. In dit artikel delen we praktische tips om het maximale uit je <a href="/support/locatiebeheer">locaties</a> te halen.</p>

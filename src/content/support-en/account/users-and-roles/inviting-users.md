@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "users-and-roles"
 subcategoryLabel: "Users & Roles"
 order: 18
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 translationKey: "gebruikers-uitnodigen"
 ---
 

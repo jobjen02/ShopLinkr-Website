@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "voorraad"
 subcategoryLabel: "Voorraad"
 order: 51
-lastUpdated: "2026-05-28"
+lastUpdated: "2025-07-10"
 ---
 
 <p>Met voorraadtellingen controleer je of de fysieke voorraad in je magazijn overeenkomt met wat er in ShopLinkr staat. Kloppen de aantallen niet? Dan kun je ze direct corrigeren. Zo voorkom je fouten bij het picken en blijft je voorraad betrouwbaar.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 28
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Met handmatige zendingen kun je een zending aanmaken die niet gekoppeld is aan een bestelling uit je verkoopkanaal.</p>

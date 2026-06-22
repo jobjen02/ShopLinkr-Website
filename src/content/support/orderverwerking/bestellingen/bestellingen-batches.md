@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 29
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Wanneer je meerdere bestellingen tegelijk <a href="/support/bestellingen-verwerken">verwerkt</a>, wordt er automatisch een batch aangemaakt. Via <strong>Bestellingen &gt; Batches</strong> kun je al je batches terugvinden en per batch de verzendlabels en pick &amp; pack-lijst downloaden.</p>

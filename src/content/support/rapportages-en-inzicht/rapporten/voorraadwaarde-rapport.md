@@ -6,7 +6,7 @@ categoryLabel: "Rapportages & Inzicht"
 subcategory: "rapporten"
 subcategoryLabel: "Rapporten"
 order: 62
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met het voorraadwaarde rapport bekijk je de totale waarde van je voorraad op een specifieke datum. Per product zie je hoeveel stuks je op voorraad hebt en wat de totale waarde daarvan is op basis van je inkoopprijzen. Zo heb je altijd inzicht in hoeveel kapitaal er in je voorraad vastzit.</p>

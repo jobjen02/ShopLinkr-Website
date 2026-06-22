@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "webshops-en-marketplaces"
 subcategoryLabel: "Webshops & Marketplaces"
 order: 66
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Volg de onderstaande stappen om je Shopify webshop te koppelen met ShopLinkr. Om alle producten correct in te laden, moet elk product in Shopify een EAN code hebben in het 'Barcode' veld.</p>

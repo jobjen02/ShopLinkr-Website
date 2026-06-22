@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "inkoop"
 subcategoryLabel: "Inkoop"
 order: 56
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 ---
 
 <p>Door je leveranciers toe te voegen in ShopLinkr houd je overzicht over bij wie je inkoopt. Je kunt leveranciers koppelen aan producten en aan <a href="/support/een-levering-aanmaken">leveringen</a>, zodat je altijd kunt terugzien welke producten je bij welke leverancier inkoopt en welke leveringen je hebt ontvangen.</p>

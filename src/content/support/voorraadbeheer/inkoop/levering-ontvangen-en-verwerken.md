@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "inkoop"
 subcategoryLabel: "Inkoop"
 order: 58
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 ---
 
 <p>Zodra een levering van je <a href="/support/leveranciers-beheren">leverancier</a> binnenkomt, kun je de producten ontvangen in ShopLinkr. Per product geef je aan hoeveel je hebt ontvangen en op welke <a href="/support/locatiebeheer">locatie</a> je het wilt opslaan. De voorraad wordt automatisch bijgewerkt.</p>

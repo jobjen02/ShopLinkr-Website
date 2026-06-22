@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "products"
 subcategoryLabel: "Products"
 order: 39
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 translationKey: "producten-overzicht"
 ---
 

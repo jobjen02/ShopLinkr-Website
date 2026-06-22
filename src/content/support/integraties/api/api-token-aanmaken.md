@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "api"
 subcategoryLabel: "API"
 order: 79
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-18"
 ---
 
 <p>Om de ShopLinkr API te gebruiken heb je een API-token nodig. Met een token authenticeer je je verzoeken en bepaal je welke rechten de integratie krijgt.</p>

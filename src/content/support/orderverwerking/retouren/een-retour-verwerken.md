@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "retouren"
 subcategoryLabel: "Retouren"
 order: 38
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Wanneer je een retourpakket hebt ontvangen, kun je de retour verwerken in ShopLinkr. Per product beoordeel je de staat en bepaal je of het terugkomt op voorraad.</p>

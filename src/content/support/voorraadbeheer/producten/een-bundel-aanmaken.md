@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 42
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Met bundels kun je meerdere producten combineren tot een nieuw product. Stel: je verkoopt een telefoon en een oplader. Je verkoopt ze beide los, maar wilt ze ook samen als bundel aanbieden. Dan maak je een productbundel aan. Er zijn dan drie producten in ShopLinkr: de telefoon, de oplader en de bundel. De voorraad van de bundel wordt automatisch berekend op basis van de losse producten.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "pick-lists"
 subcategoryLabel: "Pick lists"
 order: 33
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 translationKey: "bakken-voor-picken"
 ---
 

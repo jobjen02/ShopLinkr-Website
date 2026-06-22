@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 20
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Op de bestellingen pagina vind je al je bestellingen van al je verkoopkanalen op één plek. Vanuit hier kun je bestellingen bekijken, verwerken en beheren.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Getting started"
 subcategory: "preparation"
 subcategoryLabel: "Preparation"
 order: 6
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 translationKey: "tags-beheren"
 ---
 

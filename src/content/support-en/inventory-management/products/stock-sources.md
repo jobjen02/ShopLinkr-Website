@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "products"
 subcategoryLabel: "Products"
 order: 45
-lastUpdated: "2026-05-28"
+lastUpdated: "2025-09-17"
 translationKey: "voorraadbronnen"
 ---
 

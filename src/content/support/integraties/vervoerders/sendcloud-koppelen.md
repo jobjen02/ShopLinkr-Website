@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "vervoerders"
 subcategoryLabel: "Vervoerders"
 order: 68
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <ol>

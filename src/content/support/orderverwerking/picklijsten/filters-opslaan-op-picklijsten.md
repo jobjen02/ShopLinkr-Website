@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "picklijsten"
 subcategoryLabel: "Picklijsten"
 order: 34
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Bij het genereren van picklijsten gebruik je vaak dezelfde filtercombinatie. Met opgeslagen filters hoef je deze niet elke keer opnieuw in te stellen. Je slaat de combinatie een keer op en past hem daarna met een klik toe.</p>

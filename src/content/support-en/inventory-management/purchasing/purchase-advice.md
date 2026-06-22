@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "purchasing"
 subcategoryLabel: "Purchasing"
 order: 80
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-05-26"
 translationKey: "inkoopadvies"
 ---
 

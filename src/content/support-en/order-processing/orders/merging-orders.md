@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "orders"
 subcategoryLabel: "Orders"
 order: 26
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-03-31"
 translationKey: "bestellingen-samenvoegen"
 ---
 

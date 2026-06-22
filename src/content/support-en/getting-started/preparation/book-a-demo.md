@@ -6,7 +6,7 @@ categoryLabel: "Getting started"
 subcategory: "preparation"
 subcategoryLabel: "Preparation"
 order: 5
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "plan-een-demo-in"
 ---
 

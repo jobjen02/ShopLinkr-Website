@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 45
-lastUpdated: "2026-05-28"
+lastUpdated: "2025-09-17"
 ---
 
 <p>Een voorraadbron is een basisproduct waarvan je de voorraad bijhoudt in een meeteenheid zoals gewicht, lengte of volume. Vanuit deze ene bron verkoop je meerdere varianten. ShopLinkr rekent automatisch per variant uit hoeveel er beschikbaar is.</p>

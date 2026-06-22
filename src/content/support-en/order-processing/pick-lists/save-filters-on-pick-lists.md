@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "pick-lists"
 subcategoryLabel: "Pick lists"
 order: 34
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 translationKey: "filters-opslaan-op-picklijsten"
 ---
 

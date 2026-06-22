@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "voorbereiding"
 subcategoryLabel: "Voorbereiding"
 order: 6
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met tags kun je producten en bestellingen labelen zodat je ze makkelijk kunt terugvinden en filteren. Denk aan tags zoals "Fragiel", "Actie" of "Kerst". Elke tag heeft een naam en een kleur, zodat je ze in een oogopslag herkent.</p>

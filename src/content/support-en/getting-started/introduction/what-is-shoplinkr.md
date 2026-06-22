@@ -6,7 +6,7 @@ categoryLabel: "Getting started"
 subcategory: "introduction"
 subcategoryLabel: "Introduction"
 order: 0
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 translationKey: "wat-is-shoplinkr"
 ---
 

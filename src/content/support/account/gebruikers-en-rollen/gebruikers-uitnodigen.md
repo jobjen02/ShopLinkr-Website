@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "gebruikers-en-rollen"
 subcategoryLabel: "Gebruikers & Rollen"
 order: 18
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Werk je met een team? Dan kun je eenvoudig collega's uitnodigen om mee te werken in ShopLinkr. Elke gebruiker krijgt een eigen account met een eigen e-mailadres en wachtwoord.</p>

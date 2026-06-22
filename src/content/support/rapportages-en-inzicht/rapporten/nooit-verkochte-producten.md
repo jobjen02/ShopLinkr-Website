@@ -6,7 +6,7 @@ categoryLabel: "Rapportages & Inzicht"
 subcategory: "rapporten"
 subcategoryLabel: "Rapporten"
 order: 61
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met het rapport nooit verkochte producten ontdek je welke producten in een bepaalde periode geen enkele verkoop hebben gehad. Dit helpt je om dode voorraad te identificeren en je assortiment op te schonen.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 47
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>In ShopLinkr kun je aan elk product een inkoopprijs toevoegen. Hiermee krijg je direct inzicht in de waarde van je voorraad, zowel per product als per magazijnlocatie.</p>

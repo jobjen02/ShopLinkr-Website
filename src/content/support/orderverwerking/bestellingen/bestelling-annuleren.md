@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 24
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Soms moet je een bestelling annuleren, bijvoorbeeld omdat de klant de bestelling wil annuleren of omdat er een probleem is met de levering. Bij het annuleren wordt de bestelling ook op het verkoopkanaal geannuleerd en wordt de gereserveerde voorraad weer vrijgegeven.</p>

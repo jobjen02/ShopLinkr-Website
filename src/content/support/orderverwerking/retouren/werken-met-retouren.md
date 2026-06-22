@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "retouren"
 subcategoryLabel: "Retouren"
 order: 37
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Wanneer een klant een product retour stuurt, wordt de retour automatisch gesynchroniseerd vanuit je verkoopkanaal naar ShopLinkr. Vanuit het retouren overzicht kun je alle retouren inzien, verwerken en bijhouden.</p>

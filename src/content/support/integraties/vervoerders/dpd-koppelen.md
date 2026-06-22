@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "vervoerders"
 subcategoryLabel: "Vervoerders"
 order: 74
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p><strong>Let op:</strong> deze koppeling werkt alleen als je een eigen contract hebt met DPD. Heb je dat nog niet? Neem dan contact op met hun salesafdeling.</p>

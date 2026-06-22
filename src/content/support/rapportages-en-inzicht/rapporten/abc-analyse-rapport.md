@@ -6,7 +6,7 @@ categoryLabel: "Rapportages & Inzicht"
 subcategory: "rapporten"
 subcategoryLabel: "Rapporten"
 order: 63
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Het ABC-analyse rapport categoriseert je producten op basis van hoe vaak ze gepickt worden. A-producten zijn je belangrijkste producten die het vaakst worden gepickt, terwijl C-producten het minst gepickt worden. Gebruik dit rapport om je magazijnindeling te optimaliseren en je belangrijkste producten op de best bereikbare plekken te leggen.</p>

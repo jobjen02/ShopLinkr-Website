@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 22
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-12-12"
 ---
 
 <p>Met de 'uitstellen' functie kun je een bestelling tijdelijk uitstellen en deze pas weer zichtbaar maken in je workflow wanneer je deze daadwerkelijk moet verwerken. Dit biedt flexibiliteit en helpt je om overzichtelijker te werken.</p>

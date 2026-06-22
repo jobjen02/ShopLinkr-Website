@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "returns"
 subcategoryLabel: "Returns"
 order: 38
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 translationKey: "een-retour-verwerken"
 ---
 

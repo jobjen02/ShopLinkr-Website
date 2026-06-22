@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "regels"
 subcategoryLabel: "Regels"
 order: 35
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Met regels kun je acties automatisch laten uitvoeren wanneer er een nieuwe bestelling binnenkomt. Zo hoef je niet meer handmatig dezelfde handelingen te doen voor bestellingen die aan bepaalde voorwaarden voldoen.</p>

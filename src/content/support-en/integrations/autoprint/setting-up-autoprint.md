@@ -6,7 +6,7 @@ categoryLabel: "Integrations"
 subcategory: "autoprint"
 subcategoryLabel: "AutoPrint"
 order: 75
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-11-15"
 translationKey: "auto-print-instellen"
 ---
 

@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "gebruikers-en-rollen"
 subcategoryLabel: "Gebruikers & Rollen"
 order: 19
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Met rollen en rechten bepaal je precies wat elke medewerker binnen ShopLinkr mag doen. Zo kan een magazijnmedewerker bijvoorbeeld alleen bestellingen verwerken en picken, terwijl een beheerder overal toegang toe heeft.</p>

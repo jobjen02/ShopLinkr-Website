@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "locaties"
 subcategoryLabel: "Locaties"
 order: 55
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Een goede naamgeving voor je <a href="/support/locatiebeheer">locaties</a> zorgt ervoor dat iedereen in je team direct weet waar een product ligt. Zeker als je team groeit of je met nieuwe medewerkers werkt, voorkomt een consistente naamgeving fouten en versnelt het het <a href="/support/wat-zijn-picklijsten">pickproces</a>.</p>

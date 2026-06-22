@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "products"
 subcategoryLabel: "Products"
 order: 42
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "een-bundel-aanmaken"
 ---
 

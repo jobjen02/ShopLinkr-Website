@@ -6,7 +6,7 @@ categoryLabel: "Integrations"
 subcategory: "api"
 subcategoryLabel: "API"
 order: 78
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-18"
 translationKey: "api-overzicht"
 ---
 

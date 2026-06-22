@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 21
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>In ShopLinkr kun je bestellingen op drie manieren verwerken. Welke methode het beste past hangt af van het aantal bestellingen dat je verwerkt en hoe je magazijn is ingericht.</p>

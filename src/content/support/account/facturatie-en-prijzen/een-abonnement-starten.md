@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "facturatie-en-prijzen"
 subcategoryLabel: "Facturatie & Prijzen"
 order: 10
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Een abonnement starten is erg eenvoudig en is binnen 2 minuten geregeld!</p>

@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "inkoop"
 subcategoryLabel: "Inkoop"
 order: 57
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 ---
 
 <p>Met leveringen houd je bij welke producten je van een <a href="/support/leveranciers-beheren">leverancier</a> verwacht en wanneer ze binnenkomen. Zodra de levering arriveert, kun je de producten ontvangen en de voorraad wordt automatisch bijgewerkt. Wil je ShopLinkr laten bepalen wat en hoeveel je moet bijbestellen? Bekijk dan eerst het <a href="/support/inkoopadvies">inkoopadvies</a>; dat zet je advies in een klik om naar leveringen.</p>

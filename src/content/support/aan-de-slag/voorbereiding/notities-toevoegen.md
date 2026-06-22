@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "voorbereiding"
 subcategoryLabel: "Voorbereiding"
 order: 7
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met notities kun je interne opmerkingen toevoegen aan vrijwel elk onderdeel in ShopLinkr. Handig om informatie te delen met collega's of om iets voor jezelf vast te leggen.</p>

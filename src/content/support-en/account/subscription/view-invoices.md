@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "subscription"
 subcategoryLabel: "Subscription"
 order: 14
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 translationKey: "facturen-bekijken"
 ---
 

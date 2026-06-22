@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "products"
 subcategoryLabel: "Products"
 order: 43
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-12-12"
 translationKey: "onbeperkte-voorraad"
 ---
 

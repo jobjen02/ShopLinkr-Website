@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "orders"
 subcategoryLabel: "Orders"
 order: 23
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 translationKey: "bestelling-markeren-als-hoge-prioriteit"
 ---
 

@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "orders"
 subcategoryLabel: "Orders"
 order: 29
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "bestellingen-batches"
 ---
 

@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "api"
 subcategoryLabel: "API"
 order: 78
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-18"
 ---
 
 <p>De ShopLinkr API geeft je de mogelijkheid om vanuit je eigen systemen direct te werken met je magazijndata. Denk aan het automatisch aanmaken van bestellingen, bijwerken van voorraad of ophalen van productinformatie. De API is bedoeld voor ontwikkelaars en technische partners die een eigen koppeling willen bouwen.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "toegang-en-beveiliging"
 subcategoryLabel: "Toegang & Beveiliging"
 order: 15
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Het is verstandig om je wachtwoord regelmatig te wijzigen. In ShopLinkr doe je dit eenvoudig via de beveiligingsinstellingen.</p>

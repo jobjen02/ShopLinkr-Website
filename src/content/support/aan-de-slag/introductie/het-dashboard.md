@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "introductie"
 subcategoryLabel: "Introductie"
 order: 2
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Wanneer je inlogt in ShopLinkr, kom je terecht op het dashboard. Hier zie je in een oogopslag hoe je bedrijf ervoor staat. Het dashboard bestaat uit twee onderdelen: het <strong>hoofdoverzicht</strong> en de <strong>inzichten</strong>.</p>

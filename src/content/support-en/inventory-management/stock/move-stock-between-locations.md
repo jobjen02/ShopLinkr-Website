@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "stock"
 subcategoryLabel: "Stock"
 order: 50
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 translationKey: "voorraad-verplaatsen-tussen-locaties"
 ---
 

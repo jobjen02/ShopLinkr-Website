@@ -6,7 +6,7 @@ categoryLabel: "Inventory management"
 subcategory: "locations"
 subcategoryLabel: "Locations"
 order: 53
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "locatiebeheer"
 ---
 

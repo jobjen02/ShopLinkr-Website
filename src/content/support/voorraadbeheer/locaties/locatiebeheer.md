@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "locaties"
 subcategoryLabel: "Locaties"
 order: 53
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Met locatiebeheer kun je locaties aanmaken waar je producten in je magazijn liggen. Dit helpt je om sneller en efficiënter te picken en zorgt voor een duidelijk overzicht van je voorraad.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "voorraad"
 subcategoryLabel: "Voorraad"
 order: 50
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 ---
 
 <p>Als je met meerdere locaties werkt in je magazijn, kun je voorraad eenvoudig verplaatsen van de ene locatie naar de andere. Handig als je bijvoorbeeld voorraad van een bulklocatie naar een picklocatie wilt verplaatsen.</p>

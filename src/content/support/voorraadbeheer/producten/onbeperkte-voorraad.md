@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 43
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-12-12"
 ---
 
 <p>Als je producten verkoopt die altijd beschikbaar zijn, zoals bijvoorbeeld digitale producten (bijvoorbeeld softwarelicenties), hoef je daar geen voorraadbeheer voor bij te houden. Met de functie <strong>Onbeperkte voorraad</strong> sla je het voorraadproces voor deze producten over.</p>

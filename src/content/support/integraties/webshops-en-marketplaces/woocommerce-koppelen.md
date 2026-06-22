@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "webshops-en-marketplaces"
 subcategoryLabel: "Webshops & Marketplaces"
 order: 65
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Volg de onderstaande stappen om je WooCommerce webshop te koppelen met ShopLinkr. Om alle producten correct in te laden, moet elk product in WooCommerce een SKU code hebben.</p>

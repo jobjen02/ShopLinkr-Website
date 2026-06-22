@@ -6,7 +6,7 @@ categoryLabel: "Integrations"
 subcategory: "webshops-and-marketplaces"
 subcategoryLabel: "Webshops & Marketplaces"
 order: 65
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "woocommerce-koppelen"
 ---
 

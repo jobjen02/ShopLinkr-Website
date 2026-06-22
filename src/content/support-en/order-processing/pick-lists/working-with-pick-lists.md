@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "pick-lists"
 subcategoryLabel: "Pick lists"
 order: 30
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-11-15"
 translationKey: "wat-zijn-picklijsten"
 ---
 

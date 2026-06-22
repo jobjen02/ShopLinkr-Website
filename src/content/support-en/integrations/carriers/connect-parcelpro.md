@@ -6,7 +6,7 @@ categoryLabel: "Integrations"
 subcategory: "carriers"
 subcategoryLabel: "Carriers"
 order: 73
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "parcelpro-koppelen"
 ---
 

@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "abonnement"
 subcategoryLabel: "Abonnement"
 order: 13
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Wanneer je een account aanmaakt bij ShopLinkr, krijg je automatisch een gratis proefperiode. Zo kun je het platform in alle rust uitproberen, zonder dat je betaalgegevens hoeft achter te laten.</p>

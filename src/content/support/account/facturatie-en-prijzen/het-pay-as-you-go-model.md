@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "facturatie-en-prijzen"
 subcategoryLabel: "Facturatie & Prijzen"
 order: 9
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Wij werken met het "Pay as you Go" model. Dit is voor de klant enorm voordelig en transparant. Je betaalt echt voor wat je gebruikt.</p>

@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "inkoop"
 subcategoryLabel: "Inkoop"
 order: 80
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-05-26"
 ---
 
 <p>Met het inkoopadvies laat je ShopLinkr berekenen welke producten je het beste kunt inkopen, en hoeveel je per <a href="/support/leveranciers-beheren">leverancier</a> moet bestellen. Zo voorkom je dat je producten verkoopt zonder dat ze op voorraad zijn (nee-verkopen), zonder dat je teveel op de plank krijgt. Het advies kun je vervolgens in een klik omzetten naar concrete <a href="/support/een-levering-aanmaken">leveringen</a>.</p>

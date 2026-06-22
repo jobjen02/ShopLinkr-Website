@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "billing-and-pricing"
 subcategoryLabel: "Billing & Pricing"
 order: 11
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "alles-wat-je-moet-weten-over-het-abonnement"
 ---
 

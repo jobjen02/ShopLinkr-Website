@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 23
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Heb je een bestelling die met voorrang verwerkt moet worden? Dan kun je deze markeren als hoge prioriteit. De bestelling krijgt een visuele indicator en wordt als eerste opgenomen in een picklijst.</p>

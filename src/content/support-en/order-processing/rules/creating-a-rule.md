@@ -6,7 +6,7 @@ categoryLabel: "Order processing"
 subcategory: "rules"
 subcategoryLabel: "Rules"
 order: 36
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 translationKey: "een-regel-aanmaken"
 ---
 

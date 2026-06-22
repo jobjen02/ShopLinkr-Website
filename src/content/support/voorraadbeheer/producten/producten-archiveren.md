@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "producten"
 subcategoryLabel: "Producten"
 order: 41
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Als je een product niet meer verkoopt, kun je het archiveren. Het product verdwijnt dan uit je normale overzichten maar wordt niet definitief verwijderd. Zo houd je je productlijst overzichtelijk zonder historische data kwijt te raken.</p>

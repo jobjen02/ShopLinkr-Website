@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "billing-and-pricing"
 subcategoryLabel: "Billing & Pricing"
 order: 12
-lastUpdated: "2026-05-28"
+lastUpdated: "2025-12-29"
 translationKey: "mijn-abonnement-opzeggen"
 ---
 

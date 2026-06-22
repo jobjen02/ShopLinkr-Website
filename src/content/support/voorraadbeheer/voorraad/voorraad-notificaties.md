@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "voorraad"
 subcategoryLabel: "Voorraad"
 order: 52
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Met ShopLinkr kun je automatisch een e-mail ontvangen zodra de voorraad van een product onder een bepaalde grens komt. Zo ben je altijd op tijd op de hoogte en voorkom je dat je "nee" moet verkopen.</p>

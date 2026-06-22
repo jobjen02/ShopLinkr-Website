@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "introductie"
 subcategoryLabel: "Introductie"
 order: 3
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met de globale zoekfunctie doorzoek je in een keer meerdere onderdelen van ShopLinkr. In plaats van eerst naar de juiste pagina te navigeren, typ je je zoekopdracht in de zoekbalk en krijg je direct resultaten uit producten, bestellingen, retouren en leveringen.</p>

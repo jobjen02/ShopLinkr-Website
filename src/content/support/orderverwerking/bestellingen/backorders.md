@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 27
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Een backorder is een bestelling die niet direct verwerkt kan worden omdat er onvoldoende voorraad beschikbaar is op de juiste locatie. De bestelling krijgt automatisch de status <strong>Backorder</strong> en wordt pas weer vrijgegeven zodra de voorraad beschikbaar is.</p>

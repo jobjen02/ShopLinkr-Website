@@ -6,7 +6,7 @@ categoryLabel: "Reports & Insights"
 subcategory: "reports"
 subcategoryLabel: "Reports"
 order: 60
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 translationKey: "product-prestaties"
 ---
 

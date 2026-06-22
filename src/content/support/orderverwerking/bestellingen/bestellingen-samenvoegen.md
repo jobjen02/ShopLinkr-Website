@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"
 subcategoryLabel: "Bestellingen"
 order: 26
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-03-31"
 ---
 
 <p>Met de samenvoegfunctie kun je meerdere open bestellingen combineren tot een samengevoegde bestelling. Dit is handig wanneer dezelfde klant meerdere bestellingen heeft geplaatst die je samen als één pakket wilt verzenden. De originele bestellingen blijven bestaan voor je administratie, terwijl de samengevoegde bestelling wordt gebruikt voor het magazijnproces.</p>

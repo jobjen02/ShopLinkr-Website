@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "introductie"
 subcategoryLabel: "Introductie"
 order: 1
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Elke bestelling doorloopt een aantal stappen in ShopLinkr, van het moment dat de bestelling binnenkomt tot het moment dat het pakket de deur uit gaat. Hieronder leggen we elke stap uit.</p>

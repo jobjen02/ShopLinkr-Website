@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "billing-and-pricing"
 subcategoryLabel: "Billing & Pricing"
 order: 9
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 translationKey: "het-pay-as-you-go-model"
 ---
 

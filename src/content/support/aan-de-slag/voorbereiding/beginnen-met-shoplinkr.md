@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "voorbereiding"
 subcategoryLabel: "Voorbereiding"
 order: 4
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Zodra je de gratis proefperiode bent gestart kun je direct beginnen met het gebruik van ShopLinkr. Je hebt toegang tot alle functionaliteiten.</p>

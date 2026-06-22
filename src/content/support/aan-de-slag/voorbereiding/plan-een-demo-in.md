@@ -6,7 +6,7 @@ categoryLabel: "Aan de slag"
 subcategory: "voorbereiding"
 subcategoryLabel: "Voorbereiding"
 order: 5
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Benieuwd naar hoe ShopLinkr jouw magazijn naar een hoger niveau kan tillen? Of wil je zien hoe onze functies je kunnen helpen om je voorraad, bestellingen en verzendingen efficiënter te beheren? Dan is een demo de perfecte manier om kennis te maken met ons platform.</p>

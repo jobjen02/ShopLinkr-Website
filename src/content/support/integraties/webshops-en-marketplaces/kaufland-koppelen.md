@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "webshops-en-marketplaces"
 subcategoryLabel: "Webshops & Marketplaces"
 order: 67
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Volg de onderstaande stappen om je Kaufland account te koppelen met ShopLinkr.</p>

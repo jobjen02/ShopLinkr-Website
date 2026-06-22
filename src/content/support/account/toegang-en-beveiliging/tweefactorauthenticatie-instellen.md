@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "toegang-en-beveiliging"
 subcategoryLabel: "Toegang & Beveiliging"
 order: 16
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>Met tweefactorauthenticatie (2FA) voeg je een extra beveiligingslaag toe aan je account. Naast je wachtwoord heb je dan ook een eenmalige code nodig om in te loggen. Zo is je account beter beschermd, zelfs als iemand je wachtwoord zou achterhalen.</p>

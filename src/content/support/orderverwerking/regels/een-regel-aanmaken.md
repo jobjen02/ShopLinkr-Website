@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "regels"
 subcategoryLabel: "Regels"
 order: 36
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-01"
 ---
 
 <p>In dit artikel leggen we stap voor stap uit hoe je een regel aanmaakt in ShopLinkr. Lees eerst <a href="/support/wat-zijn-regels">Wat zijn regels?</a> als je nog niet bekend bent met het concept.</p>

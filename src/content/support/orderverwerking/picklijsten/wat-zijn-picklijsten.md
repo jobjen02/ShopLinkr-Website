@@ -6,7 +6,7 @@ categoryLabel: "Orderverwerking"
 subcategory: "picklijsten"
 subcategoryLabel: "Picklijsten"
 order: 30
-lastUpdated: "2026-05-28"
+lastUpdated: "2024-11-15"
 ---
 
 <p>Een picklijst is een verzameling van producten die horen bij meerdere bestellingen. Stel dat je 10 bestellingen wilt gaan picken: je verzamelt dan alle producten die bij deze bestellingen horen. Zodra je alles hebt gepickt, kun je de bestellingen snel en efficiënt inpakken.</p>

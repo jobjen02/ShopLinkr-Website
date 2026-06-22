@@ -6,7 +6,7 @@ categoryLabel: "Account"
 subcategory: "facturatie-en-prijzen"
 subcategoryLabel: "Facturatie & Prijzen"
 order: 11
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Een abonnement bij ShopLinkr is erg flexibel en je zit nergens aan vast. Het abonnement is maandelijks opzegbaar, je kunt dus op elk gewenst moment besluiten om te stoppen.</p>

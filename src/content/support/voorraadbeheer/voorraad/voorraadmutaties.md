@@ -6,7 +6,7 @@ categoryLabel: "Voorraadbeheer"
 subcategory: "voorraad"
 subcategoryLabel: "Voorraad"
 order: 49
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-04"
 ---
 
 <p>Elke keer dat de voorraad van een product verandert, wordt dit vastgelegd als een voorraadmutatie. Zo heb je altijd een compleet overzicht van wat er met je voorraad is gebeurd en waarom.</p>

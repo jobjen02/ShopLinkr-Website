@@ -6,7 +6,7 @@ categoryLabel: "Integraties"
 subcategory: "vervoerders"
 subcategoryLabel: "Vervoerders"
 order: 73
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-06-01"
 ---
 
 <p>Volg de onderstaande stappen om ParcelPro te koppelen met ShopLinkr.</p>

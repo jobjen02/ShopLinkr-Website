@@ -6,7 +6,7 @@ categoryLabel: "Rapportages & Inzicht"
 subcategory: "rapporten"
 subcategoryLabel: "Rapporten"
 order: 60
-lastUpdated: "2026-05-28"
+lastUpdated: "2026-04-05"
 ---
 
 <p>Met het product prestaties rapport zie je in een oogopslag hoe elk product presteert. Per product bekijk je de omzet, winst, marge, kosten en retouren over een door jou gekozen periode. Zo weet je precies welke producten goed lopen en waar je marges onder druk staan.</p>
