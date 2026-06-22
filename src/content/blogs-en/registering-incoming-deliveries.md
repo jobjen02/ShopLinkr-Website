@@ -4,8 +4,6 @@ excerpt: "Discover how ShopLinkr's \"incoming deliveries\" feature helps you man
 publishedAt: "2023-06-14T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "ShopLinkr logo"
-isVisible: true
-isBlog: true
 translationKey: "inkomende-leveringen-registreren"
 ---
 

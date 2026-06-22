@@ -3,8 +3,6 @@ title: "Locatiebeheer"
 excerpt: "Met locatiebeheer weet je meteen waar elk product ligt en wat de waarde is van jouw voorraad."
 publishedAt: "2024-01-29T00:00:00.000Z"
 image: "/images/blog/locatiebeheer/6jCIG6yk1PUXNAkFP9A81dIop8.jpg"
-isVisible: true
-isBlog: true
 ---
 
 <p>Goed nieuws voor alle ShopLinkr gebruikers! We lanceren een handige nieuwe functie: Locatiebeheer. Dit maakt het beheren van je voorraad super eenvoudig, zelfs als je producten op verschillende plekken hebt liggen binnen je magazijn. Laten we eens kijken hoe deze nieuwe feature jouw webshop kan helpen.</p>

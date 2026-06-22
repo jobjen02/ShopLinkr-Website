@@ -4,8 +4,6 @@ excerpt: "Ontdek de nieuwe \"Product Tags\" feature van ShopLinkr en organiseer 
 publishedAt: "2023-05-30T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "ShopLinkr logo"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Als online verkoper weet je hoe belangrijk het is om je producten goed georganiseerd te houden. Met de nieuwe "Product Tags" feature van ShopLinkr wordt het beheren en vinden van specifieke producten een stuk eenvoudiger. Ontdek hoe deze krachtige tool je kan helpen om je inventaris efficiënt te organiseren en je productoverzicht te verbeteren.</strong></p>

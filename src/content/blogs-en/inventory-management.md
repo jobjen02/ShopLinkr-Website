@@ -3,8 +3,6 @@ title: "Inventory Management"
 excerpt: "Inventory management might sound like a technical term, but in reality it is a crucial aspect for every webshop and retailer. Whether you run a small business or a large company, good inventory management can make the difference between growth and stagnation."
 publishedAt: "2023-09-25T00:00:00.000Z"
 image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
-isVisible: true
-isBlog: true
 translationKey: "voorraadmanagement"
 ---
 
@@ -17,7 +15,7 @@ translationKey: "voorraadmanagement"
 <p><strong>Customer satisfaction</strong>: Nothing frustrates customers more than hearing that a product is out of stock after they have placed an order. Good inventory management prevents these situations.</p>
 </li>
 <li>
-<p><strong>Cost savings</strong>: Overstock can lead to storage costs, while a shortage can lead to missed sales opportunities. Efficient inventory management optimises your costs.</p>
+<p><strong>Cost savings</strong>: Overstock can lead to storage costs, while a shortage can lead to missed sales opportunities. Efficient inventory management optimizes your costs.</p>
 </li>
 <li>
 <p><strong>Improved cash flow</strong>: By managing your stock in an optimal way, you can improve your cash flow, which is essential for the financial health of a business.</p>

@@ -4,8 +4,6 @@ excerpt: "Vereenvoudig je verzendproces met de MyParcel koppeling van ShopLinkr.
 publishedAt: "2023-03-31T00:00:00.000Z"
 image: "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png"
 imageAlt: "MyParcel integratie afbeelding"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Het verzenden van pakketten is een cruciaal onderdeel van je e-commerce bedrijf, maar het kan tijdrovend en complex zijn. Gelukkig biedt ShopLinkr een naadloze integratie met MyParcel, waarmee je jouw verzendproces kunt stroomlijnen en vereenvoudigen. In deze blogpost ontdek je hoe je met één klik op de knop verzendlabels kunt genereren, track &amp; trace codes automatisch worden doorgegeven en het verzenden van bestellingen efficiënter kunt maken.</strong></p>

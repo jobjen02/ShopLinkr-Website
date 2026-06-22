@@ -5,11 +5,13 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
+import { redirects } from './src/data/redirects.mjs';
 
 export default defineConfig({
     site: 'https://shoplinkr.com',
     output: 'server',
     adapter: vercel(),
+    redirects,
     i18n: {
         locales: ['nl', 'en'],
         defaultLocale: 'nl',

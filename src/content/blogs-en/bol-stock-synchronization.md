@@ -3,8 +3,6 @@ title: "Bol stock synchronization"
 excerpt: "Why Bol stock synchronization matters in the multichannel retail era."
 publishedAt: "2023-10-25T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
-isVisible: true
-isBlog: true
 translationKey: "bol-com-voorraad-synchronisatie"
 ---
 

@@ -1,10 +1,8 @@
 ---
 title: "What exactly is Shipping via Bol (VVB)?"
-excerpt: "Shipping via Bol (VVB) is a handy tool that Bol offers, allowing sellers to optimise their shipping process and serve customers faster. This blog explains what VVB means exactly, how it works and which benefits it offers you as a seller on Bol."
+excerpt: "Shipping via Bol (VVB) is a handy tool that Bol offers, allowing sellers to optimize their shipping process and serve customers faster. This blog explains what VVB means exactly, how it works and which benefits it offers you as a seller on Bol."
 publishedAt: "2024-02-05T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
-isVisible: true
-isBlog: true
 translationKey: "wat-is-verzenden-via-bol-vvb-precies"
 ---
 
@@ -50,6 +48,6 @@ translationKey: "wat-is-verzenden-via-bol-vvb-precies"
 <p><strong>Inventory Management</strong>: Keep accurate track of your stock to make sure you can process and ship your orders efficiently.</p>
 </li>
 </ol>
-<p>Shipping via Bol (VVB) offers a great opportunity to optimise your shipping process and give your customers the reliable and fast delivery they expect. By using the strong shipping infrastructure of Bol, you can focus on what you do best: selling great products.</p>
+<p>Shipping via Bol (VVB) offers a great opportunity to optimize your shipping process and give your customers the reliable and fast delivery they expect. By using the strong shipping infrastructure of Bol, you can focus on what you do best: selling great products.</p>
 <p>We can help you get your order &amp; inventory management in order. With our tool ShopLinkr you get instant insight into your stock and all your open orders, from all your sales channels.</p>
 <p>Schedule a <strong>free demo</strong> now and we will walk you through everything together!</p>

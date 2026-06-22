@@ -4,8 +4,6 @@ excerpt: "Ontdek hoe je met de Sendy koppeling van ShopLinkr je verzendproces op
 publishedAt: "2023-05-03T00:00:00.000Z"
 image: "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png"
 imageAlt: "Sendy integratie afbeelding"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Ontdek hoe je je verzend workflow kunt stroomlijnen met de naadloze integratie van Sendy en ShopLinkr. Met één klik op de knop genereer je verzendlabels en ontvang je automatisch de track &amp; trace-code voor je bestellingen. Lees verder om te ontdekken hoe deze integratie je verzendproces efficiënter maakt.</strong></p>

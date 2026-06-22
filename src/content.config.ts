@@ -14,8 +14,26 @@ const blogs = defineCollection({
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         category: z.string().optional(),
-        isVisible: z.boolean().default(true),
-        isBlog: z.boolean().default(true),
+    }),
+});
+
+// SEO landing pages: keyword-targeted content, served at the site root
+// (e.g. /excel-voorraadbeheer-...). Same shape as a blog minus the old
+// isBlog/isVisible flags (which only existed to hide these from the blog list
+// in Framer's single-collection setup; no longer needed now they are separate).
+const seoPages = defineCollection({
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/seo',
+    }),
+    schema: z.object({
+        title: z.string(),
+        excerpt: z.string(),
+        author: z.string().default('ShopLinkr'),
+        publishedAt: z.coerce.date(),
+        image: z.string().optional(),
+        imageAlt: z.string().optional(),
+        category: z.string().optional(),
     }),
 });
 
@@ -78,8 +96,23 @@ const blogsEn = defineCollection({
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         category: z.string().optional(),
-        isVisible: z.boolean().default(true),
-        isBlog: z.boolean().default(true),
+        translationKey: z.string().optional(),
+    }),
+});
+
+const seoPagesEn = defineCollection({
+    loader: glob({
+        pattern: '**/*.{md,mdx}',
+        base: './src/content/seo-en',
+    }),
+    schema: z.object({
+        title: z.string(),
+        excerpt: z.string(),
+        author: z.string().default('ShopLinkr'),
+        publishedAt: z.coerce.date(),
+        image: z.string().optional(),
+        imageAlt: z.string().optional(),
+        category: z.string().optional(),
         translationKey: z.string().optional(),
     }),
 });
@@ -130,9 +163,11 @@ const integrationsEn = defineCollection({
 
 export const collections = {
     blogs,
+    seoPages,
     supportArticles,
     integrations,
     blogsEn,
+    seoPagesEn,
     supportArticlesEn,
     integrationsEn,
 };

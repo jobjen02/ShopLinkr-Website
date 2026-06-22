@@ -38,7 +38,7 @@ Example: A.1.2.3.4 = Zone A, Aisle 1, Rack 2, Shelf 3, Bin 4</code></pre>
 <p>Use a letter for the first level, numbers for the rest</p>
 </td>
 <td>
-<p>The letter makes the first level instantly recognisable among the numbers</p>
+<p>The letter makes the first level instantly recognizable among the numbers</p>
 </td>
 </tr>
 <tr>

@@ -4,8 +4,6 @@ excerpt: "Ontdek de kracht van de integratie tussen ShopLinkr en Shopify. Vereen
 publishedAt: "2022-12-21T00:00:00.000Z"
 image: "/images/blog/shopify-koppelen-aan-shoplinkr/SNMrUjZnxSfQb0OfE3pgIZ8XRLM.png"
 imageAlt: "Shopify integratie afbeelding"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Met de Shopify integratie van ShopLinkr verwerk je orders, druk je verzendlabels en houd je je voorraad in sync over al je verkoopkanalen. Alles vanuit één centraal platform.</strong></p>

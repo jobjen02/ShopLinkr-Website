@@ -1,5 +1,5 @@
 ---
-title: "Cancelling an order"
+title: "Canceling an order"
 summary: "Cancel an order and have the stock released automatically."
 category: "order-processing"
 categoryLabel: "Order processing"
@@ -10,8 +10,8 @@ lastUpdated: "2026-04-01"
 translationKey: "bestelling-annuleren"
 ---
 
-<p>Sometimes you need to cancel an order, for example because the customer wants to cancel it or because there is a problem with the delivery. When you cancel, the order is also cancelled on the sales channel and the reserved stock is released again.</p>
-<h3>Cancelling an order</h3>
+<p>Sometimes you need to cancel an order, for example because the customer wants to cancel it or because there is a problem with the delivery. When you cancel, the order is also canceled on the sales channel and the reserved stock is released again.</p>
+<h3>Canceling an order</h3>
 <ol>
 <li>
 <p>Go to <strong>Orders</strong> and find the order you want to cancel.</p>
@@ -29,13 +29,13 @@ translationKey: "bestelling-annuleren"
 <p>Confirm the cancellation.</p>
 </li>
 </ol>
-<p>The order gets the status <strong>Cancelled</strong> and the cancellation is pushed through to the sales channel.</p>
+<p>The order gets the status <strong>Canceled</strong> and the cancellation is pushed through to the sales channel.</p>
 <h3>What happens to the stock?</h3>
 <p>Whether the reserved stock is released depends on the cancellation reason you choose. For most reasons the stock is booked back automatically, so it becomes available again for other orders. If, for example, you select that the product is out of stock as the reason, the stock for that product is immediately set to 0. This prevents more orders from being placed for that item.</p>
 <h3>Good to know</h3>
 <ul>
 <li>
-<p>Cancelling is currently only available for orders from bol.</p>
+<p>Canceling is currently only available for orders from bol.</p>
 </li>
 <li>
 <p>You can only cancel orders with the status Open, Picking, Picked, Deferred or Backorder.</p>

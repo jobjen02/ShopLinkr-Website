@@ -4,8 +4,6 @@ excerpt: "Streamline your order process with the seamless Bol integration from S
 publishedAt: "2022-12-14T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bol integration image"
-isVisible: true
-isBlog: true
 translationKey: "bol-com-koppelen-aan-shoplinkr"
 ---
 

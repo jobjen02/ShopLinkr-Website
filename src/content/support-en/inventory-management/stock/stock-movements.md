@@ -48,7 +48,7 @@ translationKey: "voorraadmutaties"
 <p><strong>Order processed</strong>: stock definitively written off after shipping</p>
 </li>
 <li>
-<p><strong>Order cancelled</strong>: reserved stock released again</p>
+<p><strong>Order canceled</strong>: reserved stock released again</p>
 </li>
 <li>
 <p><strong>Return</strong>: stock put back in stock after a <a href="/en/support/processing-a-return">return</a></p>

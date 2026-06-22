@@ -3,8 +3,6 @@ title: "ShopLinkr at the Webwinkel Vakdagen 2026! 🧡"
 excerpt: "We're taking part this year! ShopLinkr will be at the Webwinkel Vakdagen at the Jaarbeurs in Utrecht. Will we see you there?"
 publishedAt: "2026-01-29T00:00:00.000Z"
 image: "/images/blog/shoplinkr-op-de-webwinkel-vakdagen-2026/HqjRDnSPII6EVD1GR4Ldwul0Q.jpg"
-isVisible: true
-isBlog: true
 translationKey: "shoplinkr-op-de-webwinkel-vakdagen-2026"
 ---
 

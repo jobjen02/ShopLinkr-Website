@@ -4,10 +4,9 @@ import BlogArticlePage from '../../../components/pages/BlogArticlePage.astro';
 
 export async function getStaticPaths() {
     const blogs = await getCollection('blogsEn');
-    const visibleBlogs = blogs.filter((b) => b.data.isBlog);
 
     return blogs.map((blog) => {
-        const others = visibleBlogs.filter((b) => b.id !== blog.id);
+        const others = blogs.filter((b) => b.id !== blog.id);
 
         const sameCategory = blog.data.category
             ? others.filter((b) => b.data.category === blog.data.category)

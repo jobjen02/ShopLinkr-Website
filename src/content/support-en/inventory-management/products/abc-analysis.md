@@ -7,7 +7,7 @@ subcategory: "products"
 subcategoryLabel: "Products"
 order: 48
 lastUpdated: "2026-03-07"
-translationKey: "abc-analyse"
+translationKey: "abc-analyze"
 ---
 
 <p>The ABC analysis classifies your products based on how often they are picked in your warehouse. This lets you see at a glance which products matter most to your day to day warehouse operation.</p>

@@ -1,0 +1,35 @@
+---
+// SEO landing page (keyword-targeted content) served at the site root, e.g.
+// /excel-voorraadbeheer-alles-wat-je-moet-weten. This must read as a real page,
+// NOT a blog post: no date, no author meta, no "back to blog/home" link, no
+// category eyebrow. Just a page heading + lead-in + the content + CTA.
+import { render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+
+interface Props {
+    page: any;
+    alternates?: { nl?: string; en?: string };
+    jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const { page, alternates, jsonLd } = Astro.props;
+const { Content } = await render(page);
+---
+
+<ArticleLayout
+    title={`${page.data.title} | ShopLinkr`}
+    description={page.data.excerpt}
+    heading={page.data.title}
+    subheading={page.data.excerpt}
+    image={page.data.image}
+    imageAlt={page.data.imageAlt}
+    jsonLd={jsonLd}
+    alternates={alternates}
+>
+    <Content />
+
+    <Fragment slot="after">
+        <CtaBanner />
+    </Fragment>
+</ArticleLayout>

@@ -89,9 +89,9 @@ translationKey: "bestellingen-samenvoegen"
 <p><strong>Can I merge orders from different sales channels?</strong>
 <br>
 Yes, you can merge orders from, for example, Shopify and Bol into a single merged order.</p>
-<p><strong>What happens if an original order is cancelled?</strong>
+<p><strong>What happens if an original order is canceled?</strong>
 <br>
-The cancelled order is automatically removed from the merge. If only one order is left, the entire merge is undone.</p>
+The canceled order is automatically removed from the merge. If only one order is left, the entire merge is undone.</p>
 <p><strong>Are changes to original orders updated automatically?</strong>
 <br>
 Yes, when a sales channel pushes changes (such as product or quantity changes), the merged order is recalculated automatically. This applies as long as the merged order is not yet being processed.</p>

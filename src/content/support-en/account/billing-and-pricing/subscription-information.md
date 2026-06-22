@@ -10,7 +10,7 @@ lastUpdated: "2026-06-01"
 translationKey: "alles-wat-je-moet-weten-over-het-abonnement"
 ---
 
-<p>A ShopLinkr subscription is highly flexible, with no strings attached. The subscription can be cancelled on a monthly basis, so you can decide to stop whenever you like.</p>
+<p>A ShopLinkr subscription is highly flexible, with no strings attached. The subscription can be canceled on a monthly basis, so you can decide to stop whenever you like.</p>
 <p>We use a "pay as you go" model. Want to know exactly what that means? In <a href="/en/support/the-pay-as-you-go-model">this article</a> we explain how it works and why it is more cost-effective for you compared to other types of subscriptions.</p>
 <h3>Feedback?</h3>
 <p>Is there something that does not quite work for your business, or would you like to see something new? Feel free to <a href="/en/contact">contact</a> us. We are always happy to talk with our customers to discuss the possibilities.</p>

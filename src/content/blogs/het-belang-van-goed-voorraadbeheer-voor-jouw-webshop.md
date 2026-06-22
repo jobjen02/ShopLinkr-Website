@@ -3,8 +3,6 @@ title: "Het belang van goed voorraadbeheer voor jouw webshop"
 excerpt: "Voorraadbeheer is enorm belangrijk voor webshops"
 publishedAt: "2024-03-13T00:00:00.000Z"
 image: "/images/blog/het-belang-van-goed-voorraadbeheer-voor-jouw-webshop/zqZx6bfhycOTBHiJPMvBoyB67I.jpg"
-isVisible: true
-isBlog: true
 ---
 
 <h2>Waarom voorraadbeheer essentieel is voor jouw webshop</h2>

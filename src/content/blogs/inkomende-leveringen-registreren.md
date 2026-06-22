@@ -4,8 +4,6 @@ excerpt: "Ontdek hoe de \"inkomende leveringen\" functie van ShopLinkr je helpt 
 publishedAt: "2023-06-14T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "ShopLinkr logo"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Met de Inkomende Leveringen feature van ShopLinkr registreer, controleer en boek je nieuwe voorraad in een paar klikken in. Exporteer controlelijsten als PDF en voeg ontvangen producten direct toe aan je voorraad.</strong></p>

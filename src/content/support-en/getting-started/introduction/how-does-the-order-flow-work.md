@@ -100,10 +100,10 @@ translationKey: "hoe-werkt-de-orderflow"
 </tr>
 <tr>
 <td>
-<p><strong>Cancelled</strong></p>
+<p><strong>Canceled</strong></p>
 </td>
 <td>
-<p>Order has been cancelled</p>
+<p>Order has been canceled</p>
 </td>
 </tr>
 <tr>
@@ -123,5 +123,5 @@ translationKey: "hoe-werkt-de-orderflow"
 <p>When postponing, you can optionally enter a reason and a date. If you enter a date, the order automatically returns to the status <strong>Open</strong> at that moment and you can process it the regular way. If you do not enter a date, the order stays postponed until you resume it manually.</p>
 <h4>Marking as high priority</h4>
 <p>You can <a href="/en/support/mark-order-as-high-priority">mark urgent orders as high priority</a>. These orders get a visual indicator so it is immediately clear that they take precedence. In addition, they are added to a pick list first, so they are processed with priority.</p>
-<h4>Cancelling an order</h4>
+<h4>Canceling an order</h4>
 <p>If an order no longer needs to be shipped, you can <a href="/en/support/cancel-an-order">cancel</a> it. The reserved stock is then released again.</p>

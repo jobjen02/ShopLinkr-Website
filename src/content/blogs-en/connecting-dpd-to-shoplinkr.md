@@ -4,8 +4,6 @@ excerpt: "Find out how the DPD integration in ShopLinkr simplifies your shipping
 publishedAt: "2023-08-21T00:00:00.000Z"
 image: "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png"
 imageAlt: "DPD integration image"
-isVisible: true
-isBlog: true
 translationKey: "dpd-koppelen-aan-shoplinkr"
 ---
 

@@ -1,54 +1,7 @@
 {
-    "redirects": [
-        {
-            "source": "/functionaliteiten/pick-en-pack",
-            "destination": "/functionaliteiten/picklijsten",
-            "permanent": true
-        },
-        {
-            "source": "/functionaliteiten/productbundels",
-            "destination": "/functionaliteiten/producten",
-            "permanent": true
-        },
-        {
-            "source": "/simpel-vooraadbeheer",
-            "destination": "/simpel-voorraadbeheer",
-            "permanent": true
-        }
-    ],
     "headers": [
         {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "Strict-Transport-Security",
-                    "value": "max-age=31536000; includeSubDomains; preload"
-                },
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "Referrer-Policy",
-                    "value": "strict-origin-when-cross-origin"
-                },
-                {
-                    "key": "X-Frame-Options",
-                    "value": "SAMEORIGIN"
-                }
-            ]
-        },
-        {
             "source": "/",
-            "headers": [
-                {
-                    "key": "Link",
-                    "value": "</llms.txt>; rel=\"describedby\"; type=\"text/plain\", </.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\""
-                }
-            ]
-        },
-        {
-            "source": "/en",
             "headers": [
                 {
                     "key": "Link",

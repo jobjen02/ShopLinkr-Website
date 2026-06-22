@@ -34,7 +34,7 @@ translationKey: "bestellingen-overzicht"
 </li>
 </ul>
 <h3>Status tabs</h3>
-<p>At the top of the page you can quickly filter by status. You will see tabs for Open, Picking, Picked, Processing, Completed, <a href="/en/support/postpone-an-order">Postponed</a>, <a href="/en/support/backorders">Backorder</a> and <a href="/en/support/cancel-an-order">Cancelled</a>, among others. This makes it easy to see at a glance which orders need your attention.</p>
+<p>At the top of the page you can quickly filter by status. You will see tabs for Open, Picking, Picked, Processing, Completed, <a href="/en/support/postpone-an-order">Postponed</a>, <a href="/en/support/backorders">Backorder</a> and <a href="/en/support/cancel-an-order">Canceled</a>, among others. This makes it easy to see at a glance which orders need your attention.</p>
 <h3>Filtering</h3>
 <p>Alongside the status tabs you can filter your orders further by:</p>
 <ul>

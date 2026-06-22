@@ -3,8 +3,6 @@ title: "QLS koppelen aan ShopLinkr"
 excerpt: "Ontdek hoe de QLS koppeling van ShopLinkr je verzendproces vereenvoudigt en efficiënter maakt. Bespaar tijd en minimaliseer fouten met één klik verzendlabels genereren."
 publishedAt: "2023-05-24T00:00:00.000Z"
 image: "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Het optimaliseren van je verzendproces is essentieel voor een succesvolle e-commerce onderneming. Met de nieuwe QLS koppeling van ShopLinkr wordt het beheren van verzendlabels een fluitje van een cent. In deze blogpost ontdek je hoe deze integratie je kan helpen om je verzendproces te stroomlijnen en efficiënter te maken.</strong></p>

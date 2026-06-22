@@ -6,6 +6,7 @@ interface Props {
     title: string;
     description: string;
     heading: string;
+    subheading?: string;
     eyebrow?: string;
     image?: string;
     imageAlt?: string;
@@ -22,6 +23,7 @@ const {
     title,
     description,
     heading,
+    subheading,
     eyebrow,
     image,
     imageAlt,
@@ -61,6 +63,11 @@ const {
                 <h1 class="text-4xl md:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                     {heading}
                 </h1>
+                {subheading && (
+                    <p class="mt-6 text-lg md:text-xl text-steel dark:text-gravel leading-relaxed">
+                        {subheading}
+                    </p>
+                )}
                 {meta && (
                     <p class="mt-6 text-sm text-gravel">
                         {meta}

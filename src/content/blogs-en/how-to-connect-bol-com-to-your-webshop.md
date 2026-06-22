@@ -3,8 +3,6 @@ title: "How to Connect bol.com to Your Webshop"
 excerpt: "Merging your bol.com webshop with your own e-commerce platform, such as Shopify or WooCommerce, can have a huge impact on your online business. In this article we'll explain how connecting your bol.com webshop can be not only easy, but also cost-effective by centralizing your sales channels and optimizing your inventory management."
 publishedAt: "2024-01-22T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
-isVisible: true
-isBlog: true
 translationKey: "hoe-koppel-je-bol-com-met-jouw-webshop"
 ---
 

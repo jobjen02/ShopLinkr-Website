@@ -1,11 +1,9 @@
 ---
 title: "Connecting MyParcel to ShopLinkr"
-excerpt: "Simplify your shipping process with the MyParcel integration from ShopLinkr. Generate shipping labels and share track & trace information with your webshop automatically. Save time and optimise your logistics."
+excerpt: "Simplify your shipping process with the MyParcel integration from ShopLinkr. Generate shipping labels and share track & trace information with your webshop automatically. Save time and optimize your logistics."
 publishedAt: "2023-03-31T00:00:00.000Z"
 image: "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png"
 imageAlt: "MyParcel integration image"
-isVisible: true
-isBlog: true
 translationKey: "myparcel-koppelen-aan-shoplinkr"
 ---
 

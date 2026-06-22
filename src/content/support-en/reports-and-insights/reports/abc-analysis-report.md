@@ -7,7 +7,7 @@ subcategory: "reports"
 subcategoryLabel: "Reports"
 order: 63
 lastUpdated: "2026-04-05"
-translationKey: "abc-analyse-rapport"
+translationKey: "abc-analyze-rapport"
 ---
 
 <p>The ABC analysis report categorizes your products based on how often they are picked. A products are your most important products that are picked the most, while C products are picked the least. Use this report to optimize your warehouse layout and place your most important products in the most accessible spots.</p>

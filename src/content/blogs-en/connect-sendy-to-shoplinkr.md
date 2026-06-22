@@ -4,8 +4,6 @@ excerpt: "Discover how the Sendy integration from ShopLinkr optimizes your shipp
 publishedAt: "2023-05-03T00:00:00.000Z"
 image: "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png"
 imageAlt: "Sendy integration image"
-isVisible: true
-isBlog: true
 translationKey: "sendy-koppelen-aan-shoplinkr"
 ---
 

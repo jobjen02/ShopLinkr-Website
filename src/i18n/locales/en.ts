@@ -23,7 +23,7 @@ const en: Dictionary = {
         },
     },
     hero: {
-        badge: 'Coming soon for fulfilment companies too',
+        badge: 'Coming soon for fulfillment companies too',
         heading: 'Warehouse software for webshops.',
         sub: 'One platform for inventory, pick lists, labels and order processing. Run your warehouse without the chaos.',
         fineprint: '14 days free. No credit card. Cancel monthly.',
@@ -49,7 +49,7 @@ const en: Dictionary = {
     features: {
         eyebrow: 'What you get',
         heading: 'One platform for your whole warehouse operation.',
-        intro: 'No separate tools that ignore each other. ShopLinkr brings inventory, orders, picking, labelling and shipping together in one system.',
+        intro: 'No separate tools that ignore each other. ShopLinkr brings inventory, orders, picking, labeling and shipping together in one system.',
         stock: {
             eyebrow: 'Inventory sync',
             heading: 'One inventory, every channel.',
@@ -172,14 +172,14 @@ const en: Dictionary = {
         analyticsDesc: 'Helps us understand how you use the site so we can improve it.',
         analyticsAria: 'Analytics cookies',
         marketing: 'Marketing',
-        marketingDesc: 'For personalised content and ads.',
+        marketingDesc: 'For personalized content and ads.',
         marketingAria: 'Marketing cookies',
         readMoreBefore: 'Read more in our',
         cookiePolicy: 'cookie policy',
         readMoreMiddle: 'and',
         privacyStatement: 'privacy statement',
         acceptAll: 'Accept all',
-        configure: 'Customise',
+        configure: 'Customize',
         savePrefs: 'Save preferences',
         necessaryOnly: 'Necessary only',
         summaryAll: 'You accept all cookies.',
@@ -392,7 +392,7 @@ const en: Dictionary = {
             crumbHome: 'Home',
             crumbIntegrations: 'Integrations',
             crumbCurrent: 'Connect Shopify to bol',
-            stockEyebrow: 'Stock synchronisation',
+            stockEyebrow: 'Stock synchronization',
             stockHeading: 'One stock source for Shopify and bol.',
             stockIntro: 'ShopLinkr connects your Shopify webshop with your bol selling account. Stock changes flow both ways, orders come together in one place. Below you can see how the connection works.',
             dayEyebrow: 'A day in your warehouse',
@@ -408,7 +408,7 @@ const en: Dictionary = {
                 },
                 {
                     eyebrow: 'Matching on EAN',
-                    heading: 'Products are recognised automatically.',
+                    heading: 'Products are recognized automatically.',
                     body: 'ShopLinkr links products in Shopify to the same products on bol based on their EAN. Set it up once and the system always knows which product belongs to which channel. New products are added in just a few clicks.',
                 },
                 {
@@ -462,16 +462,16 @@ const en: Dictionary = {
         },
         comboWooBol: {
             title: 'Connect WooCommerce to bol via ShopLinkr | Integrations',
-            description: 'Selling through WooCommerce and bol? ShopLinkr synchronises your stock in real time between both channels and collects all your orders in one place.',
+            description: 'Selling through WooCommerce and bol? ShopLinkr synchronizes your stock in real time between both channels and collects all your orders in one place.',
             eyebrow: 'WooCommerce and bol',
             heading: 'Connect WooCommerce with bol via ShopLinkr.',
-            subheading: 'Selling through WooCommerce and through bol? ShopLinkr synchronises your stock in real time and collects all orders in one place. One workflow, no oversells.',
+            subheading: 'Selling through WooCommerce and through bol? ShopLinkr synchronizes your stock in real time and collects all orders in one place. One workflow, no oversells.',
             jsonLdName: 'Connect WooCommerce to bol via ShopLinkr',
-            jsonLdDescription: 'Selling through WooCommerce and bol? ShopLinkr synchronises your stock in real time between both channels and collects all your orders in one place.',
+            jsonLdDescription: 'Selling through WooCommerce and bol? ShopLinkr synchronizes your stock in real time between both channels and collects all your orders in one place.',
             breadcrumbHome: 'Home',
             breadcrumbParent: 'Integrations',
             breadcrumbCurrent: 'Connect WooCommerce to bol',
-            syncEyebrow: 'Stock synchronisation',
+            syncEyebrow: 'Stock synchronization',
             syncHeading: 'One stock source for WooCommerce and bol.',
             syncIntro: 'ShopLinkr connects your WooCommerce webshop with your bol sales account. Stock moves both ways, orders come together in one overview. Below you can see exactly what the connection does for you.',
             setupEyebrow: 'How to set it up',
@@ -481,7 +481,7 @@ const en: Dictionary = {
             faqHeading: 'What WooCommerce shops often ask.',
             rows: [
                 { eyebrow: 'ShopLinkr as the bridge', heading: 'A reliable link between WooCommerce and bol.', body: 'You connect your WooCommerce webshop to ShopLinkr, and your bol sales account too. From that moment on, ShopLinkr keeps everything aligned. No separate plugins to maintain per channel, no exports in between.' },
-                { eyebrow: 'Matching on EAN', heading: 'Products are linked together automatically.', body: 'Based on the EAN number, ShopLinkr recognises which WooCommerce product is the same as a bol listing. Set it up properly once, and you never have to match SKUs by hand again. New products are added in a few clicks.' },
+                { eyebrow: 'Matching on EAN', heading: 'Products are linked together automatically.', body: 'Based on the EAN number, ShopLinkr recognizes which WooCommerce product is the same as a bol listing. Set it up properly once, and you never have to match SKUs by hand again. New products are added in a few clicks.' },
                 { eyebrow: 'Stock in sync in real time', heading: 'One stock view for both your channels.', body: 'Sell a product on bol, and ShopLinkr adjusts your WooCommerce stock instantly. Get an order through your own webshop, and the stock on bol goes down. One stock source, the same reliable level on every channel.' },
                 { eyebrow: 'Orders in one place', heading: 'All orders in the same flow.', body: 'WooCommerce orders and bol orders appear in the same order list. You pick, pack and ship from one environment. It no longer matters where the order comes from, your warehouse always works the same way.' },
                 { eyebrow: 'Prevent oversells', heading: 'Never sell what you do not have in stock again.', body: 'Because stock moves between channels at lightning speed, you avoid selling the same last item in two places at once. Fewer cancellations, no bol sales penalties and happier customers.' },
@@ -489,7 +489,7 @@ const en: Dictionary = {
             setupSteps: [
                 { label: 'Step 1', title: 'Connect WooCommerce', body: 'Install our WooCommerce plugin on your WordPress site, copy an API key from ShopLinkr and your shop talks along right away. No developer needed.' },
                 { label: 'Step 2', title: 'Get your EAN in order', body: 'WooCommerce has no EAN field by default. We support the EAN Barcode Generator plugin from WPFactory. No EAN? Then ShopLinkr uses your SKU field as a fallback.' },
-                { label: 'Step 3', title: 'Add bol', body: 'Open your bol sales account and authorise ShopLinkr in a few clicks. Your listings are pulled in and matched with your WooCommerce products on EAN.' },
+                { label: 'Step 3', title: 'Add bol', body: 'Open your bol sales account and authorize ShopLinkr in a few clicks. Your listings are pulled in and matched with your WooCommerce products on EAN.' },
                 { label: 'Step 4', title: 'Sync is live', body: 'Done. From now on, stock and orders run between both channels through ShopLinkr. You handle everything from one environment, and your warehouse no longer notices the difference between channels.' },
             ],
             faqs: [
@@ -508,7 +508,7 @@ const en: Dictionary = {
             breadcrumbHome: 'Home',
             breadcrumbIntegrations: 'Integrations',
             breadcrumbCurrent: 'Connect WooCommerce to Shopify',
-            syncEyebrow: 'Stock synchronisation',
+            syncEyebrow: 'Stock synchronization',
             syncHeading: 'One stock source for WooCommerce and Shopify.',
             syncIntro: 'ShopLinkr connects your WooCommerce shop with your Shopify shop. Stock changes go both ways, and orders come together in a single overview. Below you can see exactly what the connection does for you.',
             rows: [
@@ -809,7 +809,7 @@ const en: Dictionary = {
             subheading: "From solo founders to teams with multiple warehouses. Below you'll find a featured story and what other customers have to say.",
             breadcrumbLabel: 'Customer stories',
             articleHeadlinePrefix: 'Customer story:',
-            storyIntro: 'Jasper started Schoongedaan in 2023 from a little cabinet next to his desk. Today he runs a fast-growing company in Nieuwegein, specialised in cleaning products for floors, kitchens, swimming pools and much more. Through bol, Kaufland and his own webshop he ships hundreds of orders every day.',
+            storyIntro: 'Jasper started Schoongedaan in 2023 from a little cabinet next to his desk. Today he runs a fast-growing company in Nieuwegein, specialized in cleaning products for floors, kitchens, swimming pools and much more. Through bol, Kaufland and his own webshop he ships hundreds of orders every day.',
             storyChallenge: 'Rapid growth quickly turned the old warehouse into chaos. Products were mixed up and order picking took a lot of time. Jasper could process at most 60 orders a day and kept running into mistakes, returns and frustration.',
             storySolution: 'With ShopLinkr, Jasper brought structure to his warehouse and connected all of his sales channels. Thanks to smart pick lists and mobile barcode scanners, the pick-and-pack process is now fully automated. He handles orders, inventory, shipping and even returns from a single system, which lets Jasper process hundreds of orders a day without errors.',
             storyMetric: 'From 60 orders a day to 150 to 250 orders, with peaks of 500 orders on Mondays.',
@@ -1156,7 +1156,7 @@ const en: Dictionary = {
                 },
                 {
                     title: 'Receive products',
-                    body: 'Per line you indicate what has come in and to which location it goes. Want to scan? With a barcode scanner ShopLinkr recognises the product by its EAN code and counts it automatically. Your stock is updated right away across all your sales channels.',
+                    body: 'Per line you indicate what has come in and to which location it goes. Want to scan? With a barcode scanner ShopLinkr recognizes the product by its EAN code and counts it automatically. Your stock is updated right away across all your sales channels.',
                 },
                 {
                     title: 'Complete the delivery',
@@ -1287,7 +1287,7 @@ const en: Dictionary = {
                 {
                     eyebrow: 'Bulk assign',
                     heading: 'Set up your entire warehouse in one go.',
-                    body: 'Through Tools you link multiple products to locations at once. Ideal when starting out or after a reorganisation, so you do not have to go product by product.',
+                    body: 'Through Tools you link multiple products to locations at once. Ideal when starting out or after a reorganization, so you do not have to go product by product.',
                 },
             ],
             typesEyebrow: 'Pick and bulk',
@@ -1316,7 +1316,7 @@ const en: Dictionary = {
         },
         featureOrders: {
             title: 'Processing orders with ShopLinkr',
-            description: 'Process orders from all your sales channels in one place. Create shipping labels with your favourite carrier, work in batches or handle individual orders in between.',
+            description: 'Process orders from all your sales channels in one place. Create shipping labels with your favorite carrier, work in batches or handle individual orders in between.',
             eyebrow: 'Orders',
             heading: 'Process everything in one place.',
             subheading: 'Orders from all your sales channels come together in a single overview. Process them individually or in large batches, print labels from any carrier and the status is synced back automatically.',
@@ -1425,7 +1425,7 @@ const en: Dictionary = {
                 {
                     eyebrow: 'Saved filters',
                     heading: 'Fixed picking rounds in one click.',
-                    body: 'Do you often use the same combination of channel, location or parcel type? Save the filter set under a recognisable name and start your pick list with one click next time.',
+                    body: 'Do you often use the same combination of channel, location or parcel type? Save the filter set under a recognizable name and start your pick list with one click next time.',
                 },
             ],
             methodsEyebrow: 'Three ways of picking',
@@ -1633,7 +1633,7 @@ const en: Dictionary = {
             signals: [
                 {
                     title: 'Cover backorders',
-                    body: 'Products with open backorders show up in the advice, so you can actually fulfil the orders you have already accepted.',
+                    body: 'Products with open backorders show up in the advice, so you can actually fulfill the orders you have already accepted.',
                 },
                 {
                     title: 'Stock thresholds',
@@ -1660,7 +1660,7 @@ const en: Dictionary = {
         },
         featureReports: {
             title: 'Reports and insight with ShopLinkr',
-            description: 'Get insight into your shop with the reports from ShopLinkr. See revenue and margin per product, track down dead stock, view the value of your warehouse and optimise your layout with an ABC analysis.',
+            description: 'Get insight into your shop with the reports from ShopLinkr. See revenue and margin per product, track down dead stock, view the value of your warehouse and optimize your layout with an ABC analysis.',
             eyebrow: 'Reports and insight',
             heading: 'Decide on numbers, not on gut feeling.',
             subheading: 'Four fixed reports bring your revenue, margin, stock value and warehouse efficiency together in one place. Filter, export and stay in control, without endless tinkering in Excel.',
@@ -1998,9 +1998,9 @@ const en: Dictionary = {
             whyIntro: 'ShopLinkr is built by Bol sellers, for Bol sellers. We know what you run into, from oversells to ranking dips, and we have the tool that solves it for good.',
             rows: [
                 { eyebrow: 'For Bol sellers', heading: 'Always in control of your stock on Bol.', body: 'As a Bol seller you simply cannot afford to run out of stock without seeing it coming. ShopLinkr connects your Bol account and keeps your inventory accurate in real time, even when you also sell on Shopify, WooCommerce or your own webshop.' },
-                { eyebrow: 'Higher ranking', heading: 'Stock that works in your favour.', body: 'Bol factors in how reliably you sell. An empty stock level or a cancelled order pushes your ranking down, and that is the last thing you want. By keeping your inventory accurate at all times, you avoid negative signals and steadily build your position within the platform.' },
+                { eyebrow: 'Higher ranking', heading: 'Stock that works in your favor.', body: 'Bol factors in how reliably you sell. An empty stock level or a canceled order pushes your ranking down, and that is the last thing you want. By keeping your inventory accurate at all times, you avoid negative signals and steadily build your position within the platform.' },
                 { eyebrow: 'Real-time updates', heading: 'Stock updates through your Bol connection.', body: 'Sell something through your webshop and ShopLinkr adjusts your Bol stock right away. The same goes the other way around: a sale on Bol instantly deducts stock from your other channels. You always communicate the right quantities, without ever stepping in manually.' },
-                { eyebrow: 'VVB and LVB', heading: 'Works with both Shipping via Bol and Fulfilment by Bol.', body: 'Do you ship yourself using Bol shipping labels (VVB), or do you let Bol handle your orders from their warehouse (LVB)? ShopLinkr supports both. You keep sight of what sits with you and what sits with Bol, together in one overview, including the smart stock switch between your own shipping and Bol fulfilment.' },
+                { eyebrow: 'VVB and LVB', heading: 'Works with both Shipping via Bol and Fulfillment by Bol.', body: 'Do you ship yourself using Bol shipping labels (VVB), or do you let Bol handle your orders from their warehouse (LVB)? ShopLinkr supports both. You keep sight of what sits with you and what sits with Bol, together in one overview, including the smart stock switch between your own shipping and Bol fulfillment.' },
                 { eyebrow: 'No contracts', heading: 'Sign up today, start working today.', body: 'Try ShopLinkr free for 14 days, no credit card, no commitments. Connect your Bol account, import your products and you are running your first orders through the system right away. Cancel monthly if it turns out not to be the right fit.' },
             ],
         },
@@ -2016,7 +2016,7 @@ const en: Dictionary = {
             rows: [
                 { eyebrow: 'One overview', heading: 'Your entire webshop at a glance.', body: 'Orders, inventory, customers and returns together on a single screen. No more switching between bol, Shopify, WooCommerce and your carrier portal. From now on you work from one central place, no matter where the order comes from.' },
                 { eyebrow: 'Bulk', heading: 'Process orders in bulk.', body: 'Select a batch of orders and print the pick and pack list and shipping labels in one action. During peak days that saves hours of work, and your workflow stays smooth even when the orders keep pouring in.' },
-                { eyebrow: 'Real-time sync', heading: 'Inventory that is always right.', body: 'Sell something on one channel and ShopLinkr instantly adjusts your inventory on the others. No oversells, no cancelled orders and no more awkward customer conversations about something that was actually already sold out.' },
+                { eyebrow: 'Real-time sync', heading: 'Inventory that is always right.', body: 'Sell something on one channel and ShopLinkr instantly adjusts your inventory on the others. No oversells, no canceled orders and no more awkward customer conversations about something that was actually already sold out.' },
                 { eyebrow: 'Time saved', heading: 'Win back well over an hour a day.', body: 'Our customers often win back well over an hour a day at an average of fifty orders. That is time you put into growth instead of manual work: sourcing new products, running marketing or simply heading home earlier.' },
                 { eyebrow: 'Hassle-free', heading: 'Sign up today, start working today.', body: 'You try ShopLinkr free for 14 days. No credit card, no long contracts, no consultants. Connect your channels, import your products and run your first orders through the system right away.' },
             ],
@@ -2059,7 +2059,7 @@ const en: Dictionary = {
                 {
                     eyebrow: 'The next step',
                     heading: 'When you are ready for ShopLinkr.',
-                    body: 'As soon as your inventory management becomes more than updating a list, you switch to ShopLinkr. Connect your channels, keep your stock synchronised in real time and process your orders centrally. The Excel template helps you up to that point, ShopLinkr helps you after it.',
+                    body: 'As soon as your inventory management becomes more than updating a list, you switch to ShopLinkr. Connect your channels, keep your stock synchronized in real time and process your orders centrally. The Excel template helps you up to that point, ShopLinkr helps you after it.',
                 },
             ],
         },
@@ -2089,7 +2089,7 @@ const en: Dictionary = {
                     body: 'You do not suddenly have two stocks in your warehouse. You have one pile of products, but on paper it is split across two accounts. The risk of selling the same product on both sides is therefore real, leading to oversells and frustrated customers.',
                 },
                 {
-                    eyebrow: 'Centralise',
+                    eyebrow: 'Centralize',
                     heading: 'Both accounts together in one place.',
                     body: 'Connect both bol accounts to ShopLinkr. We automatically link the products together so they are treated as a single stock. Sell on one account and ShopLinkr immediately adjusts the stock on the other. No more oversells, no matter where the order comes from.',
                 },
@@ -2102,8 +2102,8 @@ const en: Dictionary = {
         },
         returnFormTemplate: {
             title: 'Return form template - ShopLinkr',
-            description: 'Download our free return form template in Word and improve your returns processing. Easy to use and customisable to match your own branding.',
-            jsonLdDescription: 'Download our free return form template and improve your returns processing. Easy to use and customisable to match your own branding.',
+            description: 'Download our free return form template in Word and improve your returns processing. Easy to use and customizable to match your own branding.',
+            jsonLdDescription: 'Download our free return form template and improve your returns processing. Easy to use and customizable to match your own branding.',
             eyebrow: 'Free download',
             heading: 'Return form template, ready to use.',
             subheading: 'A ready made return form in Word, free to download. Adjust it to match your branding and include it with every shipment.',
@@ -2130,9 +2130,9 @@ const en: Dictionary = {
                     body: 'When a return comes in without clear details, you waste time figuring out who it is from and which order it belongs to. With a properly completed form you know straight away what you are holding, and you can process the return quickly and neatly.',
                 },
                 {
-                    eyebrow: 'Customisable',
+                    eyebrow: 'Customizable',
                     heading: 'Make it match your brand.',
-                    body: 'The template is a Word file, so it is fully customisable. Add your logo, adjust the text, change the colours to your branding and export it as a PDF. Within ten minutes you have a professional return form you can include with every shipment.',
+                    body: 'The template is a Word file, so it is fully customizable. Add your logo, adjust the text, change the colors to your branding and export it as a PDF. Within ten minutes you have a professional return form you can include with every shipment.',
                 },
                 {
                     eyebrow: 'The next step',
@@ -2198,14 +2198,14 @@ const en: Dictionary = {
             closing: 'Prefer to get started right away? Create an account and start your free 14 day trial. No credit card needed, and you can cancel any month you like.',
         },
         wooInventorySync: {
-            title: 'WooCommerce inventory synchronisation - ShopLinkr',
+            title: 'WooCommerce inventory synchronization - ShopLinkr',
             description: 'Looking for a simple way to manage your WooCommerce stock? With our tool you sync your WooCommerce inventory in real time with all your other sales channels.',
-            eyebrow: 'WooCommerce inventory synchronisation',
-            heading: 'WooCommerce inventory synchronisation, sorted with ease.',
+            eyebrow: 'WooCommerce inventory synchronization',
+            heading: 'WooCommerce inventory synchronization, sorted with ease.',
             subheading: 'Manage your WooCommerce webshop inventory in ShopLinkr. In real-time sync with all your other sales channels, without any manual work.',
             whyEyebrow: 'For WooCommerce stores',
-            whyHeading: 'The benefits of automatic synchronisation.',
-            whyIntro: 'WooCommerce is powerful, but without proper inventory synchronisation you get stuck the moment you sell across multiple channels. ShopLinkr takes that complexity away and keeps everything in line with what is really on the shelf.',
+            whyHeading: 'The benefits of automatic synchronization.',
+            whyIntro: 'WooCommerce is powerful, but without proper inventory synchronization you get stuck the moment you sell across multiple channels. ShopLinkr takes that complexity away and keeps everything in line with what is really on the shelf.',
             rows: [
                 { eyebrow: 'Connection', heading: 'Connect once, then it runs on its own.', body: 'You link your WooCommerce store to ShopLinkr in just a few clicks. Your products are imported and your stock flows in automatically. From that moment on, ShopLinkr keeps your WooCommerce inventory in real-time sync with all your other channels.' },
                 { eyebrow: 'Real-time', heading: 'Updates within seconds.', body: 'Sell something on WooCommerce and ShopLinkr instantly adjusts your stock on Bol, Shopify and your other channels. It works the other way around too: an order on Bol immediately reduces your stock in WooCommerce, so you never sell the same item twice.' },
@@ -2226,7 +2226,7 @@ const en: Dictionary = {
             rows: [
                 { eyebrow: 'Why a system', heading: 'Excel hits its limits faster than you expect.', body: 'A spreadsheet works fine until your second or third channel comes along. From that point on you are always playing catch up: your stock no longer matches, oversells pile up and your picker grabs the wrong quantities. An inventory management system takes that manual work out of your day.' },
                 { eyebrow: 'One workspace', heading: 'Every channel together on a single screen.', body: 'ShopLinkr connects all your sales channels in one environment. From now on you manage your stock, orders and returns from a central place, with your product list always in view and without constantly switching between tabs.' },
-                { eyebrow: 'Realtime sync', heading: 'Live updates, no delay.', body: 'Sell something on Bol and ShopLinkr instantly adjusts your stock across your other channels. No oversells, no cancelled orders and no excuses to customers. Your stock stays in step with what is actually sitting in your warehouse.' },
+                { eyebrow: 'Realtime sync', heading: 'Live updates, no delay.', body: 'Sell something on Bol and ShopLinkr instantly adjusts your stock across your other channels. No oversells, no canceled orders and no excuses to customers. Your stock stays in step with what is actually sitting in your warehouse.' },
                 { eyebrow: 'Fast and accurate', heading: 'Process orders in minutes, not hours.', body: 'Orders come in automatically, you print pick and pack lists, generate shipping labels in bulk and send track and trace back. What used to take an entire morning now fits in between your coffee and your lunch.' },
                 { eyebrow: 'Insight', heading: 'See where your stock is and what it is doing.', body: 'For each product you see physical stock, reserved quantities and what is still available to sell. Combine that with warehouse locations and purchase advice and you stay in control of what happens in your warehouse at all times.' },
             ],
@@ -2259,7 +2259,7 @@ const en: Dictionary = {
             whyIntro: 'ShopLinkr pulls all your products from your channels, brings them together in one overview and syncs your inventory back in real time. No double work, no oversells, and always a clear view of what is really on the shelf.',
             rows: [
                 { eyebrow: 'Multi-channel', heading: 'Connect all your sales channels at once.', body: 'Selling across several channels at the same time? ShopLinkr ties your channels together and builds a single inventory overview around them. From now on you work from one screen instead of constantly switching between platforms.' },
-                { eyebrow: 'Always accurate', heading: 'Inventory that is always right.', body: 'Sell a product on Bol and ShopLinkr instantly deducts the stock on Shopify and WooCommerce. No more oversells, no more cancelled orders. For each product you see how much you physically have in stock, how much is reserved and how much you can actually still sell.' },
+                { eyebrow: 'Always accurate', heading: 'Inventory that is always right.', body: 'Sell a product on Bol and ShopLinkr instantly deducts the stock on Shopify and WooCommerce. No more oversells, no more canceled orders. For each product you see how much you physically have in stock, how much is reserved and how much you can actually still sell.' },
                 { eyebrow: 'Lightning-fast picking', heading: 'Pick lists that speed up your warehouse.', body: 'The pick list shows the location for every product. Your picker walks the most efficient route and grabs everything for several orders in one go. That saves you minutes per order and keeps the pace up during peak days.' },
                 { eyebrow: 'Shipping', heading: 'Automatic shipping labels.', body: 'Straight from ShopLinkr you print a shipping label from PostNL, DPD, MyParcel, Sendcloud or another integration. The track and trace goes back to your sales channel and your customer automatically. No more copy-and-paste between marketplace and carrier.' },
                 { eyebrow: 'Purchase advice', heading: 'Smart forecasts for your purchasing.', body: 'Based on your sales history, ShopLinkr shows which products you are nearly out of and how much you should reorder. That way your best seller never suddenly sells out, without your warehouse filling up.' },

@@ -3,8 +3,6 @@ title: "Inventory Systems"
 excerpt: "A deep dive into inventory systems: why every business needs them"
 publishedAt: "2023-10-12T00:00:00.000Z"
 image: "/images/blog/voorraadsystemen/ZPmW5kSvGlGlu5mL45xiLkecb6g.png"
-isVisible: true
-isBlog: true
 translationKey: "voorraadsystemen"
 ---
 

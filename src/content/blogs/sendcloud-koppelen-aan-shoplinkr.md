@@ -4,8 +4,6 @@ excerpt: "Vereenvoudig je verzendproces met de Sendcloud koppeling van ShopLinkr
 publishedAt: "2023-04-21T00:00:00.000Z"
 image: "/images/blog/sendcloud-koppelen-aan-shoplinkr/Slt1nu6TvSVLMWJ0b7CuNixcQk.png"
 imageAlt: "Sendcloud integratie afbeelding"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Efficiënt verzendbeheer is essentieel voor elke e-commerce onderneming. Het handmatig genereren van verzendlabels en het bijhouden van de track &amp; trace informatie kan echter tijdrovend zijn. Gelukkig biedt ShopLinkr een naadloze integratie met Sendcloud, waardoor je met slechts één klik verzendlabels kunt aanmaken en de track &amp; trace informatie automatisch kunt doorgeven aan je webshop. In deze blogpost ontdek je de voordelen van het koppelen van Sendcloud met ShopLinkr en hoe dit je verzendproces vereenvoudigt.</strong></p>

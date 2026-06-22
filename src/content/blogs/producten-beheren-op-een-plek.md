@@ -3,8 +3,6 @@ title: "Producten centraal in ShopLinkr beheren"
 excerpt: "Een centraal overzicht van al je producten, met voorraad, locaties en tags op één plek."
 publishedAt: "2024-05-06T00:00:00.000Z"
 image: "/images/blog/producten-beheren-op-een-plek/tWZExEyY1pAxJKa1CbTDA0rbU.png"
-isVisible: true
-isBlog: true
 ---
 
 <p>Werk je met meerdere verkoopkanalen? Dan ken je het waarschijnlijk wel: je producten staan overal verspreid, en het overzicht raak je snel kwijt. In ShopLinkr bouwen we daarom één centrale productcatalogus waarin je al je artikelen netjes op een rij ziet staan.</p>

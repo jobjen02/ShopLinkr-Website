@@ -3,8 +3,6 @@ title: "bol voorraad synchronisatie"
 excerpt: "Het belang van bol voorraad synchronisatie in het multichannel retail tijdperk."
 publishedAt: "2023-10-25T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
-isVisible: true
-isBlog: true
 ---
 
 <p>In de dynamische wereld van e-commerce kiezen veel verkopers ervoor om meerdere online winkels op platforms zoals bol.com te hebben. Dit vergroot je zichtbaarheid en verkoop. Maar met meerdere winkels komt de uitdaging van voorraadbeheer. Hier speelt bol.com voorraad synchronisatie een cruciale rol.</p>

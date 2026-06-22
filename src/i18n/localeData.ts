@@ -33,6 +33,7 @@ export const supportCategoriesFor = pick<SupportCategory[]>({ nl: supportCategor
  */
 export const collections = {
     blogs: { nl: 'blogs', en: 'blogsEn' },
+    seo: { nl: 'seoPages', en: 'seoPagesEn' },
     support: { nl: 'supportArticles', en: 'supportArticlesEn' },
     integrations: { nl: 'integrations', en: 'integrationsEn' },
 } as const satisfies Record<string, Record<Locale, string>>;

@@ -3,8 +3,6 @@ title: "Wat is verzenden via Bol (VVB) precies?"
 excerpt: "Verzenden via Bol (VVB) is een handige tool die bol aanbiedt, waardoor verkopers hun verzendproces kunnen optimaliseren en klanten sneller kunnen bedienen. In deze blog wordt uitgelegd wat VVB precies betekent, hoe het werkt en welke voordelen het biedt voor jou als verkoper op bol."
 publishedAt: "2024-02-05T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Wat is Verzenden via Bol (VVB)?

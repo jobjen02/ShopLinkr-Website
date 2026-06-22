@@ -3,8 +3,6 @@ title: "Location Management"
 excerpt: "With location management you instantly know where every product is and what your inventory is worth."
 publishedAt: "2024-01-29T00:00:00.000Z"
 image: "/images/blog/locatiebeheer/6jCIG6yk1PUXNAkFP9A81dIop8.jpg"
-isVisible: true
-isBlog: true
 translationKey: "locatiebeheer"
 ---
 

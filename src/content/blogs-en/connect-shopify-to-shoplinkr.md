@@ -4,8 +4,6 @@ excerpt: "Discover the power of the integration between ShopLinkr and Shopify. S
 publishedAt: "2022-12-21T00:00:00.000Z"
 image: "/images/blog/shopify-koppelen-aan-shoplinkr/SNMrUjZnxSfQb0OfE3pgIZ8XRLM.png"
 imageAlt: "Shopify integration image"
-isVisible: true
-isBlog: true
 translationKey: "shopify-koppelen-aan-shoplinkr"
 ---
 

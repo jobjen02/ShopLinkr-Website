@@ -4,8 +4,6 @@ excerpt: "Ontdek de kracht van de integratie tussen ShopLinkr en WooCommerce. Ve
 publishedAt: "2023-05-01T00:00:00.000Z"
 image: "/images/blog/woocommerce-koppelen-aan-shoplinkr/2FVqp9F6P8qrmqhOp6PAtXTFu2Y.png"
 imageAlt: "WooCommerce integratie afbeelding"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Als eigenaar van een WooCommerce-winkel wil je je bestelproces zo efficiënt mogelijk maken. Met de nieuwste integratie tussen ShopLinkr en WooCommerce wordt dat een fluitje van een cent. Ontdek hoe je je bestellingen kunt verwerken, verzendlabels kunt genereren en je voorraad kunt beheren met gemak.</strong></p>

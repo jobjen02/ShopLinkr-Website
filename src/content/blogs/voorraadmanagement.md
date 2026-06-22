@@ -3,8 +3,6 @@ title: "Voorraadmanagement"
 excerpt: "Voorraadmanagement, het lijkt misschien een technische term, maar in werkelijkheid is het een cruciaal aspect voor elke webshop en retailer. Of je nu een klein bedrijf runt of een groot bedrijf, een goed voorraadbeheer kan het verschil maken tussen groei en stagnatie."
 publishedAt: "2023-09-25T00:00:00.000Z"
 image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Voorraadmanagement, het lijkt misschien een technische term, maar in werkelijkheid is het een cruciaal aspect voor elke webshop en retailer. Of je nu een klein bedrijf runt of een groot bedrijf, een goed voorraadbeheer kan het verschil maken tussen groei en stagnatie. Hierin kan een voorraadbeheer systeem als ShopLinkr een grote rol spelen.</strong></p>

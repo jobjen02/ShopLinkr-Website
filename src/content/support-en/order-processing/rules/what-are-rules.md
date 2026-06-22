@@ -34,7 +34,7 @@ translationKey: "wat-zijn-regels"
 <p><strong>Postpone orders to the Wadden Islands</strong>: automatically postpone orders with a delivery address on the Wadden Islands so you can process them separately.</p>
 </li>
 <li>
-<p><strong>Add tags</strong>: automatically give orders from a specific sales channel a tag so you can recognise them easily.</p>
+<p><strong>Add tags</strong>: automatically give orders from a specific sales channel a tag so you can recognize them easily.</p>
 </li>
 <li>
 <p><strong>Mark as high priority</strong>: automatically mark orders containing a certain product as high priority.</p>

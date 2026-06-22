@@ -41,7 +41,7 @@ translationKey: "locatiebeheer"
 </li>
 </ol>
 <h3>Hierarchical locations</h3>
-<p>You can build a hierarchy of locations. This means you can, for example, first create an aisle, then racks within it, and then bins or shelves within those. This hierarchy makes it easy to organise your warehouse logically, especially when you have a lot of products.</p>
+<p>You can build a hierarchy of locations. This means you can, for example, first create an aisle, then racks within it, and then bins or shelves within those. This hierarchy makes it easy to organize your warehouse logically, especially when you have a lot of products.</p>
 <p>Example structure:</p>
 <pre><code>Aisle A
 ├── Rack 1

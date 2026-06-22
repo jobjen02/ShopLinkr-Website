@@ -1,6 +1,6 @@
 ---
 title: "Variant groups"
-summary: "Group products that belong together, such as the same products in different quantities, sizes or colours."
+summary: "Group products that belong together, such as the same products in different quantities, sizes or colors."
 category: "inventory-management"
 categoryLabel: "Inventory management"
 subcategory: "products"
@@ -10,7 +10,7 @@ lastUpdated: "2026-04-20"
 translationKey: "variantgroepen"
 ---
 
-<p>Variant groups let you group products that belong together. Think of the same product in different quantities (2 pieces, 4 pieces, 6 pieces, etc) or colours (white, blue, green). The products keep functioning independently with their own stock, EAN codes and listings, but you can see at a glance which products are variants of each other.</p>
+<p>Variant groups let you group products that belong together. Think of the same product in different quantities (2 pieces, 4 pieces, 6 pieces, etc) or colors (white, blue, green). The products keep functioning independently with their own stock, EAN codes and listings, but you can see at a glance which products are variants of each other.</p>
 <h3>Creating a variant group</h3>
 <ol>
 <li>
@@ -101,8 +101,8 @@ translationKey: "variantgroepen"
 </table>
 </figure>
 <p>In the product overview you see at the main product: <strong>120 for 3 variants</strong>. The bundle stock (20 and 10) is not counted, because it is derived from the 120 individual pieces.</p>
-<p><strong>Colour variants</strong></p>
-<p>You sell size S T-shirts in different colours:</p>
+<p><strong>Color variants</strong></p>
+<p>You sell size S T-shirts in different colors:</p>
 <figure>
 <table>
 <tbody>

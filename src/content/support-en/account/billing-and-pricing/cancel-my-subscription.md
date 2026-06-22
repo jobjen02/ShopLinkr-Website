@@ -1,5 +1,5 @@
 ---
-title: "Cancelling my subscription"
+title: "Canceling my subscription"
 summary: "How to cancel your subscription and what happens afterwards."
 category: "account"
 categoryLabel: "Account"
@@ -10,10 +10,10 @@ lastUpdated: "2025-12-29"
 translationKey: "mijn-abonnement-opzeggen"
 ---
 
-<p>Sometimes your situation changes. Whatever the reason, with ShopLinkr you decide for yourself when to stop. On this page you can read how cancelling works, what happens to your account, and what to keep in mind.</p>
+<p>Sometimes your situation changes. Whatever the reason, with ShopLinkr you decide for yourself when to stop. On this page you can read how canceling works, what happens to your account, and what to keep in mind.</p>
 <h3>How does the subscription work?</h3>
 <p>ShopLinkr runs on a rolling monthly subscription. Each subscription period starts on the same day of the month as the day your subscription originally began. No annual contracts, no automatic renewal for long periods. You stay fully in control on a month by month basis.</p>
-<h3>How does cancelling work?</h3>
+<h3>How does canceling work?</h3>
 <p>Want to stop using ShopLinkr? You can arrange that easily through the chat in the app. You will find the chat in the bottom left of the app, via the <strong>Support</strong> button.</p>
 <p>Let us know there that you want to stop and from which date you want to end the subscription. The cancellation must be requested from the account that the subscription was started with. After your message you will always receive a confirmation.</p>
 <h3>How long can I keep using ShopLinkr?</h3>

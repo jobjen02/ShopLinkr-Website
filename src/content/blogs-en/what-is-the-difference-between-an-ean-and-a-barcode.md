@@ -3,8 +3,6 @@ title: "What is the difference between an EAN and a barcode?"
 excerpt: "Every EAN is a barcode, but not every barcode is an EAN code."
 publishedAt: "2024-02-19T00:00:00.000Z"
 image: "/images/blog/wat-is-het-verschil-tussen-een-ean-en-een-barcode/cS8gKqxjsgvRfceqmPVXQEmFk.svg"
-isVisible: true
-isBlog: true
 translationKey: "wat-is-het-verschil-tussen-een-ean-en-een-barcode"
 ---
 

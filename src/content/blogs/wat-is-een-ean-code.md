@@ -4,8 +4,6 @@ excerpt: "We hebben allemaal weleens gehoord van een EAN code, maar wat is het n
 publishedAt: "2023-11-24T00:00:00.000Z"
 image: "/images/blog/wat-is-een-ean-code/oELKYx92dZ9AvSenBT3Re6U8Y8U.png"
 imageAlt: "EAN code afbeelding"
-isVisible: true
-isBlog: true
 ---
 
 <p>In de wereld van e-commerce, retail en voorraadbeheer speelt de EAN-code een sleutelrol. Deze unieke productcodes zijn essentieel om producten in de keten te volgen en te beheren. In dit artikel lees je wat EAN-codes precies zijn, hoe ze zijn opgebouwd, waarom ze zo belangrijk zijn, hoe je ze aanvraagt en waarom je ze niet zelf kunt verzinnen.</p>

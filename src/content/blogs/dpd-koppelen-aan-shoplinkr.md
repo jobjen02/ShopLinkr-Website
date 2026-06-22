@@ -4,8 +4,6 @@ excerpt: "Ontdek hoe de DPD koppeling van ShopLinkr je verzendproces vereenvoudi
 publishedAt: "2023-08-21T00:00:00.000Z"
 image: "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png"
 imageAlt: "DPD integratie afbeelding"
-isVisible: true
-isBlog: true
 ---
 
 <p><strong>Wil je je verzendproces een flinke upgrade geven? Goed nieuws! Met de DPD koppeling van ShopLinkr wordt verzenden een stuk simpeler. Je kunt namelijk je eigen DPD contract aan ShopLinkr koppelen en zo profiteren van handige verzendmogelijkheden.</strong></p>

@@ -29,8 +29,8 @@ translationKey: "nazendingen-aanmaken"
 <p>A new order is created with the type <strong>Reshipment</strong>. It appears in your orders overview and you can process it the usual way: picking, packing and shipping.</p>
 <h3>What happens to the stock?</h3>
 <p>When you create a reshipment, stock is automatically reserved for the products in the reshipment. A reshipment is otherwise handled just like a regular order, so it can also be included in the regular pick lists.</p>
-<h3>Recognising a reshipment</h3>
-<p>A reshipment is recognisable by the <strong>Reshipment</strong> type in the order list. The reshipment is linked to the original order, so you can always see which order the reshipment belongs to.</p>
+<h3>Recognizing a reshipment</h3>
+<p>A reshipment is recognizable by the <strong>Reshipment</strong> type in the order list. The reshipment is linked to the original order, so you can always see which order the reshipment belongs to.</p>
 <img alt="" src="/images/support/nazendingen-aanmaken/LO7xOEJ6oWbGWULjhOlcKfgww.png">
 <h3>Good to know</h3>
 <ul>

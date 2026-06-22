@@ -210,6 +210,6 @@ translationKey: "inkoopadvies"
 <p>An <strong>empty advice</strong> means all products are above their threshold and nothing is expected. Switch on more parts or adjust your thresholds if you still want advice.</p>
 </li>
 <li>
-<p>Advice is generated in the background. For large catalogues this can take a few minutes. You can click away and come back later.</p>
+<p>Advice is generated in the background. For large catalogs this can take a few minutes. You can click away and come back later.</p>
 </li>
 </ul>

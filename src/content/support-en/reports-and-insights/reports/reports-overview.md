@@ -10,7 +10,7 @@ lastUpdated: "2026-04-05"
 translationKey: "rapporten-overzicht"
 ---
 
-<p>The reports in ShopLinkr give you insight into how your products are performing, what your stock is worth and where there are opportunities to optimise your warehouse. You will find all reports under <strong>Reports</strong> in the menu.</p>
+<p>The reports in ShopLinkr give you insight into how your products are performing, what your stock is worth and where there are opportunities to optimize your warehouse. You will find all reports under <strong>Reports</strong> in the menu.</p>
 <h3>Product performance</h3>
 <p>See how much of each product has sold, what the revenue and profit are, and how high your margin is. Perfect for identifying your best and worst performing products. You can filter by period, tags and packaging type.</p>
 <p>Read more in <a href="/en/support/product-performance">Product performance</a>.</p>
@@ -21,7 +21,7 @@ translationKey: "rapporten-overzicht"
 <p>View the total value of your stock on a specific date. For each product you can see how many units you have in stock and what their value is based on your purchase prices.</p>
 <p>Read more in <a href="/en/support/stock-value-report">Stock value report</a>.</p>
 <h3>ABC analysis</h3>
-<p>Categorise your products based on how often they are picked. A products are your most important products, while C products are picked the least. Use this to optimise your warehouse layout.</p>
+<p>Categorize your products based on how often they are picked. A products are your most important products, while C products are picked the least. Use this to optimize your warehouse layout.</p>
 <p>Read more in <a href="/en/support/abc-analysis">ABC analysis</a>.</p>
 <h3>Exporting</h3>
 <p>Every report can be exported. The export file is sent to your email address as soon as it is ready.</p>
