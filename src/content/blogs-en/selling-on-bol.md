@@ -1,6 +1,6 @@
 ---
 title: "Selling on bol.com"
-excerpt: "Do you want to sell your products online and are you interested in selling on bol."
+excerpt: "Do you want to sell your products online and are you interested in selling on bol.com? Here is everything you need to get started."
 publishedAt: "2024-06-11T00:00:00.000Z"
 image: "/images/blog/verkopen-via-bol-com/QSwxEmBDpwlsueddn8436Gfqs.png"
 isVisible: true

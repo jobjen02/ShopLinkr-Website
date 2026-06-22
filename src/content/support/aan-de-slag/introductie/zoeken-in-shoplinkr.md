@@ -33,7 +33,7 @@ lastUpdated: "2026-05-28"
 <h3>Hoe gebruik je het?</h3>
 <ol>
 <li>
-<p>Klik op het "<strong>zoeken"</strong> linksboven in je navigatie, of druk op ctrl/cmd+k.</p>
+<p>Klik op <strong>Zoeken</strong> linksboven in je navigatie, of druk op Ctrl/Cmd+K.</p>
 </li>
 <li>
 <p>Typ je zoekopdracht. Resultaten verschijnen direct terwijl je typt.</p>

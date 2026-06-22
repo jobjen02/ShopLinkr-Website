@@ -61,7 +61,7 @@ export const routes = {
     inventoryExcel: { nl: 'voorraadbeheer-excel-template', en: 'inventory-excel-template' },
     bolInventory: { nl: 'bol-voorraadbeheer', en: 'bol-inventory-management' },
     multipleBolAccounts: { nl: 'meerdere-bol-accounts', en: 'multiple-bol-accounts' },
-    simpleInventory: { nl: 'simpel-vooraadbeheer', en: 'simple-inventory-management' },
+    simpleInventory: { nl: 'simpel-voorraadbeheer', en: 'simple-inventory-management' },
     efficientWebshop: { nl: 'efficient-webshopbeheer', en: 'efficient-webshop-management' },
     wooInventorySync: { nl: 'woocommerce-voorraad-synchronisatie', en: 'woocommerce-inventory-sync' },
     shoplinkerOrShoplinkr: { nl: 'shoplinker-of-shoplinkr', en: 'shoplinker-or-shoplinkr' },
@@ -83,6 +83,19 @@ export function localizedPath(key: RouteKey, locale: Locale): string {
         return prefix === '' ? '/' : prefix;
     }
     return `${prefix}/${slug}`;
+}
+
+// Localised segment for the support categories index. It is not a standalone
+// page (it is the base for dynamic category/subcategory routes), so it lives
+// here rather than in `routes`, keeping the nl/en split in one place.
+const SUPPORT_CATEGORIES_SEGMENT: Record<Locale, string> = {
+    nl: 'categorieen',
+    en: 'categories',
+};
+
+/** Localized base path for support categories, e.g. /support/categorieen or /en/support/categories. */
+export function supportCategoriesBase(locale: Locale): string {
+    return `${localizedPath('support', locale)}/${SUPPORT_CATEGORIES_SEGMENT[locale]}`;
 }
 
 /**

@@ -11,7 +11,7 @@ lastUpdated: "2026-05-28"
 
 <p>Wanneer je een retourpakket hebt ontvangen, kun je de retour verwerken in ShopLinkr. Per product beoordeel je de staat en bepaal je of het terugkomt op voorraad.</p>
 <h3>Stap 1: Retour openen</h3>
-<p>Ga naar <strong>Retouren</strong> en klik op de retour die je wilt verwerken. Je ziet nu de details van de retour, inclusief de producten die de klant retour stuurt. Je kunt ook de T&amp;T code van de retour scannen, we zullen dan de retour zoeken en deze direct openen.</p>
+<p>Ga naar <strong>Retouren</strong> en klik op de retour die je wilt verwerken. Je ziet nu de details van de retour, inclusief de producten die de klant retour stuurt. Je kunt ook de T&amp;T-code van de retour scannen, we zullen dan de retour zoeken en deze direct openen.</p>
 <h3>Stap 2: Items beoordelen</h3>
 <p>Per retouritem zie je welk product het betreft en hoeveel stuks er verwacht worden. Voor elk item kun je het volgende doen:</p>
 <ol>

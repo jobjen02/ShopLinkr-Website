@@ -22,7 +22,7 @@ translationKey: "wat-zijn-picklijsten"
 <p>Product locations within your warehouse</p>
 </li>
 <li>
-<p>Only <a href="/support/single-bestellingen">single orders</a> or specifically excluding them</p>
+<p>Only <a href="/en/support/single-item-orders">single-item orders</a> or specifically excluding them</p>
 </li>
 <li>
 <p>Only certain products</p>
@@ -31,7 +31,7 @@ translationKey: "wat-zijn-picklijsten"
 <p>Tags</p>
 </li>
 <li>
-<p>Package type</p>
+<p>Parcel type</p>
 </li>
 <li>
 <p>Pickup moment</p>
@@ -70,7 +70,7 @@ translationKey: "wat-zijn-picklijsten"
 <p>You immediately see which products belong to it.</p>
 </li>
 <li>
-<p>The shipping label is automatically requested and printed (provided you have connected <a href="/support/auto-print-instellen">AutoPrint</a>).</p>
+<p>The shipping label is automatically requested and printed (provided you have connected <a href="/en/support/setting-up-autoprint">AutoPrint</a>).</p>
 </li>
 <li>
 <p>Scan the next product and process all orders this way.</p>
@@ -88,7 +88,7 @@ translationKey: "wat-zijn-picklijsten"
 <p>You scan the product first, then the correct bin. This way you can be sure the product ends up in the right bin.</p>
 </li>
 <li>
-<p>Place the bins at the <a href="/support/inpakstations-instellen">packing station</a>.</p>
+<p>Place the bins at the <a href="/en/support/setting-up-packing-stations">packing station</a>.</p>
 </li>
 <li>
 <p>The packer scans a bin and the matching order opens automatically.</p>

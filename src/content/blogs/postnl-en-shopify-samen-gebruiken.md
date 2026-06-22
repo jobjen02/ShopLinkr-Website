@@ -1,5 +1,5 @@
 ---
-title: "Postnl en shopify samen gebruiken"
+title: "PostNL en Shopify samen gebruiken"
 excerpt: "Als je een eigen webwinkel hebt op Shopify, dan weet je hoe belangrijk het is om een efficiënt verzendproces te hebben."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/postnl-en-shopify-samen-gebruiken/jQmNbHZDKG6JgDjlbfhE6eTb0g.png"

@@ -43,7 +43,7 @@ isBlog: true
 <p>Zorg ervoor dat je voor elk product de juiste EAN codes gebruikt. Een EAN code bestaat uit 13 cijfers. Voor het verkopen op een marketplace is het van belang dat de EAN codes officieel zijn aangeschaft, dit moet via GS1 gebeuren (dit is verplicht vanuit bol).</p>
 </li>
 <li>
-<p>Gebruik dezelfde EAN code op alle platformen. Een EAN code die je op bol.com gebruikt voor product A, moet je ook op je eigen webshop gebruiken voor product A. Op deze manier kan een voorraad beheer tool (zoals ShopLinkr) de producten aan elkaar koppelen en wordt het synchronisatie process gestart.</p>
+<p>Gebruik dezelfde EAN code op alle platformen. Een EAN code die je op bol.com gebruikt voor product A, moet je ook op je eigen webshop gebruiken voor product A. Op deze manier kan een voorraad beheer tool (zoals ShopLinkr) de producten aan elkaar koppelen en wordt het synchronisatieproces gestart.</p>
 </li>
 </ul>
 </li>

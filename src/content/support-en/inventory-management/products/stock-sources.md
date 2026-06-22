@@ -18,13 +18,13 @@ translationKey: "voorraadbronnen"
 <p>Dog food that you sell in bags of 500 grams, 1 kilo and 5 kilos</p>
 </li>
 <li>
-<p>Fabric that you sell per 50 cm, 1 metre or 3 metres</p>
+<p>Fabric that you sell per 50 cm, 1 meter or 3 meters</p>
 </li>
 <li>
 <p>Perfume that you decant into bottles of 50 ml, 100 ml and 250 ml</p>
 </li>
 <li>
-<p>Cable that you sell in lengths of 2, 5 and 10 metres</p>
+<p>Cable that you sell in lengths of 2, 5 and 10 meters</p>
 </li>
 </ul>
 <p>Do you sell variants that are produced in advance and stored separately (for example pallets of ready-made bottles of shampoo)? Then you manage those as individual products, not as a stock source.</p>
@@ -116,7 +116,7 @@ translationKey: "voorraadbronnen"
 <p>When a sale comes in, the pre-produced stock is used first.</p>
 </li>
 <li>
-<p>Once that runs out, you are prompted to produce from the source during <a href="/support/wat-zijn-picklijsten">picking</a>.</p>
+<p>Once that runs out, you are prompted to produce from the source during <a href="/en/support/working-with-pick-lists">picking</a>.</p>
 </li>
 </ul>
 <h3>Returns and cancellations</h3>

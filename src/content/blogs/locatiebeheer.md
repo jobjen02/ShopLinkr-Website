@@ -26,7 +26,7 @@ isBlog: true
 <p><strong>Altijd Up-to-date:</strong> Check je voorraad in real-time, op elke locatie.</p>
 </li>
 <li>
-<p><strong>Voorraad waarde inzichtelijk: </strong>Je kunt een inkoopprijs bijhouden per product, zo weet je dus wat de waarde is van jou voorraad, per locatie of in zijn geheel.</p>
+<p><strong>Voorraad waarde inzichtelijk: </strong>Je kunt een inkoopprijs bijhouden per product, zo weet je dus wat de waarde is van jouw voorraad, per locatie of in zijn geheel.</p>
 </li>
 </ol>
 <p>Je kunt eenvoudig locaties toevoegen en koppelen aan producten. De voorraad zal bij een nieuwe bestelling automatisch van een locatie in mindering worden gebracht, en op de pick &amp; pack lijst zie je waar je het product moet halen binnen je magazijn.</p>

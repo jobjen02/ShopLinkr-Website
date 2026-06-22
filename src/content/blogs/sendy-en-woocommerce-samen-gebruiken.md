@@ -9,7 +9,7 @@ isBlog: false
 
 <p>In dit artikel gaan we het hebben over het gebruik van Sendy en WooCommerce samen. Sendy is een <a href="https://shoplinkr.com/blogs/sendy-koppelen-aan-shoplinkr">verzendplatform waarmee je labels kunt maken</a> voor vervoerders zoals PostNL. WooCommerce is een <a href="https://shoplinkr.com/blogs/woocommerce-koppelen-aan-shoplinkr">populaire e-commerce plugin voor WordPress</a> waarmee je een webshop kunt bouwen. Door Sendy en WooCommerce te integreren, kun je het verzendproces van je webshop efficiënter maken en tijd besparen. Laten we eens kijken naar wat Sendy en WooCommerce precies zijn en hoe je ze kunt gebruiken.</p>
 <h2>Wat is Sendy en hoe werkt het?</h2>
-<p>Sendy is een krachtig verzendplatform dat speciaal is ontworpen voor e-commerce bedrijven. Het stelt je in staat om eenvoudig labels en verzenddocumenten te maken voor verschillende vervoerders, zoals PostNL, DHL en UPS. Met Sendy kun je ook <a href="https://shoplinkr.com/koppelingen/sendy">verzendkosten berekenen op basis van verschillende parameters</a>, zoals gewicht, afmetingen en bestemming.</p>
+<p>Sendy is een krachtig verzendplatform dat speciaal is ontworpen voor e-commerce bedrijven. Het stelt je in staat om eenvoudig labels en verzenddocumenten te maken voor verschillende vervoerders, zoals PostNL, DHL en UPS. Met Sendy kun je ook <a href="https://shoplinkr.com/integraties/sendy">verzendkosten berekenen op basis van verschillende parameters</a>, zoals gewicht, afmetingen en bestemming.</p>
 <p>De voordelen van Sendy zijn onder andere:</p>
 <ul>
 <li>

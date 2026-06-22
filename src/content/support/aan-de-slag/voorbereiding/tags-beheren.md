@@ -46,6 +46,6 @@ lastUpdated: "2026-05-28"
 <h3>Automatisch tags toekennen met regels</h3>
 <p>Met <a href="/support/wat-zijn-regels">regels</a> kun je tags automatisch toekennen aan nieuwe bestellingen. Stel bijvoorbeeld een regel in die alle bestellingen boven een bepaald bedrag automatisch de tag "Groot" geeft. Zo hoef je het niet handmatig te doen.</p>
 <h3>Filteren op tags</h3>
-<p>Je kunt zowel op de producten- als de bestellingen pagina filteren op tags. Dit is handig om snel een specifieke groep items te vinden.</p>
+<p>Je kunt zowel op de producten- als de bestellingenpagina filteren op tags. Dit is handig om snel een specifieke groep items te vinden.</p>
 <h3>Tags in rapporten</h3>
 <p>Bij het genereren van <a href="/support/rapporten-overzicht">rapporten</a> kun je filteren op tags. Zo kun je bijvoorbeeld de prestaties bekijken van alleen je seizoensproducten.</p>

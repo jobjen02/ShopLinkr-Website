@@ -65,6 +65,8 @@ const financialOmzet = [4200, 5100, 5600, 4750, 6100, 3900, 3400, 6600, 5900, 71
 const financialWinst = [780, 950, 1050, 880, 1130, 720, 630, 1230, 1100, 1320, 1230, 1450, 980, 850, 1510, 1670, 1540, 1800, 1640, 1200, 1080, 1880, 2060, 1910];
 const financialCommissie = [210, 255, 280, 240, 305, 195, 170, 330, 295, 355, 330, 390, 265, 230, 405, 450, 415, 485, 440, 325, 290, 505, 555, 515];
 const margesData = [16, 18, 17, 19, 16, 17, 16, 18, 20, 19, 18, 21, 19, 18, 22, 20, 23, 21, 24, 22, 21, 25, 23, 26];
+const retourenData = [9, 11, 10, 12, 9, 10, 8, 11, 12, 10, 11, 13, 11, 9, 12, 10, 13, 11, 12, 10, 9, 12, 11, 13];
+const annuleringenData = [5, 6, 4, 7, 5, 6, 4, 5, 6, 5, 7, 6, 5, 4, 6, 5, 7, 5, 6, 4, 5, 6, 5, 7];
 
 const volumeWidth = 600;
 const volumeHeight = 220;
@@ -74,6 +76,8 @@ const omzetPath = buildAreaPath(financialOmzet, volumeWidth, volumeHeight);
 const winstPath = buildAreaPath(financialWinst, volumeWidth, volumeHeight);
 const commissiePath = buildAreaPath(financialCommissie, volumeWidth, volumeHeight);
 const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
+const retourenPath = buildAreaPath(retourenData, volumeWidth, volumeHeight);
+const annuleringenPath = buildAreaPath(annuleringenData, volumeWidth, volumeHeight);
 ---
 
 <div class="dashboard-preview relative bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_18px_56px_-32px_rgb(25_25_25_/_0.22)] overflow-hidden flex isolate min-w-[1100px]" role="img" aria-label={dp.aria}>
@@ -262,6 +266,8 @@ const margesPath = buildAreaPath(margesData, volumeWidth, volumeHeight);
                 <svg viewBox={`0 0 ${volumeWidth} ${volumeHeight}`} class="w-full h-32" preserveAspectRatio="none">
                     <path d={margesPath.area} fill="#22c55e" fill-opacity="0.12" />
                     <path d={margesPath.line} fill="none" stroke="#22c55e" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                    <path d={retourenPath.line} fill="none" stroke="#f87171" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
+                    <path d={annuleringenPath.line} fill="none" stroke="#e8b679" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" />
                 </svg>
             </div>
 

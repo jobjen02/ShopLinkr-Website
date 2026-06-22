@@ -13,7 +13,7 @@ translationKey: "verkopen-via-bol-zonder-voorraad"
 <p>When you sell without inventory, it means you do not store or ship any physical products yourself. Instead, you work together with suppliers who send the products directly to your customers. As the seller, you are responsible for finding the right products and offering them on bol.com.</p>
 <p>An important part of selling without inventory is the use of an automated system such as ShopLinkr. With this system you can connect carriers and sales channels to one another, so that you can process orders from a sales channel using the labels of a carrier.</p>
 <h3>What does selling without inventory mean?</h3>
-<p>With selling without inventory, you as the seller are not responsible for <a href="https://shoplinkr.com/blogs/voorraadmanagement">managing physical stock</a>. Instead, the inventory is managed by the suppliers.</p>
+<p>With selling without inventory, you as the seller are not responsible for <a href="https://shoplinkr.com/en/blog/inventory-management">managing physical stock</a>. Instead, the inventory is managed by the suppliers.</p>
 <p>When a customer orders a product from you, you make sure the order is passed on correctly to the supplier. The supplier then takes care of the delivery and you receive a commission on the sale.</p>
 <h3>Advantages of selling without inventory</h3>
 <p>Selling without inventory comes with several advantages. One of the biggest advantages is that you do not have to build up your own stock, and therefore have no costs for storage space. This not only saves money, but also time.</p>
@@ -54,7 +54,7 @@ translationKey: "verkopen-via-bol-zonder-voorraad"
 <p>To be successful in selling without inventory, it is important to keep a number of tips in mind:</p>
 <ul>
 <li>
-<p>Ensure <a href="https://shoplinkr.com/blogs/het-belang-van-goed-voorraadbeheer-voor-jouw-webshop">good communication with your suppliers</a> and make clear arrangements about delivery times and prices.</p>
+<p>Ensure <a href="https://shoplinkr.com/en/blog/the-importance-of-good-inventory-management-for-your-webshop">good communication with your suppliers</a> and make clear arrangements about delivery times and prices.</p>
 </li>
 <li>
 <p>Regularly monitor your stock levels and adjust them if necessary.</p>

@@ -14,7 +14,7 @@ lastUpdated: "2026-05-28"
 <p>Bekijk per product hoeveel er is verkocht, wat de omzet en winst is, en hoe hoog je marge ligt. Ideaal om je best en slechtst presterende producten te identificeren. Je kunt filteren op periode, tags en verpakkingstype.</p>
 <p>Lees meer in <a href="/support/product-prestaties">Product prestaties</a>.</p>
 <h3>Nooit verkochte producten</h3>
-<p>Ontdek welke producten in een bepaalde periode geen enkele verkoop hebben gehad. Handig om dood voorraad te identificeren en je assortiment op te schonen.</p>
+<p>Ontdek welke producten in een bepaalde periode geen enkele verkoop hebben gehad. Handig om dode voorraad te identificeren en je assortiment op te schonen.</p>
 <p>Lees meer in <a href="/support/nooit-verkochte-producten">Nooit verkochte producten</a>.</p>
 <h3>Voorraadwaarde</h3>
 <p>Bekijk de totale waarde van je voorraad op een specifieke datum. Per product zie je hoeveel stuks je op voorraad hebt en wat de waarde daarvan is op basis van je inkoopprijzen.</p>

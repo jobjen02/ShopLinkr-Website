@@ -1,6 +1,6 @@
 ---
 title: "Selling products on Bol"
-excerpt: "Do you want to sell products online and benefit from the large customer base of Bol."
+excerpt: "Do you want to sell products online and benefit from bol.com's large customer base? This guide walks you through it step by step."
 publishedAt: "2024-06-11T00:00:00.000Z"
 image: "/images/blog/producten-verkopen-via-bol/fYoiMENxF6NOq7dknYZsEviTZo.png"
 isVisible: true

@@ -27,7 +27,7 @@ lastUpdated: "2026-05-28"
 <h3>Goed om te weten</h3>
 <ul>
 <li>
-<p>De API is gelimiteerd tot 5 verzoeken per seconde. Dit limiet geldt voor alle tokens binnen je account.</p>
+<p>De API is gelimiteerd tot 5 verzoeken per seconde. Deze limiet geldt voor alle tokens binnen je account.</p>
 </li>
 <li>
 <p>Alle verzoeken vereisen een <code>User-Agent</code> header waarmee je je integratie identificeert.</p>

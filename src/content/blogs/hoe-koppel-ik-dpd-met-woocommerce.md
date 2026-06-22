@@ -7,7 +7,6 @@ isVisible: true
 isBlog: false
 ---
 
-<h1>Hoe Koppel Ik DPD Met WooCommerce?</h1>
 <p>Heb je een online winkel op WooCommerce en wil je graag gebruik maken van DPD als verzendoptie? Geen zorgen, het koppelen van DPD met WooCommerce is eenvoudig en biedt tal van voordelen voor jou en je klanten. In dit artikel zullen we je stap voor stap begeleiden bij het proces van het koppelen van DPD aan WooCommerce. Maar voordat we daar dieper op ingaan, laten we eerst eens kijken wat DPD en WooCommerce precies zijn.</p>
 <h2>Wat is DPD en WooCommerce?</h2>
 <p>Een korte introductie tot DPD</p>

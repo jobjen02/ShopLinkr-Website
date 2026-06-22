@@ -9,7 +9,7 @@ order: 46
 lastUpdated: "2026-05-28"
 ---
 
-<p>Met variantgroepen kun je producten groeperen die bij elkaar horen. Denk aan hetzelfde product in verschillende hoeveelheden (2 stuks, 4 stuks, 6 stuks, etc) of kleuren (wit, blauw, groen). De producten blijven zelfstandig functioneren met hun eigen voorraad, EAN-codes en listings, maar je ziet in een oogopslag welke producten varianten van elkaar zijn.</p>
+<p>Met variantgroepen kun je producten groeperen die bij elkaar horen. Denk aan hetzelfde product in verschillende hoeveelheden (2 stuks, 4 stuks, 6 stuks, enzovoort) of kleuren (wit, blauw, groen). De producten blijven zelfstandig functioneren met hun eigen voorraad, EAN-codes en listings, maar je ziet in een oogopslag welke producten varianten van elkaar zijn.</p>
 <h3>Een variantgroep aanmaken</h3>
 <ol>
 <li>

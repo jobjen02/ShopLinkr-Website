@@ -165,7 +165,7 @@ onUnmounted(() => {
             <p class="text-sm text-gravel mb-7">Breng de containers naar de inpakker.</p>
             <button
                 type="button"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-flint dark:bg-graphite text-paper text-sm font-medium rounded-md hover:bg-charcoal transition-colors"
+                class="inline-flex items-center gap-2 px-4 py-2 bg-flint dark:bg-graphite text-paper text-sm font-medium rounded-md hover:bg-charcoal dark:hover:bg-flint transition-colors"
                 @click="reset"
             >
                 <i class="fa-solid fa-rotate-right text-xs" aria-hidden="true"></i>
@@ -208,7 +208,7 @@ onUnmounted(() => {
             <div class="flex items-center justify-center gap-2 mt-6">
                 <button
                     type="button"
-                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal dark:hover:bg-flint active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                     aria-label="Verlaag aantal gepickt"
                     :disabled="currentPicked === 0 || animating"
                     @click="decrease"
@@ -224,7 +224,7 @@ onUnmounted(() => {
 
                 <button
                     type="button"
-                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal dark:hover:bg-flint active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                     aria-label="Verhoog aantal gepickt"
                     :disabled="animating"
                     @click="increase"

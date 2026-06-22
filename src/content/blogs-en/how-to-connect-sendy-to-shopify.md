@@ -1,6 +1,6 @@
 ---
 title: "How do I connect Sendy to Shopify?"
-excerpt: "In this guide I'll show you how to connect Sendy to Shopify, so you can easily improve your email marketing strategy and grow your Shopify store."
+excerpt: "In this guide I'll show you how to connect Sendy to Shopify through ShopLinkr, so you can process your Shopify orders and print Sendy shipping labels from a single workflow."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendy-met-shopify/hMV8hR8vA9ZHzwTmMGUVYzMmo.png"
 isVisible: true
@@ -9,126 +9,74 @@ translationKey: "hoe-koppel-ik-sendy-met-shopify"
 ---
 
 <h1>How Do I Connect Sendy To Shopify?</h1>
-<p>In this guide I'll show you how to <a href="https://shoplinkr.com/blogs/sendy-koppelen-aan-shoplinkr">connect Sendy to Shopify</a>, so you can easily improve your email marketing strategy and grow your Shopify store. Before we get started, let's first take a look at what Sendy is and how it works.</p>
+<p>In this guide I'll show you how to <a href="https://shoplinkr.com/en/integrations/sendy">connect Sendy to Shopify</a> through ShopLinkr, so you can process your Shopify orders and print Sendy shipping labels from a single workflow. Before we get started, let's first take a look at what Sendy is and how it works.</p>
 <h2>What is Sendy and how does it work?</h2>
-<p><a href="https://shoplinkr.com/koppelingen/sendy">Sendy is a self-hosted email marketing platform</a> built on Amazon Simple Email Service (SES). It lets you easily send professional newsletters and track and analyze your email campaigns. Sendy runs on the Amazon SES infrastructure, which makes it a cost-effective choice for sending large volumes of email.</p>
+<p>Sendy is shipping software that helps businesses send their parcels efficiently. It connects with carriers such as PostNL, DHL and DPD and links easily with webshops, so you can create shipping labels automatically and benefit from competitive rates. In short, Sendy takes care of the shipping side of your orders.</p>
 <h3>The benefits of Sendy for your e-commerce business</h3>
 <p>Sendy offers several benefits for your e-commerce business:</p>
 <ol>
 <li>
-<p> Cost savings: Sendy uses Amazon SES, which lets you save significantly on your email marketing costs.</p>
+<p>Multiple carriers in one place: Sendy gives you access to carriers such as PostNL, DHL and DPD, so you can pick the best option for each shipment.</p>
 </li>
 <li>
-<p> Easy integration: Sendy integrates easily with popular platforms such as Shopify.</p>
+<p>Automatic shipping labels: based on the details of an order, a shipping label is requested from Sendy automatically.</p>
 </li>
 <li>
-<p> Powerful tracking and analytics: Sendy gives you detailed statistics on your email campaigns, so you can measure and optimize their effectiveness.</p>
+<p>Competitive rates: because Sendy bundles shipping volume, you benefit from sharp shipping rates.</p>
 </li>
 <li>
-<p> Custom branding: With Sendy you can tailor your newsletters to your brand, so they're recognizable to your customers.</p>
+<p>Tracking back to your shop: track and trace information flows back automatically, so you and your customers always know where a parcel is.</p>
 </li>
 </ol>
-<h3>Understanding the basics of Sendy</h3>
-<p>Before you can connect Sendy to Shopify, it's important to understand the basics of Sendy. Here are a few key terms you should know:</p>
-<ul>
-<li>
-<p>Lists: In Sendy, your email addresses are organized into lists. You can create different lists for different audiences.</p>
-</li>
-<li>
-<p>Campaigns: With Sendy you can create and schedule email campaigns to keep your customers informed.</p>
-</li>
-<li>
-<p>Subscribers: These are the people who have signed up for your newsletter. You can add subscribers manually, or they can sign up themselves through a subscription form on your website.</p>
-</li>
-<li>
-<p>Templates: Sendy offers a number of pre-designed templates you can use to shape your newsletters.</p>
-</li>
-</ul>
-<p>On top of these basics, Sendy also offers advanced features to take your email marketing strategy to the next level. For example, you can set up automatic follow-up emails to increase your customers' engagement. You can also use segmentation in Sendy, splitting your subscribers into different groups based on their behavior and interests. This lets you send targeted and personalized emails, which increases the chance of conversion.</p>
-<p>Another benefit of Sendy is the ability to run A/B tests. With these you can test different versions of your newsletter to see which variant performs best. By continuously experimenting and optimizing, you can improve the effectiveness of your email campaigns and increase your conversion rate.</p>
-<h2>The integration of Sendy and Shopify</h2>
-<p>When you want to connect Sendy to Shopify, there are several reasons why this can be a smart move.</p>
+<h2>How ShopLinkr connects Sendy and Shopify</h2>
+<p>Sendy is a carrier and Shopify is your sales channel. ShopLinkr is the platform that sits in between: you connect both your Shopify store and Sendy to ShopLinkr, and from there you process your Shopify orders and print your Sendy labels.</p>
 <h3>Why connect Sendy to Shopify?</h3>
-<p>By <a href="https://shoplinkr.com/blogs/shopify-koppelen-aan-shoplinkr">connecting Sendy to Shopify</a> you can easily integrate your email marketing strategy with your e-commerce store. This lets you set up automatic emails, such as welcome messages for new customers or abandoned cart emails. With Sendy you can also send personalized offers and retargeting campaigns, which helps you increase engagement and conversion.</p>
+<p>By connecting Sendy to Shopify through ShopLinkr, your Shopify orders come into one overview and you can generate the matching Sendy shipping label for each order. No more switching between systems or copying addresses by hand, which saves time and reduces errors.</p>
 <h3>The steps to connect Sendy to Shopify</h3>
-<p>To connect Sendy to Shopify, follow these simple steps:</p>
+<p>To connect Sendy to Shopify through ShopLinkr, follow these steps:</p>
 <ol>
 <li>
-<p>Install Sendy on your server and configure your Amazon SES account.</p>
+<p>Create a ShopLinkr account and connect your <a href="https://shoplinkr.com/en/blog/connect-shopify-to-shoplinkr">Shopify store</a> as a sales channel.</p>
 </li>
 <li>
-<p>Create a new list in Sendy for your Shopify customers.</p>
+<p>Connect Sendy as a carrier in ShopLinkr.</p>
 </li>
 <li>
-<p>Integrate Sendy with Shopify using an app such as ShopSync or Sendy for Shopify.</p>
+<p>Your Shopify orders now flow into ShopLinkr automatically.</p>
 </li>
 <li>
-<p>Configure the app by entering your Sendy API key and list ID.</p>
+<p>Process an order and request the Sendy shipping label straight from ShopLinkr.</p>
 </li>
 <li>
-<p>Decide which events in Shopify should automatically trigger emails, such as a purchase or an abandoned cart.</p>
-</li>
-<li>
-<p>Design your email campaigns in Sendy and schedule them to send automatically.</p>
+<p>The track and trace information is sent back to your shop automatically.</p>
 </li>
 </ol>
-<h2>Common problems and solutions when connecting Sendy to Shopify</h2>
+<h2>Common problems and solutions</h2>
 <h3>Troubleshooting when connecting Sendy to Shopify</h3>
-<p>While connecting Sendy to Shopify is generally a smooth experience, problems can sometimes come up. Here are a few common problems and their solutions:</p>
+<p>Connecting Sendy to Shopify through ShopLinkr is usually smooth, but a few things can come up. Here are some common questions and their solutions:</p>
 <ul>
 <li>
-<p>Problem: The app can't connect to Sendy.</p>
+<p>Problem: orders from Shopify don't appear in ShopLinkr. Solution: check that your Shopify store is connected correctly as a sales channel and that the connection is active.</p>
 </li>
 <li>
-<p>Solution: Check that you've entered the correct API key and list ID. Also check that your server is configured correctly.</p>
+<p>Problem: the shipping label can't be created. Solution: check that Sendy is connected and that the order's address details are complete.</p>
 </li>
 <li>
-<p>Problem: The emails aren't displayed correctly in the recipient's inbox.</p>
-</li>
-<li>
-<p>Solution: Check that your email template is formatted correctly and tested across different email clients.</p>
-</li>
-<li>
-<p>Problem: Emails aren't sent automatically from Sendy.</p>
-</li>
-<li>
-<p>Solution: Check that you've configured the right events in Shopify and that your email campaigns are scheduled correctly in Sendy.</p>
+<p>Problem: the address on the label isn't right. Solution: you can adjust the address details by hand before you request the label.</p>
 </li>
 </ul>
-<h3>Tips for a successful integration of Sendy and Shopify</h3>
-<p>To get the most out of the integration of Sendy and Shopify, here are a few handy tips:</p>
+<h3>Tips for a successful setup</h3>
 <ul>
 <li>
-<p>Personalize your email campaigns based on your customers' behavior and preferences.</p>
+<p>Make sure your product and address data in Shopify is accurate, so labels are created without errors.</p>
 </li>
 <li>
-<p>Use automatic emails to increase customer engagement and conversion, such as welcome messages, thank-you emails and abandoned cart emails.</p>
+<p>Pick the right carrier for each shipment to keep your shipping costs sharp.</p>
 </li>
 <li>
-<p>Test and optimize your email campaigns regularly to achieve the best results.</p>
-</li>
-<li>
-<p>Keep your email lists clean by regularly removing inactive subscribers or re-engaging them.</p>
+<p>Keep an eye on your orders in ShopLinkr so nothing stays behind.</p>
 </li>
 </ul>
-<h2>Maximizing the benefits of the Sendy and Shopify integration</h2>
-<h3>How to use Sendy to improve your Shopify store</h3>
-<p>By using Sendy together with Shopify, you can take your email marketing strategy to the next level and improve your Shopify store. Here are a few ideas to get you started:</p>
-<ul>
-<li>
-<p>Send personalized offers to customers based on their purchase history.</p>
-</li>
-<li>
-<p>Send email newsletters with product updates, discount codes and news about your company.</p>
-</li>
-<li>
-<p>Set up automatic emails to thank customers for their purchase and to ask for feedback.</p>
-</li>
-<li>
-<p>Use retargeting campaigns to encourage customers to return to your store and complete their purchases.</p>
-</li>
-</ul>
-<h3>Optimizing your email marketing with Sendy and Shopify</h3>
-<p>To optimize your email marketing with Sendy and Shopify, it's important to use the statistics and analytics Sendy provides. With these you can measure your email campaigns precisely and improve their effectiveness. Try different subject lines, content and calls to action to see what works best for your audience.</p>
-<p>With the integration of Sendy and Shopify, you can take your email marketing strategy to the next level and increase your customer engagement and conversion. Follow the steps and tips in this guide to successfully connect Sendy to Shopify and benefit from the many advantages this integration offers.</p>
-<p>Have you already discovered the power of Sendy and Shopify for your email marketing? Great! But what if you could take your webshop management to that same level of efficiency too? With ShopLinkr you manage your orders and inventory effortlessly. Automatic synchronization and easy order processing, all in one place. Join the thousands of satisfied users who have already processed more than 110,000 orders and manage more than 22,000 products in our system. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr now for 14 days free</a> and experience the convenience of integrated inventory management for yourself!</p>
+<h2>Getting the most out of Sendy and Shopify</h2>
+<p>By combining Sendy and Shopify in ShopLinkr, you bring your sales and your shipping together in one workflow. Your orders arrive, you print the right label and the tracking flows back, all from one place. That keeps your shipping process fast and predictable, even when your order volume grows.</p>
+<p>Ready to take your whole webshop to that same level of efficiency? With ShopLinkr you manage your orders and inventory effortlessly. Automatic synchronization and easy order processing, all in one place. Join the thousands of satisfied users who have already processed more than 110,000 orders and manage more than 22,000 products in our system. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr now for 14 days free</a> and experience the convenience of integrated inventory management for yourself!</p>

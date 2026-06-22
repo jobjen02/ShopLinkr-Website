@@ -1,5 +1,5 @@
 ---
-title: "Effectief voorraadbeheer in excel: tips en tricks"
+title: "Effectief voorraadbeheer in Excel: tips en tricks"
 excerpt: "Voorraadbeheer is een essentieel onderdeel van een succesvol bedrijf."
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/effectief-voorraadbeheer-in-excel-tips-en-tricks/4xrMr9143TtH5sELR71fwgSw40.png"

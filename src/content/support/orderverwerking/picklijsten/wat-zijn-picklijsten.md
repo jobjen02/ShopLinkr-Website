@@ -9,7 +9,7 @@ order: 30
 lastUpdated: "2026-05-28"
 ---
 
-<p>Een picklijst is een verzameling van producten die horen bij meerdere bestellingen. Stel dat je 10 bestellingen wilt gaan picken: je verzamelt dan alle producten die bij deze bestellingen horen. Zodra je alles hebt gepickt, kun je de bestellingen snel en efficient inpakken.</p>
+<p>Een picklijst is een verzameling van producten die horen bij meerdere bestellingen. Stel dat je 10 bestellingen wilt gaan picken: je verzamelt dan alle producten die bij deze bestellingen horen. Zodra je alles hebt gepickt, kun je de bestellingen snel en efficiënt inpakken.</p>
 <p>Binnen ShopLinkr hebben we een universele picklijst ontwikkeld waarmee je bestellingen snel en overzichtelijk kunt verwerken. Of je nu werkt met verschillende bakken of alles in een bak verzamelt: het systeem past zich aan jouw werkwijze aan.</p>
 <h3>Een picklijst genereren</h3>
 <p>Ga naar <strong>Picklijsten &gt; Picklijst genereren</strong>. Op deze pagina kun je filteren op:</p>

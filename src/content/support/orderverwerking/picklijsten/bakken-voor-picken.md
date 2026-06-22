@@ -42,7 +42,7 @@ lastUpdated: "2026-05-28"
 </ol>
 <p>De bakken worden automatisch aangemaakt met oplopende namen.</p>
 <h3>Barcodelabels genereren</h3>
-<p>Elke bak kan een barcodelabel krijgen dat je kunt printen en op de fysieke bak kunt plakken. Klik bij een bak op <strong>Label genereren</strong>. Het barcodelabel opent, deze kunt je printen en op de bak plakken.</p>
+<p>Elke bak kan een barcodelabel krijgen dat je kunt printen en op de fysieke bak kunt plakken. Klik bij een bak op <strong>Label genereren</strong>. Het barcodelabel opent, dit kun je printen en op de bak plakken.</p>
 <h3>Bakken gebruiken tijdens het picken</h3>
 <p>Wanneer je pickt met bakken, werkt het als volgt:</p>
 <ol>

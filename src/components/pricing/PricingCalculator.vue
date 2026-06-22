@@ -94,19 +94,15 @@ function sliderPositionToChannels(position: number): number {
 const ORDER_TICKS = [
     {
         value: 500,
-        label: '500',
     },
     {
         value: 2500,
-        label: '2,5k',
     },
     {
         value: 10000,
-        label: '10k',
     },
     {
         value: 50000,
-        label: '50k',
     },
 ];
 
@@ -120,27 +116,27 @@ const orderTickPositions = ORDER_TICKS.map((tick) => {
 const CHANNEL_TICKS = [
     {
         value: 5,
-        label: '5',
     },
     {
         value: 10,
-        label: '10',
     },
     {
         value: 25,
-        label: '25',
     },
     {
         value: 50,
-        label: '50',
     },
 ];
 
-const channelTickPositions = CHANNEL_TICKS.map((tick) => {
-    return {
-        ...tick,
-        percent: (channelsToSliderPosition(tick.value) / CHANNEL_SLIDER_MAX) * 100,
-    };
+const channelTickPositions = computed(() => {
+    const numberFormat = new Intl.NumberFormat(t.value.numberLocale);
+    return CHANNEL_TICKS.map((tick) => {
+        return {
+            ...tick,
+            label: numberFormat.format(tick.value),
+            percent: (channelsToSliderPosition(tick.value) / CHANNEL_SLIDER_MAX) * 100,
+        };
+    });
 });
 
 const ORDER_TIERS: Array<OrderTier> = [
@@ -615,11 +611,11 @@ watch(orderSliderValue, (newValue) => {
 }
 
 .pricing-range:focus-visible::-webkit-slider-thumb {
-    box-shadow: 0 0 0 4px var(--color-sunstone-mist);
+    box-shadow: 0 0 0 4px var(--color-sunstone-deep);
 }
 
 .pricing-range:focus-visible::-moz-range-thumb {
-    box-shadow: 0 0 0 4px var(--color-sunstone-mist);
+    box-shadow: 0 0 0 4px var(--color-sunstone-deep);
 }
 
 </style>
@@ -658,5 +654,13 @@ watch(orderSliderValue, (newValue) => {
     background-color: var(--color-charcoal);
     border-color: var(--color-paper);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dark .pricing-range:focus-visible::-webkit-slider-thumb {
+    box-shadow: 0 0 0 4px var(--color-sunstone);
+}
+
+.dark .pricing-range:focus-visible::-moz-range-thumb {
+    box-shadow: 0 0 0 4px var(--color-sunstone);
 }
 </style>

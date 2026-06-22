@@ -1,5 +1,7 @@
 ---
 import { externalLinks } from '../../data/externalLinks';
+import { type Locale } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
 
 interface Props {
     title: string;
@@ -12,6 +14,9 @@ const {
     subtitle,
     showCtas = true,
 } = Astro.props;
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
 ---
 
 <section class="relative bg-paper dark:bg-charcoal overflow-hidden">
@@ -38,7 +43,7 @@ const {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Gratis starten
+                        {t.common.register}
                     </a>
                     <a
                         href={externalLinks.demoBooking}
@@ -46,7 +51,7 @@ const {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Demo inplannen
+                        {t.common.demo}
                         <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                     </a>
                 </div>

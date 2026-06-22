@@ -10,10 +10,10 @@ lastUpdated: "2026-05-28"
 translationKey: "magazijnindeling-optimaliseren"
 ---
 
-<p>A well organized warehouse saves time, prevents mistakes and makes the picking process more efficient. In this article we share practical tips to get the most out of your <a href="/support/locatiebeheer">locations</a>.</p>
+<p>A well organized warehouse saves time, prevents mistakes and makes the picking process more efficient. In this article we share practical tips to get the most out of your <a href="/en/support/location-management">locations</a>.</p>
 <h3>Fast movers up front, slow movers in the back</h3>
-<p>The products that get picked most often should sit in the easiest to reach spots. Think of locations close to the <a href="/support/inpakstations-instellen">packing station</a>, at eye level and in the first aisle. Products that are rarely picked can go in harder to reach spots, such as higher shelves or aisles further away.</p>
-<p>How do you know which products get picked most often? Use the <a href="/support/abc-analyse">ABC analysis</a>:</p>
+<p>The products that get picked most often should sit in the easiest to reach spots. Think of locations close to the <a href="/en/support/setting-up-packing-stations">packing station</a>, at eye level and in the first aisle. Products that are rarely picked can go in harder to reach spots, such as higher shelves or aisles further away.</p>
+<p>How do you know which products get picked most often? Use the <a href="/en/support/abc-analysis">ABC analysis</a>:</p>
 <figure>
 <table>
 <tbody>
@@ -65,8 +65,8 @@ translationKey: "magazijnindeling-optimaliseren"
 </table>
 </figure>
 <h3>Separate pick and bulk locations</h3>
-<p>Use <a href="/support/locatiebeheer">pick locations</a> for the stock you need daily and bulk locations for larger quantities that you do not need every day. This keeps order pickers from having to walk to pallets or high racks.</p>
-<p>In ShopLinkr you can set orders to go to <a href="/support/backorders">backorder</a> when stock is only available in a bulk location. You then replenish the pick location first before processing the orders.</p>
+<p>Use <a href="/en/support/location-management">pick locations</a> for the stock you need daily and bulk locations for larger quantities that you do not need every day. This keeps order pickers from having to walk to pallets or high racks.</p>
+<p>In ShopLinkr you can set orders to go to <a href="/en/support/backorders">backorder</a> when stock is only available in a bulk location. You then replenish the pick location first before processing the orders.</p>
 <h3>Group logically</h3>
 <p>Products that are often ordered together are best placed close to one another. That way the picker walks a shorter route. Think of:</p>
 <ul>
@@ -81,9 +81,9 @@ translationKey: "magazijnindeling-optimaliseren"
 </li>
 </ul>
 <h3>Choose good naming</h3>
-<p>Consistent naming makes sure everyone on your team knows right away where a product is. Read <a href="/support/tips-voor-locatienummers">Tips for location numbers</a> for practical tips on how best to name your locations.</p>
+<p>Consistent naming makes sure everyone on your team knows right away where a product is. Read <a href="/en/support/location-number-tips">Tips for location numbers</a> for practical tips on how best to name your locations.</p>
 <h3>Review regularly</h3>
-<p>Your bestsellers change over time. A product that was an A product last month can be a B product now. Check the <a href="/support/abc-analyse">ABC analysis</a> regularly and adjust your layout. ShopLinkr shows which products recently changed category, so you can see at a glance what has shifted.</p>
+<p>Your bestsellers change over time. A product that was an A product last month can be a B product now. Check the <a href="/en/support/abc-analysis">ABC analysis</a> regularly and adjust your layout. ShopLinkr shows which products recently changed category, so you can see at a glance what has shifted.</p>
 <h3>In summary</h3>
 <figure>
 <table>

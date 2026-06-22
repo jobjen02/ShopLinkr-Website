@@ -4,6 +4,7 @@ import CtaBanner from '../sections/CtaBanner.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { localeMeta } from '../../i18n/localeData';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
@@ -23,7 +24,7 @@ const jsonLd = {
     '@type': 'WebPage',
     name: p.title,
     description: p.description,
-    ...(locale === 'nl' ? {} : { inLanguage: 'en-US' }),
+    inLanguage: localeMeta[locale].bcp47,
 };
 ---
 

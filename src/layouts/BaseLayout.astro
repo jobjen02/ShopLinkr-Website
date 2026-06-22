@@ -7,6 +7,7 @@ import Footer from '../components/layout/Footer.astro';
 import CookieBanner from '../components/islands/CookieBanner.vue';
 import type { Locale, RouteKey } from '../i18n/routes';
 import { useTranslations } from '../i18n/ui';
+import { localeMeta } from '../i18n/localeData';
 
 interface Props {
     title: string;
@@ -58,7 +59,7 @@ const websiteSchema = {
     '@type': 'WebSite',
     name: 'ShopLinkr',
     url: 'https://shoplinkr.com',
-    inLanguage: locale === 'nl' ? 'nl-NL' : 'en-US',
+    inLanguage: localeMeta[locale].bcp47,
     potentialAction: {
         '@type': 'SearchAction',
         target: {

@@ -1,5 +1,5 @@
 ---
-title: "Innosend en shopify samen gebruiken"
+title: "Innosend en Shopify samen gebruiken"
 excerpt: "Ben je een ondernemer die graag online verkoopt? Dan ben je waarschijnlijk bekend met de platforms Innosend en Shopify."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/innosend-en-shopify-samen-gebruiken/4T3ENshN5dQhJthtVSREs44dUE.png"

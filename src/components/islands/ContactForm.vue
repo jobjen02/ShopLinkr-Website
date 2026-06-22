@@ -136,7 +136,7 @@ function reset(): void {
         aria-live="polite"
         class="bg-paper dark:bg-charcoal rounded-3xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10 text-center"
     >
-        <div class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-5">
+        <div class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mb-5">
             <i class="fa-solid fa-check text-xl" aria-hidden="true"></i>
         </div>
         <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-3">
@@ -198,6 +198,7 @@ function reset(): void {
                         v-model="state.name"
                         type="text"
                         required
+                        :disabled="status === 'submitting'"
                         autocomplete="name"
                         :maxlength="MAX_NAME_LENGTH"
                         :placeholder="t.namePlaceholder"
@@ -214,6 +215,7 @@ function reset(): void {
                         v-model="state.email"
                         type="email"
                         required
+                        :disabled="status === 'submitting'"
                         autocomplete="email"
                         :maxlength="MAX_EMAIL_LENGTH"
                         inputmode="email"
@@ -233,6 +235,7 @@ function reset(): void {
                         id="contact-phone"
                         v-model="state.phone"
                         type="tel"
+                        :disabled="status === 'submitting'"
                         autocomplete="tel"
                         :maxlength="MAX_PHONE_LENGTH"
                         inputmode="tel"
@@ -250,6 +253,7 @@ function reset(): void {
                         id="contact-subject"
                         v-model="state.subject"
                         type="text"
+                        :disabled="status === 'submitting'"
                         :maxlength="MAX_SUBJECT_LENGTH"
                         :placeholder="t.subjectPlaceholder"
                         class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
@@ -270,6 +274,7 @@ function reset(): void {
                     id="contact-message"
                     v-model="state.message"
                     required
+                    :disabled="status === 'submitting'"
                     rows="5"
                     minlength="10"
                     :maxlength="MAX_MESSAGE_LENGTH"
@@ -294,7 +299,7 @@ function reset(): void {
                 v-if="status === 'error'"
                 role="alert"
                 aria-live="assertive"
-                class="rounded-lg bg-paper dark:bg-charcoal ring-1 ring-red-200 px-4 py-3 text-sm text-red-700"
+                class="rounded-lg bg-paper dark:bg-charcoal ring-1 ring-red-200 dark:ring-red-500/40 px-4 py-3 text-sm text-red-700 dark:text-red-400"
             >
                 {{ errorMessage }}
             </div>

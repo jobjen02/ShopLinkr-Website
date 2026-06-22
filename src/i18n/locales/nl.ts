@@ -14,6 +14,7 @@ const nl = {
         languageNav: 'Taal kiezen',
         skipToContent: 'Ga naar hoofdinhoud',
         readMore: 'Lees verder',
+        comingSoon: 'Binnenkort',
         openMenu: 'Menu openen',
         closeMenu: 'Menu sluiten',
         theme: {
@@ -32,7 +33,7 @@ const nl = {
     heroOrder: {
         steps: ['Besteld', 'Gepikt', 'Ingepakt', 'Verzonden'],
         orderTitle: 'Bestelling #1042',
-        viaBol: 'via Bol',
+        viaBol: 'via bol',
         unit: '1 stuk',
         play: 'Animatie afspelen',
         pause: 'Animatie pauzeren',
@@ -54,7 +55,7 @@ const nl = {
         stock: {
             eyebrow: 'Voorraadsynchronisatie',
             heading: 'Eén voorraad, alle kanalen.',
-            body: 'ShopLinkr houdt je voorraad altijd actueel. Verkocht op Bol? Shopify, WooCommerce en Kaufland zien het binnen seconden.',
+            body: 'ShopLinkr houdt je voorraad altijd actueel. Verkocht op bol? Shopify, WooCommerce en Kaufland zien het binnen seconden.',
             bullets: ['Geen nee-verkoop', 'Geen handwerk', 'Realtime updates', 'Onbeperkt kanalen'],
         },
         channels: {
@@ -420,7 +421,7 @@ const nl = {
                 {
                     eyebrow: 'Bestellingen op één plek',
                     heading: 'Alle orders in dezelfde bestellingenlijst.',
-                    body: 'Bestellingen uit Shopify en uit bol komen samen in één overzicht in ShopLinkr. Je picked, verpakt en verstuurt vanuit dezelfde flow, ongeacht waar de order vandaan komt. Eén workflow voor je magazijn, ook als je op meer kanalen verkoopt.',
+                    body: 'Bestellingen uit Shopify en uit bol komen samen in één overzicht in ShopLinkr. Je pickt, verpakt en verstuurt vanuit dezelfde flow, ongeacht waar de order vandaan komt. Eén workflow voor je magazijn, ook als je op meer kanalen verkoopt.',
                 },
                 {
                     eyebrow: 'Geen oversells',
@@ -484,11 +485,11 @@ const nl = {
                 { eyebrow: 'ShopLinkr als brug', heading: 'Een betrouwbare schakel tussen WooCommerce en bol.', body: 'Je koppelt je WooCommerce webshop aan ShopLinkr, en je bol verkoopaccount ook. Vanaf dat moment houdt ShopLinkr alles in lijn. Geen losse plugins die je per kanaal moet onderhouden, geen exports tussendoor.' },
                 { eyebrow: 'Matchen op EAN', heading: 'Producten worden automatisch aan elkaar gekoppeld.', body: 'Op basis van het EAN-nummer herkent ShopLinkr welk WooCommerce product hetzelfde is als een bol-listing. Eén keer goed instellen, en je hoeft daarna nooit meer SKUs handmatig te matchen. Nieuwe producten neem je in een paar klikken mee.' },
                 { eyebrow: 'Voorraad realtime in sync', heading: 'Eén voorraadbeeld voor allebei je kanalen.', body: 'Verkoop je een product op bol, dan past ShopLinkr de voorraad op WooCommerce direct aan. Krijg je een order binnen via je eigen webshop, dan gaat de voorraad op bol omlaag. Eén voorraadbron, dezelfde betrouwbare stand op elk kanaal.' },
-                { eyebrow: 'Bestellingen op één plek', heading: 'Alle orders in dezelfde flow.', body: 'WooCommerce-orders en bol-orders verschijnen in dezelfde bestellingenlijst. Je picked, verpakt en verstuurt vanuit één omgeving. Het maakt niet meer uit waar de bestelling vandaan komt, je magazijn werkt altijd op dezelfde manier.' },
+                { eyebrow: 'Bestellingen op één plek', heading: 'Alle orders in dezelfde flow.', body: 'WooCommerce-orders en bol-orders verschijnen in dezelfde bestellingenlijst. Je pickt, verpakt en verstuurt vanuit één omgeving. Het maakt niet meer uit waar de bestelling vandaan komt, je magazijn werkt altijd op dezelfde manier.' },
                 { eyebrow: 'Voorkom oversells', heading: 'Verkoop nooit meer wat je niet op voorraad hebt.', body: 'Doordat de voorraad razendsnel tussen kanalen meebeweegt, voorkom je dat hetzelfde laatste stuk op twee plekken tegelijk verkocht wordt. Minder annuleringen, geen bol verkoopboetes en blijere klanten.' },
             ],
             setupSteps: [
-                { label: 'Stap 1', title: 'WooCommerce koppelen', body: 'Installeer onze WooCommerce-plugin op je WordPress site, kopiëer een API-sleutel uit ShopLinkr en je shop praat direct mee. Geen developer nodig.' },
+                { label: 'Stap 1', title: 'WooCommerce koppelen', body: 'Installeer onze WooCommerce-plugin op je WordPress site, kopieer een API-sleutel uit ShopLinkr en je shop praat direct mee. Geen developer nodig.' },
                 { label: 'Stap 2', title: 'EAN op orde brengen', body: 'WooCommerce heeft standaard geen EAN-veld. Wij ondersteunen de EAN Barcode Generator plugin van WPFactory. Geen EAN? Dan gebruikt ShopLinkr je SKU-veld als fallback.' },
                 { label: 'Stap 3', title: 'bol erbij klikken', body: 'Open je bol verkoopaccount, autoriseer ShopLinkr in een paar klikken. Je listings worden opgehaald en gematcht met je WooCommerce-producten op EAN.' },
                 { label: 'Stap 4', title: 'Sync staat', body: 'Klaar. Vanaf nu lopen voorraad en orders tussen beide kanalen door ShopLinkr. Je verwerkt alles vanuit één omgeving, je magazijn merkt geen verschil meer tussen kanalen.' },
@@ -516,7 +517,7 @@ const nl = {
                 { eyebrow: 'ShopLinkr als brug', heading: 'Eén platform voor twee webshops naast elkaar.', body: 'Heb je een WooCommerce shop en een Shopify shop tegelijk draaien? ShopLinkr legt de verbinding ertussen. Je koppelt beide aan ShopLinkr, en vanaf dat moment zit alles in één overzicht. Geen aparte tools, geen dubbele administratie.' },
                 { eyebrow: 'Matchen op EAN', heading: 'Producten worden vanzelf aan elkaar gekoppeld.', body: 'ShopLinkr koppelt producten in WooCommerce en Shopify aan elkaar op basis van EAN. Eén keer op orde, en het systeem weet daarna altijd welke variant bij welk kanaal hoort. Nieuwe producten neem je in een paar klikken mee.' },
                 { eyebrow: 'Voorraad realtime in sync', heading: 'Verkopen op één shop, voorraad zakt in beide.', body: 'Verkoop je een product op Shopify, dan past ShopLinkr de voorraad op WooCommerce direct aan. En andersom. Zo houd je één waarheid voor je voorraad, ook als je op beide kanalen tegelijk actief verkoopt. Elke shop blijft z\'n eigen merk, je magazijn werkt met één voorraadstand.' },
-                { eyebrow: 'Bestellingen op één plek', heading: 'Alle orders in dezelfde bestellingenlijst.', body: 'Bestellingen uit WooCommerce en Shopify verschijnen samen in ShopLinkr. Je picked, verpakt en verstuurt vanuit dezelfde flow, ongeacht waar de order vandaan komt. Je magazijnteam werkt elke dag op dezelfde manier.' },
+                { eyebrow: 'Bestellingen op één plek', heading: 'Alle orders in dezelfde bestellingenlijst.', body: 'Bestellingen uit WooCommerce en Shopify verschijnen samen in ShopLinkr. Je pickt, verpakt en verstuurt vanuit dezelfde flow, ongeacht waar de order vandaan komt. Je magazijnteam werkt elke dag op dezelfde manier.' },
                 { eyebrow: 'Geen oversells', heading: 'Verkoop nooit meer wat je niet op voorraad hebt.', body: 'Doordat de voorraad razendsnel meebeweegt, voorkom je dat je hetzelfde laatste stuk twee keer verkoopt. Minder annuleringen, minder klantvragen en een consistente ervaring voor iedereen die bij je bestelt.' },
             ],
             useCasesEyebrow: 'Wanneer dit slim is',
@@ -556,7 +557,7 @@ const nl = {
             benefitCarrier1Title: 'Labels in seconden',
             benefitCarrier1Body: 'Print {name}-labels direct vanuit je picklijst. Adres, gewicht en orderregels staan al ingevuld, je hoeft niets meer over te typen.',
             benefitCarrier2Title: 'Tracking terug naar de klant',
-            benefitCarrier2Body: 'Zodra het label geprint is, gaat de track and trace automatisch terug naar je webshop en marketplaces. Je klant ziet de status zonder dat jij iets hoeft te doen.',
+            benefitCarrier2Body: 'Zodra het label geprint is, gaat de track en trace automatisch terug naar je webshop en marketplaces. Je klant ziet de status zonder dat jij iets hoeft te doen.',
             benefitCarrier3Title: 'Slimme keuze per order',
             benefitCarrier3Body: 'Stel regels in zodat ShopLinkr automatisch de juiste vervoerder kiest per order. Op gewicht, postcode, kanaal of producttype.',
             benefitDefault1Title: 'Realtime orderimport',
@@ -564,7 +565,7 @@ const nl = {
             benefitDefault2Title: 'Voorraad altijd in sync',
             benefitDefault2Body: 'Verkoop je via {name} of buiten {name} om, ShopLinkr houdt je voorraad realtime synchroon over alle verkoopkanalen. Geen oversells meer.',
             benefitDefault3Title: 'Verzendlabels uit dezelfde flow',
-            benefitDefault3Body: 'Pick je order en print het label bij je voorkeurs-vervoerder. {name} importeert automatisch de track and trace.',
+            benefitDefault3Body: 'Pick je order en print het label bij je voorkeurs-vervoerder. {name} importeert automatisch de track en trace.',
             syncLabelCarrier: 'Tracking automatisch terug',
             syncLabelDefault: 'Voorraad en orders in sync',
             quickFactComingSoon: 'Binnenkort live',
@@ -709,6 +710,8 @@ const nl = {
             subheading: 'Een korte vraag, een eerste kennismaking of een uitgebreid gesprek over je magazijn. Kies de manier die jou het beste past.',
             jsonLdName: 'Contact | ShopLinkr',
             jsonLdDescription: 'Neem contact op met ShopLinkr. Stuur een bericht, plan een demo of bezoek het helpcentrum. Reactie doorgaans binnen 2 uur tijdens kantooruren.',
+            breadcrumbHome: 'Home',
+            breadcrumbLeaf: 'Contact',
             channels: [
                 {
                     eyebrow: 'Stuur een bericht',
@@ -770,7 +773,7 @@ const nl = {
             tablePurpose: 'Doel',
             tableDuration: 'Duur',
             preferencesHeading: 'Voorkeuren aanpassen',
-            preferencesBody: 'Wis de cookie-instellingen in je browser om de cookiebanner opnieuw te zien. Of stuur ons een mail op <a href="mailto:contact@shoplinkr.com" class="text-charcoal font-semibold hover:text-sunstone-deep transition-colors">contact@shoplinkr.com</a> als je hulp nodig hebt.',
+            preferencesBody: 'Wis de cookie-instellingen in je browser om de cookiebanner opnieuw te zien. Of stuur ons een mail op <a href="mailto:contact@shoplinkr.com" class="text-charcoal dark:text-paper font-semibold hover:text-sunstone-deep dark:hover:text-sunstone transition-colors">contact@shoplinkr.com</a> als je hulp nodig hebt.',
             categories: [
                 {
                     title: 'Noodzakelijke cookies',
@@ -810,7 +813,7 @@ const nl = {
             articleHeadlinePrefix: 'Klantverhaal:',
             storyIntro: 'Jasper startte Schoongedaan in 2023 vanuit een kastje naast zijn bureau. Inmiddels runt hij een snelgroeiend bedrijf in Nieuwegein, gespecialiseerd in schoonmaakmiddelen voor vloeren, keukens, zwembaden en nog veel meer. Via bol, Kaufland en zijn eigen webshop levert hij dagelijks honderden bestellingen.',
             storyChallenge: 'Door snelle groei raakte het oude magazijn al snel chaotisch. Producten stonden door elkaar en orderpicken kostte veel tijd. Jasper kon maximaal 60 bestellingen per dag verwerken en liep tegen fouten, retouren en frustratie aan.',
-            storySolution: 'Met ShopLinkr bracht Jasper structuur in zijn magazijn en koppelde hij al zijn verkoopkanalen. Dankzij slimme picklijsten en mobiele barcodescanners is het pick- en pack proces nu volledig geautomatiseerd. Bestellingen, voorraad, verzending en zelfs retouren regelt hij vanuit één systeem, waardoor Jasper dagelijks honderden bestellingen foutloos verwerkt.',
+            storySolution: 'Met ShopLinkr bracht Jasper structuur in zijn magazijn en koppelde hij al zijn verkoopkanalen. Dankzij slimme picklijsten en mobiele barcodescanners is het pick- en pack-proces nu volledig geautomatiseerd. Bestellingen, voorraad, verzending en zelfs retouren regelt hij vanuit één systeem, waardoor Jasper dagelijks honderden bestellingen foutloos verwerkt.',
             storyMetric: 'Van 60 bestellingen per dag naar 150 tot 250 bestellingen, met pieken van 500 orders op maandag.',
             featuredEyebrow: 'Uitgelicht verhaal',
             featuredHeading: 'Van 60 naar 500 orders per dag.',
@@ -867,10 +870,10 @@ const nl = {
             howIntro: 'Je rekening bestaat uit een vast bedrag per verkoopkanaal en een staffeltarief per order. Schuif met de calculator om jouw maandprijs te zien, of reken zelf na met de getallen hieronder.',
             channelEyebrow: 'Per verkoopkanaal',
             channelTitle: 'Vast maandtarief.',
-            channelBody: 'Elk kanaal dat je koppelt, kost hetzelfde. Welk kanaal je ook koppelt, het tarief blijft hetzelfde per maand.',
+            channelBody: 'Elk kanaal dat je koppelt, kost hetzelfde vaste bedrag per maand. Geen verrassingen per gebruiker of per koppeling.',
             orderEyebrow: 'Per order',
             orderTitle: 'Staffeltarief.',
-            orderBody: 'Per orderstaffel een eigen tarief, dat in de hogere staffels naar enkele centen per order zakt. Hoe meer orders je per maand verwerkt, hoe lager het gemiddelde per order.',
+            orderBody: 'Per orderstaffel een eigen tarief, dat bij grote volumes naar enkele centen per order zakt. Schuif met de calculator om te zien wat jouw aantal orders per maand kost.',
             examplesLabel: 'Voorbeelden',
             examplesFootnote: 'Totalen per maand, exclusief btw. Reken zelf na via de calculator hierboven.',
             pricingExamples: [
@@ -1514,8 +1517,10 @@ const nl = {
             mockupGiftsetStock: '6 stuks',
             mockupKibbleName: 'Hondenbrokken premium',
             mockupKibbleTag: 'Bron',
+            mockupKibbleStock: '85 kg',
             mockupLicenseName: 'Softwarelicentie Pro',
             mockupLicenseTag: 'Onbeperkt',
+            mockupLicenseStock: '∞',
             overviewCaption: 'Losse producten, variantgroepen, bundels, voorraadbronnen en producten met onbeperkte voorraad staan naast elkaar in hetzelfde overzicht.',
             typesEyebrow: 'Soorten producten',
             typesHeadingLine1: 'Vier producttypes,',
@@ -1666,7 +1671,7 @@ const nl = {
             mockupEyebrow: 'Vier rapporten, één plek',
             mockupHeadingLine1: 'Inzicht in je cijfers,',
             mockupHeadingLine2: 'geen aannames meer.',
-            mockupReportLabel: 'Product prestaties',
+            mockupReportLabel: 'Productprestaties',
             mockupTopBadge: 'Top 3 op winst',
             mockupColProduct: 'Product',
             mockupColRevenue: 'Omzet',
@@ -1683,7 +1688,7 @@ const nl = {
             bullet4: 'Rechten per gebruiker',
             subFeatures: [
                 {
-                    eyebrow: 'Product prestaties',
+                    eyebrow: 'Productprestaties',
                     heading: 'Zie per product wat het oplevert.',
                     body: 'Omzet, winst, marge, inkoopkosten, commissie en retouren staan naast elkaar in één overzicht. Sorteer op omzet of winst om je toppers boven te halen, of spoor producten op waar je marge onder druk staat.',
                 },
@@ -1710,7 +1715,7 @@ const nl = {
             workflowSteps: [
                 {
                     title: 'Periode of datum kiezen',
-                    body: 'Stel per rapport de periode of datum in. Product prestaties en nooit verkochte producten kijken naar een periode, voorraadwaarde naar één datum, zodat je ook historische waarden terugziet.',
+                    body: 'Stel per rapport de periode of datum in. Productprestaties en nooit verkochte producten kijken naar een periode, voorraadwaarde naar één datum, zodat je ook historische waarden terugziet.',
                 },
                 {
                     title: 'Filteren tot je hebt wat je zoekt',
@@ -1997,7 +2002,7 @@ const nl = {
                 { eyebrow: 'Voor bol verkopers', heading: 'Altijd grip op je voorraad bij bol.', body: 'Als bol-verkoper kan je het je niet veroorloven om uit voorraad te raken zonder dat je het ziet aankomen. ShopLinkr koppelt je bol-account en houdt je voorraad realtime kloppend, ook als je daarnaast op Shopify, WooCommerce of een eigen webshop verkoopt.' },
                 { eyebrow: 'Hogere ranking', heading: 'Voorraad die meewerkt aan je positie.', body: 'Bol weegt mee hoe betrouwbaar je verkoopt. Een lege voorraad of een geannuleerde bestelling drukt je ranking, en daar wil je vanaf. Door je voorraad altijd te laten kloppen, voorkom je negatieve signalen en bouw je structureel aan je positie binnen het platform.' },
                 { eyebrow: 'Realtime updates', heading: 'Voorraadupdates met je bol koppeling.', body: 'Verkoop je iets via je webshop, dan past ShopLinkr je bol-voorraad direct aan. Andersom geldt hetzelfde: een verkoop op bol trekt meteen voorraad af op je andere kanalen. Je communiceert continu de juiste aantallen, zonder ooit handmatig in te grijpen.' },
-                { eyebrow: 'VVB en LVB', heading: 'Werkt met Verzenden via Bol én Logistiek via Bol.', body: 'Verstuur je zelf met de verzendlabels van bol (VVB), of laat je bol je orders vanuit hun magazijn afhandelen (LVB)? ShopLinkr ondersteunt beide. Je houdt zicht op wat er bij jou ligt en wat bij bol ligt, samen in één overzicht, inclusief de slimme voorraadswitch tussen eigen verzending en bol-fulfillment.' },
+                { eyebrow: 'VVB en LVB', heading: 'Werkt met Verzenden via bol én Logistiek via bol.', body: 'Verstuur je zelf met de verzendlabels van bol (VVB), of laat je bol je orders vanuit hun magazijn afhandelen (LVB)? ShopLinkr ondersteunt beide. Je houdt zicht op wat er bij jou ligt en wat bij bol ligt, samen in één overzicht, inclusief de slimme voorraadswitch tussen eigen verzending en bol-fulfillment.' },
                 { eyebrow: 'Geen contracten', heading: 'Vandaag aanmelden, vandaag werken.', body: 'Je probeert ShopLinkr 14 dagen gratis uit, zonder creditcard, zonder verplichtingen. Koppel je bol-account, importeer je producten en je draait meteen je eerste orders door het systeem. Maandelijks opzegbaar als het toch niet bij je past.' },
             ],
         },
@@ -2011,7 +2016,7 @@ const nl = {
             whyHeading: 'Jouw volledige webshopbeheer in één oogopslag.',
             whyIntro: 'Je hoeft niet langer per kanaal in een ander scherm te werken. ShopLinkr brengt je voorraad, je bestellingen en je verzending samen in één werkstroom, zodat je sneller schakelt en minder fouten maakt.',
             rows: [
-                { eyebrow: 'Eén overzicht', heading: 'Je hele webshop in één oogopslag.', body: 'Bestellingen, voorraad, klanten en retouren samen op één scherm. Geen schakelen tussen Bol, Shopify, WooCommerce en je vervoerdersportaal. Je werkt vanaf nu vanuit één centrale plek, ongeacht waar de bestelling vandaan komt.' },
+                { eyebrow: 'Eén overzicht', heading: 'Je hele webshop in één oogopslag.', body: 'Bestellingen, voorraad, klanten en retouren samen op één scherm. Geen schakelen tussen bol, Shopify, WooCommerce en je vervoerdersportaal. Je werkt vanaf nu vanuit één centrale plek, ongeacht waar de bestelling vandaan komt.' },
                 { eyebrow: 'Bulk', heading: 'Bestellingen in bulk verwerken.', body: 'Selecteer een stapel bestellingen en print de pick- en packlijst en verzendlabels in één handeling. Tijdens piekdagen scheelt dat uren werk, en je werkstroom blijft soepel ook als de bestellingen binnenstromen.' },
                 { eyebrow: 'Realtime sync', heading: 'Voorraad die altijd klopt.', body: 'Verkoop je iets op het ene kanaal, dan past ShopLinkr je voorraad meteen aan op de andere. Geen oversells, geen geannuleerde bestellingen en geen vervelende klantgesprekken meer over iets dat eigenlijk al uitverkocht was.' },
                 { eyebrow: 'Tijdwinst', heading: 'Ruim een uur per dag terugkrijgen.', body: 'Klanten van ons winnen vaak ruim een uur per dag terug bij gemiddeld vijftig bestellingen. Dat is tijd die je in groei steekt in plaats van in handwerk: nieuwe producten zoeken, marketing draaien of gewoon vroeger naar huis.' },
@@ -2020,12 +2025,12 @@ const nl = {
         },
         inventoryExcel: {
             title: 'Voorraadbeheer Excel | Voorraad Excel Template - ShopLinkr',
-            description: 'Download ons gratis inkoop excel template en verbeter je voorraadbeheer. Eenvoudig in gebruik en ideaal voor webshops die net beginnen.',
+            description: 'Download ons gratis inkoop Excel template en verbeter je voorraadbeheer. Eenvoudig in gebruik en ideaal voor webshops die net beginnen.',
             eyebrow: 'Gratis download',
             heading: 'Gratis voorraadbeheer Excel template.',
             subheading: 'Download een uitgewerkte Excel-template waarmee je direct aan de slag kunt. Ideaal voor webshops die nog geen voorraadbeheer software gebruiken.',
             jsonLdName: 'Voorraadbeheer Excel template - ShopLinkr',
-            jsonLdDescription: 'Download ons gratis inkoop excel template en verbeter je voorraadbeheer. Eenvoudig in gebruik en ideaal voor webshops die net beginnen.',
+            jsonLdDescription: 'Download ons gratis inkoop Excel template en verbeter je voorraadbeheer. Eenvoudig in gebruik en ideaal voor webshops die net beginnen.',
             requestMailto: 'mailto:contact@shoplinkr.com?subject=Aanvraag%20voorraadbeheer%20Excel%20template',
             requestButton: 'Template aanvragen',
             intro: 'Stuur ons een mailtje en we sturen je de Excel-template direct toe. Geen drempel, geen aanmelding nodig.',
@@ -2099,11 +2104,11 @@ const nl = {
         },
         returnFormTemplate: {
             title: 'Retourformulier template - ShopLinkr',
-            description: 'Download ons gratis retourformulier template in Word en verbeter je retourverwerking. Eenvoudig in gebruik en aanpasbaar naar je eigen huisstijl.',
-            jsonLdDescription: 'Download ons gratis retourformulier template en verbeter je retourverwerking. Eenvoudig in gebruik en aanpasbaar naar je eigen huisstijl.',
-            eyebrow: 'Gratis download',
+            description: 'Vraag ons gratis retourformulier template in Word aan en verbeter je retourverwerking. Eenvoudig in gebruik en aanpasbaar naar je eigen huisstijl.',
+            jsonLdDescription: 'Vraag ons gratis retourformulier template aan en verbeter je retourverwerking. Eenvoudig in gebruik en aanpasbaar naar je eigen huisstijl.',
+            eyebrow: 'Gratis aanvragen',
             heading: 'Retourformulier template, klaar voor gebruik.',
-            subheading: 'Een uitgewerkt retourformulier in Word, gratis te downloaden. Pas hem aan naar je huisstijl en geef hem mee in elke verzending.',
+            subheading: 'Een uitgewerkt retourformulier in Word, gratis op te vragen. Pas hem aan naar je huisstijl en geef hem mee in elke verzending.',
             requestMailto: 'mailto:contact@shoplinkr.com?subject=Aanvraag%20retourformulier%20template',
             requestButton: 'Template aanvragen',
             requestNote: 'Stuur ons een mailtje en we sturen je het Word-document direct toe. Helemaal vrijblijvend.',
@@ -2165,7 +2170,7 @@ const nl = {
             whyIntro: 'Voorraadbeheer hoeft niet ingewikkeld te zijn. ShopLinkr neemt het handwerk uit handen en houdt je voorraad realtime kloppend op al je verkoopkanalen, zodat je je weer kunt richten op groeien.',
             rows: [
                 { eyebrow: 'Eén klik', heading: 'Voorraad synchronisatie in één keer geregeld.', body: 'Koppel je verkoopkanalen en ShopLinkr neemt het over. Zodra er een bestelling binnenkomt, past je voorraad zich automatisch aan op al je andere kanalen. Je hoeft nooit meer handmatig cijfers over te tikken of bij te werken.' },
-                { eyebrow: 'Geen gedoe', heading: 'Automatisch werkt voor je.', body: 'Geen complexe instellingen, geen lange leerprocessen. ShopLinkr werkt vanaf dag één voor je in plaats van andersom. Je richt het in, je laat het draaien en je voorraad blijft kloppen, ook als je zelf niet achter je laptop zit.' },
+                { eyebrow: 'Geen gedoe', heading: 'Automatisering werkt voor je.', body: 'Geen complexe instellingen, geen lange leerprocessen. ShopLinkr werkt vanaf dag één voor je in plaats van andersom. Je richt het in, je laat het draaien en je voorraad blijft kloppen, ook als je zelf niet achter je laptop zit.' },
                 { eyebrow: 'Tijdwinst', heading: 'Uren per week terugkrijgen.', body: 'Je bent niet langer bezig met voorraad bijwerken, oversells oplossen of klanten teleurstellen. Die tijd steek je in waar je ondernemer voor bent geworden: nieuwe producten, marketing of gewoon vrije tijd.' },
                 { eyebrow: 'Foutloos', heading: 'Minder menselijke fouten.', body: 'Handmatig werken betekent fouten maken. Een typo, een verkeerd aantal, een vergeten update. Automatiseer je dat, dan haal je de hele foutbron weg. Je voorraad klopt continu omdat een mens er niet meer tussen zit.' },
                 { eyebrow: 'Voor iedereen', heading: 'Gebouwd voor mensen, niet voor experts.', body: 'ShopLinkr is gemaakt voor webshopondernemers die simpel voorraad willen beheren, niet voor IT-specialisten. De interface spreekt vanzelf en je hoeft geen handleiding van honderd pagina\'s door om aan de slag te kunnen.' },
@@ -2205,10 +2210,10 @@ const nl = {
             whyIntro: 'WooCommerce is krachtig, maar zonder goede voorraadsynchronisatie loop je vast zodra je via meerdere kanalen verkoopt. ShopLinkr neemt die complexiteit weg en houdt alles in lijn met wat er werkelijk op het schap ligt.',
             rows: [
                 { eyebrow: 'Koppeling', heading: 'Eén keer koppelen, daarna draait het vanzelf.', body: 'Je verbindt je WooCommerce-shop met ShopLinkr via een paar klikken. Je producten worden ingelezen en je voorraad rolt automatisch binnen. Vanaf dat moment houdt ShopLinkr je WooCommerce-voorraad realtime synchroon met al je andere kanalen.' },
-                { eyebrow: 'Realtime', heading: 'Updates binnen seconden.', body: 'Verkoop je iets op WooCommerce, dan past ShopLinkr je voorraad direct aan op Bol, Shopify en je andere kanalen. Andersom werkt het ook: een bestelling op Bol trekt meteen voorraad af in WooCommerce, zodat je nooit dubbel verkoopt.' },
+                { eyebrow: 'Realtime', heading: 'Updates binnen seconden.', body: 'Verkoop je iets op WooCommerce, dan past ShopLinkr je voorraad direct aan op bol, Shopify en je andere kanalen. Andersom werkt het ook: een bestelling op bol trekt meteen voorraad af in WooCommerce, zodat je nooit dubbel verkoopt.' },
                 { eyebrow: 'Geen handmatig werk', heading: 'Stop met cijfers overtikken.', body: 'Handmatig voorraad bijwerken is verleden tijd. ShopLinkr neemt de complete sync uit handen, zodat je geen tijd meer kwijt bent aan administratie. Die tijd steek je in producten, content of marketing voor je WooCommerce-shop.' },
                 { eyebrow: 'Geen oversells', heading: 'Voorkom dat je verkoopt wat je niet hebt.', body: 'Een oversell is duur: je raakt een klant kwijt en je krijgt een slechte review. Doordat je voorraad continu synchroon staat, communiceer je nooit meer een aantal naar je klanten dat je niet werkelijk in huis hebt.' },
-                { eyebrow: 'Klaar voor groei', heading: 'Multi-channel zonder hoofdpijn.', body: 'Wil je vanuit WooCommerce uitbreiden naar Bol, Shopify of Kaufland? ShopLinkr maakt dat ineens een stuk simpeler. Eén voorraadbron, alle kanalen tegelijk bedienen, en je houdt overzicht ongeacht hoe groot je wordt.' },
+                { eyebrow: 'Klaar voor groei', heading: 'Multi-channel zonder hoofdpijn.', body: 'Wil je vanuit WooCommerce uitbreiden naar bol, Shopify of Kaufland? ShopLinkr maakt dat ineens een stuk simpeler. Eén voorraadbron, alle kanalen tegelijk bedienen, en je houdt overzicht ongeacht hoe groot je wordt.' },
             ],
         },
         inventorySystem: {
@@ -2221,9 +2226,9 @@ const nl = {
             whyHeading: 'Een systeem dat met je meedenkt.',
             whyIntro: 'Zonder een goed systeem ben je veel tijd kwijt aan handwerk dat niets oplevert. ShopLinkr automatiseert je voorraad, je bestellingen en je verzending, zodat je je tijd kunt steken in groei in plaats van in administratie.',
             rows: [
-                { eyebrow: 'Waarom een systeem', heading: 'Excel raakt z\'n grenzen sneller dan je denkt.', body: 'Een spreadsheet werkt prima tot je tweede of derde kanaal erbij komt. Vanaf dat moment loop je achter de feiten aan: je voorraad klopt niet meer, oversells stapelen zich op en je picker pakt verkeerde aantallen. Een voorraadbeheer systeem neemt dat handwerk uit je dag.' },
+                { eyebrow: 'Waarom een systeem', heading: 'Excel bereikt z\'n grenzen sneller dan je denkt.', body: 'Een spreadsheet werkt prima tot je tweede of derde kanaal erbij komt. Vanaf dat moment loop je achter de feiten aan: je voorraad klopt niet meer, oversells stapelen zich op en je picker pakt verkeerde aantallen. Een voorraadbeheer systeem neemt dat handwerk uit je dag.' },
                 { eyebrow: 'Eén werkplek', heading: 'Alle kanalen samen op één scherm.', body: 'ShopLinkr koppelt al je verkoopkanalen in één omgeving. Je voorraad, bestellingen en retouren beheer je vanaf nu vanuit een centrale plek, met je productlijst altijd in beeld en zonder constant tussen tabbladen te schakelen.' },
-                { eyebrow: 'Realtime sync', heading: 'Live updates, geen vertraging.', body: 'Verkoop je iets op Bol, dan past ShopLinkr je voorraad direct aan op je andere kanalen. Geen oversells, geen geannuleerde bestellingen, en geen excuses naar klanten. Je voorraad klopt continu met wat er werkelijk in je magazijn ligt.' },
+                { eyebrow: 'Realtime sync', heading: 'Live updates, geen vertraging.', body: 'Verkoop je iets op bol, dan past ShopLinkr je voorraad direct aan op je andere kanalen. Geen oversells, geen geannuleerde bestellingen, en geen excuses naar klanten. Je voorraad klopt continu met wat er werkelijk in je magazijn ligt.' },
                 { eyebrow: 'Snel en accuraat', heading: 'Orders verwerken in minuten, niet uren.', body: 'Bestellingen komen automatisch binnen, je print pick- en packlijsten, draait verzendlabels in bulk en stuurt track en trace terug. Wat voorheen een hele ochtend kostte, doe je nu tussen je koffie en je lunch door.' },
                 { eyebrow: 'Inzicht', heading: 'Zie waar je voorraad zit en wat hij doet.', body: 'Per product zie je fysieke voorraad, gereserveerde aantallen en wat er nog beschikbaar is om te verkopen. Combineer dat met magazijnlocaties en inkoopadvies en je hebt continu grip op wat er in je magazijn gebeurt.' },
             ],
@@ -2242,7 +2247,7 @@ const nl = {
                 { eyebrow: 'Realtime sync', heading: 'Voorraad die met je verkoopt.', body: 'Verkoop je iets in je webshop, dan past ShopLinkr de voorraad direct aan op al je andere kanalen. Geen handmatige updates, geen wachttijd, geen onverwachte oversells. Wat je ziet, klopt met wat er werkelijk op het schap ligt.' },
                 { eyebrow: 'Voorraadmeldingen', heading: 'Krijg een seintje voordat je misgrijpt.', body: 'Stel per product een drempelwaarde in en ontvang automatisch een melding zodra je voorraad daaronder zakt. Zo weet je op tijd dat je moet inkopen en raakt je topverkoper nooit ongemerkt uitverkocht.' },
                 { eyebrow: 'Klanttevredenheid', heading: 'Snellere verwerking, blije klanten.', body: 'Bestellingen komen automatisch binnen, je picker werkt met locaties op de picklijst en verzendlabels draai je in bulk. Sneller versturen betekent betere reviews en hogere klanttevredenheid, zonder dat het je meer tijd kost.' },
-                { eyebrow: 'Inzicht', heading: 'Datagedreven beslissingen, zonder Excel-werk.', body: 'Op het dashboard zie je je topverkopers, je inkoopadvies en je voorraadprognoses in één oogopslag. Geen kraken op rapportages, gewoon zien wat er werkt en daar je inkoop op aanpassen.' },
+                { eyebrow: 'Inzicht', heading: 'Datagedreven beslissingen, zonder Excel-werk.', body: 'Op het dashboard zie je je topverkopers, je inkoopadvies en je voorraadprognoses in één oogopslag. Geen geploeter met rapportages, gewoon zien wat er werkt en daar je inkoop op aanpassen.' },
             ],
         },
         inventoryManagement: {
@@ -2256,7 +2261,7 @@ const nl = {
             whyIntro: 'ShopLinkr trekt al je producten uit je kanalen, brengt ze samen in één overzicht en synchroniseert je voorraad realtime terug. Geen dubbel werk, geen oversells, en altijd zicht op wat er werkelijk op het schap ligt.',
             rows: [
                 { eyebrow: 'Multi-channel', heading: 'Koppel al je verkoopkanalen in één keer.', body: 'Verkoop je via meerdere kanalen tegelijk? ShopLinkr verbindt je kanalen en bouwt er één voorraadoverzicht omheen. Je werkt vanaf nu vanuit één scherm in plaats van constant te switchen tussen platformen.' },
-                { eyebrow: 'Altijd kloppend', heading: 'Voorraad die altijd klopt.', body: 'Verkoop je een product op Bol, dan trekt ShopLinkr de voorraad meteen af op Shopify en WooCommerce. Geen oversells meer, geen geannuleerde bestellingen. Je ziet per product hoeveel je fysiek hebt liggen, hoeveel er gereserveerd staan en hoeveel je daadwerkelijk nog kunt verkopen.' },
+                { eyebrow: 'Altijd kloppend', heading: 'Voorraad die altijd klopt.', body: 'Verkoop je een product op bol, dan trekt ShopLinkr de voorraad meteen af op Shopify en WooCommerce. Geen oversells meer, geen geannuleerde bestellingen. Je ziet per product hoeveel je fysiek hebt liggen, hoeveel er gereserveerd staat en hoeveel je daadwerkelijk nog kunt verkopen.' },
                 { eyebrow: 'Razendsnel picken', heading: 'Picklijsten die je magazijn versnellen.', body: 'Op de picklijst staat per product de locatie. Je picker loopt de meest efficiënte route en haalt in één keer alles op voor meerdere bestellingen tegelijk. Zo bespaar je minuten per order en houd je het tempo erin tijdens piekdagen.' },
                 { eyebrow: 'Verzending', heading: 'Automatische verzendlabels.', body: 'Direct vanuit ShopLinkr print je een verzendlabel van PostNL, DPD, MyParcel, Sendcloud of een andere koppeling. De track en trace gaat automatisch terug naar je verkoopkanaal en je klant. Geen knip- en plakwerk meer tussen marketplace en vervoerder.' },
                 { eyebrow: 'Inkoopadvies', heading: 'Slimme prognoses voor je inkoop.', body: 'Op basis van je verkoophistorie laat ShopLinkr zien welke producten je bijna kwijt bent en hoeveel je opnieuw zou moeten inkopen. Zo voorkom je dat je topverkoper opeens uitverkocht raakt, zonder dat je magazijn vol komt te liggen.' },
@@ -2278,7 +2283,7 @@ const nl = {
             whyHeading: 'Software die meedraait met jouw werkwijze.',
             whyIntro: 'Een goede voorraadbeheer software hoeft niet ingewikkeld te zijn. ShopLinkr koppelt je kanalen, synchroniseert je voorraad en geeft je rust in je dagelijkse werk, zodat je tijd overhoudt voor de dingen waar je ondernemer voor bent geworden.',
             rows: [
-                { eyebrow: 'Wat is het?', heading: 'Voorraadbeheer software, kort uitgelegd.', body: 'Voorraadbeheer software houdt bij hoeveel je van elk product op voorraad hebt en zorgt dat dat aantal klopt op al je verkoopkanalen tegelijk. Verkoop je iets op Bol, dan ziet Shopify dat ook. Je hoeft niets meer handmatig bij te werken en je verkoopt nooit meer wat je niet hebt.' },
+                { eyebrow: 'Wat is het?', heading: 'Voorraadbeheer software, kort uitgelegd.', body: 'Voorraadbeheer software houdt bij hoeveel je van elk product op voorraad hebt en zorgt dat dat aantal klopt op al je verkoopkanalen tegelijk. Verkoop je iets op bol, dan ziet Shopify dat ook. Je hoeft niets meer handmatig bij te werken en je verkoopt nooit meer wat je niet hebt.' },
                 { eyebrow: 'Realtime sync', heading: 'Voorraadupdates binnen seconden.', body: 'Zodra er ergens een bestelling binnenkomt, past ShopLinkr je voorraad meteen aan op alle gekoppelde kanalen. Je kanalen kloppen altijd met wat er fysiek op het schap ligt, ook tijdens drukke verkoopdagen waarop er per minuut bestellingen binnenrollen.' },
                 { eyebrow: 'Multi-channel', heading: 'Eén dashboard voor al je kanalen.', body: 'Al je verkoopkanalen zijn standaard te koppelen. Vanuit één dashboard verwerk je je orders, voorraad en retouren, met je productlijst altijd in beeld. Schakelen tussen verschillende beheeromgevingen is verleden tijd.' },
                 { eyebrow: 'Bestellingen', heading: 'Van order tot verzonden, op één plek.', body: 'ShopLinkr verzamelt je bestellingen uit alle kanalen. Je print je pick- en packlijst, draait labels van je vervoerders en stuurt je track en trace terug zonder dat je je beheeromgeving uit hoeft. Eén werkwijze, ongeacht waar de bestelling vandaan komt.' },

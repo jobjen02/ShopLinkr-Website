@@ -11,7 +11,7 @@ translationKey: "voorraadtellingen"
 ---
 
 <p>With stock counts you check whether the physical stock in your warehouse matches what is recorded in ShopLinkr. If the numbers don't add up, you can correct them right away. This helps you avoid picking errors and keeps your stock reliable.</p>
-<p>To use stock counts, it's important that you have set up <a href="/support/locatiebeheer">locations</a>.</p>
+<p>To use stock counts, it's important that you have set up <a href="/en/support/location-management">locations</a>.</p>
 <h3>Starting a count</h3>
 <ol>
 <li>
@@ -77,13 +77,13 @@ translationKey: "voorraadtellingen"
 </tbody>
 </table>
 </figure>
-<p>Are the counted quantities correct? Click <strong>Update stock</strong>. The stock is adjusted immediately and recorded as a <a href="/support/voorraadmutaties">stock movement</a> with the reason "Stock count". Not sure? Click <strong>Count again</strong> to go back.</p>
+<p>Are the counted quantities correct? Click <strong>Update stock</strong>. The stock is adjusted immediately and recorded as a <a href="/en/support/stock-movements">stock movement</a> with the reason "Stock count". Not sure? Click <strong>Count again</strong> to go back.</p>
 <h3>Multiple locations</h3>
 <p>A count can contain multiple locations. You count each location separately and the overview shows which locations have already been counted (the <strong>Counted</strong> tab) and which still need counting (the <strong>To be counted</strong> tab). Once all locations have been counted, you can complete the count. The status changes to <strong>Completed</strong> and the count can no longer be changed.</p>
 <h3>Good to know</h3>
 <ul>
 <li>
-<p><a href="/support/een-bundel-aanmaken">Bundles</a> and products with <a href="/support/onbeperkte-voorraad">unlimited stock</a> are not included in a count.</p>
+<p><a href="/en/support/create-a-bundle">Bundles</a> and products with <a href="/en/support/unlimited-stock">unlimited stock</a> are not included in a count.</p>
 </li>
 <li>
 <p>The counted stock cannot be lower than a product's reserved stock. This prevents orders that are already being processed from no longer being fulfillable.</p>

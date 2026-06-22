@@ -30,7 +30,7 @@ lastUpdated: "2026-05-28"
 </ol>
 <p>De bestelling krijgt de status <strong>Geannuleerd</strong> en de annulering wordt doorgevoerd op het verkoopkanaal.</p>
 <h3>Wat gebeurt er met de voorraad?</h3>
-<p>Of de gereserveerde voorraad wordt vrijgegeven hangt af van de gekozen annuleringsreden. Bij de meeste redenen wordt de voorraad automatisch teruggeboekt, zodat deze weer beschikbaar is voor andere bestellingen. Stel dat je bijvoorbeeld als reden hebt aangegeven dat de er geen voorraad meer is, dan wordt de voorraad van dat product direct op 0 gezet. Hierdoor voorkom je dat er meer bestellingen worden geplaatst met dat artikel.</p>
+<p>Of de gereserveerde voorraad wordt vrijgegeven hangt af van de gekozen annuleringsreden. Bij de meeste redenen wordt de voorraad automatisch teruggeboekt, zodat deze weer beschikbaar is voor andere bestellingen. Stel dat je bijvoorbeeld als reden hebt aangegeven dat er geen voorraad meer is, dan wordt de voorraad van dat product direct op 0 gezet. Hierdoor voorkom je dat er meer bestellingen worden geplaatst met dat artikel.</p>
 <h3>Goed om te weten</h3>
 <ul>
 <li>

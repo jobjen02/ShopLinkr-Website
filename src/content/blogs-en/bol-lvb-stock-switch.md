@@ -19,7 +19,7 @@ translationKey: "bol-lvb-voorraad-switch"
 <h3>Benefits of using the Bol LVB stock switch</h3>
 <ol>
 <li>
-<p>Always have <a href="https://shoplinkr.com/functionaliteiten/voorraad">insight into your current stock</a>: By using the Bol LVB stock switch, you always have visibility into the availability of your products. This allows you to respond quickly to changes in demand and update your stock levels.</p>
+<p>Always have <a href="https://shoplinkr.com/en/features/inventory">insight into your current stock</a>: By using the Bol LVB stock switch, you always have visibility into the availability of your products. This allows you to respond quickly to changes in demand and update your stock levels.</p>
 </li>
 <li>
 <p>No more out-of-stock sales: With the Bol LVB stock switch you never have to say 'no' to your customers again. You can see in real time how many products you still have in stock and reorder them straight away if needed.</p>
@@ -28,7 +28,7 @@ translationKey: "bol-lvb-voorraad-switch"
 <p>Avoid excess stock: Because you always have insight into your stock levels, you can avoid excess stock. This way you can cut costs and increase your profit margins.</p>
 </li>
 <li>
-<p><a href="https://shoplinkr.com/voorraadbeheer-webshop">More efficient inventory management</a>: With the Bol LVB stock switch, managing your stock becomes more efficient. You can quickly switch between local stock and Bol.com stock, so you can always offer the right products at the right moment.</p>
+<p><a href="https://shoplinkr.com/en/webshop-inventory-management">More efficient inventory management</a>: With the Bol LVB stock switch, managing your stock becomes more efficient. You can quickly switch between local stock and Bol.com stock, so you can always offer the right products at the right moment.</p>
 </li>
 </ol>
 <p>The Bol LVB stock switch also offers the ability to analyse data and generate reports. This gives you insight into trends and patterns in the demand for your products, which can help you make strategic decisions for your business. With this data-driven approach you can anticipate future demand and respond to it proactively.</p>
@@ -36,9 +36,9 @@ translationKey: "bol-lvb-voorraad-switch"
 <h2>How does the Bol LVB stock switch work?</h2>
 <p>Curious how the Bol LVB stock switch works exactly? In this section we will explain the process of the Bol LVB stock switch step by step.</p>
 <h3>The process of the Bol LVB stock switch</h3>
-<p>1. <a href="https://shoplinkr.com/blogs/bol-com-voorraad-synchronisatie">Stock synchronisation</a>: When you use the Bol LVB stock switch, your local stock is automatically synchronised with the Bol.com stock. This means you can always see how many products you still have in stock.</p>
+<p>1. <a href="https://shoplinkr.com/en/blog/bol-stock-synchronization">Stock synchronisation</a>: When you use the Bol LVB stock switch, your local stock is automatically synchronised with the Bol.com stock. This means you can always see how many products you still have in stock.</p>
 <p>2. Updating availability: Based on the synchronised stock, you can update the availability of your products on Bol.com in real time. This way customers always know whether a product is in stock.</p>
-<p>3. <a href="https://shoplinkr.com/blogs/wat-is-verzenden-via-bol-vvb-precies">Direct switchover</a>: If your local stock is nearly sold out, you can switch directly to the Bol.com stock. This lets you guarantee continuity and prevent customers from being unable to order.</p>
+<p>3. <a href="https://shoplinkr.com/en/blog/what-is-shipping-via-bol-vvb-exactly">Direct switchover</a>: If your local stock is nearly sold out, you can switch directly to the Bol.com stock. This lets you guarantee continuity and prevent customers from being unable to order.</p>
 <p>The Bol LVB stock switch gives sellers an efficient way to streamline their inventory management and increase customer satisfaction. Thanks to the automatic synchronisation of stock, errors and misunderstandings about availability are minimised. This makes for a smoother shopping experience for both the seller and the customer.</p>
 <p>In addition, the direct switchover to the Bol.com stock allows sellers to respond quickly to changing demand patterns and seasonal trends. This way they can stay flexible and tailor their offering to consumer needs, which can have a positive effect on sales results.</p>
 <h2>Future outlook for the Bol LVB stock switch</h2>

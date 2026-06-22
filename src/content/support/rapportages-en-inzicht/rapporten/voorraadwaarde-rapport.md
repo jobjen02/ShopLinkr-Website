@@ -104,7 +104,7 @@ lastUpdated: "2026-05-28"
 <h3>Hoe gebruik je dit rapport?</h3>
 <ul>
 <li>
-<p><strong>Financieel inzicht</strong>: weet precies hoeveel kapitaal er in je voorraad vastzit. Handig voor je boekhouding en financiele planning.</p>
+<p><strong>Financieel inzicht</strong>: weet precies hoeveel kapitaal er in je voorraad vastzit. Handig voor je boekhouding en financiële planning.</p>
 </li>
 <li>
 <p><strong>Trends volgen</strong>: vergelijk de voorraadwaarde op verschillende datums om te zien of je voorraad groeit of krimpt.</p>

@@ -1,6 +1,7 @@
 {
     "name": "Zineps",
     "slug": "zineps",
+    "translationKey": "zineps",
     "category": "carrier",
     "status": "live",
     "logo": "/assets/carriers/Zineps.svg",
@@ -12,6 +13,5 @@
             "q": "Are address details placed on the shipping label automatically?",
             "a": "Yes, we request a shipping label from Zineps based on an order's shipping details. You can adjust the address details manually if needed."
         }
-    ],
-    "translationKey": "zineps"
+    ]
 }

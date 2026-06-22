@@ -42,5 +42,5 @@ lastUpdated: "2026-05-28"
 </li>
 </ol>
 <img alt="" src="/images/support/bol-com-koppelen/5Vvi0BJcciyoX4GLn7IObyZeF6c.png">
-<p>Alle informatie wordt geimporteerd en de voorraad wordt aangepast naar de voorraad die in ShopLinkr staat, mits het product al bestaat.</p>
+<p>Alle informatie wordt geïmporteerd en de voorraad wordt aangepast naar de voorraad die in ShopLinkr staat, mits het product al bestaat.</p>
 <p><strong>Vanaf dit moment is ShopLinkr de enige plek waar je voortaan je voorraad hoeft aan te passen.</strong></p>

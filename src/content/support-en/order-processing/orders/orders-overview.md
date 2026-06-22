@@ -27,19 +27,19 @@ translationKey: "bestellingen-overzicht"
 <p><strong>Status</strong>: the order's current status</p>
 </li>
 <li>
-<p><a href="/support/tags-beheren"><strong>Tags</strong></a>: any tags linked to the order</p>
+<p><a href="/en/support/managing-tags"><strong>Tags</strong></a>: any tags linked to the order</p>
 </li>
 <li>
 <p><strong>Placed on</strong>: the date and time the order was placed</p>
 </li>
 </ul>
 <h3>Status tabs</h3>
-<p>At the top of the page you can quickly filter by status. You will see tabs for Open, Picking, Picked, Processing, Completed, <a href="/support/bestelling-uitstellen">Deferred</a>, <a href="/support/backorders">Backorder</a> and <a href="/support/bestelling-annuleren">Cancelled</a>, among others. This makes it easy to see at a glance which orders need your attention.</p>
+<p>At the top of the page you can quickly filter by status. You will see tabs for Open, Picking, Picked, Processing, Completed, <a href="/en/support/postpone-an-order">Postponed</a>, <a href="/en/support/backorders">Backorder</a> and <a href="/en/support/cancel-an-order">Cancelled</a>, among others. This makes it easy to see at a glance which orders need your attention.</p>
 <h3>Filtering</h3>
 <p>Alongside the status tabs you can filter your orders further by:</p>
 <ul>
 <li>
-<p><strong>Order type</strong>: all orders, <a href="/support/nazendingen-aanmaken">reshipments</a> or <a href="/support/handmatige-zendingen">manual shipments</a></p>
+<p><strong>Order type</strong>: all orders, <a href="/en/support/create-reshipments">reshipments</a> or <a href="/en/support/manual-shipments">manual shipments</a></p>
 </li>
 <li>
 <p><strong>Packaging type</strong>: parcel, mailbox parcel, letter post</p>
@@ -70,16 +70,16 @@ translationKey: "bestellingen-overzicht"
 <p>Open or print shipping labels</p>
 </li>
 <li>
-<p><a href="/support/bestelling-uitstellen">Defer an order</a> or resume it</p>
+<p><a href="/en/support/postpone-an-order">Postpone an order</a> or resume it</p>
 </li>
 <li>
-<p><a href="/support/bestelling-markeren-als-hoge-prioriteit">Mark as high priority</a></p>
+<p><a href="/en/support/mark-order-as-high-priority">Mark as high priority</a></p>
 </li>
 <li>
-<p><a href="/support/bestelling-annuleren">Cancel an order</a> (for Bol orders)</p>
+<p><a href="/en/support/cancel-an-order">Cancel an order</a> (for Bol orders)</p>
 </li>
 <li>
-<p><a href="/support/nazendingen-aanmaken">Create a reshipment</a> (for completed orders)</p>
+<p><a href="/en/support/create-reshipments">Create a reshipment</a> (for completed orders)</p>
 </li>
 <li>
 <p>Sync the order with the sales channel</p>

@@ -34,7 +34,7 @@ translationKey: "zoeken-in-shoplinkr"
 <h3>How do you use it?</h3>
 <ol>
 <li>
-<p>Click "<strong>Search"</strong> at the top left of your navigation, or press ctrl/cmd+k.</p>
+<p>Click "<strong>Search</strong>" at the top left of your navigation, or press ctrl/cmd+k.</p>
 </li>
 <li>
 <p>Type your query. Results appear instantly as you type.</p>

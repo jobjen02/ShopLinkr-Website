@@ -58,7 +58,7 @@ translationKey: "nooit-verkochte-producten"
 </tbody>
 </table>
 </figure>
-<p>Every product in this report has zero sales during the chosen period, both as an individual product and as part of a <a href="/support/een-bundel-aanmaken">bundle</a>.</p>
+<p>Every product in this report has zero sales during the chosen period, both as an individual product and as part of a <a href="/en/support/create-a-bundle">bundle</a>.</p>
 <h3>Filtering</h3>
 <figure>
 <table>
@@ -89,7 +89,7 @@ translationKey: "nooit-verkochte-producten"
 </tr>
 <tr>
 <td>
-<p><a href="/support/tags-beheren"><strong>Tags</strong></a></p>
+<p><a href="/en/support/managing-tags"><strong>Tags</strong></a></p>
 </td>
 <td>
 <p>Filter on products with specific tags</p>
@@ -125,6 +125,6 @@ translationKey: "nooit-verkochte-producten"
 <p><strong>Evaluating your assortment</strong>: review regularly which products are not moving. They may no longer be relevant, or the competition may be too strong.</p>
 </li>
 <li>
-<p><strong>Combining with stock value</strong>: if a product is not selling but has a lot of stock, there is capital tied up in it. Use the <a href="/support/voorraadwaarde-rapport">stock value report</a> to see how much that is.</p>
+<p><strong>Combining with stock value</strong>: if a product is not selling but has a lot of stock, there is capital tied up in it. Use the <a href="/en/support/stock-value-report">stock value report</a> to see how much that is.</p>
 </li>
 </ul>

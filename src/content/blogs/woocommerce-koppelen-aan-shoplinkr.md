@@ -1,6 +1,6 @@
 ---
 title: "WooCommerce koppelen aan ShopLinkr"
-excerpt: "Ontdek de kracht van de integratie tussen ShopLinkr en Shopify. Vereenvoudig je orderbeheer, verwerk bestellingen en print verzendlabels moeiteloos."
+excerpt: "Ontdek de kracht van de integratie tussen ShopLinkr en WooCommerce. Vereenvoudig je orderbeheer, verwerk bestellingen en print verzendlabels moeiteloos."
 publishedAt: "2023-05-01T00:00:00.000Z"
 image: "/images/blog/woocommerce-koppelen-aan-shoplinkr/2FVqp9F6P8qrmqhOp6PAtXTFu2Y.png"
 imageAlt: "WooCommerce integratie afbeelding"

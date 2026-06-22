@@ -23,7 +23,7 @@ translationKey: "gebruikers-uitnodigen"
 <p>Enter your colleague's email address.</p>
 </li>
 <li>
-<p>Choose the role you want to assign. The role determines which permissions the user receives (see also <a href="/support/rollen-en-rechten-beheren">Managing roles and permissions</a>).</p>
+<p>Choose the role you want to assign. The role determines which permissions the user receives (see also <a href="/en/support/manage-roles-and-permissions">Managing roles and permissions</a>).</p>
 </li>
 <li>
 <p>Click <strong>Invite</strong>.</p>

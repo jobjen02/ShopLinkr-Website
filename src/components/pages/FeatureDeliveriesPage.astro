@@ -4,8 +4,7 @@ import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
-import { faqsByPage } from '../../data/faqs';
-import { faqsByPageEn } from '../../data/faqs-en';
+import { faqsByPageFor } from '../../i18n/localeData';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
@@ -24,7 +23,7 @@ const subFeatures = p.subFeatures.map((feature, i) => ({ ...feature, icon: subFe
 
 const workflowSteps = p.workflowSteps;
 
-const faqs = locale === 'en' ? faqsByPageEn.leveringen : faqsByPage.leveringen;
+const faqs = faqsByPageFor(locale).leveringen;
 
 const jsonLd = [
     breadcrumbs([

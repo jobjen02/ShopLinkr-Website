@@ -106,4 +106,4 @@ translationKey: "notities-toevoegen"
 <h3>Editing and deleting notes</h3>
 <p>You can edit or delete notes you posted earlier. Please note: a deleted note is gone for good and cannot be restored.</p>
 <h3>Automatic notes</h3>
-<p>In some cases ShopLinkr adds notes automatically. For example, when an order is resumed after a <a href="/support/bestelling-uitstellen">postponement period</a>. The note then states the reason for the postponement and the period.</p>
+<p>In some cases ShopLinkr adds notes automatically. For example, when an order is resumed after a <a href="/en/support/postpone-an-order">postponement period</a>. The note then states the reason for the postponement and the period.</p>

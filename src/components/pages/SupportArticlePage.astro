@@ -3,7 +3,7 @@ import { render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SupportHero from '../support/SupportHero.astro';
-import { type Locale } from '../../i18n/routes';
+import { type Locale, localizedPath, supportCategoriesBase } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
 type BreadcrumbItem = { href: string; label: string };
@@ -41,8 +41,8 @@ const {
 
 const { Content } = await render(article);
 
-const contactHref = locale === 'en' ? '/en/contact' : '/contact';
-const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/categorieen';
+const contactHref = localizedPath('contact', locale);
+const categoriesBase = supportCategoriesBase(locale);
 ---
 
 <BaseLayout
@@ -74,7 +74,7 @@ const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/ca
                                 </li>
                             </>
                         ))}
-                        <li class="text-charcoal dark:text-paper line-clamp-1 max-w-[28ch] md:max-w-none">
+                        <li aria-current="page" class="text-charcoal dark:text-paper line-clamp-1 max-w-[28ch] md:max-w-none">
                             {article.data.title}
                         </li>
                     </ol>

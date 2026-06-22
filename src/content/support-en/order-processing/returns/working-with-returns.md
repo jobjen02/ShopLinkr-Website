@@ -43,10 +43,10 @@ translationKey: "werken-met-retouren"
 <p><strong>In progress</strong>: the return items are being processed on the sales channel</p>
 </li>
 <li>
-<p><strong>Completed</strong>: all items have been processed and the return is finished</p>
+<p><strong>Handled</strong>: all items have been processed and the return is finished</p>
 </li>
 </ul>
 <h3>How do returns come in?</h3>
 <p>Returns are synced automatically from your sales channel. As soon as a customer reports a return, it appears in ShopLinkr with the relevant details, such as the return number, the products and the T&amp;T number.</p>
-<p>Returns are currently only supported for Bol.</p>
-<p>See <a href="/support/een-retour-verwerken">Processing a return</a> for a step-by-step guide on how to handle a return.</p>
+<p>Returns are currently only supported for bol.</p>
+<p>See <a href="/en/support/processing-a-return">Processing a return</a> for a step-by-step guide on how to handle a return.</p>

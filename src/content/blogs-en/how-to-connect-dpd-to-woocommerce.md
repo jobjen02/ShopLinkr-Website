@@ -11,9 +11,9 @@ translationKey: "hoe-koppel-ik-dpd-met-woocommerce"
 <h1>How Do I Connect DPD To WooCommerce?</h1>
 <p>Do you run an online store on WooCommerce and would you like to use DPD as a shipping option? No worries, connecting DPD to WooCommerce is easy and offers plenty of benefits for you and your customers. In this article we will guide you step by step through the process of connecting DPD to WooCommerce. But before we dive into that, let's first take a look at what DPD and WooCommerce actually are.</p>
 <h2>What are DPD and WooCommerce?</h2>
-<p>A short introduction to DPD</p>
+<h3>A short introduction to DPD</h3>
 <p>DPD is a leading international parcel delivery company with a reliable reputation. They offer fast and efficient shipping and delivery of parcels all over the world. DPD provides advanced tracking options and has a wide range of shipping options to meet your specific needs.</p>
-<p>A short introduction to WooCommerce</p>
+<h3>A short introduction to WooCommerce</h3>
 <p>WooCommerce is a popular e-commerce plugin for WordPress. It allows you to create and manage a professional online store, including the management of products, inventory, payments and shipping. With WooCommerce you can fully tailor your online store to your own wishes and needs.</p>
 <p>DPD was founded in 1976 in Aschaffenburg, Germany, and has since built an impressive worldwide parcel delivery network. With more than 46,000 employees and 42,000 vehicles, DPD delivers millions of parcels every day, making them one of the largest players in the logistics sector.</p>
 <p>WooCommerce is not only easy to use, but also offers a range of extensions and themes to customize the functionality and appearance of your online store. With thousands of available extensions you can add features such as subscriptions, bookings, product bundles and much more. This lets you fully customize your e-commerce website and grow it as your business evolves.</p>

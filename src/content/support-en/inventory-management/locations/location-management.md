@@ -69,7 +69,7 @@ translationKey: "locatiebeheer"
 <p><strong>Bulk locations</strong>: these are locations where you store larger quantities of stock, for example on pallets or in higher racks. Products on bulk locations are not picked directly for orders.</p>
 </li>
 </ul>
-<p>This distinction is useful if you want to avoid sending order pickers to hard to reach spots. In your <a href="/support/bedrijfsinstellingen">company settings</a> you can set orders to go to <a href="/support/backorders">backorder</a> when stock is only available on a bulk location.</p>
+<p>This distinction is useful if you want to avoid sending order pickers to hard to reach spots. In your <a href="/en/support/company-settings">company settings</a> you can set orders to go to <a href="/en/support/backorders">backorder</a> when stock is only available on a bulk location.</p>
 <h3>Linking products to locations</h3>
 <p>Once you have created locations, you can link products to a specific spot. There are several ways to do this:</p>
 <ul>
@@ -77,7 +77,7 @@ translationKey: "locatiebeheer"
 <p>From the product overview</p>
 </li>
 <li>
-<p>While <a href="/support/voorraadtellingen">counting stock</a></p>
+<p>While <a href="/en/support/stock-counts">counting stock</a></p>
 </li>
 <li>
 <p>From the location itself</p>
@@ -88,4 +88,4 @@ translationKey: "locatiebeheer"
 </ul>
 <p>You can place multiple products on the same location, or a single product on multiple locations (for example when you have a lot of stock and store it in different spots).</p>
 <h3>Where do you see the locations?</h3>
-<p>The product overview shows you exactly which locations a product is stored at and how many units are available per location. The location is also shown while <a href="/support/wat-zijn-picklijsten">picking</a>, so the warehouse employee immediately knows where to find the product.</p>
+<p>The product overview shows you exactly which locations a product is stored at and how many units are available per location. The location is also shown while <a href="/en/support/working-with-pick-lists">picking</a>, so the warehouse employee immediately knows where to find the product.</p>

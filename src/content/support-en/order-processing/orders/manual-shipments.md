@@ -23,7 +23,7 @@ translationKey: "handmatige-zendingen"
 <p>Enter the <strong>delivery address</strong>.</p>
 </li>
 <li>
-<p>Choose the <strong>shipping option </strong>you want to ship with.</p>
+<p>Choose the <strong>shipping option</strong> you want to ship with.</p>
 </li>
 <li>
 <p>Enter the weight if applicable.</p>

@@ -1,4 +1,6 @@
 ---
+import { useTranslations } from '../../i18n/ui';
+
 interface Props {
     name: string;
     slug: string;
@@ -36,6 +38,8 @@ const categoryLabelsByLocale: Record<'nl' | 'en', Record<string, string>> = {
     },
 };
 
+const t = useTranslations(locale);
+
 const categoryLabels = categoryLabelsByLocale[locale];
 const categoryLabel = categoryLabels[category] ?? category;
 const isComingSoon = status === 'coming-soon';
@@ -53,7 +57,7 @@ const linkProps = href
     data-integration={slug}
 >
     <div class="flex items-start gap-4">
-        <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+        <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
             <img
                 src={logo}
                 alt={`${name} logo`}
@@ -66,7 +70,7 @@ const linkProps = href
                 <p class="eyebrow !text-gravel">{categoryLabel}</p>
                 {isComingSoon && (
                     <span class="inline-flex items-center px-2 py-0.5 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep text-[10px] font-semibold uppercase tracking-wider">
-                        {locale === 'en' ? 'Coming soon' : 'Binnenkort'}
+                        {t.common.comingSoon}
                     </span>
                 )}
             </div>

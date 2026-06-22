@@ -4,9 +4,8 @@ import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
-import { faqsByPage } from '../../data/faqs';
-import { faqsByPageEn } from '../../data/faqs-en';
 import { localizeHref, type Locale } from '../../i18n/routes';
+import { faqsByPageFor } from '../../i18n/localeData';
 import { useTranslations } from '../../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
@@ -24,7 +23,7 @@ const subFeatures = p.subFeatures.map((feature, i) => ({ ...feature, icon: subFe
 
 const ruleExamples = p.ruleExamples;
 
-const faqs = locale === 'en' ? faqsByPageEn.regels : faqsByPage.regels;
+const faqs = faqsByPageFor(locale).regels;
 
 const jsonLd = [
     breadcrumbs([

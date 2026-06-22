@@ -12,10 +12,10 @@ translationKey: "myparcel-en-bol-samen-gebruiken"
 <h2>The importance of integrating MyParcel and Bol</h2>
 <p>As an online seller, having a streamlined and automated shipping process is essential. By integrating your MyParcel account with Bol, you can achieve exactly that. MyParcel is a popular shipping tool that helps you manage your shipments. Bol is one of the largest online marketplaces in the Netherlands. Thanks to the integration between these two platforms, you can process and ship your orders seamlessly, saving you time and effort.</p>
 <h3>Benefits of MyParcel and Bol integration</h3>
-<p>Integrating MyParcel and Bol offers several benefits for online sellers. One of the most important benefits is that you gain access to <a href="https://shoplinkr.com/koppelingen/myparcel">automated shipping labels</a>. This means you no longer have to spend time entering shipping information manually. On top of that, you can also benefit from real-time track &amp; trace information, so you are always aware of the status of your shipments.</p>
+<p>Integrating MyParcel and Bol offers several benefits for online sellers. One of the most important benefits is that you gain access to <a href="https://shoplinkr.com/en/integrations/myparcel">automated shipping labels</a>. This means you no longer have to spend time entering shipping information manually. On top of that, you can also benefit from real-time track &amp; trace information, so you are always aware of the status of your shipments.</p>
 <p>The integration between MyParcel and Bol also gives you the ability to optimise your inventory management. You can synchronise your stock between MyParcel and Bol, giving you an up-to-date overview of your available products at all times. This prevents double sales and ensures that your customers always receive the right products.</p>
-<h4>How MyParcel and Bol work together</h4>
-<p>The collaboration between MyParcel and Bol is simple and intuitive. You can easily link your MyParcel account to your Bol <a href="https://shoplinkr.com/blogs/myparcel-koppelen-aan-shoplinkr">seller account through ShopLinkr</a>. ShopLinkr is a tool that helps you integrate different carriers and sales channels. Once you have linked your accounts, you can start processing your orders using MyParcel labels.</p>
+<h3>How MyParcel and Bol work together</h3>
+<p>The collaboration between MyParcel and Bol is simple and intuitive. You can easily link your MyParcel account to your Bol <a href="https://shoplinkr.com/en/blog/connect-myparcel-to-shoplinkr">seller account</a>. Once you have linked your accounts, you can start processing your orders using MyParcel labels.</p>
 <p>Beyond streamlining your shipping process and optimising your inventory management, the integration between MyParcel and Bol offers even more benefits for online sellers. For example, you can take advantage of automated returns. With the integration, you can easily generate return labels and handle returns, giving your customers a seamless return experience.</p>
 <p>What's more, the integration between MyParcel and Bol also lets you optimise your shipping costs. You can make use of different shipping options and rates, depending on the size and weight of your parcels. This allows you to save costs while still offering a reliable shipping service to your customers.</p>
 <h2>The MyParcel and Bol integration process</h2>
@@ -29,7 +29,7 @@ translationKey: "myparcel-en-bol-samen-gebruiken"
 <p>Click 'Link a sales channel' and select Bol.</p>
 </li>
 <li>
-<p>Follow the instructions to <a href="https://shoplinkr.com/blogs/bol-com-koppelen-aan-shoplinkr">link your Bol seller account</a> to your MyParcel account.</p>
+<p>Follow the instructions to <a href="https://shoplinkr.com/en/blog/connect-bol-to-shoplinkr">link your Bol seller account</a> to your MyParcel account.</p>
 </li>
 <li>
 <p>Verify your identity and confirm the integration.</p>

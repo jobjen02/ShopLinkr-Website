@@ -4,9 +4,8 @@ import PricingCalculator from '../../components/pricing/PricingCalculator.vue';
 import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { breadcrumbs } from '../../utils/seo';
-import { faqsByPage } from '../../data/faqs';
-import { faqsByPageEn } from '../../data/faqs-en';
-import { localizeHref, type Locale } from '../../i18n/routes';
+import { localizeHref, localizedPath, type Locale } from '../../i18n/routes';
+import { faqsByPageFor } from '../../i18n/localeData';
 import { useTranslations } from '../../i18n/ui';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
@@ -28,7 +27,7 @@ const inclusionIcons = [
 ];
 const inclusions = p.inclusions.map((item, i) => ({ ...item, icon: inclusionIcons[i] }));
 
-const faqs = locale === 'en' ? faqsByPageEn.prijzen : faqsByPage.prijzen;
+const faqs = faqsByPageFor(locale).prijzen;
 
 const jsonLd = [
     breadcrumbs([
@@ -47,7 +46,7 @@ const jsonLd = [
             '@type': 'Offer',
             priceCurrency: 'EUR',
             availability: 'https://schema.org/InStock',
-            url: locale === 'en' ? 'https://shoplinkr.com/en/pricing' : 'https://shoplinkr.com/prijzen',
+            url: `https://shoplinkr.com${localizedPath('pricing', locale)}`,
             priceSpecification: {
                 '@type': 'UnitPriceSpecification',
                 priceCurrency: 'EUR',

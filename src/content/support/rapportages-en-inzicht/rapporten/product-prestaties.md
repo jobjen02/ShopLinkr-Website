@@ -113,7 +113,7 @@ lastUpdated: "2026-05-28"
 </tbody>
 </table>
 </figure>
-<p>Alle financiele bedragen zijn exclusief BTW.</p>
+<p>Alle financiële bedragen zijn exclusief BTW.</p>
 <h3>Filteren</h3>
 <figure>
 <table>

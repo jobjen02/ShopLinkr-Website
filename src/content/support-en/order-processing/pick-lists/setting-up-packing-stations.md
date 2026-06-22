@@ -35,4 +35,4 @@ translationKey: "inpakstations-instellen"
 <h3>How does it work?</h3>
 <p>When you process an order, the shipping label is sent automatically to the printer that is linked to your selected packing station. This means you do not have to select a printer manually, and you avoid labels ending up at the wrong printer.</p>
 <h3>Requirements</h3>
-<p>To use packing stations, you first need to have printers set up through AutoPrint. See <a href="/support/auto-print-instellen">Setting up AutoPrint</a> for more information about linking printers.</p>
+<p>To use packing stations, you first need to have printers set up through AutoPrint. See <a href="/en/support/setting-up-autoprint">Setting up AutoPrint</a> for more information about linking printers.</p>

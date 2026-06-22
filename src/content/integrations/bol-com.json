@@ -4,7 +4,7 @@
     "category": "marketplace",
     "status": "live",
     "logo": "/assets/marketplaces/bol.jpeg",
-    "summary": "Synchroniseer voorraad en orders met Bol. Automatische orderimport, voorraad-update en verzendlabels.",
+    "summary": "Synchroniseer voorraad en orders met bol. Automatische orderimport, voorraad-update en verzendlabels.",
     "url": "https://www.bol.com",
     "supportSlug": "bol-com-koppelen",
     "tagline": "Beheer al je bol winkels op één plek.",

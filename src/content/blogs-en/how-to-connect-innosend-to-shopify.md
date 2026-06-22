@@ -9,7 +9,7 @@ translationKey: "hoe-koppel-ik-innosend-met-shopify"
 ---
 
 <h1>How Do I Connect Innosend To Shopify?</h1>
-<p>In this guide you will learn how to <a href="https://shoplinkr.com/blogs/shopify-koppelen-aan-shoplinkr">connect Innosend to Shopify</a>, so you can easily manage your online store and process orders. We will start with an explanation of what Innosend is and how it works, followed by the benefits of using it for your store. Next, we will look at the basic features of Innosend and why it is important to connect it to Shopify. Finally, we will give you a step-by-step guide for the connection process, discuss common problems and solutions, and highlight the benefits of connecting Innosend to Shopify. Let's get started!</p>
+<p>In this guide you will learn how to <a href="https://shoplinkr.com/en/blog/connect-shopify-to-shoplinkr">connect Innosend to Shopify</a>, so you can easily manage your online store and process orders. We will start with an explanation of what Innosend is and how it works, followed by the benefits of using it for your store. Next, we will look at the basic features of Innosend and why it is important to connect it to Shopify. Finally, we will give you a step-by-step guide for the connection process, discuss common problems and solutions, and highlight the benefits of connecting Innosend to Shopify. Let's get started!</p>
 <h2>What is Innosend and how does it work?</h2>
 <p>Before we dive into connecting Innosend to Shopify, it is important to understand what Innosend actually is and how it works. Innosend is a powerful shipping solution designed specifically for e-commerce businesses. It allows you to manage all your shipments efficiently from one central location. With Innosend you can connect carriers and sales channels, so you can process orders from a sales channel using the labels of a carrier.</p>
 <h3>The benefits of Innosend for your online store</h3>
@@ -17,7 +17,7 @@ translationKey: "hoe-koppel-ik-innosend-met-shopify"
 <h3>The basic features of Innosend</h3>
 <p>Innosend offers a number of basic features that help you manage your shipments. First, you can connect carriers and sales channels, so you can process orders using the labels of a carrier. Second, you can track the status of all your shipments, including the location of each package. Third, you can set up shipping rules to apply certain shipping options based on specific criteria. And finally, Innosend offers extensive reporting capabilities, so you gain insight into your shipping activities and costs.</p>
 <h2>The importance of connecting Innosend to Shopify</h2>
-<p>Connecting Innosend to Shopify is of great importance for your online store. When you use Innosend and Shopify together, you benefit from the combined power of both platforms. Innosend improves the functionality of Shopify by integrating <a href="https://shoplinkr.com/blogs/hoe-koppel-je-bol-com-met-jouw-webshop">shipping solutions and streamlining the shipping process</a>. This means more efficient order processing, lower shipping costs, and a better customer experience.</p>
+<p>Connecting Innosend to Shopify is of great importance for your online store. When you use Innosend and Shopify together, you benefit from the combined power of both platforms. Innosend improves the functionality of Shopify by integrating <a href="https://shoplinkr.com/en/blog/how-to-connect-bol-com-to-your-webshop">shipping solutions and streamlining the shipping process</a>. This means more efficient order processing, lower shipping costs, and a better customer experience.</p>
 <h3>How Innosend improves the functionality of Shopify</h3>
 <p>Innosend improves the functionality of Shopify in several ways. First, it enables the integration of carriers and sales channels, making it easier to process orders using the labels of a carrier. Second, Innosend offers real-time tracking of shipments, so you are always aware of the status and location of each package. Third, Innosend helps you save shipping costs by consolidating shipments and optimizing shipping rules. In short, Innosend improves the functionality of Shopify in the area of shipping, resulting in a more efficient and cost-effective store experience.</p>
 <h3>The ease of managing your store with Innosend and Shopify</h3>
@@ -27,7 +27,23 @@ translationKey: "hoe-koppel-ik-innosend-met-shopify"
 <h3>Preparing for the connection: what you need</h3>
 <p>Before you can connect Innosend to Shopify, there are a few things you need. First of all, you need an Innosend account. If you do not have one yet, you can easily register on the Innosend website. Second, you need a Shopify store. If you do not have a store yet, you can create one on the Shopify website. Finally, make sure you have the right permissions to make changes to your Shopify settings.</p>
 <h3>The connection process: a step-by-step guide</h3>
-<p>1. Log in to your Innosend account and go to the settings page.2. Click on "Integrations" and search for the Shopify integration.3. Click the "Connect" button next to Shopify.4. Follow the instructions to connect your Shopify store with Innosend.5. Once the connection is complete, you can start managing your shipments from Innosend.</p>
+<ol>
+<li>
+<p>Log in to your Innosend account and go to the settings page.</p>
+</li>
+<li>
+<p>Click on "Integrations" and search for the Shopify integration.</p>
+</li>
+<li>
+<p>Click the "Connect" button next to Shopify.</p>
+</li>
+<li>
+<p>Follow the instructions to connect your Shopify store with Innosend.</p>
+</li>
+<li>
+<p>Once the connection is complete, you can start managing your shipments from Innosend.</p>
+</li>
+</ol>
 <p>And that's it! Now Innosend is connected to Shopify and you can easily manage and process your shipments from one central location.</p>
 <h2>Common problems and solutions when connecting Innosend to Shopify</h2>
 <p>Although connecting Innosend to Shopify is generally a simple process, problems can sometimes occur. Here are some common problems and their solutions:</p>

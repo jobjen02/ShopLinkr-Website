@@ -10,7 +10,7 @@ translationKey: "dpd-en-woocommerce-samen-gebruiken"
 
 <p>Are you an entrepreneur active in e-commerce? Then you know that shipping your products is an important part of running your business. After all, you want your customers to receive their orders quickly and efficiently. One popular shipping option that more and more online retailers are choosing is combining DPD and WooCommerce. In this article we take a closer look at this combination and show you the benefits that using DPD and WooCommerce together has to offer.</p>
 <h2>What is DPD?</h2>
-<p>Before we get into the benefits of combining DPD and WooCommerce, it is important to understand what DPD actually is. <a href="https://shoplinkr.com/koppelingen/dpd">DPD is a leading international parcel delivery service</a> with an extensive network of pickup points and delivery options. They are known for their reliable and fast delivery, which is essential for keeping your customers satisfied.</p>
+<p>Before we get into the benefits of combining DPD and WooCommerce, it is important to understand what DPD actually is. <a href="https://shoplinkr.com/en/integrations/dpd">DPD is a leading international parcel delivery service</a> with an extensive network of pickup points and delivery options. They are known for their reliable and fast delivery, which is essential for keeping your customers satisfied.</p>
 <h3>The history of DPD</h3>
 <p>DPD was founded in 1976 and has experienced impressive growth ever since. They have grown into one of the largest parcel carriers in Europe and have branches in more than 40 countries worldwide. With more than 75,000 employees, they make sure that millions of parcels are delivered smoothly every day.</p>
 <h3>The services of DPD</h3>
@@ -37,7 +37,7 @@ translationKey: "dpd-en-woocommerce-samen-gebruiken"
 <h3>Improved efficiency in shipping</h3>
 <p>By using DPD and WooCommerce together, you can optimise your shipping process and make it more efficient. You can process your orders quickly and use DPD's labels to ship your parcels. This means fewer administrative tasks and more time to focus on other important aspects of your business.</p>
 <h3>Increased customer satisfaction</h3>
-<p>Fast and reliable delivery is essential for keeping customers satisfied. With DPD, your customers can benefit from the high-quality delivery services that DPD offers. They can make use of <a href="https://shoplinkr.com/functionaliteiten/vervoerders">various delivery options</a> and receive an accurate prediction of when their parcel will be delivered.</p>
+<p>Fast and reliable delivery is essential for keeping customers satisfied. With DPD, your customers can benefit from the high-quality delivery services that DPD offers. They can make use of <a href="https://shoplinkr.com/en/features/carriers">various delivery options</a> and receive an accurate prediction of when their parcel will be delivered.</p>
 <h2>Frequently asked questions about DPD and WooCommerce</h2>
 <p>Now that you know more about using DPD and WooCommerce together, you may still have a few questions you want answered.</p>
 <h3>Troubleshooting integration</h3>

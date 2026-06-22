@@ -58,4 +58,4 @@ translationKey: "api-token-aanmaken"
 </li>
 </ul>
 <h3>Related</h3>
-<p><a href="/support/api-overzicht">API overview</a></p>
+<p><a href="/en/support/api-overview">API overview</a></p>

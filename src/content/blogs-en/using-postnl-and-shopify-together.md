@@ -18,7 +18,7 @@ translationKey: "postnl-en-shopify-samen-gebruiken"
 <p>To integrate PostNL into your Shopify store, follow these simple steps:</p>
 <ol>
 <li>
-<p>Log in to your <a href="https://shoplinkr.com/blogs/shopify-koppelen-aan-shoplinkr">Shopify dashboard</a> and go to the "Settings" section.</p>
+<p>Log in to your <a href="https://shoplinkr.com/en/blog/connect-shopify-to-shoplinkr">Shopify dashboard</a> and go to the "Settings" section.</p>
 </li>
 <li>
 <p>Click "Shipping and delivery" and select "Carriers".</p>
@@ -40,7 +40,7 @@ translationKey: "postnl-en-shopify-samen-gebruiken"
 <h2>Optimising your shipping process with PostNL and Shopify</h2>
 <p>Besides integrating PostNL into your Shopify store, there are other ways to improve and optimise your shipping process. Let's look at two important aspects: automating shipping labels and tracking parcels.</p>
 <h3>Automating shipping labels</h3>
-<p>One of the best features of using PostNL together with Shopify is the ability to <a href="https://shoplinkr.com/functionaliteiten/vervoerders">generate shipping labels automatically</a>. You can process your orders directly from your Shopify dashboard and generate the necessary shipping labels with a single click. This saves you time and ensures your orders are shipped quickly and efficiently.</p>
+<p>One of the best features of using PostNL together with Shopify is the ability to <a href="https://shoplinkr.com/en/features/carriers">generate shipping labels automatically</a>. You can process your orders directly from your Shopify dashboard and generate the necessary shipping labels with a single click. This saves you time and ensures your orders are shipped quickly and efficiently.</p>
 <p>By automating the shipping label process, you as an entrepreneur can focus more on other important tasks within your business. Think of improving your customer service, expanding your product range, or optimising your marketing strategies. This lets you take your business to the next level while keeping a smooth shipping process.</p>
 <h3>Tracking parcels made easy</h3>
 <p>Another benefit of using PostNL together with Shopify is that tracking parcels is very easy. Both you and your customers can easily follow the status of a parcel using PostNL's tracking information. This provides transparency and trust throughout the entire shipping process.</p>

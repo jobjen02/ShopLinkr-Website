@@ -26,7 +26,7 @@ translationKey: "bestellingen-verwerken"
 </li>
 </ul>
 <h3>Method 2: Processing in bulk</h3>
-<p>Select multiple orders at once in the <a href="/support/bestellingen-overzicht">order overview</a> and process them all in one go. A <a href="/support/bestellingen-batches">batch</a> is created automatically with every selected order. The shipping labels are generated in bulk, so you can download or print them all at once.</p>
+<p>Select multiple orders at once in the <a href="/en/support/orders-overview">order overview</a> and process them all in one go. A <a href="/en/support/order-batches">batch</a> is created automatically with every selected order. The shipping labels are generated in bulk, so you can download or print them all at once.</p>
 <p><strong>When should you use this?</strong></p>
 <ul>
 <li>
@@ -40,14 +40,14 @@ translationKey: "bestellingen-verwerken"
 </li>
 </ul>
 <h3>Method 3: Using pick lists</h3>
-<p>The most comprehensive method, ideal for larger volumes. You create a <a href="/support/wat-zijn-picklijsten">pick list</a>, gather all the products in the warehouse and then process the orders at the <a href="/support/inpakstations-instellen">packing station</a>.</p>
+<p>The most comprehensive method, ideal for larger volumes. You create a <a href="/en/support/working-with-pick-lists">pick list</a>, gather all the products in the warehouse and then process the orders at the <a href="/en/support/setting-up-packing-stations">packing station</a>.</p>
 <p>The picking process works in two steps:</p>
 <ol>
 <li>
-<p><strong>Picking</strong>: walk through the warehouse and collect all the products on the pick list. Optionally, you can work with <a href="/support/bakken-voor-picken">bins</a> to sort orders right away while picking. We recommend this when most of your orders consist of 2 or more different types of products.</p>
+<p><strong>Picking</strong>: walk through the warehouse and collect all the products on the pick list. Optionally, you can work with <a href="/en/support/bins-for-picking">bins</a> to sort orders right away while picking. We recommend this when most of your orders consist of 2 or more different types of products.</p>
 </li>
 <li>
-<p><strong>Packing and processing</strong>: scan a product (or bin) at the packing station. The matching order opens automatically, the shipping label is created and, if you like, printed straight away through <a href="/support/auto-print-instellen">AutoPrint</a>.</p>
+<p><strong>Packing and processing</strong>: scan a product (or bin) at the packing station. The matching order opens automatically, the shipping label is created and, if you like, printed straight away through <a href="/en/support/setting-up-autoprint">AutoPrint</a>.</p>
 </li>
 </ol>
 <p><strong>When should you use this?</strong></p>

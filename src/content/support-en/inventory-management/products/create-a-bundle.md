@@ -162,9 +162,9 @@ translationKey: "een-bundel-aanmaken"
 <p>You can set per product how many times it appears in the bundle (for example 2x the same charger).</p>
 </li>
 <li>
-<p>Bundles are not included in <a href="/support/voorraadtellingen">stock counts</a>, because their stock is determined by the individual products.</p>
+<p>Bundles are not included in <a href="/en/support/stock-counts">stock counts</a>, because their stock is determined by the individual products.</p>
 </li>
 <li>
-<p>If you <a href="/support/producten-archiveren">archive</a> an individual product, it is automatically detached from the bundle.</p>
+<p>If you <a href="/en/support/archiving-products">archive</a> an individual product, it is automatically detached from the bundle.</p>
 </li>
 </ul>

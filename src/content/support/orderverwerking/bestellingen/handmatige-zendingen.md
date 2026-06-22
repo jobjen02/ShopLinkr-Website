@@ -22,7 +22,7 @@ lastUpdated: "2026-05-28"
 <p>Vul het <strong>afleveradres</strong> in.</p>
 </li>
 <li>
-<p>Kies de <strong>verzendoptie </strong>waarmee je wilt verzenden.</p>
+<p>Kies de <strong>verzendoptie</strong> waarmee je wilt verzenden.</p>
 </li>
 <li>
 <p>Vul eventueel het gewicht in.</p>
@@ -31,4 +31,4 @@ lastUpdated: "2026-05-28"
 <p>Klik op <strong>Zending aanmaken</strong>.</p>
 </li>
 </ol>
-<p>Er wordt automatisch een verzendlabel gegenereerd welke direct wordt geopend zodat je het kunt printen.</p>
+<p>Er wordt automatisch een verzendlabel gegenereerd dat direct wordt geopend zodat je het kunt printen.</p>

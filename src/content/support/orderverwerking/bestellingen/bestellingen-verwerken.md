@@ -58,7 +58,7 @@ lastUpdated: "2026-05-28"
 <p>Bestellingen bevatten vaak meerdere producten die uit het magazijn gepickt moeten worden.</p>
 </li>
 <li>
-<p>Je wilt het pickproces zo efficient mogelijk inrichten en fouten minimaliseren.</p>
+<p>Je wilt het pickproces zo efficiënt mogelijk inrichten en fouten minimaliseren.</p>
 </li>
 <li>
 <p>Je werkt met meerdere magazijnmedewerkers.</p>

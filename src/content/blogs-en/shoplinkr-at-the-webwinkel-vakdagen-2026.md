@@ -9,7 +9,7 @@ translationKey: "shoplinkr-op-de-webwinkel-vakdagen-2026"
 ---
 
 <p><strong>Meet ShopLinkr at the Webwinkel Vakdagen: 25 &amp; 26 March in Utrecht.</strong></p>
-<p>On 25 and 26 March 2026 we'll be at the <strong>Webwinkel Vakdagen</strong> in the <strong>Jaarbeurs Utrecht 🤩</strong> for the very first time. Preparations are in full swing and we cannot wait. Two days packed with innovation, automation and inspiration for everyone who takes e-commerce logistics seriously. You're more than welcome at <strong>stand B03</strong>, and you can register through <a href="https://crm.shoplinkr.com/qr/qqV4BlAVkSUM" target="_blank">this link</a>.</p>
+<p>On 25 and 26 March 2026 we'll be at the <strong>Webwinkel Vakdagen</strong> in the <strong>Jaarbeurs Utrecht 🤩</strong> for the very first time. Preparations are in full swing and we cannot wait. Two days packed with innovation, automation and inspiration for everyone who takes e-commerce logistics seriously. You're more than welcome at <strong>stand B03</strong>, and you can register through <a href="https://crm.shoplinkr.com/qr/qqV4BlAVkSUM" target="_blank" rel="noopener noreferrer">this link</a>.</p>
 <h2>Why drop by ShopLinkr?</h2>
 <p>Whether you ship 20 or 2000 parcels a day, without solid warehouse management you're always playing catch-up. ShopLinkr shows you how simple it can be to get a grip on your stock, pick faster and prevent mistakes. Our software connects seamlessly to your webshop and shipping platforms and brings everything together in one clear system.</p>
 <p>We'll show you live how to:</p>
@@ -28,6 +28,6 @@ translationKey: "shoplinkr-op-de-webwinkel-vakdagen-2026"
 <br>
 🪧 Stand: B03
 <br>
-🔗 You can register through <a href="https://crm.shoplinkr.com/qr/qqV4BlAVkSUM" target="_blank">this link</a>.</p>
+🔗 You can register through <a href="https://crm.shoplinkr.com/qr/qqV4BlAVkSUM" target="_blank" rel="noopener noreferrer">this link</a>.</p>
 <h2>See you there!</h2>
 <p>We'll be ready for you with a demo, tailored advice and a healthy dose of enthusiasm about how your webshop can keep growing with smart warehouse software. Will we see you there?</p>

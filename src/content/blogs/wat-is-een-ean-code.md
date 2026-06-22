@@ -16,7 +16,7 @@ isBlog: true
 <ol>
 <li><strong>Landcode</strong>: de eerste 2 tot 3 cijfers geven het land aan waar de fabrikant geregistreerd staat.</li>
 <li><strong>Fabrikantcode</strong>: de volgende cijfers (meestal 4 tot 5) identificeren het specifieke bedrijf.</li>
-<li><strong>Productcode</strong>: deze cijfers wijst de fabrikant zelf toe aan elk individueel product.</li>
+<li><strong>Productcode</strong>: de fabrikant wijst deze cijfers zelf toe aan elk individueel product.</li>
 <li><strong>Controlecijfer</strong>: het laatste cijfer is een controlegetal dat berekent of de hele code klopt.</li>
 </ol>
 <h2>Waarom EAN-codes zo belangrijk zijn</h2>

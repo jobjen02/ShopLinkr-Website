@@ -84,7 +84,7 @@ Voorbeeld: A.1.2.3.4 = Zone A, Gangpad 1, Stelling 2, Plank 3, Bak 4</code></pre
 <p><strong>Inconsistente naamgeving</strong>: als de ene locatie "A.1.1" heet en de andere "Gangpad A Stelling 1", raken medewerkers in de war.</p>
 </li>
 <li>
-<p><strong>Geen hierarchie</strong>: als je alle locaties op hetzelfde niveau aanmaakt (zonder bovenliggende locatie), verlies je het overzicht. Gebruik de <a href="/support/locatiebeheer">hierarchische locaties</a> in ShopLinkr.</p>
+<p><strong>Geen hiërarchie</strong>: als je alle locaties op hetzelfde niveau aanmaakt (zonder bovenliggende locatie), verlies je het overzicht. Gebruik de <a href="/support/locatiebeheer">hiërarchische locaties</a> in ShopLinkr.</p>
 </li>
 </ul>
 <h3>Bestaande locaties hernoemen</h3>

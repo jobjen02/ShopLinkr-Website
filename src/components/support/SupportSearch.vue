@@ -240,13 +240,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div
-        class="relative w-full max-w-2xl mx-auto"
-        role="combobox"
-        :aria-expanded="showDropdown"
-        aria-haspopup="listbox"
-        aria-owns="support-search-results"
-    >
+    <div class="relative w-full max-w-2xl mx-auto">
         <div class="relative">
             <i
                 class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gravel pointer-events-none"
@@ -256,8 +250,11 @@ onBeforeUnmount(() => {
                 ref="inputRef"
                 v-model="query"
                 type="search"
+                role="combobox"
                 :placeholder="t.placeholder"
                 :aria-label="t.ariaLabel"
+                :aria-expanded="showDropdown"
+                aria-haspopup="listbox"
                 aria-autocomplete="list"
                 aria-controls="support-search-results"
                 :aria-activedescendant="selectedIndex >= 0 ? `support-search-result-${selectedIndex}` : undefined"

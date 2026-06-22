@@ -46,6 +46,6 @@ translationKey: "een-retour-verwerken"
 <h3>Good to know</h3>
 <ul>
 <li>
-<p>Returns are currently only supported for Bol.</p>
+<p>Returns are currently only supported for bol.</p>
 </li>
 </ul>

@@ -4,8 +4,7 @@ import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
-import { faqsByPage } from '../../data/faqs';
-import { faqsByPageEn } from '../../data/faqs-en';
+import { faqsByPageFor } from '../../i18n/localeData';
 import { type Locale, localizeHref } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
@@ -24,7 +23,7 @@ const subFeatures = p.subFeatures.map((feature, i) => ({ ...feature, icon: subFe
 
 const workflowSteps = p.workflowSteps;
 
-const faqs = locale === 'en' ? faqsByPageEn.rapporten : faqsByPage.rapporten;
+const faqs = faqsByPageFor(locale).rapporten;
 
 const jsonLd = [
     breadcrumbs([
@@ -96,7 +95,7 @@ const jsonLd = [
                         </h2>
                     </div>
 
-                    <div class="bg-paper dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                    <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center justify-between gap-3 mb-4">
                             <div class="flex items-center gap-2.5">
                                 <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
@@ -180,7 +179,7 @@ const jsonLd = [
 
                 {
                     subFeatures.map((feature) => (
-                        <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                        <article class="bg-paper dark:bg-graphite rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                             <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </div>

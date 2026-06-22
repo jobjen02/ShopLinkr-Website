@@ -8,14 +8,14 @@ isBlog: false
 translationKey: "voorraadbeheer-met-excel-een-complete-gids"
 ---
 
-<p>Have you ever felt lost in the complexity of inventory management? You are not alone. Luckily, there is a tool most of us already know and can rely on: Excel. Yes, you read that right. <a href="https://shoplinkr.com/blogs/het-belang-van-goed-voorraadbeheer-voor-jouw-webshop">Excel can be your best friend</a> when it comes to managing your stock. Let's take a closer look at how you can tackle this.</p>
+<p>Have you ever felt lost in the complexity of inventory management? You are not alone. Luckily, there is a tool most of us already know and can rely on: Excel. Yes, you read that right. <a href="https://shoplinkr.com/en/blog/the-importance-of-good-inventory-management-for-your-webshop">Excel can be your best friend</a> when it comes to managing your stock. Let's take a closer look at how you can tackle this.</p>
 <h2>Why Inventory Management Matters</h2>
 <p>Inventory management might seem like a secondary task, but it is crucial to the success of your business. Well-managed stock makes sure you always know what you have in stock, what you need to order and what you might have too much of.</p>
 <h3>The Basics of Inventory Management</h3>
-<p>Before we dive into Excel, let's first understand the basic principles of inventory management. It all comes down to <a href="https://shoplinkr.com/blogs/voorraadmanagement">the balance between supply and demand</a>. Too much stock costs money, and too little can lead to missed sales. Finding that balance is the key.</p>
-<p><a href="/voorraadbeheer-excel-template" target="_blank">Download our free Excel Inventory Management Template now!</a></p>
+<p>Before we dive into Excel, let's first understand the basic principles of inventory management. It all comes down to <a href="https://shoplinkr.com/en/blog/inventory-management">the balance between supply and demand</a>. Too much stock costs money, and too little can lead to missed sales. Finding that balance is the key.</p>
+<p><a href="/en/inventory-excel-template" target="_blank">Download our free Excel Inventory Management Template now!</a></p>
 <h3>Why Excel?</h3>
-<p><a href="https://shoplinkr.com/blogs/waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen">Excel is accessible, flexible and powerful</a>. It offers all the features you need to manage your stock effectively, from tracking stock levels to forecasting future demand.</p>
+<p><a href="https://shoplinkr.com/en/blog/why-is-inventory-management-important-tips-and-benefits">Excel is accessible, flexible and powerful</a>. It offers all the features you need to manage your stock effectively, from tracking stock levels to forecasting future demand.</p>
 <h2>How to Get Started With Inventory Management in Excel</h2>
 <p>Setting up an inventory system in Excel does not have to be complicated. Here are a few steps to help you get going.</p>
 <h3>Step 1: Create a Stock List</h3>
@@ -27,7 +27,7 @@ translationKey: "voorraadbeheer-met-excel-een-complete-gids"
 <h2>Advanced Tips for Inventory Management in Excel</h2>
 <p>Once you have the basics in place, you can refine your system further with these advanced tips.</p>
 <h3>Automation with Macros</h3>
-<p><a href="https://shoplinkr.com/blogs/hoe-geavanceerde-voorraadsystemen-het-verschil-maken">Learn how to use macros in Excel</a> to automate repetitive tasks, such as updating stock levels or generating reports.</p>
+<p><a href="https://shoplinkr.com/en/blog/how-advanced-inventory-systems-make-the-difference">Learn how to use macros in Excel</a> to automate repetitive tasks, such as updating stock levels or generating reports.</p>
 <h3>Use Charts and Dashboards</h3>
 <p>Visualize your stock data with charts and dashboards. This can help you spot trends and make better decisions about your inventory.</p>
 <h3>Integration with Other Systems</h3>

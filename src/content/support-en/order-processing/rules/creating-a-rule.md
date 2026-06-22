@@ -10,7 +10,7 @@ lastUpdated: "2026-05-28"
 translationKey: "een-regel-aanmaken"
 ---
 
-<p>This article walks you through creating a rule in ShopLinkr step by step. If you're not yet familiar with the concept, start by reading <a href="/support/wat-zijn-regels">What are rules?</a>.</p>
+<p>This article walks you through creating a rule in ShopLinkr step by step. If you're not yet familiar with the concept, start by reading <a href="/en/support/what-are-rules">What are rules?</a>.</p>
 <h3>Step 1: Create the rule</h3>
 <ol>
 <li>

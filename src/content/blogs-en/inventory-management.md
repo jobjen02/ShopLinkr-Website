@@ -32,18 +32,10 @@ translationKey: "voorraadmanagement"
 <p><strong>Regular stock checks</strong>: Regular counts help you identify discrepancies and potential problems before they become serious.</p>
 </li>
 <li>
-<p><strong>Use technology</strong>: Consider an inventory management system like ShopLinkr, which automates the process and offers real-time insights.
-<br>
-
-<br>
-</p>
+<p><strong>Use technology</strong>: Consider an inventory management system like ShopLinkr, which automates the process and offers real-time insights.</p>
 </li>
 </ul>
 <h3><strong>The Future of Inventory Management</strong></h3>
-<p>With the rise of technology and AI, inventory management is becoming more and more advanced. Systems can now automatically place orders, predict seasonal demand and even manage returns.
-<br>
-
-<br>
-</p>
+<p>With the rise of technology and AI, inventory management is becoming more and more advanced. Systems can now automatically place orders, predict seasonal demand and even manage returns.</p>
 <h3><strong>Conclusion</strong></h3>
 <p>Whether you are just starting out or have been in the trade for years, good inventory management is essential. With the right tools and strategies, you can make your business more efficient, more profitable and more customer-focused.</p>

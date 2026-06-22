@@ -2,13 +2,14 @@
 import { getCollection } from 'astro:content';
 import { type Locale, localizedPath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { collectionName } from '../../i18n/localeData';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 
 const integrationsBase = localizedPath('integrations', locale);
 
-const all = (await getCollection(locale === 'en' ? 'integrationsEn' : 'integrations'))
+const all = (await getCollection(collectionName('integrations', locale)))
     .map((entry) => entry.data)
     .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -48,7 +49,7 @@ const integrations = [
     <div class="marquee-wrapper">
         <div class="marquee-track">
             {
-                [...integrations, ...integrations].map((integration) => (
+                integrations.map((integration) => (
                     <a
                         href={`${integrationsBase}/${integration.slug}`}
                         class="marquee-item"
@@ -63,6 +64,24 @@ const integrations = [
                     </a>
                 ))
             }
+            <div aria-hidden="true" class="marquee-dup">
+                {
+                    integrations.map((integration) => (
+                        <a
+                            href={`${integrationsBase}/${integration.slug}`}
+                            class="marquee-item"
+                            tabindex="-1"
+                        >
+                            <img
+                                src={integration.logo}
+                                alt=""
+                                class="marquee-logo"
+                                loading="lazy"
+                            />
+                        </a>
+                    ))
+                }
+            </div>
         </div>
     </div>
 </section>
@@ -97,6 +116,10 @@ const integrations = [
 
     .marquee-wrapper:hover .marquee-track {
         animation-play-state: paused;
+    }
+
+    .marquee-dup {
+        display: contents;
     }
 
     .marquee-item {

@@ -28,9 +28,9 @@ translationKey: "backorders"
 </ul>
 <p>A setting at the product level always takes precedence over the sales channel, and the sales channel takes precedence over the company-wide setting.</p>
 <h4>How are these backorders released?</h4>
-<p>As soon as you replenish the product's stock again (for example, by <a href="/support/levering-ontvangen-en-verwerken">receiving a delivery</a>), the orders are released automatically. They then move from the status <strong>Backorder</strong> to <strong>Open</strong> and you can process them in the usual way. You do not need to do anything yourself for this.</p>
+<p>As soon as you replenish the product's stock again (for example, by <a href="/en/support/receiving-and-processing-a-delivery">receiving a delivery</a>), the orders are released automatically. They then move from the status <strong>Backorder</strong> to <strong>Open</strong> and you can process them in the usual way. You do not need to do anything yourself for this.</p>
 <h3>Backorders due to bulk location stock</h3>
-<p>This situation is more specific. In ShopLinkr you can set that stock for orders may only be taken from <a href="/support/locatiebeheer">pick locations</a> and not from bulk locations. This is useful if you want to prevent order pickers from being sent to the bulk location.</p>
+<p>This situation is more specific. In ShopLinkr you can set that stock for orders may only be taken from <a href="/en/support/location-management">pick locations</a> and not from bulk locations. This is useful if you want to prevent order pickers from being sent to the bulk location.</p>
 <p>If stock is available but only at a bulk location, the order still goes to the status <strong>Backorder</strong>. The stock is there, but not at the correct location in your warehouse.</p>
 <h4>Releasing backorders</h4>
 <p>For this situation you use the <strong>Release backorders</strong> feature. Here you move stock from a bulk location to a pick location so that the orders can be processed.</p>

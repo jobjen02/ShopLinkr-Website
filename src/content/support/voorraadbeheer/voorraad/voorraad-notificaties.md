@@ -1,5 +1,5 @@
 ---
-title: "Voorraad notificaties"
+title: "Voorraadnotificaties"
 summary: "Ontvang automatisch een e-mail wanneer een product onder een bepaalde voorraadgrens komt."
 category: "voorraadbeheer"
 categoryLabel: "Voorraadbeheer"
@@ -12,8 +12,8 @@ lastUpdated: "2026-05-28"
 <p>Met ShopLinkr kun je automatisch een e-mail ontvangen zodra de voorraad van een product onder een bepaalde grens komt. Zo ben je altijd op tijd op de hoogte en voorkom je dat je "nee" moet verkopen.</p>
 <h3>Hoe werkt het?</h3>
 <p>Je stelt op bedrijfsniveau een minimale voorraad in. Zodra een product onder die hoeveelheid zakt, krijg je automatisch een notificatie per e-mail. Je kiest zelf of je die notificatie direct wilt ontvangen, of één keer per dag in een overzicht.</p>
-<h3>Notificatie frequentie</h3>
-<p>Bij het instellen van de voorraad notificaties kun je kiezen uit twee opties:</p>
+<h3>Notificatiefrequentie</h3>
+<p>Bij het instellen van de voorraadnotificaties kun je kiezen uit twee opties:</p>
 <ul>
 <li>
 <p><strong>Directe notificatie</strong>: je ontvangt meteen een e-mail zodra een product onder de ingestelde voorraadgrens komt.</p>
@@ -31,13 +31,13 @@ lastUpdated: "2026-05-28"
 <p>Ga naar <strong>Voorraad notificaties</strong>.</p>
 </li>
 <li>
-<p>Stel de standaard minimale voorraad in en kies de gewenste notificatie frequentie (direct of dagelijks).</p>
+<p>Stel de standaard minimale voorraad in en kies de gewenste notificatiefrequentie (direct of dagelijks).</p>
 </li>
 </ol>
 <p>Deze instellingen gelden voor alle producten, tenzij je ze per product overschrijft.</p>
 <h3>Aanpassen per product</h3>
-<p>Wil je voor een specifiek product een andere voorraadgrens of notificatie frequentie gebruiken? Dat kan. Ga naar het product, klik op <strong>Bewerken</strong> en pas de voorraad notificatie-instellingen aan. Deze overschrijven de algemene bedrijfsinstellingen voor alleen dit product.</p>
-<h3>Waarom voorraad notificaties gebruiken?</h3>
+<p>Wil je voor een specifiek product een andere voorraadgrens of notificatiefrequentie gebruiken? Dat kan. Ga naar het product, klik op <strong>Bewerken</strong> en pas de voorraadnotificatie-instellingen aan. Deze overschrijven de algemene bedrijfsinstellingen voor alleen dit product.</p>
+<h3>Waarom voorraadnotificaties gebruiken?</h3>
 <ul>
 <li>
 <p><strong>Voorkom nee-verkoop</strong>: je weet precies wanneer een product bijna op is, zodat je op tijd kunt ingrijpen.</p>

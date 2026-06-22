@@ -1,6 +1,6 @@
 ---
 title: "ABC analysis"
-summary: "Classify your products by pick frequency and optimise your warehouse layout."
+summary: "Classify your products by pick frequency and optimize your warehouse layout."
 category: "inventory-management"
 categoryLabel: "Inventory management"
 subcategory: "products"
@@ -12,7 +12,7 @@ translationKey: "abc-analyse"
 
 <p>The ABC analysis classifies your products based on how often they are picked in your warehouse. This lets you see at a glance which products matter most to your day to day warehouse operation.</p>
 <h3>How does it work?</h3>
-<p>The analysis looks at the pick frequency over the past 90 days. Every time a product appears on a <a href="/support/wat-zijn-picklijsten">pick list</a> counts as one pick, regardless of the quantity. If you do not use pick lists, it looks at how often a product appears in orders. What matters is how often a warehouse employee has to walk to that product, not how many units are picked.</p>
+<p>The analysis looks at the pick frequency over the past 90 days. Every time a product appears on a <a href="/en/support/working-with-pick-lists">pick list</a> counts as one pick, regardless of the quantity. If you do not use pick lists, it looks at how often a product appears in orders. What matters is how often a warehouse employee has to walk to that product, not how many units are picked.</p>
 <p>Based on this, your products are divided into three categories following the Pareto principle (the 80/20 rule):</p>
 <figure>
 <table>
@@ -66,10 +66,10 @@ translationKey: "abc-analyse"
 </figure>
 <p>The analysis is updated automatically every night.</p>
 <h3>What can you do with it?</h3>
-<h4>Optimise your warehouse layout</h4>
+<h4>Optimize your warehouse layout</h4>
 <ul>
 <li>
-<p><strong>A products</strong>: place these in the most accessible <a href="/support/locatiebeheer">locations</a>, close to your <a href="/support/inpakstations-instellen">packing station</a>. Your employees walk here most often.</p>
+<p><strong>A products</strong>: place these in the most accessible <a href="/en/support/location-management">locations</a>, close to your <a href="/en/support/setting-up-packing-stations">packing station</a>. Your employees walk here most often.</p>
 </li>
 <li>
 <p><strong>B products</strong>: give these a mid range location in your warehouse.</p>

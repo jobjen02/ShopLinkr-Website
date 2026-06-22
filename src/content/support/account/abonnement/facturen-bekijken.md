@@ -11,7 +11,7 @@ lastUpdated: "2026-05-28"
 
 <p>Al je facturen van ShopLinkr kun je terugvinden op een centrale plek. Handig voor je boekhouding of als je een factuur wilt controleren.</p>
 <h3>Waar vind je je facturen?</h3>
-<p>Ga naar <strong>Instellingen &gt; Abonnement</strong>. Hier vind je het kopje <strong>Facturen,</strong> met een overzicht van al je facturen.</p>
+<p>Ga naar <strong>Instellingen &gt; Abonnement</strong>. Hier vind je het kopje <strong>Facturen</strong>, met een overzicht van al je facturen.</p>
 <h3>Wat zie je per factuur?</h3>
 <p>Per factuur zie je de volgende informatie:</p>
 <ul>

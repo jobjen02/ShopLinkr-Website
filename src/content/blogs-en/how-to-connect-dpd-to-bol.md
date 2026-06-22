@@ -16,8 +16,8 @@ translationKey: "hoe-koppel-ik-dpd-met-bol"
 <p>DPD was founded in 1977 and has grown into a leading parcel delivery company. They offer fast delivery, reliable service and a wide range of shipping options for both domestic and international shipments.</p>
 <h3>An introduction to Bol</h3>
 <p>Bol was founded in 1999 and has grown into one of the most popular online marketplaces in the Netherlands. It is a platform where sellers can list their products and customers can search for and buy what they need.</p>
-<p><a href="https://shoplinkr.com/blogs/dpd-koppelen-aan-shoplinkr">DPD has an advanced tracking system</a> that lets customers follow their parcels in real time. This provides transparency and peace of mind for both senders and recipients. In addition, DPD continually invests in sustainability and eco-friendly delivery options to minimise its environmental footprint.</p>
-<p><a href="https://shoplinkr.com/blogs/hoe-koppel-je-bol-com-met-jouw-webshop">Bol offers not only a wide range of products</a>, but also various services such as Bol.com Select, a subscription service that gives customers free delivery and extra benefits. Bol also regularly runs special sales campaigns and events such as the Bulk 10-day event, where customers can take advantage of big discounts on a variety of products.</p>
+<p><a href="https://shoplinkr.com/en/blog/connecting-dpd-to-shoplinkr">DPD has an advanced tracking system</a> that lets customers follow their parcels in real time. This provides transparency and peace of mind for both senders and recipients. In addition, DPD continually invests in sustainability and eco-friendly delivery options to minimise its environmental footprint.</p>
+<p><a href="https://shoplinkr.com/en/blog/how-to-connect-bol-com-to-your-webshop">Bol offers not only a wide range of products</a>, but also various services such as Bol.com Select, a subscription service that gives customers free delivery and extra benefits. Bol also regularly runs special sales campaigns and events such as the Bulk 10-day event, where customers can take advantage of big discounts on a variety of products.</p>
 <h2>The benefits of connecting DPD to Bol</h2>
 <p>There are several benefits to connecting DPD to Bol. Here are a few:</p>
 <h3>Efficiency in shipping and delivery</h3>
@@ -69,7 +69,7 @@ translationKey: "hoe-koppel-ik-dpd-met-bol"
 <p>Solution: Check whether you entered the correct login details and whether you gave permission to connect your accounts. If the problem persists, contact DPD or Bol customer service for further assistance.</p>
 </li>
 </ul>
-<p>After successfully connecting DPD to Bol, you will notice that the shipping process for your products runs more efficiently and smoothly. <a href="https://shoplinkr.com/koppelingen/dpd">DPD is known for its reliable and fast deliveries</a>, which will benefit customer satisfaction.</p>
+<p>After successfully connecting DPD to Bol, you will notice that the shipping process for your products runs more efficiently and smoothly. <a href="https://shoplinkr.com/en/integrations/dpd">DPD is known for its reliable and fast deliveries</a>, which will benefit customer satisfaction.</p>
 <p>Did you know that DPD has an extensive tracking system that lets both you and your customers accurately follow shipments? This provides transparency and trust in the delivery process, which is essential for a good customer relationship.</p>
 <h2>Frequently asked questions about connecting DPD to Bol</h2>
 <h3>How long does the connection process take?</h3>

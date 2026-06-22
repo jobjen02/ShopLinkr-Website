@@ -31,13 +31,13 @@ translationKey: "sendcloud-en-bol-samen-gebruiken"
 <p>Create an account: Sign up on the Sendcloud website and create an account. This takes only a few minutes.</p>
 </li>
 <li>
-<p>Connect your carriers and sales channels: Connect your preferred carriers and sales channels to Sendcloud using the <a href="https://shoplinkr.com/blogs/sendcloud-koppelen-aan-shoplinkr">ShopLinkr feature</a>. This lets you process orders from a sales channel with the labels of a carrier.</p>
+<p>Connect your carriers and sales channels: Connect your preferred carriers and sales channels to Sendcloud using the <a href="https://shoplinkr.com/en/blog/connect-sendcloud-to-shoplinkr">ShopLinkr feature</a>. This lets you process orders from a sales channel with the labels of a carrier.</p>
 </li>
 <li>
 <p>Set your shipping settings: Configure your shipping preferences, such as the desired carrier rate and the shipping method. Sendcloud offers flexibility and customisation to meet your specific needs.</p>
 </li>
 <li>
-<p>Use the shipping tool: Make use of the automated <a href="https://shoplinkr.com/koppelingen/sendcloud">Sendcloud shipping tool</a> to generate shipping labels, track parcels and keep customers informed about the delivery status.</p>
+<p>Use the shipping tool: Make use of the automated <a href="https://shoplinkr.com/en/integrations/sendcloud">Sendcloud shipping tool</a> to generate shipping labels, track parcels and keep customers informed about the delivery status.</p>
 </li>
 </ol>
 <h2>What is Bol?</h2>
@@ -52,7 +52,7 @@ translationKey: "sendcloud-en-bol-samen-gebruiken"
 <p>Marketing support: Bol offers various marketing tools and options to help you put your products in the spotlight and boost your sales.</p>
 </li>
 <li>
-<p>Logistical convenience: Bol has an integrated logistics service called <a href="https://shoplinkr.com/blogs/bol-com-koppelen-aan-shoplinkr">Bol Fulfilment</a>, which lets you store and pack your stock in the Bol distribution centre. This saves you time and effort in managing your logistics.</p>
+<p>Logistical convenience: Bol has an integrated logistics service called <a href="https://shoplinkr.com/en/blog/connect-bol-to-shoplinkr">Bol Fulfilment</a>, which lets you store and pack your stock in the Bol distribution centre. This saves you time and effort in managing your logistics.</p>
 </li>
 </ul>
 <h3>How does Bol work?</h3>

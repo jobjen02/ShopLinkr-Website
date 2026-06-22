@@ -4,8 +4,7 @@ import ContactForm from '../islands/ContactForm.vue';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
-import { faqsByPage } from '../../data/faqs';
-import { faqsByPageEn } from '../../data/faqs-en';
+import { faqsByPageFor } from '../../i18n/localeData';
 import { type Locale, localizeHref } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
@@ -35,12 +34,12 @@ const expectationIcons = [
 ];
 const expectations = p.expectations.map((item, i) => ({ ...item, icon: expectationIcons[i] }));
 
-const faqs = locale === 'en' ? faqsByPageEn.contact : faqsByPage.contact;
+const faqs = faqsByPageFor(locale).contact;
 
 const jsonLd = [
     breadcrumbs([
-        ['Home', localizeHref('/', locale)],
-        ['Contact', localizeHref('/contact', locale)],
+        [p.breadcrumbHome, localizeHref('/', locale)],
+        [p.breadcrumbLeaf, localizeHref('/contact', locale)],
     ]),
     {
         '@type': 'ContactPage',

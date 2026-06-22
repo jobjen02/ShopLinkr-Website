@@ -1,5 +1,5 @@
 ---
-title: "Myparcel en shopify samen gebruiken"
+title: "MyParcel en Shopify samen gebruiken"
 excerpt: "Heb je een Shopify-winkel en ben je op zoek naar een gemakkelijke en efficiënte manier om je verzendprocessen te beheren? Maak je geen zorgen, want met MyParcel en Shopify integratie kun je dit probleem eenvoudig oplossen."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/myparcel-en-shopify-samen-gebruiken/549fXbSaug0V8BtJrBVXrC20Dk.png"
@@ -25,7 +25,7 @@ isBlog: false
 <h2>De functies van MyParcel binnen Shopify</h2>
 <p>Nu we de voordelen en het integratieproces hebben besproken, laten we eens kijken naar de functies die MyParcel biedt binnen Shopify.</p>
 <h3>Verzendopties en tracking</h3>
-<p>Met MyParcel kun je verschillende <a href="https://shoplinkr.com/koppelingen/myparcel">verzendopties aanbieden</a> aan je klanten, zoals standaardverzending, expressverzending en internationale verzending. Je klanten kunnen ook de status van hun zendingen volgen via de geïntegreerde track &amp; trace-functionaliteit. Hierdoor hebben je klanten altijd inzicht in waar hun bestelling zich bevindt en wanneer ze deze kunnen verwachten.</p>
+<p>Met MyParcel kun je verschillende <a href="https://shoplinkr.com/integraties/myparcel">verzendopties aanbieden</a> aan je klanten, zoals standaardverzending, expressverzending en internationale verzending. Je klanten kunnen ook de status van hun zendingen volgen via de geïntegreerde track &amp; trace-functionaliteit. Hierdoor hebben je klanten altijd inzicht in waar hun bestelling zich bevindt en wanneer ze deze kunnen verwachten.</p>
 <h3>Retourzendingen beheren met MyParcel</h3>
 <p>Retourzendingen zijn een onvermijdelijk aspect van e-commerce. Met MyParcel kun je retourzendingen gemakkelijk beheren binnen Shopify. Je kunt retourzendingen accepteren, labels genereren en de status van retourzendingen bijhouden. Dit zorgt voor een soepele en probleemloze retourervaring voor zowel jou als je klanten.</p>
 <h2>De functies van Shopify binnen MyParcel</h2>

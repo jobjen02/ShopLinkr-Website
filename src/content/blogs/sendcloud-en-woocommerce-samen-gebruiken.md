@@ -1,5 +1,5 @@
 ---
-title: "Sendcloud en woocommerce samen gebruiken"
+title: "Sendcloud en WooCommerce samen gebruiken"
 excerpt: "Als je een webshop hebt die op WooCommerce draait, heb je waarschijnlijk al gehoord van Sendcloud."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/sendcloud-en-woocommerce-samen-gebruiken/6AEXVsHhQIMP2hgb6i7J5EP800.png"
@@ -31,7 +31,7 @@ isBlog: false
 <p>Wanneer klanten een product willen kopen, kunnen ze dit toevoegen aan hun winkelwagen en afrekenen via de betaalmethode naar keuze. Jij ontvangt dan een melding van de bestelling en kunt deze beheren via het WooCommerce-dashboard.</p>
 <h2>Integratie van Sendcloud en WooCommerce</h2>
 <p>Waarom zou je Sendcloud en WooCommerce samen gebruiken? Het antwoord is eenvoudig: om je verzendproces te optimaliseren en tijd en geld te besparen.</p>
-<p>Door Sendcloud te integreren in je WooCommerce-webshop, kun je automatisch <a href="https://shoplinkr.com/koppelingen/sendcloud">verzendlabels genereren</a> voor je bestellingen. Dit bespaart je veel tijd en elimineert menselijke fouten. Bovendien kun je profiteren van gunstige verzendtarieven dankzij de samenwerking met Sendcloud.</p>
+<p>Door Sendcloud te integreren in je WooCommerce-webshop, kun je automatisch <a href="https://shoplinkr.com/integraties/sendcloud">verzendlabels genereren</a> voor je bestellingen. Dit bespaart je veel tijd en elimineert menselijke fouten. Bovendien kun je profiteren van gunstige verzendtarieven dankzij de samenwerking met Sendcloud.</p>
 <h3>Stappen om Sendcloud en WooCommerce te integreren</h3>
 <p>Om Sendcloud en WooCommerce te integreren, hoef je slechts enkele eenvoudige stappen te volgen:</p>
 <ol>
@@ -48,7 +48,7 @@ isBlog: false
 <p>Configureer de verzendinstellingen en regels in Sendcloud.</p>
 </li>
 <li>
-<p>Bestelingen die binnenkomen op je WooCommerce-webshop worden nu automatisch gesynchroniseerd met Sendcloud. Je kunt verzendlabels genereren en het verzendproces volgen.</p>
+<p>Bestellingen die binnenkomen op je WooCommerce-webshop worden nu automatisch gesynchroniseerd met Sendcloud. Je kunt verzendlabels genereren en het verzendproces volgen.</p>
 </li>
 </ol>
 <h2>Veelgestelde vragen over Sendcloud en WooCommerce</h2>

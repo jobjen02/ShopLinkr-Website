@@ -38,6 +38,6 @@ translationKey: "bestelling-markeren-als-hoge-prioriteit"
 <p>You can only mark orders with the status Open, Deferred or Backorder as high priority.</p>
 </li>
 <li>
-<p>With rules, you can also mark orders as high priority automatically based on conditions. See "<a href="/support/wat-zijn-regels">What are rules?</a>" for more information.</p>
+<p>With rules, you can also mark orders as high priority automatically based on conditions. See "<a href="/en/support/what-are-rules">What are rules?</a>" for more information.</p>
 </li>
 </ul>

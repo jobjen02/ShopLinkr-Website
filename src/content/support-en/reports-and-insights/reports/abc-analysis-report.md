@@ -11,7 +11,7 @@ translationKey: "abc-analyse-rapport"
 ---
 
 <p>The ABC analysis report categorizes your products based on how often they are picked. A products are your most important products that are picked the most, while C products are picked the least. Use this report to optimize your warehouse layout and place your most important products in the most accessible spots.</p>
-<p>See <a href="/support/abc-analyse">ABC analysis</a> for a detailed explanation of how the categorization works and how to organize your warehouse based on the results.</p>
+<p>See <a href="/en/support/abc-analysis">ABC analysis</a> for a detailed explanation of how the categorization works and how to organize your warehouse based on the results.</p>
 <h3>What do you see per product?</h3>
 <figure>
 <table>
@@ -126,14 +126,14 @@ translationKey: "abc-analyse-rapport"
 <h3>Shifts</h3>
 <p>The report also shows which products have recently changed category. For example, a product that moved from B to A because it was picked more often during the past period. This helps you keep your warehouse layout up to date.</p>
 <h3>Filtering</h3>
-<p>You can filter by <strong>ABC category</strong> to view only products from a specific category. This way you can, for example, show only your A products to check whether they are placed in the right <a href="/support/locatiebeheer">locations</a>.</p>
+<p>You can filter by <strong>ABC category</strong> to view only products from a specific category. This way you can, for example, show only your A products to check whether they are placed in the right <a href="/en/support/location-management">locations</a>.</p>
 <h3>Good to know</h3>
 <ul>
 <li>
 <p>The analysis looks at the pick frequency of the <strong>past 90 days</strong>.</p>
 </li>
 <li>
-<p>If you use <a href="/support/wat-zijn-picklijsten">pick lists</a>, picks are used. Otherwise, how often a product appears in orders is used.</p>
+<p>If you use <a href="/en/support/working-with-pick-lists">pick lists</a>, picks are used. Otherwise, how often a product appears in orders is used.</p>
 </li>
 <li>
 <p>The analysis is updated automatically <strong>every night</strong>.</p>

@@ -9,7 +9,7 @@ order: 61
 lastUpdated: "2026-05-28"
 ---
 
-<p>Met het rapport nooit verkochte producten ontdek je welke producten in een bepaalde periode geen enkele verkoop hebben gehad. Dit helpt je om dood voorraad te identificeren en je assortiment op te schonen.</p>
+<p>Met het rapport nooit verkochte producten ontdek je welke producten in een bepaalde periode geen enkele verkoop hebben gehad. Dit helpt je om dode voorraad te identificeren en je assortiment op te schonen.</p>
 <h3>Wat zie je per product?</h3>
 <figure>
 <table>
@@ -118,7 +118,7 @@ lastUpdated: "2026-05-28"
 <h3>Hoe gebruik je dit rapport?</h3>
 <ul>
 <li>
-<p><strong>Dood voorraad opsporen</strong>: producten die maandenlang niet verkocht zijn nemen opslagruimte in en kosten geld. Overweeg ze te verkopen via een actie of uit je assortiment te halen.</p>
+<p><strong>Dode voorraad opsporen</strong>: producten die maandenlang niet verkocht zijn nemen opslagruimte in en kosten geld. Overweeg ze te verkopen via een actie of uit je assortiment te halen.</p>
 </li>
 <li>
 <p><strong>Assortiment evalueren</strong>: bekijk regelmatig welke producten niet bewegen. Misschien zijn ze niet meer relevant of is de concurrentie te groot.</p>

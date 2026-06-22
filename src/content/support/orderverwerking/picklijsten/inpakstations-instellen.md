@@ -22,7 +22,7 @@ lastUpdated: "2026-05-28"
 <p>Geef het station een herkenbare <strong>naam</strong> (bijvoorbeeld "Inpakstation 1").</p>
 </li>
 <li>
-<p>Koppel de <strong>verzendlabel printer</strong> die bij dit station hoort.</p>
+<p>Koppel de <strong>verzendlabelprinter</strong> die bij dit station hoort.</p>
 </li>
 <li>
 <p>Klik op <strong>Opslaan</strong>.</p>

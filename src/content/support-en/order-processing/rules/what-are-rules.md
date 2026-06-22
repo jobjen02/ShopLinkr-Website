@@ -21,7 +21,7 @@ translationKey: "wat-zijn-regels"
 <p><strong>Conditions</strong>: which criteria the order has to meet. Think of the sales channel, the customer's country, the total amount or a specific product.</p>
 </li>
 <li>
-<p><strong>Actions</strong>: what should happen when the order meets the conditions. For example assigning a carrier, adding a <a href="/support/tags-beheren">tag</a> or marking the order as high priority.</p>
+<p><strong>Actions</strong>: what should happen when the order meets the conditions. For example assigning a carrier, adding a <a href="/en/support/managing-tags">tag</a> or marking the order as high priority.</p>
 </li>
 </ol>
 <h3>Examples</h3>
@@ -56,7 +56,7 @@ translationKey: "wat-zijn-regels"
 <p>Add tags to the order</p>
 </li>
 <li>
-<p>Add a <a href="/support/notities-toevoegen">note</a> to the order</p>
+<p>Add a <a href="/en/support/adding-notes">note</a> to the order</p>
 </li>
 <li>
 <p>Postpone the order</p>
@@ -77,4 +77,4 @@ translationKey: "wat-zijn-regels"
 <p>Disable automatic processing in the picklist</p>
 </li>
 </ul>
-<p>See <a href="/support/een-regel-aanmaken">Creating a rule</a> for a step-by-step guide.</p>
+<p>See <a href="/en/support/creating-a-rule">Creating a rule</a> for a step-by-step guide.</p>

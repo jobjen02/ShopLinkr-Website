@@ -8,9 +8,9 @@ isBlog: false
 translationKey: "sendy-en-woocommerce-samen-gebruiken"
 ---
 
-<p>In this article we cover how to use Sendy and WooCommerce together. Sendy is a <a href="https://shoplinkr.com/blogs/sendy-koppelen-aan-shoplinkr">shipping platform that lets you create labels</a> for carriers such as PostNL. WooCommerce is a <a href="https://shoplinkr.com/blogs/woocommerce-koppelen-aan-shoplinkr">popular e-commerce plugin for WordPress</a> that lets you build a webshop. By integrating Sendy and WooCommerce, you can make your webshop's shipping process more efficient and save time. Let's take a look at what Sendy and WooCommerce actually are and how you can use them.</p>
+<p>In this article we cover how to use Sendy and WooCommerce together. Sendy is a <a href="https://shoplinkr.com/en/blog/connect-sendy-to-shoplinkr">shipping platform that lets you create labels</a> for carriers such as PostNL. WooCommerce is a <a href="https://shoplinkr.com/en/blog/connect-woocommerce-to-shoplinkr">popular e-commerce plugin for WordPress</a> that lets you build a webshop. By integrating Sendy and WooCommerce, you can make your webshop's shipping process more efficient and save time. Let's take a look at what Sendy and WooCommerce actually are and how you can use them.</p>
 <h2>What is Sendy and how does it work?</h2>
-<p>Sendy is a powerful shipping platform built specifically for e-commerce businesses. It lets you easily create labels and shipping documents for various carriers, such as PostNL, DHL and UPS. With Sendy you can also <a href="https://shoplinkr.com/koppelingen/sendy">calculate shipping costs based on different parameters</a>, such as weight, dimensions and destination.</p>
+<p>Sendy is a powerful shipping platform built specifically for e-commerce businesses. It lets you easily create labels and shipping documents for various carriers, such as PostNL, DHL and UPS. With Sendy you can also <a href="https://shoplinkr.com/en/integrations/sendy">calculate shipping costs based on different parameters</a>, such as weight, dimensions and destination.</p>
 <p>The benefits of Sendy include:</p>
 <ul>
 <li>

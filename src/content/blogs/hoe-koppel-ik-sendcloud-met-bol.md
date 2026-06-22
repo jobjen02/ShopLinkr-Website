@@ -11,7 +11,7 @@ isBlog: false
 <h2>Wat is Sendcloud en Bol?</h2>
 <p>Voordat we beginnen met het koppelen van Sendcloud aan Bol, is het handig om een overzicht te hebben van beide platformen.</p>
 <h3>Een overzicht van Sendcloud</h3>
-<p>Sendcloud is een alles-in-één verzendplatform waarmee je jouw <a href="https://shoplinkr.com/koppelingen/sendcloud">verzendproces kunt automatiseren</a> en optimaliseren. Met Sendcloud kun je verschillende vervoerders en verkoopkanalen koppelen, zodat je jouw bestellingen gemakkelijk kunt verwerken en verzenden. Het platform biedt handige functies zoals het genereren van verzendlabels, het bijhouden van zendingen en het aanbieden van verschillende verzendopties aan je klanten.</p>
+<p>Sendcloud is een alles-in-één verzendplatform waarmee je jouw <a href="https://shoplinkr.com/integraties/sendcloud">verzendproces kunt automatiseren</a> en optimaliseren. Met Sendcloud kun je verschillende vervoerders en verkoopkanalen koppelen, zodat je jouw bestellingen gemakkelijk kunt verwerken en verzenden. Het platform biedt handige functies zoals het genereren van verzendlabels, het bijhouden van zendingen en het aanbieden van verschillende verzendopties aan je klanten.</p>
 <p>Sendcloud streeft ernaar om het verzendproces voor webwinkeliers zo efficiënt mogelijk te maken. Door gebruik te maken van slimme automatisering en integraties met diverse vervoerders, kunnen gebruikers tijd en kosten besparen. Bovendien biedt Sendcloud uitgebreide analyses en rapporten om inzicht te krijgen in de prestaties van het verzendproces.</p>
 <h3>Een overzicht van Bol</h3>
 <p>Bol.com is het grootste online winkelplatform van Nederland en België. Als verkoper op Bol kun je jouw producten aanbieden aan miljoenen potentiële klanten. Het platform biedt verschillende mogelijkheden om je producten te beheren en te verkopen, waaronder het beheren van je voorraad, het afhandelen van bestellingen en het communiceren met je klanten.</p>
@@ -26,12 +26,54 @@ isBlog: false
 <h2>Stapsgewijze handleiding voor het koppelen van Sendcloud aan Bol</h2>
 <p>Voordat je Sendcloud kunt koppelen aan Bol, moet je een aantal voorbereidingen treffen. Hieronder vind je een stapsgewijze handleiding om je te helpen bij het koppelen van Sendcloud aan Bol:</p>
 <h3>Voorbereiding voor de koppeling</h3>
-<p>1. Zorg ervoor dat je een Sendcloud-account hebt. Als je nog geen account hebt, kun je deze gratis aanmaken op de website van Sendcloud.2. Ga naar het dashboard van Sendcloud en klik op "Verkoopkanalen" in het menu aan de linkerkant.3. Klik op "Toevoegen" en selecteer "Bol.com" uit de lijst met verkoopkanalen.4. Je wordt nu doorgestuurd naar de Bol.com website. Log in op je Bol-verkopersaccount en geef Sendcloud toestemming om verbinding te maken met je account.5. Nadat je toestemming hebt gegeven, word je teruggestuurd naar het dashboard van Sendcloud. Je ziet nu dat Bol.com succesvol is toegevoegd als verkoopkanaal.</p>
+<ol>
+<li>
+<p>Zorg ervoor dat je een Sendcloud-account hebt. Als je nog geen account hebt, kun je deze gratis aanmaken op de website van Sendcloud.</p>
+</li>
+<li>
+<p>Ga naar het dashboard van Sendcloud en klik op "Verkoopkanalen" in het menu aan de linkerkant.</p>
+</li>
+<li>
+<p>Klik op "Toevoegen" en selecteer "Bol.com" uit de lijst met verkoopkanalen.</p>
+</li>
+<li>
+<p>Je wordt nu doorgestuurd naar de Bol.com website. Log in op je Bol-verkopersaccount en geef Sendcloud toestemming om verbinding te maken met je account.</p>
+</li>
+<li>
+<p>Nadat je toestemming hebt gegeven, word je teruggestuurd naar het dashboard van Sendcloud. Je ziet nu dat Bol.com succesvol is toegevoegd als verkoopkanaal.</p>
+</li>
+</ol>
 <h3>Het koppelingsproces</h3>
-<p>1. Ga naar het dashboard van Sendcloud en klik op "Verkoopkanalen".2. Klik op "Bol.com" en vervolgens op "Koppelen".3. Volg de instructies op het scherm om de koppeling te voltooien. Je moet onder andere je Bol.com API-sleutel invoeren om de koppeling te autoriseren.4. Zodra de koppeling is voltooid, kun je de instellingen voor Bol.com aanpassen naar jouw wensen. Zo kun je bijvoorbeeld de verzendopties configureren en de verzendlabels aanpassen.</p>
+<ol>
+<li>
+<p>Ga naar het dashboard van Sendcloud en klik op "Verkoopkanalen".</p>
+</li>
+<li>
+<p>Klik op "Bol.com" en vervolgens op "Koppelen".</p>
+</li>
+<li>
+<p>Volg de instructies op het scherm om de koppeling te voltooien. Je moet onder andere je Bol.com API-sleutel invoeren om de koppeling te autoriseren.</p>
+</li>
+<li>
+<p>Zodra de koppeling is voltooid, kun je de instellingen voor Bol.com aanpassen naar jouw wensen. Zo kun je bijvoorbeeld de verzendopties configureren en de verzendlabels aanpassen.</p>
+</li>
+</ol>
 <h3>Probleemoplossing na koppeling</h3>
 <p>Als je merkt dat er na het koppelen van Sendcloud aan Bol problemen optreden, kun je de volgende stappen volgen om het probleem op te lossen:</p>
-<p>1. Controleer of je de juiste API-sleutel hebt ingevoerd tijdens het koppelingsproces.2. Zorg ervoor dat je voldoende saldo hebt op je Sendcloud-account. Als je saldo te laag is, kan dit problemen veroorzaken bij het verwerken van bestellingen.3. Raadpleeg de documentatie en supportpagina's van Sendcloud voor specifieke probleemoplossingen en veelvoorkomende foutmeldingen.4. Neem contact op met de klantenservice van Sendcloud als je er niet uitkomt. Ze staan klaar om je te helpen bij eventuele problemen.</p>
+<ol>
+<li>
+<p>Controleer of je de juiste API-sleutel hebt ingevoerd tijdens het koppelingsproces.</p>
+</li>
+<li>
+<p>Zorg ervoor dat je voldoende saldo hebt op je Sendcloud-account. Als je saldo te laag is, kan dit problemen veroorzaken bij het verwerken van bestellingen.</p>
+</li>
+<li>
+<p>Raadpleeg de documentatie en supportpagina's van Sendcloud voor specifieke probleemoplossingen en veelvoorkomende foutmeldingen.</p>
+</li>
+<li>
+<p>Neem contact op met de klantenservice van Sendcloud als je er niet uitkomt. Ze staan klaar om je te helpen bij eventuele problemen.</p>
+</li>
+</ol>
 <h2>Veelgestelde vragen over het koppelen van Sendcloud aan Bol</h2>
 <p>Hieronder beantwoord ik enkele veelgestelde vragen over het koppelen van Sendcloud aan Bol:</p>
 <h3>Hoe los ik koppelingsproblemen op?</h3>

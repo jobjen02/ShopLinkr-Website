@@ -47,7 +47,7 @@ const items = locales.map((loc) => ({
 
 {
     variant === 'inline' ? (
-        <div class="flex items-center gap-2" aria-label={navLabel}>
+        <div class="flex items-center gap-2" role="group" aria-label={navLabel}>
             {items.map((item) => (
                 <a
                     href={item.href}

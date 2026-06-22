@@ -10,7 +10,7 @@ lastUpdated: "2026-05-28"
 translationKey: "levering-ontvangen-en-verwerken"
 ---
 
-<p>As soon as a delivery from your <a href="/support/leveranciers-beheren">supplier</a> arrives, you can receive the products in ShopLinkr. For each product, you indicate how many you received and which <a href="/support/locatiebeheer">location</a> you want to store it in. Your stock is updated automatically.</p>
+<p>As soon as a delivery from your <a href="/en/support/managing-suppliers">supplier</a> arrives, you can receive the products in ShopLinkr. For each product, you indicate how many you received and which <a href="/en/support/location-management">location</a> you want to store it in. Your stock is updated automatically.</p>
 <h3>Mark as purchased</h3>
 <p>Before you can receive products, the delivery needs to have the status <strong>Purchased</strong>:</p>
 <ol>
@@ -51,9 +51,9 @@ translationKey: "levering-ontvangen-en-verwerken"
 <h3>Good to know</h3>
 <ul>
 <li>
-<p>Every receipt is recorded as a <a href="/support/voorraadmutaties">stock movement</a> with the reason "Delivery received".</p>
+<p>Every receipt is recorded as a <a href="/en/support/stock-movements">stock movement</a> with the reason "Delivery received".</p>
 </li>
 <li>
-<p>If there are <a href="/support/backorders">backorders</a> for the received products, they are automatically released as soon as the stock becomes available.</p>
+<p>If there are <a href="/en/support/backorders">backorders</a> for the received products, they are automatically released as soon as the stock becomes available.</p>
 </li>
 </ul>

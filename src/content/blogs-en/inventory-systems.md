@@ -34,7 +34,7 @@ translationKey: "voorraadsystemen"
 <p><strong>Periodic Systems</strong>: These systems require regular manual stock checks. At fixed times, the inventory is counted and updated.</p>
 </li>
 <li>
-<p><strong>Perpetual Systems</strong>: These are continuous tracking systems that provide real-time updates, such as ShopLinkr. They are often supported by advanced software and are ideal for larger businesses</p>
+<p><strong>Perpetual Systems</strong>: These are continuous tracking systems that provide real-time updates, such as ShopLinkr. They are often supported by advanced software and are ideal for larger businesses.</p>
 </li>
 <li>
 <p><strong>Dropshipping Systems</strong>: Specifically for businesses that do not hold any stock, but ship products directly from the supplier to the customer.

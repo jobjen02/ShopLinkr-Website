@@ -1,6 +1,6 @@
 ---
 title: "Verkopen via bol.com"
-excerpt: "Wil je je producten online verkopen en ben je geïnteresseerd in het verkopen via bol."
+excerpt: "Wil je je producten online verkopen en ben je geïnteresseerd in verkopen via bol.com? In dit artikel lees je alles wat je moet weten om aan de slag te gaan."
 publishedAt: "2024-06-11T00:00:00.000Z"
 image: "/images/blog/verkopen-via-bol-com/QSwxEmBDpwlsueddn8436Gfqs.png"
 isVisible: true

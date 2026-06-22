@@ -12,7 +12,7 @@ isBlog: false
 <h2>Wat is Innosend en WooCommerce?</h2>
 <p>Voordat we verder gaan, is het belangrijk om te weten wat Innosend en WooCommerce precies inhouden. Innosend is een innovatieve verzenddienst die speciaal is ontworpen voor online ondernemers. Het stelt je in staat om eenvoudig je verzendprocessen te beheren en te automatiseren, waardoor je kostbare tijd en middelen bespaart. WooCommerce daarentegen is een populaire e-commerce platform dat wordt gebruikt door miljoenen online winkels over de hele wereld. Het biedt een scala aan functies en mogelijkheden om je online winkel te beheren en te laten groeien.</p>
 <h3>Een korte introductie van Innosend</h3>
-<p>Innosend is een alles-in-één verzendoplossing die speciaal is ontworpen voor e-commerce bedrijven. Het stelt je in staat om gemakkelijk vervoerders en verkoopkanalen te koppelen aan je online winkel, waardoor je het verzendproces kunt stroomlijnen en optimaliseren. Met Innosend kun je bestellingen van verschillende verkoopkanalen verwerken met behulp van labels van verschillende vervoerders. Dit betekent dat je niet langer verschillende systemen hoeft te gebruiken om je verzendingen te beheren - alles kan worden gedaan binnen Innosend.</p>
+<p>Innosend is een alles-in-één verzendoplossing die speciaal is ontworpen voor e-commerce bedrijven. Het stelt je in staat om gemakkelijk vervoerders en verkoopkanalen te koppelen aan je online winkel, waardoor je het verzendproces kunt stroomlijnen en optimaliseren. Met Innosend kun je bestellingen van verschillende verkoopkanalen verwerken met behulp van labels van verschillende vervoerders. Dit betekent dat je niet langer verschillende systemen hoeft te gebruiken om je verzendingen te beheren. Alles kan worden gedaan binnen Innosend.</p>
 <p>Maar dat is niet alles. Innosend biedt ook geavanceerde functies zoals automatische orderverwerking, tracking en tracing van zendingen, en integraties met populaire e-commerce platforms zoals WooCommerce. Met deze integratie kun je naadloos je WooCommerce winkel verbinden met Innosend, waardoor je het verzendproces kunt automatiseren en vereenvoudigen. Dit betekent minder handmatig werk en meer tijd om je te concentreren op het laten groeien van je online business.</p>
 <h3>Een korte introductie van WooCommerce</h3>
 <p>WooCommerce, aan de andere kant, is een toonaangevend e-commerce platform dat bekend staat om zijn gebruiksvriendelijkheid en flexibiliteit. Het biedt een breed scala aan functies en mogelijkheden waarmee je je online winkel kunt beheren en laten groeien. Met WooCommerce kun je producten en diensten verkopen, betalingen en voorraad beheren, en nog veel meer. Het is een populaire keuze onder online ondernemers vanwege zijn eenvoudige installatie, aanpassingsmogelijkheden en uitgebreide functionaliteit.</p>
@@ -38,6 +38,7 @@ isBlog: false
 </li>
 </ol>
 <h3>Het koppelingsproces</h3>
+<p>Werk je met ShopLinkr, dan koppel je zowel je WooCommerce webshop als je Innosend-account aan ShopLinkr en verzend je vanuit ShopLinkr. De onderstaande stappen beschrijven het alternatief waarbij je rechtstreeks binnen Innosend werkt.</p>
 <p>Als je alle voorbereidingen hebt getroffen, kun je nu beginnen met het daadwerkelijke koppelingsproces. Hier zijn de stappen die je moet volgen:</p>
 <ol>
 <li>

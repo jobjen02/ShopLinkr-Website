@@ -41,6 +41,6 @@ translationKey: "auto-print-instellen"
 <p><strong>Please note:</strong> if you install PrintNode on a Windows device, you will get the option to install PrintNode as a Windows Service. Do <strong>not</strong> choose this option.</p>
 <p>Once the program is installed, log in with the same login details. PrintNode then runs in the background.</p>
 <h3>Connecting printers</h3>
-<p>After installing PrintNode, your printers appear in ShopLinkr automatically. Go to <strong>Settings &gt; Printers</strong> to check whether your printers are visible. From there you can connect them to a packing station. See <a href="/support/inpakstations-instellen">Setting up packing stations</a> for more information.</p>
+<p>After installing PrintNode, your printers appear in ShopLinkr automatically. Go to <strong>Settings &gt; Printers</strong> to check whether your printers are visible. From there you can connect them to a packing station. See <a href="/en/support/setting-up-packing-stations">Setting up packing stations</a> for more information.</p>
 <h3>Lost your login details?</h3>
-<p>Have you lost your PrintNode login details? Then read <a href="/support/printnode-inloggegevens-kwijt">Lost PrintNode login details</a> to find out what you can do.</p>
+<p>Have you lost your PrintNode login details? Then read <a href="/en/support/printnode-login-details-lost">Lost PrintNode login details</a> to find out what you can do.</p>

@@ -8,13 +8,12 @@ isBlog: false
 translationKey: "myparcel-en-woocommerce-samen-gebruiken"
 ---
 
-<h1>Using MyParcel and WooCommerce together</h1>
 <p>Are you using MyParcel and WooCommerce to grow your business? Then you are in the right place! In this article we cover the benefits of integrating MyParcel and WooCommerce, the integration process, and answers to frequently asked questions. Let's get started!</p>
 <h2>Why integrating MyParcel and WooCommerce matters</h2>
 <p>Why is it actually so important to integrate MyParcel and WooCommerce? Let's take a look at both tools and discover how they can help your business.</p>
 <p>The integration between MyParcel and WooCommerce offers plenty of benefits for your e-commerce activities. By connecting these two platforms, you can create a seamless shipping experience for both you and your customers. MyParcel takes care of efficient shipping management, while WooCommerce lets you run an attractive online store. Together they form a powerful combination that improves the overall customer experience and streamlines your operational processes.</p>
 <h3>What is MyParcel?</h3>
-<p>MyParcel is a handy <a href="https://shoplinkr.com/koppelingen/myparcel">shipping platform that helps you</a> organize and manage your shipments. With MyParcel you can easily print shipping labels, track shipping labels, and follow the shipping status of your parcels. It allows you to ship parcels efficiently and reliably, so you can focus on other aspects of your business.</p>
+<p>MyParcel is a handy <a href="https://shoplinkr.com/en/integrations/myparcel">shipping platform that helps you</a> organize and manage your shipments. With MyParcel you can easily print shipping labels, track shipping labels, and follow the shipping status of your parcels. It allows you to ship parcels efficiently and reliably, so you can focus on other aspects of your business.</p>
 <p>On top of that, MyParcel also offers handy features such as automatically generating track and trace codes and setting shipping preferences. This lets you optimize your shipping process and increase customer satisfaction. What's more, MyParcel integrates with various carriers, giving you the flexibility to choose the best shipping option for your parcels.</p>
 <h3>What is WooCommerce?</h3>
 <p>WooCommerce is a popular e-commerce plugin for WordPress. It allows you to create an online store and sell products or services. With WooCommerce you can add products, manage orders, and receive payments. It is a powerful platform that lets you grow your online business and succeed in the competitive world of e-commerce.</p>
@@ -29,12 +28,12 @@ translationKey: "myparcel-en-woocommerce-samen-gebruiken"
 <h2>The process of MyParcel and WooCommerce integration</h2>
 <p>Curious how you can integrate MyParcel and WooCommerce? We have explained the process for you step by step.</p>
 <h3>Preparing for integration</h3>
-<p>Before you start with the integration, you need to make sure you have a MyParcel account and have <a href="https://shoplinkr.com/blogs/myparcel-koppelen-aan-shoplinkr">installed the MyParcel plugin</a> on your WooCommerce website. Also make sure you have configured the right settings, such as shipping methods and rates.</p>
+<p>Before you start with the integration, you need to make sure you have a MyParcel account and have <a href="https://shoplinkr.com/en/blog/connect-myparcel-to-shoplinkr">installed the MyParcel plugin</a> on your WooCommerce website. Also make sure you have configured the right settings, such as shipping methods and rates.</p>
 <h3>Step-by-step guide for integration</h3>
 <p>To integrate MyParcel and WooCommerce, follow these simple steps:</p>
 <ol>
 <li>
-<p>Log in to your <a href="https://shoplinkr.com/blogs/woocommerce-koppelen-aan-shoplinkr">WooCommerce dashboard</a>.</p>
+<p>Log in to your <a href="https://shoplinkr.com/en/blog/connect-woocommerce-to-shoplinkr">WooCommerce dashboard</a>.</p>
 </li>
 <li>
 <p>Go to 'Plugins' and click 'Add New'.</p>

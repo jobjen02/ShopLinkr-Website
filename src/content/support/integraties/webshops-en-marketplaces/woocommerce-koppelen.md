@@ -15,7 +15,7 @@ lastUpdated: "2026-05-28"
 <p><strong>Let op:</strong> om ervoor te zorgen dat de "EAN for WooCommerce" plugin goed werkt met ShopLinkr, controleer je het volgende:</p>
 <ol>
 <li>
-<p>Ga in de Wordpress omgeving naar "WooCommerce" &gt; "Settings" &gt; "EAN" &gt; "General".</p>
+<p>Ga in de WordPress omgeving naar "WooCommerce" &gt; "Settings" &gt; "EAN" &gt; "General".</p>
 </li>
 </ol>
 <img alt="" src="/images/support/woocommerce-koppelen/NQFTYwinCDQT9wIEk31EMwXGf50.png">
@@ -49,7 +49,7 @@ lastUpdated: "2026-05-28"
 <p>Klik op "Koppelen".</p>
 </li>
 <li>
-<p>Als je nog niet bent ingelogd, log je nu in met je admin account van je Wordpress omgeving.</p>
+<p>Als je nog niet bent ingelogd, log je nu in met je admin account van je WordPress omgeving.</p>
 </li>
 <li>
 <p>Klik op "Approve".</p>

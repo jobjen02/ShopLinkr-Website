@@ -5,8 +5,7 @@ import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
-import { faqsByPage } from '../../data/faqs';
-import { faqsByPageEn } from '../../data/faqs-en';
+import { faqsByPageFor } from '../../i18n/localeData';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
@@ -27,7 +26,7 @@ const subFeatureIcons = [
 ];
 const subFeatures = p.subFeatures.map((feature, i) => ({ ...feature, icon: subFeatureIcons[i] }));
 
-const faqs = locale === 'en' ? faqsByPageEn.vervoerders : faqsByPage.vervoerders;
+const faqs = faqsByPageFor(locale).vervoerders;
 
 const jsonLd = [
     breadcrumbs([
@@ -99,7 +98,7 @@ const jsonLd = [
                         </h2>
                     </div>
 
-                    <div class="bg-paper dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 flex flex-col gap-4 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                    <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 flex flex-col gap-4 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center justify-between gap-3">
                             <div class="flex items-center gap-2.5">
                                 <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
@@ -233,7 +232,7 @@ const jsonLd = [
                                 href={`${localizeHref('/integraties', locale)}/${carrier.data.slug}`}
                                 class="group flex flex-col items-center justify-center gap-3 h-full rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                             >
-                                <div class="h-12 w-12 rounded-lg bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
                                     <img
                                         src={carrier.data.logo}
                                         alt={`${carrier.data.name} logo`}

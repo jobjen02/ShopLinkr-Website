@@ -3,20 +3,19 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SupportHero from '../support/SupportHero.astro';
 import SupportSearch from '../support/SupportSearch.vue';
-import { supportCategories } from '../../data/supportCategories';
-import { supportCategoriesEn } from '../../data/supportCategories-en';
-import { type Locale } from '../../i18n/routes';
+import { type Locale, localizedPath, supportCategoriesBase } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { supportCategoriesFor, collectionName, localeMeta } from '../../i18n/localeData';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const p = t.pages.supportIndex;
 
-const categories = locale === 'en' ? supportCategoriesEn : supportCategories;
-const supportBase = locale === 'en' ? '/en/support' : '/support';
-const categoriesBase = locale === 'en' ? '/en/support/categories' : '/support/categorieen';
+const categories = supportCategoriesFor(locale);
+const supportBase = localizedPath('support', locale);
+const categoriesBase = supportCategoriesBase(locale);
 
-const articles = await getCollection(locale === 'en' ? 'supportArticlesEn' : 'supportArticles');
+const articles = await getCollection(collectionName('support', locale));
 
 const searchData = articles
     .map((a) => {
@@ -38,7 +37,7 @@ const jsonLd = {
     name: p.jsonLdName,
     description: p.metaDescription,
     url: `https://shoplinkr.com${supportBase}`,
-    ...(locale === 'en' ? { inLanguage: 'en-US' } : {}),
+    inLanguage: localeMeta[locale].bcp47,
     mainEntity: {
         '@type': 'ItemList',
         numberOfItems: categories.length,

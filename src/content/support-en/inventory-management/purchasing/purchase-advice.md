@@ -10,8 +10,8 @@ lastUpdated: "2026-05-28"
 translationKey: "inkoopadvies"
 ---
 
-<p>With purchase advice you let ShopLinkr calculate which products you should buy and how much to order per <a href="/support/leveranciers-beheren">supplier</a>. This keeps you from selling products that aren't in stock (overselling) without leaving you with too much sitting on the shelf. From there you can turn the advice into concrete <a href="/support/een-levering-aanmaken">deliveries</a> in a single click.</p>
-<h3>Generating an advice</h3>
+<p>With purchase advice you let ShopLinkr calculate which products you should buy and how much to order per <a href="/en/support/managing-suppliers">supplier</a>. This keeps you from selling products that aren't in stock (overselling) without leaving you with too much sitting on the shelf. From there you can turn the advice into concrete <a href="/en/support/creating-a-delivery">deliveries</a> in a single click.</p>
+<h3>Generating advice</h3>
 <ol>
 <li>
 <p>Go to <strong>Purchasing &gt; Purchase advice</strong>.</p>
@@ -29,7 +29,7 @@ translationKey: "inkoopadvies"
 <p>Click <strong>Generate</strong>.</p>
 </li>
 </ol>
-<p>Once the advice is ready it appears in the overview and you can open it. Earlier advices stay visible in the overview, so you can look back later at what was advised.</p>
+<p>Once the advice is ready it appears in the overview and you can open it. Earlier advice stays visible in the overview, so you can look back later at what was advised.</p>
 <h3>Quick options</h3>
 <p>Three quick options switch on the right parts for you. After that you can still make individual adjustments.</p>
 <figure>
@@ -128,7 +128,7 @@ translationKey: "inkoopadvies"
 </figure>
 <p>Backorders, thresholds and expected sales together determine how much the advice wants to reorder. Threshold and expected sales are two ways of calculating the same thing, so the higher of the two wins (they are not added together). Backorders come on top of that, because those are orders you've already accepted.</p>
 <h3>Setting thresholds per product</h3>
-<p>On the product page you can set a purchase threshold and a purchase target per product. This determines when a product is included in an advice through the <strong>Stock thresholds</strong> part.</p>
+<p>On the product page you can set a purchase threshold and a purchase target per product. This determines when a product is included in the advice through the <strong>Stock thresholds</strong> part.</p>
 <ol>
 <li>
 <p>Open a product and click <strong>Edit</strong>.</p>
@@ -197,7 +197,7 @@ translationKey: "inkoopadvies"
 </figure>
 <p>You can still adjust lines, remove them or add your own before you turn the advice into deliveries.</p>
 <h3>Turning into deliveries</h3>
-<p>Happy with it? Then click <strong>Turn into deliveries</strong>. ShopLinkr automatically creates a delivery per supplier with the advised products and quantities. The deliveries appear in your regular <a href="/support/een-levering-aanmaken">deliveries overview</a> with the status <strong>Draft</strong> and are ready to order from your supplier.</p>
+<p>Happy with it? Then click <strong>Turn into deliveries</strong>. ShopLinkr automatically creates a delivery per supplier with the advised products and quantities. The deliveries appear in your regular <a href="/en/support/creating-a-delivery">deliveries overview</a> with the status <strong>Draft</strong> and are ready to order from your supplier.</p>
 <h3>Good to know</h3>
 <ul>
 <li>
@@ -207,9 +207,9 @@ translationKey: "inkoopadvies"
 <p>For the <strong>Expected sales</strong> part, products need a filled in average sales figure. Products without sales history are not included through this part.</p>
 </li>
 <li>
-<p>An <strong>empty advice</strong> means all products are above their threshold and nothing is expected. Switch on more parts or adjust your thresholds if you still want an advice.</p>
+<p>An <strong>empty advice</strong> means all products are above their threshold and nothing is expected. Switch on more parts or adjust your thresholds if you still want advice.</p>
 </li>
 <li>
-<p>An advice is generated in the background. For large catalogues this can take a few minutes. You can click away and come back later.</p>
+<p>Advice is generated in the background. For large catalogues this can take a few minutes. You can click away and come back later.</p>
 </li>
 </ul>

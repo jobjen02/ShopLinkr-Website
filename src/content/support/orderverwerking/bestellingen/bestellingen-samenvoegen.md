@@ -9,7 +9,7 @@ order: 26
 lastUpdated: "2026-05-28"
 ---
 
-<p>Met de samenvoeg functie kun je meerdere open bestellingen combineren tot een samengevoegde bestelling. Dit is handig wanneer dezelfde klant meerdere bestellingen heeft geplaatst die je samen als één pakket wilt verzenden. De originele bestellingen blijven bestaan voor je administratie, terwijl de samengevoegde bestelling wordt gebruikt voor het magazijnproces.</p>
+<p>Met de samenvoegfunctie kun je meerdere open bestellingen combineren tot een samengevoegde bestelling. Dit is handig wanneer dezelfde klant meerdere bestellingen heeft geplaatst die je samen als één pakket wilt verzenden. De originele bestellingen blijven bestaan voor je administratie, terwijl de samengevoegde bestelling wordt gebruikt voor het magazijnproces.</p>
 <h3>Wanneer kun je bestellingen samenvoegen?</h3>
 <p>Bestellingen kunnen worden samengevoegd als ze aan de volgende voorwaarden voldoen:</p>
 <ul>

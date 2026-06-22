@@ -24,7 +24,7 @@ translationKey: "producten-overzicht"
 <p><strong>Stock</strong>: the number of available units. Hover over the figure to see a breakdown of available, reserved, and total stock.</p>
 </li>
 <li>
-<p><a href="/support/tags-beheren"><strong>Tags</strong></a>: any tags linked to the product</p>
+<p><a href="/en/support/managing-tags"><strong>Tags</strong></a>: any tags linked to the product</p>
 </li>
 <li>
 <p><strong>Created on</strong>: when the product was created</p>
@@ -40,19 +40,19 @@ translationKey: "producten-overzicht"
 <p><strong>Sales channel</strong>: filter on products from a specific channel</p>
 </li>
 <li>
-<p><a href="/support/leveranciers-beheren"><strong>Supplier</strong></a>: filter on products from a specific supplier</p>
+<p><a href="/en/support/managing-suppliers"><strong>Supplier</strong></a>: filter on products from a specific supplier</p>
 </li>
 <li>
 <p><strong>Tags</strong>: filter on products with certain tags</p>
 </li>
 <li>
-<p><strong>Product options</strong>: <a href="/support/een-bundel-aanmaken">bundles</a>, individual products, <a href="/support/onbeperkte-voorraad">unlimited stock</a>, <a href="/support/voorraadbronnen">stock sources</a></p>
+<p><strong>Product options</strong>: <a href="/en/support/create-a-bundle">bundles</a>, individual products, <a href="/en/support/unlimited-stock">unlimited stock</a>, <a href="/en/support/stock-sources">stock sources</a></p>
 </li>
 <li>
-<p><a href="/support/notities-toevoegen"><strong>Notes</strong></a>: products with or without notes</p>
+<p><a href="/en/support/adding-notes"><strong>Notes</strong></a>: products with or without notes</p>
 </li>
 <li>
-<p><a href="/support/producten-archiveren"><strong>Archived</strong></a>: active or archived products</p>
+<p><a href="/en/support/archiving-products"><strong>Archived</strong></a>: active or archived products</p>
 </li>
 </ul>
 <h3>Actions</h3>
@@ -65,7 +65,7 @@ translationKey: "producten-overzicht"
 <p><strong>Edit</strong>: open the product details to change its information</p>
 </li>
 <li>
-<p><a href="/support/producten-importeren-en-exporteren"><strong>Import products</strong></a>: import products in bulk using a CSV file</p>
+<p><a href="/en/support/import-and-export-products"><strong>Import products</strong></a>: import products in bulk using a CSV file</p>
 </li>
 <li>
 <p><strong>Export products</strong>: export your product data</p>

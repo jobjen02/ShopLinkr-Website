@@ -45,8 +45,8 @@ translationKey: "tags-beheren"
 <h3>Assigning tags</h3>
 <p>You can assign tags manually to a product or order. Open the item and add the tag or tags you want. A product or order can have several tags at the same time.</p>
 <h3>Assigning tags automatically with rules</h3>
-<p>With <a href="/support/wat-zijn-regels">rules</a> you can assign tags automatically to new orders. For example, set up a rule that automatically gives every order above a certain amount the tag "Large". That way you do not have to do it by hand.</p>
+<p>With <a href="/en/support/what-are-rules">rules</a> you can assign tags automatically to new orders. For example, set up a rule that automatically gives every order above a certain amount the tag "Large". That way you do not have to do it by hand.</p>
 <h3>Filtering by tags</h3>
 <p>You can filter by tags on both the products page and the orders page. This is handy for quickly finding a specific group of items.</p>
 <h3>Tags in reports</h3>
-<p>When generating <a href="/support/rapporten-overzicht">reports</a> you can filter by tags. This lets you, for example, review the performance of just your seasonal products.</p>
+<p>When generating <a href="/en/support/reports-overview">reports</a> you can filter by tags. This lets you, for example, review the performance of just your seasonal products.</p>

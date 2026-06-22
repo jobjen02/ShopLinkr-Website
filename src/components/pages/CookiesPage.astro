@@ -101,11 +101,12 @@ export const prerender = false;
 
                                 <div class="overflow-x-auto rounded-xl ring-1 ring-chalk-dark dark:ring-flint">
                                     <table class="w-full text-sm">
+                                        <caption class="sr-only">{category.title}</caption>
                                         <thead class="bg-chalk-light dark:bg-graphite text-xs uppercase tracking-wider text-gravel">
                                             <tr>
-                                                <th class="px-4 py-3 text-left font-semibold">{p.tableName}</th>
-                                                <th class="px-4 py-3 text-left font-semibold">{p.tablePurpose}</th>
-                                                <th class="px-4 py-3 text-left font-semibold">{p.tableDuration}</th>
+                                                <th scope="col" class="px-4 py-3 text-left font-semibold">{p.tableName}</th>
+                                                <th scope="col" class="px-4 py-3 text-left font-semibold">{p.tablePurpose}</th>
+                                                <th scope="col" class="px-4 py-3 text-left font-semibold">{p.tableDuration}</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-chalk-dark dark:divide-flint">

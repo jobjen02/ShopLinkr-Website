@@ -10,7 +10,7 @@ lastUpdated: "2026-05-28"
 translationKey: "tips-voor-locatienummers"
 ---
 
-<p>A good naming scheme for your <a href="/support/locatiebeheer">locations</a> means everyone on your team knows right away where a product is stored. Especially as your team grows or you bring on new staff, consistent naming prevents mistakes and speeds up the <a href="/support/wat-zijn-picklijsten">picking process</a>.</p>
+<p>A good naming scheme for your <a href="/en/support/location-management">locations</a> means everyone on your team knows right away where a product is stored. Especially as your team grows or you bring on new staff, consistent naming prevents mistakes and speeds up the <a href="/en/support/working-with-pick-lists">picking process</a>.</p>
 <h3>The naming system</h3>
 <p>A widely used convention is to name locations based on their position in the warehouse, from large to small. The first level is always a letter, the rest are numbers. Depending on the size of your warehouse, you can work with or without zones:</p>
 <pre><code>Without zones:
@@ -85,7 +85,7 @@ Example: A.1.2.3.4 = Zone A, Aisle 1, Rack 2, Shelf 3, Bin 4</code></pre>
 <p><strong>Inconsistent naming</strong>: if one location is called "A.1.1" and another "Aisle A Rack 1", staff get confused.</p>
 </li>
 <li>
-<p><strong>No hierarchy</strong>: if you create all locations at the same level (without a parent location), you lose your overview. Use the <a href="/support/locatiebeheer">hierarchical locations</a> in ShopLinkr.</p>
+<p><strong>No hierarchy</strong>: if you create all locations at the same level (without a parent location), you lose your overview. Use the <a href="/en/support/location-management">hierarchical locations</a> in ShopLinkr.</p>
 </li>
 </ul>
 <h3>Renaming existing locations</h3>

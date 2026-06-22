@@ -77,6 +77,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
             status: response.status,
             headers: {
                 'Content-Type': 'text/markdown; charset=utf-8',
+                'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
                 'X-Markdown-Tokens': String(Math.ceil(md.length / 4)),
                 'X-Robots-Tag': 'noindex',
                 Vary: 'Accept',
@@ -87,6 +88,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     // Server-rendered HTML has no static CDN layer, so cache it at the edge.
     if (
         context.request.method === 'GET' &&
+        response.ok &&
         type.includes('text/html') &&
         !response.headers.has('cache-control')
     ) {

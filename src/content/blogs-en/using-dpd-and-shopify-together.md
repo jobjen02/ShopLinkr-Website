@@ -63,7 +63,7 @@ translationKey: "dpd-en-shopify-samen-gebruiken"
 <p>When you integrate DPD and Shopify, you enjoy the following benefits:</p>
 <ol>
 <li>
-<p>Automated shipping: You can <a href="https://shoplinkr.com/blogs/shopify-koppelen-aan-shoplinkr">streamline your shipping processes</a> by integrating DPD and Shopify. This means you spend less time manually processing shipping labels and booking shipments.</p>
+<p>Automated shipping: You can <a href="https://shoplinkr.com/en/blog/connect-shopify-to-shoplinkr">streamline your shipping processes</a> by integrating DPD and Shopify. This means you spend less time manually processing shipping labels and booking shipments.</p>
 </li>
 <li>
 <p>Improved order tracking: By integrating DPD, your customers can track their parcels and receive notifications about the status of their order. This results in better customer satisfaction.</p>
@@ -119,6 +119,6 @@ translationKey: "dpd-en-shopify-samen-gebruiken"
 </li>
 </ul>
 <h2>Conclusion: The impact of DPD and Shopify integration on your business</h2>
-<p>Using DPD and Shopify together can have a major impact on your e-commerce business. Through the integration you benefit from <a href="https://shoplinkr.com/blogs/dpd-koppelen-aan-shoplinkr">automated shipping</a>, better order tracking and <a href="https://shoplinkr.com/koppelingen/dpd">efficient inventory management</a>. What's more, you can improve your customers' experience and grow your business.</p>
+<p>Using DPD and Shopify together can have a major impact on your e-commerce business. Through the integration you benefit from <a href="https://shoplinkr.com/en/blog/connecting-dpd-to-shoplinkr">automated shipping</a>, better order tracking and <a href="https://shoplinkr.com/en/integrations/dpd">efficient inventory management</a>. What's more, you can improve your customers' experience and grow your business.</p>
 <p>In short, DPD and Shopify make a powerful combination for entrepreneurs who want to grow their online business. Take advantage of the many benefits of this integration and take your e-commerce activities to the next level!</p>
 <p>Ready to unleash the power of DPD and Shopify in your webshop? With ShopLinkr you effortlessly manage your orders and inventory, and keep everything in one place. Our automatic inventory synchronisation and easy order processing make your life a lot easier. And the best part? You can now try ShopLinkr completely free for 14 days. What are you waiting for? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr now</a> and take your e-commerce to the next level!</p>

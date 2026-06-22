@@ -23,7 +23,7 @@ translationKey: "onbeperkte-voorraad"
 <p>The product is always reported as available to your sales channels.</p>
 </li>
 <li>
-<p>The product is skipped during <a href="/support/voorraadtellingen">stock counts</a>.</p>
+<p>The product is skipped during <a href="/en/support/stock-counts">stock counts</a>.</p>
 </li>
 </ul>
 <h3>Sales channels that do not support it</h3>

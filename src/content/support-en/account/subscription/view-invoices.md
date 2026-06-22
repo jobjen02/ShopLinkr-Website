@@ -30,4 +30,4 @@ translationKey: "facturen-bekijken"
 </li>
 </ul>
 <h3>How does the billing work?</h3>
-<p>ShopLinkr uses the <a href="/support/het-pay-as-you-go-model">Pay as you Go</a> model. You pay monthly based on your usage. Invoices are created automatically and collected via your linked payment method (SEPA direct debit).</p>
+<p>ShopLinkr uses the <a href="/en/support/the-pay-as-you-go-model">Pay as you Go</a> model. You pay monthly based on your usage. Invoices are created automatically and collected via your linked payment method (SEPA direct debit).</p>

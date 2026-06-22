@@ -131,7 +131,7 @@ translationKey: "fictieve-voorraad"
 <p>You can set a fictitious stock level at two levels:</p>
 <ul>
 <li>
-<p><strong>Company level</strong>: go to <strong>Settings &gt; My company</strong>. This setting applies to all products. See <a href="/support/bedrijfsinstellingen">Company settings</a>.</p>
+<p><strong>Company level</strong>: go to <strong>Settings &gt; My company</strong>. This setting applies to all products. See <a href="/en/support/company-settings">Company settings</a>.</p>
 </li>
 <li>
 <p><strong>Product level</strong>: open a product and click <strong>Edit</strong>. Here you can override the company-wide setting for that specific product.</p>

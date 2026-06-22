@@ -10,4 +10,4 @@ lastUpdated: "2026-05-28"
 translationKey: "printnode-inloggegevens-kwijt"
 ---
 
-<p>Can't log in to PrintNode anymore because you've lost your login details? No worries, we can reset them for you. Get in <a href="/contact">touch</a> with us and we'll get you back up and running right away.</p>
+<p>Can't log in to PrintNode anymore because you've lost your login details? No worries, we can reset them for you. Get in <a href="/en/contact">touch</a> with us and we'll get you back up and running right away.</p>

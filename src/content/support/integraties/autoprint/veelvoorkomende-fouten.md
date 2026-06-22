@@ -34,7 +34,7 @@ lastUpdated: "2026-05-28"
 </li>
 </ul>
 <h3>Dubbele of onverwachte afdrukken</h3>
-<p>Worden labels dubbel afgedrukt of worden onbedoelde documenten geprint? Dit kan gebeuren wanneer meerdere gebruikers op dezelfde computer PrintNode hebben ingeschakeld. Controleer of slechts een gebruiker is ingelogd en PrintNode actief heeft.</p>
+<p>Worden labels dubbel afgedrukt of worden onbedoelde documenten geprint? Dit kan gebeuren wanneer meerdere gebruikers op dezelfde computer PrintNode hebben ingeschakeld. Controleer of slechts één gebruiker is ingelogd en PrintNode actief heeft.</p>
 <h3>Lege of scheve labels</h3>
 <p>Als de printer lege etiketten uitspuugt of labels scheef print:</p>
 <ul>

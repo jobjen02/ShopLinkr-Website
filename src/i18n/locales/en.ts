@@ -12,6 +12,7 @@ const en: Dictionary = {
         languageNav: 'Choose language',
         skipToContent: 'Skip to main content',
         readMore: 'Read more',
+        comingSoon: 'Coming soon',
         openMenu: 'Open menu',
         closeMenu: 'Close menu',
         theme: {
@@ -30,7 +31,7 @@ const en: Dictionary = {
     heroOrder: {
         steps: ['Ordered', 'Picked', 'Packed', 'Shipped'],
         orderTitle: 'Order #1042',
-        viaBol: 'via Bol',
+        viaBol: 'via bol',
         unit: '1 item',
         play: 'Play animation',
         pause: 'Pause animation',
@@ -39,7 +40,7 @@ const en: Dictionary = {
         scanned: 'Scanned',
         location: 'Location',
         labelReady: 'Label ready',
-        ttToBol: 'Track & trace to Bol',
+        ttToBol: 'Track & trace to bol',
     },
     trustBar: {
         heading: 'Works with the tools you already use',
@@ -52,7 +53,7 @@ const en: Dictionary = {
         stock: {
             eyebrow: 'Inventory sync',
             heading: 'One inventory, every channel.',
-            body: 'ShopLinkr keeps your stock current at all times. Sold on Bol? Shopify, WooCommerce and Kaufland see it within seconds.',
+            body: 'ShopLinkr keeps your stock current at all times. Sold on bol? Shopify, WooCommerce and Kaufland see it within seconds.',
             bullets: ['No overselling', 'No manual work', 'Real-time updates', 'Unlimited channels'],
         },
         channels: {
@@ -64,7 +65,7 @@ const en: Dictionary = {
             body: 'Add your whole team, with no extra cost per user.',
         },
         bolSellers: {
-            title: 'Built by Bol sellers.',
+            title: 'Built by bol sellers.',
             body: 'Born out of our own webshop, tested against real practice every day.',
         },
         rules: {
@@ -461,16 +462,16 @@ const en: Dictionary = {
         },
         comboWooBol: {
             title: 'Connect WooCommerce to bol via ShopLinkr | Integrations',
-            description: 'Selling through WooCommerce and bol? ShopLinkr synchronizes your stock in real time between both channels and collects all your orders in one place.',
+            description: 'Selling through WooCommerce and bol? ShopLinkr synchronises your stock in real time between both channels and collects all your orders in one place.',
             eyebrow: 'WooCommerce and bol',
             heading: 'Connect WooCommerce with bol via ShopLinkr.',
-            subheading: 'Selling through WooCommerce and through bol? ShopLinkr synchronizes your stock in real time and collects all orders in one place. One workflow, no oversells.',
+            subheading: 'Selling through WooCommerce and through bol? ShopLinkr synchronises your stock in real time and collects all orders in one place. One workflow, no oversells.',
             jsonLdName: 'Connect WooCommerce to bol via ShopLinkr',
-            jsonLdDescription: 'Selling through WooCommerce and bol? ShopLinkr synchronizes your stock in real time between both channels and collects all your orders in one place.',
+            jsonLdDescription: 'Selling through WooCommerce and bol? ShopLinkr synchronises your stock in real time between both channels and collects all your orders in one place.',
             breadcrumbHome: 'Home',
             breadcrumbParent: 'Integrations',
             breadcrumbCurrent: 'Connect WooCommerce to bol',
-            syncEyebrow: 'Stock synchronization',
+            syncEyebrow: 'Stock synchronisation',
             syncHeading: 'One stock source for WooCommerce and bol.',
             syncIntro: 'ShopLinkr connects your WooCommerce webshop with your bol sales account. Stock moves both ways, orders come together in one overview. Below you can see exactly what the connection does for you.',
             setupEyebrow: 'How to set it up',
@@ -480,7 +481,7 @@ const en: Dictionary = {
             faqHeading: 'What WooCommerce shops often ask.',
             rows: [
                 { eyebrow: 'ShopLinkr as the bridge', heading: 'A reliable link between WooCommerce and bol.', body: 'You connect your WooCommerce webshop to ShopLinkr, and your bol sales account too. From that moment on, ShopLinkr keeps everything aligned. No separate plugins to maintain per channel, no exports in between.' },
-                { eyebrow: 'Matching on EAN', heading: 'Products are linked together automatically.', body: 'Based on the EAN number, ShopLinkr recognizes which WooCommerce product is the same as a bol listing. Set it up properly once, and you never have to match SKUs by hand again. New products are added in a few clicks.' },
+                { eyebrow: 'Matching on EAN', heading: 'Products are linked together automatically.', body: 'Based on the EAN number, ShopLinkr recognises which WooCommerce product is the same as a bol listing. Set it up properly once, and you never have to match SKUs by hand again. New products are added in a few clicks.' },
                 { eyebrow: 'Stock in sync in real time', heading: 'One stock view for both your channels.', body: 'Sell a product on bol, and ShopLinkr adjusts your WooCommerce stock instantly. Get an order through your own webshop, and the stock on bol goes down. One stock source, the same reliable level on every channel.' },
                 { eyebrow: 'Orders in one place', heading: 'All orders in the same flow.', body: 'WooCommerce orders and bol orders appear in the same order list. You pick, pack and ship from one environment. It no longer matters where the order comes from, your warehouse always works the same way.' },
                 { eyebrow: 'Prevent oversells', heading: 'Never sell what you do not have in stock again.', body: 'Because stock moves between channels at lightning speed, you avoid selling the same last item in two places at once. Fewer cancellations, no bol sales penalties and happier customers.' },
@@ -488,7 +489,7 @@ const en: Dictionary = {
             setupSteps: [
                 { label: 'Step 1', title: 'Connect WooCommerce', body: 'Install our WooCommerce plugin on your WordPress site, copy an API key from ShopLinkr and your shop talks along right away. No developer needed.' },
                 { label: 'Step 2', title: 'Get your EAN in order', body: 'WooCommerce has no EAN field by default. We support the EAN Barcode Generator plugin from WPFactory. No EAN? Then ShopLinkr uses your SKU field as a fallback.' },
-                { label: 'Step 3', title: 'Add bol', body: 'Open your bol sales account and authorize ShopLinkr in a few clicks. Your listings are pulled in and matched with your WooCommerce products on EAN.' },
+                { label: 'Step 3', title: 'Add bol', body: 'Open your bol sales account and authorise ShopLinkr in a few clicks. Your listings are pulled in and matched with your WooCommerce products on EAN.' },
                 { label: 'Step 4', title: 'Sync is live', body: 'Done. From now on, stock and orders run between both channels through ShopLinkr. You handle everything from one environment, and your warehouse no longer notices the difference between channels.' },
             ],
             faqs: [
@@ -507,7 +508,7 @@ const en: Dictionary = {
             breadcrumbHome: 'Home',
             breadcrumbIntegrations: 'Integrations',
             breadcrumbCurrent: 'Connect WooCommerce to Shopify',
-            syncEyebrow: 'Stock synchronization',
+            syncEyebrow: 'Stock synchronisation',
             syncHeading: 'One stock source for WooCommerce and Shopify.',
             syncIntro: 'ShopLinkr connects your WooCommerce shop with your Shopify shop. Stock changes go both ways, and orders come together in a single overview. Below you can see exactly what the connection does for you.',
             rows: [
@@ -626,12 +627,12 @@ const en: Dictionary = {
         },
         integrationsIndex: {
             title: 'Integrations | ShopLinkr',
-            description: 'ShopLinkr works with Bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud and more. See every sales channel and carrier you can connect in a few clicks.',
+            description: 'ShopLinkr works with bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud and more. See every sales channel and carrier you can connect in a few clicks.',
             eyebrow: 'Integrations',
             heading: 'Connect your sales channels and carriers.',
-            subheading: 'ShopLinkr works with the tools you already use. From Shopify and Bol to PostNL and Sendcloud, all in one place.',
+            subheading: 'ShopLinkr works with the tools you already use. From Shopify and bol to PostNL and Sendcloud, all in one place.',
             jsonLdName: 'Integrations | ShopLinkr',
-            jsonLdDescription: 'ShopLinkr works with Bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud and more. See every sales channel and carrier you can connect in a few clicks.',
+            jsonLdDescription: 'ShopLinkr works with bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud and more. See every sales channel and carrier you can connect in a few clicks.',
             breadcrumbParent: 'Integrations',
             resultsSuffix: 'integrations available',
             filterGroupLabel: 'Filter integrations by type',
@@ -652,7 +653,7 @@ const en: Dictionary = {
             combosBody: 'Many shops already run multiple channels side by side. For these combinations we have written extra detail on what the connection does for you in practice.',
             combos: [
                 'Stock in sync in real time and all your orders in one list.',
-                'WordPress plus Bol, connected without separate plugins per channel.',
+                'WordPress plus bol, connected without separate plugins per channel.',
                 'Two shops, one stock view. Ideal for parallel brands.',
             ],
             comboLabel: 'Combination',
@@ -690,7 +691,7 @@ const en: Dictionary = {
             breadcrumbLeaf: 'About',
             jsonLdName: 'About ShopLinkr',
             jsonLdDescription: 'ShopLinkr was founded in 2022 by Job, out of his own webshop. Today we process more than 1 million orders for Dutch webshops, with a pay as you go model that stays affordable for any business.',
-            para1: 'ShopLinkr started in 2022 out of a need of our own. Founder Job ran a webshop and sold across multiple channels, including Bol and Amazon. Without a big budget, but with the need to keep track of inventory and orders, he built his own solution as a software developer. Before long, other webshops were asking whether they could use that tool too. That is how ShopLinkr was born.',
+            para1: 'ShopLinkr started in 2022 out of a need of our own. Founder Job ran a webshop and sold across multiple channels, including bol and Amazon. Without a big budget, but with the need to keep track of inventory and orders, he built his own solution as a software developer. Before long, other webshops were asking whether they could use that tool too. That is how ShopLinkr was born.',
             para2: 'We believe that an order and inventory management system should be within reach for every webshop, whatever the budget. That is why we were the first in the Netherlands to introduce a pay as you go model. You only pay for what you use, so the software scales neatly with your warehouse.',
             para3: 'Today we work on ShopLinkr with a dedicated team and we have processed more than 1 million orders for Dutch webshops. What drives us is still the same: practical software for webshops that take their warehouse seriously.',
             moreEyebrow: 'Want to see more?',
@@ -707,6 +708,8 @@ const en: Dictionary = {
             subheading: 'A quick question, a first introduction or an in depth conversation about your warehouse. Pick the way that suits you best.',
             jsonLdName: 'Contact | ShopLinkr',
             jsonLdDescription: 'Get in touch with ShopLinkr. Send a message, book a demo or visit the help center. Reply usually within 2 hours during office hours.',
+            breadcrumbHome: 'Home',
+            breadcrumbLeaf: 'Contact',
             channels: [
                 {
                     eyebrow: 'Send a message',
@@ -768,7 +771,7 @@ const en: Dictionary = {
             tablePurpose: 'Purpose',
             tableDuration: 'Duration',
             preferencesHeading: 'Changing your preferences',
-            preferencesBody: 'Clear the cookie settings in your browser to see the cookie banner again. Or send us an email at <a href="mailto:contact@shoplinkr.com" class="text-charcoal font-semibold hover:text-sunstone-deep transition-colors">contact@shoplinkr.com</a> if you need help.',
+            preferencesBody: 'Clear the cookie settings in your browser to see the cookie banner again. Or send us an email at <a href="mailto:contact@shoplinkr.com" class="text-charcoal dark:text-paper font-semibold hover:text-sunstone-deep dark:hover:text-sunstone transition-colors">contact@shoplinkr.com</a> if you need help.',
             categories: [
                 {
                     title: 'Necessary cookies',
@@ -1013,7 +1016,7 @@ const en: Dictionary = {
                 {
                     eyebrow: 'Track and trace back',
                     heading: 'Automatically back to your channel.',
-                    body: 'The moment you create the label, we send the track & trace straight back to your sales channel, so everything is updated right away.',
+                    body: 'The moment you create the label, we send the track and trace straight back to your sales channel, so everything is updated right away.',
                 },
                 {
                     eyebrow: 'Shipping rules',
@@ -1239,7 +1242,7 @@ const en: Dictionary = {
             faqEyebrow: 'Frequently asked questions',
             faqHeading1: 'The questions that keep coming up,',
             faqHeading2: 'clearly answered.',
-            faqBody: 'Missing a question? Book a call or send us a message. We are happy to think along with your situation.',
+            faqBody: 'Missing a question? Book a call or send us a message. We are happy to think along with you.',
             faqCta: 'Ask your question',
         },
         featureLocations: {
@@ -1379,7 +1382,7 @@ const en: Dictionary = {
             faqEyebrow: 'Frequently asked questions',
             faqHeadingLine1: 'The questions that come up often,',
             faqHeadingLine2: 'clearly answered.',
-            faqIntro: 'Missing a question? Schedule a call or send us a message. We are happy to think along about your situation.',
+            faqIntro: 'Missing a question? Book a call or send us a message. We are happy to think along with you.',
             faqCta: 'Ask your question',
         },
         featurePicklists: {
@@ -1390,10 +1393,10 @@ const en: Dictionary = {
             subheading: 'Pick lists with a smart route through your warehouse, a scan flow that guides you through the order step by step and shipping labels that print right at your packing station. One continuous workflow from order to packed box.',
             breadcrumbParent: 'Features',
             breadcrumbLeaf: 'Pick lists',
-            heroCardEyebrow: 'Smart picking list',
+            heroCardEyebrow: 'Smart pick list',
             heroCardHeadingLine1: 'One route through your warehouse,',
             heroCardHeadingLine2: 'no detours.',
-            mockupPicklistLabel: 'Picking list PL-2418',
+            mockupPicklistLabel: 'Pick list PL-2418',
             mockupOrderCount: '8 orders',
             mockupItem1: 'Linen tea towel, natural',
             mockupItem2: 'Coffee tin, small',
@@ -1422,7 +1425,7 @@ const en: Dictionary = {
                 {
                     eyebrow: 'Saved filters',
                     heading: 'Fixed picking rounds in one click.',
-                    body: 'Do you often use the same combination of channel, location or parcel type? Save the filter set under a recognisable name and start your picking list with one click next time.',
+                    body: 'Do you often use the same combination of channel, location or parcel type? Save the filter set under a recognisable name and start your pick list with one click next time.',
                 },
             ],
             methodsEyebrow: 'Three ways of picking',
@@ -1435,18 +1438,18 @@ const en: Dictionary = {
                     body: 'Orders with just one type of product. Filter for them separately and process them one after another. No sorting work and little chance of mistakes.',
                 },
                 {
-                    title: 'Picking list without bins',
+                    title: 'Pick list without bins',
                     body: 'Collect all the products from several orders in one big bin. When packing, you scan any product and ShopLinkr instantly opens the right order. Fast and without extra supplies.',
                 },
                 {
-                    title: 'Picking list with bins',
+                    title: 'Pick list with bins',
                     body: 'Each order gets its own bin with a barcode. While picking you first scan the product and then the bin. When packing you scan the bin and you know for sure everything is correct.',
                 },
             ],
             faqEyebrow: 'Frequently asked questions',
             faqHeadingLine1: 'Questions that come up often,',
             faqHeadingLine2: 'clearly answered.',
-            faqIntro: 'Not seeing your question? Book a call or send us a message. We are happy to think along about your situation.',
+            faqIntro: 'Not seeing your question? Book a call or send us a message. We are happy to think along with you.',
             faqCta: 'Ask your question',
         },
         featureProducts: {
@@ -1512,8 +1515,10 @@ const en: Dictionary = {
             mockupGiftsetStock: '6 units',
             mockupKibbleName: 'Dog kibble premium',
             mockupKibbleTag: 'Source',
+            mockupKibbleStock: '85 kg',
             mockupLicenseName: 'Software license Pro',
             mockupLicenseTag: 'Unlimited',
+            mockupLicenseStock: '∞',
             overviewCaption: 'Single products, variant groups, bundles, stock sources and products with unlimited stock sit side by side in the same overview.',
             typesEyebrow: 'Types of products',
             typesHeadingLine1: 'Four product types,',
@@ -1572,7 +1577,7 @@ const en: Dictionary = {
             faqEyebrow: 'Frequently asked questions',
             faqHeadingLine1: 'Questions that come up often,',
             faqHeadingLine2: 'clearly answered.',
-            faqBody: 'Missing a question? Schedule a call or send us a message. We are happy to think along about your situation.',
+            faqBody: 'Missing a question? Book a call or send us a message. We are happy to think along with you.',
             faqCta: 'Ask your question',
         },
         featurePurchasing: {
@@ -1607,7 +1612,7 @@ const en: Dictionary = {
                 },
                 {
                     eyebrow: 'Per supplier',
-                    heading: 'One advice, neatly split per supplier.',
+                    heading: 'All your advice, neatly split per supplier.',
                     body: 'Select one or more suppliers and ShopLinkr works out what to order for each one separately. Only products linked to those suppliers are counted.',
                 },
                 {
@@ -1623,7 +1628,7 @@ const en: Dictionary = {
             ],
             signalsEyebrow: 'How does the advice calculate?',
             signalsHeadingLine1: 'Five signals,',
-            signalsHeadingLine2: 'one concrete advice.',
+            signalsHeadingLine2: 'one clear recommendation.',
             signalsIntro: 'Switch each part on or off individually, or pick a quick choice that sets the right combination for you. Backorders, stock thresholds and expected sales all weigh in together. Open deliveries are subtracted, so you do not buy twice.',
             signals: [
                 {
@@ -1650,7 +1655,7 @@ const en: Dictionary = {
             faqEyebrow: 'Frequently asked questions',
             faqHeadingLine1: 'Questions that come up often,',
             faqHeadingLine2: 'clearly answered.',
-            faqIntro: 'Missing a question? Book a call or send us a message. We are happy to think along with your situation.',
+            faqIntro: 'Missing a question? Book a call or send us a message. We are happy to think along with you.',
             faqContactLink: 'Ask your question',
         },
         featureReports: {
@@ -1726,7 +1731,7 @@ const en: Dictionary = {
             faqEyebrow: 'Frequently asked questions',
             faqHeadingLine1: 'Questions that keep coming up,',
             faqHeadingLine2: 'answered clearly.',
-            faqIntro: 'Not seeing your question? Schedule a call or send us a message. We are happy to think along about your situation.',
+            faqIntro: 'Not seeing your question? Schedule a call or send us a message. We are happy to think along with you.',
             faqCta: 'Ask your question',
         },
         featureReturns: {
@@ -1957,7 +1962,7 @@ const en: Dictionary = {
             faqEyebrow: 'Frequently asked questions',
             faqHeading: 'The questions that keep coming up,',
             faqHeadingLine: 'clearly answered.',
-            faqBody: 'Is your question missing? Schedule a call or send us a message. We are happy to think along about your situation.',
+            faqBody: 'Is your question missing? Schedule a call or send us a message. We are happy to think along with you.',
             faqCta: 'Ask your question',
         },
         featuresIndex: {
@@ -2009,7 +2014,7 @@ const en: Dictionary = {
             whyHeading: 'Your complete webshop management at a glance.',
             whyIntro: 'You no longer have to work in a different screen per channel. ShopLinkr brings your inventory, your orders and your shipping together in one workflow, so you switch faster and make fewer mistakes.',
             rows: [
-                { eyebrow: 'One overview', heading: 'Your entire webshop at a glance.', body: 'Orders, inventory, customers and returns together on a single screen. No more switching between Bol, Shopify, WooCommerce and your carrier portal. From now on you work from one central place, no matter where the order comes from.' },
+                { eyebrow: 'One overview', heading: 'Your entire webshop at a glance.', body: 'Orders, inventory, customers and returns together on a single screen. No more switching between bol, Shopify, WooCommerce and your carrier portal. From now on you work from one central place, no matter where the order comes from.' },
                 { eyebrow: 'Bulk', heading: 'Process orders in bulk.', body: 'Select a batch of orders and print the pick and pack list and shipping labels in one action. During peak days that saves hours of work, and your workflow stays smooth even when the orders keep pouring in.' },
                 { eyebrow: 'Real-time sync', heading: 'Inventory that is always right.', body: 'Sell something on one channel and ShopLinkr instantly adjusts your inventory on the others. No oversells, no cancelled orders and no more awkward customer conversations about something that was actually already sold out.' },
                 { eyebrow: 'Time saved', heading: 'Win back well over an hour a day.', body: 'Our customers often win back well over an hour a day at an average of fifty orders. That is time you put into growth instead of manual work: sourcing new products, running marketing or simply heading home earlier.' },
@@ -2059,19 +2064,19 @@ const en: Dictionary = {
             ],
         },
         multipleBolAccounts: {
-            title: 'Connect multiple Bol accounts to ShopLinkr',
-            description: 'Manage multiple Bol accounts from a single environment. ShopLinkr links your accounts and keeps your stock accurate in real time across all of them.',
-            eyebrow: 'Multiple Bol accounts',
-            heading: 'Manage multiple Bol accounts without the double work.',
-            subheading: 'Working with multiple Bol accounts, for example for the Netherlands and Belgium? ShopLinkr links them together and keeps your stock on both accounts accurate at all times.',
+            title: 'Connect multiple bol accounts to ShopLinkr',
+            description: 'Manage multiple bol accounts from a single environment. ShopLinkr links your accounts and keeps your stock accurate in real time across all of them.',
+            eyebrow: 'Multiple bol accounts',
+            heading: 'Manage multiple bol accounts without the double work.',
+            subheading: 'Working with multiple bol accounts, for example for the Netherlands and Belgium? ShopLinkr links them together and keeps your stock on both accounts accurate at all times.',
             whyEyebrow: 'Two accounts, one workflow',
             whyHeading: 'From two separate worlds to one overview.',
-            whyIntro: 'Working with multiple Bol accounts brings benefits, but also a lot of double work and room for errors. ShopLinkr brings your accounts together, so instead of two environments you have one central workspace.',
+            whyIntro: 'Working with multiple bol accounts brings benefits, but also a lot of double work and room for errors. ShopLinkr brings your accounts together, so instead of two environments you have one central workspace.',
             rows: [
                 {
                     eyebrow: 'Why multiple',
-                    heading: 'Running multiple Bol accounts is more common than you think.',
-                    body: 'Plenty of sellers split their Bol activities across two accounts, for example keeping the Dutch and the Belgian market separate. That way you stay in control of region specific prices, delivery times and assortment. It is a sensible choice, but it does add a few management challenges.',
+                    heading: 'Running multiple bol accounts is more common than you think.',
+                    body: 'Plenty of sellers split their bol activities across two accounts, for example keeping the Dutch and the Belgian market separate. That way you stay in control of region specific prices, delivery times and assortment. It is a sensible choice, but it does add a few management challenges.',
                 },
                 {
                     eyebrow: 'Double work',
@@ -2086,7 +2091,7 @@ const en: Dictionary = {
                 {
                     eyebrow: 'Centralise',
                     heading: 'Both accounts together in one place.',
-                    body: 'Connect both Bol accounts to ShopLinkr. We automatically link the products together so they are treated as a single stock. Sell on one account and ShopLinkr immediately adjusts the stock on the other. No more oversells, no matter where the order comes from.',
+                    body: 'Connect both bol accounts to ShopLinkr. We automatically link the products together so they are treated as a single stock. Sell on one account and ShopLinkr immediately adjusts the stock on the other. No more oversells, no matter where the order comes from.',
                 },
                 {
                     eyebrow: 'One workflow',
@@ -2193,14 +2198,14 @@ const en: Dictionary = {
             closing: 'Prefer to get started right away? Create an account and start your free 14 day trial. No credit card needed, and you can cancel any month you like.',
         },
         wooInventorySync: {
-            title: 'WooCommerce inventory synchronization - ShopLinkr',
+            title: 'WooCommerce inventory synchronisation - ShopLinkr',
             description: 'Looking for a simple way to manage your WooCommerce stock? With our tool you sync your WooCommerce inventory in real time with all your other sales channels.',
-            eyebrow: 'WooCommerce inventory synchronization',
-            heading: 'WooCommerce inventory synchronization, sorted with ease.',
+            eyebrow: 'WooCommerce inventory synchronisation',
+            heading: 'WooCommerce inventory synchronisation, sorted with ease.',
             subheading: 'Manage your WooCommerce webshop inventory in ShopLinkr. In real-time sync with all your other sales channels, without any manual work.',
             whyEyebrow: 'For WooCommerce stores',
-            whyHeading: 'The benefits of automatic synchronization.',
-            whyIntro: 'WooCommerce is powerful, but without proper inventory synchronization you get stuck the moment you sell across multiple channels. ShopLinkr takes that complexity away and keeps everything in line with what is really on the shelf.',
+            whyHeading: 'The benefits of automatic synchronisation.',
+            whyIntro: 'WooCommerce is powerful, but without proper inventory synchronisation you get stuck the moment you sell across multiple channels. ShopLinkr takes that complexity away and keeps everything in line with what is really on the shelf.',
             rows: [
                 { eyebrow: 'Connection', heading: 'Connect once, then it runs on its own.', body: 'You link your WooCommerce store to ShopLinkr in just a few clicks. Your products are imported and your stock flows in automatically. From that moment on, ShopLinkr keeps your WooCommerce inventory in real-time sync with all your other channels.' },
                 { eyebrow: 'Real-time', heading: 'Updates within seconds.', body: 'Sell something on WooCommerce and ShopLinkr instantly adjusts your stock on Bol, Shopify and your other channels. It works the other way around too: an order on Bol immediately reduces your stock in WooCommerce, so you never sell the same item twice.' },

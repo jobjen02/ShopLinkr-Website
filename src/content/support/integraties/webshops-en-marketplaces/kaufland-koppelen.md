@@ -39,7 +39,7 @@ lastUpdated: "2026-05-28"
 <img alt="" src="/images/support/kaufland-koppelen/zaRQIIjdxR5jt5Z6ncmtHzGnU.png">
 <ol>
 <li>
-<p>Vul de "client_key" en "secret_key" in die je in stap 3 hebt bewaard.</p>
+<p>Vul de "Client key" en "Secret key" in die je in stap 3 hebt bewaard.</p>
 </li>
 </ol>
 <img alt="" src="/images/support/kaufland-koppelen/WdRDukjV4cAqnFxOz2A7yM4hhs.png">

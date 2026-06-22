@@ -1,5 +1,5 @@
 ---
-title: "Innosend en woocommerce samen gebruiken"
+title: "Innosend en WooCommerce samen gebruiken"
 excerpt: "Innosend en WooCommerce zijn twee krachtige tools die je kunt combineren om je e-commercebedrijf naar een hoger niveau te tillen."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/innosend-en-woocommerce-samen-gebruiken/zsVfvKN68yWQGDwsaCoZn0VtY8.png"
@@ -17,7 +17,7 @@ isBlog: false
 <p>Om Innosend te gebruiken, moet je eerst je vervoerders en verkoopkanalen koppelen aan ShopLinkr. Dit proces is vrij eenvoudig en wordt uitgebreid uitgelegd in de documentatie van Innosend. Zodra je je vervoerders en verkoopkanalen hebt gekoppeld, kun je orders ontvangen en verwerken met behulp van de labels van de geselecteerde vervoerders.</p>
 <p>Innosend integreert naadloos met WooCommerce, waardoor je eenvoudig je verzendprocessen kunt automatiseren en de efficiëntie van je e-commercebedrijf kunt verbeteren.</p>
 <h2>Wat is WooCommerce?</h2>
-<p><a href="https://shoplinkr.com/koppelingen/woocommerce">WooCommerce is een populaire e-commerceplugin</a> voor WordPress waarmee je eenvoudig een online winkel kunt maken en beheren. Met WooCommerce kun je producten toevoegen, prijzen instellen, betalingen ontvangen en nog veel meer. Het is een krachtig platform dat wordt gebruikt door miljoenen webwinkels over de hele wereld.</p>
+<p><a href="https://shoplinkr.com/integraties/woocommerce">WooCommerce is een populaire e-commerceplugin</a> voor WordPress waarmee je eenvoudig een online winkel kunt maken en beheren. Met WooCommerce kun je producten toevoegen, prijzen instellen, betalingen ontvangen en nog veel meer. Het is een krachtig platform dat wordt gebruikt door miljoenen webwinkels over de hele wereld.</p>
 <h3>De functies en voordelen van WooCommerce</h3>
 <p>WooCommerce biedt een breed scala aan functies die je kunnen helpen bij het opzetten en beheren van een succesvolle online winkel. Enkele van de belangrijkste functies zijn de mogelijkheid om onbeperkte producten toe te voegen, diverse betalingsgateways te integreren en gedetailleerde verkooprapporten te genereren.</p>
 <p>Daarnaast is WooCommerce ook zeer aanpasbaar, met duizenden thema's en plugins die je kunt gebruiken om je winkel een unieke uitstraling en functionaliteit te geven. Hierdoor kun je je winkel volledig aanpassen aan je bedrijfsbehoeften en merkidentiteit.</p>

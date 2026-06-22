@@ -45,7 +45,7 @@ translationKey: "variantgroepen"
 <img alt="" src="/images/support/variantgroepen/JUML5MK9nPL6XQwd29nqu0lS3c.png">
 <h3>Stock in the product overview</h3>
 <p>In the product overview the main product shows the combined stock of all variants in the group, along with the number of variants. This way you can see at a glance how much stock the entire group has.</p>
-<p>The stock of <a href="/support/een-bundel-aanmaken">bundle products</a> within the group is not counted, because their stock is derived from the individual products.</p>
+<p>The stock of <a href="/en/support/create-a-bundle">bundle products</a> within the group is not counted, because their stock is derived from the individual products.</p>
 <img alt="" src="/images/support/variantgroepen/4UCK7dvRZGVNtwzISAmyl3OjM5Q.png">
 <h3>Examples</h3>
 <p><strong>Quantity variants</strong></p>
@@ -171,10 +171,10 @@ translationKey: "variantgroepen"
 <p>Each product can only be in 1 variant group at a time.</p>
 </li>
 <li>
-<p>If you <a href="/support/producten-archiveren">archive</a> the main product, another product in the group is automatically set as the main product. If there is no other product left, the group is deleted.</p>
+<p>If you <a href="/en/support/archiving-products">archive</a> the main product, another product in the group is automatically set as the main product. If there is no other product left, the group is deleted.</p>
 </li>
 <li>
-<p>Variant groups are separate from <a href="/support/een-bundel-aanmaken">bundles</a> and <a href="/support/voorraadbronnen">stock sources</a>. Each product can be in a variant group, regardless of whether it is a bundle or a stock source product.</p>
+<p>Variant groups are separate from <a href="/en/support/create-a-bundle">bundles</a> and <a href="/en/support/stock-sources">stock sources</a>. Each product can be in a variant group, regardless of whether it is a bundle or a stock source product.</p>
 </li>
 <li>
 <p>Using stock sources? Place the stock product together with the subproducts in a variant group to keep them neatly grouped.</p>

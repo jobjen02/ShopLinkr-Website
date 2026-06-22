@@ -4,15 +4,15 @@
     "category": "carrier",
     "status": "live",
     "logo": "/assets/carriers/bol.jpg",
-    "summary": "Ship with Bol's competitive rates. Shipping labels are requested from within ShopLinkr and Bol takes on the delivery responsibility.",
+    "summary": "Ship with bol's competitive rates. Shipping labels are requested from within ShopLinkr and bol takes on the delivery responsibility.",
     "url": "https://www.bol.com",
-    "tagline": "Worry-free shipping through Bol.",
-    "about": "Shipping through Bol (VVB) is a service from Bol that lets you use competitive shipping rates through their carrier network. A key benefit is that the delivery responsibility sits with Bol, so if a parcel arrives late you are not held accountable for it. Shipments are tracked automatically and Bol handles customer contact for you whenever something goes wrong with the delivery.",
+    "tagline": "Worry-free shipping through bol.",
+    "about": "Shipping through bol (VVB) is a service from bol that lets you use competitive shipping rates through their carrier network. A key benefit is that the delivery responsibility sits with bol, so if a parcel arrives late you are not held accountable for it. Shipments are tracked automatically and bol handles customer contact for you whenever something goes wrong with the delivery.",
     "translationKey": "bol-com-verzendlabels",
     "faqs": [
         {
             "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on an order's shipping details we receive a shipping label from Bol. The address details cannot be changed, because Bol manages them itself."
+            "a": "Yes, based on an order's shipping details we receive a shipping label from bol. The address details cannot be changed, because bol manages them itself."
         }
     ]
 }

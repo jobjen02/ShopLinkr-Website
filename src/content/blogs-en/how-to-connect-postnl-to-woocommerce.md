@@ -9,7 +9,7 @@ translationKey: "hoe-koppel-ik-postnl-met-woocommerce"
 ---
 
 <h1>How Do I Connect PostNL To WooCommerce?</h1>
-<p>Have you ever run into problems shipping and delivering your products through WooCommerce? Don't worry, because I'm going to show you how to <a href="https://shoplinkr.com/koppelingen/post-nl">connect PostNL to WooCommerce</a>. With this integration you can ship efficiently and improve your customer service. Let's get started!</p>
+<p>Have you ever run into problems shipping and delivering your products through WooCommerce? Don't worry, because I'm going to show you how to <a href="https://shoplinkr.com/en/integrations/post-nl">connect PostNL to WooCommerce</a>. With this integration you can ship efficiently and improve your customer service. Let's get started!</p>
 <h2>What are PostNL and WooCommerce?</h2>
 <p>Before we dive into connecting PostNL to WooCommerce, let's start with a brief introduction to both platforms.</p>
 <h3>An introduction to PostNL</h3>
@@ -24,7 +24,7 @@ translationKey: "hoe-koppel-ik-postnl-met-woocommerce"
 <p>With PostNL integrated into WooCommerce you can streamline your shipping process. You get direct access to PostNL's shipping options and rates, so you can quickly and easily choose the best shipping method. This saves you time and reduces errors when entering shipping information by hand.</p>
 <h3>Improved customer service</h3>
 <p>By connecting PostNL to WooCommerce you can give your customers a better shipping experience. You can automatically provide tracking information so your customers can easily follow their orders. On top of that, you can use PostNL's customer service to resolve any problems or questions your customers may have.</p>
-<p>Besides the efficiency and <a href="https://shoplinkr.com/blogs/woocommerce-koppelen-aan-shoplinkr">improved customer service</a> that connecting PostNL to WooCommerce brings, there are other benefits to keep in mind. One of these benefits is the seamless integration of shipping labels and track &amp; trace features within your WooCommerce dashboard. This means you no longer have to switch between different systems to print shipping labels or check the status of a shipment.</p>
+<p>Besides the efficiency and <a href="https://shoplinkr.com/en/blog/connect-woocommerce-to-shoplinkr">improved customer service</a> that connecting PostNL to WooCommerce brings, there are other benefits to keep in mind. One of these benefits is the seamless integration of shipping labels and track &amp; trace features within your WooCommerce dashboard. This means you no longer have to switch between different systems to print shipping labels or check the status of a shipment.</p>
 <p>Another benefit of integrating PostNL into your WooCommerce webshop is the option to use additional services such as evening delivery or delivery to a pickup point. By offering these extra options to your customers, you can improve their shopping experience and meet their specific needs and preferences.</p>
 <h2>Steps to connect PostNL to WooCommerce</h2>
 <p>Alright, let's now go through how to connect PostNL to WooCommerce. Follow these simple steps:</p>
@@ -34,7 +34,7 @@ translationKey: "hoe-koppel-ik-postnl-met-woocommerce"
 <p>After installing the plugin, you need to configure the shipping settings. Go to the WooCommerce settings menu and navigate to the 'Shipping' tab. Choose 'PostNL' as your shipping method and configure the settings you want, such as shipping zones and rates.</p>
 <h3>Setting up the PostNL API</h3>
 <p>To fully integrate PostNL with WooCommerce, you also need to set up the PostNL API. Go to the PostNL website and create an API key. Then enter the API key in the WooCommerce plugin settings. This connects you to your PostNL account and lets you generate labels and sync shipping information.</p>
-<p>After setting up the PostNL API, it's important to <a href="https://shoplinkr.com/koppelingen/woocommerce">test the shipping options</a> before you go live. Place a test order on your website and check whether the PostNL shipping method is applied correctly. That way you can spot and fix any errors before customers start placing their orders.</p>
+<p>After setting up the PostNL API, it's important to <a href="https://shoplinkr.com/en/integrations/woocommerce">test the shipping options</a> before you go live. Place a test order on your website and check whether the PostNL shipping method is applied correctly. That way you can spot and fix any errors before customers start placing their orders.</p>
 <h3>Optimizing the shipping experience</h3>
 <p>To improve the shipping experience for your customers, you can consider adding extra features to the PostNL integration. Think for example of automatically sending tracking information to customers, offering different delivery options, or personalizing the shipping confirmation emails.</p>
 <h2>Common problems and solutions</h2>

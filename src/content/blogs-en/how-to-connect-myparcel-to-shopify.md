@@ -31,7 +31,7 @@ translationKey: "hoe-koppel-ik-myparcel-met-shopify"
 <p>Connecting them is very easy. All you have to do is connect your Shopify and MyParcel accounts to ShopLinkr, and then you can ship all your Shopify orders with MyParcel labels, through ShopLinkr.</p>
 <h2>Common problems and solutions when connecting</h2>
 <h3>Troubleshooting the connection</h3>
-<p>It can happen that you run into problems while <a href="https://shoplinkr.com/blogs/myparcel-koppelen-aan-shoplinkr">connecting MyParcel to Shopify</a>. A common problem is that the connection doesn't work properly or that you can't connect to your MyParcel account. In that case, it is advisable to contact MyParcel's customer service. They can help you solve the problem.</p>
+<p>It can happen that you run into problems while <a href="https://shoplinkr.com/en/blog/connect-myparcel-to-shoplinkr">connecting MyParcel to Shopify</a>. A common problem is that the connection doesn't work properly or that you can't connect to your MyParcel account. In that case, it is advisable to contact MyParcel's customer service. They can help you solve the problem.</p>
 <h3>Tips for a successful connection</h3>
 <p>To make sure the connection between MyParcel and Shopify runs smoothly, I'd be happy to give you a few tips:</p>
 <ul>

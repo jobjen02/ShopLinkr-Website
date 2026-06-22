@@ -1,6 +1,7 @@
 ---
-import { type Locale } from '../../i18n/routes';
+import { type Locale, localizedPath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { localeMeta } from '../../i18n/localeData';
 
 interface Props {
     title: string;
@@ -25,13 +26,13 @@ const {
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 
-const formatter = new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'nl-NL', {
+const formatter = new Intl.DateTimeFormat(localeMeta[locale].bcp47, {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
 });
 const formattedDate = formatter.format(publishedAt);
-const href = locale === 'en' ? `/en/blog/${slug}` : `/blogs/${slug}`;
+const href = `${localizedPath('blog', locale)}/${slug}`;
 ---
 
 <article class="group relative flex flex-col">

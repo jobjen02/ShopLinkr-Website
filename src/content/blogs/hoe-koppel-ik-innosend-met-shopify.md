@@ -7,7 +7,6 @@ isVisible: true
 isBlog: false
 ---
 
-<h1>Hoe Koppel Ik Innosend Met Shopify?</h1>
 <p>In deze handleiding leer je hoe je Innosend kunt <a href="https://shoplinkr.com/blogs/shopify-koppelen-aan-shoplinkr">koppelen met Shopify</a>, zodat je gemakkelijk je online winkel kunt beheren en bestellingen kunt verwerken. We zullen beginnen met een uitleg over wat Innosend is en hoe het werkt, gevolgd door de voordelen van het gebruik ervan voor jouw winkel. Vervolgens zullen we kijken naar de basisfuncties van Innosend en waarom het belangrijk is om het te koppelen aan Shopify. Ten slotte geven we je een stapsgewijze handleiding voor het koppelingsproces, bespreken we veelvoorkomende problemen en oplossingen, en benadrukken we de voordelen van het koppelen van Innosend aan Shopify. Laten we beginnen!</p>
 <h2>Wat is Innosend en hoe werkt het?</h2>
 <p>Voordat we ingaan op het koppelen van Innosend aan Shopify, is het belangrijk om te begrijpen wat Innosend eigenlijk is en hoe het werkt. Innosend is een krachtige verzendoplossing die speciaal is ontworpen voor e-commercebedrijven. Het stelt je in staat om al je verzendingen efficiënt te beheren vanuit één centrale locatie. Met Innosend kun je vervoerders en verkoopkanalen koppelen, zodat je bestellingen van een verkoopkanaal kunt verwerken met de labels van een vervoerder.</p>
@@ -26,7 +25,23 @@ isBlog: false
 <h3>Voorbereiding voor de koppeling: wat je nodig hebt</h3>
 <p>Voordat je Innosend kunt koppelen aan Shopify, zijn er een paar dingen die je nodig hebt. Allereerst heb je een Innosend-account nodig. Als je dit nog niet hebt, kun je je eenvoudig registreren op de Innosend-website. Ten tweede heb je een Shopify-winkel nodig. Als je nog geen winkel hebt, kun je er een aanmaken op de Shopify-website. Zorg er ten slotte voor dat je de juiste machtigingen hebt om wijzigingen aan te brengen in je Shopify-instellingen.</p>
 <h3>Het koppelingsproces: een stap-voor-stap handleiding</h3>
-<p>1. Log in op je Innosend-account en ga naar de instellingenpagina.2. Klik op "Integraties" en zoek naar de Shopify-integratie.3. Klik op de knop "Koppelen" naast Shopify.4. Volg de instructies om je Shopify-winkel te verbinden met Innosend.5. Zodra de koppeling is voltooid, kun je beginnen met het beheren van je verzendingen vanuit Innosend.</p>
+<ol>
+<li>
+<p>Log in op je Innosend-account en ga naar de instellingenpagina.</p>
+</li>
+<li>
+<p>Klik op "Integraties" en zoek naar de Shopify-integratie.</p>
+</li>
+<li>
+<p>Klik op de knop "Koppelen" naast Shopify.</p>
+</li>
+<li>
+<p>Volg de instructies om je Shopify-winkel te verbinden met Innosend.</p>
+</li>
+<li>
+<p>Zodra de koppeling is voltooid, kun je beginnen met het beheren van je verzendingen vanuit Innosend.</p>
+</li>
+</ol>
 <p>En dat is het! Nu is Innosend gekoppeld aan Shopify en kun je jouw verzendingen gemakkelijk beheren en verwerken vanuit één centrale locatie.</p>
 <h2>Veelvoorkomende problemen en oplossingen bij het koppelen van Innosend aan Shopify</h2>
 <p>Hoewel het koppelen van Innosend aan Shopify over het algemeen een eenvoudig proces is, kunnen er soms problemen optreden. Hier zijn enkele veelvoorkomende problemen en hun oplossingen:</p>

@@ -29,7 +29,7 @@ translationKey: "voorraadmutaties"
 <p><strong>Adjustment</strong>: the difference (green for an increase, red for a decrease)</p>
 </li>
 <li>
-<p><a href="/support/locatiebeheer"><strong>Location</strong></a>: which warehouse location the change took place at</p>
+<p><a href="/en/support/location-management"><strong>Location</strong></a>: which warehouse location the change took place at</p>
 </li>
 <li>
 <p><strong>Date</strong>: when the change took place</p>
@@ -51,22 +51,22 @@ translationKey: "voorraadmutaties"
 <p><strong>Order cancelled</strong>: reserved stock released again</p>
 </li>
 <li>
-<p><strong>Return</strong>: stock put back in stock after a <a href="/support/een-retour-verwerken">return</a></p>
+<p><strong>Return</strong>: stock put back in stock after a <a href="/en/support/processing-a-return">return</a></p>
 </li>
 <li>
-<p><strong>Delivery received</strong>: stock added through a <a href="/support/levering-ontvangen-en-verwerken">delivery</a> from a supplier</p>
+<p><strong>Delivery received</strong>: stock added through a <a href="/en/support/receiving-and-processing-a-delivery">delivery</a> from a supplier</p>
 </li>
 <li>
 <p><strong>Delivery reverted</strong>: the receipt of a delivery undone</p>
 </li>
 <li>
-<p><strong>Moved</strong>: stock <a href="/support/voorraad-verplaatsen-tussen-locaties">moved</a> from one location to another</p>
+<p><strong>Moved</strong>: stock <a href="/en/support/move-stock-between-locations">moved</a> from one location to another</p>
 </li>
 <li>
 <p><strong>Correction</strong>: an automatic correction by the system</p>
 </li>
 <li>
-<p><a href="/support/voorraadtellingen"><strong>Stock count</strong></a>: an adjustment after a stock count</p>
+<p><a href="/en/support/stock-counts"><strong>Stock count</strong></a>: an adjustment after a stock count</p>
 </li>
 <li>
 <p><strong>Stock synced</strong>: stock taken over from a sales channel (this happens once, when a product is first retrieved from your sales channel)</p>

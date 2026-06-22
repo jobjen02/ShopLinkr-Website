@@ -8,16 +8,16 @@ isBlog: false
 translationKey: "alles-wat-je-moet-weten-over-voorraadbeheer-in-excel"
 ---
 
-<p>Have you ever wondered how to <a href="https://shoplinkr.com/blogs/het-belang-van-goed-voorraadbeheer-voor-jouw-webshop">manage your inventory more efficiently</a> without investing in expensive software? Then you are in the right place! Inventory management in Excel can be a game changer for your business. Let's dive into the world of Excel together and discover how it can optimise your inventory management.</p>
+<p>Have you ever wondered how to <a href="https://shoplinkr.com/en/blog/the-importance-of-good-inventory-management-for-your-webshop">manage your inventory more efficiently</a> without investing in expensive software? Then you are in the right place! Inventory management in Excel can be a game changer for your business. Let's dive into the world of Excel together and discover how it can optimise your inventory management.</p>
 <h2>Why inventory management in Excel?</h2>
-<p>Before we go into detail, let's first look at why Excel is such a popular choice for inventory management. <a href="https://shoplinkr.com/blogs/waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen">Excel is accessible, flexible</a> and, let's be honest, we've all worked with it at some point. But there's more!</p>
+<p>Before we go into detail, let's first look at why Excel is such a popular choice for inventory management. <a href="https://shoplinkr.com/en/blog/why-is-inventory-management-important-tips-and-benefits">Excel is accessible, flexible</a> and, let's be honest, we've all worked with it at some point. But there's more!</p>
 <h3>The accessibility of Excel</h3>
 <p>Excel is a tool that almost everyone knows. It is available on most computers and requires no extra costs if you already have a Microsoft Office package. This makes it a low-threshold option for starting entrepreneurs or small businesses.</p>
-<p><a href="/voorraadbeheer-excel-template" target="_blank">Download our Excel inventory management template for free now!</a></p>
+<p><a href="/en/inventory-excel-template" target="_blank">Download our Excel inventory management template for free now!</a></p>
 <h3>Flexibility and customisability</h3>
 <p>With Excel you are not tied to a fixed template. You can set up your inventory management system entirely to your own liking. Whether you manage a small warehouse or have a large stock, Excel adapts to your needs.</p>
 <h3>The power of formulas and functions</h3>
-<p><a href="https://shoplinkr.com/blogs/voorraadmanagement">Excel's real power lies</a> in its formulas and functions. From simple sums to complex calculations, Excel can do it all. This allows you to manage and forecast your inventory accurately.</p>
+<p><a href="https://shoplinkr.com/en/blog/inventory-management">Excel's real power lies</a> in its formulas and functions. From simple sums to complex calculations, Excel can do it all. This allows you to manage and forecast your inventory accurately.</p>
 <h2>How do you get started with inventory management in Excel?</h2>
 <p>Okay, you are convinced of the benefits, but how do you get started? No worries, we'll walk through the process step by step.</p>
 <h3>Setting up your Excel file</h3>
@@ -31,7 +31,7 @@ translationKey: "alles-wat-je-moet-weten-over-voorraadbeheer-in-excel"
 <p>Although Excel is great, there are a few pitfalls to watch out for.</p>
 <h3>Errors in formulas</h3>
 <p>A small error in a formula can already have major consequences for your inventory management. So always double-check your formulas and, if possible, have someone else review them.</p>
-<p>To <a href="https://shoplinkr.com/voorraadbeheer-systeem">prevent errors in formulas</a>, it is useful to make use of Excel's formula auditing tools. These tools, such as 'Trace Precedents' and 'Evaluate Formula', help you understand the logic behind complex formulas and spot any errors.</p>
+<p>To <a href="https://shoplinkr.com/en/inventory-management-system">prevent errors in formulas</a>, it is useful to make use of Excel's formula auditing tools. These tools, such as 'Trace Precedents' and 'Evaluate Formula', help you understand the logic behind complex formulas and spot any errors.</p>
 <h3>Data entry errors</h3>
 <p>Human errors when entering data can lead to inaccuracies in your inventory. Set up checks and make use of Excel's validation functions to minimise errors.</p>
 <p>Excel offers several ways to prevent data entry errors. You can set up data validation to ensure that users can only enter specific values, such as a predefined list of product categories. In addition, you can check data for consistency by using conditional formatting to highlight discrepancies.</p>

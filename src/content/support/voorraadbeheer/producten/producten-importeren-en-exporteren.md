@@ -11,7 +11,7 @@ lastUpdated: "2026-05-28"
 
 <p>Met de import- en exportfunctie kun je producten in bulk toevoegen of je productgegevens downloaden.</p>
 <h3>Producten importeren</h3>
-<p>Met de importfunctie kun je producten in bulk bijwerken via een CSV-bestand.</p>
+<p>Met de importfunctie kun je producten in bulk toevoegen of bijwerken via een CSV-bestand.</p>
 <h4>Hoe importeer je producten?</h4>
 <ol>
 <li>
@@ -33,6 +33,6 @@ lastUpdated: "2026-05-28"
 <p>Klik op <strong>Opslaan</strong> om de import te starten.</p>
 </li>
 </ol>
-<p>De import wordt op de achtergrond verwerkt en kan enkele minuten duren, afhankelijk van het aantal producten in je CSV bestand.</p>
+<p>De import wordt op de achtergrond verwerkt en kan enkele minuten duren, afhankelijk van het aantal producten in je CSV-bestand.</p>
 <h3>Producten exporteren</h3>
-<p>Ga naar <strong>Producten</strong> en klik op <strong>Producten exporteren</strong>. Klik op <strong>Exporteren</strong> om de export te starten. Je krijgt een mail zodra de export klaar is, met daarin een CSV bestand met al je producten.</p>
+<p>Ga naar <strong>Producten</strong> en klik op <strong>Producten exporteren</strong>. Klik op <strong>Exporteren</strong> om de export te starten. Je krijgt een mail zodra de export klaar is, met daarin een CSV-bestand met al je producten.</p>

@@ -116,9 +116,6 @@ lastUpdated: "2026-05-28"
 </tbody>
 </table>
 </figure>
-<h3>
-<br>
-</h3>
 <h3>Speciale situaties</h3>
 <h4>Bestelling uitstellen</h4>
 <p>Met de <a href="/support/bestelling-uitstellen">uitstelfunctie</a> parkeer je een bestelling tijdelijk, zodat deze niet meer tussen je openstaande bestellingen staat. Op die manier bevat je overzicht met open bestellingen alleen de bestellingen die je direct moet verwerken.</p>

@@ -3,14 +3,15 @@ import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 import BlogCard from '../template/BlogCard.astro';
 import CtaBanner from '../sections/CtaBanner.astro';
-import { type Locale, localizeHref } from '../../i18n/routes';
+import { type Locale, localizeHref, localizedPath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { collectionName, localeMeta } from '../../i18n/localeData';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const p = t.pages.blogIndex;
 
-const blogs = await getCollection(locale === 'en' ? 'blogsEn' : 'blogs');
+const blogs = await getCollection(collectionName('blogs', locale));
 const sorted = blogs
     .filter((b) => b.data.isVisible && b.data.isBlog)
     .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
@@ -18,21 +19,21 @@ const sorted = blogs
 const [featured, ...rest] = sorted;
 
 const featuredDate = featured
-    ? new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'nl-NL', {
+    ? new Intl.DateTimeFormat(localeMeta[locale].bcp47, {
         day: 'numeric',
         month: 'long',
         year: 'numeric',
     }).format(featured.data.publishedAt)
     : null;
 
-const blogBase = locale === 'en' ? '/en/blog' : '/blogs';
+const blogBase = localizedPath('blog', locale);
 
 const jsonLd = {
     '@type': 'Blog',
     name: 'ShopLinkr Blog',
     description: p.jsonLdDescription,
     url: `https://shoplinkr.com${localizeHref('/blogs', locale)}`,
-    inLanguage: locale === 'en' ? 'en-US' : 'nl-NL',
+    inLanguage: localeMeta[locale].bcp47,
     publisher: {
         '@type': 'Organization',
         name: 'ShopLinkr',

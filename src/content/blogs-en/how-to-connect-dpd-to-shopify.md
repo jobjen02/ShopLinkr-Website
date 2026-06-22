@@ -9,14 +9,14 @@ translationKey: "hoe-koppel-ik-dpd-met-shopify"
 ---
 
 <h1>How Do I Connect DPD to Shopify?</h1>
-<p>Want to optimise your shipping process and boost customer satisfaction? Then <a href="https://shoplinkr.com/blogs/dpd-koppelen-aan-shoplinkr">connecting DPD to Shopify</a> is the ideal solution for you. In this article we explain step by step how to do this. But before we start, let's first get acquainted with DPD and Shopify.</p>
+<p>Want to optimise your shipping process and boost customer satisfaction? Then <a href="https://shoplinkr.com/en/blog/connecting-dpd-to-shoplinkr">connecting DPD to Shopify</a> is the ideal solution for you. In this article we explain step by step how to do this. But before we start, let's first get acquainted with DPD and Shopify.</p>
 <h2>What are DPD and Shopify?</h2>
 <p>You probably already know that DPD is a well-known carrier. But what exactly does connecting DPD to Shopify involve? Before we dive into the details, we'll briefly introduce both platforms.</p>
 <h3>A short introduction to DPD</h3>
-<p>DPD is a <a href="https://shoplinkr.com/koppelingen/dpd">leading carrier in Europe</a>. They offer reliable and fast shipping services, both domestically and internationally. DPD is known for its extensive network of couriers and its advanced tracking system.</p>
+<p>DPD is a <a href="https://shoplinkr.com/en/integrations/dpd">leading carrier in Europe</a>. They offer reliable and fast shipping services, both domestically and internationally. DPD is known for its extensive network of couriers and its advanced tracking system.</p>
 <p>DPD was founded in 1976 and has built a strong reputation in the logistics sector ever since. With more than 68,000 employees and a fleet of 32,000 vehicles, DPD is able to deliver millions of parcels per day. The company strives to provide sustainable and efficient delivery solutions, with a focus on customer satisfaction and innovation.</p>
 <h3>A short introduction to Shopify</h3>
-<p>Shopify is a popular e-commerce platform that lets you <a href="https://shoplinkr.com/koppelingen/shopify">create and manage your own online store</a>. It enables you to sell products, manage customers and receive payments. With Shopify you can easily set up a professional webshop without any technical knowledge.</p>
+<p>Shopify is a popular e-commerce platform that lets you <a href="https://shoplinkr.com/en/integrations/shopify">create and manage your own online store</a>. It enables you to sell products, manage customers and receive payments. With Shopify you can easily set up a professional webshop without any technical knowledge.</p>
 <p>Shopify was founded in 2006 and has since helped millions of entrepreneurs build their online business. The platform offers a wide range of features, including customisable themes, marketing tools and integrations with various shipping services such as DPD. With Shopify, sellers can easily present and sell their products while benefiting from the user-friendly interface and extensive support.</p>
 <h2>The benefits of connecting DPD to Shopify</h2>
 <p>Why would you want to connect DPD to Shopify? Here are a few benefits you can take advantage of:</p>

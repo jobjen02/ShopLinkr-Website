@@ -6,12 +6,13 @@ import CtaBanner from '../sections/CtaBanner.astro';
 import { breadcrumbs } from '../../utils/seo';
 import { type Locale, localizeHref } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { collectionName } from '../../i18n/localeData';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const p = t.pages.integrationsIndex;
 
-const all = await getCollection(locale === 'en' ? 'integrationsEn' : 'integrations');
+const all = await getCollection(collectionName('integrations', locale));
 
 const webshops = all
     .filter((i) => i.data.category === 'webshop')

@@ -15,8 +15,5 @@ isBlog: true
 <p>Op de overzichtspagina van je producten zie je nu in één oogopslag de toegevoegde tags. Dit geeft je direct inzicht in de kenmerken van elk product en helpt je bij het snel identificeren van specifieke items. Of je nu op zoek bent naar producten met een bepaalde tag of een snelle analyse wilt maken van je assortiment, de tags bieden een visuele en overzichtelijke weergave van je producten.</p>
 <h2>Filteren op tags</h2>
 <p>Met de "Product Tags" feature kun je ook producten filteren op basis van de toegevoegde tags. Hierdoor kun je snel specifieke productcategorieën selecteren en bekijken, wat vooral handig is bij het uitvoeren van gerichte analyses of het beheren van specifieke productgroepen. Het filteren op tags stelt je in staat om snel de juiste informatie te vinden en georganiseerd te blijven, zelfs als je een groot aantal producten hebt.</p>
-<h2>
-<br>
-</h2>
 <h2>Maak je tags aan in ShopLinkr &amp; probeer 14 dagen gratis!</h2>
 <p>Ontdek vandaag nog de kracht van "Product Tags" in ShopLinkr. Meld je aan voor een gratis proefperiode en ervaar de voordelen van georganiseerd productbeheer.</p>

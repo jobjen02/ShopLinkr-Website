@@ -2,18 +2,17 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import FaqList from '../template/FaqList.astro';
 import CtaBanner from '../sections/CtaBanner.astro';
-import { faqsByPage, faqCategories as faqCategoriesNl } from '../../data/faqs';
-import { faqsByPageEn, faqCategories as faqCategoriesEn } from '../../data/faqs-en';
 import { breadcrumbs } from '../../utils/seo';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { faqsByPageFor, faqCategoriesFor } from '../../i18n/localeData';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const p = t.pages.faq;
 
-const faqsByPageLocale = locale === 'en' ? faqsByPageEn : faqsByPage;
-const faqCategories = locale === 'en' ? faqCategoriesEn : faqCategoriesNl;
+const faqsByPageLocale = faqsByPageFor(locale);
+const faqCategories = faqCategoriesFor(locale);
 
 const allFaqs = faqCategories.flatMap((cat) =>
     cat.pages.flatMap((page) => faqsByPageLocale[page] ?? []),
@@ -36,8 +35,6 @@ const jsonLd = [
         })),
     },
 ];
-
-export const prerender = false;
 ---
 
 <PageLayout

@@ -28,7 +28,7 @@ lastUpdated: "2026-05-28"
 <p>Om de software te downloaden:</p>
 <ol>
 <li>
-<p>Log in op <a href="https://www.printnode.com">printnode.com</a> met de inloggegevens die je per e-mail hebt ontvangen.</p>
+<p>Log in op <a href="https://www.printnode.com" target="_blank">printnode.com</a> met de inloggegevens die je per e-mail hebt ontvangen.</p>
 </li>
 <li>
 <p>Download daar de ShopLinkr AutoPrint-versie.</p>

@@ -10,7 +10,7 @@ lastUpdated: "2026-05-28"
 translationKey: "een-levering-aanmaken"
 ---
 
-<p>Deliveries let you keep track of which products you expect from a <a href="/support/leveranciers-beheren">supplier</a> and when they will arrive. As soon as the delivery arrives, you can receive the products and your stock is updated automatically. Want ShopLinkr to work out what and how much you need to reorder? Take a look at the <a href="/support/inkoopadvies">purchasing advice</a> first, which turns your advice into deliveries in a single click.</p>
+<p>Deliveries let you keep track of which products you expect from a <a href="/en/support/managing-suppliers">supplier</a> and when they will arrive. As soon as the delivery arrives, you can receive the products and your stock is updated automatically. Want ShopLinkr to work out what and how much you need to reorder? Take a look at the <a href="/en/support/purchase-advice">purchase advice</a> first, which turns your advice into deliveries in a single click.</p>
 <h3>Creating a delivery</h3>
 <ol>
 <li>
@@ -84,4 +84,4 @@ translationKey: "een-levering-aanmaken"
 </tbody>
 </table>
 </figure>
-<p>See <a href="/support/levering-ontvangen-en-verwerken">Receiving and processing a delivery</a> for how to receive products and update your stock.</p>
+<p>See <a href="/en/support/receiving-and-processing-a-delivery">Receiving and processing a delivery</a> for how to receive products and update your stock.</p>

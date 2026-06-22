@@ -35,7 +35,7 @@ translationKey: "bestelling-annuleren"
 <h3>Good to know</h3>
 <ul>
 <li>
-<p>Cancelling is currently only available for orders from Bol.</p>
+<p>Cancelling is currently only available for orders from bol.</p>
 </li>
 <li>
 <p>You can only cancel orders with the status Open, Picking, Picked, Deferred or Backorder.</p>

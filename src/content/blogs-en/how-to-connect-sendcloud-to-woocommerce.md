@@ -8,9 +8,9 @@ isBlog: false
 translationKey: "hoe-koppel-ik-sendcloud-met-woocommerce"
 ---
 
-<p>In this guide you will learn how to connect Sendcloud to WooCommerce, so you can streamline your shipping processes and improve your customer service. Before we begin, let's first take a look at what Sendcloud actually is and what benefits it offers. After that we will turn to WooCommerce and explain why <a href="https://shoplinkr.com/blogs/sendcloud-koppelen-aan-shoplinkr">integration between Sendcloud and WooCommerce</a> is essential. Next, we will walk you step by step through the process of connecting Sendcloud to WooCommerce. Finally, we will discuss how to manage your Sendcloud and WooCommerce integration.</p>
+<p>In this guide you will learn how to connect Sendcloud to WooCommerce, so you can streamline your shipping processes and improve your customer service. Before we begin, let's first take a look at what Sendcloud actually is and what benefits it offers. After that we will turn to WooCommerce and explain why <a href="https://shoplinkr.com/en/blog/connect-sendcloud-to-shoplinkr">integration between Sendcloud and WooCommerce</a> is essential. Next, we will walk you step by step through the process of connecting Sendcloud to WooCommerce. Finally, we will discuss how to manage your Sendcloud and WooCommerce integration.</p>
 <h2>What is Sendcloud?</h2>
-<p>Sendcloud is a powerful shipping platform designed specifically to <a href="https://shoplinkr.com/koppelingen/sendcloud">optimise your shipping processes</a>. With Sendcloud you can connect carriers and sales channels to a single central platform. This lets you process orders from various sales channels efficiently using the labels of your chosen carrier. The result? You save time, money and effort in your shipping process.</p>
+<p>Sendcloud is a powerful shipping platform designed specifically to <a href="https://shoplinkr.com/en/integrations/sendcloud">optimise your shipping processes</a>. With Sendcloud you can connect carriers and sales channels to a single central platform. This lets you process orders from various sales channels efficiently using the labels of your chosen carrier. The result? You save time, money and effort in your shipping process.</p>
 <h3>The benefits of Sendcloud</h3>
 <p>Using Sendcloud brings several benefits. First, Sendcloud offers an automated shipping solution, which makes the shipping process simpler and faster. In addition, with Sendcloud you can make use of the shipping options of various carriers, so you can always choose the best shipping method for your specific needs. On top of that, Sendcloud provides extensive tracking capabilities, so both you and your customers always know the status of a shipment. Finally, Sendcloud helps you increase customer satisfaction by offering a seamless and reliable shipping experience.</p>
 <h3>The features of Sendcloud</h3>
@@ -24,7 +24,7 @@ translationKey: "hoe-koppel-ik-sendcloud-met-woocommerce"
 <h2>The need for integration between Sendcloud and WooCommerce</h2>
 <p>Now that you are familiar with both Sendcloud and WooCommerce, it is important to understand why integration between these two platforms is essential. Connecting Sendcloud to WooCommerce offers several benefits that help you improve your shipping processes and optimise your customer service.</p>
 <h3>Efficiency in shipping processes</h3>
-<p>By integrating Sendcloud with WooCommerce, you can <a href="https://shoplinkr.com/blogs/woocommerce-koppelen-aan-shoplinkr">streamline and automate your shipping processes</a>. This means you have to spend less time and effort manually processing orders and generating shipping labels. Instead, you can make use of Sendcloud's automated shipping solutions, so your shipments are handled faster and more efficiently.</p>
+<p>By integrating Sendcloud with WooCommerce, you can <a href="https://shoplinkr.com/en/blog/connect-woocommerce-to-shoplinkr">streamline and automate your shipping processes</a>. This means you have to spend less time and effort manually processing orders and generating shipping labels. Instead, you can make use of Sendcloud's automated shipping solutions, so your shipments are handled faster and more efficiently.</p>
 <h3>Improved customer service</h3>
 <p>Integrating Sendcloud with WooCommerce lets you offer your customers a seamless and reliable shipping experience. With Sendcloud you can provide extensive tracking information, so your customers always know the status of their shipment. In addition, with Sendcloud you can handle returns effortlessly, which increases customer satisfaction and promotes customer loyalty.</p>
 <h2>Step-by-step guide to connecting Sendcloud to WooCommerce</h2>
@@ -32,9 +32,45 @@ translationKey: "hoe-koppel-ik-sendcloud-met-woocommerce"
 <h3>Preparing for the integration</h3>
 <p>Before you can connect Sendcloud to WooCommerce, you need to make sure you have the required details. Make sure you have an active Sendcloud account and that you have generated the required API keys. In addition, you need a working WooCommerce store with the Sendcloud for WooCommerce plugin installed and activated.</p>
 <h3>The integration process</h3>
-<p>1. Log in to your Sendcloud account and navigate to the settings.2. Click "Shipping channels" and select "WooCommerce" as your sales channel.3. Follow the on-screen instructions to connect your WooCommerce store to Sendcloud.4. Enter your API keys and click "Save".5. Go to your WooCommerce dashboard and find the Sendcloud for WooCommerce plugin.6. Install the plugin and activate it.7. Configure the plugin according to your preferences and save the changes.8. Congratulations! You have successfully connected Sendcloud to WooCommerce. You can now enjoy the benefits of automated shipping and improved customer service.</p>
+<ol>
+<li>
+<p>Log in to your Sendcloud account and navigate to the settings.</p>
+</li>
+<li>
+<p>Click "Shipping channels" and select "WooCommerce" as your sales channel.</p>
+</li>
+<li>
+<p>Follow the on-screen instructions to connect your WooCommerce store to Sendcloud.</p>
+</li>
+<li>
+<p>Enter your API keys and click "Save".</p>
+</li>
+<li>
+<p>Go to your WooCommerce dashboard and find the Sendcloud for WooCommerce plugin.</p>
+</li>
+<li>
+<p>Install the plugin and activate it.</p>
+</li>
+<li>
+<p>Configure the plugin according to your preferences and save the changes.</p>
+</li>
+<li>
+<p>Congratulations! You have successfully connected Sendcloud to WooCommerce. You can now enjoy the benefits of automated shipping and improved customer service.</p>
+</li>
+</ol>
 <h3>Common problems and their solutions</h3>
-<p>While connecting Sendcloud to WooCommerce, a few problems may arise. Here are some common problems and their solutions:- Problem: API keys do not work.  Solution: Check that you have entered the correct API keys and that they are still valid. If the problem persists, contact Sendcloud's customer service.- Problem: Orders are not synchronised correctly.  Solution: Check that the Sendcloud for WooCommerce plugin is installed and activated correctly. Also make sure you have configured the correct settings in the plugin.- Problem: Tracking information is not displayed.  Solution: Check that you have enabled tracking information in the settings of the Sendcloud for WooCommerce plugin. If you have and the tracking information still is not displayed, contact Sendcloud's customer service for further assistance.</p>
+<p>While connecting Sendcloud to WooCommerce, a few problems may arise. Here are some common problems and their solutions:</p>
+<ul>
+<li>
+<p>Problem: API keys do not work. Solution: Check that you have entered the correct API keys and that they are still valid. If the problem persists, contact Sendcloud's customer service.</p>
+</li>
+<li>
+<p>Problem: Orders are not synchronised correctly. Solution: Check that the Sendcloud for WooCommerce plugin is installed and activated correctly. Also make sure you have configured the correct settings in the plugin.</p>
+</li>
+<li>
+<p>Problem: Tracking information is not displayed. Solution: Check that you have enabled tracking information in the settings of the Sendcloud for WooCommerce plugin. If you have and the tracking information still is not displayed, contact Sendcloud's customer service for further assistance.</p>
+</li>
+</ul>
 <h2>Managing your Sendcloud and WooCommerce integration</h2>
 <p>Now that you have successfully connected Sendcloud to WooCommerce, it is important to manage your integration well so you can get the most out of all the features and benefits this combination offers. Here are some tips to help you get started:</p>
 <h3>Keeping track of shipments</h3>

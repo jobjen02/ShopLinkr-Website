@@ -60,4 +60,4 @@ translationKey: "bakken-voor-picken"
 <p>When packing, you scan the bin and the right order opens automatically.</p>
 </li>
 </ol>
-<p>See <a href="/support/wat-zijn-picklijsten">Working with pick lists</a> for more information about the pick process with and without bins.</p>
+<p>See <a href="/en/support/working-with-pick-lists">Working with pick lists</a> for more information about the pick process with and without bins.</p>

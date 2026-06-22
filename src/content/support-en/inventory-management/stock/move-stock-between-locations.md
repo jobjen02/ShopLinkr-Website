@@ -35,7 +35,7 @@ translationKey: "voorraad-verplaatsen-tussen-locaties"
 <p>Click <strong>Update</strong>.</p>
 </li>
 </ol>
-<p>The stock is moved immediately. You can see the movement back in the product's stock mutations.</p>
+<p>The stock is moved immediately. You can see the movement in the product's <a href="/en/support/stock-movements">stock movements</a>.</p>
 <img alt="" src="/images/support/voorraad-verplaatsen-tussen-locaties/7kzr2WeOKcs5hm3fnnfHILhMzQ.png">
 <h3>Good to know</h3>
 <ul>

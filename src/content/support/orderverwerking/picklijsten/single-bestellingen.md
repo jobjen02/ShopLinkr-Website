@@ -1,6 +1,6 @@
 ---
 title: "Single bestellingen"
-summary: "Verwerk bestellingen met maar een type product extra snel."
+summary: "Verwerk bestellingen met maar één type product extra snel."
 category: "orderverwerking"
 categoryLabel: "Orderverwerking"
 subcategory: "picklijsten"

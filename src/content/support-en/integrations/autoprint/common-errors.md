@@ -46,4 +46,4 @@ translationKey: "veelvoorkomende-fouten"
 <p>Check the label roll. Make sure the label roll is positioned correctly and that there is no dirt or obstruction inside the printer.</p>
 </li>
 </ul>
-<p>Still need help? Then <a href="/contact">contact</a> us.</p>
+<p>Still need help? Then <a href="/en/contact">contact</a> us.</p>

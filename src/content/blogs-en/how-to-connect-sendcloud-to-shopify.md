@@ -8,14 +8,14 @@ isBlog: false
 translationKey: "hoe-koppel-ik-sendcloud-met-shopify"
 ---
 
-<p>In this guide I'll walk you through, step by step, how to connect Sendcloud to Shopify so you can benefit from <a href="https://shoplinkr.com/blogs/sendcloud-koppelen-aan-shoplinkr">efficient shipping and improved customer service</a>. But first, let's look at what exactly Sendcloud and Shopify are.</p>
+<p>In this guide I'll walk you through, step by step, how to connect Sendcloud to Shopify so you can benefit from <a href="https://shoplinkr.com/en/blog/connect-sendcloud-to-shoplinkr">efficient shipping and improved customer service</a>. But first, let's look at what exactly Sendcloud and Shopify are.</p>
 <h2>What are Sendcloud and Shopify?</h2>
 <p>Before you connect Sendcloud to Shopify, it's important to understand what both platforms involve.</p>
 <h3>A short introduction to Sendcloud</h3>
-<p>Sendcloud is a <a href="https://shoplinkr.com/koppelingen/sendcloud">shipping platform designed specifically</a> to help e-commerce businesses optimise their shipping process. With Sendcloud you can connect various carriers, such as PostNL, DHL and UPS, to your webshop. This lets you process orders effortlessly and generate labels, saving you valuable time.</p>
+<p>Sendcloud is a <a href="https://shoplinkr.com/en/integrations/sendcloud">shipping platform designed specifically</a> to help e-commerce businesses optimise their shipping process. With Sendcloud you can connect various carriers, such as PostNL, DHL and UPS, to your webshop. This lets you process orders effortlessly and generate labels, saving you valuable time.</p>
 <p>Besides processing orders efficiently, Sendcloud also offers handy features such as track &amp; trace, which lets both you and your customers follow shipments. On top of that, the platform helps automate returns, so the whole logistics process runs more smoothly.</p>
 <h3>A short introduction to Shopify</h3>
-<p>Shopify is a powerful e-commerce platform that makes building and managing online stores simple. With Shopify you can handle everything, from designing your website to managing your inventory and processing payments. <a href="https://shoplinkr.com/blogs/shopify-koppelen-aan-shoplinkr">Integrating Sendcloud with Shopify</a> ensures your shipping process runs seamlessly.</p>
+<p>Shopify is a powerful e-commerce platform that makes building and managing online stores simple. With Shopify you can handle everything, from designing your website to managing your inventory and processing payments. <a href="https://shoplinkr.com/en/blog/connect-shopify-to-shoplinkr">Integrating Sendcloud with Shopify</a> ensures your shipping process runs seamlessly.</p>
 <p>What's more, Shopify offers a wide range of themes and apps with which you can extend the functionality of your webshop. Think of marketing tools, reporting features and customer service systems that can help you grow your online business. By connecting Sendcloud to Shopify, you create an integrated solution that optimises both the front end and the back end of your e-commerce operations.</p>
 <h2>The benefits of connecting Sendcloud to Shopify</h2>
 <p>Now that you're familiar with Sendcloud and Shopify, it's time to discover the benefits that connecting these two platforms offers.</p>

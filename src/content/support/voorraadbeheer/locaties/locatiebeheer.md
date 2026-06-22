@@ -9,7 +9,7 @@ order: 53
 lastUpdated: "2026-05-28"
 ---
 
-<p>Met locatiebeheer kun je locaties aanmaken waar je producten in je magazijn liggen. Dit helpt je om sneller en efficienter te picken en zorgt voor een duidelijk overzicht van je voorraad.</p>
+<p>Met locatiebeheer kun je locaties aanmaken waar je producten in je magazijn liggen. Dit helpt je om sneller en efficiënter te picken en zorgt voor een duidelijk overzicht van je voorraad.</p>
 <h3>Wat zijn magazijnlocaties?</h3>
 <p>Een magazijnlocatie is een fysieke plek in jouw magazijn waar een product ligt opgeslagen. Denk bijvoorbeeld aan:</p>
 <ul>
@@ -39,8 +39,8 @@ lastUpdated: "2026-05-28"
 <p>Klik op <strong>Opslaan</strong>.</p>
 </li>
 </ol>
-<h3>Hierarchische locaties</h3>
-<p>Je kunt een hierarchie van locaties aanmaken. Dat betekent dat je bijvoorbeeld eerst een gangpad aanmaakt, daarbinnen stellingen en daarbinnen weer bakken of planken. Deze hierarchie maakt het eenvoudig om je magazijn logisch in te delen, zeker als je veel producten hebt.</p>
+<h3>Hiërarchische locaties</h3>
+<p>Je kunt een hiërarchie van locaties aanmaken. Dat betekent dat je bijvoorbeeld eerst een gangpad aanmaakt, daarbinnen stellingen en daarbinnen weer bakken of planken. Deze hiërarchie maakt het eenvoudig om je magazijn logisch in te delen, zeker als je veel producten hebt.</p>
 <p>Voorbeeldstructuur:</p>
 <pre><code>Gangpad A
 ├── Stelling 1
@@ -87,4 +87,4 @@ lastUpdated: "2026-05-28"
 </ul>
 <p>Je kunt meerdere producten op dezelfde locatie zetten, of een product op meerdere locaties (bijvoorbeeld als je veel voorraad hebt en het op verschillende plekken opslaat).</p>
 <h3>Waar zie je de locaties terug?</h3>
-<p>Op het product overzicht zie je precies op welke locaties een product ligt en hoeveel stuks er per locatie beschikbaar zijn. Ook bij het <a href="/support/wat-zijn-picklijsten">picken</a> wordt de locatie getoond, zodat de magazijnmedewerker direct weet waar het product te vinden is.</p>
+<p>Op het productoverzicht zie je precies op welke locaties een product ligt en hoeveel stuks er per locatie beschikbaar zijn. Ook bij het <a href="/support/wat-zijn-picklijsten">picken</a> wordt de locatie getoond, zodat de magazijnmedewerker direct weet waar het product te vinden is.</p>

@@ -10,7 +10,7 @@ lastUpdated: "2026-05-28"
 translationKey: "bestellingen-batches"
 ---
 
-<p>When you <a href="/support/bestellingen-verwerken">process</a> multiple orders at once, a batch is created automatically. Under <strong>Orders &gt; Batches</strong> you can find all your batches and, for each batch, download the shipping labels and pick & pack list.</p>
+<p>When you <a href="/en/support/processing-orders">process</a> multiple orders at once, a batch is created automatically. Under <strong>Orders &gt; Batches</strong> you can find all your batches and, for each batch, download the shipping labels and pick &amp; pack list.</p>
 <h3>How do batches work?</h3>
 <p>A batch is a group of orders that you processed in one go. For each batch you can see which orders it contains, what the status is, and you can download documents. As soon as all orders have been processed successfully, the batch gets the status <strong>Completed</strong>.</p>
 <h3>Statuses</h3>
@@ -38,7 +38,7 @@ translationKey: "bestellingen-batches"
 <p><strong>Completed</strong></p>
 </td>
 <td>
-<p>All orders have been processed successfully. You can now download the pick & pack list and shipping labels all at once.</p>
+<p>All orders have been processed successfully. You can now download the pick &amp; pack list and shipping labels all at once.</p>
 </td>
 </tr>
 <tr>

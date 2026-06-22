@@ -21,4 +21,4 @@ isBlog: true
 <h2>Voorraad altijd in sync</h2>
 <p>Elke verkoop, retour of inkomende levering werkt je voorraad in ShopLinkr bij, en die voorraad sync je realtime door naar bol en je andere kanalen. Zo voorkom je oververkoop.</p>
 <h2>Koppel je bol winkel aan ShopLinkr &amp; probeer 14 dagen gratis</h2>
-<p>Klaar om je bol winkel naadloos te laten meedraaien in je magazijn proces? <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en zie zelf het verschil.</p>
+<p>Klaar om je bol winkel naadloos te laten meedraaien in je magazijnproces? <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en zie zelf het verschil.</p>

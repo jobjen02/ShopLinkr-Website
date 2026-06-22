@@ -16,7 +16,7 @@ translationKey: "api-overzicht"
 <h3>Getting started</h3>
 <ol>
 <li>
-<p>Create an <a href="/support/api-token-aanmaken">API token</a> with the right permissions.</p>
+<p>Create an <a href="/en/support/create-api-token">API token</a> with the right permissions.</p>
 </li>
 <li>
 <p>View the interactive documentation <a href="https://api.shoplinkr.com/api/docs" target="_blank">here</a>.</p>

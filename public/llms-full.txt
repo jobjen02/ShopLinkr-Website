@@ -39,7 +39,7 @@ Voor kleine en middelgrote Nederlandse webshops die op meerdere kanalen verkopen
 
 ## Integraties
 
-Verkoopkanalen: Bol, Shopify, WooCommerce, Kaufland. ShopLinkr synchroniseert voorraad en importeert orders van deze kanalen.
+Verkoopkanalen: Bol, Shopify, WooCommerce, Lightspeed, Kaufland. ShopLinkr synchroniseert voorraad en importeert orders van deze kanalen.
 
 Vervoerders: PostNL, DPD, MyParcel, Sendcloud, GLS en meer, voor het printen van verzendlabels.
 

@@ -137,7 +137,7 @@ translationKey: "product-prestaties"
 </tr>
 <tr>
 <td>
-<p><a href="/support/tags-beheren"><strong>Tags</strong></a></p>
+<p><a href="/en/support/managing-tags"><strong>Tags</strong></a></p>
 </td>
 <td>
 <p>Filter on products with specific tags</p>
@@ -156,7 +156,7 @@ translationKey: "product-prestaties"
 <p><strong>Only with purchase price</strong></p>
 </td>
 <td>
-<p>Show only products that have a <a href="/support/voorraadwaarde">purchase price</a> set</p>
+<p>Show only products that have a <a href="/en/support/inventory-value">purchase price</a> set</p>
 </td>
 </tr>
 </tbody>

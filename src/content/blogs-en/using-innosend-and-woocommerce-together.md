@@ -10,7 +10,7 @@ translationKey: "innosend-en-woocommerce-samen-gebruiken"
 
 <p>Innosend and WooCommerce are two powerful tools that you can combine to take your e-commerce business to the next level. By using Innosend and WooCommerce together, you can benefit from the unique features and advantages that both platforms offer. In this article we take a closer look at what exactly Innosend and WooCommerce are, how they work and why integration between these two platforms is so important for your business.</p>
 <h2>What is Innosend?</h2>
-<p>Innosend is an innovative shipping platform that lets you manage your logistics processes with ease. With Innosend you can <a href="https://shoplinkr.com/blogs/woocommerce-koppelen-aan-shoplinkr">connect carriers and sales channels to ShopLinkr</a>, a handy tool that lets you centralise and automate all of your shipping activities. This helps you work more efficiently and save both time and money.</p>
+<p>Innosend is an innovative shipping platform that lets you manage your logistics processes with ease. With Innosend you can <a href="https://shoplinkr.com/en/blog/connect-woocommerce-to-shoplinkr">connect carriers and sales channels to ShopLinkr</a>, a handy tool that lets you centralise and automate all of your shipping activities. This helps you work more efficiently and save both time and money.</p>
 <h3>The features and benefits of Innosend</h3>
 <p>Innosend offers a wide range of features and benefits that can help you streamline your shipping processes. One of the most important advantages of Innosend is the ability to integrate different carriers and sales channels with one another. This means you can process orders from a sales channel using a carrier's labels, which makes your shipping process automated and more efficient.</p>
 <p>In addition, Innosend also offers features such as generating shipping labels, tracking shipments and managing returns. These features help you track and manage your shipping processes in real time, giving you control over your logistics activities.</p>
@@ -18,7 +18,7 @@ translationKey: "innosend-en-woocommerce-samen-gebruiken"
 <p>To use Innosend, you first need to connect your carriers and sales channels to ShopLinkr. This process is fairly simple and is explained in detail in the Innosend documentation. Once you have connected your carriers and sales channels, you can receive and process orders using the labels of the selected carriers.</p>
 <p>Innosend integrates seamlessly with WooCommerce, making it easy to automate your shipping processes and improve the efficiency of your e-commerce business.</p>
 <h2>What is WooCommerce?</h2>
-<p><a href="https://shoplinkr.com/koppelingen/woocommerce">WooCommerce is a popular e-commerce plugin</a> for WordPress that lets you easily create and manage an online store. With WooCommerce you can add products, set prices, accept payments and much more. It is a powerful platform used by millions of webshops around the world.</p>
+<p><a href="https://shoplinkr.com/en/integrations/woocommerce">WooCommerce is a popular e-commerce plugin</a> for WordPress that lets you easily create and manage an online store. With WooCommerce you can add products, set prices, accept payments and much more. It is a powerful platform used by millions of webshops around the world.</p>
 <h3>The features and benefits of WooCommerce</h3>
 <p>WooCommerce offers a wide range of features that can help you set up and manage a successful online store. Some of the most important features are the ability to add unlimited products, integrate various payment gateways and generate detailed sales reports.</p>
 <p>In addition, WooCommerce is also highly customisable, with thousands of themes and plugins that you can use to give your store a unique look and functionality. This allows you to fully tailor your store to your business needs and brand identity.</p>
@@ -42,7 +42,7 @@ translationKey: "innosend-en-woocommerce-samen-gebruiken"
 <p>After installing the Innosend plugin, you can activate the plugin and enter the required API keys and access codes. Simply follow the plugin's instructions to complete the configuration.</p>
 <p>Once you have configured the Innosend plugin, you can integrate it with WooCommerce by going to the WooCommerce dashboard and navigating to "Settings". Click on "Shipping" and select Innosend as the shipping method.</p>
 <p>Enter the necessary settings, such as shipping methods, carriers and sales channels. Make sure you enter all required information correctly.</p>
-<p>After you have completed the integration, you can <a href="https://shoplinkr.com/blogs/hoe-koppel-je-bol-com-met-jouw-webshop">automate your shipping processes</a> and benefit from the advantages of both Innosend and WooCommerce.</p>
+<p>After you have completed the integration, you can <a href="https://shoplinkr.com/en/blog/how-to-connect-bol-com-to-your-webshop">automate your shipping processes</a> and benefit from the advantages of both Innosend and WooCommerce.</p>
 <h2>Frequently asked questions about integrating Innosend and WooCommerce</h2>
 <h3>Troubleshooting and support</h3>
 <p>1. What should I do if the integration is not working?</p>

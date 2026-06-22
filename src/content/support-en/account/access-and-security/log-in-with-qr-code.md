@@ -10,7 +10,7 @@ lastUpdated: "2026-05-28"
 translationKey: "inloggen-met-qr-code"
 ---
 
-<p>With QR login, employees can log in quickly by scanning a personal QR code and entering a PIN. This is ideal for warehouse staff who need to switch between accounts fast, for example at a shared <a href="/support/inpakstations-instellen">packing station</a>.</p>
+<p>With QR login, employees can log in quickly by scanning a personal QR code and entering a PIN. This is ideal for warehouse staff who need to switch between accounts fast, for example at a shared <a href="/en/support/setting-up-packing-stations">packing station</a>.</p>
 <h3>Enabling QR login</h3>
 <ol>
 <li>
@@ -41,7 +41,7 @@ translationKey: "inloggen-met-qr-code"
 <p>Enter your 4-digit PIN.</p>
 </li>
 <li>
-<p>Have you enabled <a href="/support/tweefactorauthenticatie-instellen">2FA</a>? Then you will also be asked for your 6-digit code.</p>
+<p>Have you enabled <a href="/en/support/set-up-two-factor-authentication">2FA</a>? Then you will also be asked for your 6-digit code.</p>
 </li>
 <li>
 <p>You are logged in!</p>

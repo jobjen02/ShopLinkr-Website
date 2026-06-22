@@ -75,7 +75,7 @@ export const faqsByPage: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Werkt AutoPrint met elke printer?",
-            answer: "AutoPrint werkt met vrijwel elke printer en herkent je apparaten automatisch zodra je de koppeling installeert. Je koppelt elke printer aan een inpakstation, zodat de labels altijd op de juiste plek worden geprint. Voor Zebra-printers raden we de ZPL modus aan.",
+            answer: "AutoPrint werkt met vrijwel elke printer en herkent je apparaten automatisch zodra je de koppeling installeert. Je koppelt elke printer aan een inpakstation, zodat de labels altijd op de juiste plek worden geprint. Voor Zebra-printers raden we de ZPL-modus aan.",
         },
         {
             question: "Wat zijn bakken en wanneer is het de moeite waard om ermee te werken?",
@@ -83,7 +83,7 @@ export const faqsByPage: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Welke hardware heb ik nodig om te kunnen picken?",
-            answer: "Een handscanner. Je ziet per stap welk product je moet pakken en waar het ligt in je magazijn, en na elke succesvolle scan verschijnt het volgende product. Een telefoon of computer werkt prima om de picklijst weer te geven, maar voor de scans zelf is een echte handscanner nodig. Deze kunnen wij leveren uit voorraad en direct op de juiste manier instellen voor je, neem hiervoor contact op met onze support.",
+            answer: "Een handscanner. Je ziet per stap welk product je moet pakken en waar het ligt in je magazijn, en na elke succesvolle scan verschijnt het volgende product. Een telefoon of computer werkt prima om de picklijst weer te geven, maar voor de scans zelf is een echte handscanner nodig. Deze kunnen wij leveren uit voorraad en direct op de juiste manier instellen voor je. Neem hiervoor contact op met onze support.",
         },
         {
             question: "Hoe stel ik een vaste filtercombinatie in voor terugkerende pickrondes?",

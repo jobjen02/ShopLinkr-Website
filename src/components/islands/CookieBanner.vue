@@ -204,7 +204,7 @@ onBeforeUnmount(() => {
                         </span>
                     </div>
 
-                    <label class="flex items-start justify-between gap-4 cursor-pointer">
+                    <label class="flex items-start justify-between gap-4 cursor-pointer rounded-lg focus-within:ring-2 focus-within:ring-sunstone-deep focus-within:ring-offset-2 dark:focus-within:ring-offset-charcoal">
                         <div>
                             <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.analytics }}
@@ -230,7 +230,7 @@ onBeforeUnmount(() => {
                         />
                     </label>
 
-                    <label class="flex items-start justify-between gap-4 cursor-pointer">
+                    <label class="flex items-start justify-between gap-4 cursor-pointer rounded-lg focus-within:ring-2 focus-within:ring-sunstone-deep focus-within:ring-offset-2 dark:focus-within:ring-offset-charcoal">
                         <div>
                             <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.marketing }}

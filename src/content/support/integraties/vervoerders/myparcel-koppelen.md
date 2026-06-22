@@ -21,7 +21,7 @@ lastUpdated: "2026-05-28"
 <img alt="" src="/images/support/myparcel-koppelen/0CIRjwR0erGdUu73x1LZ3pzZLA.png">
 <ol>
 <li>
-<p>Kopieer de API key.</p>
+<p>Kopieer de API key (dit is de Public key die je straks in ShopLinkr invult).</p>
 </li>
 </ol>
 <img alt="" src="/images/support/myparcel-koppelen/cVUqWvwhuclm8BKuul8Ve1L9ZFc.png">

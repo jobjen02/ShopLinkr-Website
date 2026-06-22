@@ -89,7 +89,7 @@ translationKey: "voorraadwaarde-rapport"
 </tr>
 <tr>
 <td>
-<p><a href="/support/tags-beheren"><strong>Tags</strong></a></p>
+<p><a href="/en/support/managing-tags"><strong>Tags</strong></a></p>
 </td>
 <td>
 <p>Filter on products with specific tags</p>
@@ -101,7 +101,7 @@ translationKey: "voorraadwaarde-rapport"
 <h3>Exporting</h3>
 <p>Click <strong>Export</strong> to download the report. You receive the file by email.</p>
 <h3>Requirements</h3>
-<p>To calculate the stock value correctly, your products need a <a href="/support/voorraadwaarde">purchase price</a>. Products without a purchase price are still shown but have a value of zero. <a href="/support/een-bundel-aanmaken">Bundles</a> are not included, because their value is determined by the individual products they consist of.</p>
+<p>To calculate the stock value correctly, your products need a <a href="/en/support/inventory-value">purchase price</a>. Products without a purchase price are still shown but have a value of zero. <a href="/en/support/create-a-bundle">Bundles</a> are not included, because their value is determined by the individual products they consist of.</p>
 <h3>How do you use this report?</h3>
 <ul>
 <li>
@@ -111,6 +111,6 @@ translationKey: "voorraadwaarde-rapport"
 <p><strong>Track trends</strong>: compare the stock value on different dates to see whether your stock is growing or shrinking.</p>
 </li>
 <li>
-<p><strong>Spot overstocking</strong>: products with a high stock value that sell little deserve extra attention. Combine this report with <a href="/support/nooit-verkochte-producten">Never sold products</a> for the best insight.</p>
+<p><strong>Spot overstocking</strong>: products with a high stock value that sell little deserve extra attention. Combine this report with <a href="/en/support/never-sold-products">Never sold products</a> for the best insight.</p>
 </li>
 </ul>

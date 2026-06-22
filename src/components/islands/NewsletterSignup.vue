@@ -97,7 +97,7 @@ async function handleSubmit(): Promise<void> {
             aria-live="polite"
             class="text-center py-2"
         >
-            <div class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist text-sunstone-deep ring-1 ring-sunstone-soft/40 mb-3">
+            <div class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mb-3">
                 <i class="fa-solid fa-check text-sm" aria-hidden="true"></i>
             </div>
             <p class="text-sm font-semibold text-charcoal dark:text-paper mb-1">
