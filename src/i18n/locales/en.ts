@@ -264,7 +264,7 @@ const en: Dictionary = {
         ordersRow: 'Orders',
         monthlyPrice: 'Your monthly price',
         perMonth: '/ month',
-        payg: 'Pay as you go. No hidden costs. Cancel monthly.',
+        payg: 'Pay-as-you-go. No hidden costs. Cancel monthly.',
         salesEnterprise: 'Operating at enterprise scale? Book a call with sales for a tailored quote.',
         salesOrders: 'Above 100,000 orders per month? Book a call with sales for enterprise pricing.',
         salesChannels: 'More than 100 sales channels? Book a call with sales for enterprise pricing.',
@@ -369,6 +369,7 @@ const en: Dictionary = {
             customerStories: 'Customer stories',
             team: 'Team',
             blog: 'Blog',
+            guides: 'Guides',
             contact: 'Contact',
             helpCenter: 'Help center',
             allFeatures: 'All features',
@@ -625,6 +626,20 @@ const en: Dictionary = {
             readMore: 'Read more',
             moreArticles: 'More articles',
         },
+        guides: {
+            title: 'Guides | ShopLinkr',
+            description: 'Practical guides on inventory management in Excel, connecting your carrier to bol, Shopify or WooCommerce, and selling on bol.',
+            eyebrow: 'Guides',
+            heading: 'Guides and explainers.',
+            subheading: 'Step-by-step explainers and background on inventory management, integrations and selling across your channels. Find the guide that fits your question.',
+            readMore: 'Read the guide',
+            groups: {
+                voorraadbeheer: 'Inventory management and warehouse',
+                excel: 'Inventory management in Excel',
+                bol: 'Selling on bol',
+                koppelingen: 'Connecting carriers',
+            },
+        },
         integrationsIndex: {
             title: 'Integrations | ShopLinkr',
             description: 'ShopLinkr works with bol, Shopify, WooCommerce, PostNL, DPD, MyParcel, Sendcloud and more. See every sales channel and carrier you can connect in a few clicks.',
@@ -684,15 +699,15 @@ const en: Dictionary = {
         },
         about: {
             title: 'About ShopLinkr | ShopLinkr',
-            description: 'ShopLinkr was founded in 2022 by Job, out of his own webshop. Today we process more than 1 million orders for Dutch webshops, with a pay as you go model that stays affordable for any business.',
+            description: 'ShopLinkr was founded in 2022 by Job, out of his own webshop. Today we process over 1 million orders for Dutch webshops, with an affordable pay-as-you-go model.',
             eyebrow: 'About ShopLinkr',
             heading: 'Warehouse software built from real experience.',
             subheading: 'No pitch deck, no investor. Just one Dutch webshop that built its own tool and shared it with other webshops.',
             breadcrumbLeaf: 'About',
             jsonLdName: 'About ShopLinkr',
-            jsonLdDescription: 'ShopLinkr was founded in 2022 by Job, out of his own webshop. Today we process more than 1 million orders for Dutch webshops, with a pay as you go model that stays affordable for any business.',
+            jsonLdDescription: 'ShopLinkr was founded in 2022 by Job, out of his own webshop. Today we process more than 1 million orders for Dutch webshops, with a pay-as-you-go model that stays affordable for any business.',
             para1: 'ShopLinkr started in 2022 out of a need of our own. Founder Job ran a webshop and sold across multiple channels, including bol and Amazon. Without a big budget, but with the need to keep track of inventory and orders, he built his own solution as a software developer. Before long, other webshops were asking whether they could use that tool too. That is how ShopLinkr was born.',
-            para2: 'We believe that an order and inventory management system should be within reach for every webshop, whatever the budget. That is why we were the first in the Netherlands to introduce a pay as you go model. You only pay for what you use, so the software scales neatly with your warehouse.',
+            para2: 'We believe that an order and inventory management system should be within reach for every webshop, whatever the budget. That is why we were the first in the Netherlands to introduce a pay-as-you-go model. You only pay for what you use, so the software scales neatly with your warehouse.',
             para3: 'Today we work on ShopLinkr with a dedicated team and we have processed more than 1 million orders for Dutch webshops. What drives us is still the same: practical software for webshops that take their warehouse seriously.',
             moreEyebrow: 'Want to see more?',
             moreHeading: 'Meet the team or read a customer story.',
@@ -803,7 +818,7 @@ const en: Dictionary = {
         },
         customerStories: {
             title: 'Customer stories | ShopLinkr',
-            description: 'How Dutch webshops use ShopLinkr to get their warehouse, inventory and order processing in order. Read the Schoongedaan story and what other customers say about us.',
+            description: 'How Dutch webshops use ShopLinkr to get their warehouse, inventory and order processing in order. Read the Schoongedaan story and what other customers say.',
             eyebrow: 'Customer stories',
             heading: 'Webshops that take their warehouse seriously.',
             subheading: "From solo founders to teams with multiple warehouses. Below you'll find a featured story and what other customers have to say.",
@@ -856,7 +871,7 @@ const en: Dictionary = {
         },
         pricing: {
             title: 'Pricing | ShopLinkr',
-            description: 'A transparent pricing model for ShopLinkr. Pay as you go: you pay per sales channel and per order, with all features included. 14-day free trial.',
+            description: 'A transparent pricing model for ShopLinkr. Pay-as-you-go: you pay per sales channel and per order, with all features included. 14-day free trial.',
             eyebrow: 'Pricing',
             heading: 'One transparent pricing model.',
             subheading: 'You only pay for what you use. Every feature is included, with no tiers or separate modules.',
@@ -949,7 +964,7 @@ const en: Dictionary = {
                 { name: 'Tommy', role: '(Product) Design', bio: 'Makes the product that little bit calmer. Every button, every screen, every flow crosses his desk first.', focus: 'Interface and user experience' },
                 { name: 'You?', role: 'New star', bio: 'We are always looking for people who are just as crazy about warehouses, code and happy customers as we are.', focus: 'Open applications welcome' },
             ],
-            statLabels: ['Orders processed', 'Founded in the Netherlands', 'Pay as you go in NL', 'Customer rating'],
+            statLabels: ['Orders processed', 'Founded in the Netherlands', 'Pay-as-you-go in NL', 'Customer rating'],
             statFirstValue: '1st',
             statRatingValue: '4.9',
             values: [
@@ -1102,7 +1117,7 @@ const en: Dictionary = {
         },
         featureDeliveries: {
             title: 'Track deliveries with ShopLinkr',
-            description: 'Manage incoming deliveries in ShopLinkr. Register what you expect, check quantities on receipt and watch your stock update right away across all your sales channels.',
+            description: 'Manage incoming deliveries in ShopLinkr. Register what you expect, check quantities on receipt and watch your stock update across your sales channels.',
             eyebrow: 'Incoming deliveries',
             heading: 'From packing slip to stock without counting.',
             subheading: 'Record what arrives from your supplier, receive it line by line and your stock moves straight on to all your sales channels.',
@@ -1171,7 +1186,7 @@ const en: Dictionary = {
         },
         featureInventory: {
             title: 'Manage inventory with ShopLinkr',
-            description: 'Manage and sync your stock from one place. With stock changes, notifications, forecasting and fictional stock you stay on top of what is in stock and what is still available.',
+            description: 'Manage and sync your stock from one place. With stock changes, notifications, forecasting and fictional stock you always know what is in stock and available.',
             eyebrow: 'Inventory management',
             heading: 'Manage all your stock in one place.',
             subheading: 'Real-time sync between ShopLinkr and your sales channels, so you always see what is actually in stock and what is still left to sell.',
@@ -1247,7 +1262,7 @@ const en: Dictionary = {
         },
         featureLocations: {
             title: 'Manage locations with ShopLinkr',
-            description: 'Location management in ShopLinkr. Build a hierarchy of warehouse locations, separate your pick locations from your bulk and see exactly where each product sits, on the orders page, the product overview and the pick list.',
+            description: 'Location management in ShopLinkr. Build a hierarchy of warehouse locations, separate pick from bulk and see exactly where each product sits in your warehouse.',
             eyebrow: 'Location management',
             heading: 'A fixed spot for every product.',
             subheading: 'Lay out your warehouse with the hierarchy that fits you. For each product you see exactly where it sits, on the orders page, the product overview and the pick list.',
@@ -1316,7 +1331,7 @@ const en: Dictionary = {
         },
         featureOrders: {
             title: 'Processing orders with ShopLinkr',
-            description: 'Process orders from all your sales channels in one place. Create shipping labels with your favorite carrier, work in batches or handle individual orders in between.',
+            description: 'Process orders from all your sales channels in one place. Create shipping labels with your favorite carrier, work in batches or handle single orders in between.',
             eyebrow: 'Orders',
             heading: 'Process everything in one place.',
             subheading: 'Orders from all your sales channels come together in a single overview. Process them individually or in large batches, print labels from any carrier and the status is synced back automatically.',
@@ -1387,7 +1402,7 @@ const en: Dictionary = {
         },
         featurePicklists: {
             title: 'Creating pick lists with ShopLinkr',
-            description: 'Generate pick lists with a smart route through your warehouse, process batches with or without bins and print shipping labels automatically with AutoPrint. A warehouse operation that grows with your sales.',
+            description: 'Generate pick lists with a smart route through your warehouse, process batches with or without bins and print shipping labels automatically with AutoPrint.',
             eyebrow: 'Pick lists',
             heading: 'Pick faster, make fewer mistakes.',
             subheading: 'Pick lists with a smart route through your warehouse, a scan flow that guides you through the order step by step and shipping labels that print right at your packing station. One continuous workflow from order to packed box.',
@@ -1582,7 +1597,7 @@ const en: Dictionary = {
         },
         featurePurchasing: {
             title: 'Purchase advice with ShopLinkr',
-            description: 'Let ShopLinkr work out per supplier what you should reorder, based on stock, backorders and expected sales. Turn the advice into draft deliveries in a single click.',
+            description: 'Let ShopLinkr work out per supplier what you should reorder, based on stock, backorders and expected sales. Turn the advice into draft deliveries in one click.',
             eyebrow: 'Buy smart',
             heading: 'Know when to buy what.',
             subheading: 'ShopLinkr works out per supplier what you should reorder, based on your stock, backorders and expected sales. Turn the advice into draft deliveries in a single click.',
@@ -1660,7 +1675,7 @@ const en: Dictionary = {
         },
         featureReports: {
             title: 'Reports and insight with ShopLinkr',
-            description: 'Get insight into your shop with the reports from ShopLinkr. See revenue and margin per product, track down dead stock, view the value of your warehouse and optimize your layout with an ABC analysis.',
+            description: 'Get insight into your shop with the reports from ShopLinkr. See revenue and margin per product, track down dead stock and view the value of your warehouse.',
             eyebrow: 'Reports and insight',
             heading: 'Decide on numbers, not on gut feeling.',
             subheading: 'Four fixed reports bring your revenue, margin, stock value and warehouse efficiency together in one place. Filter, export and stay in control, without endless tinkering in Excel.',
@@ -1736,7 +1751,7 @@ const en: Dictionary = {
         },
         featureReturns: {
             title: 'Processing returns with ShopLinkr',
-            description: 'Process returns in a structured way in ShopLinkr. Assess per item, add photos as proof and book items back to the right warehouse location. Your stock and channels stay automatically in sync.',
+            description: 'Process returns in a structured way in ShopLinkr. Assess per item, add photos as proof and book items back to the right warehouse location. Stock stays in sync.',
             eyebrow: 'Return management',
             heading: 'Handle returns, in a steady rhythm.',
             subheading: 'Returns are part of the job, processing them does not have to be a hassle. Assess per item, record it with photos and book it back into stock. On to the next.',
@@ -1809,7 +1824,7 @@ const en: Dictionary = {
         },
         featureRules: {
             title: 'Setting up rules with ShopLinkr',
-            description: 'Automate your order processing with rules. Set conditions on sales channel, total weight or country and let ShopLinkr carry out the right actions on every new order.',
+            description: 'Automate your order processing with rules. Set conditions on sales channel, total weight or country and let ShopLinkr run the right actions on every new order.',
             eyebrow: 'Automation',
             heading: 'Let ShopLinkr do the work.',
             subheading: 'Build a rule with conditions and actions. On every new order ShopLinkr picks the right carrier, applies the right tag or marks the order as high priority. You set it up once and from then on it runs by itself.',
@@ -1883,7 +1898,7 @@ const en: Dictionary = {
         },
         featureUsers: {
             title: 'Users, roles and permissions with ShopLinkr',
-            description: 'Work together with your whole team in ShopLinkr. Invite colleagues, give them a role and decide per section who may do what. Add as many users as you like, with no extra cost per user.',
+            description: 'Work together with your whole team in ShopLinkr. Invite colleagues, give them a role and decide per section who may do what. Add as many users as you like.',
             eyebrow: 'Team & access',
             heading: 'Work together with your whole team.',
             subheading: 'Invite colleagues and give them the right role, then everyone works in the same workspace. That way every team member sees and does exactly what their job involves.',
@@ -1989,7 +2004,7 @@ const en: Dictionary = {
         },
         bolInventory: {
             title: 'Bol inventory management - ShopLinkr',
-            description: 'Inventory management for bol sellers who want to prevent oversells and protect their ranking. ShopLinkr connects your bol account and keeps your stock accurate in real time across all your channels.',
+            description: 'Inventory management for bol sellers who want to prevent oversells and protect their ranking. ShopLinkr keeps your stock accurate in real time across channels.',
             eyebrow: 'Bol inventory management',
             heading: 'Bol inventory management that never lets you down again.',
             subheading: 'Inventory management for bol sellers who never want another oversell, who want to protect their ranking and who want to run their sales across multiple channels at once.',

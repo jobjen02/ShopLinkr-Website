@@ -32,6 +32,7 @@
 ## Resources
 - [Volledige sitegegevens](https://shoplinkr.com/llms-full.txt): Alle kernfeiten, functionaliteiten, het prijsmodel en veelgestelde vragen in één markdown-bestand.
 - [Blog](https://shoplinkr.com/blogs): Artikelen over voorraadbeheer, magazijnoptimalisatie en e-commerce.
+- [Gidsen](https://shoplinkr.com/gidsen): Praktische gidsen over voorraadbeheer in Excel, vervoerders koppelen aan bol, Shopify en WooCommerce, en verkopen via bol.
 - [Gratis Excel template](https://shoplinkr.com/voorraadbeheer-excel-template): Voorraadbeheer Excel template om gratis te downloaden.
 
 ## Bedrijf

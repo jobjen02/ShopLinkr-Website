@@ -1,53 +1,37 @@
 ---
-title: "How to Connect bol.com to Your Webshop"
-excerpt: "Merging your bol.com webshop with your own e-commerce platform, such as Shopify or WooCommerce, can have a huge impact on your online business. In this article we'll explain how connecting your bol.com webshop can be not only easy, but also cost-effective by centralizing your sales channels and optimizing your inventory management."
+title: "How to connect bol to your webshop"
+excerpt: "Selling on bol and through your own webshop? Here's how to connect both channels and manage stock and orders centrally from one system with ShopLinkr."
 publishedAt: "2024-01-22T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
+imageAlt: "Orders and stock from bol and your webshop together in ShopLinkr"
 translationKey: "hoe-koppel-je-bol-com-met-jouw-webshop"
 ---
 
-<p><strong>The Importance of Integration</strong>: Before we get into the 'how', let's first explore the 'why'. Connecting your bol.com webshop to your own webshop can lead to:</p>
+<p>Selling through bol and through your own webshop on Shopify or WooCommerce? Then you're juggling two separate systems, each with its own stock and orders. By connecting your channels you work from a single overview, which cuts errors and manual work.</p>
+
+<h2>What connecting gets you</h2>
+<p>When your bol account and your webshop come together in one system, you mainly gain on three fronts:</p>
 <ul>
-<li>
-<p>Better inventory management</p>
-</li>
-<li>
-<p>Centralized order processing</p>
-</li>
-<li>
-<p>Increased visibility and revenue</p>
-</li>
+<li><strong>One stock level across all channels.</strong> A sale on bol immediately lowers the stock in your webshop too, so you never sell more than you have.</li>
+<li><strong>Orders in one place.</strong> Orders from every channel land in the same overview, so there's no more switching between screens.</li>
+<li><strong>Less manual work.</strong> Track &amp; trace is sent back to the sales channel automatically, without you retyping anything.</li>
 </ul>
-<p><strong>How Do You Connect bol.com to Your Webshop?</strong></p>
-<p>Preparation:</p>
+
+<h2>Preparation</h2>
+<p>Before you connect, sort out two things:</p>
 <ol>
-<li>
-<p>Make sure your accounts on both bol.com and your own e-commerce platform (Shopify, WooCommerce, etc.) are active.</p>
-</li>
-<li>
-<p>Choose the Right Integration Tool: There are various tools and plugins available for connecting your bol.com webshop.</p>
-<ul>
-<li>
-<p>We've developed our own order and inventory management system as well. With ShopLinkr it's incredibly easy to connect your bol store to your Shopify store, for example.</p>
-</li>
-<li>
-<p>The right tool depends on your needs. Do you have a large warehouse? Do several people handle the packing work at the same time? How are the products packed? How does your internal process run? These are all questions that matter when choosing the right system.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Linking EAN codes:</p>
-<ul>
-<li>
-<p>Make sure you use the correct EAN codes for every product. An EAN code consists of 13 digits. To sell on a marketplace, it's important that the EAN codes are officially purchased, which has to be done through GS1 (this is mandatory according to bol).</p>
-</li>
-<li>
-<p>Use the same EAN code across all platforms. An EAN code you use on bol.com for product A also has to be used on your own webshop for product A. This way an inventory management tool (such as ShopLinkr) can link the products together and the synchronization process is started.</p>
-</li>
-</ul>
-</li>
+<li><strong>Active accounts.</strong> Make sure your account on bol and on your own platform (Shopify, WooCommerce, or another channel) is active.</li>
+<li><strong>EAN codes in order.</strong> Give each product an EAN code and use the same code everywhere for that product. The EAN you use on bol for product A is the one you use in your webshop for product A. That's how <a href="/en/features/inventory">the inventory sync</a> recognizes it's the same product and keeps the quantities aligned.</li>
 </ol>
-<p><strong>How do I connect my bol.com store to ShopLinkr?</strong></p>
-<p>We've written an extensive article that explains step by step how to connect your bol store to ShopLinkr. Click <a href="https://support.shoplinkr.com/artikel/bol-com-koppelen" target="_blank">here</a> to read this article.</p>
-<p><strong>How do I connect my Shopify store to ShopLinkr?</strong></p>
-<p>We've written an extensive article that explains step by step how to connect your Shopify store to ShopLinkr. Click <a href="https://support.shoplinkr.com/artikel/shopify-koppelen" target="_blank">here</a> to read this article.</p>
+<p>When you sell on a marketplace such as bol, officially issued EAN codes are usually expected. You request those from <a href="https://www.gs1.org" target="_blank" rel="noopener">GS1</a>. Always check the current requirements in your seller account, since they can differ per category.</p>
+
+<h2>Connecting with ShopLinkr</h2>
+<p>ShopLinkr brings your bol sales and your webshop together in one system. You process orders centrally, keep stock in real-time sync, and print shipping labels for carriers like PostNL, DPD, and MyParcel with one click. Want to see more? Browse the <a href="/en/integrations">available integrations</a> or read the step-by-step walkthroughs in our <a href="/en/guides">guides</a>.</p>
+<p>For a detailed walkthrough per channel, we have separate guides:</p>
+<ul>
+<li><a href="/en/support/connect-bol">Connect your bol store to ShopLinkr</a></li>
+<li><a href="/en/support/connect-shopify">Connect your Shopify store to ShopLinkr</a></li>
+</ul>
+
+<h2>Try it yourself</h2>
+<p>Want to manage your channels from one system? Create an account and <a href="https://app.shoplinkr.com/auth/register">try ShopLinkr free for 14 days</a>. You only pay for what you use.</p>

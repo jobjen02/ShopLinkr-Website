@@ -40,7 +40,7 @@ export const supportCategories: Array<SupportCategory> = [
             {
                 slug: 'facturatie-en-prijzen',
                 label: 'Facturatie & Prijzen',
-                summary: 'Informatie over het abonnement, facturen en het Pay as you Go model',
+                summary: 'Informatie over het abonnement, facturen en het Pay-as-you-go model',
             },
             {
                 slug: 'abonnement',

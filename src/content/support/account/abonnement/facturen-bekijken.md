@@ -29,4 +29,4 @@ lastUpdated: "2026-04-01"
 </li>
 </ul>
 <h3>Hoe werkt de facturatie?</h3>
-<p>ShopLinkr werkt met het <a href="/support/het-pay-as-you-go-model">Pay as you Go</a> model. Je betaalt maandelijks op basis van je gebruik. Facturen worden automatisch aangemaakt en afgeschreven via je gekoppelde betaalmethode (SEPA-incasso).</p>
+<p>ShopLinkr werkt met het <a href="/support/het-pay-as-you-go-model">Pay-as-you-go</a> model. Je betaalt maandelijks op basis van je gebruik. Facturen worden automatisch aangemaakt en afgeschreven via je gekoppelde betaalmethode (SEPA-incasso).</p>

@@ -1,18 +1,22 @@
 ---
 title: "Product tags"
-excerpt: "Discover the new \"Product Tags\" feature from ShopLinkr and organize your products more efficiently. Tag, filter and find your products quickly and easily."
+excerpt: "Tags add an extra layer of organization on top of your categories. Label products by brand, season or supplier and filter your whole assortment in seconds."
 publishedAt: "2023-05-30T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
-imageAlt: "ShopLinkr logo"
+imageAlt: "Assigning product tags to a product in ShopLinkr"
 translationKey: "product-tags"
 ---
 
-<p><strong>As an online seller, you know how important it is to keep your products well organized. With the new "Product Tags" feature from ShopLinkr, managing and finding specific products becomes a lot easier. Discover how this powerful tool can help you organize your inventory efficiently and improve your product overview.</strong></p>
-<h2>Tagging for easy organization</h2>
-<p>With the "Product Tags" feature, you can easily assign tags to your products. Whether it concerns categories, brands, seasons or other relevant characteristics, you can use tags to categorize your products in a logical way. This lets you quickly find the products you need and saves you valuable time when managing your inventory.</p>
-<h2>Clear product pages</h2>
-<p>On the overview page of your products, you now see the added tags at a glance. This gives you immediate insight into the characteristics of each product and helps you quickly identify specific items. Whether you are looking for products with a particular tag or want to make a quick analysis of your assortment, the tags offer a visual and clear view of your products.</p>
+<p><strong>As your assortment grows, finding the right products gets harder. With product tags you attach free-form labels to your products, separate from your fixed categories, so you can sort and filter on any characteristic that matters to you.</strong></p>
+
+<h2>What product tags are</h2>
+<p>A tag is a free label you define yourself: a brand, a season, a supplier, a promotion or a quality level. Unlike a product category, a single product can carry several tags at once. You could tag the same item as "winter," "outlet" and the supplier's name, all without changing your category structure.</p>
+
+<h2>Assigning and viewing tags</h2>
+<p>You add tags on the product page and then see them back in the <a href="/en/features/inventory">product overview</a>. The assigned tags appear right next to each item, so you can tell at a glance which characteristics belong where. If you work with <a href="/en/features/orders">bundles and variants</a>, those stay neatly organized under the same labels too.</p>
+
 <h2>Filtering on tags</h2>
-<p>With the "Product Tags" feature, you can also filter products based on the added tags. This lets you quickly select and view specific product categories, which is especially handy when carrying out targeted analyses or managing specific product groups. Filtering on tags enables you to quickly find the right information and stay organized, even when you have a large number of products.</p>
-<h2>Create your tags in ShopLinkr &amp; try it free for 14 days!</h2>
-<p>Discover the power of "Product Tags" in ShopLinkr today. Sign up for a free trial period and experience the benefits of organized product management.</p>
+<p>The real payoff is in filtering. Pick a tag and you instantly narrow down to just the products that carry that label. Useful when you want to update an entire supplier or seasonal collection quickly, run a focused stock check, or analyze a product group in your reports on revenue, margin or dead stock.</p>
+
+<h2>Try product tags yourself</h2>
+<p>Tags take seconds to create and save you searching every time after that. Create a <a href="https://app.shoplinkr.com/auth/register">free ShopLinkr account</a> and try it free for 14 days. Want to know more about what else is possible? Browse the <a href="/en/guides">guides</a> or reach out through <a href="/en/support">support</a>.</p>

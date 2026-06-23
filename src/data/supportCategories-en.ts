@@ -22,7 +22,7 @@ export const supportCategoriesEn: Array<SupportCategory> = [
         summary: 'Everything to do with your account',
         icon: 'fa-duotone fa-solid fa-user-gear',
         subcategories: [
-            { slug: 'billing-and-pricing', label: 'Billing & Pricing', summary: 'Info about the subscription, invoices and the Pay as you Go model' },
+            { slug: 'billing-and-pricing', label: 'Billing & Pricing', summary: 'Info about the subscription, invoices and the Pay-as-you-go model' },
             { slug: 'subscription', label: 'Subscription', summary: 'Your trial, starting a subscription and everything about billing' },
             { slug: 'access-and-security', label: 'Access & Security', summary: 'Password, two-factor authentication and QR login' },
             { slug: 'users-and-roles', label: 'Users & Roles', summary: 'Invite colleagues and manage permissions' },

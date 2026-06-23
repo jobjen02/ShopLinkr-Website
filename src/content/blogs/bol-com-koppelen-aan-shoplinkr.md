@@ -1,13 +1,13 @@
 ---
 title: "Bol koppelen aan ShopLinkr"
-excerpt: "Optimaliseer je bestelproces met de naadloze bol integratie van ShopLinkr. Importeer en beheer eenvoudig bestellingen, print verzendlabels en update voorraadinformatie met gemak."
+excerpt: "Optimaliseer je bestelproces met de naadloze bol integratie van ShopLinkr. Beheer eenvoudig je bestellingen, print verzendlabels en houd je voorraad in sync."
 publishedAt: "2022-12-14T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bol integratie afbeelding"
 ---
 
 <p><strong>Met de bol integratie van ShopLinkr verwerk je bol bestellingen, druk je verzendlabels en houd je je voorraad in sync. Track &amp; trace gegevens worden automatisch teruggekoppeld naar bol, zodat je klanten precies weten waar hun pakket is.</strong></p>
-<p>Bekijk <a href="https://support.shoplinkr.com/artikel/bol-com-koppelen" target="_blank">hier</a> de handleiding voor het koppelen van bol.</p>
+<p>Bekijk <a href="/support/bol-com-koppelen">hier</a> de handleiding voor het koppelen van bol.</p>
 <h2>Je bol producten in één overzicht</h2>
 <p>Bij de koppeling haalt ShopLinkr je bol artikelen op, zodat je per product weet wat de voorraad is, op welke locatie het ligt en op welke kanalen het verkocht wordt. Geen handmatige administratie meer.</p>
 <h2>Efficiënte orderverwerking</h2>

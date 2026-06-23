@@ -1,21 +1,19 @@
 ---
 title: "Connect Sendy to ShopLinkr"
-excerpt: "Discover how the Sendy integration from ShopLinkr optimizes your shipping process. Generate shipping labels with a single click and automate your track & trace updates. Improve your shipping workflow today!"
+excerpt: "With ShopLinkr's Sendy integration you create shipping labels in one click and the track & trace goes back to your sales channel automatically, such as bol or Shopify."
 publishedAt: "2023-05-03T00:00:00.000Z"
 image: "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png"
-imageAlt: "Sendy integration image"
+imageAlt: "Creating a Sendy shipping label from ShopLinkr"
 translationKey: "sendy-koppelen-aan-shoplinkr"
 ---
 
-<p><strong>Discover how to streamline your shipping workflow with the seamless integration of Sendy and ShopLinkr. With a single click of a button you generate shipping labels and automatically receive the track &amp; trace code for your orders. Read on to find out how this integration makes your shipping process more efficient.</strong></p>
-<p>Check out the guide for connecting Sendy <a href="https://support.shoplinkr.com/artikel/sendy-koppelen" target="_blank">here</a>.</p>
-<h2>A smooth shipping process</h2>
-<p>With the Sendy integration you no longer have to create shipping labels by hand. With a single click of a button you can generate labels and automatically assign them to your orders. This saves you time and minimizes the chance of errors in the shipping process.</p>
-<h2>Automatic track &amp; trace updates</h2>
-<p>As soon as you have created the shipping label, the track &amp; trace code is automatically passed on to your webshop, such as bol.com or Shopify. This means your customers always have up-to-date information about the status of their shipments, which makes for an improved customer experience.</p>
-<h2>Flexibility and convenience</h2>
-<p>With the Sendy integration you can take advantage of the many functions and services that Sendy offers. You have access to various carriers and shipping options, so you can make the best choice based on your needs. In addition, through Sendy you can also make use of additional services such as insurance and return labels.</p>
-<h2>How does it work?</h2>
-<p>The process of connecting Sendy to ShopLinkr is simple. Follow the step-by-step instructions in our guide to set up and configure the integration. Once the connection has been established, you can immediately benefit from the advantages of automated shipping management.</p>
-<h2>Connect your Sendy account to ShopLinkr &amp; try it free for 14 days!</h2>
-<p>Want to learn more about the Sendy integration from ShopLinkr and how it can improve your shipping process? Get in touch with us now or sign up for a free trial period and experience for yourself how this integration takes your e-commerce activities to the next level.</p>
+<p><strong>With ShopLinkr's Sendy integration you create shipping labels in one click and the track &amp; trace is sent back to your sales channel automatically. You ship from the same screen where you process your orders.</strong></p>
+<p>View the guide for connecting Sendy <a href="/en/support/connect-sendy">here</a>.</p>
+<h2>Create labels without switching screens</h2>
+<p>Once connected, you select Sendy as your carrier when you finish an <a href="/en/features/orders">order</a>. ShopLinkr creates the label and links it to the right order, so you no longer retype address details in a separate shipping portal. Working through larger batches? Create labels for several orders at once straight from your <a href="/en/features/pick-lists">pick list</a>.</p>
+<h2>Track & trace goes back automatically</h2>
+<p>As soon as the label is created, ShopLinkr sends the track &amp; trace back to the channel the order came from, such as bol or Shopify. Your customer sees the shipment appear without you updating anything, and you no longer paste codes per channel.</p>
+<h2>One place for all your carriers</h2>
+<p>Sendy is one of the carriers you connect in ShopLinkr. If you also use PostNL, DPD or another party, you pick the right carrier per order and the workflow stays the same. To see which other connections are available, check the <a href="/en/features/carriers">carriers</a> page.</p>
+<h2>Connect Sendy to ShopLinkr &amp; try it free for 14 days</h2>
+<p>Want to handle your Sendy shipments from the same screen as your orders and stock? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and experience it for yourself.</p>

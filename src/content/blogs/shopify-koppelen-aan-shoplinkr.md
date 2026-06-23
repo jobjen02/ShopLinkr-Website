@@ -7,7 +7,7 @@ imageAlt: "Shopify integratie afbeelding"
 ---
 
 <p><strong>Met de Shopify integratie van ShopLinkr verwerk je orders, druk je verzendlabels en houd je je voorraad in sync over al je verkoopkanalen. Alles vanuit één centraal platform.</strong></p>
-<p>Bekijk <a href="https://support.shoplinkr.com/artikel/shopify-koppelen" target="_blank">hier</a> de handleiding voor het koppelen van Shopify.</p>
+<p>Bekijk <a href="/support/shopify-koppelen">hier</a> de handleiding voor het koppelen van Shopify.</p>
 <h2>Producten uit Shopify in één overzicht</h2>
 <p>Bij de koppeling worden je Shopify producten in ShopLinkr binnengehaald, zodat je per artikel weet waar het ligt, wat de voorraad is en welke kanalen het verkopen. Zo werk je altijd vanuit dezelfde basis.</p>
 <h2>Efficiënte orderverwerking</h2>

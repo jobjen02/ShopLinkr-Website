@@ -25,4 +25,4 @@ lastUpdated: "2026-04-01"
 <h3>Samenwerken met je team</h3>
 <p>Werk je met meerdere mensen? <a href="/support/gebruikers-uitnodigen">Nodig collega's uit</a> en bepaal met <a href="/support/rollen-en-rechten-beheren">rollen en rechten</a> precies wat iedereen mag doen. Magazijnmedewerkers kunnen snel inloggen met een <a href="/support/inloggen-met-qr-code">QR-code</a> en pincode.</p>
 <h3>Voor wie is ShopLinkr?</h3>
-<p>ShopLinkr is speciaal gemaakt voor webshops met een eigen magazijn. Of je nu een klein bedrijf bent dat net begint met groeien, of een groter bedrijf met meerdere verkoopkanalen: ShopLinkr schaalt met je mee dankzij het flexibele <a href="/support/het-pay-as-you-go-model">Pay as you Go model</a>.</p>
+<p>ShopLinkr is speciaal gemaakt voor webshops met een eigen magazijn. Of je nu een klein bedrijf bent dat net begint met groeien, of een groter bedrijf met meerdere verkoopkanalen: ShopLinkr schaalt met je mee dankzij het flexibele <a href="/support/het-pay-as-you-go-model">Pay-as-you-go model</a>.</p>

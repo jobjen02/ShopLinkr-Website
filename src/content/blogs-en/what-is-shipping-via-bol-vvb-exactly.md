@@ -1,53 +1,29 @@
 ---
 title: "What exactly is Shipping via bol (VVB)?"
-excerpt: "Shipping via bol (VVB) is a handy tool that bol offers, allowing sellers to optimize their shipping process and serve customers faster. This blog explains what VVB means exactly, how it works and which benefits it offers you as a seller on bol."
+excerpt: "Shipping via bol (VVB) lets you ship orders through bol's network while you manage your own stock and packing. Here is how it works and what it gives you."
 publishedAt: "2024-02-05T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
-translationKey: "wat-is-verzenden-via-bol-vvb-precies"
+translationKey: "wat-is-verzenden-via-bol-(vvb)-precies"
 ---
 
-<p><strong>What is Shipping via bol (VVB)?
-<br>
-</strong>With Shipping via bol, sellers can send orders using the shipping options of bol.com while still keeping control over their stock and the packing process. This means that sellers are responsible for packing the products themselves, but they can rely on the shipping service of bol to deliver their products to customers quickly and reliably.</p>
-<p><strong>Benefits of Shipping via bol</strong>:</p>
+<p>Shipping via bol (VVB) is a fulfillment method where you store and pack your products yourself, but route the delivery through bol's network. It is the alternative to Logistics via bol (LVB), where bol also manages your stock. With VVB, you keep that part in your own hands.</p>
+
+<h2>How does VVB work?</h2>
+<p>The steps are simple, but they demand tight processing:</p>
 <ol>
-<li>
-<p><strong>Reliable Delivery</strong>: Take advantage of the extensive and reliable network of bol.com for the delivery of your products.</p>
-</li>
-<li>
-<p><strong>Flexibility in Shipping</strong>: Choose from various shipping options that bol.com offers, from standard to same-day delivery.</p>
-</li>
-<li>
-<p><strong>Increased Customer Satisfaction</strong>: Fast and reliable delivery contributes to a positive customer experience and can lead to better reviews and more sales.</p>
-</li>
+<li><strong>Order comes in</strong>: a customer places an order through bol.</li>
+<li><strong>Pack it yourself</strong>: you get the product ready for shipping.</li>
+<li><strong>Label and ship</strong>: you send the parcel through a carrier that bol accepts, with track &amp; trace.</li>
+<li><strong>Delivery and tracking</strong>: the customer follows the delivery in their bol account.</li>
 </ol>
-<p><strong>How Does Shipping via bol Work?</strong>:</p>
-<ol>
-<li>
-<p><strong>Order Received</strong>: You receive an order from a customer via bol.com.</p>
-</li>
-<li>
-<p><strong>Pack It Yourself</strong>: You pack the product yourself and get it ready for shipping.</p>
-</li>
-<li>
-<p><strong>Shipping via bol.com</strong>: You use the shipping labels of bol.com and choose the shipping method you want. The parcel is collected or dropped off at a drop-off point.</p>
-</li>
-<li>
-<p><strong>Tracking and Customer Service</strong>: bol.com provides tracking information and customer service for the shipment, which saves you time and effort.</p>
-</li>
-</ol>
-<p><strong>Tips for Success with VVB</strong>:</p>
-<ol>
-<li>
-<p><strong>Fast Processing</strong>: Make sure you process your orders quickly and get them ready for shipping in order to meet the expectations of fast delivery.</p>
-</li>
-<li>
-<p><strong>Packaging Quality</strong>: Pay attention to safe and presentable packaging to prevent damage during transport and to make a good impression on customers.</p>
-</li>
-<li>
-<p><strong>Inventory Management</strong>: Keep accurate track of your stock to make sure you can process and ship your orders efficiently.</p>
-</li>
-</ol>
-<p>Shipping via bol (VVB) offers a great opportunity to optimize your shipping process and give your customers the reliable and fast delivery they expect. By using the strong shipping infrastructure of bol, you can focus on what you do best: selling great products.</p>
-<p>We can help you get your order &amp; inventory management in order. With our tool ShopLinkr you get instant insight into your stock and all your open orders, from all your sales channels.</p>
-<p>Schedule a <strong>free demo</strong> now and we will walk you through everything together!</p>
+
+<h2>What does it give you?</h2>
+<p>With VVB you stay flexible: you choose your own packaging, your carrier, and how your warehouse runs. At the same time you benefit from bol's visibility and the trust it carries with customers. Fast, reliable delivery often translates into better reviews and repeat purchases.</p>
+<p>The flip side: you are responsible for the turnaround time yourself. An order that leaves too late hurts your service score. That is why VVB lives or dies by your internal process.</p>
+
+<h2>Running VVB smoothly with ShopLinkr</h2>
+<p>The biggest pitfall with VVB is fragmentation: orders on bol, stock in your warehouse, labels at your carrier. ShopLinkr pulls that together into one central order overview. Your <a href="/en/features/orders">orders</a> from bol and your other sales channels arrive in one place, and your <a href="/en/features/inventory">stock</a> syncs in real time so you do not oversell.</p>
+<p>For the physical side, you pick products with a <a href="/en/features/pick-lists">pick list</a> that has a smart route and barcode scanning. Then you print a shipping label in one click at your <a href="/en/features/carriers">carrier</a>, such as PostNL, DPD, or MyParcel. The track &amp; trace is sent back to bol automatically, with no retyping.</p>
+
+<h2>Get started</h2>
+<p>Want to process your VVB orders faster and without errors? Try ShopLinkr <a href="https://app.shoplinkr.com/auth/register">14 days free</a> and see how it gets your order and inventory management in order.</p>

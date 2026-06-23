@@ -1,81 +1,43 @@
 ---
 title: "How do I connect DPD to bol?"
-excerpt: "In this article we look at how you can connect DPD to bol."
+excerpt: "Connecting DPD to your bol orders? With ShopLinkr you process bol orders centrally, print DPD labels in one click, and send track & trace back automatically."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-dpd-met-bol/Hrr3fJGDSMoNYFHaQUauYLhe1cw.png"
 translationKey: "hoe-koppel-ik-dpd-met-bol"
+imageAlt: "Connecting DPD parcel carrier to bol orders through ShopLinkr"
 ---
 
-<p>In this article we look at how you can connect DPD to bol. This can be a great way to grow your online business and work more efficiently. But before we get into the details of the connection process, let's first take a look at what DPD and bol actually are.</p>
-<h2>What are DPD and bol?</h2>
-<p>DPD is an international parcel delivery company that specializes in delivering parcels and shipments all over the world. They have built an excellent reputation as a reliable and fast carrier. Bol, on the other hand, is one of the largest online marketplaces in the Netherlands. It offers a platform where sellers can list their products and find customers.</p>
-<h3>An introduction to DPD</h3>
-<p>DPD was founded in 1977 and has grown into a leading parcel delivery company. They offer fast delivery, reliable service and a wide range of shipping options for both domestic and international shipments.</p>
-<h3>An introduction to bol</h3>
-<p>Bol was founded in 1999 and has grown into one of the most popular online marketplaces in the Netherlands. It is a platform where sellers can list their products and customers can search for and buy what they need.</p>
-<p><a href="https://shoplinkr.com/en/blog/connecting-dpd-to-shoplinkr">DPD has an advanced tracking system</a> that lets customers follow their parcels in real time. This provides transparency and peace of mind for both senders and recipients. In addition, DPD continually invests in sustainability and eco-friendly delivery options to minimize its environmental footprint.</p>
-<p><a href="https://shoplinkr.com/en/blog/how-to-connect-bol-com-to-your-webshop">Bol offers not only a wide range of products</a>, but also various services such as bol.com Select, a subscription service that gives customers free delivery and extra benefits. Bol also regularly runs special sales campaigns and events such as the Bulk 10-day event, where customers can take advantage of big discounts on a variety of products.</p>
-<h2>The benefits of connecting DPD to bol</h2>
-<p>There are several benefits to connecting DPD to bol. Here are a few:</p>
-<h3>Efficiency in shipping and delivery</h3>
-<p>By connecting DPD to bol, you can streamline your shipping process. You can make use of DPD's extensive shipping options to send your parcels to your customers quickly and efficiently. This saves you time and effort, so you can focus on other aspects of your business.</p>
-<h3>Improved customer service</h3>
-<p>DPD is known for its excellent customer service. By connecting your DPD account to bol, you can benefit from DPD's excellent customer service. This means your customers can get reliable information and support when they have questions about their shipments. This contributes to their satisfaction and loyalty.</p>
-<p>Connecting DPD to bol offers yet another important benefit, however: international shipping options. DPD has a broad network of international partners, which gives you as a seller access to a worldwide reach. This makes it easy to ship parcels to customers all over the world, which significantly expands your sales opportunities.</p>
-<p>Another area where the connection between DPD and bol offers benefits is the tracking and traceability of shipments. DPD provides advanced tracking capabilities, so both you and your customers can accurately follow the status of a shipment. This provides transparency and trust in the shipping process, which improves the overall customer experience.</p>
-<h2>Step-by-step guide to connecting DPD to bol</h2>
-<h3>Preparing for the connection</h3>
-<p>Before you start connecting DPD to bol, there are a few things you need to do. Here is a step-by-step guide:</p>
+<p>Want to <strong>connect DPD to bol</strong>? You don't link the two directly: bol is a large Dutch sales channel and DPD is a parcel carrier. ShopLinkr sits in between. You pull your bol orders into ShopLinkr, connect your DPD account there, and print your shipping label in one click. The track & trace is sent back to bol automatically, so your customer can follow the parcel. Here's how to set it up.</p>
+
+<h2>Connecting DPD to ShopLinkr</h2>
+<p>You add DPD once as a <a href="/en/features/carriers">carrier</a>. After that you can create a DPD label for any order without logging in to the carrier again.</p>
 <ol>
-<li>
-<p>Log in to your ShopLinkr account.</p>
-</li>
-<li>
-<p>Select 'Carriers' in the menu on the left.</p>
-</li>
-<li>
-<p>Click 'Add' and select DPD from the list of available carriers.</p>
-</li>
-<li>
-<p>Follow the instructions to connect your DPD account to ShopLinkr.</p>
-</li>
+<li><p>Log in to your ShopLinkr account.</p></li>
+<li><p>Go to <strong>Carriers</strong> in the menu.</p></li>
+<li><p>Click <strong>Add</strong> and choose <strong>DPD</strong> from the list.</p></li>
+<li><p>Enter your DPD details and save the connection.</p></li>
 </ol>
-<h3>The connection process</h3>
-<p>Once you have made all the preparations, you can start the connection process itself. Here is what you need to do:</p>
+<p>Besides DPD, ShopLinkr also supports PostNL, MyParcel, Sendcloud and more. If you want to switch later or run several carriers side by side, you add them the same way.</p>
+
+<h2>Pulling in your bol orders</h2>
+<p>Connect your bol account as a sales channel in ShopLinkr. New orders then arrive automatically in your <a href="/en/features/orders">orders overview</a>, alongside orders from any other channels such as Shopify or WooCommerce. That way you handle everything from one screen instead of platform by platform.</p>
+<p>If you sell across multiple channels, ShopLinkr keeps your <a href="/en/features/inventory">inventory</a> in sync in real time. Sell a product on bol and the stock drops on your other channels too. That prevents you from selling something that's no longer in stock.</p>
+
+<h2>From order to DPD label</h2>
+<p>Once a bol order comes in, shipping it takes just a few steps:</p>
 <ol>
-<li>
-<p>Log in to your bol account.</p>
-</li>
-<li>
-<p>Navigate to the shipping settings.</p>
-</li>
-<li>
-<p>Select DPD as your preferred carrier.</p>
-</li>
-<li>
-<p>Follow the instructions to connect your DPD account to bol.</p>
-</li>
+<li><p>Select the order (or several orders at once).</p></li>
+<li><p>Choose <strong>DPD</strong> as the carrier.</p></li>
+<li><p>Print the label in one click, or print it automatically with AutoPrint.</p></li>
 </ol>
-<h3>Troubleshooting after connecting</h3>
-<p>Sometimes problems can occur during or after connecting DPD to bol. Here are a few common problems and how you can solve them:</p>
-<ul>
-<li>
-<p>Problem: The connection did not succeed.</p>
-</li>
-<li>
-<p>Solution: Check whether you entered the correct login details and whether you gave permission to connect your accounts. If the problem persists, contact DPD or bol customer service for further assistance.</p>
-</li>
-</ul>
-<p>After successfully connecting DPD to bol, you will notice that the shipping process for your products runs more efficiently and smoothly. <a href="https://shoplinkr.com/en/integrations/dpd">DPD is known for its reliable and fast deliveries</a>, which will benefit customer satisfaction.</p>
-<p>Did you know that DPD has an extensive tracking system that lets both you and your customers accurately follow shipments? This provides transparency and trust in the delivery process, which is essential for a good customer relationship.</p>
-<h2>Frequently asked questions about connecting DPD to bol</h2>
-<h3>How long does the connection process take?</h3>
-<p>The process of connecting DPD and bol can be completed within a few minutes if you have all the required information at hand.</p>
-<h3>What if the connection fails?</h3>
-<p>If the connection fails, check whether you entered the correct login details and whether you gave the correct permission. If the problem persists, contact DPD or bol customer service for further assistance.</p>
-<p>After successfully connecting DPD to bol, it is important to regularly check the status of your shipments. Make sure you stay informed of any updates and changes in the delivery process, so you can inform your customers in time.</p>
-<h2>Conclusion: The impact of connecting DPD to bol on your business</h2>
-<p>Connecting DPD to bol can deliver significant benefits for your online business. It allows you to work more efficiently, improve your customer service and optimize your shipping process. Follow the step-by-step guide and benefit from this connection for your business!</p>
-<p>Integrating DPD with bol also creates opportunities to expand your market reach. By making use of DPD's logistics expertise and bol's broad customer base, you can present your products to a larger audience. This can lead to an increase in sales and greater brand awareness for your business.</p>
-<p>In addition, the collaboration between DPD and bol can result in improved delivery speed and reliability for your customers. DPD is known for its fast and efficient delivery services, while bol has built a solid reputation as a reliable online store. By combining these two forces, you can offer your customers a seamless and professional shipping experience, which can lead to higher customer satisfaction and repeat purchases.</p>
-<p>Want to really make the power of DPD and bol.com work in your favor? With ShopLinkr you effortlessly manage your orders and inventory, and keep everything organized in one place. Our smart software handles automatic inventory synchronization and makes processing orders a breeze. Join the thousands of satisfied users who have already processed more than 110,000 orders and manage more than 22,000 products in our system. Make your life easier and your webshop more successful. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days now</a> and discover the convenience of integrated order and inventory management!</p>
+<p>ShopLinkr sends the track & trace back to bol automatically, so there's nothing to enter by hand. When you're working through larger volumes, <a href="/en/features/pick-lists">pick lists</a> with a smart route and barcode scanning help you pack faster and without errors.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Do I connect DPD directly to bol?</h3>
+<p>No. You connect DPD to ShopLinkr, and ShopLinkr is connected to bol. You print your DPD labels from ShopLinkr and the track & trace flows back to bol on its own.</p>
+<h3>Can I use other carriers besides DPD?</h3>
+<p>Yes. You can add multiple carriers and choose which one to use per order. Handy when you want a different carrier for some shipments.</p>
+<h3>Does this work with other sales channels too?</h3>
+<p>Yes. Alongside bol you can connect Shopify, WooCommerce and Kaufland, for example. All your orders land in one overview. See all <a href="/en/integrations">integrations</a>.</p>
+
+<p>That's how you handle your bol orders and DPD shipments from a single place from now on. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and connect your first carrier today.</p>

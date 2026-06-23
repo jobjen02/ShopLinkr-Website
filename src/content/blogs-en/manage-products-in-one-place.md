@@ -12,4 +12,4 @@ translationKey: "producten-beheren-op-een-plek"
 <p>Absolutely. We are constantly working on smart improvements around products, stock and order processing. Keep an eye on our updates, or let us know which feature you would like to see added.</p>
 <h3>Are you missing something while working with your products?</h3>
 <p>Good to hear, because that gives us the chance to get better. Feel free to send us a message, give us a call or email us your idea. We are happy to think along with you to make your warehouse run even more smoothly.</p>
-<p>Are you ready to manage your stock and orders in a clear and organized way? Join the webshops that already process more than 110,000 orders through ShopLinkr. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and see for yourself how quickly you are set up.</p>
+<p>Are you ready to manage your stock and orders in a clear and organized way? Join the webshops that already process their orders through ShopLinkr. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and see for yourself how quickly you are set up.</p>

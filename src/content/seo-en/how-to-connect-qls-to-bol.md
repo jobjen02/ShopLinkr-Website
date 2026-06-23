@@ -1,93 +1,40 @@
 ---
 title: "How do I connect QLS to bol?"
-excerpt: "Connecting QLS to bol through ShopLinkr can be a smart move if you are looking for ways to streamline your shipping process and improve your customer service."
+excerpt: "Connect QLS and bol through ShopLinkr and process every order in one place. Orders in, label out, track and trace sent back automatically. Here is how it works."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-qls-met-bol/KuIOeXDC6JH34rWrRTGnOH7SWw.png"
 translationKey: "hoe-koppel-ik-qls-met-bol"
+imageAlt: "Connecting QLS to bol through ShopLinkr"
 ---
 
-<p>Connecting QLS to bol can be a smart move if you are looking for ways to streamline your business processes and improve your customer service. In this article I will show you step by step how to set up this connection through ShopLinkr. But before we get into that, let's first take a look at exactly what QLS and bol are.</p>
-<h2>What are QLS and bol?</h2>
-<p><em>QLS</em> is one of the fastest growing companies in e-commerce logistics in the Benelux. As a carrier, QLS helps webshops with fulfillment, parcel delivery and smart software, so you can optimize your logistics and scale up with ease. In ShopLinkr, QLS is one of the carriers you can connect. ShopLinkr is the platform: you connect your sales channel, such as bol, and your carrier, such as QLS, and process your orders from one place.</p>
-<p>Bol is one of the largest e-commerce platforms in the Netherlands and Belgium and offers a wide range of products to consumers. By connecting both bol and QLS to ShopLinkr, you can easily manage your bol orders and optimize your shipping process. This can lead to faster and better order handling and ultimately higher customer satisfaction.</p>
-<p>The combination of QLS and bol in ShopLinkr not only offers businesses operational advantages, but also opens up new opportunities for growth and expansion. By processing your bol orders and creating QLS shipping labels from one place, you can streamline your logistics and strengthen your competitive position. This allows you to focus on your core activities while at the same time offering your customers a seamless and efficient shopping experience.</p>
-<p>In addition, selling on bol means you can benefit from bol's extensive customer base. By offering your products on this popular e-commerce platform, you not only increase your visibility, but also reach a wider audience of potential customers. This opens the door to new growth opportunities and can contribute to strengthening your brand positioning and increasing revenue.</p>
-<h2>The benefits of connecting QLS to bol</h2>
-<p>Connecting QLS to bol through ShopLinkr offers several benefits for your business. Here are just a few of the advantages you can expect:</p>
-<h3>Efficiency in business processes</h3>
-<p>By connecting both bol and QLS to ShopLinkr, you can streamline and automate your shipping process. Your bol orders flow straight into ShopLinkr, and with the QLS connection you create shipping labels for all your orders with a single click. This not only saves time, but also reduces the chance of errors and mistakes.</p>
-<h3>Improved customer service</h3>
-<p>Good customer service is essential for the success of your business. By connecting QLS to bol through ShopLinkr, you can process orders faster and more accurately. As soon as a QLS label is created, the track and trace code is automatically sent back to your webshop, such as bol or Shopify. This means that your customers receive their products sooner and can be kept informed about the status of their order. Improved customer service will result in higher customer satisfaction and loyalty.</p>
-<p>In addition to efficiency and improved customer service, there are other benefits to managing your orders in ShopLinkr. One of these benefits is the ability to keep an overview of your stock. ShopLinkr helps you keep track of how much stock is available across your sales channels, so you stay in control as your orders grow.</p>
-<p>Another benefit of processing your bol orders in ShopLinkr is a clear overview of your orders in one place. Instead of switching between different systems, you handle your bol orders and create your QLS labels from a single platform. This makes it easier to keep oversight and to keep your shipping process running smoothly.</p>
-<h2>Step-by-step guide to connecting QLS to bol</h2>
-<h3>Preparing for the connection</h3>
-<p>Before you can connect QLS to bol in ShopLinkr, you need to make sure you have made the necessary preparations. Follow these steps to prepare for the connection:</p>
+<p>Want to connect QLS to bol? You do it through ShopLinkr. You link bol as a sales channel and QLS as a carrier, after which your orders flow in automatically and you create a QLS shipping label with a single click. The track and trace code then goes back to bol on its own. QLS is a parcel carrier, bol is a large Dutch and Belgian sales channel, and ShopLinkr is the software that brings them together.</p>
+
+<h2>Connect QLS to bol in 4 steps</h2>
+<p>You set up the connection once. After that, you process every bol order from the same screen.</p>
 <ol>
-<li>
-<p>Check whether you have an active bol seller account.</p>
-</li>
-<li>
-<p>Make sure you have a QLS account so you can create shipping labels.</p>
-</li>
-<li>
-<p>Make a list of the products you want to sell on bol.</p>
-</li>
-<li>
-<p>Make sure your product information, such as price, stock levels and shipping weights, is up to date.</p>
-</li>
-<li>
-<p>Make sure you have a ShopLinkr account and that you are logged in.</p>
-</li>
+<li><p>Create a ShopLinkr account and log in.</p></li>
+<li><p>Add bol as a sales channel and connect your bol seller account. Your open orders flow in right away.</p></li>
+<li><p>Add QLS as a carrier and link your QLS account.</p></li>
+<li><p>Set your shipping preferences and activate the connection. From now on, new bol orders are imported automatically.</p></li>
 </ol>
-<h3>The connection process</h3>
-<p>Now that you have prepared everything, you can start the actual connection process. In ShopLinkr you connect both your sales channel and your carrier. Follow these steps:</p>
+<p>You manage all of your connections from one place in ShopLinkr.</p>
+
+<h2>How to process a bol order with QLS</h2>
+<p>Once the connection is live, you never retype order details again. Going from a bol order to a shipped parcel works like this:</p>
 <ol>
-<li>
-<p>Log in to ShopLinkr and go to the integrations page.</p>
-</li>
-<li>
-<p>Connect your bol seller account as your sales channel.</p>
-</li>
-<li>
-<p>Add QLS as your carrier and follow the on-screen instructions to link your QLS account.</p>
-</li>
-<li>
-<p>Configure the settings for the connection, such as your shipping preferences.</p>
-</li>
-<li>
-<p>Save your settings to complete the connection.</p>
-</li>
+<li><p>The order flows into ShopLinkr with the right address and the right products.</p></li>
+<li><p>You collect the products using a pick list with a smart route through your warehouse, optionally with a barcode scanner.</p></li>
+<li><p>You create the QLS label with one click, or let AutoPrint print it for you automatically.</p></li>
+<li><p>The track and trace code is sent back to bol automatically, so your customer can follow the shipment.</p></li>
 </ol>
-<p>Want more detail on each step? Read how to connect <a href="/en/integrations/qls">QLS</a> and <a href="/en/blog/connect-bol-to-shoplinkr">bol</a> to ShopLinkr.</p>
-<h3>Troubleshooting after connecting</h3>
-<p>You may run into some issues during the connection process. Here are a few common problems and their solutions:</p>
-<ul>
-<li>
-<p>Problem: The connection failed.</p>
-</li>
-<li>
-<p>Solution: Check whether you entered the correct login details and whether you have an active internet connection.</p>
-</li>
-<li>
-<p>Problem: Your products are not showing correctly between bol and ShopLinkr.</p>
-</li>
-<li>
-<p>Solution: Check whether your product information is set up correctly in both ShopLinkr and your bol seller account.</p>
-</li>
-<li>
-<p>Problem: bol orders are not automatically imported into ShopLinkr after connecting.</p>
-</li>
-<li>
-<p>Solution: Check whether you have configured the correct settings for the automatic import of orders in ShopLinkr.</p>
-</li>
-</ul>
-<h2>Frequently asked questions about connecting QLS to bol</h2>
-<h3>How long does the connection process take?</h3>
-<p>The connection process between bol and QLS in ShopLinkr can take some time, depending on various factors, such as the complexity of your business processes and the number of products you want to manage. In most cases, however, it takes only a few minutes to an hour to complete the connection.</p>
-<h3>What if the connection fails?</h3>
-<p>If the connection fails, it is important to find out the cause of the problem. Check whether you entered the correct login details and whether you have an active internet connection. If the problem persists, contact ShopLinkr support for further help.</p>
-<h3>How can I check whether the connection was successful?</h3>
-<p>After completing the connection, you can check whether it was successful by placing a few test orders on bol and checking whether they are imported and processed correctly in ShopLinkr. If you do not run into any problems with importing the test orders and creating a QLS label, you can assume that the connection was successful.</p>
-<p>Now that you know how to connect QLS to bol through ShopLinkr and what benefits this brings, you are well on your way to streamlining your business processes and improving your customer service. Follow the step-by-step guide and the troubleshooting tips and you will be enjoying the benefits of this connection in no time. Good luck!</p>
-<p>Are you ready to experience the power of ShopLinkr and take your order and inventory management to the next level? With our smart software, you effortlessly keep track of everything in one place, enjoy automatic stock synchronization and easily process orders. Join the thousands of satisfied webshops that have already processed more than 110,000 orders and manage more than 22,000 products in our system. Don't miss this chance to grow your business. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days now</a> and discover the convenience of seamless integration with bol and other leading platforms!</p>
+<p>Because your orders and labels live in one place, you reduce the chance of errors and ship faster. Your inventory is synced in real time across every channel, so you never sell more than you have in stock. If you sell the same product on more than one channel, this sync keeps a bol order from coming in for something that has already sold through your own webshop.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Does this work with other sales channels too?</h3>
+<p>Yes. Besides bol, you can also connect Shopify, WooCommerce, Kaufland and other webshops and marketplaces to ShopLinkr. You process all of your orders from the same screen.</p>
+<h3>Can I use carriers other than QLS?</h3>
+<p>You can. ShopLinkr supports PostNL, DPD, MyParcel and Sendcloud among others, so you can pick the carrier that fits each order best.</p>
+<h3>How do I check that the connection works?</h3>
+<p>Place a test order on bol, check that it appears in ShopLinkr, create a QLS label, and confirm the track and trace goes back to bol. If you get stuck, ShopLinkr support is happy to help.</p>
+
+<p>Ready to streamline your shipping process? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and connect bol and QLS in a few minutes.</p>

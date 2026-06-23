@@ -1,38 +1,24 @@
 ---
 title: "Voorraadmanagement"
-excerpt: "Voorraadmanagement, het lijkt misschien een technische term, maar in werkelijkheid is het een cruciaal aspect voor elke webshop en retailer. Of je nu een klein bedrijf runt of een groot bedrijf, een goed voorraadbeheer kan het verschil maken tussen groei en stagnatie."
+excerpt: "Voorraadmanagement is meer dan tellen: bestellen, opslaan en bijhouden zodat je nooit misgrijpt of vastzit aan dode voorraad. Zo pak je het slim aan."
 publishedAt: "2023-09-25T00:00:00.000Z"
 image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
+imageAlt: "Voorraadmanagement in ShopLinkr met realtime voorraadniveaus per kanaal"
 ---
 
-<p><strong>Voorraadmanagement, het lijkt misschien een technische term, maar in werkelijkheid is het een cruciaal aspect voor elke webshop en retailer. Of je nu een klein bedrijf runt of een groot bedrijf, een goed voorraadbeheer kan het verschil maken tussen groei en stagnatie. Hierin kan een voorraadbeheersysteem als ShopLinkr een grote rol spelen.</strong></p>
-<h2>Wat is Voorraadmanagement?</h2>
-<p>Voorraadmanagement is het proces van het bestellen, opslaan en gebruiken van de voorraad van een bedrijf. Het doel is om ervoor te zorgen dat er altijd voldoende voorraad is om aan de vraag te voldoen, maar niet zoveel dat je met onverkochte goederen blijft zitten.</p>
-<h2>Waarom is Voorraadmanagement Belangrijk?</h2>
-<ol>
-<li>
-<p><strong>Klanttevredenheid</strong>: Niets frustreert klanten meer dan te horen dat een product niet op voorraad is nadat ze een bestelling hebben geplaatst. Goed voorraadmanagement voorkomt deze situaties.</p>
-</li>
-<li>
-<p><strong>Kostenbesparing</strong>: Overstock kan leiden tot opslagkosten, terwijl een tekort kan leiden tot gemiste verkoopkansen. Een efficiënt voorraadbeheer optimaliseert je kosten.</p>
-</li>
-<li>
-<p><strong>Cashflow Verbetering</strong>: Door je voorraad op een optimale manier te beheren, kun je je cashflow verbeteren, wat essentieel is voor de financiële gezondheid van een bedrijf.</p>
-</li>
-</ol>
-<h2>"Best Practices" voor Voorraadmanagement</h2>
+<p>Voorraadmanagement gaat over het bestellen, opslaan en bijhouden van je producten, zodat je altijd genoeg op de plank hebt om aan de vraag te voldoen zonder vast te zitten aan goederen die blijven liggen. Het verschil tussen die twee uitersten bepaalt hoeveel werkkapitaal er in je magazijn vastzit en hoe vaak je nee moet verkopen.</p>
+
+<h2>Waar het in de praktijk misgaat</h2>
+<p>De meeste problemen ontstaan niet door slechte producten, maar door een voorraad die niet klopt met de werkelijkheid. Verkoop je op meerdere kanalen, dan loop je het risico hetzelfde artikel dubbel te verkopen terwijl er nog maar één op voorraad is. Aan de andere kant blijven slecht lopende artikelen liggen en eten ze stilletjes je marge op aan opslag en gebonden kapitaal.</p>
+
+<h2>Drie dingen die het verschil maken</h2>
 <ul>
-<li>
-<p><strong>Vraagvoorspelling</strong>: Gebruik historische data om toekomstige vraag te voorspellen.</p>
-</li>
-<li>
-<p><strong>Regelmatige Voorraadcontroles</strong>: Regelmatige tellingen helpen discrepanties en potentiële problemen te identificeren voordat ze ernstig worden.</p>
-</li>
-<li>
-<p><strong>Gebruik Technologie</strong>: Overweeg een voorraadbeheersysteem zoals ShopLinkr, dat het proces automatiseert en real-time inzichten biedt.</p>
-</li>
+<li><p><strong>Een voorraad die overal klopt.</strong> ShopLinkr houdt je <a href="/functionaliteiten/voorraad">voorraadniveaus</a> realtime in sync over al je kanalen, van bol tot Shopify en WooCommerce, zodat je nooit verkoopt wat er niet meer ligt.</p></li>
+<li><p><strong>Vooruitkijken in plaats van achteraf bijbestellen.</strong> Met voorraadprognoses en inkoopadvies per leverancier zie je op tijd welke artikelen je moet bijbestellen, voordat je nul staat.</p></li>
+<li><p><strong>Weten wat er echt gebeurt.</strong> Rapportages over omzet en marge per product, voorraadwaarde, dode voorraad en een ABC-analyse laten zien waar je geld verdient en waar het blijft hangen.</p></li>
 </ul>
-<h2>De Toekomst van Voorraadmanagement</h2>
-<p>Met de opkomst van technologie en AI, wordt voorraadbeheer steeds geavanceerder. Systemen kunnen nu automatisch bestellingen plaatsen, seizoensgebonden vraag voorspellen en zelfs retourzendingen beheren.</p>
-<h2>Conclusie</h2>
-<p>Of je nu net begint of al jaren in het vak zit, een goed voorraadmanagement is essentieel. Met de juiste tools en strategieën kun je ervoor zorgen dat je bedrijf efficiënter, winstgevender en klantgerichter wordt.</p>
+
+<h2>Van inzicht naar uitvoering</h2>
+<p>Een kloppende voorraad is pas de helft. De andere helft is de orders er soepel uit krijgen. ShopLinkr verwerkt je bestellingen uit alle kanalen op één plek, stuurt pickers met een <a href="/functionaliteiten/picklijsten">slimme looproute</a> en barcodescanning het magazijn in, en maakt met één klik verzendlabels aan voor <a href="/functionaliteiten/vervoerders">vervoerders</a> als PostNL, DPD en MyParcel. De track & trace gaat automatisch terug naar het verkoopkanaal.</p>
+
+<p>Wil je je voorraad en orders op één plek beheren? <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en zie zelf hoe snel je opgezet bent.</p>

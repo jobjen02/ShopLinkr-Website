@@ -26,4 +26,4 @@ translationKey: "wat-is-shoplinkr"
 <h3>Working together with your team</h3>
 <p>Working with more than one person? <a href="/en/support/inviting-users">Invite colleagues</a> and use <a href="/en/support/manage-roles-and-permissions">roles and permissions</a> to define exactly what everyone is allowed to do. Warehouse staff can log in quickly with a <a href="/en/support/log-in-with-qr-code">QR code</a> and PIN.</p>
 <h3>Who is ShopLinkr for?</h3>
-<p>ShopLinkr is built specifically for webshops with their own warehouse. Whether you are a small business that is just starting to grow, or a larger company with multiple sales channels: ShopLinkr scales with you thanks to the flexible <a href="/en/support/the-pay-as-you-go-model">Pay as you Go model</a>.</p>
+<p>ShopLinkr is built specifically for webshops with their own warehouse. Whether you are a small business that is just starting to grow, or a larger company with multiple sales channels: ShopLinkr scales with you thanks to the flexible <a href="/en/support/the-pay-as-you-go-model">Pay-as-you-go model</a>.</p>

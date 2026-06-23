@@ -1,31 +1,21 @@
 ---
 title: "Location Management"
-excerpt: "With location management you instantly know where every product is and what your inventory is worth."
+excerpt: "With location management in ShopLinkr you know exactly what you have where, what it is worth, and where to pick it from in your warehouse."
 publishedAt: "2024-01-29T00:00:00.000Z"
 image: "/images/blog/locatiebeheer/6jCIG6yk1PUXNAkFP9A81dIop8.jpg"
 translationKey: "locatiebeheer"
 ---
 
-<p>Great news for all ShopLinkr users! We are launching a handy new feature: Location Management. It makes managing your inventory incredibly simple, even when your products are stored in different spots within your warehouse. Let's take a look at how this new feature can help your webshop.</p>
-<p><strong>With Location Management you always have perfect visibility into your inventory. This is super handy, because:</strong></p>
-<ol>
-<li>
-<p><strong>You always know what you have and where:</strong> Whether you have one storage spot or ten, you can see at a glance how much of each product you have and where it is located.</p>
-</li>
-<li>
-<p><strong>Less hassle with inventory:</strong> ShopLinkr helps you move your inventory between locations, fully automatically.</p>
-</li>
-<li>
-<p><strong>Happy customers:</strong> When you know where everything is, you can deliver faster. And that means satisfied customers!</p>
-</li>
-</ol>
-<p>The Handy Features of Location Management:</p>
-<ol>
-<li>
-<p><strong>Always Up-to-date:</strong> Check your inventory in real time, at every location.</p>
-</li>
-<li>
-<p><strong>Inventory value made clear: </strong>You can keep track of a purchase price per product, so you know what your inventory is worth, per location or as a whole.</p>
-</li>
-</ol>
-<p>You can easily add locations and link them to products. With a new order, the inventory will automatically be deducted from a location, and on the pick &amp; pack list you can see where to retrieve the product within your warehouse.</p>
+<p>Once your stock is spread across several spots in your warehouse, finding things eats up time. With location management in ShopLinkr you link products to fixed spots, so you always know where something is and what your <a href="/en/features/inventory">inventory</a> is worth.</p>
+
+<h2>Always see your stock</h2>
+<p>You set up hierarchical warehouse locations and link each product to one or more spots. Whether you have one storage spot or ten, you can see per location how much of a product you have on hand. Inventory stays synced in real time across all your sales channels, so you never sell more than is physically present.</p>
+
+<h2>Inventory value made clear</h2>
+<p>Keep a purchase price per product and you instantly know what your inventory is worth, per location or for the whole warehouse. That gives you an up-to-date picture for your bookkeeping and helps with decisions on purchasing and <strong>dead stock</strong>. The reports cover inventory value, margin per product, and an ABC analysis, among others.</p>
+
+<h2>Pick and ship faster</h2>
+<p>When a new order comes in, stock is automatically deducted from the right location. The <a href="/en/features/pick-lists">pick list</a> shows exactly where to grab each product, with a smart route through your warehouse. No more walking back and forth, and orders go out the door sooner.</p>
+
+<h2>Get started</h2>
+<p>Adding locations and linking them to products takes just a few clicks. Want to try it yourself? <a href="https://app.shoplinkr.com/auth/register">Create an account</a> and use ShopLinkr free for 14 days.</p>

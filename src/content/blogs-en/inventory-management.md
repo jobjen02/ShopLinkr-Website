@@ -1,39 +1,25 @@
 ---
 title: "Inventory Management"
-excerpt: "Inventory management might sound like a technical term, but in reality it is a crucial aspect for every webshop and retailer. Whether you run a small business or a large company, good inventory management can make the difference between growth and stagnation."
+excerpt: "Inventory management is more than counting: ordering, storing and tracking stock so you never run out or get stuck with dead stock. Here's how to do it well."
 publishedAt: "2023-09-25T00:00:00.000Z"
 image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
+imageAlt: "Inventory management in ShopLinkr with real-time stock levels per channel"
 translationKey: "voorraadmanagement"
 ---
 
-<p><strong>Inventory management might sound like a technical term, but in reality it is a crucial aspect for every webshop and retailer. Whether you run a small business or a large company, good inventory management can make the difference between growth and stagnation. An inventory management system like ShopLinkr can play a major role here.</strong></p>
-<h2>What Is Inventory Management?</h2>
-<p>Inventory management is the process of ordering, storing and using a company's stock. The goal is to make sure there is always enough stock to meet demand, but not so much that you are left with unsold goods.</p>
-<h2>Why Is Inventory Management Important?</h2>
-<ol>
-<li>
-<p><strong>Customer satisfaction</strong>: Nothing frustrates customers more than hearing that a product is out of stock after they have placed an order. Good inventory management prevents these situations.</p>
-</li>
-<li>
-<p><strong>Cost savings</strong>: Overstock can lead to storage costs, while a shortage can lead to missed sales opportunities. Efficient inventory management optimizes your costs.</p>
-</li>
-<li>
-<p><strong>Improved cash flow</strong>: By managing your stock in an optimal way, you can improve your cash flow, which is essential for the financial health of a business.</p>
-</li>
-</ol>
-<h2>"Best Practices" for Inventory Management</h2>
+<p>Inventory management is about ordering, storing and tracking your products so you always have enough on the shelf to meet demand without getting stuck with goods that just sit there. The gap between those two extremes decides how much working capital is tied up in your warehouse and how often you have to tell a customer something is sold out.</p>
+
+<h2>Where it goes wrong in practice</h2>
+<p>Most problems don't come from bad products, they come from stock numbers that don't match reality. If you sell on multiple channels, you risk selling the same item twice when only one is left. On the other side, slow-moving items keep sitting in the warehouse and quietly eat into your margin through storage costs and tied-up cash.</p>
+
+<h2>Three things that make the difference</h2>
 <ul>
-<li>
-<p><strong>Demand forecasting</strong>: Use historical data to predict future demand.</p>
-</li>
-<li>
-<p><strong>Regular stock checks</strong>: Regular counts help you identify discrepancies and potential problems before they become serious.</p>
-</li>
-<li>
-<p><strong>Use technology</strong>: Consider an inventory management system like ShopLinkr, which automates the process and offers real-time insights.</p>
-</li>
+<li><p><strong>Stock that's correct everywhere.</strong> ShopLinkr keeps your <a href="/en/features/inventory">stock levels</a> in sync across all your channels in real time, from bol to Shopify and WooCommerce, so you never sell what's no longer there.</p></li>
+<li><p><strong>Looking ahead instead of reordering too late.</strong> With stock forecasting and purchase advice per supplier you see in time which items to reorder, before you hit zero.</p></li>
+<li><p><strong>Knowing what's really happening.</strong> Reports on revenue and margin per product, stock value, dead stock and an ABC analysis show you where you make money and where it stays stuck.</p></li>
 </ul>
-<h2>The Future of Inventory Management</h2>
-<p>With the rise of technology and AI, inventory management is becoming more and more advanced. Systems can now automatically place orders, predict seasonal demand and even manage returns.</p>
-<h2>Conclusion</h2>
-<p>Whether you are just starting out or have been in the trade for years, good inventory management is essential. With the right tools and strategies, you can make your business more efficient, more profitable and more customer-focused.</p>
+
+<h2>From insight to execution</h2>
+<p>Accurate stock is only half the job. The other half is getting orders out the door smoothly. ShopLinkr processes orders from all your channels in one place, sends pickers into the warehouse with a <a href="/en/features/pick-lists">smart route</a> and barcode scanning, and creates shipping labels in one click for <a href="/en/features/carriers">carriers</a> like PostNL, DPD and MyParcel. The track & trace is sent back to the sales channel automatically.</p>
+
+<p>Want to manage your stock and orders in one place? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and see how quickly you're set up.</p>

@@ -1,20 +1,18 @@
 ---
 title: "DPD koppelen aan ShopLinkr"
-excerpt: "Ontdek hoe de DPD koppeling van ShopLinkr je verzendproces vereenvoudigt en efficiënter maakt. Koppel je eigen verzendcontract aan ShopLinkr."
+excerpt: "Koppel je eigen DPD contract aan ShopLinkr, maak verzendlabels met één klik en laat track & trace automatisch terug naar je verkoopkanaal sturen."
 publishedAt: "2023-08-21T00:00:00.000Z"
 image: "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png"
-imageAlt: "DPD integratie afbeelding"
+imageAlt: "DPD koppelen aan ShopLinkr voor verzendlabels en track & trace"
 ---
 
-<p><strong>Wil je je verzendproces een flinke upgrade geven? Goed nieuws! Met de DPD koppeling van ShopLinkr wordt verzenden een stuk simpeler. Je kunt namelijk je eigen DPD contract aan ShopLinkr koppelen en zo profiteren van handige verzendmogelijkheden.</strong></p>
-<p>Bekijk <a href="https://support.shoplinkr.com/artikel/dpd-koppelen" target="_blank">hier</a> de handleiding voor het koppelen van DPD.</p>
-<h2>Geen gedoe meer</h2>
-<p>Handmatige verzendprocessen zijn verleden tijd. Met de DPD koppeling kun je alles regelen vanaf één plek. Koppel je DPD contract en beheer je zendingen met gemak.</p>
-<h2>Jouw tarieven, jouw keuze</h2>
-<p>Het mooie van deze koppeling? Je kunt gewoon je bestaande DPD tarieven gebruiken. Geen extra gedoe met prijzen aanpassen, je klanten krijgen dezelfde tarieven als altijd.</p>
-<h2>Labels in een handomdraai</h2>
-<p>Verzendlabels maken is nog nooit zo makkelijk geweest. Dankzij de DPD koppeling genereer je verzendlabels razendsnel. Geen tijdrovend werk meer.</p>
-<h2>Altijd op de hoogte</h2>
-<p>Met real-time tracking kun je je zendingen op de voet volgen. Zowel jij als je klanten weten altijd waar hun bestelling is.</p>
-<h2>Alles-in-één systeem</h2>
-<p>De DPD koppeling maakt je leven makkelijker. Je hebt alles op één plek: bestellingen, voorraad en verzendingen. Dit betekent minder fouten en meer overzicht.</p>
+<p><strong>Met de DPD koppeling van ShopLinkr verzend je je bestellingen met je eigen DPD contract, zonder los te schakelen tussen systemen. Je maakt labels aan, drukt ze af en houdt je zendingen bij vanuit dezelfde plek waar je je orders en voorraad beheert.</strong></p>
+<p>Bekijk <a href="/support/dpd-koppelen">hier de handleiding</a> voor het koppelen van DPD.</p>
+<h2>Je eigen DPD contract, je eigen tarieven</h2>
+<p>Je koppelt het DPD contract dat je al hebt aan ShopLinkr. Je houdt dus je eigen afspraken en tarieven en hoeft niets opnieuw te onderhandelen of in te stellen. DPD is een van de <a href="/functionaliteiten/vervoerders">vervoerders</a> die ShopLinkr ondersteunt, naast onder andere PostNL, MyParcel en Sendcloud, zodat je later kunt uitbreiden zonder van werkwijze te wisselen.</p>
+<h2>Labels met één klik en automatische track & trace</h2>
+<p>Per bestelling maak je met één klik een DPD verzendlabel aan. Met AutoPrint laat je labels direct naar je printer sturen, zodat je grotere batches achter elkaar afhandelt. Zodra een label is aangemaakt, stuurt ShopLinkr de track & trace code automatisch terug naar het verkoopkanaal waar de order vandaan komt, bijvoorbeeld bol, Shopify of WooCommerce. Jij en je klant kunnen de zending zo volgen zonder dat je iets handmatig hoeft door te geven.</p>
+<h2>Verzenden als onderdeel van je orderproces</h2>
+<p>De DPD koppeling staat niet op zichzelf. Je verzending is de laatste stap in een proces dat begint bij je <a href="/functionaliteiten/bestellingen">bestellingen</a> en loopt via <a href="/functionaliteiten/picklijsten">picklijsten</a> met een slimme looproute en barcodescanning. Orders, voorraad en verzendingen zitten in één systeem, waardoor je minder overstapt tussen tools en minder fouten maakt.</p>
+<h2>Aan de slag met DPD in ShopLinkr</h2>
+<p>Koppel je DPD contract en verzend je eerste pakketten zonder los verzendprogramma. <a href="https://app.shoplinkr.com/auth/register">Maak een account aan</a> en probeer ShopLinkr 14 dagen gratis. Bekijk ook de andere <a href="/integraties">integraties</a> om je verkoopkanalen en vervoerders aan elkaar te knopen.</p>

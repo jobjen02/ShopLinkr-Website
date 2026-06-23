@@ -1,32 +1,25 @@
 ---
 title: "Wat is het verschil tussen een EAN en een barcode?"
-excerpt: "Elke EAN is een barcode, maar niet elke barcode is een EAN code."
+excerpt: "Elke EAN is een barcode, maar niet elke barcode is een EAN. Lees waarin ze verschillen en waarom dat onderscheid telt voor je voorraad en orders."
 publishedAt: "2024-02-19T00:00:00.000Z"
 image: "/images/blog/wat-is-het-verschil-tussen-een-ean-en-een-barcode/cS8gKqxjsgvRfceqmPVXQEmFk.svg"
 ---
 
-<h2>Barcode: de universele taal van producten</h2>
-<p>Een barcode is een visuele, machineleesbare weergave van gegevens. Het bestaat uit een reeks lijnen en ruimtes van verschillende breedtes die cijfers en andere symbolen vertegenwoordigen. Barcodes worden gebruikt om <a href="/functionaliteiten/producten" target="_blank">producten</a>, brieven, pakketten en andere items te identificeren en te volgen. Ze kunnen gelezen worden door scanners en mobiele telefoons met de juiste apps.</p>
-<p>Er zijn verschillende typen barcodes, waaronder UPC (Universal Product Code), <a href="/blogs/wat-is-een-ean-code" target="_blank">EAN</a> (European Article Number), en QR-codes. Elk type heeft zijn eigen specifieke gebruik en wordt geaccepteerd in verschillende regio's en door verschillende industrieën.</p>
-<h2>EAN: een specifiek type barcode</h2>
-<p>EAN staat voor European Article Number (ook bekend als International Article Number) en is een specifiek type barcode dat wereldwijd wordt gebruikt voor de identificatie van <a href="/functionaliteiten/producten" target="_blank">producten</a> in de detailhandel. Een EAN code bestaat uit 13 cijfers, waardoor het een uitbreiding is van de oorspronkelijke 12-cijferige UPC (Universal Product Code) die voornamelijk in Noord-Amerika wordt gebruikt.</p>
-<p>De structuur van een <a href="/blogs/wat-is-een-ean-code" target="_blank">EAN</a> is als volgt:</p>
-<ul>
-<li>
-<p>De eerste 2-3 cijfers zijn de landcode, toegekend door de GS1 organisatie.</p>
-</li>
-<li>
-<p>De volgende reeks cijfers (meestal 4-5) vertegenwoordigt de fabrikant of het bedrijf.</p>
-</li>
-<li>
-<p>De daaropvolgende cijfers (meestal 5) zijn het productnummer, toegekend door de fabrikant.</p>
-</li>
-<li>
-<p>Het laatste cijfer is een controlecijfer, gebruikt om de nauwkeurigheid van de gehele code te controleren.</p>
-</li>
-</ul>
-<h2>Belangrijkste verschillen</h2>
-<p>Het belangrijkste verschil tussen een EAN en een barcode is dat "barcode" een algemene term is voor elke vorm van datacodering die visueel kan worden gescand. Een EAN code is daarentegen een specifiek type barcode dat wordt gebruikt voor de identificatie van <a href="/functionaliteiten/producten" target="_blank">producten</a> in de detailhandel over de hele wereld.</p>
-<p>Elke EAN is een barcode, maar niet elke barcode is een EAN code.</p>
-<h2>Conclusie</h2>
-<p>Het efficiënt beheren van <a href="/functionaliteiten/voorraad" target="_blank">voorraad</a> en het efficiënt verwerken van <a href="/functionaliteiten/bestellingen" target="_blank">orders</a> zijn cruciale aspecten van de hedendaagse detailhandel en e-commerce. Het begrijpen van de verschillen tussen EAN's en barcodes is fundamenteel voor iedereen die betrokken is bij het beheer van productinformatie. Door de juiste coderingstechniek toe te passen, kan een bedrijf zijn <a href="/functionaliteiten/producten" target="_blank">producten</a> effectief volgen, beheren en promoten, wat uiteindelijk leidt tot een betere klanttevredenheid en bedrijfsvoering.</p>
+<p>De termen "barcode" en "EAN" worden vaak door elkaar gebruikt, maar ze betekenen niet hetzelfde. Het verschil snappen helpt je om je <a href="/functionaliteiten/producten">producten</a> netjes te koppelen en scanfouten in je magazijn te voorkomen.</p>
+
+<h2>Wat is een barcode?</h2>
+<p>Een barcode is een machineleesbare weergave van gegevens: een reeks lijnen en ruimtes van verschillende breedtes die cijfers of tekens vertegenwoordigen. Je vindt ze op producten, brieven en pakketten, en een scanner of telefoon leest ze in een fractie van een seconde uit.</p>
+<p>"Barcode" is dus een verzamelnaam. Er bestaan meerdere typen, zoals UPC (Universal Product Code), QR-codes en de EAN. Elk type heeft zijn eigen toepassing en wordt in andere regio's of branches gebruikt.</p>
+
+<h2>Wat is een EAN?</h2>
+<p>EAN staat voor European Article Number en is een specifiek type barcode dat wereldwijd wordt gebruikt om producten in de detailhandel te identificeren. Een EAN bestaat uit 13 cijfers die samen wereldwijd uniek zijn voor één product. Wil je weten hoe die cijfers zijn opgebouwd? Dat lees je in <a href="/blogs/wat-is-een-ean-code">wat is een EAN code</a>.</p>
+
+<h2>Het kernverschil</h2>
+<p>"Barcode" is de algemene term voor elke vorm van data die visueel te scannen is. Een EAN is daarbinnen één specifiek formaat dat de retail wereldwijd gebruikt. Oftewel: elke EAN is een barcode, maar niet elke barcode is een EAN.</p>
+
+<h2>Waarom dit telt voor je administratie</h2>
+<p>In de praktijk werk je met allebei. Een EAN koppel je aan je product zodat verkoopkanalen als bol en je webshop precies weten om welk artikel het gaat. In je magazijn scan je vervolgens barcodes om de juiste producten te picken en in te boeken.</p>
+<p>In ShopLinkr leg je EAN's vast op je producten en groepeer je varianten op EAN, zodat je voorraad over al je kanalen klopt. Bij het <a href="/functionaliteiten/picklijsten">picken</a> scan je de barcode op het artikel en de locatie, zodat je nooit het verkeerde product in een pakket stopt. Zo houd je je <a href="/functionaliteiten/voorraad">voorraad</a> realtime in sync en voorkom je misgrepen en oververkoop.</p>
+
+<h2>Aan de slag</h2>
+<p>Wil je je producten op EAN beheren en je orders met barcodescanning verwerken? Probeer ShopLinkr <a href="https://app.shoplinkr.com/auth/register">14 dagen gratis</a> en zie hoe het in jouw magazijn werkt.</p>

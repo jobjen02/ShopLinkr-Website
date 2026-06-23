@@ -8,7 +8,7 @@ translationKey: "shopify-koppelen-aan-shoplinkr"
 ---
 
 <p><strong>With ShopLinkr's Shopify integration you process orders, print shipping labels and keep your stock in sync across all your sales channels. All from one central platform.</strong></p>
-<p>View the guide for connecting Shopify <a href="https://support.shoplinkr.com/artikel/shopify-koppelen" target="_blank">here</a>.</p>
+<p>View the guide for connecting Shopify <a href="/en/support/connect-shopify">here</a>.</p>
 <h2>Your Shopify products in one overview</h2>
 <p>When you connect, your Shopify products are imported into ShopLinkr, so for each item you know where it is, what the stock level is and which channels are selling it. That way you always work from the same foundation.</p>
 <h2>Efficient order processing</h2>

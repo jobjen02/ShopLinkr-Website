@@ -1,59 +1,25 @@
 ---
 title: "Inventory Systems"
-excerpt: "A deep dive into inventory systems: why every business needs them"
+excerpt: "Periodic, perpetual or dropshipping: which inventory system fits your webshop best? We explain the differences and what real-time sync actually saves you."
 publishedAt: "2023-10-12T00:00:00.000Z"
 image: "/images/blog/voorraadsystemen/ZPmW5kSvGlGlu5mL45xiLkecb6g.png"
 translationKey: "voorraadsystemen"
 ---
 
-<h3>A Deep Dive Into Inventory Systems: Why Every Business Needs Them</h3>
-<p>In the e-commerce era, where fast delivery and accurate stock levels are crucial to customer satisfaction, inventory systems play an indispensable role. Let's take a look at what inventory systems are and why they are so essential for modern businesses.</p>
-<h3>What Are Inventory Systems?</h3>
-<p>Inventory systems, also known as inventory management systems, are tools or software solutions designed to help businesses manage their stock levels. They can track everything from the receipt of goods to sales and shipping.</p>
-<h3>Why Are Inventory Systems Important?</h3>
-<ol>
-<li>
-<p><strong>Efficiency</strong>: Inventory systems automate many of the tasks that used to be done manually, such as ordering new stock or identifying products that are nearly sold out.</p>
-</li>
-<li>
-<p><strong>Accuracy</strong>: With automated systems, human errors are minimized, which increases the accuracy of your inventory data.</p>
-</li>
-<li>
-<p><strong>Customer satisfaction</strong>: Customers expect the products they want to buy to be in stock. A good inventory system makes sure that is the case.
-<br>
+<p>If you sell across more than one channel, the real question is not whether you track your stock but how. Count at a fixed moment, or follow along with every sale as it happens? That distinction decides whether you oversell, run out, or restock right on time. Here are the three systems you will run into, and when each one fits.</p>
 
-<br>
-</p>
-</li>
-</ol>
-<h3>Types of Inventory Systems</h3>
-<ol>
-<li>
-<p><strong>Periodic Systems</strong>: These systems require regular manual stock checks. At fixed times, the inventory is counted and updated.</p>
-</li>
-<li>
-<p><strong>Perpetual Systems</strong>: These are continuous tracking systems that provide real-time updates, such as ShopLinkr. They are often supported by advanced software and are ideal for larger businesses.</p>
-</li>
-<li>
-<p><strong>Dropshipping Systems</strong>: Specifically for businesses that do not hold any stock, but ship products directly from the supplier to the customer.
-<br>
+<h2>Periodic systems</h2>
+<p>With a periodic system you count your stock at set moments, for example weekly or at the end of the month. Between those counts you do not know exactly how much you have. That works fine with a small stock or a single sales channel, but the moment you sell in several places at once you are running behind the facts and risk double sales.</p>
 
-<br>
-</p>
-</li>
-</ol>
-<h3>Choosing the Right Inventory System</h3>
-<p>When choosing an inventory system, you should take the following into account:</p>
-<ol>
-<li>
-<p><strong>Business size</strong>: Larger businesses may need more advanced systems than smaller ones.</p>
-</li>
-<li>
-<p><strong>Type of products</strong>: Businesses with perishable goods may have different needs than businesses that sell durable goods.</p>
-</li>
-<li>
-<p><strong>Budget</strong>: There are systems available for every budget, from simple free tools to extensive paid solutions. ShopLinkr has an affordable pricing model that fits every business, whether large or small.</p>
-</li>
-</ol>
-<h3>Conclusion</h3>
-<p>In the dynamic world of e-commerce and retail, having an efficient inventory system is no longer a luxury but a necessity. Choosing the right system can make the difference between a satisfied customer and a missed sales opportunity. Experience the difference for yourself now and try ShopLinkr completely free for 14 days!</p>
+<h2>Perpetual systems</h2>
+<p>A perpetual system tracks your stock continuously. Every sale, return and incoming delivery adjusts the count right away. ShopLinkr works this way: your <a href="/en/features/inventory">stock is synced in real time</a> across all your channels, from bol and Shopify to WooCommerce and Kaufland. Sell a product on one channel and the stock drops on the others immediately, so you never sell something that is already gone.</p>
+<p>On top of that live count you get stock forecasting and purchase advice per supplier, so you can see what to reorder before you run out. For products you would rather not track, you can use fictional or unlimited stock.</p>
+
+<h2>Dropshipping</h2>
+<p>If you hold no stock yourself and your supplier ships straight to the customer, everything depends on accurate numbers coming from that supplier. A central system that brings your orders and channels together keeps the overview, even when the physical stock sits somewhere else.</p>
+
+<h2>Which system fits you?</h2>
+<p>A few things guide the choice. If you sell on more than one channel, real-time synchronization is not really a luxury but the only way to prevent overselling. If you handle a lot of orders, the steps after stock matter just as much: <a href="/en/features/pick-lists">pick lists with a smart route and barcode scanning</a> and a one-click shipping label for your <a href="/en/features/carriers">carrier</a>. And budget does not have to be a barrier: ShopLinkr uses pay-as-you-go pricing, so you pay for what you use.</p>
+
+<h2>Getting started</h2>
+<p>Want to move from separate counts to a single up-to-date overview? See how ShopLinkr brings your channels, stock and shipping together, or dive straight into the <a href="/en/guides">guides</a> to get going. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and see the difference for yourself.</p>

@@ -1,63 +1,36 @@
 ---
 title: "What is a backorder?"
-excerpt: "A backorder can sometimes be a confusing concept."
+excerpt: "A backorder is an order for a product that is temporarily out of stock. Learn how to handle backorders and prevent them with solid inventory management."
 publishedAt: "2024-06-11T00:00:00.000Z"
 image: "/images/blog/wat-is-een-backorder/mOg4w5jzdzry32BjB0M5rbu4T8.png"
+imageAlt: "Warehouse worker checking inventory for a backorder"
 translationKey: "wat-is-een-backorder"
 ---
 
-<p>A backorder can sometimes be a confusing concept. But don't worry, I'm going to explain it all. A backorder occurs when a product is not immediately in stock, yet is still ordered by a customer. This can happen in various situations, for example when a certain item is very popular and sells out.</p>
-<h2>Definition of a backorder</h2>
-<p>To understand it better, let's first take a look at the definition of a backorder. A backorder refers to an order that still needs to be fulfilled because the desired product is not available in the warehouse at the time of ordering. Instead of canceling the order, it is placed in the queue until the product is back in stock.</p>
-<h3>The basic principles of backorders</h3>
-<p>Backorders are actually a normal part of doing business. They make it possible for customers to order a desired product, even when it is temporarily out of stock. This is especially useful when you need a specific item that isn't easy to find in other shops.</p>
-<p>When you place a backorder, your order is registered and a date is set on which the product is expected to be back in stock. In the meantime, you can look forward to having the desired product in your hands soon.</p>
-<h3>The difference between a backorder and out-of-stock</h3>
-<p>It is important to understand the difference between a backorder and a product that is "out-of-stock". If a product is "out-of-stock", it means that it is not available at all right now and there is no way to order it. With a backorder, the product is temporarily unavailable, but you can still place an order and wait until it is available again.</p>
-<p>While a backorder can be a handy option for customers, it also brings some challenges for businesses. Managing backorders requires careful planning and inventory management. Businesses need to make sure they have enough stock to meet demand, while at the same time avoiding being left with unsold inventory.</p>
-<p>To achieve this, businesses use advanced inventory management systems and forecasting tools to predict demand and order the right quantity of products. On top of that, they also have to take external factors into account, such as seasonal demand and delivery delays.</p>
-<p>Managing backorders also requires good communication with customers. Businesses need to be transparent about expected delivery times and proactively communicate any delays. This helps to maintain customer trust and keep them informed about the status of their order.</p>
-<h2>The importance of backorder management</h2>
-<p>Effective backorder management is essential for the smooth running of your business operations. It allows you to maintain customer relationships, safeguard customer satisfaction and strengthen your competitive position.</p>
-<h3>Benefits of effective backorder management</h3>
-<p>Effective backorder management can bring several benefits. First of all, you enable your customers to order the products they want, even when they aren't immediately in stock. This can set your business apart from the competition and encourage customers to keep ordering from you.</p>
-<p>What's more, backorders can also serve as a valuable source of information for your business. By analyzing which products often generate backorders, you can optimize your inventory management and make sure you always have enough stock of the most popular products.</p>
-<h3>Risks of poor backorder management</h3>
-<p>On the other hand, if your backorder management is poor, it can lead to dissatisfied customers, missed sales opportunities and even reputational damage to your business. Customers can get frustrated if they have to wait a long time for a backorder and decide to shop elsewhere. That's why it's essential to make sure your backorder management is well organized.</p>
-<h2>How backorders affect customer satisfaction</h2>
-<p>Backorders can have a considerable impact on customer satisfaction. When a customer orders a product that is temporarily out of stock, this can cause some inconvenience. That's why it's important to communicate proactively with your customers and keep them informed about the status of their backorder.</p>
-<h3>Impact on the customer relationship</h3>
-<p>A good customer relationship is based on trust and transparency. When you communicate openly and honestly about backorders and the expected delivery time, you can maintain your customers' trust. They appreciate that you take their order seriously and keep them informed of any delays.</p>
-<h3>The importance of communication with backorders</h3>
-<p>Communication is the key to successful backorder management. Make sure you regularly send updates to customers who are waiting for a backorder. Give them an estimated delivery date and any updates if changes occur. This way, your customers feel involved and informed, which will benefit customer satisfaction.</p>
-<h2>Techniques to reduce backorders</h2>
-<p>Although backorders can be unavoidable, there are various techniques you can apply to reduce the number of backorders and thereby increase customer satisfaction.</p>
-<h3>Inventory management and backorders</h3>
-<p>Effective inventory management is vital for reducing the number of backorders. By accurately forecasting demand and always having enough stock, you can prevent customers from being forced to place a backorder. Make use of technology and analyze historical sales data to manage your stock levels accurately.</p>
-<h3>The use of technology in backorder prevention</h3>
-<p>In addition, implementing technology can help you prevent backorders effectively. Automated inventory systems can help you keep track of your stock levels, predict demand and place timely orders with your suppliers. This reduces the risk of backorders and ensures that you always have stock of your most popular products.</p>
-<h2>Conclusion: navigating backorders</h2>
-<p>While backorders can sometimes be tricky, they are a normal part of doing business. Effective backorder management is hugely important for safeguarding customer satisfaction and keeping your business operations running smoothly. Communicate with your customers regularly, reduce the number of backorders through good inventory management and use technology to streamline your backorder process.</p>
-<h3>Key points to remember</h3>
+<p>A <strong>backorder</strong> is an order for a product that is out of stock at the moment of purchase but that you expect to restock soon. Instead of turning the order away, you accept it and ship once your inventory is replenished. For you as a seller, that means you don't lose the sale even though the item isn't on the shelf right now.</p>
+
+<h2>Backorder versus out of stock</h2>
+<p>The difference comes down to expectation. With a <strong>backorder</strong>, a product is temporarily gone but a delivery date is set or new stock is on the way. The customer can order and simply waits a little longer. An item that is <strong>out of stock</strong> often can't be ordered at all because there is no visibility on a restock. Sellers who use backorders deliberately keep selling while competitors mark the same product page as unavailable.</p>
+
+<h2>Handling backorders the right way</h2>
+<p>A backorder lives or dies by clear communication and tight inventory records. These steps keep it manageable:</p>
 <ol>
-<li>
-<p>Backorders are orders that still need to be fulfilled because the desired product is temporarily out of stock.</p>
-</li>
-<li>
-<p>Communication is essential with backorders in order to maintain customer relationships.</p>
-</li>
-<li>
-<p>Effective inventory management and technology can reduce the number of backorders.</p>
-</li>
+<li><p><strong>Be honest about the lead time.</strong> Show a realistic expected delivery date on the product and update it as soon as you have new information from your supplier.</p></li>
+<li><p><strong>Keep the customer in the loop.</strong> Confirm the order, send an update if there's a delay, and notify them the moment the package ships.</p></li>
+<li><p><strong>Reorder from your supplier on time.</strong> Use <a href="/functionaliteiten/voorraad">purchase advice per supplier</a> so you know what to reorder and when.</p></li>
+<li><p><strong>Ship as soon as stock arrives.</strong> With <a href="/functionaliteiten/picklijsten">pick lists</a> and <a href="/functionaliteiten/vervoerders">one-click shipping labels</a>, you can clear open backorders the moment they become available again.</p></li>
 </ol>
-<h3>Future considerations for backorder management</h3>
-<ul>
-<li>
-<p>Stay up to date with new technologies that can help you prevent backorders.</p>
-</li>
-<li>
-<p>Monitor demand and adjust your inventory management strategies to increase customer satisfaction.</p>
-</li>
-</ul>
-<p>With these insights, you can navigate backorders better and make sure your customer satisfaction stays high. Good luck!</p>
-<p>Had enough of the hassle with backorders and want to take your inventory management to the next level? ShopLinkr helps you with easy order and inventory management for your webshop. With automatic stock synchronization and a simple way to process orders, you keep track of everything effortlessly in one place. Plus, we work together with the most well-known and reliable companies. What are you waiting for? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr now for 14 days free</a> and say goodbye to backorder stress!</p>
+
+<h2>Preventing backorders with inventory management</h2>
+<p>Backorders are a normal part of doing business, but too many of them cost you customers. The best prevention is control over your stock. ShopLinkr syncs your inventory in <strong>real time</strong> across all your sales channels, so you never sell more than you can deliver and avoid overselling. Stock forecasting shows which products are about to run low, so you reorder before the shelves are empty.</p>
+<p>For cases where you do want to keep selling anyway, you can work with fictional or unlimited stock. That keeps a product orderable based on your supplier agreements, while you track exactly what still needs to ship per <a href="/functionaliteiten/bestellingen">order</a>.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>How long does a backorder take?</h3>
+<p>It depends on your supplier. Always give an expected delivery date based on the restock lead time and update it the moment anything changes. A clear timeframe prevents frustration and cancellations.</p>
+<h3>Can I charge for a backorder?</h3>
+<p>Many online stores only charge at the time of shipping rather than at the time of order. That lowers the barrier to buy and avoids disputes if delivery takes longer than expected.</p>
+<h3>Does this work across multiple sales channels?</h3>
+<p>Yes. ShopLinkr processes orders from bol, Shopify, WooCommerce, Kaufland, and other channels in one place. Check the <a href="/integraties">integrations</a> to see which channels and carriers are supported.</p>
+
+<p>Want to handle backorders without the hassle and keep your inventory accurate across every channel? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and manage your stock and orders in one place.</p>

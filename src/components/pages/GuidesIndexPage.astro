@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import { type Locale, localizeHref, localizedPath } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+import { collectionName, localeMeta } from '../../i18n/localeData';
+import { breadcrumbs } from '../../utils/seo';
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.guides;
+
+// Root-served SEO landing pages live in the seo / seoEn collection. They are
+// reachable at /<slug> (NL) and /en/<slug> (EN). This hub gives them a single
+// discoverable home grouped by theme, so they are no longer orphaned.
+const pages = await getCollection(collectionName('seo', locale));
+const base = locale === 'en' ? '/en' : '';
+
+type GroupKey = 'voorraadbeheer' | 'excel' | 'bol' | 'koppelingen';
+const ORDER: GroupKey[] = ['voorraadbeheer', 'excel', 'bol', 'koppelingen'];
+
+function groupOf(id: string): GroupKey {
+    if (id.includes('hoe-koppel-ik') || id.includes('how-to-connect')) return 'koppelingen';
+    if (id.includes('excel')) return 'excel';
+    if (id.includes('bol')) return 'bol';
+    return 'voorraadbeheer';
+}
+
+const grouped = ORDER.map((key) => ({
+    key,
+    label: p.groups[key],
+    items: pages
+        .filter((page) => groupOf(page.id) === key)
+        .sort((a, b) => a.data.title.localeCompare(b.data.title, localeMeta[locale].bcp47)),
+})).filter((g) => g.items.length > 0);
+
+const jsonLd = [
+    breadcrumbs([
+        [t.footer.links.guides, localizeHref('/', locale)],
+        [p.eyebrow, localizedPath('guides', locale)],
+    ]),
+    {
+        '@type': 'CollectionPage',
+        name: p.title,
+        description: p.description,
+        inLanguage: localeMeta[locale].bcp47,
+        hasPart: pages.map((page) => ({
+            '@type': 'Article',
+            headline: page.data.title,
+            url: `https://shoplinkr.com${base}/${page.id}`,
+        })),
+    },
+];
+---
+
+<PageLayout
+    title={p.title}
+    description={p.description}
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    subheading={p.subheading}
+    routeKey="guides"
+    jsonLd={jsonLd}
+>
+    <section class="pb-24 md:pb-32 bg-paper dark:bg-charcoal">
+        <div class="container-wide flex flex-col gap-16 md:gap-20">
+            {grouped.map((group) => (
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-8 md:mb-10">
+                        {group.label}
+                    </h2>
+                    <div class="grid gap-4 md:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        {group.items.map((page) => (
+                            <a
+                                href={`${base}/${page.id}`}
+                                class="group flex flex-col gap-2 h-full rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                            >
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper leading-snug tracking-tight group-hover:text-sunstone-deep transition-colors min-h-[2.75rem] md:min-h-[3.1rem]">
+                                    {page.data.title}
+                                </h3>
+                                <p class="text-sm text-steel dark:text-gravel leading-relaxed line-clamp-3">
+                                    {page.data.excerpt}
+                                </p>
+                                <span class="mt-auto pt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep group-hover:gap-2.5 transition-all">
+                                    {p.readMore}
+                                    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </section>
+
+    <CtaBanner />
+</PageLayout>

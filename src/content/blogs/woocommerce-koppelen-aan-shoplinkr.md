@@ -1,20 +1,20 @@
 ---
 title: "WooCommerce koppelen aan ShopLinkr"
-excerpt: "Ontdek de kracht van de integratie tussen ShopLinkr en WooCommerce. Vereenvoudig je orderbeheer, verwerk bestellingen en print verzendlabels moeiteloos."
+excerpt: "Koppel je WooCommerce-webshop aan ShopLinkr en verwerk bestellingen, print verzendlabels en houd je voorraad realtime in sync vanuit één centraal platform."
 publishedAt: "2023-05-01T00:00:00.000Z"
 image: "/images/blog/woocommerce-koppelen-aan-shoplinkr/2FVqp9F6P8qrmqhOp6PAtXTFu2Y.png"
-imageAlt: "WooCommerce integratie afbeelding"
+imageAlt: "WooCommerce-webshop gekoppeld aan het ShopLinkr-dashboard voor orders en voorraad"
 ---
 
-<p><strong>Als eigenaar van een WooCommerce-winkel wil je je bestelproces zo efficiënt mogelijk maken. Met de nieuwste integratie tussen ShopLinkr en WooCommerce wordt dat een fluitje van een cent. Ontdek hoe je je bestellingen kunt verwerken, verzendlabels kunt genereren en je voorraad kunt beheren met gemak.</strong></p>
-<p>Bekijk <a href="https://support.shoplinkr.com/artikel/woocommerce-koppelen" target="_blank">hier</a> de handleiding voor het koppelen van WooCommerce.</p>
-<h2>Producten automatisch opgehaald</h2>
-<p>Met de WooCommerce integratie van ShopLinkr worden al je producten moeiteloos opgehaald vanuit je WooCommerce winkel. Dit bespaart je tijd en moeite, omdat je niet langer handmatig je productinformatie hoeft in te voeren. Je hebt direct toegang tot al je producten in ShopLinkr.</p>
-<h2>Efficiënte orderverwerking</h2>
-<p>Het verwerken van bestellingen was nog nooit zo eenvoudig. Met ShopLinkr kun je al je bestellingen vanuit WooCommerce gemakkelijk beheren en efficiënt verwerken op één centrale locatie. Je hebt snel toegang tot alle orderdetails, betalingsinformatie en verzendadressen. Met slechts een paar klikken kun je de bestellingen klaarmaken voor verzending.</p>
-<h2>Eenvoudig verzendlabels genereren</h2>
-<p>Dankzij de WooCommerce integratie van ShopLinkr kun je met één klik verzendlabels genereren voor je bestellingen. Je hoeft niet langer handmatig gegevens in te voeren, waardoor je tijd bespaart en het risico op fouten vermindert. Met een soepel en geautomatiseerd proces kun je snel en gemakkelijk verzendlabels printen.</p>
-<h2>Synchronisatie van track &amp; trace informatie</h2>
-<p>Met ShopLinkr worden de track &amp; trace informatie en orderstatussen automatisch gesynchroniseerd tussen ShopLinkr en WooCommerce. Dit betekent dat je altijd up-to-date bent over de verzendstatus van je bestellingen, zowel in ShopLinkr als in WooCommerce. Klanten kunnen de voortgang van hun bestelling volgen en jij hebt volledige controle over de verzending.</p>
-<h2>Koppel je WooCommerce winkel aan ShopLinkr &amp; probeer 14 dagen gratis!</h2>
-<p>Wil je meer weten over de nieuwe WooCommerce integratie van ShopLinkr en hoe het jouw verkoopproces kan verbeteren? Neem dan nu contact met ons op of meld je aan voor een gratis proefperiode en ervaar zelf hoe deze integratie je e-commerce activiteiten naar een hoger niveau tilt.</p>
+<p><strong>Met de WooCommerce-koppeling van ShopLinkr verwerk je bestellingen, print je verzendlabels en houd je je voorraad in sync over al je verkoopkanalen. Alles vanuit één centraal platform.</strong></p>
+<p>Bekijk <a href="/support/woocommerce-koppelen">hier</a> de handleiding voor het koppelen van WooCommerce.</p>
+<h2>Producten uit WooCommerce in één overzicht</h2>
+<p>Bij de koppeling worden je WooCommerce-producten in ShopLinkr binnengehaald. Per artikel zie je de actuele <a href="/functionaliteiten/voorraad">voorraad</a>, op welke <a href="/functionaliteiten/locatiebeheer">locatie</a> het ligt en welke kanalen het verkopen. Zo werk je altijd vanuit dezelfde basis.</p>
+<h2>Bestellingen verwerken vanuit één plek</h2>
+<p>Je WooCommerce-orders komen binnen tussen de bestellingen van je andere kanalen, zoals bol, Shopify en Kaufland. Vanaf één <a href="/functionaliteiten/picklijsten">picklijst</a> met een slimme looproute pick, pak en scan je alles in één ronde, ook over meerdere bestellingen tegelijk.</p>
+<h2>Verzendlabels en automatische track &amp; trace</h2>
+<p>Maak met één klik een verzendlabel aan bij een <a href="/functionaliteiten/vervoerders">vervoerder</a> als PostNL, DPD of MyParcel. Zodra het label er is, stuurt ShopLinkr de track &amp; trace automatisch terug naar WooCommerce, zodat je klant direct ziet waar de bestelling is.</p>
+<h2>Voorraad altijd in sync</h2>
+<p>Elke verkoop, retour of inkomende levering past je voorraad in ShopLinkr aan, en die voorraad sync je realtime door naar WooCommerce en je andere kanalen. Zo verkoop je nooit meer wat er niet meer ligt.</p>
+<h2>Koppel je WooCommerce-winkel aan ShopLinkr &amp; probeer 14 dagen gratis</h2>
+<p>Klaar om je magazijn en je WooCommerce-winkel soepel te laten samenwerken? <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en ervaar het zelf.</p>

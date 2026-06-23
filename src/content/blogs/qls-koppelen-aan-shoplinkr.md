@@ -1,17 +1,17 @@
 ---
 title: "QLS koppelen aan ShopLinkr"
-excerpt: "Ontdek hoe de QLS koppeling van ShopLinkr je verzendproces vereenvoudigt en efficiënter maakt. Bespaar tijd en minimaliseer fouten met één klik verzendlabels genereren."
+excerpt: "Met de QLS koppeling van ShopLinkr maak je verzendlabels met één klik en gaat track & trace automatisch terug naar je verkoopkanaal. Zo werkt het."
 publishedAt: "2023-05-24T00:00:00.000Z"
 image: "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png"
 ---
 
-<p><strong>Het optimaliseren van je verzendproces is essentieel voor een succesvolle e-commerce onderneming. Met de nieuwe QLS koppeling van ShopLinkr wordt het beheren van verzendlabels een fluitje van een cent. In deze blogpost ontdek je hoe deze integratie je kan helpen om je verzendproces te stroomlijnen en efficiënter te maken.</strong></p>
-<p>Bekijk <a href="https://support.shoplinkr.com/artikel/qls-koppelen" target="_blank">hier</a> de handleiding voor het koppelen van QLS.</p>
-<h2>Efficiënt verzendlabel beheer met één klik</h2>
-<p>Met de QLS koppeling van ShopLinkr kun je met slechts één klik verzendlabels aanmaken voor al je bestellingen. Dit bespaart je kostbare tijd en minimaliseert het risico op fouten bij het handmatig invoeren van verzendinformatie. Je kunt nu eenvoudig en snel labels genereren, klaar om af te drukken en op je pakketten te plakken.</p>
-<h2>Naadloze integratie met diverse webshops</h2>
-<p>Of je nu een webshop hebt op Shopify, bol.com of een ander platform, de QLS koppeling integreert naadloos met verschillende e-commerce platforms. Dit betekent dat je al je bestellingen vanuit één centrale locatie kunt beheren en de verzendlabels kunt genereren, ongeacht het platform waarop de bestelling is geplaatst.</p>
-<h2>Automatische tracking updates</h2>
-<p>Zodra je het verzendlabel hebt aangemaakt, wordt de track &amp; trace code automatisch doorgegeven aan je webshop, zoals bol.com of Shopify. Dit betekent dat je klanten altijd up-to-date informatie hebben over de status van hun zendingen, wat zorgt voor een verbeterde klantervaring.</p>
-<h2>Koppel je QLS account aan ShopLinkr &amp; probeer 14 dagen gratis!</h2>
-<p>Wil je meer weten over de QLS koppeling van ShopLinkr en hoe het jouw verzendproces kan verbeteren? Neem dan nu contact met ons op of meld je aan voor een gratis proefperiode en ervaar zelf hoe deze integratie je e-commerce activiteiten naar een hoger niveau tilt.</p>
+<p><strong>QLS is een van de vervoerders die je in ShopLinkr kunt koppelen. Heb je een QLS-account, dan verstuur je je bestellingen voortaan zonder over te schakelen naar een aparte verzendtool.</strong></p>
+<p>De stappen om je account te koppelen vind je in de <a href="/support/qls-koppelen">handleiding</a>. Hieronder lees je wat de koppeling in de praktijk voor je orderverwerking betekent.</p>
+<h2>Labels aanmaken vanuit je bestellingen</h2>
+<p>Zodra QLS gekoppeld is, kies je het als verzendmethode bij het afhandelen van een bestelling. Het label maak je met één klik aan, klaar om af te drukken en op het pakket te plakken. Werk je met <a href="/functionaliteiten/picklijsten">picklijsten</a> en pakstations, dan rolt het label er aan het einde van het pakproces direct uit. Met AutoPrint laat je labels automatisch naar je printer sturen, zodat je ze niet één voor één hoeft op te halen.</p>
+<h2>Eén overzicht voor al je kanalen</h2>
+<p>ShopLinkr verwerkt je bestellingen van bol, Shopify, WooCommerce, Kaufland en andere kanalen op één plek. Of een order nu via je webshop of via een marktplaats binnenkomt, je verzendt alles met dezelfde QLS-koppeling. Geen losse exports of dubbele invoer per kanaal, en je <a href="/functionaliteiten/voorraad">voorraad</a> blijft realtime gelijk over al je kanalen.</p>
+<h2>Track & trace terug naar het verkoopkanaal</h2>
+<p>Na het aanmaken van het label stuurt ShopLinkr de track & trace automatisch terug naar het kanaal waar de bestelling vandaan komt. Je klant ziet de status van zijn zending zonder dat jij codes hoeft over te tikken, en je hoeft de bestelling niet handmatig op verzonden te zetten.</p>
+<h2>Aan de slag</h2>
+<p>QLS is een van de vervoerders die ShopLinkr ondersteunt, naast onder andere PostNL, DPD, MyParcel, Sendcloud, Sendy en Innosend. Een volledig overzicht vind je bij <a href="/functionaliteiten/vervoerders">vervoerders</a>. Wil je QLS via ShopLinkr gaan gebruiken? <a href="https://app.shoplinkr.com/auth/register">Maak een account aan</a> en probeer ShopLinkr 14 dagen gratis.</p>

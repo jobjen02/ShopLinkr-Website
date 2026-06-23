@@ -98,7 +98,7 @@ const jsonLd = [
                             href={channel.external ? channel.href : localizeHref(channel.href, locale)}
                             target={channel.external ? '_blank' : undefined}
                             rel={channel.external ? 'noopener noreferrer' : undefined}
-                            class="group flex flex-col gap-5 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-7 md:p-8 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                            class="group flex flex-col gap-5 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                         >
                             <div class="flex items-center justify-center h-11 w-11 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`${channel.icon} text-[1.15rem]`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
@@ -131,7 +131,7 @@ const jsonLd = [
                 </div>
 
                 <aside class="lg:col-span-5 space-y-6">
-                    <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-7 md:p-8">
+                    <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
                         <p class="eyebrow mb-4">{p.expectationsTitle}</p>
                         <ul class="space-y-5">
                             {
@@ -154,7 +154,7 @@ const jsonLd = [
                         </ul>
                     </div>
 
-                    <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-7 md:p-8">
+                    <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
                         <p class="eyebrow mb-4">{p.reachTitle}</p>
                         <div class="space-y-5">
                             <div>
@@ -189,7 +189,7 @@ const jsonLd = [
                         </div>
                     </div>
 
-                    <div class="bg-charcoal dark:bg-charcoal text-paper rounded-2xl p-7 md:p-8">
+                    <div class="bg-charcoal dark:bg-charcoal text-paper rounded-2xl p-6 md:p-7">
                         <i class="fa-solid fa-quote-left text-sunstone-soft text-xl mb-4" aria-hidden="true"></i>
                         <p class="text-paper/90 text-base md:text-[1.05rem] leading-relaxed">
                             {p.quote}

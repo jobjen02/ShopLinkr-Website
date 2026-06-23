@@ -1,19 +1,19 @@
 ---
 title: "Connecting MyParcel to ShopLinkr"
-excerpt: "Simplify your shipping process with the MyParcel integration from ShopLinkr. Generate shipping labels and share track & trace information with your webshop automatically. Save time and optimize your logistics."
+excerpt: "Connect MyParcel to ShopLinkr and create shipping labels with one click. Track & trace flows back to your sales channel automatically, with no double work."
 publishedAt: "2023-03-31T00:00:00.000Z"
 image: "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png"
-imageAlt: "MyParcel integration image"
+imageAlt: "Creating a MyParcel shipping label from an order in ShopLinkr"
 translationKey: "myparcel-koppelen-aan-shoplinkr"
 ---
 
-<p><strong>Shipping parcels is a crucial part of your e-commerce business, but it can be time-consuming and complex. Fortunately, ShopLinkr offers a seamless integration with MyParcel that lets you streamline and simplify your shipping process. In this blog post you will discover how to generate shipping labels with a single click, have track &amp; trace codes passed on automatically, and make order shipping more efficient.</strong></p>
-<p>View the guide for connecting MyParcel <a href="https://support.shoplinkr.com/artikel/myparcel-koppelen" target="_blank">here</a>.</p>
-<h2>The power of the MyParcel integration</h2>
-<p>With the MyParcel integration from ShopLinkr, you never have to create shipping labels by hand again. With just one click, you can generate a shipping label for any order. On top of that, the track &amp; trace code is passed on to your webshop automatically, so both you and your customers can follow the shipment.</p>
-<h2>Simple integration and ease of use</h2>
-<p>Connecting MyParcel to ShopLinkr is simple and fast. You can start automating your shipping process right away. ShopLinkr handles a seamless integration, so you can enjoy the benefits of MyParcel without any hassle.</p>
-<h2>Efficiency and time savings</h2>
-<p>Thanks to the MyParcel integration, you save valuable time when shipping orders. Generating shipping labels and passing on track &amp; trace codes happens automatically, giving you more time to focus on other important aspects of your business.</p>
-<h2>Connect your MyParcel account to ShopLinkr &amp; try it free for 14 days!</h2>
-<p>Want to learn more about the MyParcel integration from ShopLinkr and how it can improve your shipping process? Get in touch with us now or sign up for a free trial and experience for yourself how this integration takes your e-commerce activities to the next level.</p>
+<p><strong>With the MyParcel integration from ShopLinkr, you ship orders from a single screen. You create shipping labels without switching to the MyParcel portal, and the track &amp; trace code flows back automatically to the sales channel the order came from.</strong></p>
+<p>If you still need to set up MyParcel, read <a href="/en/support/connect-myparcel">the guide for connecting MyParcel</a>.</p>
+<h2>Create labels straight from your orders</h2>
+<p>Pick an order, select the shipping method and generate the MyParcel label. With AutoPrint, the label comes out the moment an order is ready to ship. You never retype address details, they come straight from the order.</p>
+<h2>Track & trace back to your channel</h2>
+<p>As soon as the label is created, ShopLinkr writes the track &amp; trace code back to bol, Shopify, WooCommerce or whichever channel the order arrived from. Your customer gets their shipping update through the channel they ordered on, without you copying codes by hand. If you sell across several channels at once, every order stays tied to its source and you never log in somewhere separate to update a status.</p>
+<h2>One workflow for all your carriers</h2>
+<p>MyParcel sits alongside your other carriers in the same screen. If you also ship with PostNL, DPD or QLS, every shipment works the same way. You can decide which carrier to use per order with <a href="/en/features/rules">automation rules</a>, so the right choice is set in advance. For an overview of every supported carrier, see the <a href="/en/features/carriers">carriers</a> page.</p>
+<h2>Connect MyParcel and try ShopLinkr free for 14 days</h2>
+<p>Want to handle your shipping from one place? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and connect your MyParcel account in a few steps.</p>

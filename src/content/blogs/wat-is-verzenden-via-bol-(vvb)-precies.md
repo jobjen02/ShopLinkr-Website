@@ -1,52 +1,28 @@
 ---
 title: "Wat is verzenden via bol (VVB) precies?"
-excerpt: "Verzenden via bol (VVB) is een handige tool die bol aanbiedt, waardoor verkopers hun verzendproces kunnen optimaliseren en klanten sneller kunnen bedienen. In deze blog wordt uitgelegd wat VVB precies betekent, hoe het werkt en welke voordelen het biedt voor jou als verkoper op bol."
+excerpt: "Verzenden via bol (VVB) laat je bestellingen versturen via het netwerk van bol, terwijl je zelf je voorraad beheert en je producten inpakt. Zo werkt het."
 publishedAt: "2024-02-05T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
 ---
 
-<p><strong>Wat is Verzenden via bol (VVB)?
-<br>
-</strong>Met Verzenden via bol kunnen verkopers bestellingen versturen met behulp van de verzendopties van bol.com, terwijl ze nog steeds de controle hebben over hun voorraad en het inpakproces. Dit betekent dat verkopers zelf verantwoordelijk zijn voor het inpakken van de producten, maar ze kunnen vertrouwen op de verzendservice van bol om hun producten snel en betrouwbaar bij de klanten te laten bezorgen.</p>
-<p><strong>Voordelen van Verzenden via bol</strong>:</p>
+<p>Verzenden via bol (VVB) is een leveringsmethode waarbij je producten zelf opslaat en inpakt, maar de verzending via het netwerk van bol laat lopen. Het is het alternatief voor Logistiek via bol (LVB), waarbij bol ook je voorraad beheert. Bij VVB houd je dat zelf in handen.</p>
+
+<h2>Hoe werkt VVB?</h2>
+<p>De stappen zijn simpel, maar vragen om een strakke verwerking:</p>
 <ol>
-<li>
-<p><strong>Betrouwbare Levering</strong>: Profiteer van het uitgebreide en betrouwbare netwerk van bol.com voor de bezorging van je producten.</p>
-</li>
-<li>
-<p><strong>Flexibiliteit in Verzending</strong>: Kies uit verschillende verzendopties die bol.com biedt, van standaard tot same-day delivery.</p>
-</li>
-<li>
-<p><strong>Verhoogde Klanttevredenheid</strong>: Snelle en betrouwbare levering draagt bij aan een positieve klantbeleving en kan leiden tot betere beoordelingen en meer verkopen.</p>
-</li>
+<li><strong>Bestelling binnen</strong>: een klant plaatst een order via bol.</li>
+<li><strong>Zelf inpakken</strong>: jij maakt het product verzendklaar.</li>
+<li><strong>Label en verzending</strong>: je verstuurt het pakket via een vervoerder die bol accepteert, met track &amp; trace.</li>
+<li><strong>Bezorging en tracking</strong>: de klant volgt de bezorging in zijn bol-account.</li>
 </ol>
-<p><strong>Hoe Werkt Verzenden via bol?</strong>:</p>
-<ol>
-<li>
-<p><strong>Bestelling Ontvangen</strong>: Je ontvangt een bestelling van een klant via bol.com.</p>
-</li>
-<li>
-<p><strong>Zelf Inpakken</strong>: Je pakt het product zelf in en maakt het klaar voor verzending.</p>
-</li>
-<li>
-<p><strong>Verzenden via bol.com</strong>: Je gebruikt de verzendlabels van bol.com en kiest de gewenste verzendmethode. Het pakket wordt opgehaald of afgeleverd bij een afgiftepunt.</p>
-</li>
-<li>
-<p><strong>Tracking en Klantenservice</strong>: bol.com biedt trackinginformatie en klantenservice voor de verzending, wat jou tijd en moeite bespaart.</p>
-</li>
-</ol>
-<p><strong>Tips voor Succes met VVB</strong>:</p>
-<ol>
-<li>
-<p><strong>Snelle Verwerking</strong>: Zorg ervoor dat je bestellingen snel verwerkt en verzendklaar maakt om te voldoen aan de verwachtingen van snelle levering.</p>
-</li>
-<li>
-<p><strong>Kwaliteit van Verpakking</strong>: Besteed aandacht aan veilige en representatieve verpakking om schade tijdens transport te voorkomen en een goede indruk te maken op klanten.</p>
-</li>
-<li>
-<p><strong>Voorraadbeheer</strong>: Houd je voorraad nauwkeurig bij om ervoor te zorgen dat je bestellingen efficiënt kunt verwerken en verzenden.</p>
-</li>
-</ol>
-<p>Verzenden via bol (VVB) biedt een geweldige kans om je verzendproces te optimaliseren en je klanten de betrouwbare en snelle levering te bieden die ze verwachten. Door gebruik te maken van de sterke infrastructuur van bol voor verzending, kun je je richten op wat je het beste doet: geweldige producten verkopen.</p>
-<p>Wij kunnen je helpen om je order &amp; voorraadbeheer op orde te brengen. Met onze tool ShopLinkr krijg je direct inzicht in je voorraad en al je openstaande bestellingen, van al je verkoopkanalen.</p>
-<p>Plan nu een <strong>gratis demo</strong> in, dan lopen we samen overal doorheen!</p>
+
+<h2>Wat levert het je op?</h2>
+<p>Met VVB blijf je flexibel: je kiest zelf je verpakking, je vervoerder en je inrichting van het magazijn. Tegelijk profiteer je van de zichtbaarheid en het vertrouwen van bol bij de klant. Snelle, betrouwbare bezorging vertaalt zich vaak in betere reviews en herhaalaankopen.</p>
+<p>De keerzijde: je bent zelf verantwoordelijk voor de doorlooptijd. Een order die te laat de deur uit gaat, raakt je servicescore. Daarom valt of staat VVB met je interne proces.</p>
+
+<h2>VVB soepel laten draaien met ShopLinkr</h2>
+<p>De grootste valkuil bij VVB is de versnippering: orders op bol, voorraad in je magazijn, labels bij je vervoerder. ShopLinkr brengt dat samen in een centraal orderoverzicht. Je <a href="/functionaliteiten/bestellingen">bestellingen</a> van bol en je andere verkoopkanalen komen op een plek binnen, en je <a href="/functionaliteiten/voorraad">voorraad</a> wordt realtime gesynchroniseerd zodat je niet oververkoopt.</p>
+<p>Voor de fysieke verwerking pak je producten met een <a href="/functionaliteiten/picklijsten">picklijst</a> met slimme looproute en barcodescanning. Daarna druk je met een klik een verzendlabel af bij je <a href="/functionaliteiten/vervoerders">vervoerder</a>, zoals PostNL, DPD of MyParcel. De track &amp; trace gaat automatisch terug naar bol, zonder dat je iets overtypt.</p>
+
+<h2>Aan de slag</h2>
+<p>Wil je je VVB-orders sneller en zonder fouten verwerken? Probeer ShopLinkr <a href="https://app.shoplinkr.com/auth/register">14 dagen gratis</a> en zie hoe je je order- en voorraadbeheer op orde brengt.</p>

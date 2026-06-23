@@ -1,40 +1,42 @@
 ---
 title: "Everything you need to know about inventory management in Excel"
-excerpt: "Have you ever wondered how to manage your inventory more efficiently without investing in expensive software? Then you are in the right place! Inventory management in Excel can be a game changer for your business."
+excerpt: "Inventory management in Excel: how to set up a working file, which formulas to use, and where it breaks down once you sell across multiple channels."
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/alles-wat-je-moet-weten-over-voorraadbeheer-in-excel/xPetkMNxhNucwbYD53Kn8BMNyE.png"
 translationKey: "alles-wat-je-moet-weten-over-voorraadbeheer-in-excel"
 ---
 
-<p>Have you ever wondered how to <a href="https://shoplinkr.com/en/blog/the-importance-of-good-inventory-management-for-your-webshop">manage your inventory more efficiently</a> without investing in expensive software? Then you are in the right place! Inventory management in Excel can be a game changer for your business. Let's dive into the world of Excel together and discover how it can optimize your inventory management.</p>
-<h2>Why inventory management in Excel?</h2>
-<p>Before we go into detail, let's first look at why Excel is such a popular choice for inventory management. <a href="https://shoplinkr.com/en/blog/why-is-inventory-management-important-tips-and-benefits">Excel is accessible, flexible</a> and, let's be honest, we've all worked with it at some point. But there's more!</p>
-<h3>The accessibility of Excel</h3>
-<p>Excel is a tool that almost everyone knows. It is available on most computers and requires no extra costs if you already have a Microsoft Office package. This makes it a low-threshold option for starting entrepreneurs or small businesses.</p>
-<p><a href="/en/inventory-excel-template" target="_blank">Download our Excel inventory management template for free now!</a></p>
-<h3>Flexibility and customizability</h3>
-<p>With Excel you are not tied to a fixed template. You can set up your inventory management system entirely to your own liking. Whether you manage a small warehouse or have a large stock, Excel adapts to your needs.</p>
-<h3>The power of formulas and functions</h3>
-<p><a href="https://shoplinkr.com/en/blog/inventory-management">Excel's real power lies</a> in its formulas and functions. From simple sums to complex calculations, Excel can do it all. This allows you to manage and forecast your inventory accurately.</p>
-<h2>How do you get started with inventory management in Excel?</h2>
-<p>Okay, you are convinced of the benefits, but how do you get started? No worries, we'll walk through the process step by step.</p>
-<h3>Setting up your Excel file</h3>
-<p>It all starts with setting up your Excel file. Create a new document and begin by drawing up columns for product names, SKUs (Stock Keeping Units), purchase prices, sales prices, stock quantities, and so on. Think carefully about which information is essential for your inventory management.</p>
-<h3>Using formulas for automation</h3>
-<p>Once your foundation is set up, it's time to add formulas. For example, use the SUM function to calculate the total value of your inventory, or VLOOKUP to quickly look up product information. Automating these processes saves you a lot of time.</p>
-<p>When you use formulas, it is important to understand how absolute and relative cell references work. Absolute references, indicated by the $ sign, ensure that a cell reference does not change when the formula is copied. Relative references adjust automatically when the formula is moved or copied to other cells.</p>
-<h3>Keeping your inventory up to date</h3>
-<p>The most important part of inventory management is keeping your data up to date. Make sure you consistently add new stock, remove sold items, and carry out regular checks. This is crucial for accurate inventory management.</p>
-<h2>Common pitfalls and how to avoid them</h2>
-<p>Although Excel is great, there are a few pitfalls to watch out for.</p>
-<h3>Errors in formulas</h3>
-<p>A small error in a formula can already have major consequences for your inventory management. So always double-check your formulas and, if possible, have someone else review them.</p>
-<p>To <a href="https://shoplinkr.com/en/inventory-management-system">prevent errors in formulas</a>, it is useful to make use of Excel's formula auditing tools. These tools, such as 'Trace Precedents' and 'Evaluate Formula', help you understand the logic behind complex formulas and spot any errors.</p>
-<h3>Data entry errors</h3>
-<p>Human errors when entering data can lead to inaccuracies in your inventory. Set up checks and make use of Excel's validation functions to minimize errors.</p>
-<p>Excel offers several ways to prevent data entry errors. You can set up data validation to ensure that users can only enter specific values, such as a predefined list of product categories. In addition, you can check data for consistency by using conditional formatting to highlight discrepancies.</p>
-<h3>Not updating your inventory regularly</h3>
-<p>Keeping track of your inventory is an ongoing process. Failing to update your Excel file regularly can lead to stock shortages or surpluses. Schedule fixed moments to check and update your inventory.</p>
-<h2>Conclusion</h2>
-<p>Inventory management in Excel is a powerful, flexible and accessible way to manage your stock. With the right setup and attention to detail, it can help you manage your inventory efficiently and grow your business. Do you have questions or are you running into something? Don't hesitate to get in touch. We are happy to help!</p>
-<p>Are you ready to take your inventory management to a higher level with the efficiency and convenience of ShopLinkr? Join the thousands of satisfied users who have already processed more than 110,000 orders, and manage your inventory and orders in one central place. <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and experience how easy it is to be fully set up within 15 minutes.</p>
+<p>Inventory management in Excel is the logical first step for many new webshops: it costs nothing extra, you already know the program, and you can set up your sheet exactly how you want. Below you'll learn how to build a working inventory file, which formulas save you time, and the point at which Excel starts working against you once you sell seriously.</p>
+
+<h2>Setting up an inventory file in Excel</h2>
+<p>Start with a fresh worksheet where every row is one product and every column is one data point. A solid starting layout looks like this:</p>
+<ol>
+<li><strong>SKU</strong>: a unique code per product so you never mix two items up.</li>
+<li><strong>Product name</strong>, and optionally a category or brand.</li>
+<li><strong>Purchase price</strong> and <strong>sales price</strong>, so your margin is visible.</li>
+<li><strong>Stock</strong>: the current quantity on the shelf.</li>
+<li><strong>Minimum stock</strong>: the level at which you need to reorder.</li>
+</ol>
+<p>Keep one tab for the inventory itself and use separate tabs for purchasing and sales. That keeps your main overview clean and lets you trace every change.</p>
+
+<h2>Formulas that save you time</h2>
+<p>The real payoff comes from a handful of standard functions. These let your sheet calculate for you instead of tracking everything by hand:</p>
+<ul>
+<li><strong>SUM</strong> calculates total inventory value by adding up purchase price times quantity.</li>
+<li><strong>VLOOKUP</strong> (or the newer XLOOKUP) pulls product details by SKU, handy on your purchasing and sales tabs.</li>
+<li><strong>Conditional formatting</strong> turns a row red the moment stock drops below your minimum.</li>
+<li><strong>Data validation</strong> forces entries to match an existing category or SKU, which prevents typos.</li>
+</ul>
+<p>When you copy formulas, watch out for absolute references with a dollar sign ($A$2), otherwise your ranges shift unnoticed and your totals stop adding up.</p>
+
+<h2>Where Excel starts working against you</h2>
+<p>Excel is fine as long as one person tracks one inventory. It falls apart the moment you sell across multiple channels. A manual file is never updated in real time, so you sell a product on your webshop while it's already gone on a marketplace. That overselling costs you canceled orders and bad reviews. On top of that, a single broken formula or a wrong paste can quietly make your entire overview unreliable.</p>
+<p>That's the point where you move to software that guards your stock for you. <a href="https://shoplinkr.com/en/features/inventory">ShopLinkr syncs your inventory in real time</a> across all your sales channels, like bol, Shopify, and WooCommerce, so overselling can't happen anymore. You also get stock forecasting, <a href="https://shoplinkr.com/en/features/pick-lists">pick lists with a smart warehouse route</a>, and reports on margin, dead stock, and stock value, the kind of things you'd have to rebuild by hand in Excel every time.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Is Excel enough for inventory management?</h3>
+<p>For a small inventory on a single sales channel, Excel works fine. Once you sell across multiple channels or your order volume grows, tracking by hand becomes error-prone and too slow.</p>
+<h3>How do I prevent errors in my inventory file?</h3>
+<p>Use data validation for entries, check your formulas with Excel's auditing tools, and update your stock at fixed moments. A second pair of eyes on your formulas helps too.</p>
+
+<p>Hitting the limits of Excel? With <a href="https://app.shoplinkr.com/auth/register">a 14-day free ShopLinkr trial</a> you can see what it's like to manage your inventory and orders in one central place, without the risks of a manual sheet.</p>

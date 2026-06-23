@@ -1,6 +1,6 @@
 ---
 title: "Connect bol to ShopLinkr"
-excerpt: "Streamline your order process with the seamless bol integration from ShopLinkr. Easily import and manage orders, print shipping labels and update inventory with ease."
+excerpt: "Streamline your order process with the seamless bol integration from ShopLinkr. Easily import orders, print shipping labels and keep inventory in sync."
 publishedAt: "2022-12-14T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bol integration image"
@@ -8,7 +8,7 @@ translationKey: "bol-com-koppelen-aan-shoplinkr"
 ---
 
 <p><strong>With the bol integration from ShopLinkr you process bol orders, print shipping labels and keep your inventory in sync. Track &amp; trace details are sent back to bol automatically, so your customers know exactly where their parcel is.</strong></p>
-<p>Take a look at the guide for connecting bol <a href="https://support.shoplinkr.com/artikel/bol-com-koppelen" target="_blank">here</a>.</p>
+<p>Take a look at the guide for connecting bol <a href="/en/support/connect-bol">here</a>.</p>
 <h2>All your bol products in one overview</h2>
 <p>When you connect, ShopLinkr pulls in your bol items, so for each product you know what the stock is, where it is located and on which channels it is sold. No more manual administration.</p>
 <h2>Efficient order processing</h2>

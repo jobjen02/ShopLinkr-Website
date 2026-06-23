@@ -1,17 +1,21 @@
 ---
 title: "Connecting Sendcloud to ShopLinkr"
-excerpt: "Simplify your shipping process with the Sendcloud integration from ShopLinkr. Generate shipping labels and share track & trace information automatically with your webshop. Save time and optimize your logistics."
+excerpt: "Connect Sendcloud to ShopLinkr and create shipping labels with one click. Track & trace is sent back to your sales channel automatically and your stock stays in sync."
 publishedAt: "2023-04-21T00:00:00.000Z"
 image: "/images/blog/sendcloud-koppelen-aan-shoplinkr/Slt1nu6TvSVLMWJ0b7CuNixcQk.png"
-imageAlt: "Sendcloud integration image"
+imageAlt: "Connecting Sendcloud to ShopLinkr for shipping labels and track & trace"
 translationKey: "sendcloud-koppelen-aan-shoplinkr"
 ---
 
-<p><strong>Efficient shipping management is essential for any e-commerce business. However, manually generating shipping labels and keeping track of the track &amp; trace information can be time-consuming. Fortunately, ShopLinkr offers a seamless integration with Sendcloud, so you can create shipping labels with just one click and automatically pass the track &amp; trace information on to your webshop. In this blog post you will discover the benefits of connecting Sendcloud with ShopLinkr and how it simplifies your shipping process.</strong></p>
-<p>Take a look at the guide for connecting Sendcloud <a href="https://support.shoplinkr.com/artikel/sendcloud-koppelen" target="_blank">here</a>.</p>
-<h2>Generate shipping labels quickly and easily with the Sendcloud integration</h2>
-<p>With the Sendcloud integration from ShopLinkr you never have to create shipping labels manually again. Simply by entering the right details, you generate shipping labels for your orders with a single click of a button. This saves valuable time and minimizes the chance of errors.</p>
-<h2>Automatic track &amp; trace updates for a better customer experience</h2>
-<p>Thanks to the integration between Sendcloud and ShopLinkr, track &amp; trace information and status updates are synchronized automatically. Your customers can easily follow the progress of their shipments, and you do not have to spend time manually updating shipping information. Improve customer satisfaction and save valuable time with the automated track &amp; trace function.</p>
-<h2>Connect your Sendcloud account to ShopLinkr &amp; try it free for 14 days!</h2>
-<p>Do you want to simplify your shipping process and save time? Discover the benefits of the Sendcloud integration from ShopLinkr today. Get in touch with us or sign up for a free trial period and experience for yourself how this integration takes your e-commerce activities to a higher level. Simplify your shipping management with ShopLinkr and Sendcloud!</p>
+<p><strong>With ShopLinkr's Sendcloud integration you create shipping labels with one click, the track &amp; trace is sent back to your sales channel automatically and your stock stays in sync. All from one central platform.</strong></p>
+<p>View the guide for connecting Sendcloud <a href="/en/support/connect-sendcloud">here</a>.</p>
+<h2>Shipping labels with one click</h2>
+<p>Once your Sendcloud account is connected, you create labels for your orders straight from ShopLinkr. No more switching between screens or retyping address details: the order data is already there and you pick the carrier that fits the shipment. With AutoPrint, labels roll out automatically as soon as an order is ready to ship.</p>
+<h2>Pack and ship in one workflow</h2>
+<p>Sendcloud is part of your shipping process, not a separate step. You <a href="/en/features/pick-lists">pick and pack</a> orders with a smart route through your warehouse and a barcode scan at the packing station, and create the Sendcloud label at that same moment. That way you process several orders in a row without mistakes.</p>
+<h2>Automatic track &amp; trace</h2>
+<p>As soon as you create a label, ShopLinkr sends the track &amp; trace back to the sales channel the order came from, whether that is bol, Shopify, WooCommerce or another channel. Your customer immediately sees where the order is, and you do not have to update anything manually.</p>
+<h2>Stock stays in sync</h2>
+<p>Every shipped order updates your <a href="/en/features/inventory">stock</a> in ShopLinkr, and that stock syncs in real time to all your sales channels. That way you avoid selling something that is already on its way or no longer in stock.</p>
+<h2>Connect Sendcloud to ShopLinkr &amp; try it free for 14 days</h2>
+<p>Ready to make your shipping process and your warehouse work together? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and connect Sendcloud in just a few minutes.</p>

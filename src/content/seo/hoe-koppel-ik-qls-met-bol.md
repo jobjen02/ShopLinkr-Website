@@ -1,95 +1,39 @@
 ---
 title: "Hoe koppel ik QLS met bol?"
-excerpt: "Het koppelen van QLS aan bol via ShopLinkr kan een slimme zet zijn als je op zoek bent naar manieren om je verzendproces te stroomlijnen en je klantenservice te verbeteren."
+excerpt: "Koppel QLS en bol via ShopLinkr en verwerk je bestellingen op één plek. Bestellingen binnen, label aanmaken, track & trace automatisch terug. Zo werkt het."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-qls-met-bol/KuIOeXDC6JH34rWrRTGnOH7SWw.png"
+imageAlt: "QLS koppelen aan bol via ShopLinkr"
 ---
 
-<p>Het koppelen van QLS aan bol via ShopLinkr kan een slimme zet zijn als je op zoek bent naar manieren om je verzendproces te stroomlijnen en je klantenservice te verbeteren. In dit artikel laat ik je stap voor stap zien hoe je deze koppeling tot stand brengt. Maar voordat we daarop ingaan, laten we eerst eens kijken wat QLS, bol en ShopLinkr precies zijn.</p>
-<h2>Wat is QLS, bol en ShopLinkr?</h2>
-<p><em>QLS</em> is een van de snelst groeiende bedrijven in e-commercelogistiek in de Benelux. QLS ontzorgt webshops volledig met fulfilment, een pakketdienst en slimme software, zodat je je logistiek kunt optimaliseren en moeiteloos kunt opschalen. Kortom, QLS is de vervoerder die je pakketten verzendt.</p>
-<p><em>ShopLinkr</em> is het platform waarop je je verkoopkanalen en je vervoerder samenbrengt. Je koppelt je verkoopkanaal, zoals bol, én je vervoerder QLS aan ShopLinkr. Bestellingen van je verkoopkanaal komen binnen in ShopLinkr, waar je ze verwerkt en met één klik een verzendlabel van QLS aanmaakt. Dit automatiseert je verzendproces en maakt het eenvoudiger en efficiënter.</p>
-<p><em>Bol</em> is een van de grootste e-commerceplatforms in Nederland en België en biedt een breed scala aan producten aan consumenten. Door bol via ShopLinkr met QLS te koppelen, kun je je bestellingen van bol op één plek beheren en je verzendproces optimaliseren. Dit kan leiden tot een snellere en betere afhandeling van bestellingen en uiteindelijk een hogere klanttevredenheid.</p>
-<p>De koppeling van bol en QLS in ShopLinkr biedt bedrijven niet alleen operationele voordelen, maar opent ook nieuwe mogelijkheden voor groei en uitbreiding. Door je verkoopkanaal en je vervoerder op één platform samen te brengen, kun je je logistieke processen stroomlijnen en je concurrentiepositie versterken. Zo kun je je concentreren op je kernactiviteiten en tegelijkertijd je klanten een naadloze en efficiënte koopervaring bieden.</p>
-<p>Daarnaast zorgt het verkopen via bol ervoor dat je kunt profiteren van de uitgebreide klantenkring van het platform. Door je producten op dit populaire e-commerceplatform aan te bieden, vergroot je niet alleen je zichtbaarheid, maar bereik je ook een breder publiek van potentiële klanten. Dit opent de deur naar nieuwe groeimogelijkheden en kan bijdragen aan het versterken van je merkpositionering en het vergroten van je omzet.</p>
-<h2>De voordelen van het koppelen van QLS aan bol</h2>
-<p>Het koppelen van QLS aan bol via ShopLinkr biedt verschillende voordelen voor je bedrijf. Hier zijn slechts enkele van de voordelen die je kunt verwachten:</p>
-<h3>Efficiëntie in je verzendproces</h3>
-<p>Door QLS en bol samen te brengen in ShopLinkr, kun je je verzendproces stroomlijnen en automatiseren. Je bestellingen van bol komen automatisch binnen in ShopLinkr en je maakt met één klik verzendlabels van QLS aan, zonder dat je handmatig gegevens hoeft in te voeren. Dit bespaart niet alleen tijd, maar vermindert ook de kans op fouten en vergissingen.</p>
-<h3>Verbeterde klantenservice</h3>
-<p>Een goede klantenservice is essentieel voor het succes van je bedrijf. Door QLS aan bol te koppelen via ShopLinkr, kun je sneller en nauwkeuriger bestellingen verwerken. Zodra je het QLS-label hebt aangemaakt, wordt de track & trace code automatisch teruggestuurd naar je webshop. Dit betekent dat je klanten hun producten sneller ontvangen en op de hoogte blijven van de status van hun bestelling. Een verbeterde klantenservice zal resulteren in een hogere klanttevredenheid en loyaliteit.</p>
-<p>Naast efficiëntie en verbeterde klantenservice zijn er nog andere voordelen verbonden aan het koppelen van QLS aan bol via ShopLinkr. Een van deze voordelen is dat je je bestellingen en voorraad op één plek beheert. Doordat je verkoopkanalen en je vervoerder in ShopLinkr samenkomen, houd je overzicht over wat er binnenkomt en wat er verzonden moet worden.</p>
-<p>Een ander voordeel is dat je je bestellingen overzichtelijk kunt verwerken vanuit je picklijst. Vanuit ShopLinkr maak je direct de QLS-labels aan voor de bestellingen die de deur uit moeten, zodat je verzending soepel en gestructureerd verloopt.</p>
-<h2>Stapsgewijze handleiding voor het koppelen van QLS aan bol</h2>
-<h3>Voorbereiding voor de koppeling</h3>
-<p>Voordat je QLS aan bol kunt koppelen via ShopLinkr, moet je ervoor zorgen dat je de nodige voorbereidingen hebt getroffen. Volg deze stappen om je voor te bereiden op de koppeling:</p>
+<p>Wil je QLS aan bol koppelen? Dat doe je via ShopLinkr. Je verbindt bol als verkoopkanaal en QLS als vervoerder, waarna je bestellingen automatisch binnenkomen en je met één klik een QLS-verzendlabel aanmaakt. De track & trace gaat daarna vanzelf terug naar bol. QLS is een pakketvervoerder, bol een groot Nederlands en Belgisch verkoopkanaal, en ShopLinkr de software die ze samenbrengt.</p>
+
+<h2>QLS aan bol koppelen in 4 stappen</h2>
+<p>De koppeling stel je eenmalig in. Daarna verwerk je elke bol-bestelling vanuit hetzelfde scherm.</p>
 <ol>
-<li>
-<p>Controleer of je een actief bol-verkopersaccount hebt.</p>
-</li>
-<li>
-<p>Zorg ervoor dat je een QLS-account hebt zodat je QLS als vervoerder kunt gebruiken.</p>
-</li>
-<li>
-<p>Zorg ervoor dat je een ShopLinkr-account hebt, want hierop breng je je verkoopkanaal en je vervoerder samen.</p>
-</li>
-<li>
-<p>Maak een lijst van de producten die je wilt gaan verkopen op bol.</p>
-</li>
-<li>
-<p>Zorg ervoor dat je productinformatie, zoals prijs, voorraadniveaus en verzendgewichten, up-to-date is.</p>
-</li>
-<li>
-<p>Zorg ervoor dat je voldoet aan de technische vereisten voor de koppeling, zoals het hebben van een internetverbinding en een compatibele webbrowser.</p>
-</li>
+<li><p>Maak een ShopLinkr-account aan en log in.</p></li>
+<li><p>Voeg bol toe als <a href="/functionaliteiten/bestellingen">verkoopkanaal</a> en verbind je bol-verkopersaccount. Je openstaande bestellingen komen direct binnen.</p></li>
+<li><p>Voeg QLS toe als <a href="/functionaliteiten/vervoerders">vervoerder</a> en koppel je QLS-account.</p></li>
+<li><p>Stel je verzendvoorkeuren in en activeer de koppeling. Nieuwe bol-bestellingen worden vanaf nu automatisch geïmporteerd.</p></li>
 </ol>
-<h3>Het koppelingsproces</h3>
-<p>Nu je alles hebt voorbereid, kun je beginnen met het daadwerkelijke koppelingsproces. Volg deze stappen om QLS en bol aan ShopLinkr te koppelen:</p>
+<p>Een volledig overzicht van alle koppelingen vind je op de pagina <a href="/integraties">integraties</a>.</p>
+
+<h2>Zo verwerk je een bol-bestelling met QLS</h2>
+<p>Zodra de koppeling staat, hoef je geen gegevens meer over te typen. Een bestelling van bol naar verzonden pakket gaat zo:</p>
 <ol>
-<li>
-<p>Log in op je ShopLinkr-account en ga naar de instellingen voor koppelingen.</p>
-</li>
-<li>
-<p>Voeg <a href="/blogs/bol-com-koppelen-aan-shoplinkr">bol als verkoopkanaal</a> toe en verbind je bol-verkopersaccount met ShopLinkr.</p>
-</li>
-<li>
-<p>Voeg <a href="/integraties/qls">QLS als vervoerder</a> toe en verbind je QLS-account met ShopLinkr.</p>
-</li>
-<li>
-<p>Configureer de instellingen van de koppeling, zoals je verzendvoorkeuren.</p>
-</li>
-<li>
-<p>Activeer de koppeling en je bestellingen van bol komen binnen in ShopLinkr.</p>
-</li>
+<li><p>De bestelling komt binnen in ShopLinkr met het juiste adres en de juiste producten.</p></li>
+<li><p>Je verzamelt de producten via een <a href="/functionaliteiten/picklijsten">picklijst</a> met een slimme looproute door je magazijn, eventueel met barcodescanner.</p></li>
+<li><p>Met één klik maak je het QLS-label aan, of je laat dit met AutoPrint automatisch uitprinten.</p></li>
+<li><p>De track & trace-code wordt automatisch teruggestuurd naar bol, zodat je klant de zending kan volgen.</p></li>
 </ol>
-<h3>Probleemoplossing na koppeling</h3>
-<p>Het kan voorkomen dat je tijdens het koppelingsproces enige problemen ondervindt. Hier zijn enkele veelvoorkomende problemen en hun oplossingen:</p>
-<ul>
-<li>
-<p>Probleem: De koppeling is mislukt.</p>
-</li>
-<li>
-<p>Oplossing: Controleer of je de juiste inloggegevens hebt ingevoerd en of je een actieve internetverbinding hebt.</p>
-</li>
-<li>
-<p>Probleem: Productinformatie wordt niet correct gesynchroniseerd tussen bol en ShopLinkr.</p>
-</li>
-<li>
-<p>Oplossing: Controleer of je productinformatie correct is ingesteld in zowel ShopLinkr als je bol-verkopersaccount.</p>
-</li>
-<li>
-<p>Probleem: Bestellingen worden niet automatisch geïmporteerd in ShopLinkr na de koppeling.</p>
-</li>
-<li>
-<p>Oplossing: Controleer of je de juiste instellingen hebt geconfigureerd voor automatische import van je bol-bestellingen in ShopLinkr.</p>
-</li>
-</ul>
-<h2>Veelgestelde vragen over het koppelen van QLS aan bol</h2>
-<h3>Hoe lang duurt het koppelingsproces?</h3>
-<p>Het koppelen van QLS en bol aan ShopLinkr kan enige tijd in beslag nemen, afhankelijk van verschillende factoren, zoals de complexiteit van je bedrijfsprocessen en het aantal producten dat je wilt koppelen. In de meeste gevallen duurt het echter slechts enkele minuten tot een uur om de koppeling te voltooien.</p>
-<h3>Wat als de koppeling mislukt?</h3>
-<p>Als de koppeling mislukt, is het belangrijk om de oorzaak van het probleem te achterhalen. Controleer of je de juiste inloggegevens hebt ingevoerd en of je een actieve internetverbinding hebt. Als het probleem aanhoudt, neem dan contact op met de klantenservice van ShopLinkr voor verdere ondersteuning.</p>
-<h3>Hoe kan ik controleren of de koppeling succesvol was?</h3>
-<p>Na het voltooien van de koppeling kun je controleren of deze succesvol was door enkele testbestellingen te plaatsen op bol en te controleren of deze correct worden geïmporteerd in ShopLinkr. Maak vervolgens een QLS-label aan en kijk of de track & trace code automatisch teruggaat naar je webshop. Als je geen problemen ondervindt, kun je ervan uitgaan dat de koppeling succesvol was.</p>
-<p>Nu je weet hoe je QLS en bol kunt koppelen via ShopLinkr en welke voordelen dit met zich meebrengt, ben je goed op weg om je verzendproces te stroomlijnen en je klantenservice te verbeteren. Volg de stapsgewijze handleiding en de tips voor probleemoplossing en je zult binnen de kortste keren genieten van de voordelen van deze koppeling. Veel succes!</p>
-<p>Ben je klaar om de kracht van ShopLinkr te ervaren en je order- en voorraadbeheer naar een hoger niveau te tillen? Met onze slimme software houd je moeiteloos alles bij op één plek, geniet je van automatische voorraad synchronisatie en verwerk je eenvoudig bestellingen. Sluit je aan bij de duizenden tevreden webshops die al meer dan 110.000 bestellingen hebben verwerkt en beheer meer dan 22.000 producten in ons systeem. Mis deze kans niet om je bedrijf te laten groeien. <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr nu 14 dagen gratis</a> en ontdek het gemak van naadloze integratie met bol en andere toonaangevende platforms!</p>
+<p>Omdat je bestellingen en labels op één plek staan, verminder je de kans op fouten en verstuur je sneller. Je <a href="/functionaliteiten/voorraad">voorraad</a> wordt realtime gesynchroniseerd over al je kanalen, zodat je niet meer verkoopt dan je op voorraad hebt. Verkoop je hetzelfde product op meerdere kanalen, dan voorkomt deze synchronisatie dat een bol-bestelling binnenkomt voor iets dat eigenlijk al via je webshop is verkocht.</p>
+
+<h2>Veelgestelde vragen</h2>
+<h3>Werkt dit ook met andere verkoopkanalen?</h3>
+<p>Ja. Naast bol koppel je ook Shopify, WooCommerce, Kaufland en andere webshops en marktplaatsen aan ShopLinkr. Je verwerkt al je bestellingen vanuit hetzelfde scherm.</p>
+<h3>Kan ik naast QLS nog andere vervoerders gebruiken?</h3>
+<p>Dat kan. ShopLinkr ondersteunt onder meer PostNL, DPD, MyParcel en Sendcloud, zodat je per bestelling de vervoerder kiest die het beste past.</p>
+<h3>Hoe controleer ik of de koppeling werkt?</h3>
+<p>Plaats een testbestelling op bol, controleer of die in ShopLinkr verschijnt, maak een QLS-label aan en kijk of de track & trace teruggaat naar bol. Loop je vast, dan helpt onze <a href="/support">support</a> je verder.</p>
+
+<p>Klaar om je verzendproces te stroomlijnen? <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en koppel bol en QLS in een paar minuten.</p>

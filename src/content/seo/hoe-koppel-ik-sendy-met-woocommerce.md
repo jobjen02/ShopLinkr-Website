@@ -1,69 +1,34 @@
 ---
 title: "Hoe koppel ik Sendy met WooCommerce?"
-excerpt: "Wil je Sendy koppelen met WooCommerce? In dit artikel leg ik stap voor stap uit hoe je dat doet via ShopLinkr, zodat je je WooCommerce-bestellingen verwerkt en je Sendy-verzendlabels op één plek afdrukt."
+excerpt: "Koppel Sendy en WooCommerce via ShopLinkr: bestellingen komen automatisch binnen, je drukt verzendlabels af en track & trace gaat terug naar je webshop."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendy-met-woocommerce/ouKyQmd7jCMXL7HeqYRbtLRgVk4.png"
+imageAlt: "Sendy en WooCommerce gekoppeld in ShopLinkr"
 ---
 
-<p>Ben je op zoek naar een manier om <a href="https://shoplinkr.com/integraties/sendy">Sendy te koppelen met WooCommerce</a>? In dit artikel leg ik stap voor stap uit hoe je dat doet via ShopLinkr, zodat je je WooCommerce-bestellingen verwerkt en je Sendy-verzendlabels op één plek afdrukt. Maar voordat we ingaan op de details, laten we eerst eens kijken wat Sendy en WooCommerce precies zijn.</p>
-<h2>Wat is Sendy en WooCommerce?</h2>
-<p>Sendy is verzendsoftware die bedrijven helpt om pakketten efficiënt te versturen. Het koppelt met vervoerders zoals PostNL, DHL en DPD en sluit eenvoudig aan op webshops, zodat je verzendlabels automatisch kunt aanmaken en profiteert van scherpe tarieven. Kort gezegd regelt Sendy de verzendkant van je bestellingen.</p>
-<p>WooCommerce is daarentegen een populaire e-commerceplugin voor WordPress waarmee je een online winkel opzet en beheert. Met WooCommerce voeg je producten toe, accepteer je betalingen en volg en verwerk je de bestellingen van je klanten.</p>
-<h3>Een introductie tot Sendy</h3>
-<p>Sendy neemt de verzendkant van je bedrijf uit handen. Je krijgt toegang tot meerdere vervoerders op één plek, op basis van de gegevens van een bestelling wordt automatisch een verzendlabel aangevraagd, en de track &amp; trace-informatie komt terug zodat jij en je klanten altijd weten waar een pakket is. Zo stroomlijn je je verzendproces.</p>
-<h3>Een introductie tot WooCommerce</h3>
-<p>WooCommerce is een krachtige tool voor het opzetten en beheren van een online winkel. Met WooCommerce voeg je eenvoudig producten toe, upload je afbeeldingen, stel je prijzen in en houd je je voorraad bij. Het biedt ook flexibele verzendopties en integraties met populaire betaalproviders, zodat je een naadloze winkelervaring biedt aan je klanten.</p>
-<h2>Hoe ShopLinkr Sendy en WooCommerce koppelt</h2>
-<p>Sendy is een vervoerder en WooCommerce is je verkoopkanaal. ShopLinkr is het platform dat ertussen zit: je koppelt zowel je WooCommerce-winkel als Sendy aan ShopLinkr, en van daaruit verwerk je je WooCommerce-bestellingen en druk je je Sendy-labels af.</p>
-<h3>De voordelen van Sendy en WooCommerce koppelen</h3>
-<p>Door Sendy en WooCommerce samen te brengen in ShopLinkr mag je een paar duidelijke voordelen verwachten:</p>
-<ul>
-<li>
-<p>Eén overzicht: je WooCommerce-bestellingen komen automatisch binnen in ShopLinkr, zodat je alles vanaf één plek verwerkt.</p>
-</li>
-<li>
-<p>Sneller verzenden: voor elke bestelling genereer je het bijbehorende Sendy-verzendlabel zonder adressen handmatig over te typen.</p>
-</li>
-<li>
-<p>Minder fouten: doordat de bestelgegevens automatisch doorstromen, is de kans op fouten kleiner.</p>
-</li>
-<li>
-<p>Tracking terug naar je winkel: de track &amp; trace-informatie wordt automatisch teruggestuurd, zodat je klanten op de hoogte blijven.</p>
-</li>
-</ul>
-<h2>Stappen om Sendy te koppelen met WooCommerce</h2>
-<p>Wil je Sendy via ShopLinkr koppelen aan WooCommerce? Volg dan deze eenvoudige stappen:</p>
+<p>Sendy en WooCommerce praten niet rechtstreeks met elkaar. ShopLinkr zit ertussen: je koppelt zowel je WooCommerce-webshop als <a href="https://shoplinkr.com/integraties/sendy">Sendy</a> aan ShopLinkr, en daarna verwerk je je bestellingen en druk je je verzendlabels op één plek af. WooCommerce levert de bestellingen, Sendy regelt de verzending, en ShopLinkr verbindt de twee. Hieronder lees je precies hoe je Sendy met WooCommerce koppelt.</p>
+
+<h2>Hoe de koppeling werkt</h2>
+<p>WooCommerce is je <a href="https://shoplinkr.com/functionaliteiten/bestellingen">verkoopkanaal</a> en Sendy is een verzendoplossing die aansluit op vervoerders. ShopLinkr is het orderverwerkingsplatform daartussen. Zodra beide gekoppeld zijn, stromen nieuwe WooCommerce-bestellingen automatisch binnen in ShopLinkr. Je vraagt per bestelling het bijbehorende verzendlabel aan zonder adressen over te typen, en de track &amp; trace wordt automatisch teruggestuurd naar WooCommerce zodat je klant een verzendmail krijgt.</p>
+
+<h2>Sendy met WooCommerce koppelen in 5 stappen</h2>
 <ol>
-<li>
-<p>Maak een ShopLinkr-account aan en koppel je <a href="https://shoplinkr.com/blogs/woocommerce-koppelen-aan-shoplinkr">WooCommerce-winkel</a> als verkoopkanaal.</p>
-</li>
-<li>
-<p>Koppel Sendy als vervoerder in ShopLinkr.</p>
-</li>
-<li>
-<p>Je WooCommerce-bestellingen stromen nu automatisch binnen in ShopLinkr.</p>
-</li>
-<li>
-<p>Verwerk een bestelling en vraag het Sendy-verzendlabel direct vanuit ShopLinkr aan.</p>
-</li>
-<li>
-<p>De track &amp; trace-informatie wordt automatisch teruggestuurd naar je winkel.</p>
-</li>
+<li><p>Maak een ShopLinkr-account aan.</p></li>
+<li><p>Koppel je WooCommerce-webshop als verkoopkanaal. Je openstaande bestellingen worden ingelezen.</p></li>
+<li><p>Voeg Sendy toe als <a href="https://shoplinkr.com/functionaliteiten/vervoerders">vervoerder</a> in ShopLinkr.</p></li>
+<li><p>Open een bestelling en vraag het Sendy-verzendlabel direct vanuit ShopLinkr aan. Met AutoPrint rolt het label automatisch uit je printer.</p></li>
+<li><p>De track &amp; trace gaat terug naar WooCommerce en je klant wordt geïnformeerd.</p></li>
 </ol>
-<h2>Veelvoorkomende problemen en oplossingen</h2>
-<h3>Probleemoplossing bij het koppelen van Sendy en WooCommerce</h3>
-<p>Het koppelen van Sendy en WooCommerce via ShopLinkr verloopt meestal soepel, maar een paar dingen kunnen voorkomen. Hier zijn enkele veelgestelde vragen en de oplossingen:</p>
-<ul>
-<li>
-<p>Probleem: bestellingen uit WooCommerce verschijnen niet in ShopLinkr. Oplossing: controleer of je WooCommerce-winkel correct is gekoppeld als verkoopkanaal en of de koppeling actief is.</p>
-</li>
-<li>
-<p>Probleem: het verzendlabel kan niet worden aangemaakt. Oplossing: controleer of Sendy is gekoppeld en of de adresgegevens van de bestelling compleet zijn.</p>
-</li>
-<li>
-<p>Probleem: het adres op het label klopt niet. Oplossing: je kunt de adresgegevens handmatig aanpassen voordat je het label aanvraagt.</p>
-</li>
-</ul>
-<h2>Conclusie: de impact van Sendy en WooCommerce koppelen op je bedrijf</h2>
-<p>Door Sendy via ShopLinkr te koppelen aan WooCommerce breng je je verkoop en je verzending samen in één werkstroom. Je bestellingen komen binnen, je drukt het juiste label af en de tracking stroomt terug, allemaal vanaf één plek. Dat bespaart tijd, voorkomt fouten en houdt je verzendproces voorspelbaar als je aantal bestellingen groeit.</p>
-<p>Heb je ontdekt hoe Sendy en WooCommerce samenwerken en ben je klaar om je webshop naar een hoger niveau te tillen? Met ShopLinkr beheer je moeiteloos je bestellingen en voorraad. Ervaar hoe onze automatische voorraadsynchronisatie en het eenvoudig verwerken van bestellingen je leven makkelijker maken. Sluit je aan bij de duizenden tevreden gebruikers die al meer dan 110.000 bestellingen hebben verwerkt en beheer meer dan 22.000 producten in ons systeem. Mis deze kans niet en <a href="https://app.shoplinkr.com/auth/register">probeer ShopLinkr nu 14 dagen gratis</a>. Ontdek zelf hoe eenvoudig het is om alles op één plek bij te houden!</p>
+
+<h2>Wat je er nog meer mee wint</h2>
+<p>De koppeling is meer dan labels printen. Omdat al je kanalen in ShopLinkr samenkomen, synchroniseert je <a href="https://shoplinkr.com/functionaliteiten/voorraad">voorraad</a> realtime en voorkom je dat je hetzelfde product dubbel verkoopt. Heb je meerdere bestellingen tegelijk? Dan pak je <a href="https://shoplinkr.com/functionaliteiten/picklijsten">picklijsten</a> met een slimme looproute en barcodescanning erbij om je magazijn sneller leeg te halen.</p>
+
+<h2>Veelgestelde vragen</h2>
+<h3>Komen bestellingen automatisch binnen?</h3>
+<p>Ja. Zodra WooCommerce als verkoopkanaal gekoppeld is, leest ShopLinkr nieuwe bestellingen vanzelf in. Verschijnt er niets, controleer dan of de koppeling actief is.</p>
+<h3>Kan ik het verzendadres nog aanpassen?</h3>
+<p>Dat kan. Klopt een adres niet of is het onvolledig, dan corrigeer je de gegevens in de bestelling voordat je het label aanvraagt.</p>
+<h3>Werkt dit ook met andere vervoerders?</h3>
+<p>Naast Sendy ondersteunt ShopLinkr onder meer PostNL, DPD en MyParcel. Een overzicht vind je bij <a href="https://shoplinkr.com/integraties">integraties</a>.</p>
+
+<p>Zo breng je verkoop en verzending samen in één werkstroom. Wil je het zelf ervaren? <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en koppel je WooCommerce-webshop aan Sendy.</p>

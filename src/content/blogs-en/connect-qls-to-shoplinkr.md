@@ -1,18 +1,18 @@
 ---
 title: "Connecting QLS to ShopLinkr"
-excerpt: "Discover how ShopLinkr's QLS integration simplifies your shipping process and makes it more efficient. Save time and reduce errors by generating shipping labels with a single click."
+excerpt: "With ShopLinkr's QLS integration you create shipping labels in one click and track & trace is sent back to your sales channel automatically. Here's how."
 publishedAt: "2023-05-24T00:00:00.000Z"
 image: "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png"
 translationKey: "qls-koppelen-aan-shoplinkr"
 ---
 
-<p><strong>Optimizing your shipping process is essential for a successful e-commerce business. With ShopLinkr's new QLS integration, managing shipping labels becomes a breeze. In this blog post you'll discover how this integration can help you streamline your shipping process and make it more efficient.</strong></p>
-<p>View the guide for connecting QLS <a href="https://support.shoplinkr.com/artikel/qls-koppelen" target="_blank">here</a>.</p>
-<h2>Efficient shipping label management with a single click</h2>
-<p>With ShopLinkr's QLS integration, you can create shipping labels for all your orders with just one click. This saves you valuable time and minimizes the risk of errors when entering shipping information manually. You can now generate labels quickly and easily, ready to print and stick on your parcels.</p>
-<h2>Seamless integration with various webshops</h2>
-<p>Whether you run a webshop on Shopify, bol.com or another platform, the QLS integration connects seamlessly with different e-commerce platforms. This means you can manage all your orders from one central location and generate shipping labels, no matter which platform the order was placed on.</p>
-<h2>Automatic tracking updates</h2>
-<p>As soon as you've created the shipping label, the track &amp; trace code is automatically passed on to your webshop, such as bol.com or Shopify. This means your customers always have up-to-date information about the status of their shipments, which improves the customer experience.</p>
-<h2>Connect your QLS account to ShopLinkr &amp; try it free for 14 days!</h2>
-<p>Want to know more about ShopLinkr's QLS integration and how it can improve your shipping process? Get in touch with us now or sign up for a free trial and experience for yourself how this integration takes your e-commerce activities to the next level.</p>
+<p><strong>QLS is one of the carriers you can connect in ShopLinkr. If you have a QLS account, you ship your orders without switching to a separate shipping tool.</strong></p>
+<p>The steps to connect your account are in the <a href="/en/support/connect-qls">guide</a>. Below is what the integration means for your day-to-day order processing.</p>
+<h2>Create labels straight from your orders</h2>
+<p>Once QLS is connected, you select it as the shipping method while handling an order. You create the label in one click, ready to print and stick on the parcel. If you work with <a href="/en/features/pick-lists">pick lists</a> and packing stations, the label comes out at the end of the packing process. With AutoPrint, labels are sent to your printer automatically, so you don't have to fetch them one by one.</p>
+<h2>One overview for all your channels</h2>
+<p>ShopLinkr processes your orders from bol, Shopify, WooCommerce, Kaufland and other channels in one place. Whether an order comes in through your webshop or a marketplace, you ship it all with the same QLS connection. No separate exports or duplicate entry per channel, and your <a href="/en/features/inventory">stock</a> stays in sync in real time across every channel.</p>
+<h2>Track & trace back to the sales channel</h2>
+<p>After you create the label, ShopLinkr sends the track & trace code back to the channel the order came from. Your customer sees the status of their shipment without you retyping codes, and you don't have to mark the order as shipped by hand.</p>
+<h2>Getting started</h2>
+<p>QLS is one of the carriers ShopLinkr supports, alongside PostNL, DPD, MyParcel, Sendcloud, Sendy, Innosend and more. You'll find the full list under <a href="/en/features/carriers">carriers</a>. Want to use QLS through ShopLinkr? <a href="https://app.shoplinkr.com/auth/register">Create an account</a> and try ShopLinkr free for 14 days.</p>

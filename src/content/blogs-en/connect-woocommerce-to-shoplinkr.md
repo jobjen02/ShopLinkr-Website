@@ -1,21 +1,21 @@
 ---
 title: "Connect WooCommerce to ShopLinkr"
-excerpt: "Discover the power of the integration between ShopLinkr and WooCommerce. Simplify your order management, process orders and print shipping labels with ease."
+excerpt: "Connect your WooCommerce store to ShopLinkr and process orders, print shipping labels and keep your stock in sync in real time from one central platform."
 publishedAt: "2023-05-01T00:00:00.000Z"
 image: "/images/blog/woocommerce-koppelen-aan-shoplinkr/2FVqp9F6P8qrmqhOp6PAtXTFu2Y.png"
-imageAlt: "WooCommerce integration image"
+imageAlt: "WooCommerce store connected to the ShopLinkr dashboard for orders and stock"
 translationKey: "woocommerce-koppelen-aan-shoplinkr"
 ---
 
-<p><strong>As the owner of a WooCommerce store, you want to make your ordering process as efficient as possible. With the latest integration between ShopLinkr and WooCommerce, that becomes a breeze. Find out how to process your orders, generate shipping labels and manage your stock with ease.</strong></p>
-<p>View the guide for connecting WooCommerce <a href="https://support.shoplinkr.com/artikel/woocommerce-koppelen" target="_blank">here</a>.</p>
-<h2>Products imported automatically</h2>
-<p>With ShopLinkr's WooCommerce integration, all your products are imported effortlessly from your WooCommerce store. This saves you time and effort, because you no longer have to enter your product information by hand. You have instant access to all your products in ShopLinkr.</p>
-<h2>Efficient order processing</h2>
-<p>Processing orders has never been this easy. With ShopLinkr you can easily manage all your orders from WooCommerce and process them efficiently in one central place. You have quick access to all order details, payment information and shipping addresses. With just a few clicks you can get your orders ready for shipping.</p>
-<h2>Generate shipping labels easily</h2>
-<p>Thanks to ShopLinkr's WooCommerce integration, you can generate shipping labels for your orders with a single click. You no longer have to enter data by hand, which saves you time and reduces the risk of errors. With a smooth and automated process, you can print shipping labels quickly and easily.</p>
-<h2>Synchronization of track &amp; trace information</h2>
-<p>With ShopLinkr, the track &amp; trace information and order statuses are synchronized automatically between ShopLinkr and WooCommerce. This means you are always up to date on the shipping status of your orders, both in ShopLinkr and in WooCommerce. Customers can follow the progress of their order and you have full control over the shipping.</p>
-<h2>Connect your WooCommerce store to ShopLinkr &amp; try it free for 14 days!</h2>
-<p>Want to learn more about ShopLinkr's new WooCommerce integration and how it can improve your sales process? Then get in touch with us now or sign up for a free trial period and experience for yourself how this integration takes your e-commerce activities to the next level.</p>
+<p><strong>With ShopLinkr's WooCommerce integration you process orders, print shipping labels and keep your stock in sync across all your sales channels. All from one central platform.</strong></p>
+<p>View the guide for connecting WooCommerce <a href="/en/support/connect-woocommerce">here</a>.</p>
+<h2>Your WooCommerce products in one overview</h2>
+<p>When you connect, your WooCommerce products are imported into ShopLinkr. For each item you see the current <a href="/en/features/inventory">stock level</a>, which <a href="/en/features/locations">location</a> it sits in and which channels are selling it. That way you always work from the same foundation.</p>
+<h2>Process orders from one place</h2>
+<p>Your WooCommerce orders land alongside the orders from your other channels, such as bol, Shopify and Kaufland. From a single <a href="/en/features/pick-lists">pick list</a> with a smart warehouse route you pick, pack and scan everything in one round, even across multiple orders at once.</p>
+<h2>Shipping labels and automatic track &amp; trace</h2>
+<p>Create a shipping label with one click for a <a href="/en/features/carriers">carrier</a> like PostNL, DPD or MyParcel. As soon as the label exists, ShopLinkr sends the track &amp; trace back to WooCommerce automatically, so your customer immediately sees where the order is.</p>
+<h2>Stock always in sync</h2>
+<p>Every sale, return or incoming delivery adjusts your stock in ShopLinkr, and that stock is synced in real time to WooCommerce and your other channels. That way you never sell what is no longer in stock.</p>
+<h2>Connect your WooCommerce store to ShopLinkr &amp; try it free for 14 days</h2>
+<p>Ready to make your warehouse and your WooCommerce store work together smoothly? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and experience it for yourself.</p>

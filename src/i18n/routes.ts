@@ -30,6 +30,7 @@ export const routes = {
     cookies: { nl: 'cookies', en: 'cookies' },
     integrations: { nl: 'integraties', en: 'integrations' },
     blog: { nl: 'blogs', en: 'blog' },
+    guides: { nl: 'gidsen', en: 'guides' },
     support: { nl: 'support', en: 'support' },
 
     // Features (functionaliteiten)
