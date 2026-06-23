@@ -70,6 +70,6 @@ lastUpdated: "2026-04-04"
 <p><strong>Producten exporteren</strong>: exporteer je productgegevens</p>
 </li>
 <li>
-<p><strong>Bulk acties</strong>: verpakkingstype, tags of kosten in bulk aanpassen</p>
+<p><strong>Bulkacties</strong>: verpakkingstype, tags of kosten in bulk aanpassen</p>
 </li>
 </ul>

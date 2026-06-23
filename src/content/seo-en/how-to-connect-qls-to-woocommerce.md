@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-qls-met-woocommerce/727e7rUsOCHXfn4QWRSgwFDU9
 translationKey: "hoe-koppel-ik-qls-met-woocommerce"
 ---
 
-<h1>How Do I Connect QLS to WooCommerce?</h1>
 <p>If you run a webshop on WooCommerce and you want to make your business processes more efficient and raise customer satisfaction, then connecting QLS to WooCommerce is a smart choice. QLS is a carrier and WooCommerce is your sales channel, and through ShopLinkr they work together perfectly. In this article I will explain step by step how to connect QLS to WooCommerce, so you can make the most of the benefits this combination offers.</p>
 <h2>What are QLS and WooCommerce?</h2>
 <p>To start, it is important to know exactly what QLS and WooCommerce are. QLS is one of the fastest growing companies in e-commerce logistics in the Benelux. With fulfillment, a parcel service and smart software (my.QLS), QLS helps webshops take logistics off their plate and scale up effortlessly. In short, QLS is the carrier that takes care of the shipping of your orders.</p>

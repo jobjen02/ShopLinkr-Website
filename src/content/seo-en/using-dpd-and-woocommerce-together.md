@@ -1,5 +1,5 @@
 ---
-title: "Using DPD and WooCommerce Together"
+title: "Using DPD and WooCommerce together"
 excerpt: "Are you an entrepreneur active in e-commerce? Then you know that shipping your products is an important part of running your business."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/dpd-en-woocommerce-samen-gebruiken/qV8NmeHk73h3qbou2JySDB8Yw.png"

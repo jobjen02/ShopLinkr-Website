@@ -31,7 +31,7 @@ translationKey: "nazendingen-aanmaken"
 <p>When you create a reshipment, stock is automatically reserved for the products in the reshipment. A reshipment is otherwise handled just like a regular order, so it can also be included in the regular pick lists.</p>
 <h3>Recognizing a reshipment</h3>
 <p>A reshipment is recognizable by the <strong>Reshipment</strong> type in the order list. The reshipment is linked to the original order, so you can always see which order the reshipment belongs to.</p>
-<img alt="" src="/images/support/nazendingen-aanmaken/LO7xOEJ6oWbGWULjhOlcKfgww.png">
+<img alt="Reshipment shown in the order list with the Reshipment type linked to the original order" src="/images/support/nazendingen-aanmaken/LO7xOEJ6oWbGWULjhOlcKfgww.png">
 <h3>Good to know</h3>
 <ul>
 <li>

@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-sendy-met-shopify/hMV8hR8vA9ZHzwTmMGUVYzMmo.p
 translationKey: "hoe-koppel-ik-sendy-met-shopify"
 ---
 
-<h1>How Do I Connect Sendy To Shopify?</h1>
 <p>In this guide I'll show you how to <a href="https://shoplinkr.com/en/integrations/sendy">connect Sendy to Shopify</a> through ShopLinkr, so you can process your Shopify orders and print Sendy shipping labels from a single workflow. Before we get started, let's first take a look at what Sendy is and how it works.</p>
 <h2>What is Sendy and how does it work?</h2>
 <p>Sendy is shipping software that helps businesses send their parcels efficiently. It connects with carriers such as PostNL, DHL and DPD and links easily with webshops, so you can create shipping labels automatically and benefit from competitive rates. In short, Sendy takes care of the shipping side of your orders.</p>

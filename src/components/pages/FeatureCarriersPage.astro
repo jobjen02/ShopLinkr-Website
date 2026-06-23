@@ -5,7 +5,7 @@ import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
-import { faqsByPageFor } from '../../i18n/localeData';
+import { faqsByPageFor, collectionName } from '../../i18n/localeData';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 
@@ -13,7 +13,7 @@ const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const p = t.pages.featureCarriers;
 
-const carriers = (await getCollection('integrations'))
+const carriers = (await getCollection(collectionName('integrations', locale)))
     .filter((i) => i.data.category === 'carrier')
     .sort((a, b) => a.data.name.localeCompare(b.data.name));
 
@@ -232,7 +232,7 @@ const jsonLd = [
                                 href={`${localizeHref('/integraties', locale)}/${carrier.data.slug}`}
                                 class="group flex flex-col items-center justify-center gap-3 h-full rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                             >
-                                <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                     <img
                                         src={carrier.data.logo}
                                         alt={`${carrier.data.name} logo`}

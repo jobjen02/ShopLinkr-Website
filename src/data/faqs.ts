@@ -53,7 +53,7 @@ export const faqsByPage: Record<string, Array<FaqItem>> = {
     bestellingen: [
         {
             question: "Kan ik bestellingen van verschillende verkoopkanalen samenvoegen?",
-            answer: "Ja. Heeft één klant op zowel Bol als Shopify een order geplaatst? Dan voeg je die samen tot één zending. ShopLinkr signaleert dat er meerdere open bestellingen voor hetzelfde afleveradres staan en biedt de samenvoeging direct aan.",
+            answer: "Ja. Heeft één klant op zowel bol als Shopify een order geplaatst? Dan voeg je die samen tot één zending. ShopLinkr signaleert dat er meerdere open bestellingen voor hetzelfde afleveradres staan en biedt de samenvoeging direct aan.",
         },
         {
             question: "Kan ik telefonische orders of B2B-zendingen ook in ShopLinkr maken?",
@@ -211,7 +211,7 @@ export const faqsByPage: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Kan ik in het rapport Nooit verkochte producten filteren op verkoopkanaal?",
-            answer: "Ja. Naast periode, tags en verpakkingstype kun je in dit rapport filteren op verkoopkanaal. Zo zie je bijvoorbeeld welke producten in je Shopify-shop niet bewegen terwijl ze op Bol wel verkopen, of andersom.",
+            answer: "Ja. Naast periode, tags en verpakkingstype kun je in dit rapport filteren op verkoopkanaal. Zo zie je bijvoorbeeld welke producten in je Shopify-shop niet bewegen terwijl ze op bol wel verkopen, of andersom.",
         },
         {
             question: "Waarom verschilt het voorraadwaarde-rapport van de voorraadwaarde bij een product zelf?",

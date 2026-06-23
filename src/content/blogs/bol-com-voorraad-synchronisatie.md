@@ -1,5 +1,5 @@
 ---
-title: "bol voorraad synchronisatie"
+title: "Bol voorraad synchronisatie"
 excerpt: "Het belang van bol voorraad synchronisatie in het multichannel retail tijdperk."
 publishedAt: "2023-10-25T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"

@@ -1,11 +1,10 @@
 ---
-title: "Hoe koppel ik myparcel met shopify?"
+title: "Hoe koppel ik MyParcel met Shopify?"
 excerpt: "Heb je een webshop op Shopify en wil je gebruik maken van de handige verzenddiensten van MyParcel? In dit artikel leg ik je stap voor stap uit hoe je MyParcel kunt koppelen met Shopify."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-myparcel-met-shopify/z55EqzQ97kW7OBi31NEQJXNxp38.png"
 ---
 
-<h1>Hoe Koppel Ik MyParcel met Shopify?</h1>
 <p>Heb je een webshop op Shopify en wil je gebruik maken van de handige verzenddiensten van MyParcel? In dit artikel leg ik je stap voor stap uit hoe je MyParcel kunt koppelen met Shopify. Maar voordat we aan de slag gaan, laten we eerst eens kijken naar wat MyParcel precies is en hoe het werkt.</p>
 <h2>Wat is MyParcel en hoe werkt het?</h2>
 <p>MyParcel is een verzenddienst die speciaal is ontworpen voor webwinkeliers. Het biedt een eenvoudige en efficiënte manier om je pakketten te verzenden. Met MyParcel kun je niet alleen verzendlabels genereren, maar ook de bezorgstatus van je pakketten volgen. Bovendien kun je gebruik maken van extra diensten zoals track &amp; trace, verzekeringen en retourzendingen.</p>

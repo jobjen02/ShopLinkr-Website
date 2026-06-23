@@ -1,5 +1,5 @@
 ---
-title: "Hoe koppel ik dpd met shopify?"
+title: "Hoe koppel ik DPD met Shopify?"
 excerpt: "Wil je jouw verzendproces optimaliseren en de klanttevredenheid verhogen? Dan is het koppelen van DPD met Shopify de ideale oplossing voor jou."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-dpd-met-shopify/4DvT09fmOTsgPtp2UMBzooMZTCI.png"

@@ -1,5 +1,5 @@
 ---
-title: "Alles wat je moet weten over voorraadbeheer in excel"
+title: "Alles wat je moet weten over voorraadbeheer in Excel"
 excerpt: "Heb jij je ooit afgevraagd hoe je jouw voorraad efficiënter kunt beheren zonder te investeren in dure software? Dan ben je hier op de juiste plek! Voorraadbeheer in Excel kan een gamechanger zijn voor jouw bedrijf."
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/alles-wat-je-moet-weten-over-voorraadbeheer-in-excel/xPetkMNxhNucwbYD53Kn8BMNyE.png"

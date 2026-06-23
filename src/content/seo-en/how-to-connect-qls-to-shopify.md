@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-qls-met-shopify/wEKgGW3VSvvX6Jwbo5dH9fxoFM.pn
 translationKey: "hoe-koppel-ik-qls-met-shopify"
 ---
 
-<h1>How Do I Connect QLS to Shopify?</h1>
 <p>Hey! Want to learn how to <a href="https://shoplinkr.com/en/blog/connect-qls-to-shoplinkr">connect QLS to your Shopify store</a> through ShopLinkr? I can help you out! In this step-by-step guide I'll explain everything you need to know to set up this connection, and I'll give you a few handy tips for solving any problems. Let's get started!</p>
 <h2>What are QLS and Shopify?</h2>
 <p>Before we dive into the connection process, it's important to have a good understanding of QLS and Shopify.</p>
@@ -67,5 +66,3 @@ translationKey: "hoe-koppel-ik-qls-met-shopify"
 <p>It's a good idea to check your connection now and then. Keep an eye on whether your orders come in neatly and whether your labels are created without problems. Notice something's off? Then contact ShopLinkr customer support.</p>
 <p>And that's it! Now you know exactly how to connect QLS to your Shopify store through ShopLinkr. Just follow the steps in this guide and you'll be ready to go. Good luck and happy selling!</p>
 <p>There you go, you're now all set to connect QLS to your Shopify store. But why stop there? With ShopLinkr you can take your order and inventory management to the next level. Automatic inventory synchronization and easy order processing, all in one place. With more than 110,000 processed orders and 22,000 products in our system, you know you're in good hands. Ready to experience it for yourself? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and see how easy it is to keep track of everything!</p>
-</content>
-</invoke>

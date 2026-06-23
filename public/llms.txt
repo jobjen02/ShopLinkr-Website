@@ -41,6 +41,6 @@
 - [Prijzen](https://shoplinkr.com/prijzen): Pay-as-you-go prijsmodel.
 
 ## Juridisch
-- [Privacybeleid](https://shoplinkr.com/privacy): Hoe we omgaan met persoonsgegevens.
-- [Voorwaarden](https://shoplinkr.com/voorwaarden): Algemene voorwaarden voor het gebruik van ShopLinkr.
+- [Privacybeleid](https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf): Hoe we omgaan met persoonsgegevens.
+- [Voorwaarden](https://shoplinkr.ams3.digitaloceanspaces.com/documents/Algemene%20voorwaarden%202026.pdf): Algemene voorwaarden voor het gebruik van ShopLinkr.
 - [Cookiebeleid](https://shoplinkr.com/cookies): Welke cookies we gebruiken en waarvoor.

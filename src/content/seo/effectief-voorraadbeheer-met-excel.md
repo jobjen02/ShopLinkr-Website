@@ -1,5 +1,5 @@
 ---
-title: "Effectief voorraadbeheer met excel"
+title: "Effectief voorraadbeheer met Excel"
 excerpt: "In dit artikel gaan we het hebben over het belang van effectief voorraadbeheer en hoe je Excel kunt gebruiken om dit proces te verbeteren."
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/effectief-voorraadbeheer-met-excel/0BsQ5cmeZpg022G6ziNTWMS6jzI.png"

@@ -40,4 +40,4 @@ lastUpdated: "2026-04-01"
 </li>
 </ul>
 <h3>Wachtwoord vergeten?</h3>
-<p>Ben je je wachtwoord vergeten? Op het inlogscherm kun je klikken op "Wachtwoord vergeten" om een reset link te ontvangen.</p>
+<p>Ben je je wachtwoord vergeten? Op het inlogscherm kun je klikken op "Wachtwoord vergeten" om een resetlink te ontvangen.</p>

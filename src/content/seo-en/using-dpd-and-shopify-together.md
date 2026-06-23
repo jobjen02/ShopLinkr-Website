@@ -1,5 +1,5 @@
 ---
-title: "Using DPD and Shopify Together"
+title: "Using DPD and Shopify together"
 excerpt: "Are you an entrepreneur looking to take your e-commerce business to the next level? Then using DPD and Shopify together might just be the perfect solution for you! In this article we'll explain what DPD and Shopify actually are and how you can integrate them to grow your business."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/dpd-en-shopify-samen-gebruiken/gMqkCv6KLqa8JKKfL7Njro1ncG4.png"

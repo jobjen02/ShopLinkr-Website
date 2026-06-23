@@ -1,5 +1,5 @@
 ---
-title: "Using QLS and WooCommerce Together"
+title: "Using QLS and WooCommerce together"
 excerpt: "If you run a webshop on WooCommerce, it is worth connecting QLS as your carrier through ShopLinkr."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/qls-en-woocommerce-samen-gebruiken/rMqfRYtkUJTNaaSBNJX0yRx5g.png"

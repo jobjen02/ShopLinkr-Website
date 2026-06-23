@@ -1,5 +1,5 @@
 ---
-title: "bol LVB voorraad switch"
+title: "Bol LVB voorraad switch"
 excerpt: "Ben je het zat om steeds weer zonder voorraad te zitten? Is het je een doorn in het oog dat je klanten moet teleurstellen omdat je producten niet op voorraad zijn? Dan is de bol LVB voorraad switch misschien wel dé oplossing voor jouw bedrijf."
 publishedAt: "2024-05-22T00:00:00.000Z"
 image: "/images/blog/bol-lvb-voorraad-switch/6nZHOmkPg884ZXzjo5XlniEdRJg.png"

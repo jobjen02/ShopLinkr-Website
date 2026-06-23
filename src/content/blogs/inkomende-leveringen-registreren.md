@@ -14,6 +14,6 @@ imageAlt: "ShopLinkr logo"
 <h2>Direct doorboeken naar je voorraad</h2>
 <p>Vanaf de controlelijst boek je de ontvangen producten met een paar klikken door naar je voorraad. Zo blijven je voorraadniveaus actueel en hoef je niets dubbel in te voeren.</p>
 <h2>Bespaar tijd en voorkom fouten</h2>
-<p>Dankzij Inkomende Leveringen werk je sneller en nauwkeuriger. Je houdt grip op wat er binnen komt, je voorraad klopt en je verkoopkanalen blijven keurig in sync.</p>
+<p>Dankzij Inkomende Leveringen werk je sneller en nauwkeuriger. Je houdt grip op wat er binnenkomt, je voorraad klopt en je verkoopkanalen blijven keurig in sync.</p>
 <h2>Boek je inkomende leveringen in &amp; probeer ShopLinkr 14 dagen gratis</h2>
-<p>Maak je magazijn werk een stuk eenvoudiger. <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en ervaar zelf hoe soepel inkomende leveringen verwerken kan zijn.</p>
+<p>Maak je magazijnwerk een stuk eenvoudiger. <a href="https://app.shoplinkr.com/auth/register">Probeer ShopLinkr 14 dagen gratis</a> en ervaar zelf hoe soepel inkomende leveringen verwerken kan zijn.</p>

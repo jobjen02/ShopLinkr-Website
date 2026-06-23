@@ -1,5 +1,5 @@
 ---
-title: "Hoe koppel ik sendcloud met shopify?"
+title: "Hoe koppel ik Sendcloud met Shopify?"
 excerpt: "In deze handleiding leg ik je stapsgewijs uit hoe je Sendcloud kunt koppelen met Shopify, zodat je kunt profiteren van efficiënte verzending en verbeterde klantenservice."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendcloud-met-shopify/neWt9kvm4V488pdlQluvJwCcE.png"

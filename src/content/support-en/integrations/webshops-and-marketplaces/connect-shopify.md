@@ -49,4 +49,4 @@ translationKey: "shopify-koppelen"
 </li>
 </ol>
 <p>All information is imported and the stock is updated to the stock in ShopLinkr, provided the product already exists.</p>
-<p><strong>From this moment on, ShopLinkr is the only place where you need to adjust your stock.</strong></p>
+<p><strong>From this point on, ShopLinkr is the only place where you need to adjust your stock.</strong></p>

@@ -1,11 +1,10 @@
 ---
-title: "Hoe koppel ik postnl met shopify?"
+title: "Hoe koppel ik PostNL met Shopify?"
 excerpt: "Wil je efficiëntie en verbeterde klantenservice in je verzend- en leveringsproces? Dan is het koppelen van PostNL aan Shopify de juiste keuze voor jouw online winkel."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-postnl-met-shopify/qD3uHGZAuwEHl7oLs3BSNJlE8Dc.png"
 ---
 
-<h1>Hoe Koppel Ik PostNL Met Shopify?</h1>
 <p>Wil je efficiëntie en verbeterde klantenservice in je verzend- en leveringsproces? Dan is het <a href="https://shoplinkr.com/integraties/post-nl">koppelen van PostNL aan Shopify</a> de juiste keuze voor jouw online winkel. In deze stapsgewijze handleiding leggen we uit hoe je dit kunt doen. Maar voordat we beginnen, laten we eerst eens kijken naar wat PostNL en Shopify precies zijn.</p>
 <h2>Wat is PostNL en Shopify?</h2>
 <p>PostNL is een van de meest bekende en betrouwbare vervoerders in Nederland. Ze bieden een breed scala aan verzend- en bezorgingsopties, zowel nationaal als internationaal. Door PostNL te koppelen aan je Shopify-winkel, kun je profiteren van hun uitgebreide netwerk en geavanceerde verzendmogelijkheden.</p>

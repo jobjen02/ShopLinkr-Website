@@ -6,7 +6,7 @@ image: "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png
 imageAlt: "Sendy integratie afbeelding"
 ---
 
-<p><strong>Ontdek hoe je je verzend workflow kunt stroomlijnen met de naadloze integratie van Sendy en ShopLinkr. Met één klik op de knop genereer je verzendlabels en ontvang je automatisch de track &amp; trace-code voor je bestellingen. Lees verder om te ontdekken hoe deze integratie je verzendproces efficiënter maakt.</strong></p>
+<p><strong>Ontdek hoe je je verzendworkflow kunt stroomlijnen met de naadloze integratie van Sendy en ShopLinkr. Met één klik op de knop genereer je verzendlabels en ontvang je automatisch de track &amp; trace-code voor je bestellingen. Lees verder om te ontdekken hoe deze integratie je verzendproces efficiënter maakt.</strong></p>
 <p>Bekijk <a href="https://support.shoplinkr.com/artikel/sendy-koppelen" target="_blank">hier</a> de handleiding voor het koppelen van Sendy.</p>
 <h2>Een soepel verzendproces</h2>
 <p>Met de Sendy koppeling hoef je niet langer handmatig verzendlabels aan te maken. Je kunt met één klik op de knop labels genereren en deze automatisch toewijzen aan je bestellingen. Dit bespaart je tijd en minimaliseert de kans op fouten in het verzendproces.</p>

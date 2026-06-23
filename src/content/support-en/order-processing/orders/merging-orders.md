@@ -21,7 +21,7 @@ translationKey: "bestellingen-samenvoegen"
 <p>The orders are not already part of another merge</p>
 </li>
 <li>
-<p>A merge may contain at most 1 Bol LVB order</p>
+<p>A merge may contain at most 1 bol LVB order</p>
 </li>
 <li>
 <p>Orders from different sales channels are allowed to be merged</p>
@@ -88,7 +88,7 @@ translationKey: "bestellingen-samenvoegen"
 <h3>Frequently asked questions</h3>
 <p><strong>Can I merge orders from different sales channels?</strong>
 <br>
-Yes, you can merge orders from, for example, Shopify and Bol into a single merged order.</p>
+Yes, you can merge orders from, for example, Shopify and bol into a single merged order.</p>
 <p><strong>What happens if an original order is canceled?</strong>
 <br>
 The canceled order is automatically removed from the merge. If only one order is left, the entire merge is undone.</p>

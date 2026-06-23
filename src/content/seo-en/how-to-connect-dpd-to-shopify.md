@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-dpd-met-shopify/4DvT09fmOTsgPtp2UMBzooMZTCI.p
 translationKey: "hoe-koppel-ik-dpd-met-shopify"
 ---
 
-<h1>How Do I Connect DPD to Shopify?</h1>
 <p>Want to optimize your shipping process and boost customer satisfaction? Then <a href="https://shoplinkr.com/en/blog/connecting-dpd-to-shoplinkr">connecting DPD to Shopify</a> is the ideal solution for you. In this article we explain step by step how to do this. But before we start, let's first get acquainted with DPD and Shopify.</p>
 <h2>What are DPD and Shopify?</h2>
 <p>You probably already know that DPD is a well-known carrier. But what exactly does connecting DPD to Shopify involve? Before we dive into the details, we'll briefly introduce both platforms.</p>

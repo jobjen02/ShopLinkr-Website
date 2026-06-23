@@ -20,7 +20,7 @@ lastUpdated: "2026-03-31"
 <p>De bestellingen zijn nog niet onderdeel van een andere samenvoeging</p>
 </li>
 <li>
-<p>Er mag maximaal 1 Bol VVB-bestelling in de samenvoeging zitten</p>
+<p>Er mag maximaal 1 bol VVB-bestelling in de samenvoeging zitten</p>
 </li>
 <li>
 <p>Bestellingen van verschillende verkoopkanalen mogen worden samengevoegd</p>
@@ -87,13 +87,13 @@ lastUpdated: "2026-03-31"
 <h3>Veelgestelde vragen</h3>
 <p><strong>Kan ik bestellingen van verschillende verkoopkanalen samenvoegen?</strong>
 <br>
-Ja, je kunt bestellingen van bijvoorbeeld Shopify en Bol samenvoegen tot één samengevoegde bestelling.</p>
+Ja, je kunt bestellingen van bijvoorbeeld Shopify en bol samenvoegen tot één samengevoegde bestelling.</p>
 <p><strong>Wat gebeurt er als een originele bestelling wordt geannuleerd?</strong>
 <br>
 De geannuleerde bestelling wordt automatisch uit de samenvoeging gehaald. Als er nog maar een bestelling over is, wordt de hele samenvoeging ongedaan gemaakt.</p>
 <p><strong>Worden wijzigingen aan originele bestellingen automatisch bijgewerkt?</strong>
 <br>
-Ja, wanneer een verkoopkanaal wijzigingen doorstuurt (zoals product- of aantal wijzigingen), wordt de samengevoegde bestelling automatisch herberekend. Dit geldt zolang de samengevoegde bestelling nog niet in verwerking is.</p>
+Ja, wanneer een verkoopkanaal wijzigingen doorstuurt (zoals product- of aantalwijzigingen), wordt de samengevoegde bestelling automatisch herberekend. Dit geldt zolang de samengevoegde bestelling nog niet in verwerking is.</p>
 <p><strong>Wat als een bestelling in backorder staat?</strong>
 <br>
 Als de voorraad onvoldoende is, krijgt de samengevoegde bestelling de status Backorder. Zodra de voorraad weer beschikbaar is, wordt de status automatisch bijgewerkt. Dit werkt hetzelfde als je gewend bent bij reguliere bestellingen.</p>

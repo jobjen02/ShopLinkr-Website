@@ -35,7 +35,7 @@ lastUpdated: "2026-04-05"
 <h3>Goed om te weten</h3>
 <ul>
 <li>
-<p>Elke filtercombinatie kan maar een keer worden opgeslagen. Als je een filter probeert op te slaan dat al bestaat, krijg je een melding.</p>
+<p>Elke filtercombinatie kan maar een keer worden opgeslagen. Als je een filter probeert op te slaan die al bestaat, krijg je een melding.</p>
 </li>
 <li>
 <p>Een opgeslagen filter moet minimaal een actieve filterinstelling bevatten.</p>

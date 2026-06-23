@@ -1,5 +1,5 @@
 ---
-title: "Qls en woocommerce samen gebruiken"
+title: "QLS en WooCommerce samen gebruiken"
 excerpt: "Als je een webwinkel hebt die draait op WooCommerce, dan is het de moeite waard om QLS via ShopLinkr als vervoerder te koppelen."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/qls-en-woocommerce-samen-gebruiken/rMqfRYtkUJTNaaSBNJX0yRx5g.png"

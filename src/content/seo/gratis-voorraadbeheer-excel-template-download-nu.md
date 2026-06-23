@@ -1,5 +1,5 @@
 ---
-title: "Gratis voorraadbeheer excel template: download nu!"
+title: "Gratis voorraadbeheer Excel template: download nu!"
 excerpt: "Voorraadbeheer is een essentieel onderdeel van ieder bedrijf."
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/gratis-voorraadbeheer-excel-template-download-nu/1YDhMbKEY49nqNcy971QswpCmE.png"

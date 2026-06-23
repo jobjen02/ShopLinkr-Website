@@ -42,7 +42,7 @@ const nl = {
         scanned: 'Gescand',
         location: 'Locatie',
         labelReady: 'Label klaar',
-        ttToBol: 'Track & trace naar Bol',
+        ttToBol: 'Track & trace naar bol',
     },
     trustBar: {
         heading: 'Werkt met de tools die je al gebruikt',
@@ -491,7 +491,7 @@ const nl = {
             setupSteps: [
                 { label: 'Stap 1', title: 'WooCommerce koppelen', body: 'Installeer onze WooCommerce-plugin op je WordPress site, kopieer een API-sleutel uit ShopLinkr en je shop praat direct mee. Geen developer nodig.' },
                 { label: 'Stap 2', title: 'EAN op orde brengen', body: 'WooCommerce heeft standaard geen EAN-veld. Wij ondersteunen de EAN Barcode Generator plugin van WPFactory. Geen EAN? Dan gebruikt ShopLinkr je SKU-veld als fallback.' },
-                { label: 'Stap 3', title: 'bol erbij klikken', body: 'Open je bol verkoopaccount, autoriseer ShopLinkr in een paar klikken. Je listings worden opgehaald en gematcht met je WooCommerce-producten op EAN.' },
+                { label: 'Stap 3', title: 'Bol erbij klikken', body: 'Open je bol verkoopaccount, autoriseer ShopLinkr in een paar klikken. Je listings worden opgehaald en gematcht met je WooCommerce-producten op EAN.' },
                 { label: 'Stap 4', title: 'Sync staat', body: 'Klaar. Vanaf nu lopen voorraad en orders tussen beide kanalen door ShopLinkr. Je verwerkt alles vanuit één omgeving, je magazijn merkt geen verschil meer tussen kanalen.' },
             ],
             faqs: [
@@ -984,7 +984,7 @@ const nl = {
             description: 'Print verzendlabels bij elke vervoerder die je gebruikt. Kies per bestelling de juiste en stuur track en trace automatisch terug naar je verkoopkanaal.',
             eyebrow: 'Verzending',
             heading: 'Print labels bij elke vervoerder die je gebruikt.',
-            subheading: 'Of een bestelling nu via Bol, je eigen webshop of een andere marketplace binnenkomt: je print het label vanuit ShopLinkr en de track en trace gaat automatisch terug naar het verkoopkanaal.',
+            subheading: 'Of een bestelling nu via bol, je eigen webshop of een andere marketplace binnenkomt: je print het label vanuit ShopLinkr en de track en trace gaat automatisch terug naar het verkoopkanaal.',
             breadcrumbHome: 'Home',
             breadcrumbParent: 'Functionaliteiten',
             breadcrumbLeaf: 'Vervoerders',
@@ -1002,7 +1002,7 @@ const nl = {
             mockupCarrierField: 'Vervoerder',
             mockupCarrierValue: 'PostNL Brievenbuspakket',
             mockupToField: 'Naar',
-            mockupTrackNote: 'T&T direct terug naar Bol, klant krijgt de melding.',
+            mockupTrackNote: 'T&T direct terug naar bol, klant krijgt de melding.',
             mockupSummary: 'Regel kiest de vervoerder, AutoPrint stuurt het label naar je printer en de track en trace gaat terug naar het kanaal. Jij verwerkt, ShopLinkr doet de rest.',
             subFeatures: [
                 {
@@ -2243,7 +2243,7 @@ const nl = {
             featuresHeading: 'Belangrijkste functies voor je webshop.',
             featuresIntro: 'Of je nu één webshop runt of op meerdere kanalen tegelijk verkoopt, ShopLinkr maakt voorraadbeheer ineens overzichtelijk. Eén plek voor je producten, je voorraad en je orders.',
             rows: [
-                { eyebrow: 'Voor webshops', heading: 'Webshop voorraad zonder gedoe.', body: 'Je runt je webshop op Shopify, WooCommerce of via een marketplace zoals Bol. ShopLinkr koppelt al die kanalen aan elkaar en houdt je voorraad continu kloppend, zodat je nooit meer iets verkoopt dat al een kwartier eerder bij een ander kanaal de deur uit ging.' },
+                { eyebrow: 'Voor webshops', heading: 'Webshop voorraad zonder gedoe.', body: 'Je runt je webshop op Shopify, WooCommerce of via een marketplace zoals bol. ShopLinkr koppelt al die kanalen aan elkaar en houdt je voorraad continu kloppend, zodat je nooit meer iets verkoopt dat al een kwartier eerder bij een ander kanaal de deur uit ging.' },
                 { eyebrow: 'Realtime sync', heading: 'Voorraad die met je verkoopt.', body: 'Verkoop je iets in je webshop, dan past ShopLinkr de voorraad direct aan op al je andere kanalen. Geen handmatige updates, geen wachttijd, geen onverwachte oversells. Wat je ziet, klopt met wat er werkelijk op het schap ligt.' },
                 { eyebrow: 'Voorraadmeldingen', heading: 'Krijg een seintje voordat je misgrijpt.', body: 'Stel per product een drempelwaarde in en ontvang automatisch een melding zodra je voorraad daaronder zakt. Zo weet je op tijd dat je moet inkopen en raakt je topverkoper nooit ongemerkt uitverkocht.' },
                 { eyebrow: 'Klanttevredenheid', heading: 'Snellere verwerking, blije klanten.', body: 'Bestellingen komen automatisch binnen, je picker werkt met locaties op de picklijst en verzendlabels draai je in bulk. Sneller versturen betekent betere reviews en hogere klanttevredenheid, zonder dat het je meer tijd kost.' },

@@ -9,7 +9,7 @@ translationKey: "het-belang-van-goed-voorraadbeheer-voor-jouw-webshop"
 <h2>Why inventory management is essential for your webshop</h2>
 <p>If you run a webshop, you know how important inventory management is. It might seem like a small detail, but it can have a big impact on your business. Let's take a closer look at why inventory management is so crucial.</p>
 <h3>The right product, at the right moment</h3>
-<p>Picture this: you're looking for a product on Bol. You find exactly what you need, but it's sold out. Frustrating, right? That's precisely why inventory management matters so much. With good inventory management, you make sure you always have the right products available at the right moment. Not only does it prevent customers from being disappointed, it also helps you boost your sales.</p>
+<p>Picture this: you're looking for a product on bol. You find exactly what you need, but it's sold out. Frustrating, right? That's precisely why inventory management matters so much. With good inventory management, you make sure you always have the right products available at the right moment. Not only does it prevent customers from being disappointed, it also helps you boost your sales.</p>
 <h3>Efficiency is the name of the game</h3>
 <p>Good inventory management isn't only about having enough products in stock. It's also about efficiency. Carrying too much stock can lead to high storage costs. On the other hand, if you carry too little stock, you run the risk of missed sales. Finding the right balance is what inventory management is all about.</p>
 <h3>Preventing losses</h3>

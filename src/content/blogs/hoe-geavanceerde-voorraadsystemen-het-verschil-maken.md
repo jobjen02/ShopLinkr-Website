@@ -37,6 +37,6 @@ imageAlt: "Magazijn"
 <p><strong>Overweeg Schaalbaarheid</strong>: Kies een systeem dat met je bedrijf kan meegroeien.</p>
 </li>
 </ol>
-<p>We hebben zelf een voorraadbeheer platform ontwikkeld, deze hebben we vanuit onze eigen praktijk ervaring gebouwd. Ook overleggen we veel met onze eigen klanten, om er zo voor te zorgen dat ons platform zo eenvoudig, maar krachtig mogelijk blijft. Wij houden niet van onnodige functies en houden dingen graag helder en overzichtelijk.</p>
+<p>We hebben zelf een voorraadbeheer platform ontwikkeld, deze hebben we vanuit onze eigen praktijkervaring gebouwd. Ook overleggen we veel met onze eigen klanten, om er zo voor te zorgen dat ons platform zo eenvoudig, maar krachtig mogelijk blijft. Wij houden niet van onnodige functies en houden dingen graag helder en overzichtelijk.</p>
 <p>Geavanceerde voorraadsystemen zijn meer dan alleen een tool voor voorraadbeheer; ze zijn een essentiële component voor het succes van moderne bedrijven. Door deze systemen te implementeren, kunnen bedrijven hun efficiëntie verhogen, kosten besparen, en de algehele klanttevredenheid verbeteren.</p>
 <p><strong>Benieuwd naar wat wij voor je kunnen betekenen? Neem contact met ons op, en we helpen je graag verder!</strong></p>

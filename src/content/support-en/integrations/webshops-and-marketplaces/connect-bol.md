@@ -1,6 +1,6 @@
 ---
-title: "Connect Bol"
-summary: "Connect your Bol account to ShopLinkr."
+title: "Connect bol"
+summary: "Connect your bol account to ShopLinkr."
 category: "integrations"
 categoryLabel: "Integrations"
 subcategory: "webshops-and-marketplaces"
@@ -18,7 +18,7 @@ translationKey: "bol-com-koppelen"
 <img alt="" src="/images/support/bol-com-koppelen/KZ9zRXIeNiTvaZzNL1FWdLQoOAs.png">
 <ol>
 <li>
-<p>Select <strong>Bol</strong> as the type.</p>
+<p>Select <strong>bol</strong> as the type.</p>
 </li>
 </ol>
 <img alt="" src="/images/support/bol-com-koppelen/KGatCB8xkgTnSYdqlNWLVuY4Byc.png">
@@ -33,7 +33,7 @@ translationKey: "bol-com-koppelen"
 <p>Click <strong>Connect</strong>.</p>
 </li>
 <li>
-<p>Log in with the Bol account you want to connect to this sales channel and click log in.</p>
+<p>Log in with the bol account you want to connect to this sales channel and click log in.</p>
 </li>
 </ol>
 <img alt="" src="/images/support/bol-com-koppelen/odPABWh4gyz8fTOUGl6PpNIkJLM.png">

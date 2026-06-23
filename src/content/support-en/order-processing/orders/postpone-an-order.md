@@ -11,7 +11,7 @@ translationKey: "bestelling-uitstellen"
 ---
 
 <p>The 'postpone' feature lets you temporarily set an order aside and only bring it back into your workflow when you actually need to process it. This gives you flexibility and helps you work in a more organized way.</p>
-<img alt="" src="/images/support/bestelling-uitstellen/6CMkLEqQVZ4WVRfaDotMKYQagI.png">
+<img alt="Postpone order option in the order action menu" src="/images/support/bestelling-uitstellen/6CMkLEqQVZ4WVRfaDotMKYQagI.png">
 <p>Postponing an order can be useful in situations such as the following:</p>
 <ul>
 <li>

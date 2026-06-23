@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-myparcel-met-shopify/z55EqzQ97kW7OBi31NEQJXNx
 translationKey: "hoe-koppel-ik-myparcel-met-shopify"
 ---
 
-<h1>How Do I Connect MyParcel to Shopify?</h1>
 <p>Do you run a webshop on Shopify and want to take advantage of MyParcel's handy shipping services? In this article I explain step by step how to connect MyParcel to Shopify. But before we get started, let's first take a look at what MyParcel actually is and how it works.</p>
 <h2>What is MyParcel and how does it work?</h2>
 <p>MyParcel is a shipping service designed specifically for online retailers. It offers a simple and efficient way to send your parcels. With MyParcel you can not only generate shipping labels, but also track the delivery status of your parcels. On top of that, you can make use of extra services such as track &amp; trace, insurance and returns.</p>

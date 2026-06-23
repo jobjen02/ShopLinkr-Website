@@ -1,11 +1,10 @@
 ---
-title: "Hoe koppel ik myparcel met woocommerce?"
+title: "Hoe koppel ik MyParcel met WooCommerce?"
 excerpt: "In deze handleiding leer je hoe je MyParcel kunt koppelen aan je WooCommerce webshop."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-myparcel-met-woocommerce/GdqgrGKTGX2Oi2Cis9k4Z5CJpQ.png"
 ---
 
-<h1>Hoe Koppel Ik MyParcel Met WooCommerce?</h1>
 <p>In deze handleiding leer je hoe je MyParcel kunt koppelen aan je WooCommerce webshop. MyParcel is een handige verzendtool die je kunt <a href="https://shoplinkr.com/blogs/myparcel-koppelen-aan-shoplinkr">integreren met WooCommerce</a>, zodat je eenvoudig en efficiënt je pakketten kunt verzenden. In dit artikel zullen we de voordelen van deze integratie bespreken, de stappen doorlopen om MyParcel aan je webshop te koppelen, veelvoorkomende problemen en oplossingen behandelen, en tips geven voor een succesvolle integratie. Laten we van start gaan!</p>
 <h2>Wat is MyParcel en WooCommerce?</h2>
 <p>Voordat we dieper ingaan op het koppelen van MyParcel aan WooCommerce, is het handig om te weten wat beide platforms precies inhouden.</p>

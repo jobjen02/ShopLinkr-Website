@@ -59,6 +59,13 @@ const toMarkdown = async (html: string, sourceUrl: string) => {
 };
 
 export const onRequest = defineMiddleware(async (context, next) => {
+    // Prerendered routes are static files: middleware still runs while Astro
+    // prerenders them at build time, where context.request.headers is not
+    // available (it emits a per-page WARN). The markdown-for-agents conversion
+    // and the edge-cache headers below only apply to server-rendered responses,
+    // so skipping prerendered routes is both correct and warning-free.
+    if (context.isPrerendered) return next();
+
     const accept = context.request.headers.get('accept') ?? '';
     const path = context.url.pathname;
     const wantsMarkdown =

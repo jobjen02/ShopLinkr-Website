@@ -11,7 +11,7 @@ translationKey: "bestelling-markeren-als-hoge-prioriteit"
 ---
 
 <p>Do you have an order that needs to be processed with priority? You can mark it as high priority. The order gets a visual indicator and is the first to be added to a pick list.</p>
-<img alt="" src="/images/support/bestelling-markeren-als-hoge-prioriteit/cCDf4j3UANoKA6l3aZEdt7CzyA.png">
+<img alt="Order in the list with a high-priority indicator" src="/images/support/bestelling-markeren-als-hoge-prioriteit/cCDf4j3UANoKA6l3aZEdt7CzyA.png">
 <h3>How do you mark an order as high priority?</h3>
 <ol>
 <li>

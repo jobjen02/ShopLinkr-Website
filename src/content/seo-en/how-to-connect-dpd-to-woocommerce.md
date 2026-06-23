@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-dpd-met-woocommerce/AgSTpNxED1IqMTSWZRJ7vQYxQ
 translationKey: "hoe-koppel-ik-dpd-met-woocommerce"
 ---
 
-<h1>How Do I Connect DPD To WooCommerce?</h1>
 <p>Do you run an online store on WooCommerce and would you like to use DPD as a shipping option? No worries, connecting DPD to WooCommerce is easy and offers plenty of benefits for you and your customers. In this article we will guide you step by step through the process of connecting DPD to WooCommerce. But before we dive into that, let's first take a look at what DPD and WooCommerce actually are.</p>
 <h2>What are DPD and WooCommerce?</h2>
 <h3>A short introduction to DPD</h3>

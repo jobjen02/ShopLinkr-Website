@@ -5,7 +5,6 @@ publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-qls-met-shopify/wEKgGW3VSvvX6Jwbo5dH9fxoFM.png"
 ---
 
-<h1>Hoe Koppel Ik QLS met Shopify?</h1>
 <p>Wil je leren hoe je QLS kunt <a href="https://shoplinkr.com/blogs/qls-koppelen-aan-shoplinkr">koppelen aan je Shopify-winkel</a> via ShopLinkr? Dat help ik je graag mee! In deze stapsgewijze handleiding leg ik je alles uit wat je moet weten om deze koppeling te maken, en geef ik je enkele handige tips om eventuele problemen op te lossen. Laten we aan de slag gaan!</p>
 <h2>Wat is QLS en Shopify?</h2>
 <p>Voordat we duiken in het koppelingsproces, is het belangrijk om een goed begrip te hebben van QLS en Shopify.</p>

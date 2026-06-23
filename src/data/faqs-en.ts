@@ -22,7 +22,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
     ],
     producten: [
         {
-            question: "How does ShopLinkr handle variants of the same product, such as sizes or colours?",
+            question: "How does ShopLinkr handle variants of the same product, such as sizes or colors?",
             answer: "You group those products into a variant group. Each variant stays an independent product with its own EAN, stock and listing, but in the product overview you see the main product with the combined stock and the number of variants. A product can only belong to one variant group at a time.",
         },
         {
@@ -31,7 +31,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Does ShopLinkr also work for products I sell by weight or length, such as kibble or fabric?",
-            answer: "Yes, with stock sources. You track the base stock in kilos, metres or litres and link variants like 500 grams or 1 metre to that source. With every sale the right quantity is deducted from the source, and ShopLinkr calculates how much is still available per variant.",
+            answer: "Yes, with stock sources. You track the base stock in kilos, meters or liters and link variants like 500 grams or 1 meter to that source. With every sale the right quantity is deducted from the source, and ShopLinkr calculates how much is still available per variant.",
         },
         {
             question: "Does a bundle automatically get unlimited stock if all of its sub-products have it?",
@@ -53,7 +53,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
     bestellingen: [
         {
             question: "Can I combine orders from different sales channels?",
-            answer: "Yes. Has a single customer placed an order on both Bol and Shopify? Then you merge them into one shipment. ShopLinkr flags that there are multiple open orders for the same delivery address and offers the merge right away.",
+            answer: "Yes. Has a single customer placed an order on both bol and Shopify? Then you merge them into one shipment. ShopLinkr flags that there are multiple open orders for the same delivery address and offers the merge right away.",
         },
         {
             question: "Can I also create phone orders or B2B shipments in ShopLinkr?",
@@ -75,7 +75,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Does AutoPrint work with any printer?",
-            answer: "AutoPrint works with practically any printer and recognises your devices automatically as soon as you install the connection. You link each printer to a packing station, so the labels are always printed in the right place. For Zebra printers we recommend ZPL mode.",
+            answer: "AutoPrint works with practically any printer and recognizes your devices automatically as soon as you install the connection. You link each printer to a packing station, so the labels are always printed in the right place. For Zebra printers we recommend ZPL mode.",
         },
         {
             question: "What are bins and when is it worth using them?",
@@ -87,7 +87,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
         },
         {
             question: "How do I set up a fixed filter combination for recurring picking rounds?",
-            answer: "Go to Picking lists, click Generate picking list and set the filters you use often, for example sales channel, parcel type and location. Click Saved filters in the top right and then Save filters, give the set a recognisable name like \"Letterbox parcels webshop\" and save. Next time the combination is ready as a quick choice for your whole team.",
+            answer: "Go to Picking lists, click Generate picking list and set the filters you use often, for example sales channel, parcel type and location. Click Saved filters in the top right and then Save filters, give the set a recognizable name like \"Letterbox parcels webshop\" and save. Next time the combination is ready as a quick choice for your whole team.",
         },
     ],
     leveringen: [
@@ -211,7 +211,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Can I filter the Never sold products report by sales channel?",
-            answer: "Yes. Alongside period, tags and packaging type, you can filter this report by sales channel. That way you can see, for example, which products aren't moving in your Shopify shop while they do sell on Bol, or the other way around.",
+            answer: "Yes. Alongside period, tags and packaging type, you can filter this report by sales channel. That way you can see, for example, which products aren't moving in your Shopify shop while they do sell on bol, or the other way around.",
         },
         {
             question: "Why does the stock value report differ from the stock value on a product itself?",
@@ -285,7 +285,7 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
         },
         {
             question: "Can I combine orders from the same customer into one shipment?",
-            answer: "Yes, based on the delivery address. If multiple open orders share the same shipping address, ShopLinkr recognises that and you can merge them into one shipment. That also works when the orders come from different sales channels.",
+            answer: "Yes, based on the delivery address. If multiple open orders share the same shipping address, ShopLinkr recognizes that and you can merge them into one shipment. That also works when the orders come from different sales channels.",
         },
     ],
     prijzen: [

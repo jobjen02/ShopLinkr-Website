@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-innosend-met-woocommerce/tQFPtpmjY1HXqDyBCR1J
 translationKey: "hoe-koppel-ik-innosend-met-woocommerce"
 ---
 
-<h1>How Do I Connect Innosend To WooCommerce?</h1>
 <p>If you run an online store on WooCommerce and you want to use Innosend as your shipping service, you have come to the right place. In this article we will explain, step by step, how to connect Innosend to your WooCommerce webshop. But before we get into the details, let us first take a moment to look at what Innosend and WooCommerce actually are.</p>
 <h2>What are Innosend and WooCommerce?</h2>
 <p>Before we go any further, it is important to understand exactly what Innosend and WooCommerce involve. Innosend is an innovative shipping service designed specifically for online entrepreneurs. It lets you easily manage and automate your shipping processes, which saves you valuable time and resources. WooCommerce, on the other hand, is a popular e-commerce platform used by millions of online stores around the world. It offers a wide range of features and capabilities to help you manage and grow your online store.</p>

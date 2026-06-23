@@ -1,11 +1,10 @@
 ---
-title: "Hoe koppel ik postnl met woocommerce?"
+title: "Hoe koppel ik PostNL met WooCommerce?"
 excerpt: "Heb je ooit problemen gehad met het verzenden en leveren van je producten via WooCommerce? Maak je geen zorgen, want ik ga je laten zien hoe je PostNL kunt koppelen aan WooCommerce."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-postnl-met-woocommerce/Dg2QbyP1pZjClaYvn4bA8zJMnuA.png"
 ---
 
-<h1>Hoe Koppel Ik PostNL Met WooCommerce?</h1>
 <p>Heb je ooit problemen gehad met het verzenden en leveren van je producten via WooCommerce? Maak je geen zorgen, want ik ga je laten zien hoe je <a href="https://shoplinkr.com/integraties/post-nl">PostNL kunt koppelen aan WooCommerce</a>. Met deze integratie kun je efficiënt verzenden en je klantenservice verbeteren. Laten we beginnen!</p>
 <h2>Wat is PostNL en WooCommerce?</h2>
 <p>Voordat we ingaan op het koppelen van PostNL aan WooCommerce, laten we eerst een korte introductie geven over beide platforms.</p>

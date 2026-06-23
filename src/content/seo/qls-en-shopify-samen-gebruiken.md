@@ -1,5 +1,5 @@
 ---
-title: "Qls en shopify samen gebruiken"
+title: "QLS en Shopify samen gebruiken"
 excerpt: "Ben je een online ondernemer die een e-commerce winkel runt op Shopify? Wil je je verzendprocessen vereenvoudigen en je klanten een naadloze ervaring bieden? Dan is het koppelen van QLS en Shopify aan ShopLinkr iets voor jou! In dit artikel bespreken we wat QLS is, wat Shopify te bieden heeft en hoe je ze via ShopLinkr samen gebruikt om je bedrijf te laten groeien."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/qls-en-shopify-samen-gebruiken/lZGMNLnxsVN4nlqhiKA03zXxGo.png"

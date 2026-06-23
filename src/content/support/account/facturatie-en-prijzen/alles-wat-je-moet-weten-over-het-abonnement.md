@@ -13,4 +13,4 @@ lastUpdated: "2026-06-01"
 <p>We werken met een "Pay as you Go" model. Wil je weten wat dit precies inhoudt? In <a href="/support/het-pay-as-you-go-model">dit artikel</a> leggen we uit hoe dit werkt en waarom dit voor jou voordeliger is ten opzichte van andere abonnementsvormen.</p>
 <h3>Feedback?</h3>
 <p>Heb je iets wat voor jouw bedrijf niet helemaal lekker werkt, of zou je graag iets nieuws willen zien? Neem gerust <a href="/contact">contact</a> met ons op. We gaan graag met onze klanten in gesprek om de mogelijkheden te bespreken.</p>
-<p>Heb je een functieverzoek? Deze kun je indienen op <a href="https://shoplinkr.featurebase.app/nl" target="_blank">deze</a> pagina.</p>
+<p>Heb je een functieverzoek? Deze kun je indienen op <a href="https://shoplinkr.featurebase.app/nl" target="_blank" rel="noopener noreferrer">deze</a> pagina.</p>

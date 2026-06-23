@@ -1,5 +1,5 @@
 ---
-title: "Connect MyParcel"
+title: "Connecting MyParcel"
 summary: "How the integration between MyParcel and ShopLinkr works"
 category: "integrations"
 categoryLabel: "Integrations"

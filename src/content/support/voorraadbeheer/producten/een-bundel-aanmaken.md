@@ -151,7 +151,7 @@ lastUpdated: "2026-06-01"
 </tbody>
 </table>
 </figure>
-<p>De bundel voorraad wordt altijd automatisch herberekend. Of je nu een los product verkoopt of de bundel zelf, de voorraad klopt altijd.</p>
+<p>De bundelvoorraad wordt altijd automatisch herberekend. Of je nu een los product verkoopt of de bundel zelf, de voorraad klopt altijd.</p>
 <h3>Goed om te weten</h3>
 <ul>
 <li>

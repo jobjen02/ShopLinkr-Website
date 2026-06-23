@@ -1,5 +1,5 @@
 ---
-title: "Hoe koppel ik innosend met shopify?"
+title: "Hoe koppel ik Innosend met Shopify?"
 excerpt: "In deze handleiding leer je hoe je Innosend kunt koppelen met Shopify, zodat je gemakkelijk je online winkel kunt beheren en bestellingen kunt verwerken."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-innosend-met-shopify/6XJEUYs0uQiwvAwsnmrOmaXwTs.png"

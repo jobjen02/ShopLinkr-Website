@@ -38,7 +38,7 @@ image: "/images/blog/sendcloud-en-bol-samen-gebruiken/7USdGuyFS8frhm12o0SuP5f9qy
 </li>
 </ol>
 <h2>Wat is bol?</h2>
-<p>bol is een van de grootste online marktplaatsen in Nederland en België. Het biedt verkopers de mogelijkheid om hun producten aan miljoenen potentiële klanten te presenteren. Als je je bereik wilt vergroten en je verkoop wilt stimuleren, is bol de place to be.</p>
+<p>Bol is een van de grootste online marktplaatsen in Nederland en België. Het biedt verkopers de mogelijkheid om hun producten aan miljoenen potentiële klanten te presenteren. Als je je bereik wilt vergroten en je verkoop wilt stimuleren, is bol de place to be.</p>
 <h3>De voordelen van bol</h3>
 <p>Door je producten op bol te verkopen, profiteer je van diverse voordelen, zoals:</p>
 <ul>

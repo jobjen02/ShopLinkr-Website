@@ -5,7 +5,6 @@ publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendy-met-woocommerce/ouKyQmd7jCMXL7HeqYRbtLRgVk4.png"
 ---
 
-<h1>Hoe Koppel Ik Sendy Met WooCommerce?</h1>
 <p>Ben je op zoek naar een manier om <a href="https://shoplinkr.com/integraties/sendy">Sendy te koppelen met WooCommerce</a>? In dit artikel leg ik stap voor stap uit hoe je dat doet via ShopLinkr, zodat je je WooCommerce-bestellingen verwerkt en je Sendy-verzendlabels op één plek afdrukt. Maar voordat we ingaan op de details, laten we eerst eens kijken wat Sendy en WooCommerce precies zijn.</p>
 <h2>Wat is Sendy en WooCommerce?</h2>
 <p>Sendy is verzendsoftware die bedrijven helpt om pakketten efficiënt te versturen. Het koppelt met vervoerders zoals PostNL, DHL en DPD en sluit eenvoudig aan op webshops, zodat je verzendlabels automatisch kunt aanmaken en profiteert van scherpe tarieven. Kort gezegd regelt Sendy de verzendkant van je bestellingen.</p>

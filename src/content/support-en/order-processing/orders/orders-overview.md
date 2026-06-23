@@ -76,7 +76,7 @@ translationKey: "bestellingen-overzicht"
 <p><a href="/en/support/mark-order-as-high-priority">Mark as high priority</a></p>
 </li>
 <li>
-<p><a href="/en/support/cancel-an-order">Cancel an order</a> (for Bol orders)</p>
+<p><a href="/en/support/cancel-an-order">Cancel an order</a> (for bol orders)</p>
 </li>
 <li>
 <p><a href="/en/support/create-reshipments">Create a reshipment</a> (for completed orders)</p>

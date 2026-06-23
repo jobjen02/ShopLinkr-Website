@@ -1,11 +1,10 @@
 ---
-title: "Hoe koppel ik sendy met shopify?"
+title: "Hoe koppel ik Sendy met Shopify?"
 excerpt: "In deze handleiding laat ik je zien hoe je Sendy koppelt met Shopify via ShopLinkr, zodat je je verzendproces automatiseert en je Shopify winkel laat groeien."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendy-met-shopify/hMV8hR8vA9ZHzwTmMGUVYzMmo.png"
 ---
 
-<h1>Hoe Koppel Ik Sendy Met Shopify?</h1>
 <p>In deze handleiding laat ik je zien hoe je <a href="https://shoplinkr.com/blogs/sendy-koppelen-aan-shoplinkr">Sendy koppelt met Shopify</a> via ShopLinkr, zodat je eenvoudig je verzendproces automatiseert en je Shopify winkel kunt laten groeien. Voordat we beginnen, kijken we eerst even naar wat Sendy is en hoe het werkt.</p>
 <h2>Wat is Sendy en hoe werkt het?</h2>
 <p><a href="https://shoplinkr.com/integraties/sendy">Sendy is verzendsoftware</a> die bedrijven helpt om pakketten efficiënt te versturen. Het biedt integraties met vervoerders zoals PostNL, DHL en DPD, en koppelt eenvoudig met webshops. Met Sendy maak je verzendlabels automatisch aan, optimaliseer je je verzendproces en profiteer je van scherpe tarieven.</p>

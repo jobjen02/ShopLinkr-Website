@@ -57,7 +57,7 @@ lastUpdated: "2026-04-05"
 </tbody>
 </table>
 </figure>
-<p>Alle producten in dit rapport hebben nul verkopen in de gekozen periode, zowel als individueel product als als onderdeel van een <a href="/support/een-bundel-aanmaken">bundel</a>.</p>
+<p>Alle producten in dit rapport hebben nul verkopen in de gekozen periode, zowel als individueel product als onderdeel van een <a href="/support/een-bundel-aanmaken">bundel</a>.</p>
 <h3>Filteren</h3>
 <figure>
 <table>

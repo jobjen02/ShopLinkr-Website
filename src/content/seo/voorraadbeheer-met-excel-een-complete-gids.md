@@ -1,5 +1,5 @@
 ---
-title: "Voorraadbeheer met excel: een complete gids"
+title: "Voorraadbeheer met Excel: een complete gids"
 excerpt: "Heb je ooit het gevoel gehad dat je verdwaalt in de complexiteit van voorraadbeheer? Je bent niet alleen."
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/voorraadbeheer-met-excel-een-complete-gids/BtA4mAWgXjgoMjQo4P6c5T2PaM.png"

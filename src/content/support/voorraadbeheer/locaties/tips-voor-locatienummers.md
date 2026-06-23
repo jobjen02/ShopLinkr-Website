@@ -9,7 +9,7 @@ order: 55
 lastUpdated: "2026-04-05"
 ---
 
-<p>Een goede naamgeving voor je <a href="/support/locatiebeheer">locaties</a> zorgt ervoor dat iedereen in je team direct weet waar een product ligt. Zeker als je team groeit of je met nieuwe medewerkers werkt, voorkomt een consistente naamgeving fouten en versnelt het het <a href="/support/wat-zijn-picklijsten">pickproces</a>.</p>
+<p>Een goede naamgeving voor je <a href="/support/locatiebeheer">locaties</a> zorgt ervoor dat iedereen in je team direct weet waar een product ligt. Zeker als je team groeit of je met nieuwe medewerkers werkt, voorkomt een consistente naamgeving fouten en versnelt het <a href="/support/wat-zijn-picklijsten">pickproces</a>.</p>
 <h3>Het naamgevingssysteem</h3>
 <p>Een veelgebruikte conventie is om locaties te benoemen op basis van hun positie in het magazijn, van groot naar klein. Het eerste niveau is altijd een letter, de rest zijn nummers. Afhankelijk van de grootte van je magazijn kun je werken met of zonder zones:</p>
 <pre><code>Zonder zones:

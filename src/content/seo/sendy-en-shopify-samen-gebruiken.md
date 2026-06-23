@@ -1,5 +1,5 @@
 ---
-title: "Sendy en shopify samen gebruiken"
+title: "Sendy en Shopify samen gebruiken"
 excerpt: "Shopify en Sendy zijn twee krachtige tools die je kunt combineren om je e-commerce bedrijf naar een hoger niveau te tillen."
 publishedAt: "2024-06-29T00:00:00.000Z"
 image: "/images/blog/sendy-en-shopify-samen-gebruiken/588KDeb7KbzQWgxdVDvifuaOkw.png"
@@ -12,7 +12,7 @@ image: "/images/blog/sendy-en-shopify-samen-gebruiken/588KDeb7KbzQWgxdVDvifuaOkw
 <p>Sendy biedt diverse voordelen voor e-commerce ondernemers. Ten eerste zorgt het voor een naadloze integratie met je Shopify-winkel, waardoor je rechtstreeks vanuit het Shopify-dashboard labels kunt aanmaken. Dit bespaart je tijd en minimaliseert de kans op fouten. Daarnaast heb je toegang tot verschillende vervoerders, zodat je de beste optie kunt kiezen op basis van prijs, snelheid en beschikbaarheid. Bovendien kun je met Sendy gemakkelijk je verzendprocessen optimaliseren en kosten besparen.</p>
 <h3>Hoe werkt Sendy?</h3>
 <p>Het gebruik van Sendy is eenvoudig en intuïtief. Nadat je een account hebt aangemaakt en <a href="https://shoplinkr.com/blogs/shopify-koppelen-aan-shoplinkr">je Shopify-winkel hebt gekoppeld</a>, hoef je alleen maar de vereiste gegevens in te vullen voor het aanmaken van labels. Dit kan onder andere het adres van de klant, het gewicht van het pakket en de gekozen vervoerder omvatten. Vervolgens genereert Sendy automatisch het label en kun je deze afdrukken en op het pakket plakken. Het enige wat je nog hoeft te doen is het pakket af te geven bij de betreffende vervoerder.</p>
-<p>Maar dat is nog niet alles! Sendy biedt ook uitgebreide trackingmogelijkheden, zodat je altijd op de hoogte bent van de status van je verzendingen. Je kunt eenvoudig de locatie van je pakket volgen en real-time updates ontvangen. Dit geeft je gemoedsrust en stelt je in staat om je klanten op de hoogte te houden van de voortgang van hun bestellingen.</p>
+<p>Maar dat is nog niet alles! Sendy biedt ook uitgebreide trackingmogelijkheden, zodat je altijd op de hoogte bent van de status van je verzendingen. Je kunt eenvoudig de locatie van je pakket volgen en realtime updates ontvangen. Dit geeft je gemoedsrust en stelt je in staat om je klanten op de hoogte te houden van de voortgang van hun bestellingen.</p>
 <p>Bovendien biedt Sendy ook een handige retourzendingfunctionaliteit. Als een klant een product wil retourneren, kun je eenvoudig een retourlabel genereren en deze naar de klant sturen. Dit maakt het retourproces snel en gemakkelijk, waardoor je klanttevredenheid en klantloyaliteit kunt vergroten.</p>
 <h2>Wat is Shopify?</h2>
 <p>Shopify is een alles-in-één e-commerce platform waarmee je gemakkelijk je eigen online winkel kunt starten en beheren. Met Shopify kun je producten toevoegen, de lay-out van je winkel aanpassen, betalingen accepteren en nog veel meer. Het biedt een gebruiksvriendelijke interface en krachtige functies waarmee je je winkel kunt laten groeien.</p>

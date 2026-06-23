@@ -14,7 +14,7 @@ lastUpdated: "2026-04-01"
 <h3>Standaardrollen</h3>
 <p>Bij het aanmaken van je account krijg je een aantal standaardrollen van ons. Deze zijn vooraf ingesteld met de rechten die bij de betreffende functie passen.</p>
 <h4>Beheerder</h4>
-<p>Een beheerder heeft toegang tot alle functies binnen ShopLinkr. Deze rol is bedoeld voor eigenaren en beheerders die volledige controle over het account nodig hebben. De Beheerder rol kan niet worden gewijzigd of verwijderd.</p>
+<p>Een beheerder heeft toegang tot alle functies binnen ShopLinkr. Deze rol is bedoeld voor eigenaren en beheerders die volledige controle over het account nodig hebben. De rol Beheerder kan niet worden gewijzigd of verwijderd.</p>
 <h4>Magazijn</h4>
 <p>Deze rol is bedoeld voor magazijnmedewerkers. Zij kunnen bestellingen verwerken, picklijsten aanmaken, voorraad bijwerken, retouren afhandelen en leveringen ontvangen. Ze hebben geen toegang tot instellingen, gebruikersbeheer of financiële gegevens.</p>
 <h4>Administratie</h4>
@@ -45,7 +45,7 @@ lastUpdated: "2026-04-01"
 <h3>Rollen beheren</h3>
 <h4>Een rol bewerken</h4>
 <p>Ga naar <strong>Instellingen &gt; Rollen</strong> en klik op de rol die je wilt aanpassen. Pas de naam of rechten aan en klik op <strong>Opslaan</strong>. De wijzigingen gelden direct voor alle gebruikers met deze rol.</p>
-<p>Let op: de Beheerder rol kan niet worden bewerkt.</p>
+<p>Let op: de rol Beheerder kan niet worden bewerkt.</p>
 <h4>Een rol dupliceren</h4>
 <p>Wil je een nieuwe rol aanmaken die lijkt op een bestaande? Klik in het overzicht aan de rechterkant op het icoontje voor <strong>dupliceren</strong>. Er wordt een kopie aangemaakt die je vervolgens kunt aanpassen. Handig als je een standaardrol als uitgangspunt wilt gebruiken en maar een paar rechten wilt toevoegen of verwijderen.</p>
 <h3>Overzicht van rechten</h3>

@@ -6,7 +6,6 @@ image: "/images/blog/hoe-koppel-ik-myparcel-met-woocommerce/GdqgrGKTGX2Oi2Cis9k4
 translationKey: "hoe-koppel-ik-myparcel-met-woocommerce"
 ---
 
-<h1>How Do I Connect MyParcel To WooCommerce?</h1>
 <p>In this guide you will learn how to connect MyParcel to your WooCommerce webshop. MyParcel is a handy shipping tool that you can <a href="https://shoplinkr.com/en/blog/connect-myparcel-to-shoplinkr">integrate with WooCommerce</a>, so that you can ship your parcels easily and efficiently. In this article we will discuss the benefits of this integration, walk through the steps to connect MyParcel to your webshop, cover common problems and solutions, and give tips for a successful integration. Let's get started!</p>
 <h2>What are MyParcel and WooCommerce?</h2>
 <p>Before we dive deeper into connecting MyParcel to WooCommerce, it is useful to know what both platforms actually involve.</p>
