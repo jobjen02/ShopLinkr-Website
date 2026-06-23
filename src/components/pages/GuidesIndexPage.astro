@@ -64,7 +64,7 @@ const jsonLd = [
     jsonLd={jsonLd}
 >
     <section class="pb-24 md:pb-32 bg-paper dark:bg-charcoal">
-        <div class="container-wide flex flex-col gap-16 md:gap-20">
+        <div class="container-prose flex flex-col gap-16 md:gap-20">
             {grouped.map((group) => (
                 <div>
                     <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-8 md:mb-10">
@@ -76,7 +76,7 @@ const jsonLd = [
                                 href={`${base}/${page.id}`}
                                 class="group flex flex-col gap-2 h-full rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                             >
-                                <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper leading-snug tracking-tight group-hover:text-sunstone-deep transition-colors min-h-[2.75rem] md:min-h-[3.1rem]">
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper leading-snug tracking-tight group-hover:text-sunstone-deep transition-colors">
                                     {page.data.title}
                                 </h3>
                                 <p class="text-sm text-steel dark:text-gravel leading-relaxed line-clamp-3">
