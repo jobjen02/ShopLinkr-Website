@@ -88,16 +88,16 @@ export const prerender = false;
     <section class="py-12 md:py-16 bg-paper dark:bg-charcoal">
         <div class="container-wide">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                     <div>
                         <p class="eyebrow mb-3">{p.mockupEyebrow}</p>
-                        <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05]">
+                        <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05]">
                             {p.mockupHeadingLine1}
                             <span class="block">{p.mockupHeadingLine2}</span>
                         </h2>
                     </div>
 
-                    <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                    <div class="bg-paper dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center justify-between gap-3 mb-4">
                             <div class="flex items-center gap-2.5">
                                 <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
@@ -115,7 +115,7 @@ export const prerender = false;
                         </div>
 
                         <ul class="space-y-2 mb-4">
-                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint">
                                 <div class="flex flex-col min-w-0">
                                     <span class="text-sm text-charcoal dark:text-paper font-medium truncate">{p.mockupRow1Name}</span>
                                     <span class="text-[11px] text-gravel">B.4</span>
@@ -139,7 +139,7 @@ export const prerender = false;
                                     <span class="text-[10px] uppercase tracking-[0.08em] font-semibold text-sunstone-deep">{p.mockupRow2Pending}</span>
                                 </div>
                             </li>
-                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint">
+                            <li class="flex items-center justify-between gap-3 px-3 py-2.5 rounded-md bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint">
                                 <div class="flex flex-col min-w-0">
                                     <span class="text-sm text-charcoal dark:text-paper font-medium truncate">{p.mockupRow3Name}</span>
                                     <span class="text-[11px] text-gravel">C.1</span>
@@ -170,7 +170,7 @@ export const prerender = false;
 
                 {
                     subFeatures.map((feature) => (
-                        <article class="bg-paper dark:bg-graphite rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                        <article class="bg-paper dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                             <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </div>
@@ -233,7 +233,7 @@ export const prerender = false;
                     <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                         {p.faqIntro}
                     </p>
-                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal dark:text-paper font-semibold text-sm">
+                    <a href={localizeHref('/contact', locale)} class="group mt-8 inline-flex items-center gap-2 text-charcoal dark:text-paper font-semibold text-sm min-h-[44px] py-2 -my-2">
                         {p.faqCta}
                         <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
                     </a>

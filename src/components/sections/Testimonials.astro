@@ -35,7 +35,7 @@ const testimonials = [
     <div class="container-prose">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12 md:mb-16">
             <div class="max-w-2xl">
-                <p class="eyebrow mb-3">{t.testimonials.eyebrow}</p>
+                <p class="eyebrow mb-4">{t.testimonials.eyebrow}</p>
                 <h2 class="text-4xl md:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight">
                     {t.testimonials.heading}
                     <img
@@ -58,14 +58,14 @@ const testimonials = [
                     ))}
                 </span>
                 <span class="font-semibold text-charcoal dark:text-paper">{t.testimonials.rating}</span>
-                <span class="text-gravel">{t.testimonials.ratingSuffix}</span>
+                <span class="text-steel dark:text-gravel">{t.testimonials.ratingSuffix}</span>
             </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-5 md:gap-6">
             {
                 testimonials.map((testimonial, i) => (
-                    <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel transition-colors p-8 md:p-10 flex flex-col">
+                    <article class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel transition-colors p-8 md:p-10 flex flex-col">
                         <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem] mb-8 flex-1">
                             {t.testimonials.quotes[i]}
                         </p>
@@ -74,14 +74,14 @@ const testimonials = [
                             <div class="h-10 w-10 rounded-lg bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <img
                                     src={testimonial.logo}
-                                    alt={testimonial.company}
+                                    alt=""
                                     class="h-full w-full object-contain p-1.5"
                                     loading="lazy"
                                 />
                             </div>
                             <div class="min-w-0">
                                 <p class="font-semibold text-charcoal dark:text-paper text-sm">{testimonial.author}</p>
-                                <p class="text-xs text-gravel mt-0.5">{testimonial.company}</p>
+                                <p class="text-xs text-steel dark:text-gravel mt-0.5">{testimonial.company}</p>
                             </div>
                         </div>
                     </article>

@@ -85,7 +85,7 @@ const jsonLd = [
                 </p>
                 <div>
                 <div
-                    class="flex flex-col gap-1 w-full rounded-2xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint p-1 text-sm sm:inline-flex sm:flex-row sm:w-max sm:rounded-full"
+                    class="flex flex-col gap-1 w-full rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint p-1 text-sm sm:inline-flex sm:flex-row sm:w-max sm:rounded-full"
                     role="group"
                     aria-label={p.filterGroupLabel}
                 >
@@ -203,10 +203,10 @@ const jsonLd = [
                 {popularCombinations.map((combo) => (
                     <a
                         href={combo.href}
-                        class="group relative block bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                        class="group relative block bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                     >
                         <div class="flex items-center gap-2 mb-4">
-                            <div class="h-10 w-10 rounded-lg bg-paper dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+                            <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <img
                                     src={combo.fromLogo}
                                     alt=""
@@ -215,7 +215,7 @@ const jsonLd = [
                                 />
                             </div>
                             <i class="fa-solid fa-arrow-right-arrow-left text-xs text-gravel" aria-hidden="true"></i>
-                            <div class="h-10 w-10 rounded-lg bg-paper dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+                            <div class="h-10 w-10 rounded-lg bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                 <img
                                     src={combo.toLogo}
                                     alt=""
@@ -224,7 +224,7 @@ const jsonLd = [
                                 />
                             </div>
                         </div>
-                        <p class="eyebrow !text-gravel mb-1">{p.comboLabel}</p>
+                        <p class="text-xs font-semibold uppercase tracking-wide text-steel dark:text-gravel mb-1">{p.comboLabel}</p>
                         <h3 class="text-base font-semibold text-charcoal dark:text-paper tracking-tight">
                             {combo.from} {p.comboAnd} {combo.to}
                         </h3>
@@ -243,12 +243,12 @@ const jsonLd = [
 
     <section class="pb-20 md:pb-28">
         <div class="container-prose">
-            <div class="max-w-2xl mx-auto text-center rounded-2xl ring-1 ring-chalk-dark dark:ring-flint bg-chalk-light dark:bg-graphite p-8 md:p-12">
+            <div class="max-w-2xl mx-auto text-center rounded-xl ring-1 ring-chalk-dark dark:ring-flint bg-chalk-light dark:bg-graphite p-8 md:p-12">
                 <p class="eyebrow mb-4">{p.missingEyebrow}</p>
                 <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight">
                     {p.missingHeading}
                 </h2>
-                <p class="mt-4 text-steel dark:text-gravel leading-relaxed">
+                <p class="mt-6 text-steel dark:text-gravel leading-relaxed">
                     {p.missingBody}
                 </p>
                 <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">

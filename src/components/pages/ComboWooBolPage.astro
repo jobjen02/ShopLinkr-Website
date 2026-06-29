@@ -39,7 +39,7 @@ const jsonLd = [
                 '@type': 'ListItem',
                 position: 1,
                 name: p.breadcrumbHome,
-                item: SITE_URL,
+                item: `${SITE_URL}${localizedPath('home', locale)}`,
             },
             {
                 '@type': 'ListItem',
@@ -81,7 +81,7 @@ const jsonLd = [
     <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <nav aria-label="Breadcrumb" class="mb-8">
-                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-steel dark:text-gravel">
                     <li>
                         <a href={localizeHref('/', locale)} class="hover:text-charcoal dark:hover:text-paper transition-colors">{p.breadcrumbHome}</a>
                     </li>
@@ -180,7 +180,7 @@ const jsonLd = [
             <ol class="grid sm:grid-cols-2 gap-4 md:gap-5">
                 {
                     setupSteps.map((step) => (
-                        <li class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
+                        <li class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
                             <p class="text-[11px] uppercase tracking-[0.18em] text-sunstone-deep font-semibold mb-2">
                                 {step.label}
                             </p>

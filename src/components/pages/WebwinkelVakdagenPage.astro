@@ -69,15 +69,17 @@ const jsonLd = {
     <section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="max-w-4xl">
-                <p class="eyebrow mb-4">{p.lookbackEyebrow}</p>
-                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1] mb-10">
-                    {p.lookbackHeading}
-                </h2>
+                <div class="mb-12 md:mb-16">
+                    <p class="eyebrow mb-4">{p.lookbackEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
+                        {p.lookbackHeading}
+                    </h2>
+                </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
                     {
                         eventInfo.map((info) => (
-                            <div class="bg-paper dark:bg-charcoal rounded-2xl p-7 ring-1 ring-chalk-dark dark:ring-flint">
+                            <div class="bg-paper dark:bg-charcoal rounded-xl p-6 md:p-7 ring-1 ring-chalk-dark dark:ring-flint">
                                 <div class="flex items-center justify-center h-10 w-10 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mb-5">
                                     <i class={`${info.icon} text-base`} aria-hidden="true" />
                                 </div>

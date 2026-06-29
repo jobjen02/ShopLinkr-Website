@@ -37,7 +37,7 @@ const grouped = ORDER.map((key) => ({
 
 const jsonLd = [
     breadcrumbs([
-        [t.footer.links.guides, localizeHref('/', locale)],
+        ['Home', localizeHref('/', locale)],
         [p.eyebrow, localizedPath('guides', locale)],
     ]),
     {
@@ -74,7 +74,7 @@ const jsonLd = [
                         {group.items.map((page) => (
                             <a
                                 href={`${base}/${page.id}`}
-                                class="group flex flex-col gap-2 h-full rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                                class="group flex flex-col gap-2 h-full rounded-xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                             >
                                 <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper leading-snug tracking-tight group-hover:text-sunstone-deep transition-colors">
                                     {page.data.title}
@@ -82,7 +82,7 @@ const jsonLd = [
                                 <p class="text-sm text-steel dark:text-gravel leading-relaxed line-clamp-3">
                                     {page.data.excerpt}
                                 </p>
-                                <span class="mt-auto pt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep group-hover:gap-2.5 transition-all">
+                                <span class="mt-auto pt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-charcoal dark:text-paper group-hover:text-sunstone-deep group-hover:gap-2.5 transition-all">
                                     {p.readMore}
                                     <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                                 </span>

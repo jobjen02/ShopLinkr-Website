@@ -46,7 +46,7 @@ const jsonLd = [
     routeKey="faq"
     jsonLd={jsonLd}
 >
-    <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
+    <section class="pb-24 md:pb-32 bg-paper dark:bg-charcoal">
         <div class="container-prose space-y-14 md:space-y-20">
             {
                 faqCategories.map((cat) => {
@@ -55,11 +55,11 @@ const jsonLd = [
                     );
                     return (
                         <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-                            <div class="lg:col-span-4 lg:sticky lg:top-28">
+                            <div class="lg:col-span-4 lg:sticky lg:top-24">
                                 <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
                                     {cat.title}
                                 </h2>
-                                <p class="mt-4 text-base text-steel dark:text-gravel leading-relaxed">
+                                <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
                                     {cat.intro}
                                 </p>
                             </div>

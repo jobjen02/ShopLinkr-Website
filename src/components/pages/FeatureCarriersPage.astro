@@ -89,7 +89,7 @@ const jsonLd = [
     <section class="py-12 md:py-16 bg-paper dark:bg-charcoal">
         <div class="container-wide">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                <article class="md:col-span-2 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col gap-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                     <div>
                         <p class="eyebrow mb-3">{p.mockupEyebrow}</p>
                         <h2 class="text-3xl md:text-[2.25rem] font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05]">
@@ -98,7 +98,7 @@ const jsonLd = [
                         </h2>
                     </div>
 
-                    <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 flex flex-col gap-4 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
+                    <div class="bg-paper dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 flex flex-col gap-4 shadow-[0_12px_40px_-24px_rgba(25,25,25,0.18)]">
                         <div class="flex items-center justify-between gap-3">
                             <div class="flex items-center gap-2.5">
                                 <span class="inline-flex items-center justify-center h-7 w-7 rounded-md bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
@@ -109,9 +109,9 @@ const jsonLd = [
                             <span class="text-[10px] uppercase tracking-[0.12em] font-semibold text-gravel">bol</span>
                         </div>
                         <div class="flex flex-wrap items-center gap-2 text-xs">
-                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint font-medium text-charcoal dark:text-paper tabular-nums">{p.mockupWeight}</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint font-medium text-charcoal dark:text-paper">{p.mockupCountry}</span>
-                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk-light dark:bg-flint ring-1 ring-chalk-dark dark:ring-flint font-medium text-charcoal dark:text-paper">{p.mockupParcelType}</span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk dark:bg-flint ring-1 ring-chalk-dark dark:ring-steel font-medium text-charcoal dark:text-paper tabular-nums">{p.mockupWeight}</span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk dark:bg-flint ring-1 ring-chalk-dark dark:ring-steel font-medium text-charcoal dark:text-paper">{p.mockupCountry}</span>
+                            <span class="inline-flex items-center px-2 py-1 rounded-md bg-chalk dark:bg-flint ring-1 ring-chalk-dark dark:ring-steel font-medium text-charcoal dark:text-paper">{p.mockupParcelType}</span>
                         </div>
 
                         <div class="flex items-center gap-3 py-1">
@@ -123,7 +123,7 @@ const jsonLd = [
                             <span class="flex-1 h-px bg-chalk-dark dark:bg-flint"></span>
                         </div>
 
-                        <div class="rounded-lg ring-1 ring-charcoal/15 dark:ring-flint bg-paper dark:bg-flint p-4 flex flex-col gap-3">
+                        <div class="rounded-xl ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint p-4 flex flex-col gap-3">
                             <div class="flex items-center justify-between">
                                 <span class="text-[10px] uppercase tracking-[0.14em] font-semibold text-gravel">{p.mockupShippingLabel}</span>
                                 <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep text-[10px] uppercase tracking-[0.08em] font-semibold ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
@@ -187,7 +187,7 @@ const jsonLd = [
 
                 {
                     subFeatures.map((feature) => (
-                        <article class="bg-paper dark:bg-graphite rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                        <article class="bg-paper dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                             <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`${feature.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </div>
@@ -230,7 +230,7 @@ const jsonLd = [
                         <li>
                             <a
                                 href={`${localizeHref('/integraties', locale)}/${carrier.data.slug}`}
-                                class="group flex flex-col items-center justify-center gap-3 h-full rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                                class="group flex flex-col items-center justify-center gap-3 h-full rounded-xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-5 md:p-6 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
                             >
                                 <div class="h-12 w-12 rounded-lg bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                     <img

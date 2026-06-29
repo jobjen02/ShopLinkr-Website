@@ -2,6 +2,7 @@
 // legacy slugs) + consolidated/renamed SEO pages -> their new location. Imported by
 // astro.config.mjs `redirects` so they work in dev, preview and production (edge).
 export const redirects = {
+    "/sitemap.xml": "/sitemap-index.xml",
     "/functionaliteiten/pick-en-pack": "/functionaliteiten/picklijsten",
     "/functionaliteiten/productbundels": "/functionaliteiten/producten",
     "/simpel-vooraadbeheer": "/simpel-voorraadbeheer",

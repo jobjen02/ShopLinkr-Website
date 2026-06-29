@@ -79,7 +79,7 @@ export const prerender = false;
     <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="max-w-3xl">
-                <p class="text-sm text-gravel mb-10">
+                <p class="text-sm text-steel dark:text-gravel mb-10">
                     {p.lastUpdatedLabel} {lastUpdated}
                 </p>
 
@@ -91,7 +91,7 @@ export const prerender = false;
                     {
                         categories.map((category) => (
                             <article>
-                                <p class="eyebrow mb-3">{category.eyebrow}</p>
+                                <p class="eyebrow mb-4">{category.eyebrow}</p>
                                 <h2 class="text-xl md:text-2xl font-semibold text-charcoal dark:text-paper tracking-tight mb-4">
                                     {category.title}
                                 </h2>
@@ -102,7 +102,7 @@ export const prerender = false;
                                 <div class="overflow-x-auto rounded-xl ring-1 ring-chalk-dark dark:ring-flint">
                                     <table class="w-full text-sm">
                                         <caption class="sr-only">{category.title}</caption>
-                                        <thead class="bg-chalk-light dark:bg-graphite text-xs uppercase tracking-wider text-gravel">
+                                        <thead class="bg-chalk-light dark:bg-graphite text-xs uppercase tracking-wider text-steel dark:text-gravel">
                                             <tr>
                                                 <th scope="col" class="px-4 py-3 text-left font-semibold">{p.tableName}</th>
                                                 <th scope="col" class="px-4 py-3 text-left font-semibold">{p.tablePurpose}</th>

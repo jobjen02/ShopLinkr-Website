@@ -37,12 +37,12 @@ export const prerender = true;
     <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="max-w-3xl mx-auto text-center">
-                <p class="eyebrow mb-5">404</p>
+                <p class="eyebrow mb-4">404</p>
                 <h1 class="text-4xl md:text-6xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.05]">
                     {p.headingLead}
                     <span class="block text-sunstone-deep">{p.headingHighlight}</span>
                 </h1>
-                <p class="mt-7 text-lg text-steel dark:text-gravel leading-relaxed max-w-xl mx-auto">
+                <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed max-w-xl mx-auto">
                     {p.intro}
                 </p>
 
@@ -71,7 +71,7 @@ export const prerender = true;
         <div class="container-prose">
             <div class="max-w-3xl mx-auto">
                 <p class="eyebrow mb-4 text-center">{p.quickEyebrow}</p>
-                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] text-center mb-12 md:mb-16">
                     {p.quickHeading}
                 </h2>
 
@@ -83,14 +83,14 @@ export const prerender = true;
                                     href={link.href}
                                     class="group flex items-start gap-4 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-soft dark:hover:ring-sunstone/30 hover:bg-sunstone-mist/30 dark:hover:bg-sunstone/5 px-5 py-5 transition-all duration-200"
                                 >
-                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-lg bg-chalk-light dark:bg-flint text-gravel group-hover:bg-sunstone-mist dark:group-hover:bg-sunstone/10 group-hover:text-sunstone-deep transition-colors">
+                                    <span class="flex-shrink-0 inline-flex items-center justify-center h-10 w-10 rounded-xl bg-chalk dark:bg-flint text-steel dark:text-gravel group-hover:bg-sunstone-mist dark:group-hover:bg-sunstone/10 group-hover:text-sunstone-deep transition-colors">
                                         <i class={`${link.icon} text-sm`} aria-hidden="true"></i>
                                     </span>
                                     <div class="flex-1">
                                         <p class="text-[15px] font-semibold text-charcoal dark:text-paper group-hover:text-sunstone-deep transition-colors">
                                             {link.title}
                                         </p>
-                                        <p class="mt-0.5 text-sm text-gravel">
+                                        <p class="mt-0.5 text-sm text-steel dark:text-gravel">
                                             {link.body}
                                         </p>
                                     </div>

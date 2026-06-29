@@ -253,17 +253,17 @@ onBeforeUnmount(() => {
                 role="combobox"
                 :placeholder="t.placeholder"
                 :aria-label="t.ariaLabel"
-                :aria-expanded="showDropdown"
                 aria-haspopup="listbox"
                 aria-autocomplete="list"
                 aria-controls="support-search-results"
+                :aria-expanded="showDropdown && hasResults"
                 :aria-activedescendant="selectedIndex >= 0 ? `support-search-result-${selectedIndex}` : undefined"
                 autocomplete="off"
                 autocapitalize="off"
                 autocorrect="off"
                 spellcheck="false"
                 enterkeyhint="search"
-                class="search-input w-full pl-12 pr-12 py-4 bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint rounded-2xl text-base text-charcoal dark:text-paper placeholder:text-gravel focus:ring-2 focus:ring-sunstone-deep focus:outline-none transition shadow-[0_8px_30px_-15px_rgba(25,25,25,0.12)]"
+                class="search-input w-full pl-12 pr-12 py-4 bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint rounded-md text-base text-charcoal dark:text-paper placeholder:text-gravel focus:ring-2 focus:ring-sunstone-deep focus:outline-none transition shadow-[0_8px_30px_-15px_rgba(25,25,25,0.12)]"
                 @focus="onFocus"
                 @blur="onBlur"
                 @keydown="onKeydown"
@@ -272,23 +272,25 @@ onBeforeUnmount(() => {
                 v-if="query.length > 0"
                 type="button"
                 :aria-label="t.clear"
-                class="absolute right-4 top-1/2 -translate-y-1/2 h-6 w-6 flex items-center justify-center rounded-full text-gravel hover:text-charcoal dark:hover:text-paper hover:bg-chalk-light dark:hover:bg-graphite transition"
+                class="group absolute right-1.5 top-1/2 -translate-y-1/2 h-11 w-11 flex items-center justify-center text-gravel hover:text-charcoal dark:hover:text-paper transition"
                 @mousedown.prevent
                 @click="clearQuery"
             >
-                <i class="fa-solid fa-xmark text-sm" aria-hidden="true"></i>
+                <span class="flex h-6 w-6 items-center justify-center rounded-full group-hover:bg-chalk-light dark:group-hover:bg-graphite transition">
+                    <i class="fa-solid fa-xmark text-sm" aria-hidden="true"></i>
+                </span>
             </button>
         </div>
 
         <div
             v-if="showDropdown"
-            id="support-search-results"
-            ref="dropdownRef"
-            role="listbox"
-            class="absolute top-full mt-3 left-0 right-0 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_20px_60px_-20px_rgba(25,25,25,0.25)] overflow-hidden z-50 text-left"
+            class="absolute top-full mt-3 left-0 right-0 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_20px_60px_-20px_rgba(25,25,25,0.25)] overflow-hidden z-50 text-left"
         >
             <div
                 v-if="hasResults"
+                id="support-search-results"
+                ref="dropdownRef"
+                role="listbox"
                 class="divide-y divide-chalk-dark dark:divide-flint max-h-[26rem] overflow-y-auto"
             >
                 <a
@@ -311,7 +313,7 @@ onBeforeUnmount(() => {
                     <p class="text-sm font-semibold text-charcoal dark:text-paper mb-1 tracking-tight">
                         {{ r.title }}
                     </p>
-                    <p class="text-xs text-gravel line-clamp-1 leading-relaxed">
+                    <p class="text-xs text-steel dark:text-gravel line-clamp-1 leading-relaxed">
                         {{ r.summary }}
                     </p>
                 </a>
@@ -325,7 +327,7 @@ onBeforeUnmount(() => {
                 <p class="text-sm text-charcoal dark:text-paper font-medium mb-1">
                     {{ t.noResults }}
                 </p>
-                <p class="text-xs text-gravel mb-3">
+                <p class="text-xs text-steel dark:text-gravel mb-3">
                     {{ t.noResultsHint }}
                 </p>
                 <a

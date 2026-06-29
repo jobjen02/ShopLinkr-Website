@@ -129,7 +129,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="relative bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_12px_32px_-20px_rgba(25,25,25,0.12)] max-w-md mx-auto px-6 sm:px-8 pt-5 pb-8">
+    <div class="relative bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_12px_32px_-20px_rgba(25,25,25,0.12)] max-w-md mx-auto px-6 sm:px-8 pt-5 pb-8">
         <div class="h-1 bg-chalk dark:bg-flint rounded-full overflow-hidden">
             <div
                 class="h-full bg-green rounded-full transition-all duration-500 ease-out"
@@ -140,18 +140,18 @@ onUnmounted(() => {
         </div>
 
         <div class="flex items-center justify-between mt-4 mb-7">
-            <p class="text-sm font-medium text-gravel tabular-nums">
+            <p class="text-sm font-medium text-steel dark:text-gravel tabular-nums">
                 {{ completedItems }} / {{ totalItems }}
             </p>
 
             <button
                 type="button"
-                class="inline-flex items-center gap-2 px-2.5 py-1.5 ring-1 ring-chalk-dark dark:ring-flint rounded-md text-sm text-charcoal dark:text-paper hover:ring-chalk-darker dark:hover:ring-steel transition-colors"
+                class="inline-flex items-center gap-2 min-h-11 px-2.5 py-1.5 ring-1 ring-chalk-dark dark:ring-flint rounded-md text-sm text-charcoal dark:text-paper hover:ring-chalk-darker dark:hover:ring-steel transition-colors"
                 @click="reset"
             >
                 <i class="fa-solid fa-xmark text-gravel" aria-hidden="true"></i>
                 <span>Opnieuw</span>
-                <kbd class="ml-0.5 px-1.5 py-0.5 text-[10px] ring-1 ring-chalk-dark dark:ring-flint rounded text-steel dark:text-gravel font-medium font-mono uppercase tracking-wide leading-none">
+                <kbd class="ml-0.5 px-1.5 py-0.5 text-[10px] ring-1 ring-chalk-dark dark:ring-flint rounded-sm text-steel dark:text-gravel font-medium font-mono uppercase tracking-wide leading-none">
                     Esc
                 </kbd>
             </button>
@@ -162,10 +162,10 @@ onUnmounted(() => {
                 <i class="fa-solid fa-circle-check text-green text-4xl" aria-hidden="true"></i>
             </div>
             <p class="text-xl font-semibold text-charcoal dark:text-paper mb-1">Picklijst voltooid</p>
-            <p class="text-sm text-gravel mb-7">Breng de containers naar de inpakker.</p>
+            <p class="text-sm text-steel dark:text-gravel mb-7">Breng de containers naar de inpakker.</p>
             <button
                 type="button"
-                class="inline-flex items-center gap-2 px-4 py-2 bg-flint dark:bg-graphite text-paper text-sm font-medium rounded-md hover:bg-charcoal dark:hover:bg-flint transition-colors"
+                class="inline-flex items-center gap-2 min-h-11 px-4 py-2 bg-flint dark:bg-graphite text-paper text-sm font-medium rounded-md hover:bg-charcoal dark:hover:bg-flint transition-colors"
                 @click="reset"
             >
                 <i class="fa-solid fa-rotate-right text-xs" aria-hidden="true"></i>
@@ -183,7 +183,7 @@ onUnmounted(() => {
             </h3>
 
             <div class="flex justify-center mt-5">
-                <div class="h-32 w-32 rounded-lg bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden">
+                <div class="h-32 w-32 rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden">
                     <img
                         :src="currentItem.image"
                         :alt="currentItem.product"
@@ -193,7 +193,7 @@ onUnmounted(() => {
                 </div>
             </div>
 
-            <p class="text-sm text-gravel text-center font-mono mt-3">
+            <p class="text-sm text-steel dark:text-gravel text-center font-mono mt-3">
                 {{ currentItem.sku }}
             </p>
 
@@ -208,7 +208,7 @@ onUnmounted(() => {
             <div class="flex items-center justify-center gap-2 mt-6">
                 <button
                     type="button"
-                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal dark:hover:bg-flint active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    class="h-11 w-11 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal dark:hover:bg-flint active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                     aria-label="Verlaag aantal gepickt"
                     :disabled="currentPicked === 0 || animating"
                     @click="decrease"
@@ -216,7 +216,7 @@ onUnmounted(() => {
                     <i class="fa-solid fa-minus text-sm" aria-hidden="true"></i>
                 </button>
 
-                <div class="h-10 px-4 min-w-[3rem] ring-1 ring-chalk-dark dark:ring-flint rounded-md flex items-center justify-center text-charcoal dark:text-paper tabular-nums font-medium" aria-live="polite">
+                <div class="h-11 px-4 min-w-[3rem] ring-1 ring-chalk-dark dark:ring-flint rounded-md flex items-center justify-center text-charcoal dark:text-paper tabular-nums font-medium" aria-live="polite">
                     {{ currentPicked }}
                 </div>
 
@@ -224,7 +224,7 @@ onUnmounted(() => {
 
                 <button
                     type="button"
-                    class="h-10 w-10 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal dark:hover:bg-flint active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                    class="h-11 w-11 bg-flint dark:bg-graphite text-paper rounded-md flex items-center justify-center hover:bg-charcoal dark:hover:bg-flint active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                     aria-label="Verhoog aantal gepickt"
                     :disabled="animating"
                     @click="increase"

@@ -119,6 +119,13 @@
         box-shadow: 0 8px 24px -8px rgb(25 25 25 / 0.35);
     }
 
+    /* Compact size for in-form submit buttons (forms use a tighter button than
+       the hero/CTA .btn default of 0.75rem 1.5rem). */
+    .btn-sm {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+    }
+
     .btn-sunstone {
         background-color: var(--color-sunstone);
         color: var(--color-charcoal);

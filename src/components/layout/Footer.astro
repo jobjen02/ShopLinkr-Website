@@ -110,7 +110,7 @@ const year = new Date().getFullYear();
                                 aria-label={social.label}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="group h-11 w-11 inline-flex items-center justify-center rounded-md ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-deep/40 hover:bg-sunstone-mist/40 dark:hover:bg-sunstone/5 transition-colors"
+                                class="group h-11 w-11 inline-flex items-center justify-center rounded-md ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-deep/40 dark:hover:ring-sunstone/30 hover:bg-sunstone-mist/40 dark:hover:bg-sunstone/5 transition-colors"
                             >
                                 <svg
                                     viewBox="0 0 24 24"
@@ -136,7 +136,7 @@ const year = new Date().getFullYear();
                                 <li>
                                     <a
                                         href={link.href}
-                                        class="text-steel dark:text-gravel hover:text-sunstone-deep transition-colors"
+                                        class="inline-block -my-1.5 py-3 text-steel dark:text-gravel hover:text-sunstone-deep transition-colors"
                                     >
                                         {link.label}
                                     </a>
@@ -148,7 +148,7 @@ const year = new Date().getFullYear();
             }
         </div>
 
-        <div class="pt-8 border-t border-chalk-dark dark:border-flint flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gravel">
+        <div class="pt-8 border-t border-chalk-dark dark:border-flint flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-steel dark:text-gravel">
             <div class="flex flex-wrap items-center gap-x-6 gap-y-1">
                 <p>© {year} ShopLinkr. {t.footer.rights}</p>
                 <a
@@ -182,7 +182,7 @@ const year = new Date().getFullYear();
                     width="16"
                     height="12"
                     loading="lazy"
-                    class="h-3 w-auto rounded-[1px]"
+                    class="h-3 w-auto"
                 />
             </p>
         </div>

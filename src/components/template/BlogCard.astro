@@ -54,11 +54,11 @@ const href = `${localizedPath('blog', locale)}/${slug}`;
     <div class="mt-5 flex items-center gap-2.5 text-xs">
         {category && (
             <>
-                <span class="eyebrow !text-sunstone-deep">{category}</span>
+                <span class="eyebrow">{category}</span>
                 <span class="text-chalk-darker dark:text-flint" aria-hidden="true">·</span>
             </>
         )}
-        <time datetime={publishedAt.toISOString()} class="text-gravel font-medium">
+        <time datetime={publishedAt.toISOString()} class="text-steel dark:text-gravel font-medium">
             {formattedDate}
         </time>
     </div>

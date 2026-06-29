@@ -62,15 +62,12 @@ const jsonLd = {
     {featured && (
         <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
             <div class="container-prose">
-                <a
-                    href={`${blogBase}/${featured.id}`}
-                    class="group grid gap-12 lg:grid-cols-12 lg:gap-16 items-center"
-                >
-                    <div class="order-2 lg:order-1 lg:col-span-7 overflow-hidden rounded-2xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint aspect-video lg:aspect-[16/10]">
+                <div class="group relative grid gap-12 lg:grid-cols-12 lg:gap-16 items-center">
+                    <div class="order-2 lg:order-1 lg:col-span-7 overflow-hidden rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint aspect-video lg:aspect-[16/10]">
                         {featured.data.image ? (
                             <img
                                 src={featured.data.image}
-                                alt={featured.data.imageAlt ?? featured.data.title}
+                                alt={featured.data.imageAlt ?? ''}
                                 class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                                 loading="eager"
                             />
@@ -98,19 +95,21 @@ const jsonLd = {
                         </div>
 
                         <h2 class="mt-4 text-2xl md:text-3xl lg:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] group-hover:text-sunstone-deep transition-colors">
-                            {featured.data.title}
+                            <a href={`${blogBase}/${featured.id}`} class="after:absolute after:inset-0 after:content-['']">
+                                {featured.data.title}
+                            </a>
                         </h2>
 
                         <p class="mt-6 text-base md:text-lg text-steel dark:text-gravel leading-relaxed">
                             {featured.data.excerpt}
                         </p>
 
-                        <span class="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep group-hover:gap-2.5 transition-all">
+                        <span class="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep group-hover:gap-2.5 transition-all" aria-hidden="true">
                             {p.readMore}
                             <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
                         </span>
                     </div>
-                </a>
+                </div>
             </div>
         </section>
     )}
@@ -119,7 +118,7 @@ const jsonLd = {
         <section class="pb-24 md:pb-32 bg-paper dark:bg-charcoal">
             <div class="container-prose">
                 <div class="border-t border-chalk-dark dark:border-flint pt-12 md:pt-16">
-                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-10">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-12 md:mb-16">
                         {p.moreArticles}
                     </h2>
                     <div class="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">

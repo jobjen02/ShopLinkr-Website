@@ -61,7 +61,7 @@ const categoriesBase = supportCategoriesBase(locale);
         <div class="container-prose py-12 md:py-16">
             <div class="max-w-3xl mx-auto">
                 <nav aria-label="Breadcrumb" class="mb-10">
-                    <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-gravel">
+                    <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-steel dark:text-gravel">
                         {breadcrumbItems.map((b) => (
                             <>
                                 <li>
@@ -84,11 +84,11 @@ const categoriesBase = supportCategoriesBase(locale);
                     <Content />
                 </article>
 
-                <p class="mt-12 text-[13px] text-gravel">
+                <p class="mt-12 text-[13px] text-steel dark:text-gravel">
                     {p.lastUpdated} <time datetime={article.data.lastUpdated.toISOString().slice(0, 10)}>{lastUpdatedFormatted}</time>
                 </p>
 
-                <div class="mt-12 rounded-[18px] bg-chalk-light dark:bg-graphite px-7 md:px-9 py-8 md:py-9 border border-chalk-dark/60 dark:border-flint">
+                <div class="mt-12 rounded-xl bg-chalk-light dark:bg-graphite p-6 md:p-7 border border-chalk-dark/60 dark:border-flint">
                     <div class="flex items-start gap-4">
                         <div class="flex-none w-10 h-10 rounded-full bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center">
                             <i class="fa-solid fa-headset text-sunstone-deep" aria-hidden="true"></i>
@@ -103,7 +103,7 @@ const categoriesBase = supportCategoriesBase(locale);
                             <div class="flex flex-wrap gap-3">
                                 <a
                                     href={contactHref}
-                                    class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-[10px] bg-paper dark:bg-charcoal border border-chalk-dark dark:border-flint text-[14px] font-semibold text-charcoal dark:text-paper hover:bg-sunstone-mist/60 dark:hover:bg-sunstone/10 hover:border-sunstone-soft hover:text-sunstone-deep transition-colors"
+                                    class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-md bg-paper dark:bg-charcoal border border-chalk-dark dark:border-flint text-[14px] font-semibold text-charcoal dark:text-paper hover:bg-sunstone-mist/60 dark:hover:bg-sunstone/10 hover:border-sunstone-soft hover:text-sunstone-deep transition-colors"
                                 >
                                     <i class="fa-solid fa-envelope text-[13px]" aria-hidden="true"></i>
                                     {p.contactCta}
@@ -111,7 +111,7 @@ const categoriesBase = supportCategoriesBase(locale);
                                 {categoryInfo && (
                                     <a
                                         href={`${categoriesBase}/${categoryInfo.slug}`}
-                                        class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-[10px] text-[14px] font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
+                                        class="inline-flex items-center gap-2 min-h-[44px] px-4 py-2 rounded-md text-[14px] font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
                                     >
                                         {p.backToPrefix} {categoryInfo.label}
                                         <i class="fa-solid fa-arrow-right text-[12px]" aria-hidden="true"></i>
@@ -133,7 +133,7 @@ const categoriesBase = supportCategoriesBase(locale);
                             <li>
                                 <a
                                     href={r.href}
-                                    class="group block bg-paper dark:bg-graphite rounded-[14px] border border-chalk-dark/70 dark:border-flint hover:border-chalk-dark dark:hover:border-steel hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-5 py-4 h-full"
+                                    class="group block bg-paper dark:bg-graphite rounded-xl border border-chalk-dark/70 dark:border-flint hover:border-chalk-dark dark:hover:border-steel hover:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.10)] transition-all duration-200 px-5 py-4 h-full"
                                 >
                                     {r.subcategoryLabel && (
                                         <p class="text-[0.6875rem] text-sunstone-deep font-semibold uppercase tracking-wider mb-1.5">
@@ -287,7 +287,7 @@ const categoriesBase = supportCategoriesBase(locale);
         background-color: var(--color-charcoal);
         color: var(--color-chalk);
         padding: 1.25em;
-        border-radius: 0.75rem;
+        border-radius: var(--radius-lg);
         overflow-x: auto;
         margin: 1.5em 0;
         font-family: var(--font-mono);

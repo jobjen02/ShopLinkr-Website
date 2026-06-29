@@ -159,7 +159,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             type="button"
             @click="togglePause"
             :aria-label="paused ? t.play : t.pause"
-            class="absolute top-1 left-1 z-40 h-7 w-7 rounded-full bg-paper/90 dark:bg-charcoal/90 backdrop-blur ring-1 ring-chalk-dark dark:ring-flint text-gravel hover:text-charcoal dark:hover:text-paper hover:ring-chalk-darker dark:hover:ring-steel flex items-center justify-center transition-colors"
+            class="absolute top-1 left-1 z-40 h-7 w-7 rounded-full bg-paper/90 dark:bg-charcoal/90 backdrop-blur ring-1 ring-chalk-dark dark:ring-flint text-gravel hover:text-charcoal dark:hover:text-paper hover:ring-chalk-darker dark:hover:ring-steel flex items-center justify-center transition-colors before:absolute before:-inset-2 before:content-['']"
         >
             <svg v-if="paused" viewBox="0 0 12 12" class="h-3 w-3 ml-0.5" aria-hidden="true">
                 <path d="M3,2 L10,6 L3,10 Z" fill="currentColor" />
@@ -171,9 +171,9 @@ onUnmounted(() => window.clearTimeout(stepTimer));
         </button>
 
         <!-- Main order card -->
-        <div class="relative z-10 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_18px_50px_-28px_rgba(25,25,25,0.22)] px-6 py-6">
+        <div class="relative z-10 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_18px_50px_-28px_rgba(25,25,25,0.22)] px-6 py-6">
             <div class="flex items-center gap-3">
-                <span class="h-11 w-11 rounded-xl bg-paper dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+                <span class="h-11 w-11 rounded-lg bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                     <img src="/assets/marketplaces/bol.jpeg" alt="bol" class="h-7 w-7 object-contain" />
                 </span>
                 <div class="min-w-0">
@@ -185,7 +185,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             <div class="my-5 border-t border-chalk-dark dark:border-flint"></div>
 
             <div class="flex items-center gap-3.5">
-                <span class="h-14 w-14 rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+                <span class="h-14 w-14 rounded-lg bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                     <img src="/products/omega_3.png" alt="Omega 3 capsules" class="h-11 w-11 object-contain" />
                 </span>
                 <div>
@@ -196,7 +196,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
 
             <!-- Steps -->
             <div class="relative mt-7">
-                <div class="absolute top-[9px] h-0.5 bg-chalk-dark dark:bg-graphite" :style="{ left: trackInset, right: trackInset }"></div>
+                <div class="absolute top-[9px] h-0.5 bg-chalk-dark dark:bg-flint" :style="{ left: trackInset, right: trackInset }"></div>
                 <div
                     class="absolute top-[9px] h-0.5 bg-green transition-[width] duration-700 ease-out"
                     :style="{ left: trackInset, width: fillWidth }"
@@ -229,7 +229,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             <div class="flex items-center gap-2 mt-0.5">
                 <span :key="stock" class="hero-pop text-3xl font-bold text-charcoal dark:text-paper tabular-nums leading-none">{{ stock }}</span>
                 <span
-                    class="inline-flex items-center gap-1 px-2 h-5 rounded-full bg-green-mist dark:bg-green/15 text-[#15803d] text-[0.62rem] font-semibold transition-opacity duration-300"
+                    class="inline-flex items-center gap-1 px-2 h-5 rounded-full bg-green-mist dark:bg-green/15 text-[#15803d] dark:text-green text-[0.62rem] font-semibold transition-opacity duration-300"
                     :class="synced ? 'opacity-100' : 'opacity-0'"
                 >
                     <span class="h-1.5 w-1.5 rounded-full bg-green"></span>
@@ -240,7 +240,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                 <span
                     v-for="ch in channels"
                     :key="ch.key"
-                    class="h-5 w-5 rounded-md bg-paper dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden"
+                    class="h-5 w-5 rounded-md bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden"
                 >
                     <img :src="ch.logo" :alt="ch.name" class="h-3.5 w-3.5 object-contain" />
                 </span>
@@ -253,7 +253,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             :class="scanShown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'"
         >
             <div class="flex items-center gap-2.5">
-                <span class="h-9 w-9 rounded-lg bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center flex-shrink-0">
+                <span class="h-9 w-9 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center flex-shrink-0">
                     <svg viewBox="0 0 22 22" class="h-5 w-5" aria-hidden="true">
                         <g fill="none" stroke="#d49d5e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M2,6 V3.5 A1.5,1.5 0 0 1 3.5,2 H6" />
@@ -261,7 +261,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
                             <path d="M20,16 V18.5 A1.5,1.5 0 0 1 18.5,20 H16" />
                             <path d="M6,20 H3.5 A1.5,1.5 0 0 1 2,18.5 V16" />
                         </g>
-                        <g stroke="#191919" stroke-width="1.3">
+                        <g class="text-charcoal dark:text-paper" stroke="currentColor" stroke-width="1.3">
                             <path d="M7,7.5 V14.5 M9.4,7.5 V14.5 M11.8,7.5 V14.5 M14.2,7.5 V14.5" />
                         </g>
                     </svg>
@@ -288,7 +288,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             :class="labelShown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'"
         >
             <div class="flex items-center gap-2.5">
-                <span class="h-9 w-9 rounded-lg bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center flex-shrink-0">
+                <span class="h-9 w-9 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 flex items-center justify-center flex-shrink-0">
                     <svg viewBox="0 0 22 22" class="h-5 w-5" aria-hidden="true">
                         <path d="M5,7 V2 H17 V7" fill="none" stroke="#d49d5e" stroke-width="1.7" stroke-linejoin="round" />
                         <rect x="1.5" y="7" width="19" height="9" rx="2" fill="none" stroke="#d49d5e" stroke-width="1.7" />
@@ -315,7 +315,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             class="absolute bottom-0 right-2 z-20 inline-flex items-center gap-2 bg-paper dark:bg-charcoal rounded-full ring-1 ring-chalk-dark dark:ring-flint shadow-[0_14px_30px_-20px_rgba(25,25,25,0.28)] pl-2 pr-3 py-1.5 transition-all duration-500 ease-out"
             :class="ttShown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'"
         >
-            <span class="h-6 w-6 rounded-md bg-paper dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+            <span class="h-6 w-6 rounded-md bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img src="/assets/marketplaces/bol.jpeg" alt="bol" class="h-4 w-4 object-contain" />
             </span>
             <span class="text-[0.72rem] font-semibold text-charcoal dark:text-paper leading-none">{{ t.ttToBol }}</span>

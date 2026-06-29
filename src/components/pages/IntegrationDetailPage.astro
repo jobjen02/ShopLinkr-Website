@@ -154,12 +154,12 @@ const quickFacts = [
 >
     <section class="relative bg-paper dark:bg-charcoal overflow-clip">
         <div class="absolute inset-x-0 top-0 -z-0 pointer-events-none h-[600px]">
-            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(247,148,29,0.05),transparent_65%)] opacity-60"></div>
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,var(--color-sunstone-mist),transparent_65%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(247,148,29,0.05),transparent_65%)] opacity-60"></div>
         </div>
 
-        <div class="container-prose pt-10 md:pt-14 pb-20 md:pb-28 relative">
+        <div class="container-prose pt-12 md:pt-16 pb-20 md:pb-28 relative">
             <nav aria-label="Breadcrumb" class="mb-10">
-                <ol class="flex flex-wrap items-center gap-2 text-sm text-gravel">
+                <ol class="flex flex-wrap items-center gap-2 text-sm text-steel dark:text-gravel">
                     <li>
                         <a href={integrationsHref} class="hover:text-charcoal dark:hover:text-paper transition-colors">{p.breadcrumbIntegrations}</a>
                     </li>
@@ -176,7 +176,7 @@ const quickFacts = [
                 <div class="lg:col-span-8 lg:col-start-1 lg:row-start-1">
                     <header class="pb-14 md:pb-16">
                         <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
-                            {p.h1Prefix} {name}.
+                            {p.h1Prefix} {name}
                         </h1>
                         <p class="mt-6 text-base md:text-lg text-steel dark:text-gravel leading-relaxed max-w-2xl">
                             {effectiveTagline}
@@ -187,17 +187,17 @@ const quickFacts = [
                     </header>
 
                     <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
-                        <p class="eyebrow mb-3">{p.aboutEyebrow} {name}</p>
-                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-5">
+                        <p class="eyebrow mb-4">{p.aboutEyebrow} {name}</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15]">
                             {p.aboutHeadingPrefix} {name}?
                         </h2>
-                        <p class="text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl">
+                        <p class="mt-6 text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl">
                             {effectiveAbout}
                         </p>
                     </section>
 
                     <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
-                        <p class="eyebrow mb-3">{p.benefitsEyebrow}</p>
+                        <p class="eyebrow mb-4">{p.benefitsEyebrow}</p>
                         <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
                             {p.benefitsHeading}
                         </h2>
@@ -224,11 +224,11 @@ const quickFacts = [
                     </section>
 
                     <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
-                        <p class="eyebrow mb-3">{p.getStartedEyebrow}</p>
-                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-5 max-w-2xl">
+                        <p class="eyebrow mb-4">{p.getStartedEyebrow}</p>
+                        <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] max-w-2xl">
                             {p.getStartedHeadingPrefix} {name}{p.getStartedHeadingSuffix}
                         </h2>
-                        <p class="text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl mb-8">
+                        <p class="mt-6 text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl mb-8">
                             {p.getStartedBody}
                         </p>
 
@@ -237,7 +237,7 @@ const quickFacts = [
                                 href={supportHref}
                                 class="group flex items-center gap-5 bg-charcoal dark:bg-graphite text-paper rounded-xl p-6 md:p-7 hover:bg-charcoal/95 dark:hover:bg-flint transition-all duration-200"
                             >
-                                <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-paper/10 text-paper flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-paper/10 text-paper flex-shrink-0">
                                     <i class="fa-solid fa-book-open text-base" aria-hidden="true"></i>
                                 </div>
                                 <div class="flex-1 min-w-0">
@@ -264,9 +264,9 @@ const quickFacts = [
 
                 <aside class="lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-2">
                     <div class="lg:sticky lg:top-24 space-y-5">
-                        <div class="bg-chalk-light/60 dark:bg-graphite rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
+                        <div class="bg-chalk-light/60 dark:bg-graphite rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7">
                             <div class="flex items-center gap-4 mb-5">
-                                <div class="h-16 w-16 rounded-xl bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <div class="h-16 w-16 rounded-lg bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                     <img
                                         src={logo}
                                         alt={`${name} logo`}
@@ -283,7 +283,7 @@ const quickFacts = [
                                         </span>
                                     ) : (
                                         <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-paper dark:bg-flint text-charcoal dark:text-paper text-[10px] font-semibold uppercase tracking-wider ring-1 ring-chalk-dark dark:ring-flint">
-                                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                            <span class="h-1.5 w-1.5 rounded-full bg-green"></span>
                                             {p.badgeLive}
                                         </span>
                                     )}
@@ -305,7 +305,7 @@ const quickFacts = [
                                 {supportSlug && (
                                     <a
                                         href={supportHref}
-                                        class="flex items-center justify-between gap-3 bg-paper dark:bg-flint rounded-lg ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-soft dark:hover:ring-sunstone/30 hover:bg-sunstone-mist/30 dark:hover:bg-sunstone/10 px-4 py-3 text-sm font-medium text-charcoal dark:text-paper transition-all"
+                                        class="flex items-center justify-between gap-3 bg-paper dark:bg-flint rounded-xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-soft dark:hover:ring-sunstone/30 hover:bg-sunstone-mist/30 dark:hover:bg-sunstone/10 px-4 py-3 text-sm font-medium text-charcoal dark:text-paper transition-all"
                                     >
                                         <span class="inline-flex items-center gap-2.5">
                                             <i class="fa-solid fa-book-open text-xs text-sunstone-deep" aria-hidden="true"></i>
@@ -319,7 +319,7 @@ const quickFacts = [
                                         href={url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        class="flex items-center justify-between gap-3 bg-paper dark:bg-flint rounded-lg ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel px-4 py-3 text-sm font-medium text-charcoal dark:text-paper transition-all"
+                                        class="flex items-center justify-between gap-3 bg-paper dark:bg-flint rounded-xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel px-4 py-3 text-sm font-medium text-charcoal dark:text-paper transition-all"
                                     >
                                         <span class="inline-flex items-center gap-2.5">
                                             <i class="fa-solid fa-arrow-up-right-from-square text-xs text-gravel" aria-hidden="true"></i>
@@ -356,7 +356,7 @@ const quickFacts = [
                 <div class="lg:col-span-8 lg:col-start-1 lg:row-start-2">
                     {faqs && faqs.length > 0 && (
                         <section class="border-t border-chalk-dark dark:border-flint py-14 md:py-16">
-                            <p class="eyebrow mb-3">{p.faqEyebrow}</p>
+                            <p class="eyebrow mb-4">{p.faqEyebrow}</p>
                             <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-8 md:mb-10 max-w-2xl">
                                 {p.faqHeadingPrefix}{name}{p.faqHeadingSuffix}
                             </h2>
@@ -372,9 +372,9 @@ const quickFacts = [
 
                     {related.length > 0 && (
                         <section class="border-t border-chalk-dark dark:border-flint pt-14 md:pt-16">
-                            <p class="eyebrow mb-3">{p.relatedEyebrow}</p>
+                            <p class="eyebrow mb-4">{p.relatedEyebrow}</p>
                             <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.15] mb-8 md:mb-10">
-                                {relatedHeading}.
+                                {relatedHeading}
                             </h2>
 
                             <div class="grid sm:grid-cols-2 gap-4">

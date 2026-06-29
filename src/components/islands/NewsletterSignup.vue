@@ -90,7 +90,7 @@ async function handleSubmit(): Promise<void> {
 </script>
 
 <template>
-    <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6">
+    <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6">
         <div
             v-if="status === 'success'"
             role="status"
@@ -103,7 +103,7 @@ async function handleSubmit(): Promise<void> {
             <p class="text-sm font-semibold text-charcoal dark:text-paper mb-1">
                 {{ t.successTitle }}
             </p>
-            <p class="text-xs text-gravel">
+            <p class="text-xs text-steel dark:text-gravel">
                 {{ t.successBody }}
             </p>
         </div>
@@ -112,7 +112,7 @@ async function handleSubmit(): Promise<void> {
             <p class="text-sm font-semibold text-charcoal dark:text-paper mb-1">
                 {{ t.heading }}
             </p>
-            <p class="text-xs text-gravel mb-4 leading-relaxed">
+            <p class="text-xs text-steel dark:text-gravel mb-4 leading-relaxed">
                 {{ t.body }}
             </p>
 
@@ -145,7 +145,7 @@ async function handleSubmit(): Promise<void> {
                         :maxlength="MAX_NAME_LENGTH"
                         :placeholder="t.firstNamePlaceholder"
                         :aria-label="t.firstNameAria"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-3.5 py-2.5 text-sm text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-md ring-1 ring-chalk-dark dark:ring-flint bg-chalk-light dark:bg-graphite px-3.5 py-3 text-sm text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                         :disabled="status === 'submitting'"
                     />
                 </div>
@@ -160,7 +160,7 @@ async function handleSubmit(): Promise<void> {
                         inputmode="email"
                         :placeholder="t.emailPlaceholder"
                         :aria-label="t.emailAria"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-3.5 py-2.5 text-sm text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-md ring-1 ring-chalk-dark dark:ring-flint bg-chalk-light dark:bg-graphite px-3.5 py-3 text-sm text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                         :disabled="status === 'submitting'"
                     />
                 </div>
@@ -169,7 +169,7 @@ async function handleSubmit(): Promise<void> {
                     type="submit"
                     :disabled="!isValid || status === 'submitting'"
                     :aria-busy="status === 'submitting'"
-                    class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-sunstone text-charcoal text-sm font-semibold hover:bg-sunstone/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="btn btn-sunstone btn-sm w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     <span v-if="status === 'submitting'" class="inline-flex items-center gap-2">
                         <i class="fa-solid fa-circle-notch fa-spin text-xs" aria-hidden="true"></i>
@@ -185,12 +185,12 @@ async function handleSubmit(): Promise<void> {
                     v-if="status === 'error'"
                     role="alert"
                     aria-live="assertive"
-                    class="text-xs text-red-600 mt-2"
+                    class="text-xs text-red mt-2"
                 >
                     {{ errorMessage }}
                 </p>
 
-                <p v-else class="text-[11px] text-gravel mt-2 leading-relaxed">
+                <p v-else class="text-xs text-steel dark:text-gravel mt-2 leading-relaxed">
                     {{ t.noSpam }}
                 </p>
             </form>

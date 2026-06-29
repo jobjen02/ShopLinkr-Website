@@ -99,7 +99,7 @@ export const prerender = false;
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                 {
                     orderedStats.map((stat) => (
-                        <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 text-center md:text-left transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
+                        <div class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 text-center md:text-left transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel">
                             <p class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-none">
                                 {stat.value}
                             </p>
@@ -150,7 +150,7 @@ export const prerender = false;
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-5">
-                <article class="md:col-span-3 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint overflow-hidden flex flex-col transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                <article class="md:col-span-3 md:row-span-2 bg-gradient-to-br from-sunstone-mist/70 via-sunstone-mist/25 to-paper dark:from-sunstone/5 dark:via-charcoal dark:to-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint overflow-hidden flex flex-col transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
                     <div class="aspect-[4/3] md:aspect-auto md:flex-1 bg-paper/40 dark:bg-charcoal/40 overflow-hidden">
                         <img
                             src={team[0].photo}
@@ -182,7 +182,7 @@ export const prerender = false;
                     </div>
                 </article>
 
-                <article class="md:col-span-3 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint overflow-hidden flex flex-col sm:flex-row transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                <article class="md:col-span-3 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint overflow-hidden flex flex-col sm:flex-row transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
                     <div class="sm:w-2/5 aspect-square sm:aspect-auto bg-chalk-light dark:bg-graphite overflow-hidden shrink-0">
                         <img
                             src={team[1].photo}
@@ -201,7 +201,7 @@ export const prerender = false;
                                     {team[1].role}
                                 </p>
                             </div>
-                            <span class="inline-flex items-center justify-center h-9 w-9 rounded-lg bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 shrink-0">
+                            <span class="inline-flex items-center justify-center h-9 w-9 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 shrink-0">
                                 <i class={`fa-duotone fa-solid ${team[1].emoji} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </span>
                         </div>
@@ -214,7 +214,7 @@ export const prerender = false;
                     </div>
                 </article>
 
-                <article class="md:col-span-3 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint overflow-hidden flex flex-col sm:flex-row transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                <article class="md:col-span-3 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint overflow-hidden flex flex-col sm:flex-row transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
                     <div class="sm:w-2/5 aspect-square sm:aspect-auto bg-chalk-light dark:bg-graphite overflow-hidden shrink-0 order-1 sm:order-2">
                         <img
                             src={team[2].photo}
@@ -233,7 +233,7 @@ export const prerender = false;
                                     {team[2].role}
                                 </p>
                             </div>
-                            <span class="inline-flex items-center justify-center h-9 w-9 rounded-lg bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 shrink-0">
+                            <span class="inline-flex items-center justify-center h-9 w-9 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 shrink-0">
                                 <i class={`fa-duotone fa-solid ${team[2].emoji} text-base`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </span>
                         </div>
@@ -246,11 +246,11 @@ export const prerender = false;
                     </div>
                 </article>
 
-                <article class="md:col-span-6 bg-charcoal dark:bg-charcoal text-paper rounded-2xl ring-1 ring-charcoal dark:ring-flint overflow-hidden flex flex-col md:flex-row items-stretch transition duration-300 ease-out hover:bg-charcoal/95">
+                <article class="md:col-span-6 bg-charcoal dark:bg-charcoal text-paper rounded-xl ring-1 ring-charcoal dark:ring-flint overflow-hidden flex flex-col md:flex-row items-stretch transition duration-300 ease-out hover:bg-charcoal/95">
                     <div class="md:w-1/3 aspect-square md:aspect-auto bg-charcoal/60 dark:bg-charcoal/60 overflow-hidden shrink-0 relative">
                         <img
                             src={team[3].photo}
-                            alt={team[3].name}
+                            alt=""
                             class="h-full w-full object-contain opacity-90"
                             loading="lazy"
                         />
@@ -298,7 +298,7 @@ export const prerender = false;
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
                 {
                     values.map((value) => (
-                        <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
+                        <article class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 flex flex-col gap-4 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]">
                             <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30">
                                 <i class={`fa-duotone fa-solid ${value.icon} text-xl`} style="--fa-secondary-opacity: 0.32;" aria-hidden="true"></i>
                             </div>
@@ -320,27 +320,27 @@ export const prerender = false;
     <section class="py-24 md:py-32 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="max-w-3xl mx-auto">
-                <div class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10">
+                <figure class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10">
                     <i class="fa-solid fa-quote-left text-sunstone-deep text-2xl mb-5" aria-hidden="true"></i>
-                    <p class="text-charcoal dark:text-paper text-xl md:text-2xl font-medium leading-relaxed">
+                    <blockquote class="text-charcoal dark:text-paper text-xl md:text-2xl font-medium leading-relaxed">
                         {p.quote}
-                    </p>
-                    <div class="mt-6">
+                    </blockquote>
+                    <figcaption class="mt-6">
                         <p class="text-sm font-semibold text-charcoal dark:text-paper">
                             Job
                         </p>
                         <p class="text-xs text-gravel mt-0.5">
                             Founder ShopLinkr
                         </p>
-                    </div>
-                </div>
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
     <section class="py-24 md:py-32">
         <div class="container-prose">
-            <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
+            <article class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10">
                 <div class="flex-1">
                     <p class="eyebrow mb-3">{p.demoEyebrow}</p>
                     <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-snug">

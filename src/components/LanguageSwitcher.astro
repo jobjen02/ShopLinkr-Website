@@ -55,7 +55,7 @@ const items = locales.map((loc) => ({
                     lang={item.loc}
                     aria-current={item.isCurrent ? 'true' : undefined}
                     class:list={[
-                        'inline-flex items-center gap-2 rounded-md px-3 py-2 text-[14px] font-medium transition-colors',
+                        'inline-flex items-center gap-2 rounded-md px-3 py-2 min-h-11 text-[14px] font-medium transition-colors',
                         item.isCurrent
                             ? 'bg-sunstone-mist/30 dark:bg-sunstone/10 text-charcoal dark:text-paper'
                             : 'text-steel dark:text-gravel hover:bg-chalk-light dark:hover:bg-graphite hover:text-charcoal dark:hover:text-paper',
@@ -71,8 +71,6 @@ const items = locales.map((loc) => ({
             <button
                 type="button"
                 class="inline-flex items-center gap-1.5 py-2 text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors"
-                aria-haspopup="true"
-                aria-expanded="false"
                 aria-label={navLabel}
             >
                 <img

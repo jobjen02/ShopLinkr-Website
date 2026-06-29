@@ -21,7 +21,7 @@ const t = useTranslations(locale);
 
 <section class="relative bg-paper dark:bg-charcoal overflow-hidden">
     <div class="absolute inset-x-0 top-0 -z-0 pointer-events-none h-[600px]">
-        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,#faedd5,transparent_65%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(250,237,213,0.05),transparent_65%)] opacity-60"></div>
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[90%] h-full bg-[radial-gradient(ellipse_at_top,var(--color-sunstone-mist),transparent_65%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(250,237,213,0.05),transparent_65%)] opacity-60"></div>
     </div>
 
     <div class="container-prose pt-16 md:pt-24 pb-12 md:pb-16 relative">
@@ -44,15 +44,15 @@ const t = useTranslations(locale);
                         rel="noopener noreferrer"
                     >
                         {t.common.register}
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                     </a>
                     <a
                         href={externalLinks.demoBooking}
-                        class="inline-flex items-center justify-center gap-2 text-base font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors px-6 py-3"
+                        class="btn btn-secondary text-base"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         {t.common.demo}
-                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                     </a>
                 </div>
             )}

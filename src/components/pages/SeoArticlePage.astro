@@ -23,7 +23,7 @@ const { Content } = await render(page);
     heading={page.data.title}
     subheading={page.data.excerpt}
     image={page.data.image}
-    imageAlt={page.data.imageAlt}
+    imageAlt={page.data.imageAlt ?? page.data.title}
     jsonLd={jsonLd}
     alternates={alternates}
 >

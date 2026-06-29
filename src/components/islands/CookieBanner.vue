@@ -169,11 +169,11 @@ onBeforeUnmount(() => {
             aria-modal="false"
             aria-labelledby="cookie-banner-title"
             aria-describedby="cookie-banner-desc"
-            class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 md:max-w-md z-[100] bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_24px_60px_-20px_rgba(25,25,25,0.25)] overflow-hidden"
+            class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 md:max-w-md z-[100] bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_24px_60px_-20px_rgba(25,25,25,0.25)] overflow-hidden"
         >
             <div class="p-6">
                 <div class="flex items-start gap-3 mb-3">
-                    <span class="flex-shrink-0 inline-flex items-center justify-center h-9 w-9 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 mt-0.5">
+                    <span class="flex-shrink-0 inline-flex items-center justify-center h-9 w-9 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mt-0.5">
                         <i class="fa-solid fa-cookie-bite text-sm" aria-hidden="true"></i>
                     </span>
                     <div>
@@ -195,21 +195,21 @@ onBeforeUnmount(() => {
                             <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.necessary }}
                             </p>
-                            <p class="text-xs text-gravel leading-relaxed mt-0.5">
+                            <p class="text-xs text-steel dark:text-gravel leading-relaxed mt-0.5">
                                 {{ t.necessaryDesc }}
                             </p>
                         </div>
-                        <span class="flex-shrink-0 text-xs font-medium text-gravel mt-1">
+                        <span class="flex-shrink-0 text-xs font-medium text-steel dark:text-gravel mt-1">
                             {{ t.alwaysOn }}
                         </span>
                     </div>
 
-                    <label class="flex items-start justify-between gap-4 cursor-pointer rounded-lg focus-within:ring-2 focus-within:ring-sunstone-deep focus-within:ring-offset-2 dark:focus-within:ring-offset-charcoal">
+                    <label class="flex items-start justify-between gap-4 cursor-pointer rounded-xl focus-within:ring-2 focus-within:ring-sunstone-deep focus-within:ring-offset-2 dark:focus-within:ring-offset-charcoal">
                         <div>
                             <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.analytics }}
                             </p>
-                            <p class="text-xs text-gravel leading-relaxed mt-0.5">
+                            <p class="text-xs text-steel dark:text-gravel leading-relaxed mt-0.5">
                                 {{ t.analyticsDesc }}
                             </p>
                         </div>
@@ -230,12 +230,12 @@ onBeforeUnmount(() => {
                         />
                     </label>
 
-                    <label class="flex items-start justify-between gap-4 cursor-pointer rounded-lg focus-within:ring-2 focus-within:ring-sunstone-deep focus-within:ring-offset-2 dark:focus-within:ring-offset-charcoal">
+                    <label class="flex items-start justify-between gap-4 cursor-pointer rounded-xl focus-within:ring-2 focus-within:ring-sunstone-deep focus-within:ring-offset-2 dark:focus-within:ring-offset-charcoal">
                         <div>
                             <p class="text-sm font-semibold text-charcoal dark:text-paper">
                                 {{ t.marketing }}
                             </p>
-                            <p class="text-xs text-gravel leading-relaxed mt-0.5">
+                            <p class="text-xs text-steel dark:text-gravel leading-relaxed mt-0.5">
                                 {{ t.marketingDesc }}
                             </p>
                         </div>
@@ -256,12 +256,12 @@ onBeforeUnmount(() => {
                         />
                     </label>
 
-                    <p class="text-xs text-gravel italic mt-3">
+                    <p class="text-xs text-steel dark:text-gravel italic mt-3">
                         {{ summary }}
                     </p>
                 </div>
 
-                <p class="mt-4 text-xs text-gravel">
+                <p class="mt-4 text-xs text-steel dark:text-gravel">
                     {{ t.readMoreBefore }}
                     <a :href="cookiesHref" class="text-charcoal dark:text-paper font-medium hover:text-sunstone-deep transition-colors">{{ t.cookiePolicy }}</a>
                     {{ t.readMoreMiddle }}
@@ -271,7 +271,7 @@ onBeforeUnmount(() => {
                 <div class="mt-5 flex flex-col gap-2">
                     <button
                         type="button"
-                        class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-charcoal dark:bg-paper text-paper dark:text-charcoal text-sm font-semibold hover:bg-charcoal/90 dark:hover:bg-paper/90 transition-colors"
+                        class="btn btn-primary w-full justify-center text-sm"
                         @click="acceptAll"
                     >
                         {{ t.acceptAll }}
@@ -281,7 +281,7 @@ onBeforeUnmount(() => {
                         <button
                             v-if="!showDetails"
                             type="button"
-                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal text-charcoal dark:text-paper text-sm font-medium hover:bg-chalk-light dark:hover:bg-graphite transition-colors"
+                            class="btn btn-secondary justify-center text-sm"
                             @click="toggleDetails"
                         >
                             {{ t.configure }}
@@ -289,14 +289,14 @@ onBeforeUnmount(() => {
                         <button
                             v-else
                             type="button"
-                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal text-charcoal dark:text-paper text-sm font-medium hover:bg-chalk-light dark:hover:bg-graphite transition-colors"
+                            class="btn btn-secondary justify-center text-sm"
                             @click="saveCustom"
                         >
                             {{ t.savePrefs }}
                         </button>
                         <button
                             type="button"
-                            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal text-steel dark:text-gravel text-sm font-medium hover:bg-chalk-light dark:hover:bg-graphite hover:text-charcoal dark:hover:text-paper transition-colors"
+                            class="btn btn-secondary justify-center text-sm text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper"
                             @click="rejectAll"
                         >
                             {{ t.necessaryOnly }}

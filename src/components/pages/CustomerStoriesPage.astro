@@ -97,12 +97,12 @@ const jsonLd = [
                 </h2>
             </div>
 
-            <article class="max-w-4xl bg-paper dark:bg-charcoal rounded-3xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
-                <header class="px-8 md:px-14 pt-10 md:pt-14 pb-8 md:pb-10 text-center border-b border-chalk-dark dark:border-flint">
-                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-2xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint mb-6 overflow-hidden">
+            <article class="max-w-4xl bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
+                <header class="px-8 md:px-10 pt-10 md:pt-12 pb-8 md:pb-10 text-center border-b border-chalk-dark dark:border-flint">
+                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-lg bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint mb-6 overflow-hidden">
                         <img
                             src={story.logo}
-                            alt={story.company}
+                            alt=""
                             class="h-full w-full object-contain p-2"
                             loading="lazy"
                         />
@@ -112,8 +112,8 @@ const jsonLd = [
                     </h3>
                 </header>
 
-                <div class="px-8 md:px-14 pt-8 md:pt-10">
-                    <div class="aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-chalk-dark dark:ring-flint bg-charcoal">
+                <div class="px-8 md:px-10 pt-8 md:pt-10">
+                    <div class="aspect-video w-full overflow-hidden rounded-xl ring-1 ring-chalk-dark dark:ring-flint bg-charcoal">
                         <iframe
                             class="h-full w-full"
                             src="https://www.youtube-nocookie.com/embed/PZq1V6Unp_U"
@@ -127,7 +127,7 @@ const jsonLd = [
                     </div>
                 </div>
 
-                <div class="px-8 md:px-14 py-10 md:py-14 space-y-10">
+                <div class="px-8 md:px-10 py-10 md:py-12 space-y-10">
                     <div>
                         <p class="eyebrow mb-3">{p.aboutLabel}</p>
                         <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem]">
@@ -149,7 +149,7 @@ const jsonLd = [
                         </p>
                     </div>
 
-                    <div class="bg-sunstone-mist/50 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 rounded-2xl px-7 py-7 md:px-9 md:py-8">
+                    <div class="bg-sunstone-mist/50 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 rounded-xl px-7 py-7 md:px-9 md:py-8">
                         <p class="eyebrow mb-3">{p.resultLabel}</p>
                         <p class="text-charcoal dark:text-paper leading-snug text-lg md:text-xl font-semibold tracking-tight">
                             {story.metric}
@@ -177,30 +177,30 @@ const jsonLd = [
                         ))}
                     </span>
                     <span class="font-semibold text-charcoal dark:text-paper">{p.rating}</span>
-                    <span class="text-gravel">{p.ratingSuffix}</span>
+                    <span class="text-steel dark:text-gravel">{p.ratingSuffix}</span>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-2 gap-5 md:gap-6">
                 {
                     voices.map((voice) => (
-                        <article class="bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel transition-colors p-8 md:p-10 flex flex-col">
+                        <article class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-chalk-darker dark:hover:ring-steel transition-colors p-8 md:p-10 flex flex-col">
                             <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem] mb-8 flex-1">
                                 {voice.quote}
                             </p>
 
                             <div class="flex items-center gap-4">
-                                <div class="h-10 w-10 rounded-lg bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
+                                <div class="h-10 w-10 rounded-lg bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
                                     <img
                                         src={voice.logo}
-                                        alt={voice.company}
+                                        alt=""
                                         class="h-full w-full object-contain p-1.5"
                                         loading="lazy"
                                     />
                                 </div>
                                 <div class="min-w-0">
                                     <p class="font-semibold text-charcoal dark:text-paper text-sm">{voice.author}</p>
-                                    <p class="text-xs text-gravel mt-0.5">{voice.company}</p>
+                                    <p class="text-xs text-steel dark:text-gravel mt-0.5">{voice.company}</p>
                                 </div>
                             </div>
                         </article>
@@ -213,7 +213,7 @@ const jsonLd = [
                     href="https://nl.trustpilot.com/review/shoplinkr.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-sm text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors inline-flex items-center gap-1.5"
+                    class="text-sm text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors inline-flex items-center gap-1.5 py-2 min-h-11"
                 >
                     {p.allReviews}
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>

@@ -338,9 +338,9 @@ watch(orderSliderValue, (newValue) => {
 <template>
     <section class="py-12 md:py-16">
         <div class="container-prose">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
-                <div class="lg:col-span-3 min-w-0 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-12">
-                    <p class="eyebrow mb-3">{{ t.eyebrow }}</p>
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+                <div class="lg:col-span-3 min-w-0 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10">
+                    <p class="eyebrow mb-4">{{ t.eyebrow }}</p>
                     <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-tight mb-10">
                         {{ t.heading }}
                     </h2>
@@ -470,14 +470,14 @@ watch(orderSliderValue, (newValue) => {
                     </div>
                 </div>
 
-                <aside class="lg:col-span-2 min-w-0 bg-charcoal dark:bg-graphite text-paper rounded-2xl p-8 md:p-12 flex flex-col">
+                <aside class="lg:col-span-2 min-w-0 bg-charcoal dark:bg-graphite text-paper rounded-xl p-8 md:p-10 flex flex-col">
                     <p class="text-xs uppercase tracking-[0.08em] font-semibold text-sunstone mb-4">
                         {{ t.monthlyPrice }}
                     </p>
 
                     <div class="flex items-baseline gap-2 mb-2">
                         <span class="text-5xl md:text-6xl font-semibold tabular-nums tracking-tight leading-none">
-                            &euro;{{ formattedTotal }}
+                            &euro; {{ formattedTotal }}
                         </span>
                         <span class="text-base text-chalk-darker">{{ t.perMonth }}</span>
                     </div>
@@ -488,7 +488,7 @@ watch(orderSliderValue, (newValue) => {
 
                     <div
                         v-if="showSalesNotice"
-                        class="mb-8 rounded-lg bg-sunstone-mist/15 border border-sunstone/40 p-4 text-sm leading-relaxed"
+                        class="mb-8 rounded-xl bg-sunstone-mist/15 border border-sunstone/40 p-4 text-sm leading-relaxed"
                     >
                         <div class="flex items-start gap-3">
                             <i class="fa-solid fa-headset text-sunstone text-base mt-0.5" aria-hidden="true"></i>

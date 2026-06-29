@@ -134,9 +134,9 @@ function reset(): void {
         v-if="status === 'success'"
         role="status"
         aria-live="polite"
-        class="bg-paper dark:bg-charcoal rounded-3xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10 text-center"
+        class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10 text-center"
     >
-        <div class="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mb-5">
+        <div class="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 mb-5">
             <i class="fa-solid fa-check text-xl" aria-hidden="true"></i>
         </div>
         <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-3">
@@ -147,7 +147,7 @@ function reset(): void {
         </p>
         <button
             type="button"
-            class="mt-6 inline-flex items-center justify-center gap-2 text-sm font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
+            class="mt-6 inline-flex items-center justify-center gap-2 min-h-11 text-sm font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
             @click="reset"
         >
             <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
@@ -157,7 +157,7 @@ function reset(): void {
 
     <div
         v-else
-        class="bg-paper dark:bg-charcoal rounded-3xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10"
+        class="bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] p-8 md:p-10"
     >
         <p class="eyebrow mb-3">{{ t.eyebrow }}</p>
         <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-2">
@@ -202,7 +202,7 @@ function reset(): void {
                         autocomplete="name"
                         :maxlength="MAX_NAME_LENGTH"
                         :placeholder="t.namePlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-md ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
 
@@ -220,7 +220,7 @@ function reset(): void {
                         :maxlength="MAX_EMAIL_LENGTH"
                         inputmode="email"
                         :placeholder="t.emailPlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-md ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
             </div>
@@ -229,7 +229,7 @@ function reset(): void {
                 <div>
                     <label for="contact-phone" class="block text-sm font-medium text-charcoal dark:text-paper mb-2">
                         {{ t.phone }}
-                        <span class="text-gravel text-xs font-normal">{{ t.optional }}</span>
+                        <span class="text-steel dark:text-gravel text-xs font-normal">{{ t.optional }}</span>
                     </label>
                     <input
                         id="contact-phone"
@@ -240,14 +240,14 @@ function reset(): void {
                         :maxlength="MAX_PHONE_LENGTH"
                         inputmode="tel"
                         :placeholder="t.phonePlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-md ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
 
                 <div>
                     <label for="contact-subject" class="block text-sm font-medium text-charcoal dark:text-paper mb-2">
                         {{ t.subject }}
-                        <span class="text-gravel text-xs font-normal">{{ t.optional }}</span>
+                        <span class="text-steel dark:text-gravel text-xs font-normal">{{ t.optional }}</span>
                     </label>
                     <input
                         id="contact-subject"
@@ -256,7 +256,7 @@ function reset(): void {
                         :disabled="status === 'submitting'"
                         :maxlength="MAX_SUBJECT_LENGTH"
                         :placeholder="t.subjectPlaceholder"
-                        class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
+                        class="w-full rounded-md ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition"
                     />
                 </div>
             </div>
@@ -266,7 +266,7 @@ function reset(): void {
                     <label for="contact-message" class="block text-sm font-medium text-charcoal dark:text-paper">
                         {{ t.message }} <span class="text-sunstone-deep">*</span>
                     </label>
-                    <span class="text-xs text-gravel" aria-live="polite">
+                    <span class="text-xs text-steel dark:text-gravel">
                         {{ characterCount }} / {{ MAX_MESSAGE_LENGTH }}
                     </span>
                 </div>
@@ -279,7 +279,7 @@ function reset(): void {
                     minlength="10"
                     :maxlength="MAX_MESSAGE_LENGTH"
                     :placeholder="t.messagePlaceholder"
-                    class="w-full rounded-lg ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition resize-y min-h-[140px]"
+                    class="w-full rounded-md ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-flint px-4 py-3 text-[15px] text-charcoal dark:text-paper placeholder-gravel focus:outline-none focus:ring-2 focus:ring-sunstone-deep transition resize-y min-h-[140px]"
                 ></textarea>
             </div>
 
@@ -288,7 +288,7 @@ function reset(): void {
                     v-model="state.consent"
                     type="checkbox"
                     required
-                    class="mt-1 h-4 w-4 rounded ring-1 ring-chalk-dark dark:ring-flint text-sunstone-deep focus:ring-2 focus:ring-sunstone-deep"
+                    class="mt-1 h-4 w-4 rounded ring-1 ring-chalk-dark dark:ring-flint accent-sunstone-deep focus:ring-2 focus:ring-sunstone-deep"
                 />
                 <span class="text-sm text-steel dark:text-gravel leading-relaxed">
                     {{ t.consent }} <span class="text-sunstone-deep">*</span>
@@ -299,7 +299,7 @@ function reset(): void {
                 v-if="status === 'error'"
                 role="alert"
                 aria-live="assertive"
-                class="rounded-lg bg-paper dark:bg-charcoal ring-1 ring-red-200 dark:ring-red-500/40 px-4 py-3 text-sm text-red-700 dark:text-red-400"
+                class="rounded-xl bg-red-mist dark:bg-red/10 ring-1 ring-red/20 dark:ring-red/40 px-4 py-3 text-sm text-red dark:text-red-light"
             >
                 {{ errorMessage }}
             </div>
@@ -308,7 +308,7 @@ function reset(): void {
                 type="submit"
                 :disabled="!isValid || status === 'submitting'"
                 :aria-busy="status === 'submitting'"
-                class="btn btn-sunstone text-base w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                class="btn btn-sunstone btn-sm w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 <span v-if="status === 'submitting'" class="inline-flex items-center gap-2">
                     <i class="fa-solid fa-circle-notch fa-spin text-sm" aria-hidden="true"></i>
@@ -320,7 +320,7 @@ function reset(): void {
                 </span>
             </button>
 
-            <p id="contact-form-help" class="text-xs text-gravel mt-3">
+            <p id="contact-form-help" class="text-xs text-steel dark:text-gravel mt-3">
                 {{ t.help }}
             </p>
         </form>
