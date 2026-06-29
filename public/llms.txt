@@ -30,7 +30,6 @@
 - [Orderverwerking support](https://shoplinkr.com/support/categorieen/orderverwerking): Help-artikelen over orderverwerking.
 
 ## Resources
-- [Volledige sitegegevens](https://shoplinkr.com/llms-full.txt): Alle kernfeiten, functionaliteiten, het prijsmodel en veelgestelde vragen in één markdown-bestand.
 - [Blog](https://shoplinkr.com/blogs): Artikelen over voorraadbeheer, magazijnoptimalisatie en e-commerce.
 - [Gidsen](https://shoplinkr.com/gidsen): Praktische gidsen over voorraadbeheer in Excel, vervoerders koppelen aan bol, Shopify en WooCommerce, en verkopen via bol.
 - [Gratis Excel template](https://shoplinkr.com/voorraadbeheer-excel-template): Voorraadbeheer Excel template om gratis te downloaden.
@@ -41,7 +40,8 @@
 - [Contact](https://shoplinkr.com/contact): Demo aanvragen of vragen stellen.
 - [Prijzen](https://shoplinkr.com/prijzen): Pay-as-you-go prijsmodel.
 
-## Juridisch
+## Optional
+- [Volledige sitegegevens](https://shoplinkr.com/llms-full.txt): Alle kernfeiten, functionaliteiten, het prijsmodel en veelgestelde vragen in één markdown-bestand.
 - [Privacybeleid](https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf): Hoe we omgaan met persoonsgegevens.
 - [Voorwaarden](https://shoplinkr.ams3.digitaloceanspaces.com/documents/Algemene%20voorwaarden%202026.pdf): Algemene voorwaarden voor het gebruik van ShopLinkr.
 - [Cookiebeleid](https://shoplinkr.com/cookies): Welke cookies we gebruiken en waarvoor.

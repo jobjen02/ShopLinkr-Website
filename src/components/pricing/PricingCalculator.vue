@@ -143,57 +143,57 @@ const ORDER_TIERS: Array<OrderTier> = [
     {
         min: 0,
         max: 100,
-        pricePerOrder: 0.10,
+        pricePerOrder: 0.13,
     },
     {
         min: 100,
         max: 250,
-        pricePerOrder: 0.20,
+        pricePerOrder: 0.26,
     },
     {
         min: 250,
         max: 500,
-        pricePerOrder: 0.14,
+        pricePerOrder: 0.182,
     },
     {
         min: 500,
         max: 1000,
-        pricePerOrder: 0.07,
+        pricePerOrder: 0.091,
     },
     {
         min: 1000,
         max: 1500,
-        pricePerOrder: 0.08,
+        pricePerOrder: 0.104,
     },
     {
         min: 1500,
         max: 2500,
-        pricePerOrder: 0.025,
+        pricePerOrder: 0.0325,
     },
     {
         min: 2500,
         max: 4000,
-        pricePerOrder: 0.0333,
+        pricePerOrder: 0.04329,
     },
     {
         min: 4000,
         max: 6000,
-        pricePerOrder: 0.0625,
+        pricePerOrder: 0.08125,
     },
     {
         min: 6000,
         max: 10000,
-        pricePerOrder: 0.0375,
+        pricePerOrder: 0.04875,
     },
     {
         min: 10000,
         max: null,
-        pricePerOrder: 0.02,
+        pricePerOrder: 0.026,
     },
 ];
 
 const channelSliderValue = ref(channelsToSliderPosition(2));
-const orderSliderValue = ref(ordersToSliderPosition(500));
+const orderSliderValue = ref(ordersToSliderPosition(300));
 
 const channels = computed(() => {
     return sliderPositionToChannels(channelSliderValue.value);
@@ -250,6 +250,7 @@ const formattedTotal = computed(() => {
         maximumFractionDigits: 2,
     }).format(totalPrice.value);
 });
+
 
 const formattedChannelCost = computed(() => {
     return new Intl.NumberFormat(t.value.numberLocale, {
@@ -337,8 +338,8 @@ watch(orderSliderValue, (newValue) => {
 <template>
     <section class="py-12 md:py-16">
         <div class="container-prose">
-            <div class="grid lg:grid-cols-5 gap-8 lg:gap-12">
-                <div class="lg:col-span-3 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-12">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+                <div class="lg:col-span-3 min-w-0 bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-12">
                     <p class="eyebrow mb-3">{{ t.eyebrow }}</p>
                     <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-tight mb-10">
                         {{ t.heading }}
@@ -368,7 +369,7 @@ watch(orderSliderValue, (newValue) => {
                             }"
                         />
 
-                        <div class="relative h-1.5 mt-1 mx-[11px]">
+                        <div class="relative h-1.5 mt-1 mx-[11px] max-sm:hidden">
                             <span
                                 v-for="tick in channelTickPositions"
                                 :key="`mark-channel-${tick.value}`"
@@ -383,7 +384,7 @@ watch(orderSliderValue, (newValue) => {
                             <span
                                 v-for="tick in channelTickPositions"
                                 :key="`label-channel-${tick.value}`"
-                                class="absolute top-0 -translate-x-1/2"
+                                class="absolute top-0 -translate-x-1/2 max-sm:hidden"
                                 :style="{ left: `${tick.percent}%` }"
                             >
                                 {{ tick.label }}
@@ -416,7 +417,7 @@ watch(orderSliderValue, (newValue) => {
                             }"
                         />
 
-                        <div class="relative h-1.5 mt-1 mx-[11px]">
+                        <div class="relative h-1.5 mt-1 mx-[11px] max-sm:hidden">
                             <span
                                 v-for="tick in orderTickPositions"
                                 :key="`mark-${tick.value}`"
@@ -431,7 +432,7 @@ watch(orderSliderValue, (newValue) => {
                             <span
                                 v-for="(tick, i) in orderTickPositions"
                                 :key="`label-${tick.value}`"
-                                class="absolute top-0 -translate-x-1/2"
+                                class="absolute top-0 -translate-x-1/2 max-sm:hidden"
                                 :style="{ left: `${tick.percent}%` }"
                             >
                                 {{ t.tickOrders[i] }}
@@ -469,7 +470,7 @@ watch(orderSliderValue, (newValue) => {
                     </div>
                 </div>
 
-                <aside class="lg:col-span-2 bg-charcoal dark:bg-graphite text-paper rounded-2xl p-8 md:p-12 flex flex-col">
+                <aside class="lg:col-span-2 min-w-0 bg-charcoal dark:bg-graphite text-paper rounded-2xl p-8 md:p-12 flex flex-col">
                     <p class="text-xs uppercase tracking-[0.08em] font-semibold text-sunstone mb-4">
                         {{ t.monthlyPrice }}
                     </p>
@@ -549,6 +550,10 @@ watch(orderSliderValue, (newValue) => {
     background: transparent;
     height: 1.25rem;
     cursor: pointer;
+    /* Horizontal drag moves the thumb; vertical swipes still scroll the page.
+       Without this the browser treats a sideways drag as a scroll/swipe gesture
+       and the page jumps on mobile. */
+    touch-action: pan-y;
 }
 
 .pricing-range:focus {

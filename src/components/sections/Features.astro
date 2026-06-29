@@ -71,7 +71,7 @@ const f = t.features;
                 <div class="flex items-center gap-3 flex-wrap">
                     {
                         channels.map((channel) => (
-                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint overflow-hidden">
+                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-lg bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint overflow-hidden">
                                 <img
                                     src={channel.src}
                                     alt={channel.name}
@@ -132,7 +132,7 @@ const f = t.features;
                 <div class="flex items-center gap-3 flex-wrap">
                     {
                         carriers.map((carrier) => (
-                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint overflow-hidden">
+                            <div class="flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-lg bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint overflow-hidden">
                                 <img
                                     src={carrier.src}
                                     alt={carrier.name}
@@ -188,26 +188,25 @@ const f = t.features;
                 </div>
             </a>
 
-            <article class="md:col-span-4 bg-charcoal dark:bg-graphite dark:ring-1 dark:ring-flint text-paper rounded-2xl p-6 md:p-8 transition duration-300 ease-out hover:bg-charcoal/95 dark:hover:bg-graphite/95 dark:hover:ring-steel">
-                <div class="flex flex-col md:flex-row items-start md:items-center md:justify-between gap-5">
-                    <div class="flex-1">
-                        <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-paper/50 mb-2">{f.pricing.eyebrow}</p>
-                        <h3 class="text-2xl md:text-3xl font-semibold tracking-tight leading-snug">
-                            {f.pricing.heading}
-                        </h3>
-                        <p class="text-paper/70 mt-2 text-[0.975rem] max-w-2xl">
-                            {f.pricing.body}
-                        </p>
-                    </div>
-                    <a
-                        href={pricingHref}
-                        class="btn btn-sunstone text-sm whitespace-nowrap"
-                    >
-                        {f.pricing.cta}
-                        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </article>
+        </div>
+
+        <div class="mt-10 md:mt-12 pt-10 md:pt-12 border-t border-chalk-dark dark:border-flint flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div class="max-w-2xl">
+                <p class="text-[11px] uppercase tracking-[0.18em] font-semibold text-sunstone-deep mb-2">{f.pricing.eyebrow}</p>
+                <h3 class="text-xl md:text-2xl font-semibold tracking-tight leading-snug text-charcoal dark:text-paper">
+                    {f.pricing.heading}
+                </h3>
+                <p class="text-steel dark:text-gravel mt-2 text-[0.975rem]">
+                    {f.pricing.body}
+                </p>
+            </div>
+            <a
+                href={pricingHref}
+                class="btn btn-primary text-sm whitespace-nowrap self-start md:self-auto"
+            >
+                {f.pricing.cta}
+                <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
 </section>

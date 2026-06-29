@@ -2,6 +2,7 @@ import { defineMiddleware } from 'astro:middleware';
 import { unified } from 'unified';
 import rehypeParse from 'rehype-parse';
 import rehypeRemark from 'rehype-remark';
+import remarkGfm from 'remark-gfm';
 import remarkStringify from 'remark-stringify';
 
 // Markdown for agents: a request with `Accept: text/markdown` gets a markdown
@@ -12,6 +13,9 @@ import remarkStringify from 'remark-stringify';
 const processor = unified()
     .use(rehypeParse, { fragment: true })
     .use(rehypeRemark)
+    // GFM so tables (e.g. the cookie-declaration table) serialize instead of
+    // throwing `Cannot handle unknown node table`.
+    .use(remarkGfm)
     .use(remarkStringify, { bullet: '-', fences: true, emphasis: '_' });
 
 const SKIP = /^\/(_|\.well-known|api)(\/|$)/;
@@ -76,20 +80,34 @@ export const onRequest = defineMiddleware(async (context, next) => {
     const response = await next();
     const type = response.headers.get('content-type') ?? '';
 
-    // Convert the just-rendered HTML to markdown for agents.
+    // Convert the just-rendered HTML to markdown for agents. If the conversion
+    // ever throws (an HTML construct the converter can't serialize), fall back
+    // to the original HTML rather than 500-ing the agent.
     if (wantsMarkdown && type.includes('text/html')) {
         const html = await response.text();
-        const md = await toMarkdown(html, context.url.href);
-        return new Response(md, {
-            status: response.status,
-            headers: {
-                'Content-Type': 'text/markdown; charset=utf-8',
-                'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
-                'X-Markdown-Tokens': String(Math.ceil(md.length / 4)),
-                'X-Robots-Tag': 'noindex',
-                Vary: 'Accept',
-            },
-        });
+        try {
+            const md = await toMarkdown(html, context.url.href);
+            return new Response(md, {
+                status: response.status,
+                headers: {
+                    'Content-Type': 'text/markdown; charset=utf-8',
+                    'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+                    'X-Markdown-Tokens': String(Math.ceil(md.length / 4)),
+                    'X-Robots-Tag': 'noindex',
+                    Vary: 'Accept',
+                },
+            });
+        } catch (err) {
+            console.error(`[markdown-for-agents] conversion failed for ${path}:`, err);
+            return new Response(html, {
+                status: response.status,
+                headers: {
+                    'Content-Type': 'text/html; charset=utf-8',
+                    'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+                    Vary: 'Accept',
+                },
+            });
+        }
     }
 
     // Server-rendered HTML has no static CDN layer, so cache it at the edge.

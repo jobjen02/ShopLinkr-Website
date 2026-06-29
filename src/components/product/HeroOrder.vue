@@ -67,8 +67,8 @@ const seq: Array<{ dur: number; fn: () => void }> = [
     { dur: 1150, fn: () => (stockShown.value = true) },
     { dur: 700, fn: () => { stock.value = 9; synced.value = true; } },
     { dur: 1300, fn: () => (scanShown.value = true) }, // barcode gescand op locatie
-    { dur: 400, fn: () => (done.value = 2) }, // Gepikt
-    { dur: 1400, fn: () => (scanShown.value = false) },
+    { dur: 550, fn: () => (done.value = 2) }, // Gepikt
+    { dur: 2700, fn: () => (scanShown.value = false) }, // scan blijft langer staan (was te snel weg)
     { dur: 600, fn: () => (done.value = 3) }, // Ingepakt
     { dur: 400, fn: () => (labelShown.value = true) }, // PostNL-label klaar
     { dur: 1500, fn: () => { done.value = 4; ttShown.value = true; } }, // Verzonden + T&T

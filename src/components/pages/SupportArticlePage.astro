@@ -59,7 +59,7 @@ const categoriesBase = supportCategoriesBase(locale);
 
     <section class="bg-paper dark:bg-charcoal">
         <div class="container-prose py-12 md:py-16">
-            <div class="max-w-3xl">
+            <div class="max-w-3xl mx-auto">
                 <nav aria-label="Breadcrumb" class="mb-10">
                     <ol class="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] text-gravel">
                         {breadcrumbItems.map((b) => (
@@ -124,7 +124,7 @@ const categoriesBase = supportCategoriesBase(locale);
             </div>
 
             {relatedArticles.length > 0 && (
-                <div class="max-w-3xl mt-16 md:mt-20">
+                <div class="max-w-3xl mx-auto mt-16 md:mt-20">
                     <h2 class="text-[22px] md:text-[26px] font-semibold text-charcoal dark:text-paper tracking-tight mb-6">
                         {p.relatedTitle}
                     </h2>

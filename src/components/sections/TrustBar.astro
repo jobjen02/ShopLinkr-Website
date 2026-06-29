@@ -48,23 +48,25 @@ const integrations = [
 
     <div class="marquee-wrapper">
         <div class="marquee-track">
-            {
-                integrations.map((integration) => (
-                    <a
-                        href={`${integrationsBase}/${integration.slug}`}
-                        class="marquee-item"
-                        aria-label={`${integration.name} ${t.trustBar.itemLabel}`}
-                    >
-                        <img
-                            src={integration.logo}
-                            alt={integration.name}
-                            class="marquee-logo"
-                            loading="lazy"
-                        />
-                    </a>
-                ))
-            }
-            <div aria-hidden="true" class="marquee-dup">
+            <div class="marquee-set">
+                {
+                    integrations.map((integration) => (
+                        <a
+                            href={`${integrationsBase}/${integration.slug}`}
+                            class="marquee-item"
+                            aria-label={`${integration.name} ${t.trustBar.itemLabel}`}
+                        >
+                            <img
+                                src={integration.logo}
+                                alt={integration.name}
+                                class="marquee-logo"
+                                decoding="async"
+                            />
+                        </a>
+                    ))
+                }
+            </div>
+            <div class="marquee-set" aria-hidden="true">
                 {
                     integrations.map((integration) => (
                         <a
@@ -76,7 +78,7 @@ const integrations = [
                                 src={integration.logo}
                                 alt=""
                                 class="marquee-logo"
-                                loading="lazy"
+                                decoding="async"
                             />
                         </a>
                     ))
@@ -108,9 +110,8 @@ const integrations = [
     .marquee-track {
         display: flex;
         align-items: center;
-        gap: 4.5rem;
         width: max-content;
-        animation: marquee 80s linear infinite;
+        animation: marquee 42s linear infinite;
         padding-block: 0.5rem;
     }
 
@@ -118,8 +119,15 @@ const integrations = [
         animation-play-state: paused;
     }
 
-    .marquee-dup {
-        display: contents;
+    /* Two identical sets sit side by side; the trailing padding equals the inner
+       gap so translateX(-50%) lands exactly one set further = a seamless loop with
+       no visible jump when it repeats. Smaller gap on mobile keeps logos dense. */
+    .marquee-set {
+        display: flex;
+        align-items: center;
+        gap: 2.75rem;
+        padding-right: 2.75rem;
+        flex-shrink: 0;
     }
 
     .marquee-item {
