@@ -2,6 +2,7 @@
 title: "Manage your products centrally in ShopLinkr"
 excerpt: "A central overview of all your products, with stock, locations and tags in one place."
 publishedAt: "2024-05-06T00:00:00.000Z"
+updatedAt: "2026-01-02T00:00:00.000Z"
 image: "/images/blog/producten-beheren-op-een-plek/tWZExEyY1pAxJKa1CbTDA0rbU.png"
 translationKey: "producten-beheren-op-een-plek"
 category: "Inventory"

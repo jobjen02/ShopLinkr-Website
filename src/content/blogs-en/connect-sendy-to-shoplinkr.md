@@ -2,6 +2,7 @@
 title: "Connect Sendy to ShopLinkr"
 excerpt: "With ShopLinkr's Sendy integration you create shipping labels in one click and the track & trace goes back to your sales channel automatically, such as bol or Shopify."
 publishedAt: "2023-05-03T00:00:00.000Z"
+updatedAt: "2026-01-02T00:00:00.000Z"
 image: "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png"
 imageAlt: "Creating a Sendy shipping label from ShopLinkr"
 translationKey: "sendy-koppelen-aan-shoplinkr"

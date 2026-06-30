@@ -2,6 +2,8 @@
 
 > ShopLinkr is een Nederlands WMS en voorraadbeheerplatform voor kleine en middelgrote webshops. Het automatiseert orderverwerking, picklijsten, labelprinting en multi-channel voorraadsynchronisatie tussen Bol, Shopify, WooCommerce, Kaufland en alle Nederlandse vervoerders.
 
+Laatst bijgewerkt: 2026-06-30. Engelse versie: https://shoplinkr.com/en/llms.txt
+
 ## Product
 - [Functionaliteiten overzicht](https://shoplinkr.com/functionaliteiten): Alle functies van ShopLinkr op één pagina.
 - [Bestellingen](https://shoplinkr.com/functionaliteiten/bestellingen): Centraal verwerken van bestellingen uit Bol, Shopify, WooCommerce en Kaufland.
@@ -43,6 +45,7 @@
 
 ## Optional
 - [Volledige sitegegevens](https://shoplinkr.com/llms-full.txt): Alle kernfeiten, functionaliteiten, het prijsmodel en veelgestelde vragen in één markdown-bestand.
+- [Engelstalige versie](https://shoplinkr.com/en/llms.txt): Dezelfde index in het Engels.
 - [Privacybeleid](https://shoplinkr.ams3.digitaloceanspaces.com/documents/Privacyverklaring%202026.pdf): Hoe we omgaan met persoonsgegevens.
 - [Voorwaarden](https://shoplinkr.ams3.digitaloceanspaces.com/documents/Algemene%20voorwaarden%202026.pdf): Algemene voorwaarden voor het gebruik van ShopLinkr.
 - [Cookiebeleid](https://shoplinkr.com/cookies): Welke cookies we gebruiken en waarvoor.

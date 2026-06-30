@@ -2,6 +2,7 @@
 title: "Hoe geavanceerde voorraadsystemen het verschil maken"
 excerpt: "Verkoop je op bol, Shopify of WooCommerce? Lees hoe realtime voorraadsync misgrepen voorkomt en je magazijn sneller en een stuk overzichtelijker draait."
 publishedAt: "2023-12-20T00:00:00.000Z"
+updatedAt: "2026-01-10T00:00:00.000Z"
 image: "/images/blog/hoe-geavanceerde-voorraadsystemen-het-verschil-maken/cAZ7fEzipIbJtiEq1ZODQAM9UHc.webp"
 imageAlt: "Magazijnmedewerker scant een product tijdens het picken van een bestelling"
 category: "Voorraad"

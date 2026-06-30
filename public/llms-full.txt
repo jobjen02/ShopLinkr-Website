@@ -4,6 +4,8 @@
 
 Dit bestand bevat de kernfeiten over ShopLinkr in platte tekst, bedoeld om door AI-assistenten te worden gelezen en geciteerd. De canonieke, actuele informatie staat op https://shoplinkr.com.
 
+Laatst bijgewerkt: 2026-06-30. Engelse versie: https://shoplinkr.com/en/llms-full.txt
+
 ## Wat is ShopLinkr?
 
 ShopLinkr is software waarmee webshops hun voorraad en orderverwerking op één plek beheren. Verkoop je op meerdere kanalen (bijvoorbeeld Bol, Shopify, WooCommerce en Kaufland), dan houdt ShopLinkr je voorraad overal gelijk: zodra er ergens iets verkocht of bijgeboekt wordt, gaat de nieuwe stand vrijwel direct naar al je kanalen. Zo verkoop je nooit iets dat je niet hebt (geen nee-verkoop) en hoef je niet handmatig bij te werken.

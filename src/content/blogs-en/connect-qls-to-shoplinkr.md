@@ -2,6 +2,7 @@
 title: "Connecting QLS to ShopLinkr"
 excerpt: "With ShopLinkr's QLS integration you create shipping labels in one click and track & trace is sent back to your sales channel automatically. Here's how."
 publishedAt: "2023-05-24T00:00:00.000Z"
+updatedAt: "2026-04-29T00:00:00.000Z"
 image: "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png"
 translationKey: "qls-koppelen-aan-shoplinkr"
 category: "Integrations"

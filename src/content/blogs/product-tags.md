@@ -2,6 +2,7 @@
 title: "Product tags"
 excerpt: "Tags geven je producten een extra laag organisatie naast je categorieën. Label op merk, seizoen of leverancier en filter zo in seconden je assortiment."
 publishedAt: "2023-05-30T00:00:00.000Z"
+updatedAt: "2026-02-07T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "Producttags toewijzen aan een product in ShopLinkr"
 category: "Voorraad"

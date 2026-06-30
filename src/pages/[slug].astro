@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import SeoArticlePage from '../components/pages/SeoArticlePage.astro';
 import { authorSchema } from '../utils/author';
 import { guideGroupOf } from '../utils/guides';
+import { dateModified } from '../utils/articleDate';
 
 const { slug } = Astro.params;
 
@@ -33,7 +34,7 @@ const articleSchema = {
     headline: page.data.title,
     description: page.data.excerpt,
     datePublished: page.data.publishedAt.toISOString(),
-    dateModified: page.data.publishedAt.toISOString(),
+    dateModified: dateModified(page.data.publishedAt, page.data.updatedAt).toISOString(),
     inLanguage: 'nl-NL',
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
     author: authorSchema(page.data.author, 'nl'),

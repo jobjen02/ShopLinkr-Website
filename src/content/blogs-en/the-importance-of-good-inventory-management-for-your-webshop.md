@@ -2,6 +2,7 @@
 title: "The importance of good inventory management for your webshop"
 excerpt: "Selling on multiple channels? Your inventory management decides whether you run out or oversell. Here's how to keep stock tight and your warehouse in order."
 publishedAt: "2024-03-13T00:00:00.000Z"
+updatedAt: "2026-05-17T00:00:00.000Z"
 image: "/images/blog/het-belang-van-goed-voorraadbeheer-voor-jouw-webshop/zqZx6bfhycOTBHiJPMvBoyB67I.jpg"
 translationKey: "het-belang-van-goed-voorraadbeheer-voor-jouw-webshop"
 category: "Inventory"

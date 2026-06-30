@@ -2,6 +2,7 @@
 title: "How Advanced Inventory Systems Make the Difference"
 excerpt: "Selling on bol, Shopify or WooCommerce? Learn how real-time stock sync prevents overselling and keeps your warehouse running faster and much clearer too."
 publishedAt: "2023-12-20T00:00:00.000Z"
+updatedAt: "2026-01-10T00:00:00.000Z"
 image: "/images/blog/hoe-geavanceerde-voorraadsystemen-het-verschil-maken/cAZ7fEzipIbJtiEq1ZODQAM9UHc.webp"
 imageAlt: "Warehouse worker scanning a product while picking an order"
 translationKey: "hoe-geavanceerde-voorraadsystemen-het-verschil-maken"

@@ -2,6 +2,7 @@
 title: "Waarom is voorraadbeheer belangrijk? Tips en voordelen"
 excerpt: "Goed voorraadbeheer voorkomt misgrijpen, overstock en uren handwerk. Lees waarom het loont en hoe je voorraad over al je verkoopkanalen op orde houdt."
 publishedAt: "2023-06-26T00:00:00.000Z"
+updatedAt: "2026-04-28T00:00:00.000Z"
 image: "/images/blog/waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen/Z1AL5Fr0i2b0gFFVYf2qfopxSw.png"
 imageAlt: "Magazijnstellingen met voorraad, gekoppeld aan online verkoopkanalen"
 category: "Voorraad"

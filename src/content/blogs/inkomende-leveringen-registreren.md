@@ -2,6 +2,7 @@
 title: "Inkomende leveringen registreren"
 excerpt: "Ontdek hoe de \"inkomende leveringen\" functie van ShopLinkr je helpt om inkomende leveringen te beheren, controleren en naadloos toe te voegen aan je voorraad."
 publishedAt: "2023-06-14T00:00:00.000Z"
+updatedAt: "2026-04-15T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "ShopLinkr logo"
 category: "Voorraad"

@@ -2,6 +2,7 @@
 title: "Voorraadsystemen"
 excerpt: "Periodiek, perpetueel of dropshipping: welk type voorraadsysteem past bij jouw webshop? We leggen de verschillen uit en wat realtime sync je oplevert."
 publishedAt: "2023-10-12T00:00:00.000Z"
+updatedAt: "2026-02-23T00:00:00.000Z"
 image: "/images/blog/voorraadsystemen/ZPmW5kSvGlGlu5mL45xiLkecb6g.png"
 category: "Voorraad"
 imageAlt: "Voorraadsysteem met realtime aantallen per product"

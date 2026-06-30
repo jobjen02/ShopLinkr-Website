@@ -2,6 +2,7 @@
 title: "Sendy koppelen aan ShopLinkr"
 excerpt: "Met de Sendy koppeling van ShopLinkr maak je verzendlabels met één klik en gaat de track & trace automatisch terug naar je verkoopkanaal, zoals bol of Shopify."
 publishedAt: "2023-05-03T00:00:00.000Z"
+updatedAt: "2026-01-02T00:00:00.000Z"
 image: "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png"
 imageAlt: "Sendy verzendlabel aanmaken vanuit ShopLinkr"
 category: "Koppelingen"

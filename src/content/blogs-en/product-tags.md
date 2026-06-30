@@ -2,6 +2,7 @@
 title: "Product tags"
 excerpt: "Tags add an extra layer of organization on top of your categories. Label products by brand, season or supplier and filter your whole assortment in seconds."
 publishedAt: "2023-05-30T00:00:00.000Z"
+updatedAt: "2026-02-07T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "Assigning product tags to a product in ShopLinkr"
 translationKey: "product-tags"

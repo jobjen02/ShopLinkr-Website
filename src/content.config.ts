@@ -11,6 +11,9 @@ const blogs = defineCollection({
         excerpt: z.string(),
         author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
+        // Set ONLY when the content is genuinely revised. Drives the visible
+        // "Bijgewerkt op" byline, schema dateModified and sitemap <lastmod>.
+        updatedAt: z.coerce.date().optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         category: z.string().optional(),
@@ -31,6 +34,7 @@ const seoPages = defineCollection({
         excerpt: z.string(),
         author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
+        updatedAt: z.coerce.date().optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         category: z.string().optional(),
@@ -94,6 +98,7 @@ const blogsEn = defineCollection({
         excerpt: z.string(),
         author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
+        updatedAt: z.coerce.date().optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         category: z.string().optional(),
@@ -111,6 +116,7 @@ const seoPagesEn = defineCollection({
         excerpt: z.string(),
         author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
+        updatedAt: z.coerce.date().optional(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
         category: z.string().optional(),

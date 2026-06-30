@@ -2,6 +2,7 @@
 title: "How to connect bol to your webshop"
 excerpt: "Selling on bol and through your own webshop? Here's how to connect both channels and manage stock and orders centrally from one system with ShopLinkr."
 publishedAt: "2024-01-22T00:00:00.000Z"
+updatedAt: "2026-02-18T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Orders and stock from bol and your webshop together in ShopLinkr"
 translationKey: "hoe-koppel-je-bol-com-met-jouw-webshop"

@@ -2,6 +2,7 @@
 title: "Connecting DPD to ShopLinkr"
 excerpt: "Connect your own DPD contract to ShopLinkr, create shipping labels with one click and have track & trace sent back to your sales channel automatically."
 publishedAt: "2023-08-21T00:00:00.000Z"
+updatedAt: "2026-06-05T00:00:00.000Z"
 image: "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png"
 imageAlt: "Connecting DPD to ShopLinkr for shipping labels and track & trace"
 translationKey: "dpd-koppelen-aan-shoplinkr"

@@ -2,6 +2,7 @@
 title: "Hoe koppel je bol met jouw webshop?"
 excerpt: "Verkoop je op bol én via je eigen webshop? Zo koppel je beide kanalen en beheer je voorraad en bestellingen centraal vanuit één systeem met ShopLinkr."
 publishedAt: "2024-01-22T00:00:00.000Z"
+updatedAt: "2026-02-18T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bestellingen en voorraad van bol en je webshop samen in ShopLinkr"
 category: "Koppelingen"

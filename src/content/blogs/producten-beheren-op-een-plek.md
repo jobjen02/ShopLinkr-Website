@@ -2,6 +2,7 @@
 title: "Producten centraal in ShopLinkr beheren"
 excerpt: "Een centraal overzicht van al je producten, met voorraad, locaties en tags op één plek."
 publishedAt: "2024-05-06T00:00:00.000Z"
+updatedAt: "2026-01-02T00:00:00.000Z"
 image: "/images/blog/producten-beheren-op-een-plek/tWZExEyY1pAxJKa1CbTDA0rbU.png"
 category: "Voorraad"
 imageAlt: "Productoverzicht van een webshop op een scherm"

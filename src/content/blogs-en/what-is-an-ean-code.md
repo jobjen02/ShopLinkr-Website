@@ -2,6 +2,7 @@
 title: "What is an EAN code?"
 excerpt: "An EAN code is the unique barcode on your product. Learn how it is built, why you need one and how to request it officially through GS1."
 publishedAt: "2023-11-24T00:00:00.000Z"
+updatedAt: "2026-05-15T00:00:00.000Z"
 image: "/images/blog/wat-is-een-ean-code/oELKYx92dZ9AvSenBT3Re6U8Y8U.png"
 imageAlt: "Barcode showing the thirteen digits of an EAN code"
 translationKey: "wat-is-een-ean-code"

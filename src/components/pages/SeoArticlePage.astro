@@ -8,6 +8,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import CtaBanner from '../sections/CtaBanner.astro';
 import { type Locale, localizeHref } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { articleDateLabel } from '../../utils/articleDate';
 
 interface RelatedGuide {
     title: string;
@@ -26,11 +27,7 @@ const { page, related = [], alternates, jsonLd } = Astro.props;
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const g = t.pages.guides;
-const formattedDate = new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'nl-NL', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-}).format(page.data.publishedAt);
+const dateLabel = articleDateLabel(page.data.publishedAt, page.data.updatedAt, locale);
 const { Content } = await render(page);
 ---
 
@@ -41,7 +38,7 @@ const { Content } = await render(page);
     subheading={page.data.excerpt}
     image={page.data.image}
     imageAlt={page.data.imageAlt ?? page.data.title}
-    meta={formattedDate}
+    meta={dateLabel}
     publishedTime={page.data.publishedAt.toISOString()}
     authorName={page.data.author}
     backHref={localizeHref('/gidsen', locale)}

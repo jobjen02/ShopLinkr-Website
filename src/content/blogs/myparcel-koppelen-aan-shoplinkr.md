@@ -2,6 +2,7 @@
 title: "MyParcel koppelen aan ShopLinkr"
 excerpt: "Koppel MyParcel aan ShopLinkr en maak verzendlabels met één klik aan. Track & trace gaat automatisch terug naar je verkoopkanaal, zonder dubbel werk."
 publishedAt: "2023-03-31T00:00:00.000Z"
+updatedAt: "2026-03-22T00:00:00.000Z"
 image: "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png"
 imageAlt: "MyParcel verzendlabel aanmaken vanuit een bestelling in ShopLinkr"
 category: "Koppelingen"

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BlogArticlePage from '../../components/pages/BlogArticlePage.astro';
 import { authorSchema } from '../../utils/author';
+import { articleDateLabel, dateModified } from '../../utils/articleDate';
 
 const { slug } = Astro.params;
 
@@ -26,11 +27,7 @@ const alternates = enSlug
     ? { nl: `/blogs/${blog.id}`, en: `/en/blog/${enSlug}` }
     : undefined;
 
-const formattedDate = new Intl.DateTimeFormat('nl-NL', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-}).format(blog.data.publishedAt);
+const formattedDate = articleDateLabel(blog.data.publishedAt, blog.data.updatedAt, 'nl');
 
 const canonicalUrl = `https://shoplinkr.com/blogs/${blog.id}`;
 
@@ -39,7 +36,7 @@ const articleSchema = {
     headline: blog.data.title,
     description: blog.data.excerpt,
     datePublished: blog.data.publishedAt.toISOString(),
-    dateModified: blog.data.publishedAt.toISOString(),
+    dateModified: dateModified(blog.data.publishedAt, blog.data.updatedAt).toISOString(),
     inLanguage: 'nl-NL',
     mainEntityOfPage: {
         '@type': 'WebPage',

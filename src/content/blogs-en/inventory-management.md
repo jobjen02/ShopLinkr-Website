@@ -2,6 +2,7 @@
 title: "Inventory Management"
 excerpt: "Inventory management is more than counting: ordering, storing and tracking stock so you never run out or get stuck with dead stock. Here's how to do it well."
 publishedAt: "2023-09-25T00:00:00.000Z"
+updatedAt: "2026-04-27T00:00:00.000Z"
 image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
 imageAlt: "Inventory management in ShopLinkr with real-time stock levels per channel"
 translationKey: "voorraadmanagement"

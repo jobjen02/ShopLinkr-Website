@@ -2,6 +2,7 @@
 title: "Bol stock synchronization"
 excerpt: "Selling on bol alongside your webshop or other channels? Here is how real-time stock sync keeps your numbers aligned and prevents overselling and cancellations."
 publishedAt: "2023-10-25T00:00:00.000Z"
+updatedAt: "2026-02-19T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
 imageAlt: "Inventory management with bol connected alongside other sales channels"
 translationKey: "bol-com-voorraad-synchronisatie"

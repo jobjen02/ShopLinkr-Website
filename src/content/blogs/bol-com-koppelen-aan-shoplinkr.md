@@ -2,6 +2,7 @@
 title: "Bol koppelen aan ShopLinkr"
 excerpt: "Optimaliseer je bestelproces met de naadloze bol integratie van ShopLinkr. Beheer eenvoudig je bestellingen, print verzendlabels en houd je voorraad in sync."
 publishedAt: "2022-12-14T00:00:00.000Z"
+updatedAt: "2026-03-26T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bol integratie afbeelding"
 category: "Koppelingen"

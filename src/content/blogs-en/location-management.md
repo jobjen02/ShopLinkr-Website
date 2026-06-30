@@ -2,6 +2,7 @@
 title: "Location Management"
 excerpt: "With location management in ShopLinkr you know exactly what you have where, what it is worth, and where to pick it from in your warehouse."
 publishedAt: "2024-01-29T00:00:00.000Z"
+updatedAt: "2026-06-17T00:00:00.000Z"
 image: "/images/blog/locatiebeheer/6jCIG6yk1PUXNAkFP9A81dIop8.jpg"
 translationKey: "locatiebeheer"
 category: "Inventory"

@@ -2,6 +2,7 @@
 title: "Registering incoming deliveries"
 excerpt: "Discover how ShopLinkr's \"incoming deliveries\" feature helps you manage, check and seamlessly add incoming deliveries to your inventory."
 publishedAt: "2023-06-14T00:00:00.000Z"
+updatedAt: "2026-04-15T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "ShopLinkr logo"
 translationKey: "inkomende-leveringen-registreren"

@@ -2,6 +2,7 @@
 title: "Connect bol to ShopLinkr"
 excerpt: "Streamline your order process with the seamless bol integration from ShopLinkr. Easily import orders, print shipping labels and keep inventory in sync."
 publishedAt: "2022-12-14T00:00:00.000Z"
+updatedAt: "2026-03-26T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bol integration image"
 translationKey: "bol-com-koppelen-aan-shoplinkr"

@@ -2,6 +2,7 @@
 title: "DPD koppelen aan ShopLinkr"
 excerpt: "Koppel je eigen DPD contract aan ShopLinkr, maak verzendlabels met één klik en laat track & trace automatisch terug naar je verkoopkanaal sturen."
 publishedAt: "2023-08-21T00:00:00.000Z"
+updatedAt: "2026-06-05T00:00:00.000Z"
 image: "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png"
 imageAlt: "DPD koppelen aan ShopLinkr voor verzendlabels en track & trace"
 category: "Koppelingen"

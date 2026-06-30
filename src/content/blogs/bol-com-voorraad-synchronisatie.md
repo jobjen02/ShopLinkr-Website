@@ -2,6 +2,7 @@
 title: "Bol voorraad synchronisatie"
 excerpt: "Verkoop je op bol naast je webshop of andere kanalen? Zo houdt realtime voorraadsync je aantallen overal gelijk en voorkom je oververkoop en annuleringen."
 publishedAt: "2023-10-25T00:00:00.000Z"
+updatedAt: "2026-02-19T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
 imageAlt: "Voorraadbeheer met bol gekoppeld naast andere verkoopkanalen"
 category: "Bol"

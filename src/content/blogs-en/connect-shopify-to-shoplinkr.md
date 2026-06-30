@@ -2,6 +2,7 @@
 title: "Connecting Shopify to ShopLinkr"
 excerpt: "Discover the power of the integration between ShopLinkr and Shopify. Simplify your order management, process orders and print shipping labels effortlessly."
 publishedAt: "2022-12-21T00:00:00.000Z"
+updatedAt: "2026-03-18T00:00:00.000Z"
 image: "/images/blog/shopify-koppelen-aan-shoplinkr/SNMrUjZnxSfQb0OfE3pgIZ8XRLM.png"
 imageAlt: "Shopify integration image"
 translationKey: "shopify-koppelen-aan-shoplinkr"

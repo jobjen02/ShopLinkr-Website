@@ -2,6 +2,7 @@
 title: "Why is inventory management important? Tips and benefits"
 excerpt: "Good inventory management prevents stockouts, overstock, and hours of manual work. Learn why it pays off and how to keep stock right across every channel."
 publishedAt: "2023-06-26T00:00:00.000Z"
+updatedAt: "2026-04-28T00:00:00.000Z"
 image: "/images/blog/waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen/Z1AL5Fr0i2b0gFFVYf2qfopxSw.png"
 imageAlt: "Warehouse shelving with stock connected to online sales channels"
 translationKey: "waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen"

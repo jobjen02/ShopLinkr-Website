@@ -42,7 +42,9 @@ function fmField(block, key) {
     return m ? m[1] : null;
 }
 function fmDate(block) {
-    const v = fmField(block, '(?:publishedAt|lastUpdated)');
+    // Freshest first: a real revision (updatedAt / support's lastUpdated) wins
+    // over the original publish date for <lastmod>.
+    const v = fmField(block, 'updatedAt') ?? fmField(block, 'lastUpdated') ?? fmField(block, 'publishedAt');
     if (!v) return null;
     const d = new Date(v);
     return Number.isNaN(d.getTime()) ? null : d.toISOString();

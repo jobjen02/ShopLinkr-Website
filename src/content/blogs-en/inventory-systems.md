@@ -2,6 +2,7 @@
 title: "Inventory Systems"
 excerpt: "Periodic, perpetual or dropshipping: which inventory system fits your webshop best? We explain the differences and what real-time sync actually saves you."
 publishedAt: "2023-10-12T00:00:00.000Z"
+updatedAt: "2026-02-23T00:00:00.000Z"
 image: "/images/blog/voorraadsystemen/ZPmW5kSvGlGlu5mL45xiLkecb6g.png"
 translationKey: "voorraadsystemen"
 category: "Inventory"

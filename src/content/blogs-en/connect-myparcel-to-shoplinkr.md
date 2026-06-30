@@ -2,6 +2,7 @@
 title: "Connecting MyParcel to ShopLinkr"
 excerpt: "Connect MyParcel to ShopLinkr and create shipping labels with one click. Track & trace flows back to your sales channel automatically, with no double work."
 publishedAt: "2023-03-31T00:00:00.000Z"
+updatedAt: "2026-03-22T00:00:00.000Z"
 image: "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png"
 imageAlt: "Creating a MyParcel shipping label from an order in ShopLinkr"
 translationKey: "myparcel-koppelen-aan-shoplinkr"

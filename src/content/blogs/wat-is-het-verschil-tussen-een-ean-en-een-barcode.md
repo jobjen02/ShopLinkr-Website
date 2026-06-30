@@ -2,6 +2,7 @@
 title: "Wat is het verschil tussen een EAN en een barcode?"
 excerpt: "Elke EAN is een barcode, maar niet elke barcode is een EAN. Lees waarin ze verschillen en waarom dat onderscheid telt voor je voorraad en orders."
 publishedAt: "2024-02-19T00:00:00.000Z"
+updatedAt: "2026-06-06T00:00:00.000Z"
 image: "/images/blog/wat-is-het-verschil-tussen-een-ean-en-een-barcode/cS8gKqxjsgvRfceqmPVXQEmFk.svg"
 category: "Voorraad"
 imageAlt: "EAN-streepjescode op een productverpakking"

@@ -2,6 +2,7 @@
 title: "QLS koppelen aan ShopLinkr"
 excerpt: "Met de QLS koppeling van ShopLinkr maak je verzendlabels met één klik en gaat track & trace automatisch terug naar je verkoopkanaal. Zo werkt het."
 publishedAt: "2023-05-24T00:00:00.000Z"
+updatedAt: "2026-04-29T00:00:00.000Z"
 image: "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png"
 category: "Koppelingen"
 imageAlt: "QLS-verzendlabel op een pakket"

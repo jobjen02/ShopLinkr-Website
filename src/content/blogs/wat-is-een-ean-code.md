@@ -2,6 +2,7 @@
 title: "Wat is een EAN code?"
 excerpt: "Een EAN-code is de unieke streepjescode op je product. Lees hoe hij is opgebouwd, waarom je hem nodig hebt en hoe je hem officieel aanvraagt bij GS1."
 publishedAt: "2023-11-24T00:00:00.000Z"
+updatedAt: "2026-05-15T00:00:00.000Z"
 image: "/images/blog/wat-is-een-ean-code/oELKYx92dZ9AvSenBT3Re6U8Y8U.png"
 imageAlt: "Streepjescode met de dertien cijfers van een EAN-code"
 category: "Voorraad"

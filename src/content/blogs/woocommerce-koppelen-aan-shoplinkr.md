@@ -2,6 +2,7 @@
 title: "WooCommerce koppelen aan ShopLinkr"
 excerpt: "Koppel je WooCommerce-webshop aan ShopLinkr en verwerk bestellingen, print verzendlabels en houd je voorraad realtime in sync vanuit één centraal platform."
 publishedAt: "2023-05-01T00:00:00.000Z"
+updatedAt: "2026-05-13T00:00:00.000Z"
 image: "/images/blog/woocommerce-koppelen-aan-shoplinkr/2FVqp9F6P8qrmqhOp6PAtXTFu2Y.png"
 imageAlt: "WooCommerce-webshop gekoppeld aan het ShopLinkr-dashboard voor orders en voorraad"
 category: "Koppelingen"
