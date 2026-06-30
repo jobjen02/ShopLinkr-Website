@@ -4,6 +4,8 @@ excerpt: "With ShopLinkr's QLS integration you create shipping labels in one cli
 publishedAt: "2023-05-24T00:00:00.000Z"
 image: "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png"
 translationKey: "qls-koppelen-aan-shoplinkr"
+category: "Integrations"
+imageAlt: "A QLS shipping label on a parcel"
 ---
 
 <p><strong>QLS is one of the carriers you can connect in ShopLinkr. If you have a QLS account, you ship your orders without switching to a separate shipping tool.</strong></p>

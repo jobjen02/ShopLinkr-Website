@@ -1,6 +1,7 @@
 ---
 title: "Bestelling uitstellen"
 summary: "Een handige functie waarmee je meer overzicht krijgt in je openstaande bestellingen."
+author: "Tommy van Kessel"
 category: "orderverwerking"
 categoryLabel: "Orderverwerking"
 subcategory: "bestellingen"

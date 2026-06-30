@@ -1,6 +1,7 @@
 ---
 title: "Excel voorraadbeheer: alles wat je moet weten"
 excerpt: "Voorraadbeheer in Excel opzetten? Lees hoe je een werkende voorraadlijst bouwt, welke formules je nodig hebt en wanneer je beter overstapt naar software."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/excel-voorraadbeheer-alles-wat-je-moet-weten/58m5d5UMmNOQQzYXW1R3kQWxjF0.png"
 imageAlt: "Voorraadlijst in een Excel-spreadsheet op een laptop"

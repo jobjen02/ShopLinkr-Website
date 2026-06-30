@@ -5,6 +5,7 @@ publishedAt: "2023-10-25T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
 imageAlt: "Inventory management with bol connected alongside other sales channels"
 translationKey: "bol-com-voorraad-synchronisatie"
+category: "Bol"
 ---
 
 <p>If you sell on bol and on your own webshop or another platform, you share the same physical stock across multiple channels. The risk is in the gap: when an item sells on bol while Shopify still shows it as available, you sell something you no longer have. The result is a cancellation and a disappointed customer. Stock synchronization fixes this by keeping your numbers the same everywhere.</p>

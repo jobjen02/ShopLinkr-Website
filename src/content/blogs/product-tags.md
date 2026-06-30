@@ -4,6 +4,7 @@ excerpt: "Tags geven je producten een extra laag organisatie naast je categorieÃ
 publishedAt: "2023-05-30T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "Producttags toewijzen aan een product in ShopLinkr"
+category: "Voorraad"
 ---
 
 <p><strong>Naarmate je assortiment groeit, wordt het lastiger om de juiste producten terug te vinden. Met product tags hang je vrije labels aan je producten, los van je vaste categorieÃ«n, zodat je op elk kenmerk dat voor jou telt kunt sorteren en filteren.</strong></p>

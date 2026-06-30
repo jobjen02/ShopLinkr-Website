@@ -4,6 +4,7 @@ excerpt: "Koppel je eigen DPD contract aan ShopLinkr, maak verzendlabels met Ã©Ã
 publishedAt: "2023-08-21T00:00:00.000Z"
 image: "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png"
 imageAlt: "DPD koppelen aan ShopLinkr voor verzendlabels en track & trace"
+category: "Koppelingen"
 ---
 
 <p><strong>Met de DPD koppeling van ShopLinkr verzend je je bestellingen met je eigen DPD contract, zonder los te schakelen tussen systemen. Je maakt labels aan, drukt ze af en houdt je zendingen bij vanuit dezelfde plek waar je je orders en voorraad beheert.</strong></p>

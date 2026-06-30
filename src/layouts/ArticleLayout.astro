@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import AuthorBio from '../components/AuthorBio.astro';
 import type { Locale, RouteKey } from '../i18n/routes';
 
 interface Props {
@@ -17,6 +18,8 @@ interface Props {
     routeKey?: RouteKey;
     alternates?: { nl?: string; en?: string };
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+    publishedTime?: string;
+    authorName?: string;
 }
 
 const {
@@ -34,7 +37,11 @@ const {
     routeKey,
     alternates,
     jsonLd,
+    publishedTime,
+    authorName,
 } = Astro.props;
+
+const resolvedLocale = (locale ?? Astro.currentLocale ?? 'nl') as Locale;
 ---
 
 <BaseLayout
@@ -45,6 +52,8 @@ const {
     routeKey={routeKey}
     alternates={alternates}
     jsonLd={jsonLd}
+    ogType="article"
+    publishedTime={publishedTime}
 >
     <article class="pt-12 md:pt-16 pb-24 md:pb-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
@@ -88,6 +97,10 @@ const {
 
             <div class="prose-shoplinkr mt-12 max-w-3xl">
                 <slot />
+            </div>
+
+            <div class="max-w-3xl">
+                <AuthorBio name={authorName} locale={resolvedLocale} />
             </div>
         </div>
     </article>

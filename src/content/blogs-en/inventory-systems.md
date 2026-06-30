@@ -4,6 +4,8 @@ excerpt: "Periodic, perpetual or dropshipping: which inventory system fits your 
 publishedAt: "2023-10-12T00:00:00.000Z"
 image: "/images/blog/voorraadsystemen/ZPmW5kSvGlGlu5mL45xiLkecb6g.png"
 translationKey: "voorraadsystemen"
+category: "Inventory"
+imageAlt: "An inventory system showing real-time stock counts per product"
 ---
 
 <p>If you sell across more than one channel, the real question is not whether you track your stock but how. Count at a fixed moment, or follow along with every sale as it happens? That distinction decides whether you oversell, run out, or restock right on time. Here are the three systems you will run into, and when each one fits.</p>

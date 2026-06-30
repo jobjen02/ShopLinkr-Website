@@ -4,6 +4,7 @@ excerpt: "Want to connect Innosend to Shopify and manage orders and shipping lab
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-innosend-met-shopify/6XJEUYs0uQiwvAwsnmrOmaXwTs.png"
 translationKey: "hoe-koppel-ik-innosend-met-shopify"
+imageAlt: "Innosend connected to a Shopify webshop"
 ---
 
 <p>Want to connect Innosend to Shopify so you no longer have to juggle orders and shipping labels across separate screens? Shopify is a webshop platform and Innosend is a shipping tool. By connecting them, you process orders and labels from one place. Below you will learn how that connection works and how <strong>ShopLinkr</strong> lets you centralize your entire Shopify order workflow.</p>

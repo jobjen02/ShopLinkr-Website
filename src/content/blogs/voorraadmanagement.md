@@ -4,6 +4,7 @@ excerpt: "Voorraadmanagement is meer dan tellen: bestellen, opslaan en bijhouden
 publishedAt: "2023-09-25T00:00:00.000Z"
 image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
 imageAlt: "Voorraadmanagement in ShopLinkr met realtime voorraadniveaus per kanaal"
+category: "Voorraad"
 ---
 
 <p>Voorraadmanagement gaat over het bestellen, opslaan en bijhouden van je producten, zodat je altijd genoeg op de plank hebt om aan de vraag te voldoen zonder vast te zitten aan goederen die blijven liggen. Het verschil tussen die twee uitersten bepaalt hoeveel werkkapitaal er in je magazijn vastzit en hoe vaak je nee moet verkopen.</p>

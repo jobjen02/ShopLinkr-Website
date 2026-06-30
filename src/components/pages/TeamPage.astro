@@ -5,6 +5,7 @@ import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { getAuthor } from '../../utils/author';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
@@ -58,26 +59,26 @@ const jsonLd = [
         description: p.description,
         mainEntity: {
             '@type': 'Organization',
+            '@id': 'https://shoplinkr.com/#organization',
             name: 'ShopLinkr',
             url: 'https://shoplinkr.com',
             foundingDate: '2022',
-            founder: {
-                '@type': 'Person',
-                name: 'Job',
-            },
-            employee: realTeam.map((member) => ({
-                '@type': 'Person',
-                name: member.name,
-                jobTitle: member.role,
-                description: member.bio,
-                ...(member.photo && {
-                    image: `https://shoplinkr.com${member.photo}`,
-                }),
-                worksFor: {
-                    '@type': 'Organization',
-                    name: 'ShopLinkr',
-                },
-            })),
+            founder: { '@id': 'https://shoplinkr.com/#job-jenniskens' },
+            employee: realTeam.map((member) => {
+                const a = getAuthor(member.name);
+                return {
+                    '@type': 'Person',
+                    '@id': `https://shoplinkr.com/#${a.slug}`,
+                    name: member.name,
+                    jobTitle: member.role,
+                    description: member.bio,
+                    ...(member.photo && {
+                        image: `https://shoplinkr.com${member.photo}`,
+                    }),
+                    ...(a.linkedin && { url: a.linkedin, sameAs: [a.linkedin] }),
+                    worksFor: { '@id': 'https://shoplinkr.com/#organization' },
+                };
+            }),
         },
     },
 ];

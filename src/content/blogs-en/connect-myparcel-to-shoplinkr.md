@@ -5,6 +5,7 @@ publishedAt: "2023-03-31T00:00:00.000Z"
 image: "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png"
 imageAlt: "Creating a MyParcel shipping label from an order in ShopLinkr"
 translationKey: "myparcel-koppelen-aan-shoplinkr"
+category: "Integrations"
 ---
 
 <p><strong>With the MyParcel integration from ShopLinkr, you ship orders from a single screen. You create shipping labels without switching to the MyParcel portal, and the track &amp; trace code flows back automatically to the sales channel the order came from.</strong></p>

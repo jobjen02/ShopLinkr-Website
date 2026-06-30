@@ -10,6 +10,8 @@ interface Props {
     locale?: 'nl' | 'en';
     routeKey?: RouteKey;
     alternates?: { nl?: string; en?: string };
+    ogType?: 'website' | 'article';
+    publishedTime?: string;
 }
 
 const {
@@ -20,7 +22,15 @@ const {
     locale = 'nl',
     routeKey,
     alternates: altUrls,
+    ogType = 'website',
+    publishedTime,
 } = Astro.props;
+
+// Social crawlers (Facebook/LinkedIn/X) do not render SVG, so fall back to the
+// default OG image for any SVG hero. The width/height/type tags below are only
+// declared for that known 1200x630 default PNG, not for arbitrary hero images.
+const ogImage = image.endsWith('.svg') ? '/og-default.png' : image;
+const isDefaultOg = ogImage === '/og-default.png';
 
 const canonicalURL = canonical
     ? new URL(canonical, Astro.site)
@@ -57,22 +67,29 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
 <title>{title}</title>
 <meta name="description" content={description} />
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.site)} />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+<meta property="og:image" content={new URL(ogImage, Astro.site)} />
+{
+    isDefaultOg && (
+        <>
+            <meta property="og:image:type" content="image/png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+        </>
+    )
+}
 <meta property="og:image:alt" content={title} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:locale" content={ogLocale} />
 <meta property="og:site_name" content="ShopLinkr" />
+{ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={new URL(image, Astro.site)} />
+<meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 <meta name="twitter:image:alt" content={title} />
 
 {

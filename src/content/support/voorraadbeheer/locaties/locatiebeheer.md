@@ -1,6 +1,7 @@
 ---
 title: "Locatiebeheer"
 summary: "Maak locaties aan in je magazijn voor sneller picken en beter voorraadoverzicht."
+author: "Tommy van Kessel"
 category: "voorraadbeheer"
 categoryLabel: "Voorraadbeheer"
 subcategory: "locaties"

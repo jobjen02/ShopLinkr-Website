@@ -1,8 +1,10 @@
 ---
 title: "Alles wat je moet weten over voorraadbeheer in Excel"
 excerpt: "Voorraadbeheer in Excel: hoe je een werkend bestand opzet, welke formules je gebruikt en waar het misgaat zodra je over meerdere kanalen verkoopt."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/alles-wat-je-moet-weten-over-voorraadbeheer-in-excel/xPetkMNxhNucwbYD53Kn8BMNyE.png"
+imageAlt: "Voorraadbeheer bijgehouden in een Excel-spreadsheet"
 ---
 
 <p>Voorraadbeheer in Excel is voor veel startende webshops de logische eerste stap: het kost niets extra, je kent het programma al en je kunt je sheet precies inrichten zoals je wilt. Hieronder lees je hoe je een werkend voorraadbestand opzet, welke formules je tijd besparen en op welk punt Excel je gaat tegenwerken zodra je serieus begint te verkopen.</p>

@@ -4,6 +4,8 @@ excerpt: "A central overview of all your products, with stock, locations and tag
 publishedAt: "2024-05-06T00:00:00.000Z"
 image: "/images/blog/producten-beheren-op-een-plek/tWZExEyY1pAxJKa1CbTDA0rbU.png"
 translationKey: "producten-beheren-op-een-plek"
+category: "Inventory"
+imageAlt: "A webshop's product overview on one screen"
 ---
 
 <p>Do you work with multiple sales channels? Then you probably know the feeling: your products are scattered everywhere, and you quickly lose track of things. That is why, in ShopLinkr, we are building one central product catalog in which you can see all your items neatly lined up.</p>

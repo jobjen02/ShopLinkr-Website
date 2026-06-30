@@ -4,6 +4,7 @@ excerpt: "Koppel Sendcloud aan ShopLinkr en maak verzendlabels met één klik. T
 publishedAt: "2023-04-21T00:00:00.000Z"
 image: "/images/blog/sendcloud-koppelen-aan-shoplinkr/Slt1nu6TvSVLMWJ0b7CuNixcQk.png"
 imageAlt: "Sendcloud koppelen aan ShopLinkr voor verzendlabels en track & trace"
+category: "Koppelingen"
 ---
 
 <p><strong>Met de Sendcloud koppeling van ShopLinkr maak je verzendlabels met één klik, gaat de track &amp; trace automatisch terug naar je verkoopkanaal en blijft je voorraad in sync. Alles vanuit één centraal platform.</strong></p>

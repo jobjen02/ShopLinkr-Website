@@ -1,6 +1,7 @@
 ---
 title: "Eenvoudig voorraadbeheer in Excel: tips en tricks"
 excerpt: "Praktische tips voor voorraadbeheer in Excel met formules, voorwaardelijke opmaak en draaitabellen, plus het moment waarop je beter kunt overstappen."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/eenvoudig-voorraadbeheer-in-excel-tips-en-tricks/Wy1jG1OuSctTpS6YWPeLVAMA04.png"
 imageAlt: "Voorraadbeheer in Excel met een overzichtelijke spreadsheet vol producten en aantallen"

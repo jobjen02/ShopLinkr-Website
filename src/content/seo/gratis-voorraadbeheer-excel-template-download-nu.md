@@ -1,6 +1,7 @@
 ---
 title: "Gratis voorraadbeheer Excel template: download nu"
 excerpt: "Zo bouw je een gratis voorraadbeheer Excel template, met de juiste kolommen en formules. Plus wanneer je beter overstapt op realtime voorraadsoftware."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/gratis-voorraadbeheer-excel-template-download-nu/1YDhMbKEY49nqNcy971QswpCmE.png"
 imageAlt: "Spreadsheet met voorraadbeheer in Excel op een laptop"

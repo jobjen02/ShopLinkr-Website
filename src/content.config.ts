@@ -9,7 +9,7 @@ const blogs = defineCollection({
     schema: z.object({
         title: z.string(),
         excerpt: z.string(),
-        author: z.string().default('ShopLinkr'),
+        author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
@@ -29,7 +29,7 @@ const seoPages = defineCollection({
     schema: z.object({
         title: z.string(),
         excerpt: z.string(),
-        author: z.string().default('ShopLinkr'),
+        author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
@@ -45,6 +45,7 @@ const supportArticles = defineCollection({
     schema: z.object({
         title: z.string(),
         summary: z.string(),
+        author: z.string().optional(),
         category: z.string(),
         categoryLabel: z.string(),
         subcategory: z.string().optional(),
@@ -91,7 +92,7 @@ const blogsEn = defineCollection({
     schema: z.object({
         title: z.string(),
         excerpt: z.string(),
-        author: z.string().default('ShopLinkr'),
+        author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
@@ -108,7 +109,7 @@ const seoPagesEn = defineCollection({
     schema: z.object({
         title: z.string(),
         excerpt: z.string(),
-        author: z.string().default('ShopLinkr'),
+        author: z.string().default('Job Jenniskens'),
         publishedAt: z.coerce.date(),
         image: z.string().optional(),
         imageAlt: z.string().optional(),
@@ -125,6 +126,7 @@ const supportArticlesEn = defineCollection({
     schema: z.object({
         title: z.string(),
         summary: z.string(),
+        author: z.string().optional(),
         category: z.string(),
         categoryLabel: z.string(),
         subcategory: z.string().optional(),

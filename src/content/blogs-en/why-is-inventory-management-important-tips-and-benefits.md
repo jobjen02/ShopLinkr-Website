@@ -5,6 +5,7 @@ publishedAt: "2023-06-26T00:00:00.000Z"
 image: "/images/blog/waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen/Z1AL5Fr0i2b0gFFVYf2qfopxSw.png"
 imageAlt: "Warehouse shelving with stock connected to online sales channels"
 translationKey: "waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen"
+category: "Inventory"
 ---
 
 <p><strong>Inventory management sounds dull until it goes wrong: a product shows as "in stock" online while the shelf is empty, or your warehouse is full of items that have not sold in months. Both cost money. Good inventory management comes down to one thing: knowing exactly what you have, where it is, and when to reorder.</strong></p>

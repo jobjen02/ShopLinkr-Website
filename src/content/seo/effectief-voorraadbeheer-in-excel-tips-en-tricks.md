@@ -1,6 +1,7 @@
 ---
 title: "Effectief voorraadbeheer in Excel: tips en tricks"
 excerpt: "Voorraadbeheer in Excel opzetten? Met deze praktische tips, formules en draaitabellen houd je je voorraad scherp, plus wanneer je beter overstapt."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/effectief-voorraadbeheer-in-excel-tips-en-tricks/4xrMr9143TtH5sELR71fwgSw40.png"
 imageAlt: "Voorraadbeheer bijhouden in een Excel-spreadsheet"

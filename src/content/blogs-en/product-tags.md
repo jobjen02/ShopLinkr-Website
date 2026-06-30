@@ -5,6 +5,7 @@ publishedAt: "2023-05-30T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "Assigning product tags to a product in ShopLinkr"
 translationKey: "product-tags"
+category: "Inventory"
 ---
 
 <p><strong>As your assortment grows, finding the right products gets harder. With product tags you attach free-form labels to your products, separate from your fixed categories, so you can sort and filter on any characteristic that matters to you.</strong></p>

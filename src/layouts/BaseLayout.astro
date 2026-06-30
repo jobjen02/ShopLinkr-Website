@@ -17,6 +17,8 @@ interface Props {
     routeKey?: RouteKey;
     alternates?: { nl?: string; en?: string };
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+    ogType?: 'website' | 'article';
+    publishedTime?: string;
 }
 
 const {
@@ -27,6 +29,8 @@ const {
     routeKey,
     alternates,
     jsonLd,
+    ogType,
+    publishedTime,
 } = Astro.props;
 
 // Locale is derived from the URL (NL at root, EN under /en/) so pages don't
@@ -37,15 +41,29 @@ const t = useTranslations(locale);
 const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': 'https://shoplinkr.com/#organization',
     name: 'ShopLinkr',
     url: 'https://shoplinkr.com',
     logo: 'https://shoplinkr.com/logo/logo-charcoal.svg',
     description: t.footer.description,
     email: 'contact@shoplinkr.com',
     telephone: '+31649781212',
+    vatID: 'NL004469462B39',
+    identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'KVK',
+        value: '87745046',
+    },
     address: {
         '@type': 'PostalAddress',
+        addressLocality: 'Meerlo',
         addressCountry: 'NL',
+    },
+    aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.6',
+        bestRating: '5',
+        ratingCount: '18',
     },
     sameAs: [
         'https://www.linkedin.com/company/shoplinkr',
@@ -57,17 +75,11 @@ const organizationSchema = {
 const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': 'https://shoplinkr.com/#website',
     name: 'ShopLinkr',
     url: 'https://shoplinkr.com',
     inLanguage: localeMeta[locale].bcp47,
-    potentialAction: {
-        '@type': 'SearchAction',
-        target: {
-            '@type': 'EntryPoint',
-            urlTemplate: 'https://shoplinkr.com/support?q={search_term_string}',
-        },
-        'query-input': 'required name=search_term_string',
-    },
+    publisher: { '@id': 'https://shoplinkr.com/#organization' },
 };
 ---
 
@@ -95,6 +107,8 @@ const websiteSchema = {
             locale={locale}
             routeKey={routeKey}
             alternates={alternates}
+            ogType={ogType}
+            publishedTime={publishedTime}
         />
         <JsonLd schema={organizationSchema} />
         <JsonLd schema={websiteSchema} />

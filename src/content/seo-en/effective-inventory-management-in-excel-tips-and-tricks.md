@@ -1,6 +1,7 @@
 ---
 title: "Effective inventory management in Excel: tips and tricks"
 excerpt: "Setting up inventory management in Excel? These practical tips, formulas, and pivot tables keep your stock sharp, plus when it's time to move on."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/effectief-voorraadbeheer-in-excel-tips-en-tricks/4xrMr9143TtH5sELR71fwgSw40.png"
 imageAlt: "Tracking inventory in an Excel spreadsheet"

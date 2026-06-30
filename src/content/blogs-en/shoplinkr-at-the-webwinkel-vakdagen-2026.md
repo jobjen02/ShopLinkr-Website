@@ -4,6 +4,8 @@ excerpt: "We're taking part this year! ShopLinkr will be at the Webwinkel Vakdag
 publishedAt: "2026-01-29T00:00:00.000Z"
 image: "/images/blog/shoplinkr-op-de-webwinkel-vakdagen-2026/HqjRDnSPII6EVD1GR4Ldwul0Q.jpg"
 translationKey: "shoplinkr-op-de-webwinkel-vakdagen-2026"
+category: "General"
+imageAlt: "ShopLinkr at the Webwinkel Vakdagen 2026 trade fair"
 ---
 
 <p><strong>Meet ShopLinkr at the Webwinkel Vakdagen: 25 &amp; 26 March in Utrecht.</strong></p>

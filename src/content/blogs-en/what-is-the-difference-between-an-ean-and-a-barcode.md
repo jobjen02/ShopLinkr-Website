@@ -4,6 +4,8 @@ excerpt: "Every EAN is a barcode, but not every barcode is an EAN. Here is how t
 publishedAt: "2024-02-19T00:00:00.000Z"
 image: "/images/blog/wat-is-het-verschil-tussen-een-ean-en-een-barcode/cS8gKqxjsgvRfceqmPVXQEmFk.svg"
 translationKey: "wat-is-het-verschil-tussen-een-ean-en-een-barcode"
+category: "Inventory"
+imageAlt: "An EAN barcode on product packaging"
 ---
 
 <p>The terms "barcode" and "EAN" often get used interchangeably, but they are not the same thing. Understanding the difference helps you link your <a href="/en/features/products">products</a> cleanly and avoid scanning errors in your warehouse.</p>

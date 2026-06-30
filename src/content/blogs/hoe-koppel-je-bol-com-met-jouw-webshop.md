@@ -4,6 +4,7 @@ excerpt: "Verkoop je op bol én via je eigen webshop? Zo koppel je beide kanalen
 publishedAt: "2024-01-22T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bestellingen en voorraad van bol en je webshop samen in ShopLinkr"
+category: "Koppelingen"
 ---
 
 <p>Verkoop je via bol én via je eigen webshop op Shopify of WooCommerce? Dan beheer je al snel twee losse systemen met elk hun eigen voorraad en bestellingen. Door je kanalen aan elkaar te koppelen werk je vanuit één overzicht, en dat scheelt fouten en handwerk.</p>

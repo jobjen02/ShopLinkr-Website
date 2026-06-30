@@ -1,6 +1,7 @@
 ---
 title: "Free inventory management in Excel: here's how"
 excerpt: "Free inventory management in Excel: build a working sheet step by step, use the formulas that matter, and know when it's time to switch to a real system."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/gratis-voorraadbeheer-in-excel-zo-doe-je-dat/5kHlNh7V4iPEedbSXiIwpeOIR8.png"
 translationKey: "gratis-voorraadbeheer-in-excel-zo-doe-je-dat"

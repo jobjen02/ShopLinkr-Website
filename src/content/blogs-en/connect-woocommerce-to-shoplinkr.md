@@ -5,6 +5,7 @@ publishedAt: "2023-05-01T00:00:00.000Z"
 image: "/images/blog/woocommerce-koppelen-aan-shoplinkr/2FVqp9F6P8qrmqhOp6PAtXTFu2Y.png"
 imageAlt: "WooCommerce store connected to the ShopLinkr dashboard for orders and stock"
 translationKey: "woocommerce-koppelen-aan-shoplinkr"
+category: "Integrations"
 ---
 
 <p><strong>With ShopLinkr's WooCommerce integration you process orders, print shipping labels and keep your stock in sync across all your sales channels. All from one central platform.</strong></p>

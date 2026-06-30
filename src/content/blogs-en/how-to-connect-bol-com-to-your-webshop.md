@@ -5,6 +5,7 @@ publishedAt: "2024-01-22T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Orders and stock from bol and your webshop together in ShopLinkr"
 translationKey: "hoe-koppel-je-bol-com-met-jouw-webshop"
+category: "Integrations"
 ---
 
 <p>Selling through bol and through your own webshop on Shopify or WooCommerce? Then you're juggling two separate systems, each with its own stock and orders. By connecting your channels you work from a single overview, which cuts errors and manual work.</p>

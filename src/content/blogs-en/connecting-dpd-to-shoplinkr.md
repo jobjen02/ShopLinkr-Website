@@ -5,6 +5,7 @@ publishedAt: "2023-08-21T00:00:00.000Z"
 image: "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png"
 imageAlt: "Connecting DPD to ShopLinkr for shipping labels and track & trace"
 translationKey: "dpd-koppelen-aan-shoplinkr"
+category: "Integrations"
 ---
 
 <p><strong>With the DPD integration in ShopLinkr you ship your orders using your own DPD contract, without switching between systems. You create labels, print them and track shipments from the same place where you manage your orders and inventory.</strong></p>

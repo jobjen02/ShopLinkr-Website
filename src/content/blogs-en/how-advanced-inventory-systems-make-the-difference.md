@@ -5,6 +5,7 @@ publishedAt: "2023-12-20T00:00:00.000Z"
 image: "/images/blog/hoe-geavanceerde-voorraadsystemen-het-verschil-maken/cAZ7fEzipIbJtiEq1ZODQAM9UHc.webp"
 imageAlt: "Warehouse worker scanning a product while picking an order"
 translationKey: "hoe-geavanceerde-voorraadsystemen-het-verschil-maken"
+category: "Inventory"
 ---
 
 <p>If you sell across multiple channels, stock is your biggest risk. Sell the last unit on bol while Shopify still shows it as available, and you end up overselling and canceling an order. A solid inventory system keeps all your channels in sync and keeps your warehouse moving.</p>

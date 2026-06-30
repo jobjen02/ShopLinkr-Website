@@ -1,6 +1,7 @@
 ---
 title: "Inventory management with Excel: a complete guide"
 excerpt: "How to set up inventory management in Excel: the right columns, smart formulas, and a free template. Plus when it pays to switch to software."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/voorraadbeheer-met-excel-een-complete-gids/BtA4mAWgXjgoMjQo4P6c5T2PaM.png"
 imageAlt: "Inventory list in an Excel spreadsheet on a laptop"

@@ -1,9 +1,11 @@
 ---
 title: "How to track inventory in Excel: tips and tricks"
 excerpt: "Tracking inventory in Excel? Learn the right column setup, time-saving formulas, and smart tricks to keep your stock clear and avoid overselling."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/hoe-voorraad-bijhouden-in-excel-tips-en-tricks/Xq0eC64USWLzKNmaavdG91IJyRc.png"
 translationKey: "hoe-voorraad-bijhouden-in-excel-tips-en-tricks"
+imageAlt: "An Excel spreadsheet with stock counts and formulas"
 ---
 
 <p>For many small webshops and new sellers, tracking inventory in Excel is the obvious first step: it is free, flexible, and probably already on your computer. With a solid column structure, a few formulas, and a low-stock alert, you can keep your inventory firmly under control. Here is how to set it up and which tricks make the real difference.</p>

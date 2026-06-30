@@ -66,14 +66,7 @@ const jsonLd = [
             name: 'ShopLinkr',
             url: 'https://shoplinkr.com',
         },
-        publisher: {
-            '@type': 'Organization',
-            name: 'ShopLinkr',
-            logo: {
-                '@type': 'ImageObject',
-                url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
-            },
-        },
+        publisher: { '@id': 'https://shoplinkr.com/#organization' },
         image: `https://shoplinkr.com${story.logo}`,
     },
 ];

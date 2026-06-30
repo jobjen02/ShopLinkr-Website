@@ -1,6 +1,7 @@
 ---
 title: "Easy inventory management in Excel: tips and tricks"
 excerpt: "Practical tips for inventory management in Excel using formulas, conditional formatting, and pivot tables, plus when it's time to upgrade your setup."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/eenvoudig-voorraadbeheer-in-excel-tips-en-tricks/Wy1jG1OuSctTpS6YWPeLVAMA04.png"
 translationKey: "eenvoudig-voorraadbeheer-in-excel-tips-en-tricks"

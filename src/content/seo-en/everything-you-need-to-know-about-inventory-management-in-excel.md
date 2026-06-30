@@ -1,9 +1,11 @@
 ---
 title: "Everything you need to know about inventory management in Excel"
 excerpt: "Inventory management in Excel: how to set up a working file, which formulas to use, and where it breaks down once you sell across multiple channels."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/alles-wat-je-moet-weten-over-voorraadbeheer-in-excel/xPetkMNxhNucwbYD53Kn8BMNyE.png"
 translationKey: "alles-wat-je-moet-weten-over-voorraadbeheer-in-excel"
+imageAlt: "Inventory tracked in an Excel spreadsheet"
 ---
 
 <p>Inventory management in Excel is the logical first step for many new webshops: it costs nothing extra, you already know the program, and you can set up your sheet exactly how you want. Below you'll learn how to build a working inventory file, which formulas save you time, and the point at which Excel starts working against you once you sell seriously.</p>

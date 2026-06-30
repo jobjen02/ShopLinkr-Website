@@ -3,6 +3,8 @@ title: "Het belang van goed voorraadbeheer voor jouw webshop"
 excerpt: "Verkoop je op meerdere kanalen? Dan bepaalt je voorraadbeheer of je niet misgrijpt of oververkoopt. Zo houd je je voorraad strak en je magazijn op orde."
 publishedAt: "2024-03-13T00:00:00.000Z"
 image: "/images/blog/het-belang-van-goed-voorraadbeheer-voor-jouw-webshop/zqZx6bfhycOTBHiJPMvBoyB67I.jpg"
+category: "Voorraad"
+imageAlt: "Webshopeigenaar die de voorraad in het magazijn controleert"
 ---
 
 <p>Een klant vindt precies wat hij zoekt, klikt op bestellen, en het blijkt uitverkocht. Of erger: je verkoopt op bol én Shopify hetzelfde product, en je verkoopt er eentje te veel. Voorraadbeheer voelt als een detail, tot het misgaat. Dan kost het je een verkoop, een review of een annulering.</p>

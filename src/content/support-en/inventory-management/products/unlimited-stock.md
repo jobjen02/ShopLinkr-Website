@@ -1,6 +1,7 @@
 ---
 title: "Unlimited stock"
 summary: "Useful for digital products or products that are always in stock."
+author: "Tommy van Kessel"
 category: "inventory-management"
 categoryLabel: "Inventory management"
 subcategory: "products"

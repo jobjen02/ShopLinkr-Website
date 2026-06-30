@@ -5,6 +5,7 @@ import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
 import { localizeHref, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { authorSchema } from '../../utils/author';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
@@ -21,12 +22,10 @@ const jsonLd = [
         description: p.jsonLdDescription,
         mainEntity: {
             '@type': 'Organization',
+            '@id': 'https://shoplinkr.com/#organization',
             name: 'ShopLinkr',
             foundingDate: '2022',
-            founder: {
-                '@type': 'Person',
-                name: 'Job',
-            },
+            founder: authorSchema('Job Jenniskens', locale),
         },
     },
 ];

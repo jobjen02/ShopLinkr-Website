@@ -4,6 +4,7 @@ excerpt: "Goed voorraadbeheer voorkomt misgrijpen, overstock en uren handwerk. L
 publishedAt: "2023-06-26T00:00:00.000Z"
 image: "/images/blog/waarom-is-voorraadbeheer-belangrijk-tips-en-voordelen/Z1AL5Fr0i2b0gFFVYf2qfopxSw.png"
 imageAlt: "Magazijnstellingen met voorraad, gekoppeld aan online verkoopkanalen"
+category: "Voorraad"
 ---
 
 <p><strong>Voorraadbeheer klinkt saai tot het misgaat: een product staat online als "op voorraad" terwijl het schap leeg is, of je magazijn ligt vol met spullen die maandenlang niet verkopen. Beide kosten geld. Goed voorraadbeheer draait om één ding: precies weten wat je hebt, waar het ligt en wanneer je moet bijbestellen.</strong></p>

@@ -1,6 +1,7 @@
 ---
 title: "Voorraadbeheer met Excel: een complete gids"
 excerpt: "Zo zet je voorraadbeheer op in Excel: de juiste kolommen, slimme formules en een gratis template. Plus wanneer je beter overstapt naar software."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/voorraadbeheer-met-excel-een-complete-gids/BtA4mAWgXjgoMjQo4P6c5T2PaM.png"
 imageAlt: "Voorraadlijst in een Excel-spreadsheet op een laptop"

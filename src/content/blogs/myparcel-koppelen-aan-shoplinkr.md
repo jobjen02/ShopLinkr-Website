@@ -4,6 +4,7 @@ excerpt: "Koppel MyParcel aan ShopLinkr en maak verzendlabels met één klik aan
 publishedAt: "2023-03-31T00:00:00.000Z"
 image: "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png"
 imageAlt: "MyParcel verzendlabel aanmaken vanuit een bestelling in ShopLinkr"
+category: "Koppelingen"
 ---
 
 <p><strong>Met de MyParcel koppeling van ShopLinkr verstuur je bestellingen vanuit één scherm. Je maakt verzendlabels aan zonder over te schakelen naar het MyParcel portaal, en de track &amp; trace code gaat automatisch terug naar het verkoopkanaal waar de bestelling vandaan komt.</strong></p>

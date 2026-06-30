@@ -1,6 +1,7 @@
 ---
 title: "Location management"
 summary: "Set up locations in your warehouse for faster picking and a better stock overview."
+author: "Tommy van Kessel"
 category: "inventory-management"
 categoryLabel: "Inventory management"
 subcategory: "locations"

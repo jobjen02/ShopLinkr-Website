@@ -1,6 +1,7 @@
 ---
 title: "Effective inventory management with Excel"
 excerpt: "How to set up inventory management in Excel: the columns, formulas, and alerts that matter, and when to switch to dedicated inventory software instead."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/effectief-voorraadbeheer-met-excel/0BsQ5cmeZpg022G6ziNTWMS6jzI.png"
 imageAlt: "Tracking inventory in an Excel spreadsheet"

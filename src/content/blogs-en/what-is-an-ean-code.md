@@ -5,6 +5,7 @@ publishedAt: "2023-11-24T00:00:00.000Z"
 image: "/images/blog/wat-is-een-ean-code/oELKYx92dZ9AvSenBT3Re6U8Y8U.png"
 imageAlt: "Barcode showing the thirteen digits of an EAN code"
 translationKey: "wat-is-een-ean-code"
+category: "Inventory"
 ---
 
 <p>The EAN code is the barcode you see on almost every product. It makes a product recognizable worldwide, from the checkout to your warehouse. Below you will learn how an EAN code is built, how to request it and why you cannot make one up yourself.</p>

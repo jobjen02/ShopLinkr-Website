@@ -5,6 +5,7 @@ publishedAt: "2023-04-21T00:00:00.000Z"
 image: "/images/blog/sendcloud-koppelen-aan-shoplinkr/Slt1nu6TvSVLMWJ0b7CuNixcQk.png"
 imageAlt: "Connecting Sendcloud to ShopLinkr for shipping labels and track & trace"
 translationKey: "sendcloud-koppelen-aan-shoplinkr"
+category: "Integrations"
 ---
 
 <p><strong>With ShopLinkr's Sendcloud integration you create shipping labels with one click, the track &amp; trace is sent back to your sales channel automatically and your stock stays in sync. All from one central platform.</strong></p>

@@ -3,6 +3,8 @@ title: "Wat is verzenden via bol (VVB) precies?"
 excerpt: "Verzenden via bol (VVB) laat je bestellingen versturen via het netwerk van bol, terwijl je zelf je voorraad beheert en je producten inpakt. Zo werkt het."
 publishedAt: "2024-02-05T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
+category: "Verzenden"
+imageAlt: "Pakket klaar voor verzending via bol (VVB)"
 ---
 
 <p>Verzenden via bol (VVB) is een leveringsmethode waarbij je producten zelf opslaat en inpakt, maar de verzending via het netwerk van bol laat lopen. Het is het alternatief voor Logistiek via bol (LVB), waarbij bol ook je voorraad beheert. Bij VVB houd je dat zelf in handen.</p>

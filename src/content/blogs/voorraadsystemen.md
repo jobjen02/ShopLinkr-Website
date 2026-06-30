@@ -3,6 +3,8 @@ title: "Voorraadsystemen"
 excerpt: "Periodiek, perpetueel of dropshipping: welk type voorraadsysteem past bij jouw webshop? We leggen de verschillen uit en wat realtime sync je oplevert."
 publishedAt: "2023-10-12T00:00:00.000Z"
 image: "/images/blog/voorraadsystemen/ZPmW5kSvGlGlu5mL45xiLkecb6g.png"
+category: "Voorraad"
+imageAlt: "Voorraadsysteem met realtime aantallen per product"
 ---
 
 <p>Verkoop je op meerdere kanalen, dan is de grote vraag niet óf je je voorraad bijhoudt, maar hoe. Op een vast moment tellen, of continu meelopen met elke verkoop? Dat onderscheid bepaalt of je oververkoopt, misgrijpt of precies op tijd inkoopt. Hieronder de drie systemen die je tegenkomt, en wanneer welke past.</p>

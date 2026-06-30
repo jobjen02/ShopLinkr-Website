@@ -1,6 +1,7 @@
 ---
 title: "Gratis voorraadbeheer in Excel: zo doe je dat"
 excerpt: "Gratis voorraadbeheer in Excel: stap voor stap een werkblad opzetten, slimme formules gebruiken en weten wanneer je beter overstapt naar een echt systeem."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/gratis-voorraadbeheer-in-excel-zo-doe-je-dat/5kHlNh7V4iPEedbSXiIwpeOIR8.png"
 imageAlt: "Voorraadbeheer in een Excel-werkblad op een laptop"

@@ -1,6 +1,7 @@
 ---
 title: "Voorraadbronnen"
 summary: "Verkoop meerdere varianten vanuit een centrale voorraad in gewicht, lengte of volume."
+author: "Tommy van Kessel"
 category: "voorraadbeheer"
 categoryLabel: "Voorraadbeheer"
 subcategory: "producten"

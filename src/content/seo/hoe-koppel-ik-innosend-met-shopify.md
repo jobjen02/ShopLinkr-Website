@@ -3,6 +3,7 @@ title: "Hoe koppel ik Innosend met Shopify?"
 excerpt: "Innosend met Shopify koppelen om bestellingen en verzendlabels op één plek te beheren? Zo werkt het en zo verwerk je je Shopify-orders nog efficiënter."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-innosend-met-shopify/6XJEUYs0uQiwvAwsnmrOmaXwTs.png"
+imageAlt: "Innosend gekoppeld aan een Shopify-webshop"
 ---
 
 <p>Wil je Innosend koppelen met Shopify, zodat je je bestellingen en verzendlabels niet meer in losse schermen hoeft te beheren? Shopify is een webshopplatform en Innosend een verzendtool. Door ze te koppelen verwerk je orders en labels vanuit één omgeving. Hieronder lees je hoe zo'n koppeling werkt en hoe je met <strong>ShopLinkr</strong> je volledige orderverwerking voor Shopify centraliseert.</p>

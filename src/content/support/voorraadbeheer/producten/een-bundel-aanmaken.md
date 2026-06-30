@@ -1,6 +1,7 @@
 ---
 title: "Een bundel aanmaken"
 summary: "Combineer meerdere producten tot een bundel en laat ShopLinkr de voorraad automatisch berekenen."
+author: "Tommy van Kessel"
 category: "voorraadbeheer"
 categoryLabel: "Voorraadbeheer"
 subcategory: "producten"

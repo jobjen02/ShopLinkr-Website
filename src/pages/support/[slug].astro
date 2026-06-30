@@ -6,6 +6,7 @@ import {
     supportCategoriesBySlug,
     findSubcategoryBySlug,
 } from '../../data/supportCategories';
+import { authorSchema } from '../../utils/author';
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const articles = await getCollection('supportArticles');
@@ -88,19 +89,8 @@ const articleSchema = {
         '@id': canonicalUrl,
     },
     articleSection: article.data.categoryLabel,
-    author: {
-        '@type': 'Organization',
-        name: 'ShopLinkr',
-        url: 'https://shoplinkr.com',
-    },
-    publisher: {
-        '@type': 'Organization',
-        name: 'ShopLinkr',
-        logo: {
-            '@type': 'ImageObject',
-            url: 'https://shoplinkr.com/logo/logo-charcoal.svg',
-        },
-    },
+    author: authorSchema(article.data.author, 'nl'),
+    publisher: { '@id': 'https://shoplinkr.com/#organization' },
 };
 
 const breadcrumbItems = [

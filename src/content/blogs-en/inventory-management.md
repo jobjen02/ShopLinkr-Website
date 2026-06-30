@@ -5,6 +5,7 @@ publishedAt: "2023-09-25T00:00:00.000Z"
 image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
 imageAlt: "Inventory management in ShopLinkr with real-time stock levels per channel"
 translationKey: "voorraadmanagement"
+category: "Inventory"
 ---
 
 <p>Inventory management is about ordering, storing and tracking your products so you always have enough on the shelf to meet demand without getting stuck with goods that just sit there. The gap between those two extremes decides how much working capital is tied up in your warehouse and how often you have to tell a customer something is sold out.</p>

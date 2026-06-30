@@ -3,6 +3,8 @@ title: "ShopLinkr op de Webwinkel Vakdagen 2026! 🧡"
 excerpt: "We zijn erbij dit jaar! We staan met ShopLinkr op de Webwinkel Vakdagen in de Jaarbeurs in Utrecht, zien we je daar?"
 publishedAt: "2026-01-29T00:00:00.000Z"
 image: "/images/blog/shoplinkr-op-de-webwinkel-vakdagen-2026/HqjRDnSPII6EVD1GR4Ldwul0Q.jpg"
+category: "Algemeen"
+imageAlt: "ShopLinkr op de Webwinkel Vakdagen 2026"
 ---
 
 <p><strong>Ontmoet ShopLinkr op de Webwinkel Vakdagen: 25 &amp; 26 maart in Utrecht.</strong></p>

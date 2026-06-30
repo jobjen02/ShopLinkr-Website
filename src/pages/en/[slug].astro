@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import SeoArticlePage from '../../components/pages/SeoArticlePage.astro';
 import { routes } from '../../i18n/routes';
+import { authorSchema } from '../../utils/author';
 
 export async function getStaticPaths() {
     const pages = await getCollection('seoPagesEn');
@@ -48,12 +49,8 @@ const articleSchema = {
     dateModified: page.data.publishedAt.toISOString(),
     inLanguage: 'en-US',
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
-    author: { '@type': 'Organization', name: page.data.author || 'ShopLinkr', url: 'https://shoplinkr.com' },
-    publisher: {
-        '@type': 'Organization',
-        name: 'ShopLinkr',
-        logo: { '@type': 'ImageObject', url: 'https://shoplinkr.com/logo/logo-charcoal.svg' },
-    },
+    author: authorSchema(page.data.author, 'en'),
+    publisher: { '@id': 'https://shoplinkr.com/#organization' },
     ...(page.data.image && { image: `https://shoplinkr.com${page.data.image}` }),
     ...(page.data.category && { articleSection: page.data.category }),
 };

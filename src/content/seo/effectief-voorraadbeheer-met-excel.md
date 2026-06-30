@@ -1,6 +1,7 @@
 ---
 title: "Effectief voorraadbeheer met Excel"
 excerpt: "Zo zet je voorraadbeheer met Excel goed op: kolommen, formules en automatische signalen. Plus wanneer je beter naar voorraadbeheersoftware overstapt."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/effectief-voorraadbeheer-met-excel/0BsQ5cmeZpg022G6ziNTWMS6jzI.png"
 imageAlt: "Voorraadbeheer bijhouden in een Excel-spreadsheet"

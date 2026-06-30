@@ -5,6 +5,7 @@ publishedAt: "2022-12-21T00:00:00.000Z"
 image: "/images/blog/shopify-koppelen-aan-shoplinkr/SNMrUjZnxSfQb0OfE3pgIZ8XRLM.png"
 imageAlt: "Shopify integration image"
 translationKey: "shopify-koppelen-aan-shoplinkr"
+category: "Integrations"
 ---
 
 <p><strong>With ShopLinkr's Shopify integration you process orders, print shipping labels and keep your stock in sync across all your sales channels. All from one central platform.</strong></p>

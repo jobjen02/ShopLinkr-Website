@@ -4,6 +4,7 @@ excerpt: "Verkoop je op bol, Shopify of WooCommerce? Lees hoe realtime voorraads
 publishedAt: "2023-12-20T00:00:00.000Z"
 image: "/images/blog/hoe-geavanceerde-voorraadsystemen-het-verschil-maken/cAZ7fEzipIbJtiEq1ZODQAM9UHc.webp"
 imageAlt: "Magazijnmedewerker scant een product tijdens het picken van een bestelling"
+category: "Voorraad"
 ---
 
 <p>Verkoop je op meerdere kanalen, dan is voorraad je grootste risico. Eén verkochte voorraad op bol terwijl Shopify nog op voorraad staat, en je hebt een misgreep met een geannuleerde bestelling tot gevolg. Een goed voorraadsysteem houdt al je kanalen synchroon en zorgt dat je magazijn soepel doorloopt.</p>

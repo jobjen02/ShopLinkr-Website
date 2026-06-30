@@ -1,6 +1,7 @@
 ---
 title: "Fictieve voorraad"
 summary: "Verberg je werkelijke voorraad voor concurrenten door een fictieve voorraad in te stellen."
+author: "Tommy van Kessel"
 category: "voorraadbeheer"
 categoryLabel: "Voorraadbeheer"
 subcategory: "producten"

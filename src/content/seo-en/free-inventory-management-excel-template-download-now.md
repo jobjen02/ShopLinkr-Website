@@ -1,6 +1,7 @@
 ---
 title: "Free inventory management Excel template: download now"
 excerpt: "Build a free inventory management Excel template with the right columns and formulas, and learn when it's time to switch to realtime inventory software."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/gratis-voorraadbeheer-excel-template-download-nu/1YDhMbKEY49nqNcy971QswpCmE.png"
 imageAlt: "Spreadsheet showing inventory management in Excel on a laptop"

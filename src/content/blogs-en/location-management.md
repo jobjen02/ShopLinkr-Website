@@ -4,6 +4,8 @@ excerpt: "With location management in ShopLinkr you know exactly what you have w
 publishedAt: "2024-01-29T00:00:00.000Z"
 image: "/images/blog/locatiebeheer/6jCIG6yk1PUXNAkFP9A81dIop8.jpg"
 translationKey: "locatiebeheer"
+category: "Inventory"
+imageAlt: "Warehouse shelving with labelled stock locations"
 ---
 
 <p>Once your stock is spread across several spots in your warehouse, finding things eats up time. With location management in ShopLinkr you link products to fixed spots, so you always know where something is and what your <a href="/en/features/inventory">inventory</a> is worth.</p>

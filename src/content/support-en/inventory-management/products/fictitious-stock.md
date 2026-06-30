@@ -1,6 +1,7 @@
 ---
 title: "Fictitious stock"
 summary: "Hide your real stock from competitors by setting a fictitious stock level."
+author: "Tommy van Kessel"
 category: "inventory-management"
 categoryLabel: "Inventory management"
 subcategory: "products"

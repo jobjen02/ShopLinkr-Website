@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SupportHero from '../support/SupportHero.astro';
 import { type Locale, localizedPath, supportCategoriesBase } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import AuthorBio from '../AuthorBio.astro';
 
 type BreadcrumbItem = { href: string; label: string };
 type RelatedArticle = {
@@ -87,6 +88,8 @@ const categoriesBase = supportCategoriesBase(locale);
                 <p class="mt-12 text-[13px] text-steel dark:text-gravel">
                     {p.lastUpdated} <time datetime={article.data.lastUpdated.toISOString().slice(0, 10)}>{lastUpdatedFormatted}</time>
                 </p>
+
+                <AuthorBio name={article.data.author} locale={locale} />
 
                 <div class="mt-12 rounded-xl bg-chalk-light dark:bg-graphite p-6 md:p-7 border border-chalk-dark/60 dark:border-flint">
                     <div class="flex items-start gap-4">

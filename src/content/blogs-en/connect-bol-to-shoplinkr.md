@@ -5,6 +5,7 @@ publishedAt: "2022-12-14T00:00:00.000Z"
 image: "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png"
 imageAlt: "Bol integration image"
 translationKey: "bol-com-koppelen-aan-shoplinkr"
+category: "Integrations"
 ---
 
 <p><strong>With the bol integration from ShopLinkr you process bol orders, print shipping labels and keep your inventory in sync. Track &amp; trace details are sent back to bol automatically, so your customers know exactly where their parcel is.</strong></p>

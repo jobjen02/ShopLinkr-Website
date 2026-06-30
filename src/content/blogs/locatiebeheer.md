@@ -3,6 +3,8 @@ title: "Locatiebeheer"
 excerpt: "Met locatiebeheer in ShopLinkr weet je per locatie precies wat je waar hebt liggen, wat het waard is en waar je het tijdens het picken vandaan haalt."
 publishedAt: "2024-01-29T00:00:00.000Z"
 image: "/images/blog/locatiebeheer/6jCIG6yk1PUXNAkFP9A81dIop8.jpg"
+category: "Voorraad"
+imageAlt: "Magazijnstellingen met gelabelde voorraadlocaties"
 ---
 
 <p>Zodra je voorraad over meerdere plekken in je magazijn verspreid raakt, wordt zoeken een tijdrover. Met locatiebeheer in ShopLinkr koppel je producten aan vaste plekken, zodat je altijd weet waar iets ligt en wat je <a href="/functionaliteiten/voorraad">voorraad</a> waard is.</p>

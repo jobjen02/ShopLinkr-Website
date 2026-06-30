@@ -4,6 +4,7 @@ excerpt: "Een EAN-code is de unieke streepjescode op je product. Lees hoe hij is
 publishedAt: "2023-11-24T00:00:00.000Z"
 image: "/images/blog/wat-is-een-ean-code/oELKYx92dZ9AvSenBT3Re6U8Y8U.png"
 imageAlt: "Streepjescode met de dertien cijfers van een EAN-code"
+category: "Voorraad"
 ---
 
 <p>De EAN-code is de streepjescode die je op vrijwel elk product terugziet. Hij maakt een product wereldwijd herkenbaar, van de kassa tot je magazijn. Hieronder lees je hoe een EAN-code is opgebouwd, hoe je hem aanvraagt en waarom je hem niet zelf kunt verzinnen.</p>

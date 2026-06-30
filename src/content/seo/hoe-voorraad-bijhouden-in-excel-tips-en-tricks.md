@@ -1,8 +1,10 @@
 ---
 title: "Voorraad bijhouden in Excel: tips en tricks"
 excerpt: "Voorraad bijhouden in Excel? Leer de juiste kolomopzet, handige formules en slimme tricks om je voorraad overzichtelijk te houden en nee-verkopen te voorkomen."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/hoe-voorraad-bijhouden-in-excel-tips-en-tricks/Xq0eC64USWLzKNmaavdG91IJyRc.png"
+imageAlt: "Excel-spreadsheet met voorraadaantallen en formules"
 ---
 
 <p>Voorraad bijhouden in Excel is voor veel kleine webshops en starters de logische eerste stap: het is gratis, flexibel en je hebt het waarschijnlijk al op je computer staan. Met een goede kolomstructuur, een paar formules en een minimumvoorraad-melding houd je je voorraad prima onder controle. Hieronder lees je hoe je dat opzet en welke tricks het verschil maken.</p>

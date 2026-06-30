@@ -1,6 +1,7 @@
 ---
 title: "Onbeperkte voorraad"
 summary: "Handig voor digitale producten of producten die altijd op voorraad zijn."
+author: "Tommy van Kessel"
 category: "voorraadbeheer"
 categoryLabel: "Voorraadbeheer"
 subcategory: "producten"

@@ -1,6 +1,7 @@
 ---
 title: "Excel inventory management: everything you need to know"
 excerpt: "Setting up inventory management in Excel? Learn how to build a working stock list, which formulas you need, and when to switch to dedicated software."
+author: "Stijn Verhagen"
 publishedAt: "2024-05-18T00:00:00.000Z"
 image: "/images/blog/excel-voorraadbeheer-alles-wat-je-moet-weten/58m5d5UMmNOQQzYXW1R3kQWxjF0.png"
 imageAlt: "Inventory list in an Excel spreadsheet on a laptop"

@@ -1,6 +1,7 @@
 ---
 title: "Postpone an order"
 summary: "A handy feature that gives you a clearer overview of your open orders."
+author: "Tommy van Kessel"
 category: "order-processing"
 categoryLabel: "Order processing"
 subcategory: "orders"

@@ -4,6 +4,7 @@ excerpt: "Verkoop je op bol naast je webshop of andere kanalen? Zo houdt realtim
 publishedAt: "2023-10-25T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
 imageAlt: "Voorraadbeheer met bol gekoppeld naast andere verkoopkanalen"
+category: "Bol"
 ---
 
 <p>Verkoop je op bol én op een eigen webshop of ander platform, dan deel je dezelfde fysieke voorraad over meerdere kanalen. Het risico zit in het verschil: verkoopt een artikel op bol terwijl je Shopify het nog als beschikbaar toont, dan verkoop je iets wat je niet meer hebt. Het gevolg is een annulering en een teleurgestelde klant. Voorraad synchroniseren lost dat op door je aantallen overal gelijk te houden.</p>

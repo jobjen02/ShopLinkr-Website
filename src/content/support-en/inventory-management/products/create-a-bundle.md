@@ -1,6 +1,7 @@
 ---
 title: "Creating a bundle"
 summary: "Combine multiple products into a bundle and let ShopLinkr calculate the stock automatically."
+author: "Tommy van Kessel"
 category: "inventory-management"
 categoryLabel: "Inventory management"
 subcategory: "products"

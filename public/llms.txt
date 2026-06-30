@@ -21,6 +21,7 @@
 - [Shopify](https://shoplinkr.com/integraties/shopify): Voorraadsync en orderimport voor Shopify webshops.
 - [WooCommerce](https://shoplinkr.com/integraties/woocommerce): Voorraadsync en orderimport voor WooCommerce.
 - [Kaufland](https://shoplinkr.com/integraties/kaufland): Verkoop op Kaufland met realtime voorraadsync.
+- [Lightspeed C-Series](https://shoplinkr.com/integraties/lightspeed-c-series): Voorraadsync en orderimport voor Lightspeed C-Series webshops.
 
 ## Support
 - [Veelgestelde vragen](https://shoplinkr.com/veelgestelde-vragen): Antwoord op de meestgestelde vragen over voorraad, orderverwerking, verzending, prijzen en meer.

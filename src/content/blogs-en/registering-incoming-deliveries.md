@@ -5,6 +5,7 @@ publishedAt: "2023-06-14T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
 imageAlt: "ShopLinkr logo"
 translationKey: "inkomende-leveringen-registreren"
+category: "Inventory"
 ---
 
 <p><strong>With ShopLinkr's Incoming Deliveries feature you register, check and book in new inventory in just a few clicks. Export check lists as PDF and add received products straight to your inventory.</strong></p>

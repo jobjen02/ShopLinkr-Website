@@ -1,6 +1,7 @@
 ---
 title: "Stock sources"
 summary: "Sell multiple variants from a single central stock measured in weight, length or volume."
+author: "Tommy van Kessel"
 category: "inventory-management"
 categoryLabel: "Inventory management"
 subcategory: "products"

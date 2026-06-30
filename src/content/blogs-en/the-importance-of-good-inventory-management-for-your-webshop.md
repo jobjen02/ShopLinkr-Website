@@ -4,6 +4,8 @@ excerpt: "Selling on multiple channels? Your inventory management decides whethe
 publishedAt: "2024-03-13T00:00:00.000Z"
 image: "/images/blog/het-belang-van-goed-voorraadbeheer-voor-jouw-webshop/zqZx6bfhycOTBHiJPMvBoyB67I.jpg"
 translationKey: "het-belang-van-goed-voorraadbeheer-voor-jouw-webshop"
+category: "Inventory"
+imageAlt: "Webshop owner checking stock in the warehouse"
 ---
 
 <p>A customer finds exactly what they're looking for, clicks order, and it turns out to be sold out. Or worse: you sell the same product on bol and Shopify, and you sell one too many. Inventory management feels like a detail until it goes wrong. Then it costs you a sale, a review or a cancellation.</p>
