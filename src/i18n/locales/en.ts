@@ -269,7 +269,7 @@ const en: Dictionary = {
         salesOrders: 'Above 100,000 orders per month? Book a call with sales for enterprise pricing.',
         salesChannels: 'More than 100 sales channels? Book a call with sales for enterprise pricing.',
         contactSales: 'Contact sales',
-        perks: ['All features included', 'Unlimited users', 'Fast support via chat and email', 'Free migration and onboarding'],
+        perks: ['Recalculated monthly', 'All features included', 'Unlimited users', 'Fast support via chat and email', 'Free migration and onboarding'],
         startTrial: 'Start 14 days free',
         preferDemo: 'Rather see a demo first? Book a call',
         numberLocale: 'en-US',
@@ -633,6 +633,8 @@ const en: Dictionary = {
             heading: 'Guides and explainers',
             subheading: 'Step-by-step explainers and background on inventory management, integrations and selling across your channels. Find the guide that fits your question.',
             readMore: 'Read the guide',
+            relatedHeading: 'Related guides',
+            backLabel: 'All guides',
             groups: {
                 voorraadbeheer: 'Inventory management and warehouse',
                 excel: 'Inventory management in Excel',
@@ -741,7 +743,7 @@ const en: Dictionary = {
                 {
                     eyebrow: 'Look it up yourself',
                     title: 'Visit the help center',
-                    body: 'Hundreds of articles with explanations, video and step-by-step guides. You will often find your answer here right away.',
+                    body: 'An extensive knowledge base with explanations, video and step-by-step guides. You will often find your answer here right away.',
                     cta: 'Go to the help center',
                 },
             ],
@@ -2189,7 +2191,7 @@ const en: Dictionary = {
             lookbackEyebrow: 'Looking back',
             lookbackHeading: 'Thanks for a wonderful edition',
             eventInfo: [
-                { label: 'Edition', value: '20 and 21 January 2026' },
+                { label: 'Edition', value: '25 and 26 March 2026' },
                 { label: 'Location', value: 'Jaarbeurs Utrecht' },
                 { label: 'Next edition', value: 'Book a demo in the meantime' },
             ],

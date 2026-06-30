@@ -271,7 +271,7 @@ const nl = {
         salesOrders: 'Boven 100.000 bestellingen per maand? Plan een gesprek met sales voor enterprise pricing.',
         salesChannels: 'Meer dan 100 verkoopkanalen? Plan een gesprek met sales voor enterprise pricing.',
         contactSales: 'Contact sales',
-        perks: ['Alle features inbegrepen', 'Ongelimiteerde gebruikers', 'Snelle support via chat en mail', 'Gratis migratie en onboarding'],
+        perks: ['Maandelijks opnieuw berekend', 'Alle features inbegrepen', 'Ongelimiteerde gebruikers', 'Snelle support via chat en mail', 'Gratis migratie en onboarding'],
         startTrial: 'Start 14 dagen gratis',
         preferDemo: 'Liever eerst een demo? Plan een gesprek',
         numberLocale: 'nl-NL',
@@ -433,7 +433,7 @@ const nl = {
             dayInLife: [
                 {
                     title: 'Orders binnen',
-                    body: 'Je magazijn opent. ShopLinkr toont gisteravonds orders uit Shopify en je bol verkoopaccount netjes in één lijst, gesorteerd op urgentie.',
+                    body: 'Je magazijn opent. ShopLinkr toont de orders van gisteravond uit Shopify en je bol verkoopaccount netjes in één lijst, gesorteerd op urgentie.',
                 },
                 {
                     title: 'Picken met één lijst',
@@ -635,6 +635,8 @@ const nl = {
             heading: 'Gidsen en uitleg',
             subheading: 'Stapsgewijze uitleg en achtergrond over voorraadbeheer, koppelingen en verkopen via je kanalen. Vind snel de gids die bij jouw vraag past.',
             readMore: 'Lees de gids',
+            relatedHeading: 'Gerelateerde gidsen',
+            backLabel: 'Alle gidsen',
             groups: {
                 voorraadbeheer: 'Voorraadbeheer en magazijn',
                 excel: 'Voorraadbeheer in Excel',
@@ -743,7 +745,7 @@ const nl = {
                 {
                     eyebrow: 'Zoek het zelf op',
                     title: 'Bezoek het helpcentrum',
-                    body: 'Honderden artikelen met uitleg, video en stappenplannen. Vaak vind je hier direct je antwoord.',
+                    body: 'Een uitgebreide kennisbank met uitleg, video en stappenplannen. Vaak vind je hier direct je antwoord.',
                     cta: 'Naar het helpcentrum',
                 },
             ],
@@ -2191,7 +2193,7 @@ const nl = {
             lookbackEyebrow: 'Terugblik',
             lookbackHeading: 'Bedankt voor de mooie editie',
             eventInfo: [
-                { label: 'Editie', value: '20 en 21 januari 2026' },
+                { label: 'Editie', value: '25 en 26 maart 2026' },
                 { label: 'Locatie', value: 'Jaarbeurs Utrecht' },
                 { label: 'Volgende editie', value: 'Plan een demo in tussendoor' },
             ],

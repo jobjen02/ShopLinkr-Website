@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import SeoArticlePage from '../../components/pages/SeoArticlePage.astro';
 import { authorSchema } from '../../utils/author';
+import { guideGroupOf } from '../../utils/guides';
 
 const { slug } = Astro.params;
 
@@ -14,6 +15,13 @@ if (!page) return Astro.rewrite('/en/404');
 const alternates = page.data.translationKey
     ? { nl: `/${page.data.translationKey}`, en: `/en/${page.id}` }
     : undefined;
+
+// Related guides from the same theme group, so each guide links to its siblings.
+const group = guideGroupOf(page.id);
+const related = pages
+    .filter((p) => p.id !== page.id && guideGroupOf(p.id) === group)
+    .slice(0, 3)
+    .map((p) => ({ title: p.data.title, excerpt: p.data.excerpt, href: `/en/${p.id}` }));
 
 const canonicalUrl = `https://shoplinkr.com/en/${page.id}`;
 
@@ -35,7 +43,8 @@ const breadcrumbSchema = {
     '@type': 'BreadcrumbList',
     itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shoplinkr.com/en' },
-        { '@type': 'ListItem', position: 2, name: page.data.title, item: canonicalUrl },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://shoplinkr.com/en/guides' },
+        { '@type': 'ListItem', position: 3, name: page.data.title, item: canonicalUrl },
     ],
 };
 
@@ -44,4 +53,4 @@ const jsonLd = [articleSchema, breadcrumbSchema];
 export const prerender = false;
 ---
 
-<SeoArticlePage page={page} alternates={alternates} jsonLd={jsonLd} />
+<SeoArticlePage page={page} related={related} alternates={alternates} jsonLd={jsonLd} />

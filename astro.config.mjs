@@ -10,9 +10,11 @@ import nodePath from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { redirects } from './src/data/redirects.mjs';
 
-// Build a pathname -> ISO date map from the content frontmatter so the sitemap
-// can emit <lastmod>. A pathname that has no matching entry simply gets no
-// lastmod (never a wrong date), so this is safe even if a route shape changes.
+// The content routes (blog/guide/support/integration + support categories) are
+// server-rendered, so @astrojs/sitemap can't auto-discover them. We enumerate
+// every content URL from the source files here and feed them as `customPages`,
+// and build a pathname -> ISO date map for <lastmod> in the same pass.
+const ORIGIN = 'https://shoplinkr.com';
 const CONTENT_DIR = fileURLToPath(new URL('./src/content', import.meta.url));
 
 function walkMarkdown(dir) {
@@ -31,35 +33,72 @@ function walkMarkdown(dir) {
     return files;
 }
 
-function frontmatterDate(file) {
-    const fm = readFileSync(file, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
-    if (!fm) return null;
-    const m = fm[1].match(/^(?:publishedAt|lastUpdated):\s*["']?([0-9T:.\-Z]+)["']?/m);
-    if (!m) return null;
-    const date = new Date(m[1]);
-    return Number.isNaN(date.getTime()) ? null : date.toISOString();
+function frontmatter(file) {
+    const m = readFileSync(file, 'utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    return m ? m[1] : '';
+}
+function fmField(block, key) {
+    const m = block.match(new RegExp(`^${key}:\\s*["']?([\\w./:+-]+)["']?`, 'm'));
+    return m ? m[1] : null;
+}
+function fmDate(block) {
+    const v = fmField(block, '(?:publishedAt|lastUpdated)');
+    if (!v) return null;
+    const d = new Date(v);
+    return Number.isNaN(d.getTime()) ? null : d.toISOString();
 }
 
-function buildLastmodMap() {
-    const collections = [
-        { dir: 'blogs', toPath: (slug) => `/blogs/${slug}` },
-        { dir: 'blogs-en', toPath: (slug) => `/en/blog/${slug}` },
-        { dir: 'seo', toPath: (slug) => `/${slug}` },
-        { dir: 'seo-en', toPath: (slug) => `/en/${slug}` },
-        { dir: 'support', toPath: (slug) => `/support/${slug}` },
-        { dir: 'support-en', toPath: (slug) => `/en/support/${slug}` },
+function buildContent() {
+    const lastmod = {};
+    const urls = new Set();
+    const add = (path, date) => { urls.add(path); if (date) lastmod[path] = date; };
+
+    // Article collections (markdown body).
+    const articleDirs = [
+        { dir: 'blogs', toPath: (s) => `/blogs/${s}` },
+        { dir: 'blogs-en', toPath: (s) => `/en/blog/${s}` },
+        { dir: 'seo', toPath: (s) => `/${s}` },
+        { dir: 'seo-en', toPath: (s) => `/en/${s}` },
+        { dir: 'support', toPath: (s) => `/support/${s}` },
+        { dir: 'support-en', toPath: (s) => `/en/support/${s}` },
     ];
-    const map = {};
-    for (const { dir, toPath } of collections) {
+    for (const { dir, toPath } of articleDirs) {
         for (const file of walkMarkdown(nodePath.join(CONTENT_DIR, dir))) {
-            const date = frontmatterDate(file);
-            if (date) map[toPath(nodePath.basename(file, '.md'))] = date;
+            add(toPath(nodePath.basename(file, '.md')), fmDate(frontmatter(file)));
         }
     }
-    return map;
+
+    // Support category + subcategory pages, derived from the articles' frontmatter.
+    for (const { dir, base } of [
+        { dir: 'support', base: '/support/categorieen' },
+        { dir: 'support-en', base: '/en/support/categories' },
+    ]) {
+        for (const file of walkMarkdown(nodePath.join(CONTENT_DIR, dir))) {
+            const block = frontmatter(file);
+            const cat = fmField(block, 'category');
+            const sub = fmField(block, 'subcategory');
+            if (cat) add(`${base}/${cat}`);
+            if (cat && sub) add(`${base}/${cat}/${sub}`);
+        }
+    }
+
+    // Integration detail pages (JSON).
+    for (const { dir, toPath } of [
+        { dir: 'integrations', toPath: (s) => `/integraties/${s}` },
+        { dir: 'integrations-en', toPath: (s) => `/en/integrations/${s}` },
+    ]) {
+        let files = [];
+        try { files = readdirSync(nodePath.join(CONTENT_DIR, dir)).filter((f) => f.endsWith('.json')); } catch {}
+        for (const f of files) {
+            const slug = JSON.parse(readFileSync(nodePath.join(CONTENT_DIR, dir, f), 'utf8')).slug;
+            if (slug) add(toPath(slug));
+        }
+    }
+
+    return { lastmod, customPages: [...urls].map((p) => `${ORIGIN}${p}`) };
 }
 
-const lastmodByPath = buildLastmodMap();
+const { lastmod: lastmodByPath, customPages: contentCustomPages } = buildContent();
 
 export default defineConfig({
     site: 'https://shoplinkr.com',
@@ -87,6 +126,8 @@ export default defineConfig({
                     en: 'en-US',
                 },
             },
+            // Server-rendered content routes aren't auto-discovered; add them.
+            customPages: contentCustomPages,
             filter: (page) => !page.includes('/404'),
             serialize(item) {
                 const rawPath = new URL(item.url).pathname.replace(/\/$/, '') || '/';

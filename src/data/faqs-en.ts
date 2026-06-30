@@ -290,6 +290,10 @@ export const faqsByPageEn: Record<string, Array<FaqItem>> = {
     ],
     prijzen: [
         {
+            question: "Do you have a demo environment?",
+            answer: "No, and that's a deliberate choice. ShopLinkr is an extensive platform, and instead of dropping you into an empty demo we'd rather walk through it together. ShopLinkr isn't hard to use, but this way we make sure you start with the features that fit your business and your way of working. We offer that personal guidance from day 1, completely free.",
+        },
+        {
             question: "What if I have more orders in a month than expected?",
             answer: "Your bill scales along automatically. Every order falls within a tier with its own rate, and you pay neatly per tier you reach. The next month you settle up again based on that volume. No contract changes, no surprises.",
         },

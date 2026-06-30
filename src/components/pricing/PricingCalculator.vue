@@ -251,6 +251,12 @@ const formattedTotal = computed(() => {
     }).format(totalPrice.value);
 });
 
+// Keep the big price on one line: shrink the type a step once the amount reaches
+// the thousands (e.g. "1.010,94") so it never wraps past the euro sign.
+const priceSizeClass = computed(() =>
+    formattedTotal.value.length >= 8 ? 'text-4xl md:text-5xl' : 'text-5xl md:text-6xl',
+);
+
 
 const formattedChannelCost = computed(() => {
     return new Intl.NumberFormat(t.value.numberLocale, {
@@ -476,7 +482,10 @@ watch(orderSliderValue, (newValue) => {
                     </p>
 
                     <div class="flex items-baseline gap-2 mb-2">
-                        <span class="text-5xl md:text-6xl font-semibold tabular-nums tracking-tight leading-none">
+                        <span
+                            class="font-semibold tabular-nums tracking-tight leading-none whitespace-nowrap"
+                            :class="priceSizeClass"
+                        >
                             &euro; {{ formattedTotal }}
                         </span>
                         <span class="text-base text-chalk-darker">{{ t.perMonth }}</span>

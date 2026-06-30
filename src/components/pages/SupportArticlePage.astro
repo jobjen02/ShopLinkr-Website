@@ -51,6 +51,8 @@ const categoriesBase = supportCategoriesBase(locale);
     description={article.data.summary}
     jsonLd={jsonLd}
     alternates={alternates}
+    ogType="article"
+    publishedTime={article.data.lastUpdated.toISOString()}
     markdown
 >
     <SupportHero

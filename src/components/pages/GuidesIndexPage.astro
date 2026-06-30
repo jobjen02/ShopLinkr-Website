@@ -6,6 +6,7 @@ import { type Locale, type RouteKey, localizeHref, localizedPath } from '../../i
 import { useTranslations } from '../../i18n/ui';
 import { collectionName, localeMeta } from '../../i18n/localeData';
 import { breadcrumbs } from '../../utils/seo';
+import { guideGroupOf as groupOf, GUIDE_GROUP_ORDER as ORDER, type GuideGroup as GroupKey } from '../../utils/guides';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
@@ -16,16 +17,6 @@ const p = t.pages.guides;
 // discoverable home grouped by theme, so they are no longer orphaned.
 const seoPages = await getCollection(collectionName('seo', locale));
 const base = locale === 'en' ? '/en' : '';
-
-type GroupKey = 'voorraadbeheer' | 'excel' | 'bol' | 'koppelingen';
-const ORDER: GroupKey[] = ['voorraadbeheer', 'excel', 'bol', 'koppelingen'];
-
-function groupOf(id: string): GroupKey {
-    if (id.includes('hoe-koppel-ik') || id.includes('how-to-connect')) return 'koppelingen';
-    if (id.includes('excel')) return 'excel';
-    if (id.includes('bol')) return 'bol';
-    return 'voorraadbeheer';
-}
 
 // Bespoke SEO landing pages live as standalone routes, not in the seo
 // collection, so the hub lists them here too. This de-orphans the keyword

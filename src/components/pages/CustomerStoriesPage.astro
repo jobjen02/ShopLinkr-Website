@@ -61,12 +61,12 @@ const jsonLd = [
             name: story.company,
             url: 'https://schoongedaan.nl',
         },
-        author: {
-            '@type': 'Organization',
-            name: 'ShopLinkr',
-            url: 'https://shoplinkr.com',
-        },
+        author: { '@id': 'https://shoplinkr.com/#organization' },
         publisher: { '@id': 'https://shoplinkr.com/#organization' },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://shoplinkr.com${localizeHref('/referenties', locale)}`,
+        },
         image: `https://shoplinkr.com${story.logo}`,
     },
 ];

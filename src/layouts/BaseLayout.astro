@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '@fontsource-variable/inter';
 import BaseHead from '../components/seo/BaseHead.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
 import Header from '../components/layout/Header.astro';
@@ -118,6 +119,15 @@ const websiteSchema = {
         {jsonLd && <JsonLd schema={jsonLd} />}
     </head>
     <body class="min-h-screen flex flex-col">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-M33XL5PD"
+                height="0"
+                width="0"
+                style="display:none;visibility:hidden"></iframe></noscript
+        >
+        <!-- End Google Tag Manager (noscript) -->
         <a
             href="#main"
             class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] focus:inline-flex focus:items-center focus:gap-2 focus:px-4 focus:py-2.5 focus:rounded-xl focus:bg-charcoal focus:text-paper dark:focus:bg-paper dark:focus:text-charcoal focus:text-sm focus:font-semibold focus:shadow-[0_8px_24px_-12px_rgba(25,25,25,0.40)]"

@@ -21,17 +21,32 @@ const pricingUrl = `${origin}${localizeHref('/prijzen', locale)}`;
 
 const jsonLd = {
     '@type': 'SoftwareApplication',
+    '@id': 'https://shoplinkr.com/#software',
     name: 'ShopLinkr',
+    alternateName: ['Shop Linkr', 'Shoplinker'],
     applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'Inventory Management Software',
     operatingSystem: 'Web',
     description: t.pages.home.jsonLdDescription,
     url: homeUrl,
+    publisher: { '@id': 'https://shoplinkr.com/#organization' },
     offers: {
         '@type': 'Offer',
+        price: '5.00',
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
         url: pricingUrl,
     },
+    featureList: [
+        'Inventory sync across bol, Shopify, WooCommerce and Kaufland',
+        'Order management from a single dashboard',
+        'Pick lists with the most efficient warehouse route',
+        'Barcode scanning to pick without mistakes',
+        'Automatic shipping labels and track and trace',
+        'Returns handling',
+        'Profit per order and per channel',
+        'Warehouse location management',
+    ],
     aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: '4.6',

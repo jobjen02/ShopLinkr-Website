@@ -16,6 +16,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "^10.0.8",
     "@astrojs/vue": "^6.0.1",
+    "@fontsource-variable/inter": "^5.2.8",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.2",
     "rehype-parse": "^9.0.1",

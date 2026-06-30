@@ -62,7 +62,70 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#e8b679" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Google Tag Manager -->
+<script is:inline>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M33XL5PD');
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Get Reditus -->
+<script is:inline>
+    (function (w, d, s, p, t) {
+        w.gr =
+            w.gr ||
+            function () {
+                w.gr.ce = 60;
+                w.gr.q = w.gr.q || [];
+                w.gr.q.push(arguments);
+            };
+        p = d.getElementsByTagName(s)[0];
+        t = d.createElement(s);
+        t.async = true;
+        t.src = 'https://script.getreditus.com/v2.js';
+        p.parentNode.insertBefore(t, p);
+    })(window, document, 'script');
+    gr('initCustomer', '60a9b8ab-d70a-491b-b09a-7f661e203da3');
+    gr('track', 'pageview');
+</script>
+<!-- End Get Reditus -->
+
+<!-- Featurebase -->
+<script is:inline>
+    !(function (e, t) {
+        var a = 'featurebase-sdk';
+        function n() {
+            if (!t.getElementById(a)) {
+                var e = t.createElement('script');
+                (e.id = a), (e.src = 'https://do.featurebase.app/js/sdk.js'), t.getElementsByTagName('script')[0].parentNode.insertBefore(e, t.getElementsByTagName('script')[0]);
+            }
+        }
+        'function' != typeof e.Featurebase &&
+            (e.Featurebase = function () {
+                (e.Featurebase.q = e.Featurebase.q || []).push(arguments);
+            }),
+            'complete' === t.readyState || 'interactive' === t.readyState ? n() : t.addEventListener('DOMContentLoaded', n);
+    })(window, document);
+</script>
+<script is:inline define:vars={{ fbLang: locale }}>
+    Featurebase('boot', {
+        appId: '65ea1a5e61760fa73a313577',
+        theme: 'light',
+        language: fbLang,
+    });
+</script>
+<!-- End Featurebase -->
 
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="canonical" href={canonicalURL} />
@@ -110,13 +173,25 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
     )
 }
 
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<!-- Inter is self-hosted via @fontsource-variable/inter (imported in BaseLayout), no external render-blocking request. -->
 
-<link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css" />
-<link rel="stylesheet" href="/fontawesome/css/solid.min.css" />
-<link rel="stylesheet" href="/fontawesome/css/regular.min.css" />
-<link rel="stylesheet" href="/fontawesome/css/duotone.min.css" />
+<!-- FontAwesome loaded non-blocking so it never delays first paint / LCP; noscript keeps icons for no-JS clients. -->
+{
+    ['fontawesome', 'solid', 'regular', 'duotone'].map((f) => (
+        <link
+            rel="stylesheet"
+            href={`/fontawesome/css/${f}.min.css`}
+            media="print"
+            onload="this.media='all'"
+        />
+    ))
+}
+<noscript>
+    <link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/solid.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/regular.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/duotone.min.css" />
+</noscript>
 
 <link rel="sitemap" href="/sitemap-index.xml" />
 {markdown && <link rel="alternate" type="text/markdown" href={new URL(`${canonicalURL.pathname.replace(/\/$/, '')}.md`, Astro.site)} />}

@@ -290,6 +290,10 @@ export const faqsByPage: Record<string, Array<FaqItem>> = {
     ],
     prijzen: [
         {
+            question: "Hebben jullie een demo-omgeving?",
+            answer: "Nee, en dat is een bewuste keuze. ShopLinkr is een uitgebreid platform, en in plaats van je los te laten in een lege demo lopen we het liever samen met je door. ShopLinkr is niet moeilijk om te gebruiken, maar zo weten we zeker dat je vanaf het begin de functies inzet die bij jouw bedrijf en manier van werken passen. Die persoonlijke begeleiding bieden we je vanaf dag 1 aan, helemaal kosteloos.",
+        },
+        {
             question: "Wat als ik in een maand meer orders heb dan verwacht?",
             answer: "Je rekening schaalt automatisch mee. Elke order valt binnen een staffel met een eigen tarief, en je betaalt netjes per staffel die je raakt. De maand erop reken je weer af op basis van dat volume. Geen contractwijzigingen, geen verrassingen.",
         },

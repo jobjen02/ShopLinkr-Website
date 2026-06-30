@@ -1,21 +1,31 @@
 ---
 // SEO landing page (keyword-targeted content) served at the site root, e.g.
-// /excel-voorraadbeheer-alles-wat-je-moet-weten. This must read as a real page,
-// NOT a blog post: no date, no author meta, no "back to blog/home" link, no
-// category eyebrow. Just a page heading + lead-in + the content + CTA.
+// /excel-voorraadbeheer-alles-wat-je-moet-weten. Reads as a real page (heading +
+// lead-in + content), with a link back to the /gidsen hub and a "related guides"
+// block so the guide cluster is fully interlinked (hub <-> spoke <-> siblings).
 import { render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import CtaBanner from '../sections/CtaBanner.astro';
-import type { Locale } from '../../i18n/routes';
+import { type Locale, localizeHref } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+
+interface RelatedGuide {
+    title: string;
+    excerpt: string;
+    href: string;
+}
 
 interface Props {
     page: any;
+    related?: RelatedGuide[];
     alternates?: { nl?: string; en?: string };
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const { page, alternates, jsonLd } = Astro.props;
+const { page, related = [], alternates, jsonLd } = Astro.props;
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const g = t.pages.guides;
 const formattedDate = new Intl.DateTimeFormat(locale === 'en' ? 'en-US' : 'nl-NL', {
     day: 'numeric',
     month: 'long',
@@ -34,12 +44,42 @@ const { Content } = await render(page);
     meta={formattedDate}
     publishedTime={page.data.publishedAt.toISOString()}
     authorName={page.data.author}
+    backHref={localizeHref('/gidsen', locale)}
+    backLabel={g.backLabel}
     jsonLd={jsonLd}
     alternates={alternates}
 >
     <Content />
 
     <Fragment slot="after">
+        {related.length > 0 && (
+            <section class="py-16 md:py-20 bg-chalk-light dark:bg-graphite border-t border-chalk-dark dark:border-flint">
+                <div class="container-prose">
+                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight mb-8 md:mb-10">
+                        {g.relatedHeading}
+                    </h2>
+                    <div class="grid gap-4 md:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        {related.map((r) => (
+                            <a
+                                href={r.href}
+                                class="group flex flex-col gap-2 h-full rounded-xl bg-paper dark:bg-charcoal ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-7 transition duration-300 ease-out hover:ring-chalk-darker dark:hover:ring-steel hover:shadow-[0_12px_40px_-20px_rgba(25,25,25,0.18)]"
+                            >
+                                <h3 class="text-base md:text-lg font-semibold text-charcoal dark:text-paper leading-snug tracking-tight group-hover:text-sunstone-deep transition-colors">
+                                    {r.title}
+                                </h3>
+                                <p class="text-sm text-steel dark:text-gravel leading-relaxed line-clamp-3">
+                                    {r.excerpt}
+                                </p>
+                                <span class="mt-auto pt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-charcoal dark:text-paper group-hover:text-sunstone-deep group-hover:gap-2.5 transition-all">
+                                    {g.readMore}
+                                    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        )}
         <CtaBanner />
     </Fragment>
 </ArticleLayout>
