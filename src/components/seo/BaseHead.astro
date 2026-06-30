@@ -12,6 +12,8 @@ interface Props {
     alternates?: { nl?: string; en?: string };
     ogType?: 'website' | 'article';
     publishedTime?: string;
+    /** When true, advertise a markdown twin at the canonical URL + ".md". */
+    markdown?: boolean;
 }
 
 const {
@@ -24,6 +26,7 @@ const {
     alternates: altUrls,
     ogType = 'website',
     publishedTime,
+    markdown,
 } = Astro.props;
 
 // Social crawlers (Facebook/LinkedIn/X) do not render SVG, so fall back to the
@@ -116,3 +119,4 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
 <link rel="stylesheet" href="/fontawesome/css/duotone.min.css" />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
+{markdown && <link rel="alternate" type="text/markdown" href={new URL(`${canonicalURL.pathname.replace(/\/$/, '')}.md`, Astro.site)} />}

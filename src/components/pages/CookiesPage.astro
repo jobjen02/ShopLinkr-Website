@@ -9,54 +9,9 @@ const p = t.pages.cookies;
 
 const lastUpdated = '2026-05-28';
 
-const categories = [
-    {
-        title: p.categories[0].title,
-        eyebrow: p.categories[0].eyebrow,
-        body: p.categories[0].body,
-        items: [
-            {
-                name: 'shoplinkr-cookie-consent',
-                purpose: p.categories[0].items[0].purpose,
-                duration: p.categories[0].items[0].duration,
-            },
-            {
-                name: 'session',
-                purpose: p.categories[0].items[1].purpose,
-                duration: p.categories[0].items[1].duration,
-            },
-        ],
-    },
-    {
-        title: p.categories[1].title,
-        eyebrow: p.categories[1].eyebrow,
-        body: p.categories[1].body,
-        items: [
-            {
-                name: '_ga, _ga_*',
-                purpose: p.categories[1].items[0].purpose,
-                duration: p.categories[1].items[0].duration,
-            },
-        ],
-    },
-    {
-        title: p.categories[2].title,
-        eyebrow: p.categories[2].eyebrow,
-        body: p.categories[2].body,
-        items: [
-            {
-                name: '_fbp',
-                purpose: p.categories[2].items[0].purpose,
-                duration: p.categories[2].items[0].duration,
-            },
-            {
-                name: 'li_*',
-                purpose: p.categories[2].items[1].purpose,
-                duration: p.categories[2].items[1].duration,
-            },
-        ],
-    },
-];
+// Cookie categories come straight from the locale dict (single source of
+// truth), so adding or removing a category never needs a change here.
+const categories = p.categories;
 
 const jsonLd = {
     '@type': 'WebPage',

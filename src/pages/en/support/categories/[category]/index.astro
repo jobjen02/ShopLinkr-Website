@@ -7,20 +7,9 @@ import {
     CATEGORY_SLUG_NL_TO_EN,
 } from '../../../../../data/supportCategories-en';
 
-export async function getStaticPaths() {
-    return supportCategoriesEn.map((c) => ({
-        params: {
-            category: c.slug,
-        },
-    }));
-}
-
 const { category } = Astro.params;
 const categoryInfo = supportCategoriesEnBySlug[category as string];
-
-if (!categoryInfo) {
-    throw new Error(`Unknown support category: ${category}`);
-}
+if (!categoryInfo) return Astro.rewrite('/en/404');
 
 // EN -> NL category slug for the hreflang/switch counterpart.
 const nlCategorySlug = Object.entries(CATEGORY_SLUG_NL_TO_EN).find(([, en]) => en === category)?.[0];
@@ -86,7 +75,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [collectionSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <SupportCategoryPage

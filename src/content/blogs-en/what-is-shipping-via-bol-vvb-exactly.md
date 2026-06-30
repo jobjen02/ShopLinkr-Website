@@ -3,7 +3,7 @@ title: "What exactly is Shipping via bol (VVB)?"
 excerpt: "Shipping via bol (VVB) lets you ship orders through bol's network while you manage your own stock and packing. Here is how it works and what it gives you."
 publishedAt: "2024-02-05T00:00:00.000Z"
 image: "/images/blog/bol-com-voorraad-synchronisatie/UQ5tdeo65FBYBl2jtwFeuE2kDK8.jpeg"
-translationKey: "wat-is-verzenden-via-bol-(vvb)-precies"
+translationKey: "wat-is-verzenden-via-bol-vvb-precies"
 category: "Shipping"
 imageAlt: "A parcel ready for shipment via bol (VVB)"
 ---

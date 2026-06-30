@@ -795,8 +795,8 @@ const nl = {
                     eyebrow: 'Altijd actief',
                     body: 'Deze cookies zijn nodig om de site goed te laten werken. Denk aan inloggen, formulieren versturen en je sessie onthouden. Zonder deze cookies werkt de site niet correct.',
                     items: [
-                        { purpose: 'Onthoudt je cookie-voorkeuren', duration: '12 maanden' },
-                        { purpose: 'Houdt je sessie op de site actief', duration: 'Tot je de browser sluit' },
+                        { name: 'shoplinkr-cookie-consent', purpose: 'Onthoudt je cookie-voorkeuren', duration: '12 maanden' },
+                        { name: 'session', purpose: 'Houdt je sessie op de site actief', duration: 'Tot je de browser sluit' },
                     ],
                 },
                 {
@@ -804,7 +804,7 @@ const nl = {
                     eyebrow: 'Optioneel',
                     body: 'Deze cookies helpen ons begrijpen hoe je de site gebruikt, welke pagina\'s populair zijn en waar mensen blijven hangen. We gebruiken deze inzichten om de site te verbeteren. Volledig anoniem.',
                     items: [
-                        { purpose: 'Google Analytics 4: bezoekers en gedrag (anoniem)', duration: '2 jaar' },
+                        { name: '_ga, _ga_*', purpose: 'Google Analytics 4: bezoekers en gedrag (anoniem)', duration: '2 jaar' },
                     ],
                 },
             ],

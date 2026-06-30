@@ -19,6 +19,7 @@ interface Props {
     jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
     ogType?: 'website' | 'article';
     publishedTime?: string;
+    markdown?: boolean;
 }
 
 const {
@@ -31,6 +32,7 @@ const {
     jsonLd,
     ogType,
     publishedTime,
+    markdown,
 } = Astro.props;
 
 // Locale is derived from the URL (NL at root, EN under /en/) so pages don't
@@ -109,6 +111,7 @@ const websiteSchema = {
             alternates={alternates}
             ogType={ogType}
             publishedTime={publishedTime}
+            markdown={markdown}
         />
         <JsonLd schema={organizationSchema} />
         <JsonLd schema={websiteSchema} />

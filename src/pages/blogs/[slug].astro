@@ -3,42 +3,24 @@ import { getCollection } from 'astro:content';
 import BlogArticlePage from '../../components/pages/BlogArticlePage.astro';
 import { authorSchema } from '../../utils/author';
 
-export async function getStaticPaths() {
-    const blogs = await getCollection('blogs');
+const { slug } = Astro.params;
 
-    const blogsEn = await getCollection('blogsEn');
-    const enByNlId = new Map(
-        blogsEn.filter((b) => b.data.translationKey).map((b) => [b.data.translationKey, b.id]),
-    );
+const blogs = await getCollection('blogs');
+const blog = blogs.find((b) => b.id === slug);
+if (!blog) return Astro.rewrite('/404');
 
-    return blogs.map((blog) => {
-        const others = blogs.filter((b) => b.id !== blog.id);
+const others = blogs.filter((b) => b.id !== blog.id);
+const sameCategory = blog.data.category
+    ? others.filter((b) => b.data.category === blog.data.category)
+    : [];
+const otherIds = new Set(sameCategory.map((b) => b.id));
+const fallback = others.filter((b) => !otherIds.has(b.id));
+const related = [...sameCategory, ...fallback]
+    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+    .slice(0, 3);
 
-        const sameCategory = blog.data.category
-            ? others.filter((b) => b.data.category === blog.data.category)
-            : [];
-
-        const otherIds = new Set(sameCategory.map((b) => b.id));
-        const fallback = others.filter((b) => !otherIds.has(b.id));
-
-        const related = [...sameCategory, ...fallback]
-            .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
-            .slice(0, 3);
-
-        return {
-            params: {
-                slug: blog.id,
-            },
-            props: {
-                blog,
-                related,
-                enSlug: enByNlId.get(blog.id) ?? null,
-            },
-        };
-    });
-}
-
-const { blog, related, enSlug } = Astro.props;
+const blogsEn = await getCollection('blogsEn');
+const enSlug = blogsEn.find((b) => b.data.translationKey === blog.id)?.id ?? null;
 
 const alternates = enSlug
     ? { nl: `/blogs/${blog.id}`, en: `/en/blog/${enSlug}` }
@@ -99,7 +81,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [articleSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <BlogArticlePage

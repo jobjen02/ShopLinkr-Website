@@ -7,20 +7,9 @@ import {
 } from '../../../../data/supportCategories';
 import { CATEGORY_SLUG_NL_TO_EN } from '../../../../data/supportCategories-en';
 
-export async function getStaticPaths() {
-    return supportCategories.map((c) => ({
-        params: {
-            category: c.slug,
-        },
-    }));
-}
-
 const { category } = Astro.params;
 const categoryInfo = supportCategoriesBySlug[category as string];
-
-if (!categoryInfo) {
-    throw new Error(`Unknown support category: ${category}`);
-}
+if (!categoryInfo) return Astro.rewrite('/404');
 
 const enCategorySlug = CATEGORY_SLUG_NL_TO_EN[category];
 const alternates = enCategorySlug
@@ -84,7 +73,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [collectionSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <SupportCategoryPage

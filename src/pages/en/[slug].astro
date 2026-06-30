@@ -1,39 +1,15 @@
 ---
 import { getCollection } from 'astro:content';
 import SeoArticlePage from '../../components/pages/SeoArticlePage.astro';
-import { routes } from '../../i18n/routes';
 import { authorSchema } from '../../utils/author';
 
-export async function getStaticPaths() {
-    const pages = await getCollection('seoPagesEn');
+const { slug } = Astro.params;
 
-    // Build guard: an EN root-served SEO slug must not collide with a reserved
-    // /en/ route (a localized page slug or a real page/dir under src/pages/en).
-    const reserved = new Set<string>();
-    for (const r of Object.values(routes)) {
-        if (r.en && !r.en.includes('/')) reserved.add(r.en);
-    }
-    for (const file of Object.keys(import.meta.glob('./*.astro'))) {
-        const seg = file.replace('./', '').replace('.astro', '');
-        if (seg !== '[slug]' && seg !== 'index') reserved.add(seg);
-    }
-    ['blog', 'features', 'integrations', 'support'].forEach((s) => reserved.add(s));
-
-    for (const page of pages) {
-        if (reserved.has(page.id)) {
-            throw new Error(
-                `EN SEO page slug "${page.id}" collides with a reserved /en/ route. Rename src/content/seo-en/${page.id}.md (and its redirect/links) or the conflicting route.`,
-            );
-        }
-    }
-
-    return pages.map((page) => ({
-        params: { slug: page.id },
-        props: { page },
-    }));
-}
-
-const { page } = Astro.props;
+// Astro matches explicit /en/ routes before this catch-all, so any path that is
+// not an EN SEO page slug simply falls through to 404 here.
+const pages = await getCollection('seoPagesEn');
+const page = pages.find((p) => p.id === slug);
+if (!page) return Astro.rewrite('/en/404');
 
 const alternates = page.data.translationKey
     ? { nl: `/${page.data.translationKey}`, en: `/en/${page.id}` }
@@ -65,7 +41,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [articleSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <SeoArticlePage page={page} alternates={alternates} jsonLd={jsonLd} />

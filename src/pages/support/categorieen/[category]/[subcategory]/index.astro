@@ -11,22 +11,10 @@ import {
     SUBCATEGORY_SLUG_NL_TO_EN,
 } from '../../../../../data/supportCategories-en';
 
-export async function getStaticPaths() {
-    return supportCategories.flatMap((c) => c.subcategories.map((s) => ({
-        params: {
-            category: c.slug,
-            subcategory: s.slug,
-        },
-    })));
-}
-
 const { category, subcategory } = Astro.params;
 const categoryInfo = supportCategoriesBySlug[category as string];
 const subcategoryInfo = categoryInfo ? findSubcategoryBySlug(categoryInfo, subcategory as string) : undefined;
-
-if (!categoryInfo || !subcategoryInfo) {
-    throw new Error(`Unknown support path: ${category}/${subcategory}`);
-}
+if (!categoryInfo || !subcategoryInfo) return Astro.rewrite('/404');
 
 const enCategorySlug = CATEGORY_SLUG_NL_TO_EN[category];
 const enSubSlug = SUBCATEGORY_SLUG_NL_TO_EN[subcategory];
@@ -96,7 +84,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [collectionSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <SupportSubcategoryPage

@@ -1,22 +1,12 @@
 ---
 import { getCollection } from 'astro:content';
-import type { GetStaticPaths } from 'astro';
 import IntegrationDetailPage from '../../components/pages/IntegrationDetailPage.astro';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const integrations = await getCollection('integrations');
-    return integrations.map((integration) => ({
-        params: {
-            slug: integration.data.slug,
-        },
-        props: {
-            integration,
-            allIntegrations: integrations,
-        },
-    }));
-};
+const { slug } = Astro.params;
 
-const { integration, allIntegrations } = Astro.props;
+const allIntegrations = await getCollection('integrations');
+const integration = allIntegrations.find((i) => i.data.slug === slug);
+if (!integration) return Astro.rewrite('/404');
 const { name, category, summary, supportSlug } = integration.data;
 
 const related = allIntegrations
@@ -75,7 +65,7 @@ const alternates = enSlugs.has(integration.data.slug)
     ? { nl: `/integraties/${integration.data.slug}`, en: `/en/integrations/${integration.data.slug}` }
     : undefined;
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <IntegrationDetailPage

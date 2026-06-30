@@ -3,36 +3,21 @@ import { getCollection } from 'astro:content';
 import BlogArticlePage from '../../../components/pages/BlogArticlePage.astro';
 import { authorSchema } from '../../../utils/author';
 
-export async function getStaticPaths() {
-    const blogs = await getCollection('blogsEn');
+const { slug } = Astro.params;
 
-    return blogs.map((blog) => {
-        const others = blogs.filter((b) => b.id !== blog.id);
+const blogs = await getCollection('blogsEn');
+const blog = blogs.find((b) => b.id === slug);
+if (!blog) return Astro.rewrite('/en/404');
 
-        const sameCategory = blog.data.category
-            ? others.filter((b) => b.data.category === blog.data.category)
-            : [];
-
-        const otherIds = new Set(sameCategory.map((b) => b.id));
-        const fallback = others.filter((b) => !otherIds.has(b.id));
-
-        const related = [...sameCategory, ...fallback]
-            .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
-            .slice(0, 3);
-
-        return {
-            params: {
-                slug: blog.id,
-            },
-            props: {
-                blog,
-                related,
-            },
-        };
-    });
-}
-
-const { blog, related } = Astro.props;
+const others = blogs.filter((b) => b.id !== blog.id);
+const sameCategory = blog.data.category
+    ? others.filter((b) => b.data.category === blog.data.category)
+    : [];
+const otherIds = new Set(sameCategory.map((b) => b.id));
+const fallback = others.filter((b) => !otherIds.has(b.id));
+const related = [...sameCategory, ...fallback]
+    .sort((a, b) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+    .slice(0, 3);
 
 const formattedDate = new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
@@ -93,7 +78,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [articleSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <BlogArticlePage

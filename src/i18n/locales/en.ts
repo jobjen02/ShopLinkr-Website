@@ -793,8 +793,8 @@ const en: Dictionary = {
                     eyebrow: 'Always on',
                     body: 'These cookies are required for the site to work properly. Think of logging in, submitting forms and remembering your session. Without them, the site does not work correctly.',
                     items: [
-                        { purpose: 'Remembers your cookie preferences', duration: '12 months' },
-                        { purpose: 'Keeps your session on the site active', duration: 'Until you close the browser' },
+                        { name: 'shoplinkr-cookie-consent', purpose: 'Remembers your cookie preferences', duration: '12 months' },
+                        { name: 'session', purpose: 'Keeps your session on the site active', duration: 'Until you close the browser' },
                     ],
                 },
                 {
@@ -802,7 +802,7 @@ const en: Dictionary = {
                     eyebrow: 'Optional',
                     body: 'These cookies help us understand how you use the site, which pages are popular and where people get stuck. We use these insights to improve the site. Fully anonymous.',
                     items: [
-                        { purpose: 'Google Analytics 4: visitors and behavior (anonymous)', duration: '2 years' },
+                        { name: '_ga, _ga_*', purpose: 'Google Analytics 4: visitors and behavior (anonymous)', duration: '2 years' },
                     ],
                 },
             ],

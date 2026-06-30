@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import type { GetStaticPaths } from 'astro';
 import SupportArticlePage from '../../../components/pages/SupportArticlePage.astro';
 import {
     supportCategoriesEnBySlug,
@@ -8,20 +7,11 @@ import {
 import { findSubcategoryBySlug } from '../../../data/supportCategories';
 import { authorSchema } from '../../../utils/author';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const articles = await getCollection('supportArticlesEn');
-    return articles.map((article) => ({
-        params: {
-            slug: article.id.split('/').pop(),
-        },
-        props: {
-            article,
-            allArticles: articles,
-        },
-    }));
-};
+const { slug } = Astro.params;
 
-const { article, allArticles } = Astro.props;
+const allArticles = await getCollection('supportArticlesEn');
+const article = allArticles.find((a) => a.id.split('/').pop() === slug);
+if (!article) return Astro.rewrite('/en/404');
 
 const categoryInfo = supportCategoriesEnBySlug[article.data.category];
 const subcategoryInfo = categoryInfo && article.data.subcategory
@@ -134,7 +124,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [articleSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <SupportArticlePage

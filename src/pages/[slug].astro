@@ -1,44 +1,18 @@
 ---
 import { getCollection } from 'astro:content';
 import SeoArticlePage from '../components/pages/SeoArticlePage.astro';
-import { routes } from '../i18n/routes';
 import { authorSchema } from '../utils/author';
 
-export async function getStaticPaths() {
-    const pages = await getCollection('seoPages');
-    const pagesEn = await getCollection('seoPagesEn');
-    const enByNlId = new Map(
-        pagesEn.filter((p) => p.data.translationKey).map((p) => [p.data.translationKey, p.id]),
-    );
+const { slug } = Astro.params;
 
-    // Build guard: a root-served SEO slug must never collide with a reserved
-    // root route (a localized page slug or a real page/dir under src/pages).
-    // The build fails loudly if it does, so the shared root namespace stays safe.
-    const reserved = new Set<string>();
-    for (const r of Object.values(routes)) {
-        if (r.nl && !r.nl.includes('/')) reserved.add(r.nl);
-    }
-    for (const file of Object.keys(import.meta.glob('./*.astro'))) {
-        const seg = file.replace('./', '').replace('.astro', '');
-        if (seg !== '[slug]' && seg !== 'index') reserved.add(seg);
-    }
-    ['blogs', 'functionaliteiten', 'integraties', 'support', 'en', 'api'].forEach((s) => reserved.add(s));
+// Astro matches explicit routes (e.g. /prijzen) before this root catch-all, so
+// any path that is not an SEO page slug simply falls through to 404 here.
+const pages = await getCollection('seoPages');
+const page = pages.find((p) => p.id === slug);
+if (!page) return Astro.rewrite('/404');
 
-    for (const page of pages) {
-        if (reserved.has(page.id)) {
-            throw new Error(
-                `SEO page slug "${page.id}" collides with a reserved root route. Rename src/content/seo/${page.id}.md (and its redirect/links) or the conflicting route.`,
-            );
-        }
-    }
-
-    return pages.map((page) => ({
-        params: { slug: page.id },
-        props: { page, enSlug: enByNlId.get(page.id) ?? null },
-    }));
-}
-
-const { page, enSlug } = Astro.props;
+const pagesEn = await getCollection('seoPagesEn');
+const enSlug = pagesEn.find((p) => p.data.translationKey === page.id)?.id ?? null;
 
 const alternates = enSlug
     ? { nl: `/${page.id}`, en: `/en/${enSlug}` }
@@ -70,7 +44,7 @@ const breadcrumbSchema = {
 
 const jsonLd = [articleSchema, breadcrumbSchema];
 
-export const prerender = true;
+export const prerender = false;
 ---
 
 <SeoArticlePage page={page} alternates={alternates} jsonLd={jsonLd} />
