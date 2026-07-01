@@ -1,0 +1,37 @@
+---
+import LegalPage from '../components/pages/LegalPage.astro';
+import { breadcrumbs } from '../utils/seo';
+import content from '../data/legal/algemene-voorwaarden.html?raw';
+
+const canonical = 'https://shoplinkr.com/algemene-voorwaarden';
+const description = 'De algemene voorwaarden van ShopLinkr, inclusief de verwerkersovereenkomst voor de verwerking van persoonsgegevens.';
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Algemene voorwaarden', '/algemene-voorwaarden'],
+    ]),
+    {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        name: 'Algemene voorwaarden',
+        description,
+        url: canonical,
+        inLanguage: 'nl-NL',
+        isPartOf: { '@id': 'https://shoplinkr.com/#website' },
+    },
+];
+
+export const prerender = false;
+---
+
+<LegalPage
+    title="Algemene voorwaarden"
+    description={description}
+    updatedLabel="Versie"
+    lastUpdated="maart 2026"
+    pdfHref="/documents/algemene-voorwaarden.pdf"
+    jsonLd={jsonLd}
+>
+    <Fragment set:html={content} />
+</LegalPage>

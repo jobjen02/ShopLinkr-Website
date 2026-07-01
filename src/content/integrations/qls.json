@@ -1,17 +1,30 @@
 {
-    "name": "QLS",
-    "slug": "qls",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/QLS.jpg",
-    "summary": "Print QLS-labels rechtstreeks vanuit je picklijst. Inclusief automatische tracking terug naar je webshop.",
-    "supportSlug": "qls-koppelen",
-    "tagline": "Passie voor e-commerce",
-    "about": "QLS is één van de snelst groeiende bedrijven in e-commercelogistiek in de Benelux. Door webshops volledig te ontzorgen met fulfilment, pakketdienst en slimme software (my.QLS), helpt QLS ondernemers hun logistiek te optimaliseren en moeiteloos op te schalen. Meer dan 1.500 webshops hebben al voor QLS gekozen als strategische partner. QLS biedt complete e-commerce logistiek: Fulfilment, Pakketdienst, Software.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij QLS. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "QLS",
+  "slug": "qls",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/QLS.jpg",
+  "summary": "Print QLS-labels rechtstreeks vanuit je picklijst. Inclusief automatische tracking terug naar je webshop.",
+  "ogImage": "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png",
+  "supportSlug": "qls-koppelen",
+  "tagline": "Passie voor e-commerce",
+  "about": "QLS is één van de snelst groeiende bedrijven in e-commercelogistiek in de Benelux. Door webshops volledig te ontzorgen met fulfilment, pakketdienst en slimme software (my.QLS), helpt QLS ondernemers hun logistiek te optimaliseren en moeiteloos op te schalen. Meer dan 1.500 webshops hebben al voor QLS gekozen als strategische partner. QLS biedt complete e-commerce logistiek: Fulfilment, Pakketdienst, Software.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij QLS. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Wordt de track-and-trace automatisch teruggekoppeld naar mijn webshop?",
+      "a": "Ja, zodra ShopLinkr een QLS-label heeft aangemaakt, wordt de track-and-trace automatisch teruggezet naar je webshop. Zo blijft de verzendstatus van elke bestelling up-to-date."
+    },
+    {
+      "q": "Heb ik mijn eigen QLS-account nodig om te koppelen?",
+      "a": "Ja, je koppelt met de gebruikersnaam en het wachtwoord van je eigen QLS-account en kiest daarbij je bedrijf en merk. Je verzendt dus onder je eigen QLS-contract en tarieven."
+    },
+    {
+      "q": "Waar maak ik mijn QLS-labels aan nadat ik heb gekoppeld?",
+      "a": "Zodra de koppeling actief is, is ShopLinkr de enige plek waar je je QLS-labels hoeft aan te maken. Je print de labels rechtstreeks vanuit je picklijst."
+    }
+  ]
 }

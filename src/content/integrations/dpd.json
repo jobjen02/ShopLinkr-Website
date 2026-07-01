@@ -1,17 +1,34 @@
 {
-    "name": "DPD",
-    "slug": "dpd",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/dpd.jpeg",
-    "summary": "Genereer DPD-verzendlabels en pickup-locaties direct in je orderflow. Track en trace automatisch teruggekoppeld.",
-    "supportSlug": "dpd-koppelen",
-    "tagline": "Klimaatneutraal, duurzaam en innovatief: allemaal in één pakket.",
-    "about": "DPD is een pakketbezorgdienst die pakketten snel en betrouwbaar levert. Ze werken in veel landen en bieden diensten voor bedrijven en particulieren. Met hun track-and-trace systeem kun je eenvoudig je pakket volgen. DPD staat voor \"Dynamic Parcel Distribution\" en is bekend om hun focus op duurzaamheid en klantvriendelijke bezorgopties.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij DPD. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "DPD",
+  "slug": "dpd",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/dpd.jpeg",
+  "summary": "Genereer DPD-verzendlabels en pickup-locaties direct in je orderflow. Track en trace automatisch teruggekoppeld.",
+  "ogImage": "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png",
+  "supportSlug": "dpd-koppelen",
+  "tagline": "Klimaatneutraal, duurzaam en innovatief: allemaal in één pakket.",
+  "about": "DPD is een pakketbezorgdienst die pakketten snel en betrouwbaar levert. Ze werken in veel landen en bieden diensten voor bedrijven en particulieren. Met hun track-and-trace systeem kun je eenvoudig je pakket volgen. DPD staat voor \"Dynamic Parcel Distribution\" en is bekend om hun focus op duurzaamheid en klantvriendelijke bezorgopties.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij DPD. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Kan ik mijn eigen DPD contract koppelen?",
+      "a": "Ja. Je koppelt het DPD contract dat je al hebt aan ShopLinkr, zodat je je eigen afspraken en tarieven houdt. Je hoeft niets opnieuw te onderhandelen of in te stellen."
+    },
+    {
+      "q": "Welke gegevens heb ik nodig om DPD te koppelen?",
+      "a": "Je hebt Shipper WS-inloggegevens (een gebruikersnaam en wachtwoord) nodig van de CustomerIT-afdeling van DPD. Die vraag je aan via <a href=\"mailto:customerit@dpd.nl\">customerit@dpd.nl</a>."
+    },
+    {
+      "q": "Krijg ik de track en trace automatisch terug in ShopLinkr?",
+      "a": "Ja. Nadat het label is aangemaakt, wordt de track en trace automatisch teruggekoppeld naar de bestelling, zodat je die niet handmatig hoeft over te nemen."
+    },
+    {
+      "q": "Kan ik DPD-afhaalpunten kiezen bij het verzenden?",
+      "a": "Ja, je kunt DPD pickup-locaties direct in je orderflow gebruiken naast een gewoon verzendlabel."
+    }
+  ]
 }

@@ -7,6 +7,8 @@ translationKey: "het-belang-van-effectief-voorraadbeheer"
 imageAlt: "Warehouse worker checking stock levels on shelves"
 ---
 
+<p><strong>Effective inventory management is striking the balance between holding enough stock to fulfill every order right away and not tying up capital in dead stock. You steer it with ABC analysis, lead times, and an ordering strategy, and keep stock synced in real time across every sales channel to prevent overselling.</strong></p>
+
 <p>Effective inventory management comes down to one balance: holding enough stock to fulfill every order right away, without tying up capital in products that sit on the shelf for months. Lean too far one way and you run out, missing sales you could have made. Lean too far the other way and storage costs and dead stock pile up. This guide covers the principles that drive that balance, the mistakes that go wrong most often, and how to keep your stock accurate across every sales channel.</p>
 
 <h2>The principles that drive your stock</h2>
@@ -20,7 +22,7 @@ imageAlt: "Warehouse worker checking stock levels on shelves"
 <h2>The mistakes that cost the most</h2>
 <p>Most inventory problems fall into a handful of categories:</p>
 <ol>
-<li><strong>Overselling.</strong> You sell across several channels, but stock is not in sync. A product already sold on your webshop is still listed on a marketplace. The result: canceled orders and unhappy customers.</li>
+<li><strong>Overselling.</strong> You sell across several channels, but stock is not in sync. A product already sold on your webshop is still listed on a marketplace. The result: <a href="https://partnerplatform.bol.com/nl/idp/annuleringen" target="_blank" rel="noopener noreferrer">canceled orders</a> and unhappy customers.</li>
 <li><strong>Dead stock.</strong> Products that no longer move take up storage space and lock up capital you could put to better use elsewhere.</li>
 <li><strong>Reordering too late.</strong> Without a clear view of your lead times and sales velocity, you hit shortages right when demand peaks.</li>
 </ol>

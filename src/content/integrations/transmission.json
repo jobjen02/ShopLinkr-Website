@@ -1,16 +1,28 @@
 {
-    "name": "TransMission",
-    "slug": "transmission",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/TransMission.png",
-    "summary": "Geschikt voor grotere zendingen en pallets met TransMission. Labels en tracking in dezelfde flow als je pakketten.",
-    "tagline": "Stuk- en palletzendingen door heel Europa.",
-    "about": "TransMission is een Nederlandse vervoerder die zich richt op stuk- en palletzendingen, zowel binnen Nederland als door Europa. Door samenwerking in een Europees netwerk van regionale vervoerders is TransMission sterk in zendingen waarvoor een gewone pakketdienst te beperkt is. Denk aan grote dozen, pallets en zendingen met levertijd-afspraken.",
-    "faqs": [
-        {
-            "q": "Werkt TransMission ook voor reguliere pakketzendingen?",
-            "a": "TransMission richt zich met name op stuk- en palletzendingen. Voor reguliere pakketten gebruik je in ShopLinkr meestal een vervoerder als PostNL, DPD of GLS. Met een verzendregel kun je makkelijk per ordertype een andere vervoerder kiezen."
-        }
-    ]
+  "name": "TransMission",
+  "slug": "transmission",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/TransMission.png",
+  "summary": "Geschikt voor grotere zendingen en pallets met TransMission. Labels en tracking in dezelfde flow als je pakketten.",
+  "tagline": "Stuk- en palletzendingen door heel Europa.",
+  "about": "TransMission is een Nederlandse vervoerder die zich richt op stuk- en palletzendingen, zowel binnen Nederland als door Europa. Door samenwerking in een Europees netwerk van regionale vervoerders is TransMission sterk in zendingen waarvoor een gewone pakketdienst te beperkt is. Denk aan grote dozen, pallets en zendingen met levertijd-afspraken.",
+  "faqs": [
+    {
+      "q": "Werkt TransMission ook voor reguliere pakketzendingen?",
+      "a": "TransMission richt zich met name op stuk- en palletzendingen. Voor reguliere pakketten gebruik je in ShopLinkr meestal een vervoerder als PostNL, DPD of GLS. Met een verzendregel kun je makkelijk per ordertype een andere vervoerder kiezen."
+    },
+    {
+      "q": "Heb ik een eigen TransMission contract nodig om te koppelen?",
+      "a": "Ja, je koppelt ShopLinkr aan je eigen TransMission account, zodat je op je eigen vervoerderstarief en afspraken verzendt. ShopLinkr regelt daarbinnen het aanmaken van labels en het terugkoppelen van de track & trace."
+    },
+    {
+      "q": "Wordt de track & trace automatisch teruggekoppeld naar mijn order?",
+      "a": "Ja, zodra je een label aanmaakt komt de track & trace automatisch terug bij de order. Zo kun je je klant op de hoogte houden zonder codes handmatig over te typen."
+    },
+    {
+      "q": "Kan ik labels voor pallet- en stukgoedzendingen in dezelfde flow printen als mijn pakketten?",
+      "a": "Ja, je maakt labels voor TransMission-zendingen aan in dezelfde verzendflow als je gewone pakketten. Je hoeft dus niet naar een apart systeem voor je grotere zendingen."
+    }
+  ]
 }

@@ -1,18 +1,31 @@
 {
-    "name": "MyParcel",
-    "slug": "myparcel",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/MyParcel.jpg",
-    "summary": "Create MyParcel labels for PostNL, DHL and DPD in seconds. Tracking flows back to your channels automatically.",
-    "supportSlug": "myparcel-koppelen",
-    "tagline": "The number 1 shipping platform for online entrepreneurs",
-    "about": "MyParcel is a shipping platform for online stores. It helps you send parcels easily through carriers such as PostNL and DHL. You can create shipping labels, offer Track & Trace and manage returns. This makes shipping faster and easier to keep track of for webshops.",
-    "translationKey": "myparcel",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on the shipping details of an order we request a shipping label from MyParcel. You can adjust the address details manually if needed."
-        }
-    ]
+  "name": "MyParcel",
+  "slug": "myparcel",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/MyParcel.jpg",
+  "summary": "Create MyParcel labels for PostNL, DHL and DPD in seconds. Tracking flows back to your channels automatically.",
+  "ogImage": "/images/blog/myparcel-koppelen-aan-shoplinkr/Zw7u7BKJNlgYbzWhIRb6eGF5k.png",
+  "supportSlug": "myparcel-koppelen",
+  "tagline": "The number 1 shipping platform for online entrepreneurs",
+  "about": "MyParcel is a shipping platform for online stores. It helps you send parcels easily through carriers such as PostNL and DHL. You can create shipping labels, offer Track & Trace and manage returns. This makes shipping faster and easier to keep track of for webshops.",
+  "translationKey": "myparcel",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, based on the shipping details of an order we request a shipping label from MyParcel. You can adjust the address details manually if needed."
+    },
+    {
+      "q": "Which carriers can I create MyParcel labels for?",
+      "a": "You can create MyParcel shipping labels for PostNL, DHL and DPD in seconds, straight from ShopLinkr."
+    },
+    {
+      "q": "Do I need my own MyParcel account to connect?",
+      "a": "Yes, you connect your own MyParcel account by copying the Public key from your MyParcel shop settings and entering it in ShopLinkr under Settings > Carriers. That way you ship under your own MyParcel account."
+    },
+    {
+      "q": "Is the Track & Trace sent back to my sales channels automatically?",
+      "a": "Yes, once the label is created the tracking is sent back to your channels automatically, so your customer can follow the shipment."
+    }
+  ]
 }

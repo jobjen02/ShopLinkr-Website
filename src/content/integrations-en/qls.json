@@ -1,18 +1,31 @@
 {
-    "name": "QLS",
-    "slug": "qls",
-    "translationKey": "qls",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/QLS.jpg",
-    "summary": "Print QLS labels straight from your picklist, including automatic tracking back to your webshop.",
-    "supportSlug": "qls-koppelen",
-    "tagline": "Passion for e-commerce",
-    "about": "QLS is one of the fastest growing companies in e-commerce logistics in the Benelux. By taking the full logistics burden off webshops with fulfillment, a parcel service and smart software (my.QLS), QLS helps entrepreneurs optimize their logistics and scale up effortlessly. More than 1,500 webshops have already chosen QLS as their strategic partner. QLS offers complete e-commerce logistics: Fulfillment, Parcel service, Software.",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on an order's shipping details we request a shipping label from QLS. You can adjust the address details manually if you want."
-        }
-    ]
+  "name": "QLS",
+  "slug": "qls",
+  "translationKey": "qls",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/QLS.jpg",
+  "summary": "Print QLS labels straight from your picklist, including automatic tracking back to your webshop.",
+  "ogImage": "/images/blog/qls-koppelen-aan-shoplinkr/fbdkDgelh9OQZyjRPb4PRwl6zLw.png",
+  "supportSlug": "qls-koppelen",
+  "tagline": "Passion for e-commerce",
+  "about": "QLS is one of the fastest growing companies in e-commerce logistics in the Benelux. By taking the full logistics burden off webshops with fulfillment, a parcel service and smart software (my.QLS), QLS helps entrepreneurs optimize their logistics and scale up effortlessly. More than 1,500 webshops have already chosen QLS as their strategic partner. QLS offers complete e-commerce logistics: Fulfillment, Parcel service, Software.",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, based on an order's shipping details we request a shipping label from QLS. You can adjust the address details manually if you want."
+    },
+    {
+      "q": "Is the track and trace sent back to my webshop automatically?",
+      "a": "Yes, as soon as ShopLinkr creates a QLS label, the track and trace is automatically returned to your webshop, so the shipping status of every order stays up to date."
+    },
+    {
+      "q": "Do I need my own QLS account to connect?",
+      "a": "Yes, you connect using the username and password of your own QLS account and select your company and brand. This means you ship under your own QLS contract and rates."
+    },
+    {
+      "q": "Where do I create my QLS labels after connecting?",
+      "a": "Once the connection is active, ShopLinkr is the only place you need to create your QLS labels. You print them straight from your picklist."
+    }
+  ]
 }

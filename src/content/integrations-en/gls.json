@@ -1,17 +1,29 @@
 {
-    "name": "GLS",
-    "slug": "gls",
-    "translationKey": "gls",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/GLS.png",
-    "summary": "Generate GLS labels straight from ShopLinkr. Ship quickly across Europe with live tracking.",
-    "tagline": "Parcels to people",
-    "about": "GLS (General Logistics Systems) is an international parcel service that operates across Europe and beyond. GLS delivers parcels for webshops, businesses and consumers and is known for its reliable delivery network, fast delivery and extensive Track & Trace options. With GLS you can ship parcels within the Netherlands, throughout Europe and to international destinations.",
-    "faqs": [
-        {
-            "q": "Are the address details added to the shipping label automatically?",
-            "a": "Yes, based on an order's shipping details we request a shipping label from GLS. You can adjust the address details manually if you want."
-        }
-    ]
+  "name": "GLS",
+  "slug": "gls",
+  "translationKey": "gls",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/GLS.png",
+  "summary": "Generate GLS labels straight from ShopLinkr. Ship quickly across Europe with live tracking.",
+  "tagline": "Parcels to people",
+  "about": "GLS (General Logistics Systems) is an international parcel service that operates across Europe and beyond. GLS delivers parcels for webshops, businesses and consumers and is known for its reliable delivery network, fast delivery and extensive Track & Trace options. With GLS you can ship parcels within the Netherlands, throughout Europe and to international destinations.",
+  "faqs": [
+    {
+      "q": "Are the address details added to the shipping label automatically?",
+      "a": "Yes, based on an order's shipping details we request a shipping label from GLS. You can adjust the address details manually if you want."
+    },
+    {
+      "q": "Do I need my own GLS account to create labels?",
+      "a": "Yes, you connect your own GLS contract to ShopLinkr. Labels are then created under your own agreement and rates with GLS."
+    },
+    {
+      "q": "Do I automatically get a Track & Trace code after creating a label?",
+      "a": "Yes, as soon as a GLS label is created the Track & Trace code is returned into ShopLinkr so you can follow the shipment."
+    },
+    {
+      "q": "Can I also ship internationally with GLS from ShopLinkr?",
+      "a": "Yes, with GLS you send parcels within the Netherlands, throughout Europe and to international destinations."
+    }
+  ]
 }

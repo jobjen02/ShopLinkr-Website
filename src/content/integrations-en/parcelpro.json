@@ -1,18 +1,30 @@
 {
-    "name": "ParcelPro",
-    "slug": "parcelpro",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/ParcelPro.jpg",
-    "summary": "One connection for PostNL, DHL and GLS through ParcelPro. Labels printed and tracking handled automatically.",
-    "supportSlug": "parcelpro-koppelen",
-    "tagline": "Connect multiple carriers in a single system.",
-    "about": "With ParcelPro you connect multiple carriers in one system. ParcelPro currently offers integrations with 18 different carriers. By integrating ParcelPro with ShopLinkr, you instantly get the ability to use all of these carriers through ShopLinkr.",
-    "translationKey": "parcelpro",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on the shipping details of an order we request a shipping label from ParcelPro. You can adjust the address details manually if needed."
-        }
-    ]
+  "name": "ParcelPro",
+  "slug": "parcelpro",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/ParcelPro.jpg",
+  "summary": "One connection for PostNL, DHL and GLS through ParcelPro. Labels printed and tracking handled automatically.",
+  "supportSlug": "parcelpro-koppelen",
+  "tagline": "Connect multiple carriers in a single system.",
+  "about": "With ParcelPro you connect multiple carriers in one system. ParcelPro currently offers integrations with 18 different carriers. By integrating ParcelPro with ShopLinkr, you instantly get the ability to use all of these carriers through ShopLinkr.",
+  "translationKey": "parcelpro",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, based on the shipping details of an order we request a shipping label from ParcelPro. You can adjust the address details manually if needed."
+    },
+    {
+      "q": "Which carriers can I use through the ParcelPro connection?",
+      "a": "Through ParcelPro you can use carriers such as PostNL, DHL and GLS, and ParcelPro currently offers integrations with 18 different carriers. Once you connect ParcelPro to ShopLinkr, you can use all of these carriers straight from ShopLinkr."
+    },
+    {
+      "q": "Do I still need to create my shipping labels somewhere else after connecting?",
+      "a": "No, once ParcelPro is connected, ShopLinkr becomes the only place where you need to create your shipping labels."
+    },
+    {
+      "q": "Is the track & trace processed automatically?",
+      "a": "Yes, when a shipping label is created the tracking is handled automatically, so you do not have to enter it by hand."
+    }
+  ]
 }

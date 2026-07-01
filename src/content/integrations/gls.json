@@ -1,16 +1,28 @@
 {
-    "name": "GLS",
-    "slug": "gls",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/GLS.png",
-    "summary": "Genereer GLS-labels rechtstreeks vanuit ShopLinkr. Snel verzenden door heel Europa met live tracking.",
-    "tagline": "Parcels to people",
-    "about": "GLS (General Logistics Systems) is een internationale pakketdienst die actief is in heel Europa en daarbuiten. GLS bezorgt pakketten voor webshops, bedrijven en particulieren en staat bekend om zijn betrouwbare bezorgnetwerk, snelle levering en uitgebreide Track & Trace mogelijkheden. Met GLS kun je pakketten verzenden binnen Nederland, door heel Europa en naar internationale bestemmingen.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij GLS. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "GLS",
+  "slug": "gls",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/GLS.png",
+  "summary": "Genereer GLS-labels rechtstreeks vanuit ShopLinkr. Snel verzenden door heel Europa met live tracking.",
+  "tagline": "Parcels to people",
+  "about": "GLS (General Logistics Systems) is een internationale pakketdienst die actief is in heel Europa en daarbuiten. GLS bezorgt pakketten voor webshops, bedrijven en particulieren en staat bekend om zijn betrouwbare bezorgnetwerk, snelle levering en uitgebreide Track & Trace mogelijkheden. Met GLS kun je pakketten verzenden binnen Nederland, door heel Europa en naar internationale bestemmingen.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij GLS. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Heb ik een eigen GLS-account nodig om labels aan te maken?",
+      "a": "Ja, je koppelt je eigen GLS-contract aan ShopLinkr. De labels worden dan onder jouw eigen afspraken en tarieven bij GLS aangemaakt."
+    },
+    {
+      "q": "Krijg ik automatisch een Track & Trace-code na het aanmaken van een label?",
+      "a": "Ja, zodra een GLS-label is aangemaakt komt de Track & Trace-code terug in ShopLinkr, zodat je de zending kunt volgen."
+    },
+    {
+      "q": "Kan ik met GLS vanuit ShopLinkr ook naar het buitenland verzenden?",
+      "a": "Ja, met GLS verstuur je pakketten binnen Nederland, door heel Europa en naar internationale bestemmingen."
+    }
+  ]
 }

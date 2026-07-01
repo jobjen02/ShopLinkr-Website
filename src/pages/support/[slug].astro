@@ -6,6 +6,7 @@ import {
     findSubcategoryBySlug,
 } from '../../data/supportCategories';
 import { authorSchema } from '../../utils/author';
+import { extractSteps, howToSchema } from '../../utils/howto';
 
 const { slug } = Astro.params;
 
@@ -128,7 +129,21 @@ const breadcrumbSchema = {
     ],
 };
 
-const jsonLd = [articleSchema, breadcrumbSchema];
+// Connection articles ("...-koppelen") split one procedure across several
+// single-step <ol> blocks; 'all-ol' collects them into one HowTo for AI citation.
+const howTo = articleSlug?.endsWith('-koppelen')
+    ? howToSchema({
+        name: article.data.title,
+        description: article.data.summary,
+        url: canonicalUrl,
+        inLanguage: 'nl-NL',
+        steps: extractSteps(article.body ?? '', 'all-ol'),
+    })
+    : null;
+
+const jsonLd = howTo
+    ? [articleSchema, breadcrumbSchema, howTo]
+    : [articleSchema, breadcrumbSchema];
 
 export const prerender = false;
 ---

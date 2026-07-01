@@ -1,17 +1,29 @@
 {
-    "name": "PostNL",
-    "slug": "post-nl",
-    "translationKey": "post-nl",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/PostNL.jpg",
-    "summary": "Ship with PostNL using your own contract. Print labels straight from ShopLinkr and get tracking directly in your system.",
-    "tagline": "PostNL is the national postal service of the Netherlands",
-    "about": "PostNL is the national postal service of the Netherlands. They deliver letters and parcels in the Netherlands and across the rest of the Benelux. PostNL also offers logistics solutions for e-commerce and has a history spanning more than 225 years.",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, we request a shipping label from PostNL based on the shipping details of an order. You can adjust the address details manually if you want."
-        }
-    ]
+  "name": "PostNL",
+  "slug": "post-nl",
+  "translationKey": "post-nl",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/PostNL.jpg",
+  "summary": "Ship with PostNL using your own contract. Print labels straight from ShopLinkr and get tracking directly in your system.",
+  "tagline": "PostNL is the national postal service of the Netherlands",
+  "about": "PostNL is the national postal service of the Netherlands. They deliver letters and parcels in the Netherlands and across the rest of the Benelux. PostNL also offers logistics solutions for e-commerce and has a history spanning more than 225 years.",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, we request a shipping label from PostNL based on the shipping details of an order. You can adjust the address details manually if you want."
+    },
+    {
+      "q": "Do I need my own PostNL contract to connect?",
+      "a": "Yes, you ship with PostNL using your own contract. You link that contract to ShopLinkr, so you keep your own agreements and rates."
+    },
+    {
+      "q": "Do I get the track & trace back in ShopLinkr automatically?",
+      "a": "Yes, once the shipping label is created the track & trace is added to ShopLinkr automatically, so your order is directly linked to its tracking."
+    },
+    {
+      "q": "Can I have PostNL labels printed automatically?",
+      "a": "You print PostNL labels directly from ShopLinkr. With AutoPrint they are printed automatically as soon as you process an order."
+    }
+  ]
 }

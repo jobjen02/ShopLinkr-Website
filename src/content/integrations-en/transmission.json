@@ -1,17 +1,29 @@
 {
-    "name": "TransMission",
-    "slug": "transmission",
-    "translationKey": "transmission",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/TransMission.png",
-    "summary": "Built for larger shipments and pallets with TransMission. Labels and tracking in the same flow as your parcels.",
-    "tagline": "Freight and pallet shipments across Europe.",
-    "about": "TransMission is a Dutch carrier focused on freight and pallet shipments, both within the Netherlands and across Europe. Through a European network of regional carriers, TransMission excels at shipments that a regular parcel service can't handle. Think large boxes, pallets and shipments with agreed delivery times.",
-    "faqs": [
-        {
-            "q": "Does TransMission also work for regular parcel shipments?",
-            "a": "TransMission focuses mainly on freight and pallet shipments. For regular parcels you'll usually use a carrier like PostNL, DPD or GLS in ShopLinkr. With a shipping rule you can easily pick a different carrier per order type."
-        }
-    ]
+  "name": "TransMission",
+  "slug": "transmission",
+  "translationKey": "transmission",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/TransMission.png",
+  "summary": "Built for larger shipments and pallets with TransMission. Labels and tracking in the same flow as your parcels.",
+  "tagline": "Freight and pallet shipments across Europe.",
+  "about": "TransMission is a Dutch carrier focused on freight and pallet shipments, both within the Netherlands and across Europe. Through a European network of regional carriers, TransMission excels at shipments that a regular parcel service can't handle. Think large boxes, pallets and shipments with agreed delivery times.",
+  "faqs": [
+    {
+      "q": "Does TransMission also work for regular parcel shipments?",
+      "a": "TransMission focuses mainly on freight and pallet shipments. For regular parcels you'll usually use a carrier like PostNL, DPD or GLS in ShopLinkr. With a shipping rule you can easily pick a different carrier per order type."
+    },
+    {
+      "q": "Do I need my own TransMission contract to connect?",
+      "a": "Yes, you connect ShopLinkr to your own TransMission account so you ship on your own carrier rates and agreements. Within that connection ShopLinkr handles label creation and the track & trace."
+    },
+    {
+      "q": "Is the track & trace automatically returned to my order?",
+      "a": "Yes, as soon as you create a label the track & trace is automatically added to the order. That way you can keep your customer informed without manually copying codes."
+    },
+    {
+      "q": "Can I print labels for pallet and freight shipments in the same flow as my parcels?",
+      "a": "Yes, you create labels for TransMission shipments in the same shipping flow as your regular parcels, so you don't need a separate system for your larger shipments."
+    }
+  ]
 }

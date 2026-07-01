@@ -7,13 +7,15 @@ imageAlt: "Warehouse with shelving and products, managed through warehouse softw
 translationKey: "de-ultieme-gids-voor-magazijnsoftware"
 ---
 
+<p><strong>Warehouse software brings your inventory, order processing, picking, shipping, and returns from every sales channel together in one place. It syncs your stock in real time, prevents overselling, and cuts out manual work. The core features are central order processing, real-time inventory sync, pick lists with a warehouse route, one-click shipping labels, and reports.</strong></p>
+
 <p>Warehouse software is the central place where you manage your inventory, orders, and shipping. Instead of juggling separate spreadsheets and retyping data between channels, the software tracks in real time what is in stock, which orders come in, and what needs to go out the door. For webshops and marketplace sellers, that is the difference between control and chaos. This guide covers which features matter and how to make the right choice.</p>
 
 <h2>Which features do you actually need?</h2>
 <p>Not every tool that calls itself warehouse software does the same thing. These are the core features that save the most time in practice:</p>
 <ul>
 <li><p><strong>Central order processing.</strong> Orders from all your channels, such as bol, Shopify, WooCommerce, and Kaufland, land in one screen. No more separate browser tabs per marketplace.</p></li>
-<li><p><strong>Real-time inventory sync.</strong> Sell a product on one channel and stock drops instantly on all the others. That prevents overselling, the leading cause of cancellations and negative reviews.</p></li>
+<li><p><strong>Real-time inventory sync.</strong> Sell a product on one channel and stock drops instantly on all the others. That prevents overselling, the leading cause of <a href="https://partnerplatform.bol.com/nl/idp/annuleringen" target="_blank" rel="noopener noreferrer">cancellations</a> and negative reviews.</p></li>
 <li><p><strong>Pick lists with a warehouse route.</strong> A smart walking route through your warehouse, with barcode scanning, bins, and packing stations, so orders get picked faster and with fewer mistakes.</p></li>
 <li><p><strong>One-click shipping labels.</strong> Labels for carriers like PostNL, DPD, and MyParcel, with track and trace sent back to the sales channel automatically.</p></li>
 <li><p><strong>Reports.</strong> Insight into revenue and margin per product, dead stock, and stock value, so you base decisions on numbers instead of gut feeling.</p></li>

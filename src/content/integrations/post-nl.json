@@ -1,16 +1,28 @@
 {
-    "name": "PostNL",
-    "slug": "post-nl",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/PostNL.jpg",
-    "summary": "Verzend met PostNL via je eigen contract. Labels printen vanuit ShopLinkr, tracking direct in je systeem.",
-    "tagline": "PostNL is het nationale postbedrijf van Nederland",
-    "about": "PostNL is het nationale postbedrijf van Nederland. Ze bezorgen brieven en pakketten in Nederland en de rest van de Benelux. PostNL biedt ook logistieke oplossingen voor e-commerce en heeft een geschiedenis van meer dan 225 jaar.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij PostNL. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "PostNL",
+  "slug": "post-nl",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/PostNL.jpg",
+  "summary": "Verzend met PostNL via je eigen contract. Labels printen vanuit ShopLinkr, tracking direct in je systeem.",
+  "tagline": "PostNL is het nationale postbedrijf van Nederland",
+  "about": "PostNL is het nationale postbedrijf van Nederland. Ze bezorgen brieven en pakketten in Nederland en de rest van de Benelux. PostNL biedt ook logistieke oplossingen voor e-commerce en heeft een geschiedenis van meer dan 225 jaar.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij PostNL. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Heb ik een eigen PostNL-contract nodig om te koppelen?",
+      "a": "Ja, je verzendt met PostNL via je eigen contract. Je koppelt dat contract aan ShopLinkr, zodat je je eigen afspraken en tarieven blijft gebruiken."
+    },
+    {
+      "q": "Krijg ik de track & trace automatisch terug in ShopLinkr?",
+      "a": "Ja, zodra het verzendlabel is aangemaakt komt de track & trace automatisch in ShopLinkr te staan, zodat je bestelling direct is voorzien van tracking."
+    },
+    {
+      "q": "Kan ik PostNL-labels automatisch laten printen?",
+      "a": "Je printt PostNL-labels rechtstreeks vanuit ShopLinkr. Met AutoPrint worden ze automatisch geprint zodra je een bestelling verwerkt."
+    }
+  ]
 }

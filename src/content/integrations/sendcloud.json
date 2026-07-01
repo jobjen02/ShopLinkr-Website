@@ -1,18 +1,31 @@
 {
-    "name": "Sendcloud",
-    "slug": "sendcloud",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/Sendcloud.png",
-    "summary": "Verstuur via meer dan 100 vervoerders met Sendcloud. Labels printen vanuit ShopLinkr en tracking richting je kanalen.",
-    "url": "https://www.sendcloud.nl",
-    "supportSlug": "sendcloud-koppelen",
-    "tagline": "Europa's #1 verzendsoftware",
-    "about": "Sendcloud is een verzendplatform voor webshops dat het verzendproces automatiseert en optimaliseert. Het biedt integraties met meer dan 100 vervoerders, zoals PostNL, DHL en DPD, en ondersteunt diverse shopsystemen. Met Sendcloud kun je eenvoudig verzendlabels aanmaken, trackinginformatie delen en retouren beheren, wat tijd en kosten bespaart.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij Sendcloud. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "Sendcloud",
+  "slug": "sendcloud",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/Sendcloud.png",
+  "summary": "Verstuur via meer dan 100 vervoerders met Sendcloud. Labels printen vanuit ShopLinkr en tracking richting je kanalen.",
+  "ogImage": "/images/blog/sendcloud-koppelen-aan-shoplinkr/Slt1nu6TvSVLMWJ0b7CuNixcQk.png",
+  "url": "https://www.sendcloud.nl",
+  "supportSlug": "sendcloud-koppelen",
+  "tagline": "Europa's #1 verzendsoftware",
+  "about": "Sendcloud is een verzendplatform voor webshops dat het verzendproces automatiseert en optimaliseert. Het biedt integraties met meer dan 100 vervoerders, zoals PostNL, DHL en DPD, en ondersteunt diverse shopsystemen. Met Sendcloud kun je eenvoudig verzendlabels aanmaken, trackinginformatie delen en retouren beheren, wat tijd en kosten bespaart.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij Sendcloud. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Heb ik een eigen Sendcloud-account nodig om te koppelen?",
+      "a": "Ja, je koppelt met de <strong>public key</strong> en <strong>secret key</strong> uit je eigen Sendcloud-account. Zo verzend je op basis van je eigen vervoerderscontracten en tarieven."
+    },
+    {
+      "q": "Krijg ik de track &amp; trace automatisch terug in mijn verkoopkanalen?",
+      "a": "Ja, zodra een verzendlabel is aangemaakt sturen we de trackinginformatie automatisch terug naar je gekoppelde kanalen."
+    },
+    {
+      "q": "Kan ik zelf kiezen met welke vervoerder ik verzend?",
+      "a": "Ja, de bezorgopties worden opgehaald vanuit Sendcloud, dus je kiest uit de vervoerders die je daar hebt ingesteld, zoals PostNL, DHL of DPD."
+    }
+  ]
 }

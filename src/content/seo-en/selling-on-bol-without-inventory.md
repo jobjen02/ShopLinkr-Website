@@ -7,12 +7,14 @@ imageAlt: "Parcels and a laptop showing an order, representing selling on bol wi
 translationKey: "verkopen-via-bol-zonder-voorraad"
 ---
 
+<p><strong>Selling on bol without inventory means you list products on bol while your supplier stores them and ships them directly to the customer. You earn the margin without your own warehouse or storage costs. Stock synchronization, passing orders along, and track & trace stay organized centrally.</strong></p>
+
 <p>Selling on bol without inventory means you list products on bol, a large Dutch sales channel, while your supplier stores the goods and ships them straight to your customer. You handle the sale and the margin, with no warehouse or storage costs. The hard part is the admin around it: keeping stock current, passing orders along, and reporting track & trace back. That is where <strong>ShopLinkr</strong> comes in.</p>
 
 <h2>How selling without your own stock works</h2>
 <p>You connect your bol seller account to a central system that manages orders and inventory for you. When an order arrives, you pass it to your supplier, who ships it and returns the track & trace. Here is how it works in practice:</p>
 <ol>
-<li><p>Create a seller account on bol and prepare your products with complete information and your own price plus margin.</p></li>
+<li><p>Create a <a href="https://partnerplatform.bol.com/nl/cdp/aanmeldproces" target="_blank" rel="noopener noreferrer">seller account on bol</a> and prepare your products with complete information and your own price plus margin.</p></li>
 <li><p>Connect bol to ShopLinkr through the <a href="/integraties">integrations</a> so orders come in centrally.</p></li>
 <li><p>Agree with your supplier on delivery times, prices, and how you exchange stock levels.</p></li>
 <li><p>Keep your <a href="/functionaliteiten/voorraad">inventory</a> synced in real time across every channel, so you never sell something that cannot be delivered.</p></li>
@@ -27,7 +29,7 @@ translationKey: "verkopen-via-bol-zonder-voorraad"
 
 <h2>Frequently asked questions</h2>
 <h3>How do returns work?</h3>
-<p>As the seller, you stay responsible for returns toward the customer. ShopLinkr processes returns in your administration so your stock and figures stay accurate. Make clear arrangements with your supplier about who receives the returned products.</p>
+<p>As the seller, you stay <a href="https://consument.acm.nl/aankoop-dienst-annuleren/bedenktijd" target="_blank" rel="noopener noreferrer">responsible for returns</a> toward the customer. ShopLinkr processes returns in your administration so your stock and figures stay accurate. Make clear arrangements with your supplier about who receives the returned products.</p>
 <h3>What if the supplier runs out of a product?</h3>
 <p>With real-time synchronization, a sold-out product is set to unavailable automatically, so you never accept an order you cannot fulfill. That keeps customers happy and cuts down on canceled orders.</p>
 

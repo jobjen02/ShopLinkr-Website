@@ -1,17 +1,29 @@
 {
-    "name": "Bol VVB",
-    "slug": "bol-com-verzendlabels",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/bol.jpg",
-    "summary": "Verzend met de scherpe tarieven van bol. Verzendlabels worden vanuit ShopLinkr aangevraagd en de bezorgverantwoordelijkheid ligt bij bol.",
-    "url": "https://www.bol.com",
-    "tagline": "Verzenden zonder zorgen via bol.",
-    "about": "Verzenden via bol (VVB) is een dienst van bol waarmee je gebruikmaakt van scherpe verzendtarieven via hun vervoerdersnetwerk. Een belangrijk voordeel is dat de bezorgverantwoordelijkheid bij bol ligt, dus als een pakket te laat is wordt jij daar niet op afgerekend. Zendingen worden automatisch gevolgd en bol staat voor je klaar als er iets fout gaat met de bezorging.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling ontvangen we een verzendlabel van bol. De adresgegevens kunnen niet worden gewijzigd, omdat bol deze zelf beheert."
-        }
-    ]
+  "name": "Bol VVB",
+  "slug": "bol-com-verzendlabels",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/bol.jpg",
+  "summary": "Verzend met de scherpe tarieven van bol. Verzendlabels worden vanuit ShopLinkr aangevraagd en de bezorgverantwoordelijkheid ligt bij bol.",
+  "url": "https://www.bol.com",
+  "tagline": "Verzenden zonder zorgen via bol.",
+  "about": "Verzenden via bol (VVB) is een dienst van bol waarmee je gebruikmaakt van scherpe verzendtarieven via hun vervoerdersnetwerk. Een belangrijk voordeel is dat de bezorgverantwoordelijkheid bij bol ligt, dus als een pakket te laat is wordt jij daar niet op afgerekend. Zendingen worden automatisch gevolgd en bol staat voor je klaar als er iets fout gaat met de bezorging.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling ontvangen we een verzendlabel van bol. De adresgegevens kunnen niet worden gewijzigd, omdat bol deze zelf beheert."
+    },
+    {
+      "q": "Heb ik een eigen vervoerderscontract nodig om via bol te verzenden?",
+      "a": "Nee, Verzenden via bol (VVB) gebruikt het vervoerdersnetwerk en de scherpe tarieven van bol zelf, dus je hoeft geen apart contract met een vervoerder af te sluiten."
+    },
+    {
+      "q": "Wat gebeurt er als een pakket te laat of verkeerd wordt bezorgd?",
+      "a": "De bezorgverantwoordelijkheid ligt bij bol, dus je wordt niet afgerekend op een te late bezorging en bol staat voor je klaar als er iets misgaat met de levering."
+    },
+    {
+      "q": "Wordt de track & trace automatisch bijgehouden?",
+      "a": "Ja, zendingen die via bol worden verstuurd worden automatisch gevolgd, dus de track & trace wordt voor je vastgelegd zonder dat je dit handmatig hoeft in te voeren."
+    }
+  ]
 }

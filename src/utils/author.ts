@@ -60,6 +60,16 @@ export function getAuthor(name?: string): Author {
     return AUTHORS.find((a) => a.name === name) ?? DEFAULT_AUTHOR;
 }
 
+/** Resolve an author by their url slug (for the /auteur/[slug] archive route). */
+export function getAuthorBySlug(slug?: string): Author | undefined {
+    return AUTHORS.find((a) => a.slug === slug);
+}
+
+/** Link to an author's archive page. Slug is language-invariant. */
+export function authorHref(slug: string, locale: Locale): string {
+    return locale === 'en' ? `/en/author/${slug}` : `/auteur/${slug}`;
+}
+
 export function authorRole(author: Author, locale: Locale): string {
     return locale === 'en' ? author.roleEn : author.roleNl;
 }
@@ -85,4 +95,14 @@ export function authorSchema(name: string | undefined, locale: Locale) {
         ...(a.linkedin && { url: a.linkedin, sameAs: [a.linkedin] }),
         worksFor: { '@id': 'https://shoplinkr.com/#organization' },
     };
+}
+
+/**
+ * The founder Person node, emitted site-wide (from BaseLayout) so the
+ * `#job-jenniskens` @id referenced by Organization.founder resolves on every
+ * page, not just on the articles the founder authored. Identical shape to
+ * authorSchema so the two definitions merge cleanly by @id on article pages.
+ */
+export function founderPersonSchema(locale: Locale) {
+    return authorSchema(DEFAULT_AUTHOR.name, locale);
 }

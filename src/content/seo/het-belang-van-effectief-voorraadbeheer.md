@@ -6,6 +6,8 @@ image: "/images/blog/het-belang-van-effectief-voorraadbeheer/UDjSpdsktDxItpPNIGY
 imageAlt: "Magazijnmedewerker controleert voorraadniveaus op schappen"
 ---
 
+<p><strong>Effectief voorraadbeheer is het vinden van de balans tussen genoeg voorraad om elke bestelling direct te leveren en niet te veel kapitaal vastleggen in dode voorraad. Je stuurt hierop met ABC-analyse, lead times en een bestelstrategie, en houdt je voorraad realtime synchroon over al je verkoopkanalen om overselling te voorkomen.</strong></p>
+
 <p>Effectief voorraadbeheer draait om één balans: genoeg op voorraad om elke bestelling direct te kunnen leveren, zonder kapitaal vast te zetten in producten die maandenlang op het schap blijven liggen. Schiet je naar de ene kant door, dan grijp je mis en raak je verkopen kwijt. Schiet je naar de andere kant door, dan stapelen opslagkosten en dode voorraad zich op. In deze gids lees je de principes die die balans bepalen, de fouten die het vaakst misgaan, en hoe je je voorraad over al je verkoopkanalen kloppend houdt.</p>
 
 <h2>De principes die je voorraad sturen</h2>
@@ -19,7 +21,7 @@ imageAlt: "Magazijnmedewerker controleert voorraadniveaus op schappen"
 <h2>De fouten die het meeste geld kosten</h2>
 <p>De meeste voorraadproblemen vallen in een paar categorieën:</p>
 <ol>
-<li><strong>Overselling.</strong> Je verkoopt op meerdere kanalen, maar de voorraad loopt niet synchroon. Een product dat op je webshop al verkocht is, staat op een marktplaats nog te koop. Het gevolg: annuleringen en ontevreden klanten.</li>
+<li><strong>Overselling.</strong> Je verkoopt op meerdere kanalen, maar de voorraad loopt niet synchroon. Een product dat op je webshop al verkocht is, staat op een marktplaats nog te koop. Het gevolg: <a href="https://partnerplatform.bol.com/nl/idp/annuleringen" target="_blank" rel="noopener noreferrer">annuleringen</a> en ontevreden klanten.</li>
 <li><strong>Dode voorraad.</strong> Producten die niet meer lopen, kosten opslagruimte en binden kapitaal dat je elders beter kunt gebruiken.</li>
 <li><strong>Te laat bestellen.</strong> Zonder zicht op je lead times en verkoopsnelheid loop je tegen tekorten aan, juist tijdens piekperiodes.</li>
 </ol>

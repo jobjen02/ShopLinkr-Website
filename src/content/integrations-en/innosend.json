@@ -1,18 +1,30 @@
 {
-    "name": "Innosend",
-    "slug": "innosend",
-    "translationKey": "innosend",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/Innosend.jpg",
-    "summary": "Create Innosend labels from any pick list. Ship quickly within the Netherlands and abroad.",
-    "supportSlug": "innosend-koppelen",
-    "tagline": "Complete shipping software to send your parcels with ease.",
-    "about": "Innosend is user-friendly shipping software for all types of webshops. You can ship parcels with multiple carriers, so you always get the sharpest shipping rate. Thanks to smart shipping rules, orders are automatically matched to the right carrier. With Innosend your shipping process becomes a lot easier and clearer. Innosend helps you set up an account free of charge, so you can get started right away.",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on the shipping details of an order we request a shipping label from Innosend. You can adjust the address details manually if you wish."
-        }
-    ]
+  "name": "Innosend",
+  "slug": "innosend",
+  "translationKey": "innosend",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/Innosend.jpg",
+  "summary": "Create Innosend labels from any pick list. Ship quickly within the Netherlands and abroad.",
+  "supportSlug": "innosend-koppelen",
+  "tagline": "Complete shipping software to send your parcels with ease.",
+  "about": "Innosend is user-friendly shipping software for all types of webshops. You can ship parcels with multiple carriers, so you always get the sharpest shipping rate. Thanks to smart shipping rules, orders are automatically matched to the right carrier. With Innosend your shipping process becomes a lot easier and clearer. Innosend helps you set up an account free of charge, so you can get started right away.",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, based on the shipping details of an order we request a shipping label from Innosend. You can adjust the address details manually if you wish."
+    },
+    {
+      "q": "What do I need to connect Innosend?",
+      "a": "You connect Innosend with an API Key and API Secret. You find these in your Innosend account under Settings > Shops > Integration, and then enter them in ShopLinkr under Settings > Carriers."
+    },
+    {
+      "q": "Do I automatically get a track and trace when I create a label?",
+      "a": "Yes, as soon as you create an Innosend label the matching track and trace is returned automatically in ShopLinkr."
+    },
+    {
+      "q": "Can I also ship abroad with Innosend?",
+      "a": "Yes, with the Innosend integration you create labels for both domestic and international shipments."
+    }
+  ]
 }

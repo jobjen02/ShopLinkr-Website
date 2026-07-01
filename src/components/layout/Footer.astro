@@ -148,21 +148,26 @@ const year = new Date().getFullYear();
             }
         </div>
 
-        <div class="pt-8 border-t border-chalk-dark dark:border-flint flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-steel dark:text-gravel">
+        <div class="pt-8 border-t border-chalk-dark dark:border-flint text-sm text-steel dark:text-gravel">
+            <address class="not-italic mb-5 leading-relaxed">
+                <span class="font-medium text-charcoal dark:text-paper">ShopLinkr</span>
+                <span class="mx-1.5" aria-hidden="true">·</span>KvK 87745046
+                <span class="mx-1.5" aria-hidden="true">·</span>BTW NL004469462B39
+                <span class="mx-1.5" aria-hidden="true">·</span>Meerlo, Nederland
+                <span class="mx-1.5" aria-hidden="true">·</span><a href="tel:+31649781212" class="-my-1.5 py-3 hover:text-charcoal dark:hover:text-paper transition-colors">+31 6 49781212</a>
+                <span class="mx-1.5" aria-hidden="true">·</span><a href="mailto:contact@shoplinkr.com" class="-my-1.5 py-3 hover:text-charcoal dark:hover:text-paper transition-colors">contact@shoplinkr.com</a>
+            </address>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div class="flex flex-wrap items-center gap-x-6 gap-y-1">
                 <p>© {year} ShopLinkr. {t.footer.rights}</p>
                 <a
-                    href={externalLinks.privacyPdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/privacyverklaring"
                     class="-my-1.5 py-3 hover:text-charcoal dark:hover:text-paper transition-colors"
                 >
                     {t.footer.privacy}
                 </a>
                 <a
-                    href={externalLinks.termsPdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/algemene-voorwaarden"
                     class="-my-1.5 py-3 hover:text-charcoal dark:hover:text-paper transition-colors"
                 >
                     {t.footer.terms}
@@ -185,6 +190,7 @@ const year = new Date().getFullYear();
                     class="h-3 w-auto"
                 />
             </p>
+            </div>
         </div>
     </div>
 </footer>

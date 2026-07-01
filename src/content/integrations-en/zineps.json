@@ -1,17 +1,29 @@
 {
-    "name": "Zineps",
-    "slug": "zineps",
-    "translationKey": "zineps",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/Zineps.svg",
-    "summary": "Print Zineps labels right inside your normal order flow, including tracking updates sent back to your webshop.",
-    "tagline": "Logistics integration software.",
-    "about": "Zineps is shipping software that lets you easily create shipping labels for various carriers. The platform helps webshops and logistics systems automate their shipping process. Through Zineps you can generate shipping labels for carriers such as PostNL, DHL and international partners, so parcels can be shipped quickly and efficiently.",
-    "faqs": [
-        {
-            "q": "Are address details placed on the shipping label automatically?",
-            "a": "Yes, we request a shipping label from Zineps based on an order's shipping details. You can adjust the address details manually if needed."
-        }
-    ]
+  "name": "Zineps",
+  "slug": "zineps",
+  "translationKey": "zineps",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/Zineps.svg",
+  "summary": "Print Zineps labels right inside your normal order flow, including tracking updates sent back to your webshop.",
+  "tagline": "Logistics integration software.",
+  "about": "Zineps is shipping software that lets you easily create shipping labels for various carriers. The platform helps webshops and logistics systems automate their shipping process. Through Zineps you can generate shipping labels for carriers such as PostNL, DHL and international partners, so parcels can be shipped quickly and efficiently.",
+  "faqs": [
+    {
+      "q": "Are address details placed on the shipping label automatically?",
+      "a": "Yes, we request a shipping label from Zineps based on an order's shipping details. You can adjust the address details manually if needed."
+    },
+    {
+      "q": "Do I need my own Zineps account to use the integration?",
+      "a": "Yes, you use your own Zineps account for the integration, so you ship under your own carrier contracts."
+    },
+    {
+      "q": "For which carriers can I create labels through Zineps?",
+      "a": "Through Zineps you can create shipping labels for carriers such as PostNL, DHL and international partners."
+    },
+    {
+      "q": "Does my webshop automatically receive the track & trace?",
+      "a": "Yes, tracking updates are sent back to your webshop automatically, so your customer can follow the shipment."
+    }
+  ]
 }

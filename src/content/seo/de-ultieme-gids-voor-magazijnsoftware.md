@@ -6,13 +6,15 @@ image: "/images/blog/de-ultieme-gids-voor-magazijnsoftware/Eb4Bj0GklqDe3Rc0xy2wE
 imageAlt: "Magazijn met stellingen en producten, beheerd via magazijnsoftware"
 ---
 
+<p><strong>Magazijnsoftware is software die je voorraad, orderverwerking, picken, verzenden en retouren van al je verkoopkanalen op één plek samenbrengt. Ze synchroniseert je voorraad realtime, voorkomt overselling en bespaart handwerk. De belangrijkste functies zijn centrale orderverwerking, realtime voorraadsynchronisatie, picklijsten met magazijnroute, verzendlabels in één klik en rapportages.</strong></p>
+
 <p>Magazijnsoftware is de centrale plek waar je je voorraad, bestellingen en verzending beheert. In plaats van losse Excel-bestanden en handmatig overtypen tussen kanalen, houdt de software realtime bij wat er op voorraad ligt, welke orders binnenkomen en wat er de deur uit moet. Voor webshops en marktplaatsverkopers is dat het verschil tussen overzicht en chaos. In deze gids lees je welke functies ertoe doen en hoe je de juiste keuze maakt.</p>
 
 <h2>Welke functies heb je echt nodig?</h2>
 <p>Niet elke tool die zich magazijnsoftware noemt, doet hetzelfde. Dit zijn de kernfuncties die in de praktijk het meeste tijd besparen:</p>
 <ul>
 <li><p><strong>Centrale orderverwerking.</strong> Bestellingen uit al je kanalen, zoals bol, Shopify, WooCommerce en Kaufland, komen samen in één scherm. Geen losse tabbladen meer per marktplaats.</p></li>
-<li><p><strong>Realtime voorraadsynchronisatie.</strong> Verkoop je een product op het ene kanaal, dan zakt de voorraad meteen op alle andere. Dat voorkomt overselling, de belangrijkste bron van annuleringen en negatieve reviews.</p></li>
+<li><p><strong>Realtime voorraadsynchronisatie.</strong> Verkoop je een product op het ene kanaal, dan zakt de voorraad meteen op alle andere. Dat voorkomt overselling, de belangrijkste bron van <a href="https://partnerplatform.bol.com/nl/idp/annuleringen" target="_blank" rel="noopener noreferrer">annuleringen</a> en negatieve reviews.</p></li>
 <li><p><strong>Picklijsten met magazijnroute.</strong> Een slimme looproute door je magazijn, met scannen op barcode, vakken en pakstations, zodat orders sneller en met minder fouten worden verzameld.</p></li>
 <li><p><strong>Verzendlabels in één klik.</strong> Labels voor vervoerders als PostNL, DPD en MyParcel, en track & trace die automatisch terug naar het verkoopkanaal gaat.</p></li>
 <li><p><strong>Rapportages.</strong> Inzicht in omzet en marge per product, dode voorraad en voorraadwaarde, zodat je beslissingen op cijfers baseert in plaats van op gevoel.</p></li>

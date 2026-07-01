@@ -1,18 +1,35 @@
 {
-    "name": "Bol",
-    "slug": "bol-com",
-    "category": "marketplace",
-    "status": "live",
-    "logo": "/assets/marketplaces/bol.jpeg",
-    "summary": "Synchroniseer voorraad en orders met bol. Automatische orderimport, voorraad-update en verzendlabels.",
-    "url": "https://www.bol.com",
-    "supportSlug": "bol-com-koppelen",
-    "tagline": "Beheer al je bol winkels op één plek.",
-    "about": "bol is de grootste online marketplace van Nederland en België. Naast het eigen aanbod biedt bol ook een platform waar externe verkopers, oftewel partners, hun producten kunnen aanbieden. Klanten bestellen gemakkelijk via de website of app, en de levering wordt verzorgd door bol of de partners zelf.",
-    "faqs": [
-        {
-            "q": "Worden gepauzeerde producten geïmporteerd in ShopLinkr?",
-            "a": "Ja, alle producten die in je bol omgeving staan, worden overgenomen in ShopLinkr. Staat een product op pauze? Dan zie je in ShopLinkr dat het product als \"inactief\" is gemarkeerd. Je kunt het product eenvoudig vanuit ShopLinkr weer activeren en direct van pauze afhalen."
-        }
-    ]
+  "name": "Bol",
+  "slug": "bol-com",
+  "category": "marketplace",
+  "status": "live",
+  "logo": "/assets/marketplaces/bol.jpeg",
+  "summary": "Synchroniseer voorraad en orders met bol. Automatische orderimport, voorraad-update en verzendlabels.",
+  "ogImage": "/images/blog/bol-com-koppelen-aan-shoplinkr/SPWjKLABTo27bWBrwDEkutQi2JQ.png",
+  "url": "https://www.bol.com",
+  "supportSlug": "bol-com-koppelen",
+  "tagline": "Beheer al je bol winkels op één plek.",
+  "about": "bol is de grootste online marketplace van Nederland en België. Naast het eigen aanbod biedt bol ook een platform waar externe verkopers, oftewel partners, hun producten kunnen aanbieden. Klanten bestellen gemakkelijk via de website of app, en de levering wordt verzorgd door bol of de partners zelf.",
+  "faqs": [
+    {
+      "q": "Worden gepauzeerde producten geïmporteerd in ShopLinkr?",
+      "a": "Ja, alle producten die in je bol omgeving staan, worden overgenomen in ShopLinkr. Staat een product op pauze? Dan zie je in ShopLinkr dat het product als \"inactief\" is gemarkeerd. Je kunt het product eenvoudig vanuit ShopLinkr weer activeren en direct van pauze afhalen."
+    },
+    {
+      "q": "Kan ik Verzenden via bol (VVB) orders verwerken in ShopLinkr?",
+      "a": "Ja. Werk je met Verzenden via bol (VVB), dan verwerk je die orders gewoon in ShopLinkr. Je gebruikt de labels die je van bol ontvangt en houdt al je zendingen op één plek in overzicht."
+    },
+    {
+      "q": "Kan ik meerdere bol accounts koppelen aan ShopLinkr?",
+      "a": "Ja. Je koppelt elk bol account als apart verkoopkanaal via Instellingen > Verkoopkanalen, zodat je al je bol winkels op één plek beheert."
+    },
+    {
+      "q": "Wat gebeurt er met mijn voorraad zodra ik bol koppel?",
+      "a": "Bij het koppelen wordt de voorraad op bol aangepast naar de voorraad die in ShopLinkr staat, mits het product daar al bestaat. Vanaf dat moment is ShopLinkr de enige plek waar je je voorraad nog hoeft aan te passen."
+    },
+    {
+      "q": "Worden nieuwe bol bestellingen automatisch geïmporteerd?",
+      "a": "Ja, nieuwe bestellingen van bol komen automatisch binnen in ShopLinkr, zodat je ze allemaal op één plek verwerkt."
+    }
+  ]
 }

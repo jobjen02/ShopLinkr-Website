@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBanner from '../sections/CtaBanner.astro';
+import type { Locale } from '../../i18n/routes';
+import { authorRole, authorBioText, type Author } from '../../utils/author';
+
+type ContentType = 'guide' | 'blog' | 'support';
+
+interface Props {
+    author: Author;
+    articles: { title: string; href: string; type: ContentType }[];
+    locale: Locale;
+    alternates?: { nl?: string; en?: string };
+}
+
+const { author, articles, locale, alternates } = Astro.props;
+const role = authorRole(author, locale);
+const bio = authorBioText(author, locale);
+
+const copy = locale === 'en'
+    ? { eyebrow: 'Author', empty: 'No content published yet.', totalSuffix: 'published pages', labels: { guide: 'Guides', blog: 'Blog', support: 'Support articles' }, hubLabels: { guide: 'guides', blog: 'blog posts', support: 'support articles' }, seeAll: (noun: string) => `View all ${noun}` }
+    : { eyebrow: 'Auteur', empty: 'Nog niets gepubliceerd.', totalSuffix: 'gepubliceerde pagina\'s', labels: { guide: 'Gidsen', blog: 'Blog', support: 'Supportartikelen' }, hubLabels: { guide: 'gidsen', blog: 'blogartikelen', support: 'supportartikelen' }, seeAll: (noun: string) => `Bekijk alle ${noun}` };
+
+const hubs: Record<ContentType, string> = {
+    guide: locale === 'en' ? '/en/guides' : '/gidsen',
+    blog: locale === 'en' ? '/en/blog' : '/blogs',
+    support: locale === 'en' ? '/en/support' : '/support',
+};
+
+const PREVIEW = 4;
+const total = articles.length;
+
+// Per type: a counter + only the few most recent items (with a link to the hub
+// for the rest), so a prolific author's page stays a clean overview instead of a
+// dump of every link.
+const groups = (['guide', 'blog', 'support'] as ContentType[])
+    .map((type) => {
+        const items = articles.filter((a) => a.type === type);
+        return { type, label: copy.labels[type], count: items.length, preview: items.slice(0, PREVIEW), hub: hubs[type], hasMore: items.length > PREVIEW };
+    })
+    .filter((g) => g.count > 0);
+
+const description = `${author.name}, ${role} ${locale === 'en' ? 'at' : 'bij'} ShopLinkr. ${bio}`;
+
+// ProfilePage with the Person as mainEntity, sharing the #<slug> @id that the
+// article author nodes reference, so the person resolves to a real page.
+const jsonLd = {
+    '@type': 'ProfilePage',
+    mainEntity: {
+        '@type': 'Person',
+        '@id': `https://shoplinkr.com/#${author.slug}`,
+        name: author.name,
+        jobTitle: role,
+        description: bio,
+        image: `https://shoplinkr.com${author.photo}`,
+        ...(author.linkedin && { url: author.linkedin, sameAs: [author.linkedin] }),
+        worksFor: { '@id': 'https://shoplinkr.com/#organization' },
+    },
+};
+
+export const prerender = false;
+---
+
+<BaseLayout
+    title={`${author.name}, ${role} | ShopLinkr`}
+    description={description}
+    jsonLd={jsonLd}
+    alternates={alternates}
+>
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
+        <div class="container-prose">
+            <p class="eyebrow mb-6">{copy.eyebrow}</p>
+            <div class="flex items-start gap-5 mb-8">
+                <img
+                    src={author.photo}
+                    alt={author.name}
+                    width="72"
+                    height="72"
+                    loading="lazy"
+                    class="flex-none h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
+                />
+                <div class="pt-1">
+                    <h1 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
+                        {author.name}
+                    </h1>
+                    <p class="mt-1.5 text-steel dark:text-gravel">{role}</p>
+                </div>
+            </div>
+            <p class="max-w-2xl text-lg text-steel dark:text-gravel leading-relaxed">{bio}</p>
+            {author.linkedin && (
+                <a
+                    href={author.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-sunstone-deep hover:text-sunstone transition-colors"
+                >
+                    LinkedIn
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[11px]" aria-hidden="true"></i>
+                </a>
+            )}
+
+            {total > 0 && (
+                <p class="mt-6 text-sm text-gravel">{total} {copy.totalSuffix}</p>
+            )}
+
+            {groups.length > 0 ? (
+                <div class="mt-14 space-y-12">
+                    {groups.map((group) => (
+                        <div>
+                            <div class="flex items-baseline justify-between gap-4 mb-5">
+                                <h2 class="text-sm font-semibold uppercase tracking-wider text-gravel">
+                                    {group.label} <span class="text-steel dark:text-gravel">({group.count})</span>
+                                </h2>
+                                {group.hasMore && (
+                                    <a
+                                        href={group.hub}
+                                        class="flex-none text-xs font-semibold text-sunstone-deep hover:text-sunstone transition-colors"
+                                    >
+                                        {copy.seeAll(copy.hubLabels[group.type])}
+                                    </a>
+                                )}
+                            </div>
+                            <ul class="divide-y divide-chalk-dark dark:divide-flint border-y border-chalk-dark dark:border-flint">
+                                {group.preview.map((a) => (
+                                    <li>
+                                        <a
+                                            href={a.href}
+                                            class="group flex items-center justify-between gap-4 py-4 text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
+                                        >
+                                            <span class="font-medium">{a.title}</span>
+                                            <i class="fa-solid fa-arrow-right text-xs text-gravel group-hover:text-sunstone-deep group-hover:translate-x-0.5 transition" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <p class="mt-16 text-steel dark:text-gravel">{copy.empty}</p>
+            )}
+        </div>
+    </section>
+
+    <CtaBanner />
+</BaseLayout>

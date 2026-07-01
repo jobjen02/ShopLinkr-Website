@@ -4,6 +4,7 @@ import SeoArticlePage from '../components/pages/SeoArticlePage.astro';
 import { authorSchema } from '../utils/author';
 import { guideGroupOf } from '../utils/guides';
 import { dateModified } from '../utils/articleDate';
+import { extractSteps, howToSchema } from '../utils/howto';
 
 const { slug } = Astro.params;
 
@@ -52,7 +53,22 @@ const breadcrumbSchema = {
     ],
 };
 
-const jsonLd = [articleSchema, breadcrumbSchema];
+// Connection guides ("hoe-koppel-ik-...") carry an explicit step sequence; expose
+// it as a HowTo so AI engines can cite the procedure. First <ol> = the connect
+// steps (a later <ol> is a different task and is ignored by 'first-ol').
+const howTo = page.id.startsWith('hoe-koppel-ik-')
+    ? howToSchema({
+        name: page.data.title,
+        description: page.data.excerpt,
+        url: canonicalUrl,
+        inLanguage: 'nl-NL',
+        steps: extractSteps(page.body ?? '', 'first-ol'),
+    })
+    : null;
+
+const jsonLd = howTo
+    ? [articleSchema, breadcrumbSchema, howTo]
+    : [articleSchema, breadcrumbSchema];
 
 export const prerender = false;
 ---

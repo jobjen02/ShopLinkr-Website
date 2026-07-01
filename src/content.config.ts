@@ -71,6 +71,8 @@ const integrations = defineCollection({
         status: z.enum(['live', 'coming-soon']).default('live'),
         logo: z.string(),
         summary: z.string(),
+        // Social share image (og:image) for the detail page; falls back to the site default.
+        ogImage: z.string().optional(),
         url: z.string().optional(),
         supportSlug: z.string().optional(),
         tagline: z.string().optional(),
@@ -155,6 +157,8 @@ const integrationsEn = defineCollection({
         status: z.enum(['live', 'coming-soon']).default('live'),
         logo: z.string(),
         summary: z.string(),
+        // Social share image (og:image) for the detail page; falls back to the site default.
+        ogImage: z.string().optional(),
         url: z.string().optional(),
         supportSlug: z.string().optional(),
         tagline: z.string().optional(),

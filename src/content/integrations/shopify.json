@@ -1,18 +1,31 @@
 {
-    "name": "Shopify",
-    "slug": "shopify",
-    "category": "webshop",
-    "status": "live",
-    "logo": "/assets/webshops/Shopify.jpg",
-    "summary": "Synchroniseer voorraad en orders met Shopify. Centraliseer je hele orderflow over kanalen heen, met realtime voorraadsync.",
-    "url": "https://www.shopify.com",
-    "supportSlug": "shopify-koppelen",
-    "tagline": "Shopify regelt alles, van betaling tot aan het retourproces.",
-    "about": "Shopify is een platform waarmee je eenvoudig een webwinkel kunt opzetten en beheren. Het helpt je om producten te verkopen, betalingen te verwerken en je winkel vorm te geven, zonder dat je technische kennis nodig hebt. Je kunt er zowel online als offline mee verkopen, bijvoorbeeld via een fysieke winkel of pop-upshop.",
-    "faqs": [
-        {
-            "q": "Worden conceptproducten geïmporteerd?",
-            "a": "Dit kun je zelf instellen. Tijdens het koppelen van je Shopify winkel kun je aangeven of je dit wilt. Achteraf kun je dit eenvoudig aanpassen."
-        }
-    ]
+  "name": "Shopify",
+  "slug": "shopify",
+  "category": "webshop",
+  "status": "live",
+  "logo": "/assets/webshops/Shopify.jpg",
+  "summary": "Synchroniseer voorraad en orders met Shopify. Centraliseer je hele orderflow over kanalen heen, met realtime voorraadsync.",
+  "ogImage": "/images/blog/shopify-koppelen-aan-shoplinkr/SNMrUjZnxSfQb0OfE3pgIZ8XRLM.png",
+  "url": "https://www.shopify.com",
+  "supportSlug": "shopify-koppelen",
+  "tagline": "Shopify regelt alles, van betaling tot aan het retourproces.",
+  "about": "Shopify is een platform waarmee je eenvoudig een webwinkel kunt opzetten en beheren. Het helpt je om producten te verkopen, betalingen te verwerken en je winkel vorm te geven, zonder dat je technische kennis nodig hebt. Je kunt er zowel online als offline mee verkopen, bijvoorbeeld via een fysieke winkel of pop-upshop.",
+  "faqs": [
+    {
+      "q": "Worden conceptproducten geïmporteerd?",
+      "a": "Dit kun je zelf instellen. Tijdens het koppelen van je Shopify winkel kun je aangeven of je dit wilt. Achteraf kun je dit eenvoudig aanpassen."
+    },
+    {
+      "q": "Moeten mijn Shopify producten een EAN code hebben om te koppelen?",
+      "a": "Ja, om alle producten correct in te laden moet elk product in Shopify een EAN code in het 'Barcode' veld hebben."
+    },
+    {
+      "q": "Waar beheer ik mijn voorraad nadat ik Shopify heb gekoppeld?",
+      "a": "Vanaf het moment van koppelen beheer je je voorraad alleen nog in ShopLinkr. Van daaruit wordt je Shopify voorraad realtime bijgewerkt."
+    },
+    {
+      "q": "Vanaf welke locatie worden mijn voorraad en bestellingen verwerkt?",
+      "a": "Tijdens het koppelen kies je een Shopify locatie. Op die locatie voert ShopLinkr de voorraadwijzigingen uit en vanaf daar worden je bestellingen ingeladen."
+    }
+  ]
 }

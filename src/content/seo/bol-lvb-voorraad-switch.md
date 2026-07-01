@@ -6,6 +6,8 @@ image: "/images/blog/bol-lvb-voorraad-switch/6nZHOmkPg884ZXzjo5XlniEdRJg.png"
 imageAlt: "Voorraadbeheer en kanaalsynchronisatie voor bol LVB in ShopLinkr"
 ---
 
+<p><strong>Verkoop je via LVB en vanuit je eigen magazijn, dan houd je met realtime voorraadsynchronisatie je voorraad over alle kanalen gelijk. Je koppelt bol en je andere kanalen, bepaalt per product de voorraadbron en laat ShopLinkr bij elke verkoop alle niveaus direct bijwerken. Zo schakel je flexibel zonder ooit te oververkopen.</strong></p>
+
 <p>Verkoop je via Logistiek via bol (LVB) en wil je tegelijk vanuit je eigen magazijn leveren? Dan moet je je voorraad kunnen switchen tussen bol en je andere kanalen zonder dubbel te verkopen. Bol is een groot Nederlands verkoopkanaal en LVB neemt opslag en verzending voor je over, maar zodra je daarnaast vanuit eigen voorraad of een webshop verkoopt, lopen je voorraadniveaus snel uit elkaar. Met een centrale voorraadtool houd je alles realtime gelijk.</p>
 
 <h2>Waarom je voorraad over kanalen moet synchroniseren</h2>

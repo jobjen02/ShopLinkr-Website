@@ -47,6 +47,27 @@ const voices = [
     },
 ];
 
+// The named testimonials, as Review nodes tied to the SoftwareApplication (#software,
+// defined on the homepage). This turns the visible quotes into structured, named
+// reviews that legitimately back the aggregateRating and feed AI trust signals.
+// No reviewRating or datePublished per review: those values are not in the data and
+// are deliberately not invented.
+const reviewSchema = voices.map((voice) => ({
+    '@type': 'Review',
+    itemReviewed: {
+        '@type': 'SoftwareApplication',
+        '@id': 'https://shoplinkr.com/#software',
+        name: 'ShopLinkr',
+    },
+    author: {
+        '@type': 'Person',
+        name: voice.author,
+        worksFor: { '@type': 'Organization', name: voice.company },
+    },
+    reviewBody: voice.quote,
+    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+}));
+
 const jsonLd = [
     breadcrumbs([
         ['Home', localizeHref('/', locale)],
@@ -69,6 +90,7 @@ const jsonLd = [
         },
         image: `https://shoplinkr.com${story.logo}`,
     },
+    ...reviewSchema,
 ];
 ---
 

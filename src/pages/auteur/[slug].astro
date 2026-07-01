@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import AuthorArchivePage from '../../components/pages/AuthorArchivePage.astro';
+import { getAuthorBySlug, getAuthor } from '../../utils/author';
+
+const { slug } = Astro.params;
+const author = getAuthorBySlug(slug);
+if (!author) return Astro.rewrite('/404');
+
+const blogs = await getCollection('blogs');
+const seo = await getCollection('seoPages');
+const support = await getCollection('supportArticles');
+
+// Resolve each item's author the same way the visible byline does (getAuthor
+// falls back to the founder for un-authored content), so the archive matches
+// what each article page actually credits.
+const byAuthor = (a?: string) => getAuthor(a).slug === author.slug;
+
+const articles = [
+    ...seo
+        .filter((p) => byAuthor(p.data.author))
+        .map((p) => ({ title: p.data.title, href: `/${p.id}`, date: (p.data.updatedAt ?? p.data.publishedAt).getTime(), type: 'guide' as const })),
+    ...blogs
+        .filter((b) => byAuthor(b.data.author))
+        .map((b) => ({ title: b.data.title, href: `/blogs/${b.id}`, date: (b.data.updatedAt ?? b.data.publishedAt).getTime(), type: 'blog' as const })),
+    ...support
+        .filter((a) => byAuthor(a.data.author))
+        .map((a) => ({ title: a.data.title, href: `/support/${a.id.split('/').pop()}`, date: a.data.lastUpdated.getTime(), type: 'support' as const })),
+]
+    .sort((a, b) => b.date - a.date)
+    .map(({ title, href, type }) => ({ title, href, type }));
+
+const alternates = { nl: `/auteur/${author.slug}`, en: `/en/author/${author.slug}` };
+
+export const prerender = false;
+---
+
+<AuthorArchivePage author={author} articles={articles} locale="nl" alternates={alternates} />

@@ -7,6 +7,8 @@ translationKey: "alles-wat-je-moet-weten-over-backorders"
 imageAlt: "Warehouse worker processing backorders at a packing station"
 ---
 
+<p><strong>A backorder is an order you accept for a product that is not in stock at that moment. You put the order on hold, reorder from your supplier, and fulfill it as soon as new stock arrives. This lets you capture demand without keeping everything in stock all the time.</strong></p>
+
 <p>With a backorder, you accept an order for a product that is not in stock at that moment. Instead of losing the sale, you place the order on hold and fulfill it as soon as new stock arrives. For webshops and marketplace sellers, a backorder is a way to capture demand without having to keep everything in stock all the time. In this article you'll learn what a backorder is, how the process works, and how to manage backorders smoothly.</p>
 
 <h2>How a backorder works</h2>
@@ -34,7 +36,7 @@ imageAlt: "Warehouse worker processing backorders at a packing station"
 
 <h2>Frequently asked questions about backorders</h2>
 <h3>What happens if a backorder can't be fulfilled?</h3>
-<p>You let the customer know. They can then choose to wait longer or cancel the order. Clear communication prevents most of the frustration here.</p>
+<p>You let the customer know. They can then choose to wait longer or <a href="https://consument.acm.nl/garantie-reparatie-geld-terug/aankoop-niet-geleverd" target="_blank" rel="noopener noreferrer">cancel the order</a>. Clear communication prevents most of the frustration here.</p>
 <h3>Can you cancel a backorder?</h3>
 <p>Yes. As long as the order hasn't been processed and shipped, a backorder can be canceled.</p>
 <h3>Is a backorder the same as a delayed delivery?</h3>

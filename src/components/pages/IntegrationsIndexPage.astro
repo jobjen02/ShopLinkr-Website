@@ -55,15 +55,30 @@ const popularCombinations = [
     },
 ];
 
+// Enumerate every supported integration so "which channels/carriers does
+// ShopLinkr support" is machine-answerable in one list.
+const integrationItemList = {
+    '@type': 'ItemList',
+    name: p.jsonLdName,
+    numberOfItems: totalCount,
+    itemListElement: [...webshops, ...marketplaces, ...carriers].map((i, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: i.data.name,
+        url: `https://shoplinkr.com${localizeHref(`/integraties/${i.data.slug}`, locale)}`,
+    })),
+};
+
 const jsonLd = [
     breadcrumbs([
         ['Home', localizeHref('/', locale)],
         [p.breadcrumbParent, localizeHref('/integraties', locale)],
     ]),
     {
-        '@type': 'WebPage',
+        '@type': 'CollectionPage',
         name: p.jsonLdName,
         description: p.jsonLdDescription,
+        mainEntity: integrationItemList,
     },
 ];
 ---

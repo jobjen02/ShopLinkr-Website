@@ -1,17 +1,30 @@
 {
-    "name": "Sendy",
-    "slug": "sendy",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/Sendy.jpg",
-    "summary": "Print verzendlabels van Sendy direct vanuit ShopLinkr. Eén workflow voor al je pakketten.",
-    "supportSlug": "sendy-koppelen",
-    "tagline": "Slimme software voor een eenvoudig verzendproces.",
-    "about": "Sendy is een verzendsoftware die bedrijven helpt pakketten efficiënt te versturen. Het biedt integraties met vervoerders zoals PostNL, DHL en DPD, en koppelt eenvoudig met webshops. Met Sendy kun je verzendlabels automatisch aanmaken, je verzendproces optimaliseren en profiteren van scherpe tarieven.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij Sendy. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "Sendy",
+  "slug": "sendy",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/Sendy.jpg",
+  "summary": "Print verzendlabels van Sendy direct vanuit ShopLinkr. Eén workflow voor al je pakketten.",
+  "ogImage": "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png",
+  "supportSlug": "sendy-koppelen",
+  "tagline": "Slimme software voor een eenvoudig verzendproces.",
+  "about": "Sendy is een verzendsoftware die bedrijven helpt pakketten efficiënt te versturen. Het biedt integraties met vervoerders zoals PostNL, DHL en DPD, en koppelt eenvoudig met webshops. Met Sendy kun je verzendlabels automatisch aanmaken, je verzendproces optimaliseren en profiteren van scherpe tarieven.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij Sendy. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Hoe koppel ik Sendy aan ShopLinkr?",
+      "a": "Je maakt in je Sendy-account onder 'Mijn Sendy' een Personal access token aan en vult die in ShopLinkr in bij 'Instellingen' &gt; 'Vervoerders' &gt; 'Verbind vervoerder'. Daarna kies je je shop en klik je op 'Koppelen'."
+    },
+    {
+      "q": "Met welke vervoerders kan ik via Sendy verzenden?",
+      "a": "Sendy biedt integraties met vervoerders zoals <strong>PostNL, DHL en DPD</strong>, die je vervolgens via ShopLinkr voor je verzendlabels kunt gebruiken."
+    },
+    {
+      "q": "Krijg ik automatisch een track &amp; trace-code als ik een Sendy-label aanmaak?",
+      "a": "Ja, zodra je via ShopLinkr een Sendy-label aanmaakt, komt de track &amp; trace-code automatisch terug bij de bestelling."
+    }
+  ]
 }

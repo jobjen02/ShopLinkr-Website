@@ -17,6 +17,7 @@ interface Props {
     related: IntegrationEntry[];
     relatedHref: (slug: string) => string;
     supportHref: string;
+    contactHref?: string;
     homeHref: string;
     integrationsHref: string;
     title: string;
@@ -34,6 +35,7 @@ const {
     related,
     relatedHref,
     supportHref,
+    contactHref,
     homeHref,
     integrationsHref,
     title,
@@ -47,6 +49,7 @@ const {
     category,
     logo,
     summary,
+    ogImage,
     status,
     url,
     supportSlug,
@@ -149,6 +152,7 @@ const quickFacts = [
 <BaseLayout
     title={title}
     description={description}
+    image={ogImage}
     alternates={alternates}
     jsonLd={jsonLd}
     markdown
@@ -230,7 +234,7 @@ const quickFacts = [
                             {p.getStartedHeadingPrefix} {name}{p.getStartedHeadingSuffix}
                         </h2>
                         <p class="mt-6 text-sm md:text-base text-steel dark:text-gravel leading-relaxed max-w-2xl mb-8">
-                            {p.getStartedBody}
+                            {supportSlug ? p.getStartedBody : p.getStartedBodyNoGuide}
                         </p>
 
                         {supportSlug ? (
@@ -253,7 +257,7 @@ const quickFacts = [
                             </a>
                         ) : (
                             <a
-                                href={supportHref}
+                                href={contactHref ?? supportHref}
                                 class="group inline-flex items-center gap-2 text-sm font-semibold text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors"
                             >
                                 {p.guideFallbackLink}

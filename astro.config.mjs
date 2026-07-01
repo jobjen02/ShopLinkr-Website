@@ -105,6 +105,10 @@ const { lastmod: lastmodByPath, customPages: contentCustomPages } = buildContent
 export default defineConfig({
     site: 'https://shoplinkr.com',
     output: 'server',
+    // One canonical URL form: /x, never /x/. The Vercel adapter 308-redirects the
+    // slashed variant and the generated sitemap emits slash-free URLs, so /prijzen
+    // and /prijzen/ stop being two indexable soft-duplicates.
+    trailingSlash: 'never',
     adapter: vercel(),
     redirects,
     i18n: {
@@ -121,13 +125,12 @@ export default defineConfig({
         vue(),
         mdx(),
         sitemap({
-            i18n: {
-                defaultLocale: 'nl',
-                locales: {
-                    nl: 'nl-NL',
-                    en: 'en-US',
-                },
-            },
+            // The @astrojs/sitemap i18n option only prefix-swaps (/prijzen -> /en/prijzen),
+            // which cannot map our translated slugs (/prijzen <-> /en/pricing), so it emitted
+            // hreflang alternates for only a handful of same-slug pages and none for the rest.
+            // A partial, mostly-wrong alternate set is worse than none, and the in-<head>
+            // hreflang (built from the routes map in BaseHead) is already complete and correct,
+            // so that stays the single source of truth for hreflang.
             // Server-rendered content routes aren't auto-discovered; add them.
             customPages: contentCustomPages,
             filter: (page) => !page.includes('/404'),
@@ -136,7 +139,9 @@ export default defineConfig({
                 const lastmod = lastmodByPath[rawPath];
                 if (lastmod) item = { ...item, lastmod };
 
-                const path = new URL(item.url).pathname.replace(/^\/en(?=\/|$)/, '') || '/';
+                // Strip the /en prefix AND any trailing slash so the exact-match tests below
+                // (e.g. '/prijzen', '/pricing', '/') fire for every URL variant.
+                const path = new URL(item.url).pathname.replace(/^\/en(?=\/|$)/, '').replace(/\/$/, '') || '/';
 
                 if (path === '/') {
                     return {

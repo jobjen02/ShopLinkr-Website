@@ -1,17 +1,29 @@
 {
-    "name": "Lightspeed C-Series",
-    "slug": "lightspeed-c-series",
-    "category": "webshop",
-    "status": "live",
-    "logo": "/assets/webshops/Lightspeed.png",
-    "summary": "Koppel je Lightspeed C-Series webshop aan ShopLinkr. Voorraadsync en orderimport in een centrale omgeving.",
-    "url": "https://www.lightspeedhq.nl",
-    "tagline": "Verwerk eenvoudig je Lightspeed bestellingen met je favoriete vervoerder vanuit ShopLinkr",
-    "about": "Lightspeed eCom C-Series is een krachtig e-commerce platform waarmee je eenvoudig een professionele webshop kunt starten en laten groeien. Met deze webshopsoftware beheer je producten, voorraden en bestellingen op één centrale plek. Daarnaast zijn er koppelingen beschikbaar met betaalproviders, verzenddiensten en externe verkoopkanalen, zodat je jouw bereik kunt vergroten. Lightspeed C-Series is geschikt voor zowel kleine webshops als grotere merken en vormt een stabiele basis voor een succesvolle online verkoopstrategie.",
-    "faqs": [
-        {
-            "q": "Welke Lightspeed versie ondersteunen jullie?",
-            "a": "Op dit moment ondersteunen we de Lightspeed eCom C-Series variant. Werk je met een andere Lightspeed variant? Neem contact met ons op, dan kijken we samen wat er mogelijk is."
-        }
-    ]
+  "name": "Lightspeed C-Series",
+  "slug": "lightspeed-c-series",
+  "category": "webshop",
+  "status": "live",
+  "logo": "/assets/webshops/Lightspeed.png",
+  "summary": "Koppel je Lightspeed C-Series webshop aan ShopLinkr. Voorraadsync en orderimport in een centrale omgeving.",
+  "url": "https://www.lightspeedhq.nl",
+  "tagline": "Verwerk eenvoudig je Lightspeed bestellingen met je favoriete vervoerder vanuit ShopLinkr",
+  "about": "Lightspeed eCom C-Series is een krachtig e-commerce platform waarmee je eenvoudig een professionele webshop kunt starten en laten groeien. Met deze webshopsoftware beheer je producten, voorraden en bestellingen op één centrale plek. Daarnaast zijn er koppelingen beschikbaar met betaalproviders, verzenddiensten en externe verkoopkanalen, zodat je jouw bereik kunt vergroten. Lightspeed C-Series is geschikt voor zowel kleine webshops als grotere merken en vormt een stabiele basis voor een succesvolle online verkoopstrategie.",
+  "faqs": [
+    {
+      "q": "Welke Lightspeed versie ondersteunen jullie?",
+      "a": "Op dit moment ondersteunen we de Lightspeed eCom C-Series variant. Werk je met een andere Lightspeed variant? Neem contact met ons op, dan kijken we samen wat er mogelijk is."
+    },
+    {
+      "q": "Welke productgegevens hebben mijn producten nodig om goed in te laden?",
+      "a": "Om je Lightspeed producten goed in te laden, moet elk product een unieke EAN of SKU code hebben. ShopLinkr gebruikt die code om je producten en voorraad correct te matchen."
+    },
+    {
+      "q": "Moet ik mijn voorraad na het koppelen nog in Lightspeed bijhouden?",
+      "a": "Nee, na de koppeling beheer je je voorraad alleen nog in ShopLinkr. Je wijzigingen worden automatisch gesynchroniseerd naar je Lightspeed C-Series webshop."
+    },
+    {
+      "q": "Worden mijn Lightspeed bestellingen automatisch geimporteerd in ShopLinkr?",
+      "a": "Ja, je Lightspeed bestellingen komen binnen in ShopLinkr, zodat je ze op een centrale plek verwerkt en verzendt met je eigen vervoerder."
+    }
+  ]
 }

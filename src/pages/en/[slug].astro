@@ -4,6 +4,7 @@ import SeoArticlePage from '../../components/pages/SeoArticlePage.astro';
 import { authorSchema } from '../../utils/author';
 import { guideGroupOf } from '../../utils/guides';
 import { dateModified } from '../../utils/articleDate';
+import { extractSteps, howToSchema } from '../../utils/howto';
 
 const { slug } = Astro.params;
 
@@ -49,7 +50,20 @@ const breadcrumbSchema = {
     ],
 };
 
-const jsonLd = [articleSchema, breadcrumbSchema];
+// Connection guides ("how-to-connect-...") expose their step sequence as a HowTo.
+const howTo = page.id.startsWith('how-to-connect-')
+    ? howToSchema({
+        name: page.data.title,
+        description: page.data.excerpt,
+        url: canonicalUrl,
+        inLanguage: 'en-US',
+        steps: extractSteps(page.body ?? '', 'first-ol'),
+    })
+    : null;
+
+const jsonLd = howTo
+    ? [articleSchema, breadcrumbSchema, howTo]
+    : [articleSchema, breadcrumbSchema];
 
 export const prerender = false;
 ---

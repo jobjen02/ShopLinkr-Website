@@ -7,6 +7,8 @@ imageAlt: "Warehouse worker checking inventory for a backorder"
 translationKey: "wat-is-een-backorder"
 ---
 
+<p><strong>A backorder is an order for a product that is temporarily out of stock but that you expect to restock soon. You accept the order and ship once your inventory is replenished, so you don't lose the sale. With clear communication about the lead time and solid inventory management, backorders stay manageable.</strong></p>
+
 <p>A <strong>backorder</strong> is an order for a product that is out of stock at the moment of purchase but that you expect to restock soon. Instead of turning the order away, you accept it and ship once your inventory is replenished. For you as a seller, that means you don't lose the sale even though the item isn't on the shelf right now.</p>
 
 <h2>Backorder versus out of stock</h2>
@@ -15,7 +17,7 @@ translationKey: "wat-is-een-backorder"
 <h2>Handling backorders the right way</h2>
 <p>A backorder lives or dies by clear communication and tight inventory records. These steps keep it manageable:</p>
 <ol>
-<li><p><strong>Be honest about the lead time.</strong> Show a realistic expected delivery date on the product and update it as soon as you have new information from your supplier.</p></li>
+<li><p><strong>Be honest about the lead time.</strong> Show a realistic <a href="https://consument.acm.nl/garantie-reparatie-geld-terug/aankoop-niet-geleverd" target="_blank" rel="noopener noreferrer">expected delivery date</a> on the product and update it as soon as you have new information from your supplier.</p></li>
 <li><p><strong>Keep the customer in the loop.</strong> Confirm the order, send an update if there's a delay, and notify them the moment the package ships.</p></li>
 <li><p><strong>Reorder from your supplier on time.</strong> Use <a href="/functionaliteiten/voorraad">purchase advice per supplier</a> so you know what to reorder and when.</p></li>
 <li><p><strong>Ship as soon as stock arrives.</strong> With <a href="/functionaliteiten/picklijsten">pick lists</a> and <a href="/functionaliteiten/vervoerders">one-click shipping labels</a>, you can clear open backorders the moment they become available again.</p></li>

@@ -6,6 +6,8 @@ image: "/images/blog/wat-is-een-backorder/mOg4w5jzdzry32BjB0M5rbu4T8.png"
 imageAlt: "Magazijnmedewerker controleert voorraad voor een backorder"
 ---
 
+<p><strong>Een backorder is een bestelling voor een product dat tijdelijk niet op voorraad is, maar dat je binnenkort weer verwacht. Je neemt de bestelling aan en levert zodra de voorraad is aangevuld, zodat je de verkoop niet misloopt. Met heldere communicatie over de levertijd en goed voorraadbeheer houd je backorders beheersbaar.</strong></p>
+
 <p>Een <strong>backorder</strong> is een bestelling voor een product dat op het moment van bestellen niet op voorraad is, maar waarvan je weet dat het binnenkort weer binnenkomt. In plaats van de bestelling te weigeren, neem je hem aan en lever je zodra de voorraad is aangevuld. Voor jou als verkoper betekent dit dat je een verkoop niet misloopt, ook al ligt het artikel even niet in het magazijn.</p>
 
 <h2>Backorder versus uitverkocht</h2>
@@ -14,7 +16,7 @@ imageAlt: "Magazijnmedewerker controleert voorraad voor een backorder"
 <h2>Backorders goed verwerken</h2>
 <p>Een backorder valt of staat met heldere communicatie en strakke voorraadadministratie. Deze stappen houden het beheersbaar:</p>
 <ol>
-<li><p><strong>Wees eerlijk over de levertijd.</strong> Toon een realistische verwachte leverdatum bij het product en pas die aan zodra je nieuwe informatie van je leverancier hebt.</p></li>
+<li><p><strong>Wees eerlijk over de levertijd.</strong> Toon een realistische <a href="https://consument.acm.nl/garantie-reparatie-geld-terug/aankoop-niet-geleverd" target="_blank" rel="noopener noreferrer">verwachte leverdatum</a> bij het product en pas die aan zodra je nieuwe informatie van je leverancier hebt.</p></li>
 <li><p><strong>Houd de klant op de hoogte.</strong> Bevestig de bestelling, stuur een update bij vertraging en meld het zodra het pakket onderweg is.</p></li>
 <li><p><strong>Bestel op tijd bij je leverancier.</strong> Gebruik <a href="/functionaliteiten/voorraad">inkoopadvies per leverancier</a> zodat je weet wat en wanneer je moet bijbestellen.</p></li>
 <li><p><strong>Verzend zodra de voorraad binnen is.</strong> Met <a href="/functionaliteiten/picklijsten">picklijsten</a> en <a href="/functionaliteiten/vervoerders">verzendlabels in één klik</a> pak je openstaande backorders direct op zodra ze leverbaar zijn.</p></li>

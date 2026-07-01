@@ -14,6 +14,8 @@ interface Props {
     publishedTime?: string;
     /** When true, advertise a markdown twin at the canonical URL + ".md". */
     markdown?: boolean;
+    /** When true, emit `noindex` instead of the default index directive (e.g. 404). */
+    noindex?: boolean;
 }
 
 const {
@@ -27,6 +29,7 @@ const {
     ogType = 'website',
     publishedTime,
     markdown,
+    noindex = false,
 } = Astro.props;
 
 // Social crawlers (Facebook/LinkedIn/X) do not render SVG, so fall back to the
@@ -35,9 +38,12 @@ const {
 const ogImage = image.endsWith('.svg') ? '/og-default.png' : image;
 const isDefaultOg = ogImage === '/og-default.png';
 
+// Strip any trailing slash (root stays "/") so the canonical always matches the
+// trailingSlash: 'never' URL form, even if a slashed variant is somehow rendered.
+const normalizedPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const canonicalURL = canonical
     ? new URL(canonical, Astro.site)
-    : new URL(Astro.url.pathname, Astro.site);
+    : new URL(normalizedPath, Astro.site);
 
 const ogLocale = localeMeta[locale].og;
 
@@ -128,7 +134,16 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
 <!-- End Featurebase -->
 
 <link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="canonical" href={canonicalURL} />
+<meta
+    name="robots"
+    content={noindex
+        ? 'noindex, follow'
+        : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'}
+/>
 
 <title>{title}</title>
 <meta name="description" content={description} />

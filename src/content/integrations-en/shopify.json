@@ -1,19 +1,32 @@
 {
-    "name": "Shopify",
-    "slug": "shopify",
-    "category": "webshop",
-    "status": "live",
-    "logo": "/assets/webshops/Shopify.jpg",
-    "summary": "Sync your stock and orders with Shopify. Centralize your entire order flow across channels, with real-time stock syncing.",
-    "url": "https://www.shopify.com",
-    "supportSlug": "shopify-koppelen",
-    "tagline": "Shopify handles everything, from payment all the way to the returns process.",
-    "about": "Shopify is a platform that lets you easily set up and manage a webshop. It helps you sell products, process payments, and design your store without needing any technical knowledge. You can use it to sell both online and offline, for example through a physical store or a pop-up shop.",
-    "translationKey": "shopify",
-    "faqs": [
-        {
-            "q": "Are draft products imported?",
-            "a": "You can set this yourself. While connecting your Shopify store, you can indicate whether you want this. You can easily change it afterwards."
-        }
-    ]
+  "name": "Shopify",
+  "slug": "shopify",
+  "category": "webshop",
+  "status": "live",
+  "logo": "/assets/webshops/Shopify.jpg",
+  "summary": "Sync your stock and orders with Shopify. Centralize your entire order flow across channels, with real-time stock syncing.",
+  "ogImage": "/images/blog/shopify-koppelen-aan-shoplinkr/SNMrUjZnxSfQb0OfE3pgIZ8XRLM.png",
+  "url": "https://www.shopify.com",
+  "supportSlug": "shopify-koppelen",
+  "tagline": "Shopify handles everything, from payment all the way to the returns process.",
+  "about": "Shopify is a platform that lets you easily set up and manage a webshop. It helps you sell products, process payments, and design your store without needing any technical knowledge. You can use it to sell both online and offline, for example through a physical store or a pop-up shop.",
+  "translationKey": "shopify",
+  "faqs": [
+    {
+      "q": "Are draft products imported?",
+      "a": "You can set this yourself. While connecting your Shopify store, you can indicate whether you want this. You can easily change it afterwards."
+    },
+    {
+      "q": "Do my Shopify products need an EAN code to connect?",
+      "a": "Yes, to load all products correctly, each product in Shopify needs an EAN code in the 'Barcode' field."
+    },
+    {
+      "q": "Where do I manage my stock after connecting Shopify?",
+      "a": "Once connected, you manage your stock only in ShopLinkr. From there your Shopify stock is updated in real time."
+    },
+    {
+      "q": "Which location is used for my stock and orders?",
+      "a": "During setup you select a Shopify location. ShopLinkr applies stock changes on that location and imports your orders from there."
+    }
+  ]
 }

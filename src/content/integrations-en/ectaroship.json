@@ -1,17 +1,29 @@
 {
-    "name": "EctaroShip",
-    "slug": "ectaroship",
-    "translationKey": "ectaroship",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/EctaroShip.png",
-    "summary": "Ship through EctaroShip at competitive rates. Labels and tracking are fully automated.",
-    "tagline": "Ship with confidence. Faster and easier",
-    "about": "EctaroShip is shipping software that lets you easily create shipping labels for a range of carriers. The platform helps webshops and logistics systems centralize their shipping process and handle it more efficiently. With EctaroShip you can send parcels, generate labels and manage shipments from a single environment, without having to manually transfer orders between systems.",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on the shipping details of an order we request a shipping label from EctaroShip. You can adjust the address details manually if needed."
-        }
-    ]
+  "name": "EctaroShip",
+  "slug": "ectaroship",
+  "translationKey": "ectaroship",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/EctaroShip.png",
+  "summary": "Ship through EctaroShip at competitive rates. Labels and tracking are fully automated.",
+  "tagline": "Ship with confidence. Faster and easier",
+  "about": "EctaroShip is shipping software that lets you easily create shipping labels for a range of carriers. The platform helps webshops and logistics systems centralize their shipping process and handle it more efficiently. With EctaroShip you can send parcels, generate labels and manage shipments from a single environment, without having to manually transfer orders between systems.",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, based on the shipping details of an order we request a shipping label from EctaroShip. You can adjust the address details manually if needed."
+    },
+    {
+      "q": "Do I automatically get a track & trace back in ShopLinkr?",
+      "a": "Yes, once a label has been created with EctaroShip the matching track & trace is returned to ShopLinkr automatically. You do not have to enter it manually."
+    },
+    {
+      "q": "Can I connect my own EctaroShip account?",
+      "a": "Yes, you connect your own EctaroShip account so you ship based on your own agreements and rates. From that single environment you generate labels and manage your shipments."
+    },
+    {
+      "q": "Can I ship with different carriers through EctaroShip?",
+      "a": "Yes, EctaroShip is shipping software that creates labels for a range of carriers, so you can ship with different carriers from a single environment. Which carriers are available exactly depends on your EctaroShip account."
+    }
+  ]
 }

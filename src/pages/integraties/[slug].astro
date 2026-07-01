@@ -17,9 +17,12 @@ const supportHref = supportSlug ? `/support/${supportSlug}` : '/support';
 
 const integrationSchema = {
     '@type': 'WebPage',
+    '@id': `https://shoplinkr.com/integraties/${integration.data.slug}#webpage`,
     name: `${name} koppelen aan ShopLinkr`,
     description: summary,
     url: `https://shoplinkr.com/integraties/${integration.data.slug}`,
+    inLanguage: 'nl-NL',
+    isPartOf: { '@id': 'https://shoplinkr.com/#website' },
 };
 
 const breadcrumbSchema = {
@@ -28,12 +31,18 @@ const breadcrumbSchema = {
         {
             '@type': 'ListItem',
             position: 1,
+            name: 'Home',
+            item: 'https://shoplinkr.com',
+        },
+        {
+            '@type': 'ListItem',
+            position: 2,
             name: 'Integraties',
             item: 'https://shoplinkr.com/integraties',
         },
         {
             '@type': 'ListItem',
-            position: 2,
+            position: 3,
             name: `${name} koppelen aan ShopLinkr`,
             item: `https://shoplinkr.com/integraties/${integration.data.slug}`,
         },
@@ -73,6 +82,7 @@ export const prerender = false;
     related={related}
     relatedHref={(slug) => `/integraties/${slug}`}
     supportHref={supportHref}
+    contactHref="/contact"
     homeHref="/"
     integrationsHref="/integraties"
     title={`${name} koppelen aan ShopLinkr | Integraties`}

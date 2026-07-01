@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '../i18n/routes';
-import { getAuthor, authorRole, authorBioText } from '../utils/author';
+import { getAuthor, authorRole, authorBioText, authorHref } from '../utils/author';
 
 interface Props {
     name?: string;
@@ -26,7 +26,7 @@ const writtenBy = locale === 'en' ? 'Written by' : 'Geschreven door';
     <div class="flex-1 min-w-0">
         <p class="text-[12px] uppercase tracking-wider text-gravel mb-1">{writtenBy}</p>
         <p class="text-[15px] font-semibold text-charcoal dark:text-paper">
-            {author.name}<span class="text-steel dark:text-gravel font-normal">, {role}</span>
+            <a href={authorHref(author.slug, locale)} class="hover:text-sunstone-deep transition-colors">{author.name}</a><span class="text-steel dark:text-gravel font-normal">, {role}</span>
         </p>
         <p class="mt-1.5 text-[14px] text-steel dark:text-gravel leading-relaxed">{bio}</p>
         {author.linkedin && (

@@ -6,6 +6,8 @@ image: "/images/blog/alles-wat-je-moet-weten-over-back-ordering/NcCH192G4myz0RpH
 imageAlt: "Magazijnmedewerker verwerkt backorders aan een inpaktafel"
 ---
 
+<p><strong>Een backorder is een bestelling die je aanneemt voor een product dat op dat moment niet op voorraad is. Je zet de order in de wacht, bestelt bij je leverancier en levert zodra de nieuwe voorraad binnen is. Zo vang je vraag op zonder alles continu op voorraad te houden.</strong></p>
+
 <p>Een backorder betekent dat je een bestelling aanneemt voor een product dat op dat moment niet op voorraad is. In plaats van de verkoop te missen, plaats je de order in de wacht en lever je zodra de voorraad weer binnen is. Voor webshops en marketplace-verkopers is een backorder een manier om vraag op te vangen zonder dat je alles continu op voorraad hoeft te houden. In dit artikel lees je wat een backorder precies is, hoe het proces verloopt en hoe je backorders soepel beheert.</p>
 
 <h2>Hoe een backorder werkt</h2>
@@ -33,7 +35,7 @@ imageAlt: "Magazijnmedewerker verwerkt backorders aan een inpaktafel"
 
 <h2>Veelgestelde vragen over backorders</h2>
 <h3>Wat gebeurt er als een backorder niet geleverd kan worden?</h3>
-<p>Dan breng je de klant op de hoogte. Die kan vervolgens kiezen om langer te wachten of de bestelling te annuleren. Heldere communicatie voorkomt hier de meeste frustratie.</p>
+<p>Dan breng je de klant op de hoogte. Die kan vervolgens kiezen om langer te wachten of <a href="https://consument.acm.nl/garantie-reparatie-geld-terug/aankoop-niet-geleverd" target="_blank" rel="noopener noreferrer">de bestelling te annuleren</a>. Heldere communicatie voorkomt hier de meeste frustratie.</p>
 <h3>Kun je een backorder annuleren?</h3>
 <p>Ja, zolang de order nog niet verwerkt en verzonden is, kun je een backorder annuleren.</p>
 <h3>Is een backorder hetzelfde als een vertraagde levering?</h3>

@@ -9,6 +9,7 @@ import CookieBanner from '../components/islands/CookieBanner.vue';
 import type { Locale, RouteKey } from '../i18n/routes';
 import { useTranslations } from '../i18n/ui';
 import { localeMeta } from '../i18n/localeData';
+import { founderPersonSchema } from '../utils/author';
 
 interface Props {
     title: string;
@@ -21,6 +22,7 @@ interface Props {
     ogType?: 'website' | 'article';
     publishedTime?: string;
     markdown?: boolean;
+    noindex?: boolean;
 }
 
 const {
@@ -34,6 +36,7 @@ const {
     ogType,
     publishedTime,
     markdown,
+    noindex,
 } = Astro.props;
 
 // Locale is derived from the URL (NL at root, EN under /en/) so pages don't
@@ -46,9 +49,11 @@ const organizationSchema = {
     '@type': 'Organization',
     '@id': 'https://shoplinkr.com/#organization',
     name: 'ShopLinkr',
+    legalName: 'ShopLinkr',
     url: 'https://shoplinkr.com',
     logo: 'https://shoplinkr.com/logo/logo-charcoal.svg',
     description: t.footer.description,
+    foundingDate: '2022',
     email: 'contact@shoplinkr.com',
     telephone: '+31649781212',
     vatID: 'NL004469462B39',
@@ -62,12 +67,32 @@ const organizationSchema = {
         addressLocality: 'Meerlo',
         addressCountry: 'NL',
     },
-    aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.6',
-        bestRating: '5',
-        ratingCount: '18',
+    areaServed: {
+        '@type': 'Country',
+        name: 'Netherlands',
     },
+    // Links to the founder Person node emitted below, so the entity graph names a real person.
+    founder: { '@id': 'https://shoplinkr.com/#job-jenniskens' },
+    contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: 'contact@shoplinkr.com',
+        telephone: '+31649781212',
+        availableLanguage: ['nl', 'en'],
+    },
+    knowsAbout: [
+        'voorraadbeheer',
+        'magazijnbeheer',
+        'orderverwerking',
+        'multichannel verkopen',
+        'picklijsten',
+        'verzendlabels',
+        'bol koppeling',
+        'webshop fulfilment',
+    ],
+    // aggregateRating deliberately lives only on the SoftwareApplication node
+    // (HomePage.astro). A self-serving rating on Organization without on-page
+    // Review markup is discounted by Google; keep the product node as the single source.
     sameAs: [
         'https://www.linkedin.com/company/shoplinkr',
         'https://www.instagram.com/shoplinkr',
@@ -84,6 +109,9 @@ const websiteSchema = {
     inLanguage: localeMeta[locale].bcp47,
     publisher: { '@id': 'https://shoplinkr.com/#organization' },
 };
+
+// Founder Person node, emitted site-wide so Organization.founder's @id resolves everywhere.
+const founderSchema = founderPersonSchema(locale);
 ---
 
 <!doctype html>
@@ -113,9 +141,11 @@ const websiteSchema = {
             ogType={ogType}
             publishedTime={publishedTime}
             markdown={markdown}
+            noindex={noindex}
         />
         <JsonLd schema={organizationSchema} />
         <JsonLd schema={websiteSchema} />
+        <JsonLd schema={founderSchema} />
         {jsonLd && <JsonLd schema={jsonLd} />}
     </head>
     <body class="min-h-screen flex flex-col">

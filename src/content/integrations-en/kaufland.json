@@ -1,19 +1,31 @@
 {
-    "name": "Kaufland",
-    "slug": "kaufland",
-    "translationKey": "kaufland",
-    "category": "marketplace",
-    "status": "live",
-    "logo": "/assets/marketplaces/kaufland.jpg",
-    "summary": "Sell on Kaufland and keep your stock in sync in real time. Conquer the German market without any extra work.",
-    "url": "https://www.kaufland.de",
-    "supportSlug": "kaufland-koppelen",
-    "tagline": "Easily process your Kaufland orders with your preferred carrier straight from ShopLinkr",
-    "about": "Kaufland is a large German company focused on both online and offline retail. Through its online platform, Kaufland offers a wide range of products, such as electronics, clothing, toys, and household goods. The platform works as a marketplace where third-party sellers can offer their products to a broad audience. Kaufland focuses on user-friendly services, fast delivery, and a large product range, which makes it an important player in the online retail sector in Europe.",
-    "faqs": [
-        {
-            "q": "Can I connect all countries to ShopLinkr?",
-            "a": "Yes, you can connect all countries to ShopLinkr. When you set up the Kaufland connection, you select the country you want for that sales channel. Each sales channel is linked to one country. So you connect Kaufland again for every additional country you want to link to ShopLinkr."
-        }
-    ]
+  "name": "Kaufland",
+  "slug": "kaufland",
+  "translationKey": "kaufland",
+  "category": "marketplace",
+  "status": "live",
+  "logo": "/assets/marketplaces/kaufland.jpg",
+  "summary": "Sell on Kaufland and keep your stock in sync in real time. Conquer the German market without any extra work.",
+  "url": "https://www.kaufland.de",
+  "supportSlug": "kaufland-koppelen",
+  "tagline": "Easily process your Kaufland orders with your preferred carrier straight from ShopLinkr",
+  "about": "Kaufland is a large German company focused on both online and offline retail. Through its online platform, Kaufland offers a wide range of products, such as electronics, clothing, toys, and household goods. The platform works as a marketplace where third-party sellers can offer their products to a broad audience. Kaufland focuses on user-friendly services, fast delivery, and a large product range, which makes it an important player in the online retail sector in Europe.",
+  "faqs": [
+    {
+      "q": "Can I connect all countries to ShopLinkr?",
+      "a": "Yes, you can connect all countries to ShopLinkr. When you set up the Kaufland connection, you select the country you want for that sales channel. Each sales channel is linked to one country. So you connect Kaufland again for every additional country you want to link to ShopLinkr."
+    },
+    {
+      "q": "What do I need to connect Kaufland?",
+      "a": "In your Kaufland account you generate a new <strong>Client key</strong> and <strong>Secret key</strong> under \"Settings\" &gt; \"Shop Settings\" &gt; \"API\". You enter those two keys in ShopLinkr under <strong>Settings &gt; Sales channels</strong> to create the connection."
+    },
+    {
+      "q": "Do I still need to update my stock in Kaufland itself?",
+      "a": "No. Once the connection is active, <strong>ShopLinkr is the only place</strong> where you need to update your stock. It is synced with Kaufland in real time, provided the product already exists in ShopLinkr."
+    },
+    {
+      "q": "How do I process my Kaufland orders?",
+      "a": "Your Kaufland orders are imported into ShopLinkr automatically. There you process them and create shipping labels with <strong>your own carrier</strong>."
+    }
+  ]
 }

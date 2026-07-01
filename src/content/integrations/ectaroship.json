@@ -1,16 +1,28 @@
 {
-    "name": "EctaroShip",
-    "slug": "ectaroship",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/EctaroShip.png",
-    "summary": "Verzending via EctaroShip met scherpe tarieven. Labels en tracking volledig geautomatiseerd.",
-    "tagline": "Verzend met vertrouwen. Sneller & gemakkelijker",
-    "about": "EctaroShip is verzendsoftware waarmee je eenvoudig verzendlabels kunt aanmaken voor verschillende vervoerders. Het platform helpt webshops en logistieke systemen om hun verzendproces te centraliseren en efficiënter te verwerken. Met EctaroShip kun je vanuit één omgeving pakketten verzenden, labels genereren en zendingen beheren zonder orders handmatig tussen systemen te hoeven overnemen.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij EctaroShip. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "EctaroShip",
+  "slug": "ectaroship",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/EctaroShip.png",
+  "summary": "Verzending via EctaroShip met scherpe tarieven. Labels en tracking volledig geautomatiseerd.",
+  "tagline": "Verzend met vertrouwen. Sneller & gemakkelijker",
+  "about": "EctaroShip is verzendsoftware waarmee je eenvoudig verzendlabels kunt aanmaken voor verschillende vervoerders. Het platform helpt webshops en logistieke systemen om hun verzendproces te centraliseren en efficiënter te verwerken. Met EctaroShip kun je vanuit één omgeving pakketten verzenden, labels genereren en zendingen beheren zonder orders handmatig tussen systemen te hoeven overnemen.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij EctaroShip. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Krijg ik automatisch een track & trace terug in ShopLinkr?",
+      "a": "Ja, zodra er een label is aangemaakt bij EctaroShip komt de bijbehorende track & trace automatisch terug in ShopLinkr. Je hoeft die dus niet handmatig over te nemen."
+    },
+    {
+      "q": "Kan ik mijn eigen EctaroShip-account koppelen?",
+      "a": "Ja, je koppelt je eigen EctaroShip-account, zodat je verzendt op basis van je eigen afspraken en tarieven. Vanuit die ene omgeving genereer je labels en beheer je je zendingen."
+    },
+    {
+      "q": "Kan ik via EctaroShip met verschillende vervoerders verzenden?",
+      "a": "Ja, EctaroShip is verzendsoftware die labels aanmaakt voor meerdere vervoerders, zodat je vanuit één omgeving met verschillende vervoerders kunt verzenden. Welke vervoerders precies beschikbaar zijn, hangt af van je EctaroShip-account."
+    }
+  ]
 }

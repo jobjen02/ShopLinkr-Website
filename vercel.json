@@ -17,6 +17,42 @@
                     "value": "application/linkset+json"
                 }
             ]
+        },
+        {
+            "source": "/fontawesome/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        },
+        {
+            "source": "/fonts/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        },
+        {
+            "source": "/flags/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        },
+        {
+            "source": "/logo/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+        },
+        {
+            "source": "/images/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+        },
+        {
+            "source": "/products/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+        },
+        {
+            "source": "/assets/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+        },
+        {
+            "source": "/testimonials/(.*)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+        },
+        {
+            "source": "/(favicon.ico|favicon.png|apple-touch-icon.png|icon-192.png|icon-512.png|og-default.png|og-default.svg|site.webmanifest)",
+            "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
         }
     ]
 }

@@ -1,18 +1,35 @@
 {
-    "name": "DPD",
-    "slug": "dpd",
-    "translationKey": "dpd",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/dpd.jpeg",
-    "summary": "Generate DPD shipping labels and pickup locations straight from your order flow. Track and trace is synced back automatically.",
-    "supportSlug": "dpd-koppelen",
-    "tagline": "Climate neutral, sustainable and innovative: all in one parcel.",
-    "about": "DPD is a parcel delivery service that delivers packages quickly and reliably. They operate in many countries and offer services for both businesses and consumers. Their track-and-trace system lets you follow your parcel with ease. DPD stands for \"Dynamic Parcel Distribution\" and is known for its focus on sustainability and customer-friendly delivery options.",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, we request a shipping label from DPD based on an order's shipping details. You can adjust the address details manually if you want."
-        }
-    ]
+  "name": "DPD",
+  "slug": "dpd",
+  "translationKey": "dpd",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/dpd.jpeg",
+  "summary": "Generate DPD shipping labels and pickup locations straight from your order flow. Track and trace is synced back automatically.",
+  "ogImage": "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png",
+  "supportSlug": "dpd-koppelen",
+  "tagline": "Climate neutral, sustainable and innovative: all in one parcel.",
+  "about": "DPD is a parcel delivery service that delivers packages quickly and reliably. They operate in many countries and offer services for both businesses and consumers. Their track-and-trace system lets you follow your parcel with ease. DPD stands for \"Dynamic Parcel Distribution\" and is known for its focus on sustainability and customer-friendly delivery options.",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, we request a shipping label from DPD based on an order's shipping details. You can adjust the address details manually if you want."
+    },
+    {
+      "q": "Can I connect my own DPD contract?",
+      "a": "Yes. You connect the DPD contract you already have to ShopLinkr, so you keep your own rates and terms. There is nothing to renegotiate or set up again."
+    },
+    {
+      "q": "What details do I need to connect DPD?",
+      "a": "You need Shipper WS login details (a username and password) from DPD's CustomerIT department. You can request these via <a href=\"mailto:customerit@dpd.nl\">customerit@dpd.nl</a>."
+    },
+    {
+      "q": "Does the track and trace come back into ShopLinkr automatically?",
+      "a": "Yes. After the label is created, the track and trace is synced back to the order automatically, so you don't have to copy it over by hand."
+    },
+    {
+      "q": "Can I choose DPD pickup points when shipping?",
+      "a": "Yes, you can use DPD pickup locations straight from your order flow alongside a regular shipping label."
+    }
+  ]
 }

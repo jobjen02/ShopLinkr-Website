@@ -1,18 +1,31 @@
 {
-    "name": "Sendy",
-    "slug": "sendy",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/Sendy.jpg",
-    "summary": "Print Sendy shipping labels straight from ShopLinkr. One workflow for all your parcels.",
-    "supportSlug": "sendy-koppelen",
-    "tagline": "Smart software for a simple shipping process.",
-    "about": "Sendy is shipping software that helps businesses send parcels efficiently. It offers integrations with carriers such as PostNL, DHL and DPD, and connects easily with webshops. With Sendy you can create shipping labels automatically, streamline your shipping process and benefit from competitive rates.",
-    "translationKey": "sendy",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on an order's shipping details we request a shipping label from Sendy. You can adjust the address details manually if you want."
-        }
-    ]
+  "name": "Sendy",
+  "slug": "sendy",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/Sendy.jpg",
+  "summary": "Print Sendy shipping labels straight from ShopLinkr. One workflow for all your parcels.",
+  "ogImage": "/images/blog/sendy-koppelen-aan-shoplinkr/Yi3hfDqwuZAzsjJScHP73oeWIM.png",
+  "supportSlug": "sendy-koppelen",
+  "tagline": "Smart software for a simple shipping process.",
+  "about": "Sendy is shipping software that helps businesses send parcels efficiently. It offers integrations with carriers such as PostNL, DHL and DPD, and connects easily with webshops. With Sendy you can create shipping labels automatically, streamline your shipping process and benefit from competitive rates.",
+  "translationKey": "sendy",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, based on an order's shipping details we request a shipping label from Sendy. You can adjust the address details manually if you want."
+    },
+    {
+      "q": "How do I connect Sendy to ShopLinkr?",
+      "a": "In your Sendy account you create a Personal access token under 'My Sendy', then enter it in ShopLinkr under 'Settings' &gt; 'Carriers' &gt; 'Connect carrier'. After that you pick your shop and click 'Connect'."
+    },
+    {
+      "q": "Which carriers can I ship with through Sendy?",
+      "a": "Sendy offers integrations with carriers such as <strong>PostNL, DHL and DPD</strong>, which you can then use for your shipping labels through ShopLinkr."
+    },
+    {
+      "q": "Do I automatically get a track &amp; trace code when I create a Sendy label?",
+      "a": "Yes, as soon as you create a Sendy label through ShopLinkr, the track &amp; trace code comes back automatically on the order."
+    }
+  ]
 }

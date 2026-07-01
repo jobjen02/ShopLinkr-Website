@@ -7,6 +7,8 @@ imageAlt: "Inventory management and channel sync for bol LVB in ShopLinkr"
 translationKey: "bol-lvb-voorraad-switch"
 ---
 
+<p><strong>Selling through LVB and from your own warehouse? Realtime inventory sync keeps your stock aligned across every channel. You connect bol and your other channels, set the stock source per product, and let ShopLinkr update all levels instantly on every sale. That way you switch flexibly without ever overselling.</strong></p>
+
 <p>Selling through bol fulfillment (LVB) but also shipping from your own warehouse? Then you need to switch your bol LVB stock between channels without selling the same item twice. Bol is a large Dutch sales channel, and LVB handles storage and shipping for you. The moment you also sell from your own stock or a webshop, your inventory levels drift apart fast. A central inventory tool keeps everything aligned in real time.</p>
 
 <h2>Why you need to sync stock across channels</h2>

@@ -1,0 +1,58 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { type Locale } from '../../i18n/routes';
+
+interface Props {
+    title: string;
+    description: string;
+    /** Hero eyebrow; defaults to "Juridisch" / "Legal". */
+    eyebrow?: string;
+    /** Hero subheading; defaults to the meta description. */
+    subheading?: string;
+    lastUpdated: string;
+    /** Overrides the "Laatst gewijzigd op" prefix (e.g. "Versie" for a versioned document). */
+    updatedLabel?: string;
+    pdfHref: string;
+    alternates?: { nl?: string; en?: string };
+    jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const { title, description, eyebrow, subheading, lastUpdated, updatedLabel: updatedLabelProp, pdfHref, alternates, jsonLd } = Astro.props;
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const updatedLabel = updatedLabelProp ?? (locale === 'en' ? 'Last updated on' : 'Laatst gewijzigd op');
+const downloadLabel = locale === 'en' ? 'Download as PDF' : 'Download als PDF';
+const eyebrowText = eyebrow ?? (locale === 'en' ? 'Legal' : 'Juridisch');
+---
+
+<PageLayout
+    title={`${title} | ShopLinkr`}
+    description={description}
+    eyebrow={eyebrowText}
+    heading={title}
+    subheading={subheading ?? description}
+    alternates={alternates}
+    jsonLd={jsonLd}
+>
+    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
+        <div class="container-prose">
+            <div class="max-w-3xl">
+                <p class="text-sm text-steel dark:text-gravel mb-10">
+                    {updatedLabel} {lastUpdated}
+                    <span class="mx-2 text-chalk-darker dark:text-flint" aria-hidden="true">·</span>
+                    <a
+                        href={pdfHref}
+                        download
+                        class="inline-flex items-center gap-1.5 font-semibold text-sunstone-deep hover:text-sunstone transition-colors"
+                    >
+                        <i class="fa-solid fa-file-pdf text-xs" aria-hidden="true"></i>
+                        {downloadLabel}
+                    </a>
+                </p>
+
+                <div class="prose-shoplinkr">
+                    <slot />
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>

@@ -1,0 +1,144 @@
+---
+import LegalPage from '../components/pages/LegalPage.astro';
+import { breadcrumbs } from '../utils/seo';
+
+const canonical = 'https://shoplinkr.com/privacyverklaring';
+const description = 'De privacyverklaring van ShopLinkr: welke persoonsgegevens we verwerken, met welk doel en onder welke grondslag, en wat jouw rechten zijn.';
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', '/'],
+        ['Privacyverklaring', '/privacyverklaring'],
+    ]),
+    {
+        '@type': 'WebPage',
+        '@id': `${canonical}#webpage`,
+        name: 'Privacyverklaring',
+        description,
+        url: canonical,
+        inLanguage: 'nl-NL',
+        isPartOf: { '@id': 'https://shoplinkr.com/#website' },
+    },
+];
+
+export const prerender = false;
+---
+
+<LegalPage
+    title="Privacyverklaring"
+    description={description}
+    lastUpdated="24 november 2025"
+    pdfHref="/documents/privacyverklaring.pdf"
+    jsonLd={jsonLd}
+>
+    <nav aria-label="Inhoudsopgave">
+        <ul>
+            <li><a href="#art-1">1. Inleiding</a></li>
+            <li><a href="#art-2">2. Waarom heeft ShopLinkr deze privacyverklaring?</a></li>
+            <li><a href="#art-3">3. Wat zijn persoonsgegevens en wat is verwerken?</a></li>
+            <li><a href="#art-4">4. Welke persoonsgegevens verwerken wij?</a></li>
+            <li><a href="#art-5">5. Hoe verkrijgen wij jouw persoonsgegevens?</a></li>
+            <li><a href="#art-6">6. Met welk doel (en onder welke grondslag) verwerken wij jouw persoonsgegevens?</a></li>
+            <li><a href="#art-7">7. Met wie delen wij persoonsgegevens?</a></li>
+            <li><a href="#art-8">8. Hoe lang bewaren wij persoonsgegevens?</a></li>
+            <li><a href="#art-9">9. Hoe zijn de persoonsgegevens beveiligd?</a></li>
+            <li><a href="#art-10">10. Geldt deze privacyverklaring ook voor de sites waarnaar wordt gelinkt?</a></li>
+            <li><a href="#art-11">11. Wat zijn jouw rechten?</a></li>
+            <li><a href="#art-12">12. Hoe kan je contact met ons opnemen?</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="art-1">1. Inleiding</h2>
+    <p>ShopLinkr (hierna ook aangeduid met ‘ShopLinkr’, ‘wij’, ‘we’, ‘ons’ of ‘onze’) hecht belang aan de bescherming van jouw privacy en de privacy van jouw klanten. De via onze service en ons platform verkregen persoonsgegevens worden verwerkt in overeenstemming met de geldende privacyregels en worden alleen gebruikt op de wijze zoals beschreven in deze verklaring.</p>
+    <p>ShopLinkr verwerkt persoonsgegevens in de rol van verwerker zoals vastgelegd in de Algemene Verordening Gegevensbescherming (de ‘AVG’). Indien je een betrokkene bent raden we je aan deze privacyverklaring zorgvuldig te lezen.</p>
+
+    <h2 id="art-2">2. Waarom heeft ShopLinkr deze privacyverklaring?</h2>
+    <p>In deze privacyverklaring leggen wij zo helder mogelijk uit welke persoonsgegevens wij verwerken, met welk doel en onder welke wettelijke grondslag. Hiermee wordt door ShopLinkr uitvoering gegeven aan de in de AVG neergelegde informatieplicht aan de betrokkene(n) wiens persoonsgegevens ShopLinkr verwerkt.</p>
+
+    <h2 id="art-3">3. Wat zijn persoonsgegevens en wat is verwerken?</h2>
+    <p>Persoonsgegevens zijn alle gegevens waarmee een natuurlijke persoon (de ‘betrokkene’) kan worden geïdentificeerd. Het verwerken van persoonsgegevens is het verrichten van handelingen met de persoonsgegevens van een betrokkene, zoals het ontvangen, opslaan, aanpassen, doorsturen en verwijderen van die persoonsgegevens. Wij verwerken jouw persoonsgegevens wanneer jij of de verkoper van de door jouw gekochte producten/diensten onze diensten gebruikt.</p>
+
+    <h2 id="art-4">4. Welke persoonsgegevens verwerken wij?</h2>
+    <p>De persoonsgegevens die wij van je kunnen verwerken zijn:</p>
+    <ul>
+        <li>basisinformatie zoals jouw voor- en achternaam;</li>
+        <li>contactgegevens zoals jouw adres, (mobiele) telefoonnummer en e-mailadres;</li>
+        <li>technische gegevens, zoals jouw IP-adres, het apparaat waarmee je onze website bezoekt en de pagina’s die je bekijkt;</li>
+    </ul>
+    <p>Wij proberen om niet meer persoonsgegevens te verzamelen dan wij nodig hebben.</p>
+
+    <h2 id="art-5">5. Hoe verkrijgen wij jouw persoonsgegevens?</h2>
+    <p>In bijna alle gevallen zullen wij jouw persoonsgegevens van onze klanten verkrijgen. Onze klanten zijn de online verkopers via bijvoorbeeld Bol.com of Amazon waar jij iets hebt gekocht. Zij gebruiken de service van ShopLinkr om (onder meer) diens verschillende verkoopkanalen met elkaar te kunnen koppelen, waardoor bijvoorbeeld de totale beschikbare voorraad op elk kanaal gelijk is. Ook kunnen onze klanten ShopLinkr gebruiken om verzendlabels voor (retour)pakketzendingen bij derden partijen aan te maken.</p>
+    <p>Verder is het mogelijk dat wij jouw persoonsgegevens hebben, omdat jij:</p>
+    <ul>
+        <li>onze website (www.shoplinkr.com hierna: de “Website”) bezoekt;</li>
+        <li>namens jouw onderneming een abonnement aangaat via onze Website;</li>
+        <li>een formulier op onze Website invult, zoals voor inschrijving op onze nieuwsbrief;</li>
+        <li>een vertegenwoordiger bent van onze zakelijke relatie(s) en/of (potentiële) klant(en);</li>
+    </ul>
+
+    <h2 id="art-6">6. Met welk doel (en onder welke grondslag) verwerken wij jouw persoonsgegevens?</h2>
+    <p>Het verwerken van persoonsgegevens is noodzakelijk om onze klanten onze service aan te bieden en om ze daarbij de best mogelijke ervaring te bieden. Wij mogen jouw persoonsgegevens alleen verwerken als daarvoor een ‘wettelijke grondslag’ bestaat. Hieronder wordt per doeleinde (van de verwerking) tevens beschreven op basis van welke grondslag (uit art. 6 van de AVG) deze plaatsvindt. Wij verwerken jouw persoonsgegevens voor de hieronder genoemde doeleinden:</p>
+    <h3>A. Voor het aanmaken van het klantaccount voor jouw onderneming</h3>
+    <p>ShopLinkr verwerkt eventueel jouw persoonsgegevens wanneer je via de Website een abonnement aangaat voor jouw onderneming. De gegevens van jouw onderneming hoeven in principe geen persoonsgegevens te zijn, maar in de praktijk worden vaak wel persoonsgegevens opgegeven.</p>
+    <p>De grondslag hiervoor is de uitvoering van de overeenkomst die je hebt met ShopLinkr. Wij moeten deze persoonsgegevens namelijk verwerken om onze service te verlenen en eventueel contact op te nemen. Wij verwerken alleen die gegevens die nodig zijn voor de voorbereiding, uitvoering en afronding van het desbetreffende abonnement.</p>
+    <h3>B. Om onze diensten mogelijk te maken richting onze klanten</h3>
+    <p>Wij slaan jouw persoonsgegevens op zodat onze klanten op ons platform de bestellingen (en retourneringen) kunnen inzien die bij hen worden gedaan. Daarbij kunnen onze klanten door onze service gemakkelijk facturen en postverzendingen aanmaken met jouw persoonsgegeven. De grondslag hiervoor is de uitvoering van de overeenkomst.</p>
+    <h3>C. Voor het sturen van onze nieuwsbrief en andere commerciële berichten</h3>
+    <p>Het is mogelijk dat ShopLinkr jouw gegevens ook gebruikt voor direct marketing- en communicatiedoeleinden. Bijvoorbeeld om je berichten te sturen over voor jou relevante aanbiedingen. Of bijvoorbeeld over ontwikkelingen rondom ShopLinkr via onze nieuwsbrief. De verwerking vindt in dit geval plaats op grond van een gerechtvaardigd belang. In het geval je geen klant bent, maar wel op de Website hebt aangegeven dat je onze nieuwsbrief wilt ontvangen dan is de grondslag de door jou gegeven toestemming om de nieuwsbrief te ontvangen. Deze toestemming kan op elk moment weer worden ingetrokken.</p>
+    <h3>D. Voor het verbeteren en analyseren van onze Website</h3>
+    <p>Sommige persoonsgegevens (die worden verkregen door middel van cookies) verwerkt ShopLinkr om de Website te monitoren en te verbeteren, statistieken te verzamelen en de Website te beveiligen. Deze verwerkingen vinden plaats op basis van een gerechtvaardigd belang, zodat de Website goed werkt en steeds beter kan worden. Een cookie is een klein tekstbestandje dat op de harde schijf van je computer wordt gezet op het moment dat je de Website bezoekt. Hiermee kunnen we gegevens verzamelen, zoals jouw IP-adres en jouw surfgedrag.</p>
+
+    <h2 id="art-7">7. Met wie delen wij persoonsgegevens?</h2>
+    <p>We zullen jouw persoonsgegevens niet zonder jouw voorafgaande toestemming aan derden verstrekken voor commerciële doeleinden. Het kan nodig zijn dat wij jouw persoonsgegevens wel om andere redenen delen met derden. In de verwerkersovereenkomst (onderaan onze algemene voorwaarden) kan je een opsomming vinden van (sub-)verwerkers van ons. In onder meer de onderstaande gevallen kunnen we jouw persoonsgegevens delen met derden:</p>
+    <ul>
+        <li>voor het verwerken van betalingen;</li>
+        <li>voor het managen van onze nieuwsbrief;</li>
+        <li>voor het hosten van de servers waar jouw gegevens opgeslagen staan en eventuele andere IT-diensten;</li>
+        <li>voor het aanbieden van onze diensten (via technische koppelingen met andere partijen);</li>
+        <li>om aan eventuele wettelijke verplichtingen te kunnen voldoen.</li>
+    </ul>
+    <p>In bovenstaande gevallen zijn deze derde partijen (sub-)verwerker en verstrekken wij aan hen uitsluitend de gegevens die zij nodig hebben om de dienst uit te laten voeren. Zij mogen jouw persoonsgegevens dus niet gebruiken voor andere doeleinden. Zodra zij jouw gegevens niet langer meer nodig hebben voor het verlenen van de service aan ons dan dienen zij jouw gegevens te verwijderen.</p>
+    <p>Derden aan wie wij jouw persoonsgegevens verstrekken zijn zelf eveneens verantwoordelijk voor de verwerking van die gegevens en voor de naleving van de AVG. Als een van onze externe dienstverleners persoonsgegevens verwerkt buiten de Europese Economische Ruimte, dan zal onze schriftelijke overeenkomst met hen passende maatregelen omvatten, meestal standaard contractbepalingen.</p>
+
+    <h2 id="art-8">8. Hoe lang bewaren wij persoonsgegevens?</h2>
+    <p>Wij bewaren jouw persoonsgegevens niet langer in een herleidbare vorm dan nodig is voor het doel waarvoor wij ze hebben verwerkt.</p>
+    <p>Als er sprake is van een wettelijke bewaarplicht (zoals die van de administratie van 7 jaar) dan houden wij die termijnen aan. De persoonsgegevens worden in dat geval na de bewaarplicht op correcte wijze vernietigd, tenzij een specifieke wettelijke grondslag ons noodzaakt om jouw gegevens toch nog langer te bewaren.</p>
+
+    <h2 id="art-9">9. Hoe zijn de persoonsgegevens beveiligd?</h2>
+    <p>Wij hebben passende technische en organisatorische maatregelen genomen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging van jouw persoonsgegevens tegen te gaan.</p>
+    <p>Deze maatregelen zijn onder andere (maar niet beperkt tot):</p>
+    <ul>
+        <li>beveiligde netwerkverbindingen (SSL);</li>
+        <li>opslag van persoonsgegevens in beveiligde digitale cloudomgeving;</li>
+        <li>toegang tot persoonsgegevens is beperkt met wachtwoorden en tot bepaalde geautoriseerde personen;</li>
+        <li>actuele back-ups;</li>
+        <li>firewalls;</li>
+        <li>virusscanners;</li>
+        <li>software updates;</li>
+    </ul>
+    <p>Als je vragen hebt over de beveiliging van jouw persoonsgegevens en/of er aanwijzingen zijn van misbruik van jouw persoonsgegevens? Neem dan contact op via <a href="mailto:privacy@shoplinkr.com">privacy@shoplinkr.com</a>.</p>
+
+    <h2 id="art-10">10. Geldt deze privacyverklaring ook voor de sites waarnaar wordt gelinkt?</h2>
+    <p>Deze privacyverklaring is niet van toepassing op websites van derden die door middel van links met onze website zijn verbonden. Wij kunnen niet garanderen dat deze websites op een betrouwbare of veilige manier met jouw persoonsgegevens omgaan. Lees altijd voor gebruik van de desbetreffende website de privacyverklaring van deze website, voor meer informatie over de manier waarop zij met jouw gegevens omgaan.</p>
+
+    <h2 id="art-11">11. Wat zijn jouw rechten?</h2>
+    <p>Je hebt de volgende privacy rechten:</p>
+    <ul>
+        <li>het recht om jouw persoonsgegevens in te zien;</li>
+        <li>het recht om jouw persoonsgegevens te wijzigen;</li>
+        <li>het recht om jouw persoonsgegevens te laten verwijderen;</li>
+        <li>het recht om een gegevensexport op te vragen van jouw persoonsgegevens;</li>
+        <li>het recht om correctie of aanvulling van jouw persoonsgegevens te vragen (gemotiveerd);</li>
+        <li>het recht om bezwaar tegen de verwerking van jouw persoonsgegevens te maken (gemotiveerd).</li>
+    </ul>
+    <p>Een verzoek kan je indienen via de mail bij <a href="mailto:privacy@shoplinkr.com">privacy@shoplinkr.com</a>. Je dient in jouw verzoek te vermelden op welke grond je het verzoek indient. Wij nemen jouw verzoek vervolgens binnen vier weken in behandeling.</p>
+    <p>Voordat wij jouw verzoek kunnen honoreren dienen wij wel eerst jouw identiteit te controleren. Wij willen immers voorkomen dat wij iemand toegang geven tot de persoonsgegevens van een ander. Dit doen we aan de hand van zogenaamde two-factorauthenticatie, op basis van de persoonsgegevens die we van jou hebben. Denk hierbij bijvoorbeeld aan een bevestiging van jouw verzoek per sms via het bij ons bekende telefoonnummer of het door jou beantwoorden van bepaalde verificatievragen.</p>
+    <p>Ook heb je het recht om eventuele vragen/klachten in te dienen bij de toezichthouder (de Autoriteit Persoonsgegevens).</p>
+
+    <h2 id="art-12">12. Hoe kan je contact met ons opnemen?</h2>
+    <p>Als je meer wilt weten of klachten hebt over onze verwerking van jouw persoonsgegevens, dan kan je (schriftelijk) contact met ons opnemen via: <a href="mailto:privacy@shoplinkr.com">privacy@shoplinkr.com</a>. De overige contactgegevens van ons zijn:</p>
+    <p>ShopLinkr<br />Beatrixstraat 19<br />5864 AG Meerlo</p>
+    <p>Omdat wij deze verklaring van tijd tot tijd kunnen aanpassen raden wij je aan om deze pagina regelmatig te bekijken zodat je op de hoogte bent van de wijzigingen.</p>
+    <p>Deze privacyverklaring is voor het laatst gewijzigd op 24 november 2025.</p>
+</LegalPage>

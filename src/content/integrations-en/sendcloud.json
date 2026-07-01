@@ -1,19 +1,32 @@
 {
-    "name": "Sendcloud",
-    "slug": "sendcloud",
-    "translationKey": "sendcloud",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/Sendcloud.png",
-    "summary": "Ship through more than 100 carriers with Sendcloud. Print labels straight from ShopLinkr and push tracking back to your channels.",
-    "url": "https://www.sendcloud.nl",
-    "supportSlug": "sendcloud-koppelen",
-    "tagline": "Europe's #1 shipping software",
-    "about": "Sendcloud is a shipping platform for webshops that automates and streamlines the shipping process. It offers integrations with more than 100 carriers, such as PostNL, DHL and DPD, and supports a wide range of shop systems. With Sendcloud you can easily create shipping labels, share tracking information and manage returns, which saves time and cuts costs.",
-    "faqs": [
-        {
-            "q": "Are address details added to the shipping label automatically?",
-            "a": "Yes, based on an order's shipping details we request a shipping label from Sendcloud. You can adjust the address details manually if needed."
-        }
-    ]
+  "name": "Sendcloud",
+  "slug": "sendcloud",
+  "translationKey": "sendcloud",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/Sendcloud.png",
+  "summary": "Ship through more than 100 carriers with Sendcloud. Print labels straight from ShopLinkr and push tracking back to your channels.",
+  "ogImage": "/images/blog/sendcloud-koppelen-aan-shoplinkr/Slt1nu6TvSVLMWJ0b7CuNixcQk.png",
+  "url": "https://www.sendcloud.nl",
+  "supportSlug": "sendcloud-koppelen",
+  "tagline": "Europe's #1 shipping software",
+  "about": "Sendcloud is a shipping platform for webshops that automates and streamlines the shipping process. It offers integrations with more than 100 carriers, such as PostNL, DHL and DPD, and supports a wide range of shop systems. With Sendcloud you can easily create shipping labels, share tracking information and manage returns, which saves time and cuts costs.",
+  "faqs": [
+    {
+      "q": "Are address details added to the shipping label automatically?",
+      "a": "Yes, based on an order's shipping details we request a shipping label from Sendcloud. You can adjust the address details manually if needed."
+    },
+    {
+      "q": "Do I need my own Sendcloud account to connect?",
+      "a": "Yes, you connect using the <strong>public key</strong> and <strong>secret key</strong> from your own Sendcloud account. That way you ship on your own carrier contracts and rates."
+    },
+    {
+      "q": "Do I automatically get track &amp; trace back in my sales channels?",
+      "a": "Yes, as soon as a shipping label is created we push the tracking information back to your connected channels automatically."
+    },
+    {
+      "q": "Can I choose which carrier I ship with?",
+      "a": "Yes, the delivery options are fetched from Sendcloud, so you pick from the carriers you have set up there, such as PostNL, DHL or DPD."
+    }
+  ]
 }

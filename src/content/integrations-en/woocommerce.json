@@ -1,19 +1,32 @@
 {
-    "name": "WooCommerce",
-    "slug": "woocommerce",
-    "translationKey": "woocommerce",
-    "category": "webshop",
-    "status": "live",
-    "logo": "/assets/webshops/WooCommerce.png",
-    "summary": "Connect your WooCommerce webshop to ShopLinkr. Stock updates sync in real time and orders import automatically.",
-    "url": "https://woocommerce.com",
-    "supportSlug": "woocommerce-koppelen",
-    "tagline": "Easily process your WooCommerce orders with your favorite carrier straight from ShopLinkr",
-    "about": "WooCommerce is a free plugin for WordPress that lets you build a webshop. It is popular because it is easy to use and offers plenty of options, such as adding products, accepting payments and setting up shipping methods. You can extend it with additional plugins and themes, which makes it suitable for both small and large webshops.",
-    "faqs": [
-        {
-            "q": "Which code does ShopLinkr use as the EAN code?",
-            "a": "WooCommerce does not have an EAN field by default. That is why ShopLinkr uses the SKU field for EAN codes. You can, however, install a plugin to add an EAN field to your products. For this, ShopLinkr supports the plugin \"EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory\" by WPFactory. If an EAN code has been filled in, it is used; otherwise ShopLinkr falls back to the SKU field. Products without an EAN or SKU value are not imported by ShopLinkr."
-        }
-    ]
+  "name": "WooCommerce",
+  "slug": "woocommerce",
+  "translationKey": "woocommerce",
+  "category": "webshop",
+  "status": "live",
+  "logo": "/assets/webshops/WooCommerce.png",
+  "summary": "Connect your WooCommerce webshop to ShopLinkr. Stock updates sync in real time and orders import automatically.",
+  "ogImage": "/images/blog/woocommerce-koppelen-aan-shoplinkr/2FVqp9F6P8qrmqhOp6PAtXTFu2Y.png",
+  "url": "https://woocommerce.com",
+  "supportSlug": "woocommerce-koppelen",
+  "tagline": "Easily process your WooCommerce orders with your favorite carrier straight from ShopLinkr",
+  "about": "WooCommerce is a free plugin for WordPress that lets you build a webshop. It is popular because it is easy to use and offers plenty of options, such as adding products, accepting payments and setting up shipping methods. You can extend it with additional plugins and themes, which makes it suitable for both small and large webshops.",
+  "faqs": [
+    {
+      "q": "Which code does ShopLinkr use as the EAN code?",
+      "a": "WooCommerce does not have an EAN field by default. That is why ShopLinkr uses the SKU field for EAN codes. You can, however, install a plugin to add an EAN field to your products. For this, ShopLinkr supports the plugin \"EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory\" by WPFactory. If an EAN code has been filled in, it is used; otherwise ShopLinkr falls back to the SKU field. Products without an EAN or SKU value are not imported by ShopLinkr."
+    },
+    {
+      "q": "Are my WooCommerce orders imported into ShopLinkr automatically?",
+      "a": "Yes, once the connection is active ShopLinkr imports your WooCommerce orders automatically so you can process and ship them right away. You do <strong>not have to enter them manually</strong>."
+    },
+    {
+      "q": "Do I still need to keep my stock updated in WooCommerce after connecting?",
+      "a": "No, once the connection is active <strong>ShopLinkr becomes the only place where you adjust your stock</strong>. Stock updates sync to WooCommerce in real time."
+    },
+    {
+      "q": "What do I need to connect WooCommerce to ShopLinkr?",
+      "a": "You need the <strong>URL of your WooCommerce webshop</strong> and access to your WordPress admin account; you connect by approving access. Make sure you enter the correct URL, because some sites require www together with https."
+    }
+  ]
 }

@@ -1,16 +1,28 @@
 {
-    "name": "PakketMail",
-    "slug": "pakketmail",
-    "category": "carrier",
-    "status": "live",
-    "logo": "/assets/carriers/PakketMail.png",
-    "summary": "Verstuur met PakketMail-tarieven via meerdere vervoerders. Eén dashboard, één integratie.",
-    "tagline": "Eenvoudig, voordelig en zorgeloos verzenden!",
-    "about": "PakketMail is verzendsoftware voor webshops en retailers. Het platform ondersteunt koppelingen met webshopplatformen en marktplaatsen en werkt met meerdere vervoerders. Denk aan PostNL, DHL, DPD, GLS en UPS. Met PakketMail kun je eenvoudig verzendlabels maken, Track & Trace e-mails versturen en retourzendingen beheren.",
-    "faqs": [
-        {
-            "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
-            "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij PakketMail. De adresgegevens kun je indien gewenst handmatig aanpassen."
-        }
-    ]
+  "name": "PakketMail",
+  "slug": "pakketmail",
+  "category": "carrier",
+  "status": "live",
+  "logo": "/assets/carriers/PakketMail.png",
+  "summary": "Verstuur met PakketMail-tarieven via meerdere vervoerders. Eén dashboard, één integratie.",
+  "tagline": "Eenvoudig, voordelig en zorgeloos verzenden!",
+  "about": "PakketMail is verzendsoftware voor webshops en retailers. Het platform ondersteunt koppelingen met webshopplatformen en marktplaatsen en werkt met meerdere vervoerders. Denk aan PostNL, DHL, DPD, GLS en UPS. Met PakketMail kun je eenvoudig verzendlabels maken, Track & Trace e-mails versturen en retourzendingen beheren.",
+  "faqs": [
+    {
+      "q": "Worden adresgegevens automatisch op het verzendlabel gezet?",
+      "a": "Ja, op basis van de verzendgegevens van een bestelling vragen we een verzendlabel aan bij PakketMail. De adresgegevens kun je indien gewenst handmatig aanpassen."
+    },
+    {
+      "q": "Krijg ik de Track & Trace automatisch terug in mijn bestelling?",
+      "a": "Ja, zodra we bij PakketMail een verzendlabel aanmaken, ontvangen we de Track & Trace en koppelen we die automatisch terug aan je bestelling."
+    },
+    {
+      "q": "Kan ik kiezen met welke vervoerder ik verstuur?",
+      "a": "PakketMail werkt met meerdere vervoerders, waaronder PostNL, DHL, DPD, GLS en UPS, zodat je de vervoerder kiest die bij je zending past."
+    },
+    {
+      "q": "Kan ik retourzendingen via PakketMail afhandelen?",
+      "a": "Ja, PakketMail ondersteunt het beheren van retourzendingen, zodat je die naast je gewone verzendlabels kunt regelen."
+    }
+  ]
 }

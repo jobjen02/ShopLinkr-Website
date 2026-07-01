@@ -6,12 +6,14 @@ image: "/images/blog/verkopen-via-bol-zonder-voorraad/437d5obC6QayHIhZuoedmoSKB4
 imageAlt: "Pakketten en een laptop met een bestelling, symbool voor verkopen via bol zonder eigen voorraad"
 ---
 
+<p><strong>Verkopen via bol zonder voorraad betekent dat je producten op bol aanbiedt terwijl je leverancier ze opslaat en rechtstreeks naar de klant verzendt. Jij verdient de marge zonder eigen magazijn of opslagkosten. De voorraadsync, het doorzetten van bestellingen en de track & trace houd je centraal op orde.</strong></p>
+
 <p>Verkopen via bol zonder voorraad betekent dat je producten aanbiedt op bol, een groot Nederlands verkoopkanaal, terwijl je leverancier de spullen opslaat en rechtstreeks naar je klant stuurt. Jij regelt de verkoop en de marge, zonder magazijn of opslagkosten. De uitdaging zit in de administratie eromheen: voorraad actueel houden, bestellingen doorzetten en track & trace terugmelden. Daar helpt <strong>ShopLinkr</strong> je bij.</p>
 
 <h2>Hoe werkt verkopen zonder eigen voorraad?</h2>
 <p>Je koppelt je verkoopaccount op bol aan een centraal systeem dat orders en voorraad voor je beheert. Komt er een bestelling binnen, dan geef je die door aan je leverancier, die verzendt en de track & trace teruggeeft. Zo werk je het in praktijk uit:</p>
 <ol>
-<li><p>Maak een verkoopaccount aan op bol en zet je producten klaar met complete productinformatie en je eigen prijs plus marge.</p></li>
+<li><p>Maak een <a href="https://partnerplatform.bol.com/nl/cdp/aanmeldproces" target="_blank" rel="noopener noreferrer">verkoopaccount aan op bol</a> en zet je producten klaar met complete productinformatie en je eigen prijs plus marge.</p></li>
 <li><p>Koppel bol aan ShopLinkr via de <a href="/integraties">integraties</a>, zodat orders centraal binnenkomen.</p></li>
 <li><p>Maak afspraken met je leverancier over levertijden, prijzen en hoe je voorraadstanden uitwisselt.</p></li>
 <li><p>Houd je <a href="/functionaliteiten/voorraad">voorraad</a> realtime gesynchroniseerd over al je kanalen, zodat je nooit iets verkoopt dat niet leverbaar is.</p></li>
@@ -26,7 +28,7 @@ imageAlt: "Pakketten en een laptop met een bestelling, symbool voor verkopen via
 
 <h2>Veelgestelde vragen</h2>
 <h3>Hoe gaan retourzendingen?</h3>
-<p>Als verkoper blijf jij verantwoordelijk voor retouren richting de klant. ShopLinkr verwerkt retouren in je administratie, zodat voorraad en cijfers kloppen. Maak met je leverancier duidelijke afspraken over wie de teruggestuurde producten ontvangt.</p>
+<p>Als verkoper blijf jij <a href="https://consument.acm.nl/aankoop-dienst-annuleren/bedenktijd" target="_blank" rel="noopener noreferrer">verantwoordelijk voor retouren</a> richting de klant. ShopLinkr verwerkt retouren in je administratie, zodat voorraad en cijfers kloppen. Maak met je leverancier duidelijke afspraken over wie de teruggestuurde producten ontvangt.</p>
 <h3>Wat als de leverancier iets niet op voorraad heeft?</h3>
 <p>Met realtime synchronisatie zet je een uitverkocht product automatisch op niet leverbaar, zodat je geen orders aanneemt die je niet kunt nakomen. Zo voorkom je teleurgestelde klanten en annuleringen.</p>
 
