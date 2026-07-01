@@ -20,12 +20,24 @@ const icons = [
 ];
 const rows = p.rows.map((row, i) => ({ ...row, icon: icons[i] }));
 
-const jsonLd = {
-    '@type': 'WebPage',
-    name: p.title,
-    description: p.jsonLdDescription,
-    inLanguage: localeMeta[locale].bcp47,
-};
+const jsonLd = [
+    {
+        '@type': 'WebPage',
+        name: p.title,
+        description: p.jsonLdDescription,
+        inLanguage: localeMeta[locale].bcp47,
+    },
+    {
+        '@type': 'DigitalDocument',
+        name: p.title,
+        description: p.jsonLdDescription,
+        url: `https://shoplinkr.com${p.downloadFile}`,
+        encodingFormat: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        inLanguage: localeMeta[locale].bcp47,
+        isAccessibleForFree: true,
+        publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    },
+];
 
 export const prerender = false;
 ---
@@ -43,11 +55,12 @@ export const prerender = false;
         <div class="container-prose">
             <div class="flex flex-col sm:flex-row gap-3">
                 <a
-                    href={p.requestMailto}
+                    href={p.downloadFile}
+                    download
                     class="btn btn-sunstone text-base"
                 >
+                    <i class="fa-solid fa-download text-sm" aria-hidden="true"></i>
                     {p.requestButton}
-                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
                 </a>
                 <a
                     href={externalLinks.demoBooking}
