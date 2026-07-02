@@ -67,7 +67,7 @@ export const prerender = false;
     jsonLd={jsonLd}
     alternates={alternates}
 >
-    <section class="py-24 md:py-32 bg-paper dark:bg-charcoal">
+    <section class="py-12 md:py-32 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <p class="eyebrow mb-6">{copy.eyebrow}</p>
             <div class="flex items-start gap-5 mb-8">
@@ -104,7 +104,7 @@ export const prerender = false;
             )}
 
             {groups.length > 0 ? (
-                <div class="mt-14 space-y-12">
+                <div class="mt-14 space-y-8 md:space-y-12">
                     {groups.map((group) => (
                         <div>
                             <div class="flex items-baseline justify-between gap-4 mb-5">
@@ -137,7 +137,7 @@ export const prerender = false;
                     ))}
                 </div>
             ) : (
-                <p class="mt-16 text-steel dark:text-gravel">{copy.empty}</p>
+                <p class="mt-10 md:mt-16 text-steel dark:text-gravel">{copy.empty}</p>
             )}
         </div>
     </section>

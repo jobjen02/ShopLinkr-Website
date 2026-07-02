@@ -342,9 +342,9 @@ watch(orderSliderValue, (newValue) => {
 </script>
 
 <template>
-    <section class="py-12 md:py-16">
+    <section class="py-8 md:py-16">
         <div class="container-prose">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
                 <div class="lg:col-span-3 min-w-0 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10">
                     <p class="eyebrow mb-4">{{ t.eyebrow }}</p>
                     <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-tight mb-10">
