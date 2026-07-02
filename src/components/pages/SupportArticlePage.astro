@@ -239,39 +239,6 @@ const categoriesBase = supportCategoriesBase(locale);
         color: var(--color-sunstone-deep);
     }
 
-    .prose-shoplinkr {
-        counter-reset: shoplinkr-step;
-    }
-
-    .prose-shoplinkr h2,
-    .prose-shoplinkr h3,
-    .prose-shoplinkr h4 {
-        counter-reset: shoplinkr-step;
-    }
-
-    .prose-shoplinkr ol {
-        list-style: none;
-        padding-left: 2.25em;
-    }
-
-    .prose-shoplinkr ol > li {
-        position: relative;
-        counter-increment: shoplinkr-step;
-        margin: 0.4em 0;
-        padding-left: 0.25em;
-    }
-
-    .prose-shoplinkr ol > li::before {
-        content: counter(shoplinkr-step) ".";
-        position: absolute;
-        left: -1.75em;
-        top: 0;
-        color: var(--color-gravel);
-        font-weight: 600;
-        font-variant-numeric: tabular-nums;
-        min-width: 1.5em;
-    }
-
     .prose-shoplinkr blockquote {
         border-left: 3px solid var(--color-sunstone);
         margin: 1.75em 0;
