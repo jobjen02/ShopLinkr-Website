@@ -1,5 +1,5 @@
 ---
-title: "MyParcel koppelen met Shopify"
+title: "Hoe koppel ik MyParcel met Shopify?"
 excerpt: "Verzend je Shopify-bestellingen met MyParcel. Koppel beide accounts aan ShopLinkr en print je verzendlabels met een klik, track & trace gaat automatisch terug."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-myparcel-met-shopify/z55EqzQ97kW7OBi31NEQJXNxp38.png"

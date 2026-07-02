@@ -386,7 +386,7 @@ const nl = {
     },
     pages: {
         comboShopifyBol: {
-            title: 'Shopify koppelen aan bol via ShopLinkr | Integraties',
+            title: 'Shopify koppelen aan bol via ShopLinkr',
             description: 'Verkoop je via Shopify en bol? ShopLinkr houdt je voorraad realtime synchroon en verzamelt alle bestellingen in één overzicht. Eén workflow, geen oversells.',
             eyebrow: 'Shopify en bol',
             heading: 'Shopify koppelen met bol via ShopLinkr',
@@ -464,7 +464,7 @@ const nl = {
             ],
         },
         comboWooBol: {
-            title: 'WooCommerce koppelen aan bol via ShopLinkr | Integraties',
+            title: 'WooCommerce koppelen aan bol via ShopLinkr',
             description: 'Verkoop je via WooCommerce en bol? ShopLinkr synchroniseert je voorraad realtime tussen beide kanalen en verzamelt al je bestellingen op één plek.',
             eyebrow: 'WooCommerce en bol',
             heading: 'WooCommerce koppelen met bol via ShopLinkr',
@@ -502,7 +502,7 @@ const nl = {
             ],
         },
         comboWooShopify: {
-            title: 'WooCommerce koppelen aan Shopify via ShopLinkr | Integraties',
+            title: 'WooCommerce koppelen aan Shopify via ShopLinkr',
             description: 'Draai je WooCommerce en Shopify naast elkaar? ShopLinkr houdt je voorraad realtime synchroon tussen beide shops en verzamelt alle orders in één flow.',
             jsonLdName: 'WooCommerce koppelen aan Shopify via ShopLinkr',
             eyebrow: 'WooCommerce en Shopify',
@@ -714,6 +714,7 @@ const nl = {
             para1: 'ShopLinkr ontstond in 2022 uit eigen behoefte. Oprichter Job runde een webshop en verkocht via meerdere kanalen, waaronder bol en Amazon. Zonder groot budget, maar met de noodzaak om voorraad en orders bij te houden, bouwde hij als softwareontwikkelaar een eigen oplossing. Al snel vroegen andere webshops of ze die tool ook mochten gebruiken. Zo werd ShopLinkr geboren.',
             para2: 'We geloven dat een order- en voorraadbeheersysteem voor elke webshop toegankelijk moet zijn, ongeacht het budget. Daarom introduceerden we als eerste in Nederland een pay-as-you-go model. Je betaalt alleen voor wat je gebruikt, dus de software groeit netjes mee met je magazijn.',
             para3: 'Inmiddels werken we met een vast team aan ShopLinkr en hebben we meer dan 1 miljoen bestellingen verwerkt voor Nederlandse webshops. Wat ons drijft is nog steeds hetzelfde: praktische software voor webshops die hun magazijn serieus nemen.',
+            brandNote: 'Je schrijft ons trouwens als ShopLinkr, niet ShopLinker. <a href="/shoplinker-of-shoplinkr">Waarom, dat lees je hier</a>.',
             moreEyebrow: 'Verder kijken?',
             moreHeading: 'Ontmoet het team of lees een klantverhaal',
             teamCta: 'Bekijk het team',
@@ -1999,7 +2000,7 @@ const nl = {
             pillar3Features: ['Regels', 'Rapporten', 'Klanten', 'Gebruikers'],
         },
         bolInventory: {
-            title: 'Bol voorraadbeheer - ShopLinkr',
+            title: 'Bol voorraadbeheer | ShopLinkr',
             description: 'Voorraadbeheer voor bol-verkopers die oversells willen voorkomen en hun ranking willen beschermen. ShopLinkr houdt je voorraad realtime kloppend per kanaal.',
             eyebrow: 'Bol voorraadbeheer',
             heading: 'Bol voorraadbeheer dat je nooit meer in de steek laat',
@@ -2016,7 +2017,7 @@ const nl = {
             ],
         },
         efficientWebshop: {
-            title: 'Efficiënt webshopbeheer - ShopLinkr',
+            title: 'Efficiënt webshopbeheer | ShopLinkr',
             description: 'Maak gebruik van ShopLinkr, synchroniseer je voorraad en verwerk bestellingen efficiënter dan ooit. Voorraadbeheer, picklijsten en verzending in één werkstroom.',
             eyebrow: 'Efficiënt webshopbeheer',
             heading: 'Beheer je webshop efficiënter met ShopLinkr',
@@ -2033,7 +2034,7 @@ const nl = {
             ],
         },
         inventoryExcel: {
-            title: 'Voorraadbeheer Excel | Voorraad Excel Template - ShopLinkr',
+            title: 'Voorraadbeheer Excel | Voorraad Excel Template | ShopLinkr',
             description: 'Download ons gratis inkoop Excel template en verbeter je voorraadbeheer. Eenvoudig in gebruik en ideaal voor webshops die net beginnen.',
             eyebrow: 'Gratis download',
             heading: 'Gratis voorraadbeheer Excel template',
@@ -2112,7 +2113,7 @@ const nl = {
             ],
         },
         returnFormTemplate: {
-            title: 'Retourformulier template - ShopLinkr',
+            title: 'Retourformulier template | ShopLinkr',
             description: 'Vraag ons gratis retourformulier template in Word aan en verbeter je retourverwerking. Eenvoudig in gebruik en aanpasbaar naar je eigen huisstijl.',
             jsonLdDescription: 'Vraag ons gratis retourformulier template aan en verbeter je retourverwerking. Eenvoudig in gebruik en aanpasbaar naar je eigen huisstijl.',
             eyebrow: 'Gratis download',
@@ -2186,7 +2187,7 @@ const nl = {
             ],
         },
         webwinkelVakdagen: {
-            title: 'Webwinkel Vakdagen 2026 - ShopLinkr',
+            title: 'Webwinkel Vakdagen 2026 | ShopLinkr',
             description: 'We waren aanwezig op de Webwinkel Vakdagen 2026 in de Jaarbeurs Utrecht. Plan een demo in voor een persoonlijk gesprek over je voorraadbeheer.',
             eyebrow: 'Webwinkel Vakdagen 2026',
             heading: 'We waren erbij op de Webwinkel Vakdagen 2026',
@@ -2209,7 +2210,7 @@ const nl = {
             closing: 'Liever direct aan de slag? Maak een account aan en start je gratis proefperiode van 14 dagen. Je hoeft geen creditcard achter te laten, en je kunt elk moment maandelijks opzeggen.',
         },
         wooInventorySync: {
-            title: 'WooCommerce voorraad synchronisatie - ShopLinkr',
+            title: 'WooCommerce voorraad synchronisatie | ShopLinkr',
             description: 'Zoek je een simpele oplossing voor je voorraad in WooCommerce? Met onze tool synchroniseer je je WooCommerce-voorraad realtime met al je andere kanalen.',
             eyebrow: 'WooCommerce voorraad synchronisatie',
             heading: 'WooCommerce voorraad synchronisatie, eenvoudig geregeld',

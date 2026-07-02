@@ -1,5 +1,5 @@
 ---
-title: "Sendy koppelen met bol"
+title: "Hoe koppel ik Sendy met bol?"
 excerpt: "Sendy koppelen met bol? Verwerk je bol-bestellingen centraal in ShopLinkr, houd je voorraad realtime in sync en print verzendlabels in een paar klikken."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendy-met-bol/7QqK0zCa3VdkuWIFIbvd50WJk.png"

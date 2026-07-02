@@ -4,7 +4,7 @@ excerpt: "Ontdek hoe de \"inkomende leveringen\" functie van ShopLinkr je helpt 
 publishedAt: "2023-06-14T00:00:00.000Z"
 updatedAt: "2026-04-15T00:00:00.000Z"
 image: "/images/blog/inkomende-leveringen-registreren/UnFE1JdBW063uhk7iJqls4Vm9k.png"
-imageAlt: "ShopLinkr logo"
+imageAlt: "Inkomende levering registreren in ShopLinkr"
 category: "Voorraad"
 ---
 

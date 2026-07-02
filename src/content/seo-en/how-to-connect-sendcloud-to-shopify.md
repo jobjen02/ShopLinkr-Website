@@ -1,5 +1,5 @@
 ---
-title: "How do you connect Sendcloud to Shopify?"
+title: "How do I connect Sendcloud to Shopify?"
 excerpt: "Connect Sendcloud to Shopify through a shipping platform or through ShopLinkr. See how to handle labels, track & trace, and your inventory in one place."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendcloud-met-shopify/neWt9kvm4V488pdlQluvJwCcE.png"

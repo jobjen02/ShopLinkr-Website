@@ -49,3 +49,4 @@ lastUpdated: "2026-04-01"
 <p>Retouren worden automatisch gesynchroniseerd vanuit je verkoopkanaal. Zodra een klant een retour aanmeldt, verschijnt deze in ShopLinkr met de bijbehorende gegevens zoals het retournummer, de producten en het T&amp;T nummer.</p>
 <p>Retouren worden op dit moment alleen ondersteund voor bol.</p>
 <p>Zie <a href="/support/een-retour-verwerken">Een retour verwerken</a> voor een stap-voor-stap uitleg over het afhandelen van een retour.</p>
+<p>Wil je klanten een retourformulier meesturen met hun bestelling? Download onze <a href="/retourformulier-template">gratis retourformulier-template</a>.</p>

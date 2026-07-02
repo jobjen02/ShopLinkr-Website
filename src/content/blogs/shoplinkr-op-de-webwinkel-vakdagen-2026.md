@@ -8,7 +8,7 @@ imageAlt: "ShopLinkr op de Webwinkel Vakdagen 2026"
 ---
 
 <p><strong>Ontmoet ShopLinkr op de Webwinkel Vakdagen: 25 &amp; 26 maart in Utrecht.</strong></p>
-<p>Op 25 en 26 maart 2026 staan we voor het eerst op de <strong>Webwinkel Vakdagen</strong> in de <strong>Jaarbeurs Utrecht 🤩</strong>. De voorbereidingen zijn in volle gang en wij hebben er enorm veel zin in. Twee dagen vol innovatie, automatisering en inspiratie voor iedereen die serieus werk maakt van e-commerce logistiek. Je bent van harte welkom op <strong>stand B03</strong>, aanmelden kan via <a href="https://crm.shoplinkr.com/qr/qqV4BlAVkSUM" target="_blank">deze link</a>.</p>
+<p>Op 25 en 26 maart 2026 staan we voor het eerst op de <a href="/webwinkelvakdagen2026"><strong>Webwinkel Vakdagen</strong></a> in de <strong>Jaarbeurs Utrecht 🤩</strong>. De voorbereidingen zijn in volle gang en wij hebben er enorm veel zin in. Twee dagen vol innovatie, automatisering en inspiratie voor iedereen die serieus werk maakt van e-commerce logistiek. Je bent van harte welkom op <strong>stand B03</strong>, aanmelden kan via <a href="https://crm.shoplinkr.com/qr/qqV4BlAVkSUM" target="_blank">deze link</a>.</p>
 <h2>Waarom langskomen bij ShopLinkr?</h2>
 <p>Of je nu 20 of 2000 pakketten per dag verstuurt, zonder goed magazijnbeheer loop je achter de feiten aan. ShopLinkr laat je zien hoe eenvoudig het kan zijn om grip te krijgen op je voorraad, sneller te picken en fouten te voorkomen. Onze software sluit naadloos aan op je webshop en verzendplatforms en centraliseert alles in één overzichtelijk systeem.</p>
 <p>We laten je live zien hoe je:</p>

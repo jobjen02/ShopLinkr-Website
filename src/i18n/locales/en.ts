@@ -384,7 +384,7 @@ const en: Dictionary = {
     },
     pages: {
         comboShopifyBol: {
-            title: 'Connect Shopify to bol via ShopLinkr | Integrations',
+            title: 'Connect Shopify to bol via ShopLinkr',
             description: 'Selling through Shopify and bol? ShopLinkr keeps your stock in sync in real time and gathers every order in one overview. One workflow, no oversells.',
             eyebrow: 'Shopify and bol',
             heading: 'Connect Shopify with bol via ShopLinkr',
@@ -462,7 +462,7 @@ const en: Dictionary = {
             ],
         },
         comboWooBol: {
-            title: 'Connect WooCommerce to bol via ShopLinkr | Integrations',
+            title: 'Connect WooCommerce to bol via ShopLinkr',
             description: 'Selling through WooCommerce and bol? ShopLinkr synchronizes your stock in real time between both channels and collects all your orders in one place.',
             eyebrow: 'WooCommerce and bol',
             heading: 'Connect WooCommerce with bol via ShopLinkr',
@@ -500,7 +500,7 @@ const en: Dictionary = {
             ],
         },
         comboWooShopify: {
-            title: 'Connect WooCommerce to Shopify via ShopLinkr | Integrations',
+            title: 'Connect WooCommerce to Shopify via ShopLinkr',
             description: 'Running WooCommerce and Shopify side by side? ShopLinkr keeps your stock in sync in real time between both shops and gathers every order in one flow.',
             jsonLdName: 'Connect WooCommerce to Shopify via ShopLinkr',
             eyebrow: 'WooCommerce and Shopify',
@@ -712,6 +712,7 @@ const en: Dictionary = {
             para1: 'ShopLinkr started in 2022 out of a need of our own. Founder Job ran a webshop and sold across multiple channels, including bol and Amazon. Without a big budget, but with the need to keep track of inventory and orders, he built his own solution as a software developer. Before long, other webshops were asking whether they could use that tool too. That is how ShopLinkr was born.',
             para2: 'We believe that an order and inventory management system should be within reach for every webshop, whatever the budget. That is why we were the first in the Netherlands to introduce a pay-as-you-go model. You only pay for what you use, so the software scales neatly with your warehouse.',
             para3: 'Today we work on ShopLinkr with a dedicated team and we have processed more than 1 million orders for Dutch webshops. What drives us is still the same: practical software for webshops that take their warehouse seriously.',
+            brandNote: 'By the way, it is written ShopLinkr, not ShopLinker. <a href="/en/shoplinker-or-shoplinkr">Here is why</a>.',
             moreEyebrow: 'Want to see more?',
             moreHeading: 'Meet the team or read a customer story',
             teamCta: 'Meet the team',
@@ -1997,7 +1998,7 @@ const en: Dictionary = {
             pillar3Features: ['Rules', 'Reports', 'Customers', 'Users'],
         },
         bolInventory: {
-            title: 'Bol inventory management - ShopLinkr',
+            title: 'Bol inventory management | ShopLinkr',
             description: 'Inventory management for bol sellers who want to prevent oversells and protect their ranking. ShopLinkr keeps your stock accurate in real time across channels.',
             eyebrow: 'Bol inventory management',
             heading: 'Bol inventory management that never lets you down again',
@@ -2014,7 +2015,7 @@ const en: Dictionary = {
             ],
         },
         efficientWebshop: {
-            title: 'Efficient webshop management - ShopLinkr',
+            title: 'Efficient webshop management | ShopLinkr',
             description: 'Use ShopLinkr to sync your inventory and process orders more efficiently than ever. Inventory management, pick lists and shipping in one workflow.',
             eyebrow: 'Efficient webshop management',
             heading: 'Manage your webshop more efficiently with ShopLinkr',
@@ -2031,7 +2032,7 @@ const en: Dictionary = {
             ],
         },
         inventoryExcel: {
-            title: 'Inventory Excel | Inventory Excel Template - ShopLinkr',
+            title: 'Inventory Excel | Inventory Excel Template | ShopLinkr',
             description: 'Download our free purchasing Excel template and improve your inventory management. Easy to use and ideal for webshops that are just getting started.',
             eyebrow: 'Free download',
             heading: 'Free inventory management Excel template',
@@ -2110,7 +2111,7 @@ const en: Dictionary = {
             ],
         },
         returnFormTemplate: {
-            title: 'Return form template - ShopLinkr',
+            title: 'Return form template | ShopLinkr',
             description: 'Download our free return form template in Word and improve your returns processing. Easy to use and customizable to match your own branding.',
             jsonLdDescription: 'Download our free return form template and improve your returns processing. Easy to use and customizable to match your own branding.',
             eyebrow: 'Free download',
@@ -2184,7 +2185,7 @@ const en: Dictionary = {
             ],
         },
         webwinkelVakdagen: {
-            title: 'Webwinkel Vakdagen 2026 - ShopLinkr',
+            title: 'Webwinkel Vakdagen 2026 | ShopLinkr',
             description: 'We were present at the Webwinkel Vakdagen 2026 at Jaarbeurs Utrecht. Book a demo for a personal conversation about your inventory management.',
             eyebrow: 'Webwinkel Vakdagen 2026',
             heading: 'We were there at the Webwinkel Vakdagen 2026',
@@ -2207,7 +2208,7 @@ const en: Dictionary = {
             closing: 'Prefer to get started right away? Create an account and start your free 14 day trial. No credit card needed, and you can cancel any month you like.',
         },
         wooInventorySync: {
-            title: 'WooCommerce inventory synchronization - ShopLinkr',
+            title: 'WooCommerce inventory synchronization | ShopLinkr',
             description: 'Looking for a simple way to manage your WooCommerce stock? With our tool you sync your WooCommerce inventory in real time with all your other sales channels.',
             eyebrow: 'WooCommerce inventory synchronization',
             heading: 'WooCommerce inventory synchronization, sorted with ease',

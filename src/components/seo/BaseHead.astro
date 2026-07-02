@@ -1,6 +1,10 @@
 ---
 import { localizedPath, routes, type RouteKey } from '../../i18n/routes';
 import { localeMeta } from '../../i18n/localeData';
+// The hero H1 is the LCP element and renders in Inter (latin). Import the woff2 so
+// Vite emits it and we get its hashed URL, then preload it below so the browser
+// starts fetching before it parses the fontsource stylesheet.
+import interHeroWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2';
 
 interface Props {
     title: string;
@@ -70,6 +74,9 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#e8b679" />
 <meta name="generator" content={Astro.generator} />
+
+<!-- Preload the hero (LCP) font so it fetches before the fontsource stylesheet is parsed. -->
+<link rel="preload" as="font" type="font/woff2" href={interHeroWoff2} crossorigin="anonymous" />
 
 <!-- Google Tag Manager -->
 <script is:inline>

@@ -1,5 +1,5 @@
 ---
-title: "Connect Sendy to bol"
+title: "How do I connect Sendy to bol?"
 excerpt: "Connect Sendy to bol? Process your bol orders centrally in ShopLinkr, keep stock in sync in real time, and print shipping labels in just a few clicks."
 publishedAt: "2024-06-02T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendy-met-bol/7QqK0zCa3VdkuWIFIbvd50WJk.png"

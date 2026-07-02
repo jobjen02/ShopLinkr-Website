@@ -1,5 +1,5 @@
 ---
-title: "Connect MyParcel to WooCommerce"
+title: "How do I connect MyParcel to WooCommerce?"
 excerpt: "Connect MyParcel to WooCommerce through ShopLinkr and ship every order with MyParcel labels. A simple step-by-step setup with automatic track & trace."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-myparcel-met-woocommerce/GdqgrGKTGX2Oi2Cis9k4Z5CJpQ.png"

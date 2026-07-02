@@ -1,5 +1,5 @@
 ---
-title: "Hoe koppel je Sendcloud met Shopify?"
+title: "Hoe koppel ik Sendcloud met Shopify?"
 excerpt: "Sendcloud koppelen aan Shopify doe je via een verzendplatform of via ShopLinkr. Lees hoe je labels, track & trace en je voorraad in één keer regelt."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-sendcloud-met-shopify/neWt9kvm4V488pdlQluvJwCcE.png"

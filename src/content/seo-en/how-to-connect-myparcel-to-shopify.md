@@ -1,5 +1,5 @@
 ---
-title: "Connect MyParcel to Shopify"
+title: "How do I connect MyParcel to Shopify?"
 excerpt: "Ship your Shopify orders with MyParcel. Connect both accounts to ShopLinkr, print shipping labels in one click, and track & trace syncs back automatically."
 publishedAt: "2024-05-31T00:00:00.000Z"
 image: "/images/blog/hoe-koppel-ik-myparcel-met-shopify/z55EqzQ97kW7OBi31NEQJXNxp38.png"
