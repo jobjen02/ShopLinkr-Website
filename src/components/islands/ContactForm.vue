@@ -24,7 +24,7 @@ const MAX_SUBJECT_LENGTH = 200;
 const MAX_MESSAGE_LENGTH = 5000;
 
 // Maps raw server error strings to a dictionary key; anything unknown falls back to sendFailed.
-type ErrorKey = 'nameTooShort' | 'invalidEmail' | 'messageTooShort' | 'consentRequired' | 'notConfigured' | 'sendFailed' | 'generic' | 'tooLong';
+type ErrorKey = 'nameTooShort' | 'invalidEmail' | 'messageTooShort' | 'consentRequired' | 'notConfigured' | 'sendFailed' | 'generic' | 'tooLong' | 'tooManyRequests';
 
 const ERROR_KEYS: Record<string, ErrorKey> = {
     'Name too short': 'nameTooShort',
@@ -33,6 +33,7 @@ const ERROR_KEYS: Record<string, ErrorKey> = {
     'Consent required': 'consentRequired',
     'Server is niet juist geconfigureerd': 'notConfigured',
     'Mail kon niet verstuurd worden': 'sendFailed',
+    'Too many requests': 'tooManyRequests',
     'Invalid content type': 'generic',
     'Payload too large': 'tooLong',
     'Invalid JSON': 'generic',

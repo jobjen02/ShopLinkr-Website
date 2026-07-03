@@ -1,6 +1,10 @@
 import type { APIRoute } from 'astro';
+import { getClientIp, rateLimit } from '../../lib/rateLimit';
 
 export const prerender = false;
+
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 
 interface NewsletterPayload {
     firstName?: unknown;
@@ -40,7 +44,7 @@ function isValidEmail(value: unknown): value is string {
         && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 }
 
-function jsonResponse(body: Record<string, unknown>, status: number): Response {
+function jsonResponse(body: Record<string, unknown>, status: number, extraHeaders?: Record<string, string>): Response {
     return new Response(
         JSON.stringify(body),
         {
@@ -48,12 +52,23 @@ function jsonResponse(body: Record<string, unknown>, status: number): Response {
             headers: {
                 'Content-Type': 'application/json',
                 'Cache-Control': 'no-store',
+                ...extraHeaders,
             },
         },
     );
 }
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, clientAddress }) => {
+    const ip = getClientIp(request, clientAddress);
+    const limit = rateLimit(`newsletter:${ip}`, RATE_LIMIT_MAX, RATE_LIMIT_WINDOW_MS);
+
+    if (!limit.ok) {
+        return jsonResponse({
+            ok: false,
+            error: 'Too many requests',
+        }, 429, { 'Retry-After': String(limit.retryAfterSeconds) });
+    }
+
     const isDebug = import.meta.env.DEV === true || import.meta.env.PUBLIC_DEBUG_CONTACT === 'true';
 
     const contentType = request.headers.get('content-type') ?? '';

@@ -1,6 +1,10 @@
 import type { APIRoute } from 'astro';
+import { getClientIp, rateLimit } from '../../lib/rateLimit';
 
 export const prerender = false;
+
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 
 interface ContactPayload {
     name?: unknown;
@@ -74,7 +78,7 @@ function toHtmlMessage(value: string): string {
     return escapeHtml(value).replace(/\r?\n/g, '<br>');
 }
 
-function jsonResponse(body: Record<string, unknown>, status: number): Response {
+function jsonResponse(body: Record<string, unknown>, status: number, extraHeaders?: Record<string, string>): Response {
     return new Response(
         JSON.stringify(body),
         {
@@ -82,12 +86,30 @@ function jsonResponse(body: Record<string, unknown>, status: number): Response {
             headers: {
                 'Content-Type': 'application/json',
                 'Cache-Control': 'no-store',
+                ...extraHeaders,
             },
         },
     );
 }
 
-export const POST: APIRoute = async ({ request }) => {
+// Build a mail address without letting a hostile display name inject a second
+// address or break header parsing (the raw name lands in `to`/`reply_to`).
+function formatAddress(displayName: string, email: string): string {
+    const safe = displayName.replace(/[\r\n"\\<>,;:]/g, ' ').replace(/\s+/g, ' ').trim();
+    return safe ? `${safe} <${email}>` : email;
+}
+
+export const POST: APIRoute = async ({ request, clientAddress }) => {
+    const ip = getClientIp(request, clientAddress);
+    const limit = rateLimit(`contact:${ip}`, RATE_LIMIT_MAX, RATE_LIMIT_WINDOW_MS);
+
+    if (!limit.ok) {
+        return jsonResponse({
+            ok: false,
+            error: 'Too many requests',
+        }, 429, { 'Retry-After': String(limit.retryAfterSeconds) });
+    }
+
     const contentType = request.headers.get('content-type') ?? '';
 
     if (!contentType.toLowerCase().includes('application/json')) {
@@ -199,7 +221,7 @@ export const POST: APIRoute = async ({ request }) => {
         ? `${CONTACT_FROM_NAME} <${CONTACT_FROM_EMAIL}>`
         : CONTACT_FROM_EMAIL;
 
-    const userAddress = `${name} <${email}>`;
+    const userAddress = formatAddress(name, email);
 
     const baseReplacements = {
         name,

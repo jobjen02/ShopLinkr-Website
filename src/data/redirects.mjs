@@ -3,6 +3,8 @@
 // astro.config.mjs `redirects` so they work in dev, preview and production (edge).
 export const redirects = {
     "/sitemap.xml": "/sitemap-index.xml",
+    "/over-ons": "/team",
+    "/en/about": "/en/team",
     "/functionaliteiten/pick-en-pack": "/functionaliteiten/picklijsten",
     "/functionaliteiten/productbundels": "/functionaliteiten/producten",
     "/simpel-vooraadbeheer": "/simpel-voorraadbeheer",

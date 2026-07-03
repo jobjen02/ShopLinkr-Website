@@ -179,6 +179,32 @@ const jsonLd = [
         </div>
     </section>
 
+    <section class="py-8 md:py-16 bg-paper dark:bg-charcoal">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+                <figure class="rounded-xl ring-1 ring-chalk-dark dark:ring-flint overflow-hidden">
+                    <img
+                        src="/images/picklocaties.jpg"
+                        width="1024"
+                        height="768"
+                        loading="lazy"
+                        alt={p.locationsPhotoAlt}
+                        class="w-full h-auto"
+                    />
+                </figure>
+                <div>
+                    <p class="eyebrow mb-4">{p.locationsPhotoEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
+                        {p.locationsPhotoHeading}
+                    </h2>
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
+                        {p.locationsPhotoBody}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-12 md:py-32 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start">

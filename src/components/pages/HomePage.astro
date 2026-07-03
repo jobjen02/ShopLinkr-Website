@@ -63,10 +63,74 @@ const jsonLd = {
     jsonLd={jsonLd}
 >
     <Hero />
+    <section class="py-12 md:py-24">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+                <figure>
+                    <img
+                        src="/images/magazijn-praktijk2.jpg"
+                        width="1600"
+                        height="900"
+                        loading="lazy"
+                        alt={t.pages.home.photoAlt}
+                        class="w-full h-auto rounded-xl ring-1 ring-chalk-dark dark:ring-flint"
+                    />
+                </figure>
+                <div>
+                    <p class="eyebrow mb-4">{t.pages.home.photoEyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
+                        {t.pages.home.photoHeading}
+                    </h2>
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
+                        {t.pages.home.photoBody}
+                    </p>
+                    <a
+                        href={localizeHref('/team', locale)}
+                        class="group mt-8 inline-flex items-center gap-2 min-h-11 text-charcoal dark:text-paper font-semibold text-sm"
+                    >
+                        {t.pages.home.photoLinkLabel}
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <TrustBar />
     <Features />
     <Showcase />
     <DashboardSection />
+    <section class="py-12 md:py-24">
+        <div class="container-prose">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+                <div>
+                    <p class="eyebrow mb-4">{t.pages.home.photo2Eyebrow}</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
+                        {t.pages.home.photo2Heading}
+                    </h2>
+                    <p class="mt-6 text-base text-steel dark:text-gravel leading-relaxed">
+                        {t.pages.home.photo2Body}
+                    </p>
+                    <a
+                        href={localizeHref('/functionaliteiten/picklijsten', locale)}
+                        class="group mt-8 inline-flex items-center gap-2 min-h-11 text-charcoal dark:text-paper font-semibold text-sm"
+                    >
+                        {t.pages.home.photo2LinkLabel}
+                        <i class="fa-solid fa-arrow-right text-xs transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <figure>
+                    <img
+                        src="/images/inpakken-praktijk.jpg"
+                        width="1024"
+                        height="768"
+                        loading="lazy"
+                        alt={t.pages.home.photo2Alt}
+                        class="w-full h-auto rounded-xl ring-1 ring-chalk-dark dark:ring-flint"
+                    />
+                </figure>
+            </div>
+        </div>
+    </section>
     <Testimonials />
     <CtaBanner />
 </BaseLayout>

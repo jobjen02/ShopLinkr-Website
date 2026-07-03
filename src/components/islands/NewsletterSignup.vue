@@ -12,7 +12,7 @@ const MAX_NAME_LENGTH = 80;
 const MAX_EMAIL_LENGTH = 254;
 
 // Maps raw server error strings to a dictionary key; anything unknown is generic.
-type ErrorKey = 'tooShort' | 'invalidEmail' | 'notConfigured' | 'timeout' | 'generic';
+type ErrorKey = 'tooShort' | 'invalidEmail' | 'notConfigured' | 'timeout' | 'generic' | 'tooManyRequests';
 
 const ERROR_KEYS: Record<string, ErrorKey> = {
     'First name too short': 'tooShort',
@@ -21,6 +21,7 @@ const ERROR_KEYS: Record<string, ErrorKey> = {
     'Aanmelden lukte niet': 'generic',
     'Aanmelden duurde te lang': 'timeout',
     'Onverwachte fout bij aanmelden': 'generic',
+    'Too many requests': 'tooManyRequests',
     'Invalid content type': 'generic',
     'Payload too large': 'generic',
     'Invalid JSON': 'generic',
