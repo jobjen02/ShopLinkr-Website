@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, ref } from 'vue';
 import { externalLinks } from '../../data/externalLinks';
 import { useTranslations } from '../../i18n/ui';
 import { localizeHref, type Locale } from '../../i18n/routes';
@@ -87,15 +87,47 @@ const ORDER_TIERS: Array<OrderTier> = [
     { min: 25000, max: null, pricePerOrder: 0.028 },
 ];
 
-const orderSliderValue = ref(ordersToSliderPosition(300));
+// `orders` is the source of truth (an exact count). The slider, the typable field
+// and the clickable tick labels all just set it.
+const orders = ref(300);
 
-const orders = computed(() => {
-    return sliderPositionToOrders(orderSliderValue.value);
-});
+const sliderPos = computed(() => ordersToSliderPosition(orders.value));
 
-const isMaxOrders = computed(() => {
-    return orderSliderValue.value === ORDER_SLIDER_MAX;
-});
+const isMaxOrders = computed(() => orders.value >= ORDER_TARGET_MAX);
+
+const setOrders = (n: number) => {
+    orders.value = Math.max(0, Math.min(ORDER_TARGET_MAX, Math.round(n)));
+};
+
+// Dragging the slider snaps to the nearest "nice" step; typing/clicking is exact.
+const onSlider = (event: Event) => {
+    orders.value = sliderPositionToOrders(Number((event.target as HTMLInputElement).value));
+};
+
+// Typable value field: click the number to enter an exact order count.
+const editing = ref(false);
+const draft = ref('');
+
+const startEdit = (event: FocusEvent) => {
+    editing.value = true;
+    draft.value = String(orders.value);
+    (event.target as HTMLInputElement).select();
+};
+
+const onType = (event: Event) => {
+    const raw = (event.target as HTMLInputElement).value.replace(/[^0-9]/g, '');
+    const n = raw === '' ? 0 : Math.min(ORDER_TARGET_MAX, parseInt(raw, 10));
+    draft.value = raw === '' ? '' : String(n);
+    orders.value = n;
+};
+
+const endEdit = () => {
+    editing.value = false;
+};
+
+const confirmEdit = (event: KeyboardEvent) => {
+    (event.target as HTMLInputElement).blur();
+};
 
 const orderCost = computed(() => {
     const totalOrders = orders.value;
@@ -162,14 +194,6 @@ const ordersAriaText = computed(() => {
 
     return t.value.ordersAriaMany.replace('{n}', formattedOrders.value);
 });
-
-watch(orderSliderValue, (newValue) => {
-    const orderCount = sliderPositionToOrders(newValue);
-    const idealPosition = ordersToSliderPosition(orderCount);
-    if (newValue !== idealPosition) {
-        orderSliderValue.value = idealPosition;
-    }
-}, { flush: 'sync' });
 </script>
 
 <template>
@@ -199,18 +223,30 @@ watch(orderSliderValue, (newValue) => {
                 </div>
 
                 <div class="relative mt-10 md:mt-12">
-                    <div class="flex items-baseline justify-between mb-4">
+                    <div class="flex items-center justify-between mb-4">
                         <label for="orders-input" class="text-sm font-semibold text-charcoal dark:text-paper">
                             {{ t.ordersLabel }}
                         </label>
-                        <span class="text-base font-semibold text-charcoal dark:text-paper tabular-nums">
-                            {{ ordersLabel }}
+                        <span class="group relative inline-block">
+                            <i class="fa-solid fa-pen pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-[0.7rem] text-gravel opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100" aria-hidden="true"></i>
+                            <input
+                                type="text"
+                                inputmode="numeric"
+                                :value="editing ? draft : ordersLabel"
+                                @focus="startEdit"
+                                @input="onType"
+                                @blur="endEdit"
+                                @keydown.enter="confirmEdit"
+                                :aria-label="t.ordersLabel"
+                                class="w-28 border-b border-dashed border-transparent bg-transparent pl-6 pr-1 py-0.5 text-right text-base font-semibold text-charcoal dark:text-paper tabular-nums cursor-text transition-[border-color] duration-200 hover:border-steel focus:border-sunstone-deep focus:outline-none"
+                            />
                         </span>
                     </div>
 
                     <input
                         id="orders-input"
-                        v-model.number="orderSliderValue"
+                        :value="sliderPos"
+                        @input="onSlider"
                         type="range"
                         min="0"
                         :max="ORDER_SLIDER_MAX"
@@ -218,7 +254,7 @@ watch(orderSliderValue, (newValue) => {
                         class="pricing-range w-full"
                         :aria-valuetext="ordersAriaText"
                         :style="{
-                            '--progress': `${(orderSliderValue / ORDER_SLIDER_MAX) * 100}%`,
+                            '--progress': `${(sliderPos / ORDER_SLIDER_MAX) * 100}%`,
                         }"
                     />
 
@@ -233,16 +269,30 @@ watch(orderSliderValue, (newValue) => {
                     </div>
 
                     <div class="relative text-xs text-gravel mt-1 tabular-nums h-4 mx-[11px]">
-                        <span class="absolute left-0 top-0">0</span>
-                        <span
+                        <button
+                            type="button"
+                            @click="setOrders(0)"
+                            class="absolute left-0 top-0 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper"
+                        >
+                            0
+                        </button>
+                        <button
                             v-for="(tick, i) in orderTickPositions"
                             :key="`label-${tick.value}`"
-                            class="absolute top-0 -translate-x-1/2 max-sm:hidden"
+                            type="button"
+                            @click="setOrders(tick.value)"
+                            class="absolute top-0 -translate-x-1/2 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper max-sm:hidden"
                             :style="{ left: `${tick.percent}%` }"
                         >
                             {{ t.tickOrders[i] }}
-                        </span>
-                        <span class="absolute right-0 top-0">100k+</span>
+                        </button>
+                        <button
+                            type="button"
+                            @click="setOrders(ORDER_TARGET_MAX)"
+                            class="absolute right-0 top-0 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper"
+                        >
+                            100k+
+                        </button>
                     </div>
                 </div>
 
