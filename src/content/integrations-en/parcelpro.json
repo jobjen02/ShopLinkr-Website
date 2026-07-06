@@ -3,7 +3,7 @@
   "slug": "parcelpro",
   "category": "carrier",
   "status": "live",
-  "logo": "/assets/carriers/ParcelPro.jpg",
+  "logo": "/assets/carriers/ParcelPro.png",
   "summary": "One connection for PostNL, DHL and GLS through ParcelPro. Labels printed and tracking handled automatically.",
   "supportSlug": "parcelpro-koppelen",
   "tagline": "Connect multiple carriers in a single system.",

@@ -14,15 +14,12 @@ interface OrderTier {
     pricePerOrder: number;
 }
 
-const PRICE_PER_CHANNEL = 5;
-const MAX_CHANNELS = 100;
+// All-in model: one price, driven only by orders. Sales channels, label printing
+// and users are included for free. A EUR 10/month minimum applies at low volume.
+const MIN_PRICE = 10;
 const ORDER_SLIDER_MAX = 1000;
 const ORDER_TARGET_MAX = 100000;
-
 const CURVE_POWER = 2;
-
-const CHANNEL_SLIDER_MAX = 1000;
-const CHANNEL_CURVE_POWER = 2;
 
 function ordersToSliderPosition(orderCount: number): number {
     if (orderCount <= 0) {
@@ -65,45 +62,11 @@ function sliderPositionToOrders(position: number): number {
     return Math.max(0, Math.round(raw / precision) * precision);
 }
 
-function channelsToSliderPosition(channelCount: number): number {
-    if (channelCount <= 1) {
-        return 0;
-    }
-
-    if (channelCount >= MAX_CHANNELS) {
-        return CHANNEL_SLIDER_MAX;
-    }
-
-    return Math.round(Math.pow((channelCount - 1) / (MAX_CHANNELS - 1), 1 / CHANNEL_CURVE_POWER) * CHANNEL_SLIDER_MAX);
-}
-
-function sliderPositionToChannels(position: number): number {
-    if (position <= 0) {
-        return 1;
-    }
-
-    if (position >= CHANNEL_SLIDER_MAX) {
-        return MAX_CHANNELS;
-    }
-
-    const t = position / CHANNEL_SLIDER_MAX;
-    const raw = Math.pow(t, CHANNEL_CURVE_POWER) * (MAX_CHANNELS - 1) + 1;
-    return Math.round(raw);
-}
-
 const ORDER_TICKS = [
-    {
-        value: 500,
-    },
-    {
-        value: 2500,
-    },
-    {
-        value: 10000,
-    },
-    {
-        value: 50000,
-    },
+    { value: 500 },
+    { value: 2500 },
+    { value: 10000 },
+    { value: 50000 },
 ];
 
 const orderTickPositions = ORDER_TICKS.map((tick) => {
@@ -113,91 +76,18 @@ const orderTickPositions = ORDER_TICKS.map((tick) => {
     };
 });
 
-const CHANNEL_TICKS = [
-    {
-        value: 5,
-    },
-    {
-        value: 10,
-    },
-    {
-        value: 25,
-    },
-    {
-        value: 50,
-    },
-];
-
-const channelTickPositions = computed(() => {
-    const numberFormat = new Intl.NumberFormat(t.value.numberLocale);
-    return CHANNEL_TICKS.map((tick) => {
-        return {
-            ...tick,
-            label: numberFormat.format(tick.value),
-            percent: (channelsToSliderPosition(tick.value) / CHANNEL_SLIDER_MAX) * 100,
-        };
-    });
-});
-
 const ORDER_TIERS: Array<OrderTier> = [
-    {
-        min: 0,
-        max: 100,
-        pricePerOrder: 0.13,
-    },
-    {
-        min: 100,
-        max: 250,
-        pricePerOrder: 0.26,
-    },
-    {
-        min: 250,
-        max: 500,
-        pricePerOrder: 0.182,
-    },
-    {
-        min: 500,
-        max: 1000,
-        pricePerOrder: 0.091,
-    },
-    {
-        min: 1000,
-        max: 1500,
-        pricePerOrder: 0.104,
-    },
-    {
-        min: 1500,
-        max: 2500,
-        pricePerOrder: 0.0325,
-    },
-    {
-        min: 2500,
-        max: 4000,
-        pricePerOrder: 0.04329,
-    },
-    {
-        min: 4000,
-        max: 6000,
-        pricePerOrder: 0.08125,
-    },
-    {
-        min: 6000,
-        max: 10000,
-        pricePerOrder: 0.04875,
-    },
-    {
-        min: 10000,
-        max: null,
-        pricePerOrder: 0.026,
-    },
+    { min: 0, max: 250, pricePerOrder: 0.26 },
+    { min: 250, max: 500, pricePerOrder: 0.17 },
+    { min: 500, max: 1000, pricePerOrder: 0.13 },
+    { min: 1000, max: 2500, pricePerOrder: 0.095 },
+    { min: 2500, max: 5000, pricePerOrder: 0.066 },
+    { min: 5000, max: 10000, pricePerOrder: 0.048 },
+    { min: 10000, max: 25000, pricePerOrder: 0.036 },
+    { min: 25000, max: null, pricePerOrder: 0.028 },
 ];
 
-const channelSliderValue = ref(channelsToSliderPosition(2));
 const orderSliderValue = ref(ordersToSliderPosition(300));
-
-const channels = computed(() => {
-    return sliderPositionToChannels(channelSliderValue.value);
-});
 
 const orders = computed(() => {
     return sliderPositionToOrders(orderSliderValue.value);
@@ -205,22 +95,6 @@ const orders = computed(() => {
 
 const isMaxOrders = computed(() => {
     return orderSliderValue.value === ORDER_SLIDER_MAX;
-});
-
-const isMaxChannels = computed(() => {
-    return channels.value === MAX_CHANNELS;
-});
-
-const showSalesNotice = computed(() => {
-    return isMaxOrders.value || isMaxChannels.value;
-});
-
-const isEnterprise = computed(() => {
-    return isMaxOrders.value && isMaxChannels.value;
-});
-
-const channelCost = computed(() => {
-    return channels.value * PRICE_PER_CHANNEL;
 });
 
 const orderCost = computed(() => {
@@ -241,36 +115,23 @@ const orderCost = computed(() => {
 });
 
 const totalPrice = computed(() => {
-    return channelCost.value + orderCost.value;
+    return Math.max(MIN_PRICE, orderCost.value);
 });
 
 const formattedTotal = computed(() => {
+    // Whole euros only: the calculator is indicative ("work it out yourself"), so a
+    // rounded round number reads cleaner than trailing cents.
     return new Intl.NumberFormat(t.value.numberLocale, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
     }).format(totalPrice.value);
 });
 
 // Keep the big price on one line: shrink the type a step once the amount reaches
 // the thousands (e.g. "1.010,94") so it never wraps past the euro sign.
 const priceSizeClass = computed(() =>
-    formattedTotal.value.length >= 8 ? 'text-4xl md:text-5xl' : 'text-5xl md:text-6xl',
+    formattedTotal.value.length >= 8 ? 'text-5xl md:text-6xl' : 'text-6xl md:text-7xl',
 );
-
-
-const formattedChannelCost = computed(() => {
-    return new Intl.NumberFormat(t.value.numberLocale, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    }).format(channelCost.value);
-});
-
-const formattedOrderCost = computed(() => {
-    return new Intl.NumberFormat(t.value.numberLocale, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    }).format(orderCost.value);
-});
 
 const formattedOrders = computed(() => {
     return new Intl.NumberFormat(t.value.numberLocale).format(orders.value);
@@ -283,6 +144,8 @@ const ordersLabel = computed(() => {
 
     return formattedOrders.value;
 });
+
+const volumeSentence = computed(() => t.value.volumeLine.replace('{n}', ordersLabel.value));
 
 const ordersAriaText = computed(() => {
     if (isMaxOrders.value) {
@@ -300,38 +163,6 @@ const ordersAriaText = computed(() => {
     return t.value.ordersAriaMany.replace('{n}', formattedOrders.value);
 });
 
-const channelLabel = computed(() => {
-    if (isMaxChannels.value) {
-        return t.value.channelsMaxLabel;
-    }
-
-    if (channels.value === 1) {
-        return t.value.channelOne;
-    }
-
-    return t.value.channelMany.replace('{n}', String(channels.value));
-});
-
-const salesNoticeText = computed(() => {
-    if (isEnterprise.value) {
-        return t.value.salesEnterprise;
-    }
-
-    if (isMaxOrders.value) {
-        return t.value.salesOrders;
-    }
-
-    return t.value.salesChannels;
-});
-
-watch(channelSliderValue, (newValue) => {
-    const channelCount = sliderPositionToChannels(newValue);
-    const idealPosition = channelsToSliderPosition(channelCount);
-    if (newValue !== idealPosition) {
-        channelSliderValue.value = idealPosition;
-    }
-}, { flush: 'sync' });
-
 watch(orderSliderValue, (newValue) => {
     const orderCount = sliderPositionToOrders(newValue);
     const idealPosition = ordersToSliderPosition(orderCount);
@@ -344,209 +175,121 @@ watch(orderSliderValue, (newValue) => {
 <template>
     <section class="py-8 md:py-16">
         <div class="container-prose">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16">
-                <div class="lg:col-span-3 min-w-0 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10">
-                    <p class="eyebrow mb-4">{{ t.eyebrow }}</p>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight leading-tight mb-10">
-                        {{ t.heading }}
-                    </h2>
+            <div class="relative mx-auto max-w-2xl overflow-hidden bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_24px_70px_-42px_rgba(25,25,25,0.4)] px-6 py-10 md:px-12 md:py-14">
+                <!-- Warm dial-glow behind the price: the sunstone accent that also
+                     fills the slider, so the control and the payoff read as one thing. -->
+                <div
+                    class="pointer-events-none absolute inset-x-0 -top-16 h-56 bg-[radial-gradient(ellipse_at_top,var(--color-sunstone-mist),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(250,237,213,0.07),transparent_70%)]"
+                    aria-hidden="true"
+                ></div>
 
-                    <div class="mb-10">
-                        <div class="flex items-baseline justify-between mb-4">
-                            <label for="channels-input" class="text-sm font-semibold text-charcoal dark:text-paper">
-                                {{ t.channelsLabel }}
-                            </label>
-                            <span class="text-base font-semibold text-charcoal dark:text-paper tabular-nums">
-                                {{ channelLabel }}
-                            </span>
-                        </div>
+                <div class="relative text-center">
+                    <p class="eyebrow mb-6">{{ t.eyebrow }}</p>
 
-                        <input
-                            id="channels-input"
-                            v-model.number="channelSliderValue"
-                            type="range"
-                            min="0"
-                            :max="CHANNEL_SLIDER_MAX"
-                            step="1"
-                            class="pricing-range w-full"
-                            :aria-valuetext="channelLabel"
-                            :style="{
-                                '--progress': `${(channelSliderValue / CHANNEL_SLIDER_MAX) * 100}%`,
-                            }"
-                        />
-
-                        <div class="relative h-1.5 mt-1 mx-[11px] max-sm:hidden">
-                            <span
-                                v-for="tick in channelTickPositions"
-                                :key="`mark-channel-${tick.value}`"
-                                class="absolute top-0 w-px h-1.5 bg-chalk-darker dark:bg-flint"
-                                :style="{ left: `${tick.percent}%` }"
-                                aria-hidden="true"
-                            ></span>
-                        </div>
-
-                        <div class="relative text-xs text-gravel mt-1 tabular-nums h-4 mx-[11px]">
-                            <span class="absolute left-0 top-0">1</span>
-                            <span
-                                v-for="tick in channelTickPositions"
-                                :key="`label-channel-${tick.value}`"
-                                class="absolute top-0 -translate-x-1/2 max-sm:hidden"
-                                :style="{ left: `${tick.percent}%` }"
-                            >
-                                {{ tick.label }}
-                            </span>
-                            <span class="absolute right-0 top-0">100+</span>
-                        </div>
-                    </div>
-
-                    <div class="mb-10">
-                        <div class="flex items-baseline justify-between mb-4">
-                            <label for="orders-input" class="text-sm font-semibold text-charcoal dark:text-paper">
-                                {{ t.ordersLabel }}
-                            </label>
-                            <span class="text-base font-semibold text-charcoal dark:text-paper tabular-nums">
-                                {{ ordersLabel }}
-                            </span>
-                        </div>
-
-                        <input
-                            id="orders-input"
-                            v-model.number="orderSliderValue"
-                            type="range"
-                            min="0"
-                            :max="ORDER_SLIDER_MAX"
-                            step="1"
-                            class="pricing-range w-full"
-                            :aria-valuetext="ordersAriaText"
-                            :style="{
-                                '--progress': `${(orderSliderValue / ORDER_SLIDER_MAX) * 100}%`,
-                            }"
-                        />
-
-                        <div class="relative h-1.5 mt-1 mx-[11px] max-sm:hidden">
-                            <span
-                                v-for="tick in orderTickPositions"
-                                :key="`mark-${tick.value}`"
-                                class="absolute top-0 w-px h-1.5 bg-chalk-darker dark:bg-flint"
-                                :style="{ left: `${tick.percent}%` }"
-                                aria-hidden="true"
-                            ></span>
-                        </div>
-
-                        <div class="relative text-xs text-gravel mt-1 tabular-nums h-4 mx-[11px]">
-                            <span class="absolute left-0 top-0">0</span>
-                            <span
-                                v-for="(tick, i) in orderTickPositions"
-                                :key="`label-${tick.value}`"
-                                class="absolute top-0 -translate-x-1/2 max-sm:hidden"
-                                :style="{ left: `${tick.percent}%` }"
-                            >
-                                {{ t.tickOrders[i] }}
-                            </span>
-                            <span class="absolute right-0 top-0">100k+</span>
-                        </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-chalk-dark dark:border-flint">
-                        <p class="eyebrow mb-5">{{ t.breakdown }}</p>
-                        <dl class="space-y-3 text-sm">
-                            <div class="flex items-baseline justify-between gap-4">
-                                <dt class="text-steel dark:text-gravel">
-                                    {{ t.channelsRow }}
-                                    <span class="text-gravel">
-                                        ({{ channels }})
-                                    </span>
-                                </dt>
-                                <dd class="text-charcoal dark:text-paper font-medium tabular-nums whitespace-nowrap">
-                                    &euro; {{ formattedChannelCost }}
-                                </dd>
-                            </div>
-                            <div class="flex items-baseline justify-between gap-4">
-                                <dt class="text-steel dark:text-gravel">
-                                    {{ t.ordersRow }}
-                                    <span v-if="orders > 0" class="text-gravel">
-                                        ({{ formattedOrders }})
-                                    </span>
-                                </dt>
-                                <dd class="text-charcoal dark:text-paper font-medium tabular-nums whitespace-nowrap">
-                                    &euro; {{ formattedOrderCost }}
-                                </dd>
-                            </div>
-                        </dl>
-                    </div>
-                </div>
-
-                <aside class="lg:col-span-2 min-w-0 bg-charcoal dark:bg-graphite text-paper rounded-xl p-8 md:p-10 flex flex-col">
-                    <p class="text-xs uppercase tracking-[0.08em] font-semibold text-sunstone mb-4">
-                        {{ t.monthlyPrice }}
-                    </p>
-
-                    <div class="flex items-baseline gap-2 mb-2">
+                    <div class="flex items-baseline justify-center gap-2">
                         <span
-                            class="font-semibold tabular-nums tracking-tight leading-none whitespace-nowrap"
+                            class="font-semibold tabular-nums tracking-tight leading-none whitespace-nowrap text-charcoal dark:text-paper"
                             :class="priceSizeClass"
                         >
                             &euro; {{ formattedTotal }}
                         </span>
-                        <span class="text-base text-chalk-darker">{{ t.perMonth }}</span>
+                        <span class="text-lg text-steel dark:text-gravel">{{ t.perMonth }}</span>
+                    </div>
+                    <p class="mt-3 text-sm text-steel dark:text-gravel">{{ volumeSentence }}</p>
+                </div>
+
+                <div class="relative mt-10 md:mt-12">
+                    <div class="flex items-baseline justify-between mb-4">
+                        <label for="orders-input" class="text-sm font-semibold text-charcoal dark:text-paper">
+                            {{ t.ordersLabel }}
+                        </label>
+                        <span class="text-base font-semibold text-charcoal dark:text-paper tabular-nums">
+                            {{ ordersLabel }}
+                        </span>
                     </div>
 
-                    <p class="text-sm text-chalk-darker leading-relaxed mb-6">
-                        {{ t.payg }}
-                    </p>
+                    <input
+                        id="orders-input"
+                        v-model.number="orderSliderValue"
+                        type="range"
+                        min="0"
+                        :max="ORDER_SLIDER_MAX"
+                        step="1"
+                        class="pricing-range w-full"
+                        :aria-valuetext="ordersAriaText"
+                        :style="{
+                            '--progress': `${(orderSliderValue / ORDER_SLIDER_MAX) * 100}%`,
+                        }"
+                    />
 
-                    <div
-                        v-if="showSalesNotice"
-                        class="mb-8 rounded-xl bg-sunstone-mist/15 border border-sunstone/40 p-4 text-sm leading-relaxed"
+                    <div class="relative h-1.5 mt-1 mx-[11px] max-sm:hidden">
+                        <span
+                            v-for="tick in orderTickPositions"
+                            :key="`mark-${tick.value}`"
+                            class="absolute top-0 w-px h-1.5 bg-chalk-darker dark:bg-flint"
+                            :style="{ left: `${tick.percent}%` }"
+                            aria-hidden="true"
+                        ></span>
+                    </div>
+
+                    <div class="relative text-xs text-gravel mt-1 tabular-nums h-4 mx-[11px]">
+                        <span class="absolute left-0 top-0">0</span>
+                        <span
+                            v-for="(tick, i) in orderTickPositions"
+                            :key="`label-${tick.value}`"
+                            class="absolute top-0 -translate-x-1/2 max-sm:hidden"
+                            :style="{ left: `${tick.percent}%` }"
+                        >
+                            {{ t.tickOrders[i] }}
+                        </span>
+                        <span class="absolute right-0 top-0">100k+</span>
+                    </div>
+                </div>
+
+                <ul class="relative mt-10 pt-8 border-t border-chalk-dark dark:border-flint grid sm:grid-cols-2 gap-x-6 gap-y-3">
+                    <li
+                        v-for="perk in t.perks"
+                        :key="perk"
+                        class="flex items-start gap-2.5 text-sm text-steel dark:text-gravel"
                     >
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-headset text-sunstone text-base mt-0.5" aria-hidden="true"></i>
-                            <div>
-                                <p class="text-paper mb-2">
-                                    {{ salesNoticeText }}
-                                </p>
-                                <a
-                                    :href="contactHref"
-                                    class="inline-flex items-center gap-1.5 text-sunstone font-semibold hover:text-paper transition-colors"
-                                >
-                                    {{ t.contactSales }}
-                                    <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                        <i class="fa-solid fa-check text-sunstone-deep text-xs mt-1" aria-hidden="true"></i>
+                        <span>{{ perk }}</span>
+                    </li>
+                </ul>
 
-                    <ul class="space-y-3 mb-10">
-                        <li
-                            v-for="perk in t.perks"
-                            :key="perk"
-                            class="flex items-start gap-3 text-sm text-chalk"
-                        >
-                            <i class="fa-solid fa-check text-sunstone text-xs mt-1" aria-hidden="true"></i>
-                            <span>{{ perk }}</span>
-                        </li>
-                    </ul>
+                <div
+                    v-if="isMaxOrders"
+                    class="relative mt-8 rounded-xl bg-sunstone-mist/50 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 p-4 text-sm leading-relaxed text-center text-steel dark:text-gravel"
+                >
+                    {{ t.salesNotice }}
+                    <a
+                        :href="contactHref"
+                        class="font-semibold text-sunstone-deep hover:text-charcoal dark:hover:text-paper transition-colors"
+                    >
+                        {{ t.contactSales }}
+                    </a>
+                </div>
 
-                    <div class="mt-auto flex flex-col gap-3">
-                        <a
-                            :href="externalLinks.register"
-                            class="btn btn-sunstone justify-center text-base"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {{ t.startTrial }}
-                            <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
-                        </a>
-                        <a
-                            :href="externalLinks.demoBooking"
-                            class="text-center text-sm text-chalk-darker hover:text-paper transition-colors"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {{ t.preferDemo }}
-                        </a>
-                    </div>
-                </aside>
+                <div class="relative mt-10 flex flex-col items-center gap-4">
+                    <a
+                        :href="externalLinks.register"
+                        class="btn btn-sunstone text-base w-full sm:w-auto justify-center"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {{ t.startTrial }}
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                    <p class="text-xs text-steel dark:text-gravel text-center max-w-sm">{{ t.payg }}</p>
+                    <a
+                        :href="externalLinks.demoBooking"
+                        class="text-sm text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {{ t.preferDemo }}
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -569,13 +312,15 @@ watch(orderSliderValue, (newValue) => {
     outline: none;
 }
 
+/* The filled part of the track uses the sunstone accent (the same warm tone as
+   the price glow and the CTA), so dragging visibly "charges" the price. */
 .pricing-range::-webkit-slider-runnable-track {
     height: 6px;
     border-radius: 9999px;
     background: linear-gradient(
         to right,
-        var(--color-charcoal) 0%,
-        var(--color-charcoal) var(--progress, 0%),
+        var(--color-sunstone-deep) 0%,
+        var(--color-sunstone-deep) var(--progress, 0%),
         var(--color-chalk-dark) var(--progress, 0%),
         var(--color-chalk-dark) 100%
     );
@@ -590,7 +335,7 @@ watch(orderSliderValue, (newValue) => {
 .pricing-range::-moz-range-progress {
     height: 6px;
     border-radius: 9999px;
-    background-color: var(--color-charcoal);
+    background-color: var(--color-sunstone-deep);
 }
 
 .pricing-range::-webkit-slider-thumb {
@@ -601,7 +346,7 @@ watch(orderSliderValue, (newValue) => {
     margin-top: -8px;
     border-radius: 9999px;
     background-color: var(--color-paper);
-    border: 2px solid var(--color-charcoal);
+    border: 2px solid var(--color-sunstone-deep);
     box-shadow: 0 1px 4px rgba(25, 25, 25, 0.18);
     transition: transform 0.15s ease;
 }
@@ -615,7 +360,7 @@ watch(orderSliderValue, (newValue) => {
     height: 22px;
     border-radius: 9999px;
     background-color: var(--color-paper);
-    border: 2px solid var(--color-charcoal);
+    border: 2px solid var(--color-sunstone-deep);
     box-shadow: 0 1px 4px rgba(25, 25, 25, 0.18);
     transition: transform 0.15s ease;
 }
@@ -625,26 +370,23 @@ watch(orderSliderValue, (newValue) => {
 }
 
 .pricing-range:focus-visible::-webkit-slider-thumb {
-    box-shadow: 0 0 0 4px var(--color-sunstone-deep);
+    box-shadow: 0 0 0 4px var(--color-sunstone-soft);
 }
 
 .pricing-range:focus-visible::-moz-range-thumb {
-    box-shadow: 0 0 0 4px var(--color-sunstone-deep);
+    box-shadow: 0 0 0 4px var(--color-sunstone-soft);
 }
-
 </style>
 
 <style>
 /* Dark mode (UNSCOPED so the `.dark` class on <html>, outside this component,
-   matches). The slider fill is the primary neutral and inverts exactly like the
-   primary buttons: charcoal (light) -> paper (dark). The unfilled track goes
-   chalk-dark -> flint, and the knob inverts too (paper+charcoal border ->
-   charcoal+paper border) so it stays visible on the now-light fill. */
+   matches). The unfilled track goes to flint; the filled part keeps the sunstone
+   accent, and the knob is paper with a sunstone ring so it stays visible. */
 .dark .pricing-range::-webkit-slider-runnable-track {
     background: linear-gradient(
         to right,
-        var(--color-paper) 0%,
-        var(--color-paper) var(--progress, 0%),
+        var(--color-sunstone-deep) 0%,
+        var(--color-sunstone-deep) var(--progress, 0%),
         var(--color-flint) var(--progress, 0%),
         var(--color-flint) 100%
     );
@@ -655,18 +397,18 @@ watch(orderSliderValue, (newValue) => {
 }
 
 .dark .pricing-range::-moz-range-progress {
-    background-color: var(--color-paper);
+    background-color: var(--color-sunstone-deep);
 }
 
 .dark .pricing-range::-webkit-slider-thumb {
-    background-color: var(--color-charcoal);
-    border-color: var(--color-paper);
+    background-color: var(--color-paper);
+    border-color: var(--color-sunstone-deep);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .dark .pricing-range::-moz-range-thumb {
-    background-color: var(--color-charcoal);
-    border-color: var(--color-paper);
+    background-color: var(--color-paper);
+    border-color: var(--color-sunstone-deep);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 

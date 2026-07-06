@@ -4,10 +4,10 @@ import { useTranslations } from '../../i18n/ui';
 import type { Locale } from '../../i18n/routes';
 
 const channels = [
-    { key: 'bol', name: 'bol', logo: '/assets/marketplaces/bol.jpeg' },
-    { key: 'shopify', name: 'Shopify', logo: '/assets/webshops/Shopify.jpg' },
+    { key: 'bol', name: 'bol', logo: '/assets/marketplaces/bol.png' },
+    { key: 'shopify', name: 'Shopify', logo: '/assets/webshops/Shopify.svg' },
     { key: 'woo', name: 'WooCommerce', logo: '/assets/webshops/WooCommerce.png' },
-    { key: 'kaufland', name: 'Kaufland', logo: '/assets/marketplaces/kaufland.jpg' },
+    { key: 'kaufland', name: 'Kaufland', logo: '/assets/marketplaces/Kaufland.png' },
 ];
 
 const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
@@ -180,7 +180,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
         <div class="relative z-10 bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_18px_50px_-28px_rgba(25,25,25,0.22)] px-6 py-6">
             <div class="flex items-center gap-3">
                 <span class="h-11 w-11 rounded-lg bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
-                    <img src="/assets/marketplaces/bol.jpeg" alt="bol" class="h-7 w-7 object-contain" />
+                    <img src="/assets/marketplaces/bol.png" alt="bol" class="h-7 w-7 object-contain" />
                 </span>
                 <div class="min-w-0">
                     <p class="text-[0.95rem] font-semibold text-charcoal dark:text-paper leading-tight">{{ t.orderTitle }}</p>
@@ -322,7 +322,7 @@ onUnmounted(() => window.clearTimeout(stepTimer));
             :class="ttShown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'"
         >
             <span class="h-6 w-6 rounded-md bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint flex items-center justify-center overflow-hidden flex-shrink-0">
-                <img src="/assets/marketplaces/bol.jpeg" alt="bol" class="h-4 w-4 object-contain" />
+                <img src="/assets/marketplaces/bol.png" alt="bol" class="h-4 w-4 object-contain" />
             </span>
             <span class="text-[0.72rem] font-semibold text-charcoal dark:text-paper leading-none">{{ t.ttToBol }}</span>
             <span class="h-4 w-4 rounded-full bg-green flex items-center justify-center flex-shrink-0">

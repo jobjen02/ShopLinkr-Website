@@ -3,7 +3,7 @@
   "slug": "dpd",
   "category": "carrier",
   "status": "live",
-  "logo": "/assets/carriers/dpd.jpeg",
+  "logo": "/assets/carriers/dpd.png",
   "summary": "Genereer DPD-verzendlabels en pickup-locaties direct in je orderflow. Track en trace automatisch teruggekoppeld.",
   "ogImage": "/images/blog/dpd-koppelen-aan-shoplinkr/Uc7mAfexKzCHWp3ppwSgHRWMC8.png",
   "supportSlug": "dpd-koppelen",
