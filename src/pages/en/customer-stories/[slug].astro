@@ -1,0 +1,12 @@
+---
+import CustomerStoryDetailPage from '../../../components/pages/CustomerStoryDetailPage.astro';
+import { findCustomerStory } from '../../../data/customerStories';
+
+const { slug } = Astro.params;
+const story = findCustomerStory(slug ?? '');
+if (!story) return Astro.rewrite('/en/404');
+
+export const prerender = false;
+---
+
+<CustomerStoryDetailPage story={story} />

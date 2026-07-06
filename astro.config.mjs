@@ -97,6 +97,16 @@ function buildContent() {
         }
     }
 
+    // Customer story detail pages (slugs read from the TS data file). Each story
+    // exists in both locales, so emit both the NL and EN URL.
+    try {
+        const storiesSrc = readFileSync(fileURLToPath(new URL('./src/data/customerStories.ts', import.meta.url)), 'utf8');
+        for (const m of storiesSrc.matchAll(/slug:\s*'([a-z0-9-]+)'/g)) {
+            add(`/referenties/${m[1]}`);
+            add(`/en/customer-stories/${m[1]}`);
+        }
+    } catch {}
+
     return { lastmod, customPages: [...urls].map((p) => `${ORIGIN}${p}`) };
 }
 

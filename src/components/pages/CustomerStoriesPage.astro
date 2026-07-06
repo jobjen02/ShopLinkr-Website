@@ -2,21 +2,25 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import { externalLinks } from '../../data/externalLinks';
 import { breadcrumbs } from '../../utils/seo';
-import { type Locale, localizeHref } from '../../i18n/routes';
+import { type Locale, localizeHref, localizedPath } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
+import { customerStories } from '../../data/customerStories';
 
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 const p = t.pages.customerStories;
 
-const story = {
-    company: 'Schoongedaan.nl',
-    logo: '/testimonials/Schoongedaan.png',
-    intro: p.storyIntro,
-    challenge: p.storyChallenge,
-    solution: p.storySolution,
-    metric: p.storyMetric,
-};
+const storiesBase = localizedPath('customerStories', locale);
+
+// Compact cards for the index. Each links through to its detail page. The card
+// text is per-locale; the rest is locale-invariant and comes from the data file.
+const cards = customerStories.map((s) => ({
+    company: s.company,
+    logo: s.logo,
+    href: `${storiesBase}/${s.slug}`,
+    teaser: s.content[locale].teaser,
+    highlight: s.content[locale].highlight,
+}));
 
 // Quote text is locale-varying and already lives in t.testimonials.quotes (same
 // order); author/company/logo are locale-invariant so they stay here.
@@ -68,28 +72,32 @@ const reviewSchema = voices.map((voice) => ({
     publisher: { '@id': 'https://shoplinkr.com/#organization' },
 }));
 
+// One Article node per story, each pointing at its own detail page. url/image are
+// only included when we have them (never invented).
+const storyArticles = customerStories.map((s) => ({
+    '@type': 'Article',
+    headline: `${p.articleHeadlinePrefix} ${s.company}`,
+    description: s.content[locale].metric,
+    about: {
+        '@type': 'Organization',
+        name: s.company,
+        ...(s.url ? { url: s.url } : {}),
+    },
+    author: { '@id': 'https://shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `https://shoplinkr.com${storiesBase}/${s.slug}`,
+    },
+    ...(s.logo ? { image: `https://shoplinkr.com${s.logo}` } : {}),
+}));
+
 const jsonLd = [
     breadcrumbs([
         ['Home', localizeHref('/', locale)],
         [p.breadcrumbLabel, localizeHref('/referenties', locale)],
     ]),
-    {
-        '@type': 'Article',
-        headline: `${p.articleHeadlinePrefix} ${story.company}`,
-        description: story.metric,
-        about: {
-            '@type': 'Organization',
-            name: story.company,
-            url: 'https://schoongedaan.nl',
-        },
-        author: { '@id': 'https://shoplinkr.com/#organization' },
-        publisher: { '@id': 'https://shoplinkr.com/#organization' },
-        mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `https://shoplinkr.com${localizeHref('/referenties', locale)}`,
-        },
-        image: `https://shoplinkr.com${story.logo}`,
-    },
+    ...storyArticles,
     ...reviewSchema,
 ];
 ---
@@ -106,72 +114,51 @@ const jsonLd = [
     <section class="py-12 md:py-32">
         <div class="container-prose">
             <div class="max-w-2xl mb-8 md:mb-16">
-                <p class="eyebrow mb-4">{p.featuredEyebrow}</p>
+                <p class="eyebrow mb-4">{p.storiesEyebrow}</p>
                 <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
-                    {p.featuredHeading}
+                    {p.storiesHeading}
                 </h2>
             </div>
 
-            <article class="max-w-4xl bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_3px_10px_rgba(0,0,0,0.05)] overflow-hidden">
-                <header class="px-8 md:px-10 pt-10 md:pt-12 pb-8 md:pb-10 text-center border-b border-chalk-dark dark:border-flint">
-                    <div class="inline-flex items-center justify-center h-16 w-16 rounded-lg bg-paper dark:bg-paper ring-1 ring-chalk-dark dark:ring-flint mb-6 overflow-hidden">
-                        <img
-                            src={story.logo}
-                            alt=""
-                            class="h-full w-full object-contain p-2"
-                            loading="lazy"
-                        />
-                    </div>
-                    <h3 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight">
-                        {story.company}
-                    </h3>
-                </header>
+            <div class="grid md:grid-cols-2 gap-5 md:gap-6">
+                {
+                    cards.map((card) => (
+                        <a
+                            href={card.href}
+                            class="group flex flex-col bg-paper dark:bg-charcoal rounded-xl ring-1 ring-chalk-dark dark:ring-flint hover:ring-sunstone-soft dark:hover:ring-sunstone/40 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all p-8 md:p-10"
+                        >
+                            {card.logo ? (
+                                <div class="inline-flex self-start items-center bg-paper dark:bg-paper rounded-lg ring-1 ring-chalk-dark dark:ring-flint px-3.5 h-12 mb-6">
+                                    <img
+                                        src={card.logo}
+                                        alt={card.company}
+                                        class="h-6 md:h-7 w-auto max-w-[160px] object-contain"
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ) : (
+                                <h3 class="text-xl md:text-2xl font-semibold text-charcoal dark:text-paper tracking-tight mb-6">
+                                    {card.company}
+                                </h3>
+                            )}
 
-                <div class="px-8 md:px-10 pt-8 md:pt-10">
-                    <div class="aspect-video w-full overflow-hidden rounded-xl ring-1 ring-chalk-dark dark:ring-flint bg-charcoal">
-                        <iframe
-                            class="h-full w-full"
-                            src="https://www.youtube-nocookie.com/embed/PZq1V6Unp_U"
-                            title={p.videoTitle}
-                            loading="lazy"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                        ></iframe>
-                    </div>
-                </div>
+                            <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem] mb-6 flex-1">
+                                {card.teaser}
+                            </p>
 
-                <div class="px-8 md:px-10 py-10 md:py-12 space-y-10">
-                    <div>
-                        <p class="eyebrow mb-3">{p.aboutLabel}</p>
-                        <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem]">
-                            {story.intro}
-                        </p>
-                    </div>
+                            <div class="inline-flex self-start items-center gap-2 rounded-full bg-sunstone-mist/60 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 px-4 py-2 mb-8">
+                                <i class="fa-solid fa-chart-line text-sunstone-deep text-sm" aria-hidden="true" />
+                                <span class="text-sm font-semibold text-charcoal dark:text-paper">{card.highlight}</span>
+                            </div>
 
-                    <div>
-                        <p class="eyebrow mb-3">{p.challengeLabel}</p>
-                        <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem]">
-                            {story.challenge}
-                        </p>
-                    </div>
-
-                    <div>
-                        <p class="eyebrow mb-3">{p.solutionLabel}</p>
-                        <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem]">
-                            {story.solution}
-                        </p>
-                    </div>
-
-                    <div class="bg-sunstone-mist/50 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 rounded-xl px-7 py-7 md:px-9 md:py-8">
-                        <p class="eyebrow mb-3">{p.resultLabel}</p>
-                        <p class="text-charcoal dark:text-paper leading-snug text-lg md:text-xl font-semibold tracking-tight">
-                            {story.metric}
-                        </p>
-                    </div>
-                </div>
-            </article>
+                            <span class="inline-flex items-center gap-1.5 text-sm font-medium text-charcoal dark:text-paper mt-auto">
+                                {p.readStory}
+                                <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                            </span>
+                        </a>
+                    ))
+                }
+            </div>
         </div>
     </section>
 

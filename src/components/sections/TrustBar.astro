@@ -150,22 +150,27 @@ const integrations = [
 
     /* Dark mode: the raw partner logos are mixed (transparent dark wordmarks +
        white-background marks), so neither raw-on-dark nor a white-ize filter
-       works. Put each logo on a light chip, exactly like the integration cards,
-       so every logo stays legible and on-brand. */
+       works. Put each logo in its own uniform light card (fixed size + lift
+       shadow), so every logo stays legible, on-brand and evenly sized. */
     :global(.dark) .marquee-item {
         background-color: var(--color-paper);
-        border-radius: 0.625rem;
+        border-radius: 0.75rem;
+        width: 10rem;
+        height: 4.5rem;
         padding-inline: 1.25rem;
+        box-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.25),
+            0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    :global(.dark) .marquee-logo {
+        max-width: 7.5rem;
     }
 
     @media (min-width: 768px) {
         .marquee-logo {
             height: 2.75rem;
             max-width: 11rem;
-        }
-
-        .marquee-track {
-            gap: 5rem;
         }
 
         .marquee-item {

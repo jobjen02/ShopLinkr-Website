@@ -62,20 +62,26 @@ const settle = () => {
 
 // Each beat waits `dur` ms (from the previous beat) then runs `fn`. The runner
 // loops forever and can freeze/continue in place on pause.
+// Steps advance at an equal 2900ms cadence (each transition below sums to 2900),
+// so the progress bar fills evenly instead of jumping at uneven intervals.
 const seq: Array<{ dur: number; fn: () => void }> = [
-    { dur: 350, fn: () => (done.value = 1) }, // Besteld
-    { dur: 1150, fn: () => (stockShown.value = true) },
+    { dur: 300, fn: () => (done.value = 1) }, // Besteld (snelle start)
+    // step 1 -> 2 (picken): voorraad-sync + barcodescan binnen deze stap, dan Gepikt
+    { dur: 700, fn: () => (stockShown.value = true) },
     { dur: 700, fn: () => { stock.value = 9; synced.value = true; } },
-    { dur: 1300, fn: () => (scanShown.value = true) }, // barcode gescand op locatie
-    { dur: 550, fn: () => (done.value = 2) }, // Gepikt
-    { dur: 2700, fn: () => (scanShown.value = false) }, // scan blijft langer staan (was te snel weg)
-    { dur: 600, fn: () => (done.value = 3) }, // Ingepakt
-    { dur: 400, fn: () => (labelShown.value = true) }, // PostNL-label klaar
-    { dur: 1500, fn: () => { done.value = 4; ttShown.value = true; } }, // Verzonden + T&T
-    // Hold the finished state, then snap the progress back to the start without
-    // the card disappearing: instant flag kills transitions so nothing visibly
-    // collapses, then the loop replays from step 1.
-    { dur: 3500, fn: () => { instant.value = true; reset(); } },
+    { dur: 700, fn: () => (scanShown.value = true) }, // barcode gescand op locatie
+    { dur: 800, fn: () => (done.value = 2) }, // Gepikt (700+700+700+800 = 2900 na Besteld)
+    // step 2 -> 3 (inpakken): scan blijft staan tot vlak voor de overgang, dan snel
+    // weg + Ingepakt, zodat er geen dode tijd tussen zit (maar de stap blijft 2900).
+    { dur: 2400, fn: () => (scanShown.value = false) },
+    { dur: 500, fn: () => (done.value = 3) }, // Ingepakt (2400+500 = 2900 na Gepikt)
+    // step 3 -> 4 (verzenden): label klaar, dan Verzonden
+    { dur: 900, fn: () => (labelShown.value = true) }, // PostNL-label klaar
+    { dur: 2000, fn: () => { done.value = 4; ttShown.value = true; } }, // Verzonden + T&T (900+2000 = 2900 na Ingepakt)
+    // Hold de eindtoestand, snap dan de voortgang terug zonder dat de kaart
+    // verdwijnt: instant kilt de transitions zodat er niks zichtbaar inklapt,
+    // waarna de loop opnieuw speelt.
+    { dur: 3000, fn: () => { instant.value = true; reset(); } },
     { dur: 100, fn: () => { instant.value = false; } },
 ];
 

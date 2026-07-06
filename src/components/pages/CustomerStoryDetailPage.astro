@@ -1,0 +1,236 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { externalLinks } from '../../data/externalLinks';
+import { breadcrumbs } from '../../utils/seo';
+import { type Locale, localizedPath } from '../../i18n/routes';
+import { useTranslations } from '../../i18n/ui';
+import type { CustomerStory } from '../../data/customerStories';
+
+interface Props {
+    story: CustomerStory;
+}
+
+const { story } = Astro.props;
+
+const locale = (Astro.currentLocale ?? 'nl') as Locale;
+const t = useTranslations(locale);
+const p = t.pages.customerStories;
+const c = story.content[locale];
+
+const storiesHref = localizedPath('customerStories', locale);
+const detailHref = `${storiesHref}/${story.slug}`;
+
+// Both locales always exist for a story (the data carries both), so the detail
+// page always has a reciprocal twin: build hreflang from the localized paths.
+const alternates = {
+    nl: `${localizedPath('customerStories', 'nl')}/${story.slug}`,
+    en: `${localizedPath('customerStories', 'en')}/${story.slug}`,
+};
+
+const metaTitle = `${p.articleHeadlinePrefix} ${story.company} | ShopLinkr`;
+
+// Outbound link to the customer's own site, tagged so they can see the traffic
+// comes from ShopLinkr. The clean url (without params) stays the one used in schema.
+const websiteHref = story.url
+    ? `${story.url}${story.url.includes('?') ? '&' : '?'}utm_source=shoplinkr&utm_medium=referral&utm_campaign=customer-story`
+    : null;
+
+// The sidebar only appears when a story actually has something to put in it. Facts
+// are per-customer and optional: no forced identical grid on every story.
+const facts = c.facts ?? [];
+const hasSidebar = Boolean(story.logo || facts.length > 0 || websiteHref);
+
+const jsonLd = [
+    breadcrumbs([
+        ['Home', localizedPath('home', locale)],
+        [p.breadcrumbLabel, storiesHref],
+        [story.company, detailHref],
+    ]),
+    {
+        '@type': 'Article',
+        headline: `${p.articleHeadlinePrefix} ${story.company}`,
+        description: c.metric,
+        about: {
+            '@type': 'Organization',
+            name: story.company,
+            ...(story.url ? { url: story.url } : {}),
+        },
+        author: { '@id': 'https://shoplinkr.com/#organization' },
+        publisher: { '@id': 'https://shoplinkr.com/#organization' },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://shoplinkr.com${detailHref}`,
+        },
+        ...(story.logo ? { image: `https://shoplinkr.com${story.logo}` } : {}),
+    },
+];
+---
+
+<PageLayout
+    title={metaTitle}
+    description={c.metric}
+    eyebrow={p.detailEyebrow}
+    heading={story.company}
+    subheading={c.teaser}
+    alternates={alternates}
+    jsonLd={jsonLd}
+>
+    <section class="py-10 md:py-20">
+        <div class="container-prose">
+            <a
+                href={storiesHref}
+                class="inline-flex items-center gap-2 text-sm text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper transition-colors mb-8 md:mb-12 min-h-11"
+            >
+                <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
+                {p.backToStories}
+            </a>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="aspect-video w-full overflow-hidden rounded-xl ring-1 ring-chalk-dark dark:ring-flint bg-charcoal shadow-[0_3px_10px_rgba(0,0,0,0.05)]">
+                    <iframe
+                        class="h-full w-full"
+                        src={`https://www.youtube-nocookie.com/embed/${story.videoId}`}
+                        title={`${story.company} ${p.videoTitleSuffix}`}
+                        loading="lazy"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+
+                <div class:list={['mt-10 md:mt-14 grid gap-10 lg:gap-14', hasSidebar && 'lg:grid-cols-[minmax(0,1fr)_18rem]']}>
+                    <div class="min-w-0 space-y-10">
+                        <div>
+                            <p class="eyebrow mb-3">{p.aboutPrefix} {story.company}</p>
+                            <p class="text-charcoal dark:text-paper leading-relaxed text-[1.0625rem]">
+                                {c.intro}
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="eyebrow mb-3">{p.challengeLabel}</p>
+                            <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem]">
+                                {c.challenge}
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="eyebrow mb-3">{p.solutionLabel}</p>
+                            <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem]">
+                                {c.solution}
+                            </p>
+                        </div>
+
+                        {c.quote && (
+                            <figure class="border-l-2 border-sunstone pl-6 md:pl-7 py-1">
+                                <p class="eyebrow mb-3">{p.quoteLabel}</p>
+                                <blockquote class="text-xl md:text-2xl font-medium text-charcoal dark:text-paper leading-snug tracking-tight">
+                                    {c.quote}
+                                </blockquote>
+                                {c.quoteAuthor && (
+                                    <figcaption class="mt-4 text-sm text-steel dark:text-gravel">
+                                        {c.quoteAuthor}
+                                    </figcaption>
+                                )}
+                            </figure>
+                        )}
+
+                        {c.extra?.map((section) => (
+                            <div>
+                                <p class="eyebrow mb-3">{section.label}</p>
+                                <p class="text-steel dark:text-gravel leading-relaxed text-[1.0625rem]">
+                                    {section.body}
+                                </p>
+                            </div>
+                        ))}
+
+                        <div class="bg-sunstone-mist/50 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 rounded-xl px-7 py-7 md:px-9 md:py-8">
+                            <p class="eyebrow mb-3">{p.resultLabel}</p>
+                            <p class="text-charcoal dark:text-paper leading-snug text-lg md:text-xl font-semibold tracking-tight">
+                                {c.metric}
+                            </p>
+                        </div>
+                    </div>
+
+                    {hasSidebar && (
+                        <aside class="lg:sticky lg:top-24 h-max">
+                            <div class="rounded-xl ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal p-6 md:p-7">
+                                {story.logo && (
+                                    <div class="inline-flex items-center bg-paper dark:bg-paper rounded-lg ring-1 ring-chalk-dark dark:ring-flint px-3.5 h-12 mb-6">
+                                        <img
+                                            src={story.logo}
+                                            alt={story.company}
+                                            class="h-6 md:h-7 w-auto max-w-[150px] object-contain"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                )}
+
+                                {facts.length > 0 && (
+                                    <Fragment>
+                                        <p class="eyebrow mb-4">{p.factsHeading}</p>
+                                        <dl class="space-y-4">
+                                            {facts.map((fact) => (
+                                                <div>
+                                                    <dt class="text-xs font-semibold uppercase tracking-wide text-steel dark:text-gravel">
+                                                        {fact.label}
+                                                    </dt>
+                                                    <dd class="mt-1 text-[0.95rem] text-charcoal dark:text-paper font-medium leading-snug">
+                                                        {fact.value}
+                                                    </dd>
+                                                </div>
+                                            ))}
+                                        </dl>
+                                    </Fragment>
+                                )}
+
+                                {websiteHref && (
+                                    <a
+                                        href={websiteHref}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-charcoal dark:text-paper hover:text-sunstone-deep transition-colors min-h-11"
+                                    >
+                                        {p.visitWebsite}
+                                        <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+                                    </a>
+                                )}
+                            </div>
+                        </aside>
+                    )}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-32">
+        <div class="container-prose">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="eyebrow mb-4">{p.ctaEyebrow}</p>
+                <h2 class="text-2xl md:text-3xl font-semibold text-charcoal dark:text-paper tracking-tight">
+                    {p.ctaHeading}
+                </h2>
+                <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+                    <a
+                        href={externalLinks.register}
+                        class="btn btn-sunstone text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {t.common.register}
+                        <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                    </a>
+                    <a
+                        href={externalLinks.demoBooking}
+                        class="btn btn-secondary text-base"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {t.common.demo}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</PageLayout>
