@@ -6,13 +6,13 @@ categoryLabel: "Integrations"
 subcategory: "autoprint"
 subcategoryLabel: "AutoPrint"
 order: 75
-lastUpdated: "2024-11-15"
+lastUpdated: "2026-07-07"
 translationKey: "auto-print-instellen"
 ---
 
 <p>With AutoPrint, shipping labels are printed automatically as soon as you process an order. To make this work, we use PrintNode, a software tool that you install on the computer in your warehouse. PrintNode sends the labels straight from ShopLinkr to your printer, without any extra manual steps.</p>
 <h3>Activating PrintNode</h3>
-<p>PrintNode is an add-on within ShopLinkr and costs 25 euros per month. At 20 orders a day, you will easily earn this investment back in time saved.</p>
+<p>PrintNode is included as standard with every subscription, at no extra cost. Especially from around 20 orders a day, it saves you a lot of time.</p>
 <ol>
 <li>
 <p>Go to <strong>Settings &gt; Subscription</strong>.</p>
