@@ -14,70 +14,68 @@ interface OrderTier {
     pricePerOrder: number;
 }
 
-// All-in model: one price, driven only by orders. Sales channels, label printing
-// and users are included for free. A EUR 10/month minimum applies at low volume.
+// The input is orders PER DAY (how a webshop owner thinks). The monthly figure and
+// the price are derived from it (day * 30). The staffel below stays in monthly
+// orders, so we convert once. A EUR 10/month minimum applies at low volume.
 const MIN_PRICE = 10;
-const ORDER_SLIDER_MAX = 1000;
-const ORDER_TARGET_MAX = 50000;
+const DAYS_PER_MONTH = 30;
+const PER_DAY_MAX = 1500; // ~45.000 orders/month
+const SLIDER_MAX = 1000;
 const CURVE_POWER = 2;
 
-function ordersToSliderPosition(orderCount: number): number {
-    if (orderCount <= 0) {
+function perDayToSliderPosition(perDay: number): number {
+    if (perDay <= 0) {
         return 0;
     }
-
-    if (orderCount >= ORDER_TARGET_MAX) {
-        return ORDER_SLIDER_MAX;
+    if (perDay >= PER_DAY_MAX) {
+        return SLIDER_MAX;
     }
-
-    return Math.round(Math.pow(orderCount / ORDER_TARGET_MAX, 1 / CURVE_POWER) * ORDER_SLIDER_MAX);
+    return Math.round(Math.pow(perDay / PER_DAY_MAX, 1 / CURVE_POWER) * SLIDER_MAX);
 }
 
-function sliderPositionToOrders(position: number): number {
+function sliderPositionToPerDay(position: number): number {
     if (position <= 0) {
         return 0;
     }
-
-    if (position >= ORDER_SLIDER_MAX) {
-        return ORDER_TARGET_MAX;
+    if (position >= SLIDER_MAX) {
+        return PER_DAY_MAX;
     }
 
-    const t = position / ORDER_SLIDER_MAX;
-    const raw = Math.pow(t, CURVE_POWER) * ORDER_TARGET_MAX;
+    const raw = Math.pow(position / SLIDER_MAX, CURVE_POWER) * PER_DAY_MAX;
 
     let precision: number;
-
-    if (raw < 100) {
+    if (raw < 30) {
+        precision = 1;
+    } else if (raw < 100) {
+        precision = 5;
+    } else if (raw < 300) {
         precision = 10;
     } else if (raw < 1000) {
         precision = 25;
-    } else if (raw < 10000) {
-        precision = 100;
-    } else if (raw < 50000) {
-        precision = 500;
     } else {
-        precision = 1000;
+        precision = 50;
     }
 
     return Math.max(0, Math.round(raw / precision) * precision);
 }
 
-const ORDER_TICKS = [
+const DAY_TICKS = [
+    { value: 10 },
+    { value: 50 },
+    { value: 100 },
+    { value: 250 },
     { value: 500 },
-    { value: 2000 },
-    { value: 5000 },
-    { value: 10000 },
-    { value: 15000 },
-    { value: 30000 },
+    { value: 1000 },
 ];
 
-const orderTickPositions = ORDER_TICKS.map((tick) => {
+const dayTickPositions = DAY_TICKS.map((tick) => {
     return {
         ...tick,
-        percent: (ordersToSliderPosition(tick.value) / ORDER_SLIDER_MAX) * 100,
+        percent: (perDayToSliderPosition(tick.value) / SLIDER_MAX) * 100,
     };
 });
 
+// Monthly staffel (unchanged): the price is computed on orders per month.
 const ORDER_TIERS: Array<OrderTier> = [
     { min: 0, max: 250, pricePerOrder: 0.26 },
     { min: 250, max: 500, pricePerOrder: 0.17 },
@@ -89,43 +87,36 @@ const ORDER_TIERS: Array<OrderTier> = [
     { min: 20000, max: null, pricePerOrder: 0.04 },
 ];
 
-// `orders` is the source of truth (an exact count). The slider, the typable field
-// and the clickable tick labels all just set it.
-const orders = ref(300);
+const perDay = ref(10);
 
-const sliderPos = computed(() => ordersToSliderPosition(orders.value));
+const sliderPos = computed(() => perDayToSliderPosition(perDay.value));
+const isMax = computed(() => perDay.value >= PER_DAY_MAX);
+const monthly = computed(() => perDay.value * DAYS_PER_MONTH);
 
-const isMaxOrders = computed(() => orders.value >= ORDER_TARGET_MAX);
-
-// The slider/field are in orders per MONTH (exact). Under the price we also show
-// an APPROXIMATE per-day figure (month / 30), prefixed with "≈" since day * 30
-// won't exactly equal the monthly number.
-const ordersPerDay = computed(() => Math.round(orders.value / 30));
-
-const setOrders = (n: number) => {
-    orders.value = Math.max(0, Math.min(ORDER_TARGET_MAX, Math.round(n)));
+const setPerDay = (n: number) => {
+    perDay.value = Math.max(0, Math.min(PER_DAY_MAX, Math.round(n)));
 };
 
-// Dragging the slider snaps to the nearest "nice" step; typing/clicking is exact.
+// Dragging snaps to a nearby "nice" step; typing/clicking a tick is exact.
 const onSlider = (event: Event) => {
-    orders.value = sliderPositionToOrders(Number((event.target as HTMLInputElement).value));
+    perDay.value = sliderPositionToPerDay(Number((event.target as HTMLInputElement).value));
 };
 
-// Typable value field: click the number to enter an exact order count.
+// Typable value field: click the number to enter an exact orders/day count.
 const editing = ref(false);
 const draft = ref('');
 
 const startEdit = (event: FocusEvent) => {
     editing.value = true;
-    draft.value = String(orders.value);
+    draft.value = String(perDay.value);
     (event.target as HTMLInputElement).select();
 };
 
 const onType = (event: Event) => {
     const raw = (event.target as HTMLInputElement).value.replace(/[^0-9]/g, '');
-    const n = raw === '' ? 0 : Math.min(ORDER_TARGET_MAX, parseInt(raw, 10));
+    const n = raw === '' ? 0 : Math.min(PER_DAY_MAX, parseInt(raw, 10));
     draft.value = raw === '' ? '' : String(n);
-    orders.value = n;
+    perDay.value = n;
 };
 
 const endEdit = () => {
@@ -137,14 +128,13 @@ const confirmEdit = (event: KeyboardEvent) => {
 };
 
 const orderCost = computed(() => {
-    const totalOrders = orders.value;
+    const totalOrders = monthly.value;
     let total = 0;
 
     for (const tier of ORDER_TIERS) {
         if (totalOrders <= tier.min) {
             break;
         }
-
         const tierMax = tier.max ?? Infinity;
         const ordersInTier = Math.min(totalOrders, tierMax) - tier.min;
         total += ordersInTier * tier.pricePerOrder;
@@ -158,63 +148,46 @@ const totalPrice = computed(() => {
 });
 
 const formattedTotal = computed(() => {
-    // Whole euros only: the calculator is indicative ("work it out yourself"), so a
-    // rounded round number reads cleaner than trailing cents.
+    // Whole euros only: the calculator is indicative, a round number reads cleaner.
     return new Intl.NumberFormat(t.value.numberLocale, {
         minimumFractionDigits: 0,
         maximumFractionDigits: 0,
     }).format(totalPrice.value);
 });
 
-// Keep the big price on one line: shrink the type a step once the amount reaches
-// the thousands (e.g. "1.010,94") so it never wraps past the euro sign.
 const priceSizeClass = computed(() =>
     formattedTotal.value.length >= 8 ? 'text-5xl md:text-6xl' : 'text-6xl md:text-7xl',
 );
 
-const formattedOrders = computed(() => {
-    return new Intl.NumberFormat(t.value.numberLocale).format(orders.value);
-});
+const formattedPerDay = computed(() => new Intl.NumberFormat(t.value.numberLocale).format(perDay.value));
 
-const ordersLabel = computed(() => {
-    if (isMaxOrders.value) {
-        return t.value.ordersMax;
+const perDayLabel = computed(() => (isMax.value ? t.value.ordersMax : formattedPerDay.value));
+
+const perDayAria = computed(() => {
+    if (isMax.value) {
+        return t.value.ordersAriaMax;
     }
-
-    return formattedOrders.value;
+    if (perDay.value === 0) {
+        return t.value.ordersAriaZero;
+    }
+    if (perDay.value === 1) {
+        return t.value.ordersAriaOne;
+    }
+    return t.value.ordersAriaMany.replace('{n}', formattedPerDay.value);
 });
 
+// ~ orders per month, derived from the per-day figure.
 const volumeSentence = computed(() => {
-    if (ordersPerDay.value === 1) {
-        return t.value.volumeLineOne;
-    }
-    const n = new Intl.NumberFormat(t.value.numberLocale).format(ordersPerDay.value);
+    const n = new Intl.NumberFormat(t.value.numberLocale).format(monthly.value);
     return t.value.volumeLine.replace('{n}', n);
 });
 
-const ordersAriaText = computed(() => {
-    if (isMaxOrders.value) {
-        return t.value.ordersAriaMax;
-    }
-
-    if (orders.value === 0) {
-        return t.value.ordersAriaZero;
-    }
-
-    if (orders.value === 1) {
-        return t.value.ordersAriaOne;
-    }
-
-    return t.value.ordersAriaMany.replace('{n}', formattedOrders.value);
-});
 </script>
 
 <template>
     <section class="py-8 md:py-16">
         <div class="container-prose">
             <div class="relative mx-auto max-w-2xl overflow-hidden bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_24px_70px_-42px_rgba(25,25,25,0.4)] px-6 py-10 md:px-12 md:py-14">
-                <!-- Warm dial-glow behind the price: the sunstone accent that also
-                     fills the slider, so the control and the payoff read as one thing. -->
                 <div
                     class="pointer-events-none absolute inset-x-0 -top-16 h-56 bg-[radial-gradient(ellipse_at_top,var(--color-sunstone-mist),transparent_70%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(250,237,213,0.07),transparent_70%)]"
                     aria-hidden="true"
@@ -245,7 +218,7 @@ const ordersAriaText = computed(() => {
                             <input
                                 type="text"
                                 inputmode="numeric"
-                                :value="editing ? draft : ordersLabel"
+                                :value="editing ? draft : perDayLabel"
                                 @focus="startEdit"
                                 @input="onType"
                                 @blur="endEdit"
@@ -262,18 +235,18 @@ const ordersAriaText = computed(() => {
                         @input="onSlider"
                         type="range"
                         min="0"
-                        :max="ORDER_SLIDER_MAX"
+                        :max="SLIDER_MAX"
                         step="1"
                         class="pricing-range w-full"
-                        :aria-valuetext="ordersAriaText"
+                        :aria-valuetext="perDayAria"
                         :style="{
-                            '--progress': `${(sliderPos / ORDER_SLIDER_MAX) * 100}%`,
+                            '--progress': `${(sliderPos / SLIDER_MAX) * 100}%`,
                         }"
                     />
 
                     <div class="relative h-1.5 mt-1 mx-[11px] max-sm:hidden">
                         <span
-                            v-for="tick in orderTickPositions"
+                            v-for="tick in dayTickPositions"
                             :key="`mark-${tick.value}`"
                             class="absolute top-0 w-px h-1.5 bg-chalk-darker dark:bg-flint"
                             :style="{ left: `${tick.percent}%` }"
@@ -284,16 +257,16 @@ const ordersAriaText = computed(() => {
                     <div class="relative text-xs text-gravel mt-1 tabular-nums h-4 mx-[11px]">
                         <button
                             type="button"
-                            @click="setOrders(0)"
+                            @click="setPerDay(0)"
                             class="absolute left-0 top-0 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper"
                         >
                             0
                         </button>
                         <button
-                            v-for="(tick, i) in orderTickPositions"
+                            v-for="(tick, i) in dayTickPositions"
                             :key="`label-${tick.value}`"
                             type="button"
-                            @click="setOrders(tick.value)"
+                            @click="setPerDay(tick.value)"
                             class="absolute top-0 -translate-x-1/2 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper max-sm:hidden"
                             :style="{ left: `${tick.percent}%` }"
                         >
@@ -301,10 +274,10 @@ const ordersAriaText = computed(() => {
                         </button>
                         <button
                             type="button"
-                            @click="setOrders(ORDER_TARGET_MAX)"
+                            @click="setPerDay(PER_DAY_MAX)"
                             class="absolute right-0 top-0 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper"
                         >
-                            50k+
+                            {{ t.ordersMax }}
                         </button>
                     </div>
                 </div>
@@ -321,7 +294,7 @@ const ordersAriaText = computed(() => {
                 </ul>
 
                 <div
-                    v-if="isMaxOrders"
+                    v-if="isMax"
                     class="relative mt-8 rounded-xl bg-sunstone-mist/50 dark:bg-sunstone/10 ring-1 ring-sunstone-soft/50 dark:ring-sunstone/30 p-4 text-sm leading-relaxed text-center text-steel dark:text-gravel"
                 >
                     {{ t.salesNotice }}
@@ -365,9 +338,6 @@ const ordersAriaText = computed(() => {
     background: transparent;
     height: 1.25rem;
     cursor: pointer;
-    /* Horizontal drag moves the thumb; vertical swipes still scroll the page.
-       Without this the browser treats a sideways drag as a scroll/swipe gesture
-       and the page jumps on mobile. */
     touch-action: pan-y;
 }
 
@@ -375,8 +345,6 @@ const ordersAriaText = computed(() => {
     outline: none;
 }
 
-/* The filled part of the track uses the sunstone accent (the same warm tone as
-   the price glow and the CTA), so dragging visibly "charges" the price. */
 .pricing-range::-webkit-slider-runnable-track {
     height: 6px;
     border-radius: 9999px;
@@ -442,9 +410,6 @@ const ordersAriaText = computed(() => {
 </style>
 
 <style>
-/* Dark mode (UNSCOPED so the `.dark` class on <html>, outside this component,
-   matches). The unfilled track goes to flint; the filled part keeps the sunstone
-   accent, and the knob is paper with a sunstone ring so it stays visible. */
 .dark .pricing-range::-webkit-slider-runnable-track {
     background: linear-gradient(
         to right,
