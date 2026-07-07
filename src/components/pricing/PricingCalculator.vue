@@ -18,7 +18,7 @@ interface OrderTier {
 // and users are included for free. A EUR 10/month minimum applies at low volume.
 const MIN_PRICE = 10;
 const ORDER_SLIDER_MAX = 1000;
-const ORDER_TARGET_MAX = 100000;
+const ORDER_TARGET_MAX = 50000;
 const CURVE_POWER = 2;
 
 function ordersToSliderPosition(orderCount: number): number {
@@ -64,9 +64,11 @@ function sliderPositionToOrders(position: number): number {
 
 const ORDER_TICKS = [
     { value: 500 },
-    { value: 2500 },
+    { value: 2000 },
+    { value: 5000 },
     { value: 10000 },
-    { value: 50000 },
+    { value: 15000 },
+    { value: 30000 },
 ];
 
 const orderTickPositions = ORDER_TICKS.map((tick) => {
@@ -83,8 +85,8 @@ const ORDER_TIERS: Array<OrderTier> = [
     { min: 1000, max: 2500, pricePerOrder: 0.095 },
     { min: 2500, max: 5000, pricePerOrder: 0.066 },
     { min: 5000, max: 10000, pricePerOrder: 0.048 },
-    { min: 10000, max: 25000, pricePerOrder: 0.036 },
-    { min: 25000, max: null, pricePerOrder: 0.028 },
+    { min: 10000, max: 20000, pricePerOrder: 0.045 },
+    { min: 20000, max: null, pricePerOrder: 0.04 },
 ];
 
 // `orders` is the source of truth (an exact count). The slider, the typable field
@@ -94,6 +96,11 @@ const orders = ref(300);
 const sliderPos = computed(() => ordersToSliderPosition(orders.value));
 
 const isMaxOrders = computed(() => orders.value >= ORDER_TARGET_MAX);
+
+// The slider/field are in orders per MONTH (exact). Under the price we also show
+// an APPROXIMATE per-day figure (month / 30), prefixed with "≈" since day * 30
+// won't exactly equal the monthly number.
+const ordersPerDay = computed(() => Math.round(orders.value / 30));
 
 const setOrders = (n: number) => {
     orders.value = Math.max(0, Math.min(ORDER_TARGET_MAX, Math.round(n)));
@@ -177,7 +184,13 @@ const ordersLabel = computed(() => {
     return formattedOrders.value;
 });
 
-const volumeSentence = computed(() => t.value.volumeLine.replace('{n}', ordersLabel.value));
+const volumeSentence = computed(() => {
+    if (ordersPerDay.value === 1) {
+        return t.value.volumeLineOne;
+    }
+    const n = new Intl.NumberFormat(t.value.numberLocale).format(ordersPerDay.value);
+    return t.value.volumeLine.replace('{n}', n);
+});
 
 const ordersAriaText = computed(() => {
     if (isMaxOrders.value) {
@@ -291,7 +304,7 @@ const ordersAriaText = computed(() => {
                             @click="setOrders(ORDER_TARGET_MAX)"
                             class="absolute right-0 top-0 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper"
                         >
-                            100k+
+                            50k+
                         </button>
                     </div>
                 </div>
