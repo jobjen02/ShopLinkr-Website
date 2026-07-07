@@ -49,7 +49,7 @@ export const customerStories: CustomerStory[] = [
         company: 'Strandwinkel',
         logo: '/testimonials/Strandwinkel.png',
         url: 'https://www.strandwinkel.nl',
-        videoId: 'KJVlKQxHupU',
+        videoId: 'P8rzgCGih1g',
         content: {
             nl: {
                 teaser: 'Alles voor een dag strand, vanuit een zelf opgebouwd magazijn in De Lier.',
