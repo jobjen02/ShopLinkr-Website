@@ -6,18 +6,17 @@ categoryLabel: "Integraties"
 subcategory: "autoprint"
 subcategoryLabel: "AutoPrint"
 order: 75
-lastUpdated: "2026-07-07"
+lastUpdated: "2026-07-08"
 ---
 
 <p>Met AutoPrint worden verzendlabels automatisch geprint zodra je een bestelling verwerkt. Hiervoor maken we gebruik van PrintNode, een softwaretool die je installeert op de computer in je magazijn. PrintNode stuurt de labels vanuit ShopLinkr direct naar je printer, zonder extra handmatige stappen.</p>
-<h3>PrintNode activeren</h3>
-<p>PrintNode is standaard inbegrepen bij elk abonnement, je betaalt er niets extra voor. Zeker vanaf zo'n 20 bestellingen per dag bespaar je er flink wat tijd mee.</p>
+<h3>AutoPrint activeren</h3>
 <ol>
 <li>
-<p>Ga naar <strong>Instellingen &gt; Abonnement</strong>.</p>
+<p>Ga naar <strong>Instellingen &gt; Printers</strong>.</p>
 </li>
 <li>
-<p>Klik op de groene knop bij PrintNode.</p>
+<p>Activeer AutoPrint.</p>
 </li>
 <li>
 <p>Er wordt automatisch een PrintNode-account voor je aangemaakt. Je ontvangt een e-mail met je inloggegevens.</p>

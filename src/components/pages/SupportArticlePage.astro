@@ -239,10 +239,11 @@ const categoriesBase = supportCategoriesBase(locale);
         color: var(--color-sunstone-deep);
     }
 
-    .prose-shoplinkr {
-        counter-reset: shoplinkr-step;
-    }
-
+    /* Reset the step counter at each heading only (NOT on the .prose container):
+       a container-level counter-reset nests the heading resets so they stop
+       applying to following-sibling lists, making numbering run across sections.
+       Headings own the reset -> steps restart per section, but multiple lists
+       under one heading (procedures split by screenshots) keep counting up. */
     .prose-shoplinkr h2,
     .prose-shoplinkr h3,
     .prose-shoplinkr h4 {
