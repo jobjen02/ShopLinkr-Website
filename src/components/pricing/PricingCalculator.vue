@@ -20,6 +20,7 @@ interface OrderTier {
 const MIN_PRICE = 10;
 const DAYS_PER_MONTH = 30;
 const PER_DAY_MAX = 1500; // ~45.000 orders/month
+const PER_MONTH_MAX = PER_DAY_MAX * DAYS_PER_MONTH; // 45.000
 const SLIDER_MAX = 1000;
 const CURVE_POWER = 2;
 
@@ -59,21 +60,38 @@ function sliderPositionToPerDay(position: number): number {
     return Math.max(0, Math.round(raw / precision) * precision);
 }
 
-const DAY_TICKS = [
-    { value: 10 },
-    { value: 50 },
-    { value: 100 },
-    { value: 250 },
-    { value: 500 },
-    { value: 1000 },
-];
+// Per-month equivalent: snaps to nice MONTHLY steps so dragging lands on round monthly
+// figures (e.g. 500), instead of multiples of 30 you get by snapping orders/day.
+function sliderPositionToMonthly(position: number): number {
+    if (position <= 0) {
+        return 0;
+    }
+    if (position >= SLIDER_MAX) {
+        return PER_MONTH_MAX;
+    }
 
-const dayTickPositions = DAY_TICKS.map((tick) => {
-    return {
-        ...tick,
-        percent: (perDayToSliderPosition(tick.value) / SLIDER_MAX) * 100,
-    };
-});
+    const raw = Math.pow(position / SLIDER_MAX, CURVE_POWER) * PER_MONTH_MAX;
+
+    let precision: number;
+    if (raw < 1000) {
+        precision = 50;
+    } else if (raw < 3000) {
+        precision = 100;
+    } else if (raw < 10000) {
+        precision = 250;
+    } else if (raw < 30000) {
+        precision = 500;
+    } else {
+        precision = 1000;
+    }
+
+    return Math.max(0, Math.round(raw / precision) * precision);
+}
+
+// Tick values differ per unit: orders/day in per-day mode, round monthly figures in
+// per-month mode. Their slider position is computed from the per-day equivalent.
+const DAY_TICKS = [10, 50, 100, 250, 500, 1000];
+const MONTH_TICKS = [500, 2500, 5000, 10000, 15000, 30000];
 
 // Monthly staffel (unchanged): the price is computed on orders per month.
 const ORDER_TIERS: Array<OrderTier> = [
@@ -89,9 +107,38 @@ const ORDER_TIERS: Array<OrderTier> = [
 
 const perDay = ref(10);
 
+// The number is always stored as orders/day (the canonical source). A toggle only
+// changes the DISPLAYED unit: per day, or per month (= day * 30). Default: per day.
+type Unit = 'day' | 'month';
+const unit = ref<Unit>('day');
+const isDay = computed(() => unit.value === 'day');
+
 const sliderPos = computed(() => perDayToSliderPosition(perDay.value));
 const isMax = computed(() => perDay.value >= PER_DAY_MAX);
 const monthly = computed(() => perDay.value * DAYS_PER_MONTH);
+
+// Displayed number is rounded (day: orders/day, month: orders/month). Stored perDay
+// may be fractional after clicking a round monthly tick, so the month figure lands exact.
+const displayValue = computed(() => (isDay.value ? Math.round(perDay.value) : Math.round(monthly.value)));
+const displayMax = computed(() => (isDay.value ? PER_DAY_MAX : PER_MONTH_MAX));
+
+const tickPositions = computed(() =>
+    (isDay.value ? DAY_TICKS : MONTH_TICKS).map((value) => {
+        const pd = isDay.value ? value : value / DAYS_PER_MONTH;
+        return { pd, percent: (perDayToSliderPosition(pd) / SLIDER_MAX) * 100 };
+    }),
+);
+
+// A tick click sets the exact value (no per-day rounding), so a round monthly tick
+// like 500 shows 500 rather than snapping to 510.
+const setTick = (pd: number) => {
+    perDay.value = Math.max(0, Math.min(PER_DAY_MAX, pd));
+};
+
+// Ticks at or below the current value are highlighted (as if hovered); hovering a
+// label lights up that tick (label + mark) too.
+const hoveredTick = ref<number | null>(null);
+const tickActive = (pd: number, i: number) => perDay.value >= pd || hoveredTick.value === i;
 
 const setPerDay = (n: number) => {
     perDay.value = Math.max(0, Math.min(PER_DAY_MAX, Math.round(n)));
@@ -99,7 +146,11 @@ const setPerDay = (n: number) => {
 
 // Dragging snaps to a nearby "nice" step; typing/clicking a tick is exact.
 const onSlider = (event: Event) => {
-    perDay.value = sliderPositionToPerDay(Number((event.target as HTMLInputElement).value));
+    const pos = Number((event.target as HTMLInputElement).value);
+    // Snap in the currently displayed unit: orders/day, or round monthly figures.
+    perDay.value = isDay.value
+        ? sliderPositionToPerDay(pos)
+        : sliderPositionToMonthly(pos) / DAYS_PER_MONTH;
 };
 
 // Typable value field: click the number to enter an exact orders/day count.
@@ -108,15 +159,16 @@ const draft = ref('');
 
 const startEdit = (event: FocusEvent) => {
     editing.value = true;
-    draft.value = String(perDay.value);
+    draft.value = String(displayValue.value);
     (event.target as HTMLInputElement).select();
 };
 
 const onType = (event: Event) => {
     const raw = (event.target as HTMLInputElement).value.replace(/[^0-9]/g, '');
-    const n = raw === '' ? 0 : Math.min(PER_DAY_MAX, parseInt(raw, 10));
+    const n = raw === '' ? 0 : Math.min(displayMax.value, parseInt(raw, 10));
     draft.value = raw === '' ? '' : String(n);
-    perDay.value = n;
+    // Store as orders/day; in month mode convert the typed monthly figure back exactly.
+    perDay.value = isDay.value ? n : n / DAYS_PER_MONTH;
 };
 
 const endEdit = () => {
@@ -125,6 +177,11 @@ const endEdit = () => {
 
 const confirmEdit = (event: KeyboardEvent) => {
     (event.target as HTMLInputElement).blur();
+};
+
+const setUnit = (u: Unit) => {
+    unit.value = u;
+    editing.value = false;
 };
 
 const orderCost = computed(() => {
@@ -159,27 +216,26 @@ const priceSizeClass = computed(() =>
     formattedTotal.value.length >= 8 ? 'text-5xl md:text-6xl' : 'text-6xl md:text-7xl',
 );
 
-const formattedPerDay = computed(() => new Intl.NumberFormat(t.value.numberLocale).format(perDay.value));
+const formattedDisplay = computed(() => new Intl.NumberFormat(t.value.numberLocale).format(displayValue.value));
 
-const perDayLabel = computed(() => (isMax.value ? t.value.ordersMax : formattedPerDay.value));
+const maxLabel = computed(() => (isDay.value ? t.value.ordersMax : t.value.ordersMaxMonth));
+const displayLabel = computed(() => (isMax.value ? maxLabel.value : formattedDisplay.value));
 
-const perDayAria = computed(() => {
-    if (isMax.value) {
-        return t.value.ordersAriaMax;
-    }
-    if (perDay.value === 0) {
-        return t.value.ordersAriaZero;
-    }
-    if (perDay.value === 1) {
-        return t.value.ordersAriaOne;
-    }
-    return t.value.ordersAriaMany.replace('{n}', formattedPerDay.value);
-});
+const tickLabels = computed(() => (isDay.value ? t.value.tickOrders : t.value.tickOrdersMonth));
 
-// ~ orders per month, derived from the per-day figure.
+const unitWord = computed(() => (isDay.value ? t.value.toggleDay : t.value.toggleMonth).toLowerCase());
+const fieldAria = computed(() => `${t.value.ordersLabel} (${unitWord.value})`);
+const sliderAria = computed(() => `${displayLabel.value} ${unitWord.value}`);
+
+// The secondary line shows the OTHER unit, so both are always visible: in per-day
+// mode it shows the monthly figure, in per-month mode the per-day figure.
 const volumeSentence = computed(() => {
-    const n = new Intl.NumberFormat(t.value.numberLocale).format(monthly.value);
-    return t.value.volumeLine.replace('{n}', n);
+    if (isDay.value) {
+        const n = new Intl.NumberFormat(t.value.numberLocale).format(Math.round(monthly.value));
+        return t.value.volumeLine.replace('{n}', n);
+    }
+    const n = new Intl.NumberFormat(t.value.numberLocale).format(Math.round(perDay.value));
+    return t.value.volumeLinePerDay.replace('{n}', n);
 });
 
 </script>
@@ -209,24 +265,46 @@ const volumeSentence = computed(() => {
                 </div>
 
                 <div class="relative mt-10 md:mt-12">
-                    <div class="flex items-center justify-between mb-4">
-                        <label for="orders-input" class="text-sm font-semibold text-charcoal dark:text-paper">
-                            {{ t.ordersLabel }}
-                        </label>
-                        <span class="group relative inline-block">
-                            <i class="fa-solid fa-pen pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-[0.7rem] text-gravel opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100" aria-hidden="true"></i>
-                            <input
-                                type="text"
-                                inputmode="numeric"
-                                :value="editing ? draft : perDayLabel"
-                                @focus="startEdit"
-                                @input="onType"
-                                @blur="endEdit"
-                                @keydown.enter="confirmEdit"
-                                :aria-label="t.ordersLabel"
-                                class="w-28 border-b border-dashed border-transparent bg-transparent pl-6 pr-1 py-0.5 text-right text-base font-semibold text-charcoal dark:text-paper tabular-nums cursor-text transition-[border-color] duration-200 hover:border-steel focus:border-sunstone-deep focus:outline-none"
-                            />
-                        </span>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between gap-3">
+                            <label for="orders-input" class="cursor-text text-sm font-semibold text-charcoal dark:text-paper">
+                                {{ t.ordersLabel }}
+                            </label>
+                            <span class="group relative inline-block">
+                                <i class="fa-solid fa-pen pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-[0.7rem] text-gravel opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100" aria-hidden="true"></i>
+                                <input
+                                    type="text"
+                                    inputmode="numeric"
+                                    :value="editing ? draft : displayLabel"
+                                    @focus="startEdit"
+                                    @input="onType"
+                                    @blur="endEdit"
+                                    @keydown.enter="confirmEdit"
+                                    :aria-label="fieldAria"
+                                    class="w-28 border-b border-dashed border-transparent bg-transparent pl-6 pr-1 py-0.5 text-right text-base font-semibold text-charcoal dark:text-paper tabular-nums cursor-text transition-[border-color] duration-200 hover:border-steel focus:border-sunstone-deep focus:outline-none"
+                                />
+                            </span>
+                        </div>
+                        <div class="mt-3 inline-flex rounded-full bg-chalk-light dark:bg-graphite p-0.5 ring-1 ring-chalk-dark dark:ring-flint text-xs font-semibold" role="group" :aria-label="t.ordersLabel">
+                            <button
+                                type="button"
+                                @click="setUnit('day')"
+                                :aria-pressed="isDay"
+                                class="cursor-pointer rounded-full px-3 py-1 transition-colors"
+                                :class="isDay ? 'bg-paper dark:bg-charcoal text-charcoal dark:text-paper shadow-[0_1px_3px_rgba(25,25,25,0.12)]' : 'text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper'"
+                            >
+                                {{ t.toggleDay }}
+                            </button>
+                            <button
+                                type="button"
+                                @click="setUnit('month')"
+                                :aria-pressed="!isDay"
+                                class="cursor-pointer rounded-full px-3 py-1 transition-colors"
+                                :class="!isDay ? 'bg-paper dark:bg-charcoal text-charcoal dark:text-paper shadow-[0_1px_3px_rgba(25,25,25,0.12)]' : 'text-steel dark:text-gravel hover:text-charcoal dark:hover:text-paper'"
+                            >
+                                {{ t.toggleMonth }}
+                            </button>
+                        </div>
                     </div>
 
                     <input
@@ -238,7 +316,7 @@ const volumeSentence = computed(() => {
                         :max="SLIDER_MAX"
                         step="1"
                         class="pricing-range w-full"
-                        :aria-valuetext="perDayAria"
+                        :aria-valuetext="sliderAria"
                         :style="{
                             '--progress': `${(sliderPos / SLIDER_MAX) * 100}%`,
                         }"
@@ -246,9 +324,10 @@ const volumeSentence = computed(() => {
 
                     <div class="relative h-1.5 mt-1 mx-[11px] max-sm:hidden">
                         <span
-                            v-for="tick in dayTickPositions"
-                            :key="`mark-${tick.value}`"
-                            class="absolute top-0 w-px h-1.5 bg-chalk-darker dark:bg-flint"
+                            v-for="(tick, i) in tickPositions"
+                            :key="`mark-${i}`"
+                            class="absolute top-0 w-px h-1.5 -translate-x-1/2 transition-colors"
+                            :class="tickActive(tick.pd, i) ? 'bg-charcoal dark:bg-paper' : 'bg-chalk-darker dark:bg-flint'"
                             :style="{ left: `${tick.percent}%` }"
                             aria-hidden="true"
                         ></span>
@@ -258,26 +337,30 @@ const volumeSentence = computed(() => {
                         <button
                             type="button"
                             @click="setPerDay(0)"
-                            class="absolute left-0 top-0 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper"
+                            class="absolute left-0 top-0 -translate-x-1/2 cursor-pointer transition-colors text-charcoal dark:text-paper"
                         >
                             0
                         </button>
                         <button
-                            v-for="(tick, i) in dayTickPositions"
-                            :key="`label-${tick.value}`"
+                            v-for="(tick, i) in tickPositions"
+                            :key="`label-${i}`"
                             type="button"
-                            @click="setPerDay(tick.value)"
-                            class="absolute top-0 -translate-x-1/2 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper max-sm:hidden"
+                            @click="setTick(tick.pd)"
+                            @mouseenter="hoveredTick = i"
+                            @mouseleave="hoveredTick = null"
+                            class="absolute top-0 -translate-x-1/2 cursor-pointer transition-colors max-sm:hidden"
+                            :class="tickActive(tick.pd, i) ? 'text-charcoal dark:text-paper' : 'text-gravel'"
                             :style="{ left: `${tick.percent}%` }"
                         >
-                            {{ t.tickOrders[i] }}
+                            {{ tickLabels[i] }}
                         </button>
                         <button
                             type="button"
                             @click="setPerDay(PER_DAY_MAX)"
-                            class="absolute right-0 top-0 cursor-pointer transition-colors hover:text-charcoal dark:hover:text-paper"
+                            class="absolute right-0 top-0 translate-x-1/2 cursor-pointer transition-colors"
+                            :class="perDay >= PER_DAY_MAX ? 'text-charcoal dark:text-paper' : 'text-gravel hover:text-charcoal dark:hover:text-paper'"
                         >
-                            {{ t.ordersMax }}
+                            {{ maxLabel }}
                         </button>
                     </div>
                 </div>
