@@ -20,6 +20,9 @@ Bezoeker klikt/verzendt  ->  window.dataLayer.push({...})  ->  GTM  ->  GA4
 Alle event-logica zit in **`src/lib/analytics.ts`**:
 
 - `track(event, params)` — duwt een event op de dataLayer (laat `undefined` weg).
+  Voegt automatisch de globale defaults `page_language` en `page_path` toe (uit
+  de DOM), zodat geen enkele aanroep die zelf hoeft mee te geven. Wil je een
+  extra default op elk event? Zet 'm op één plek in `defaultParams()`.
 - `initClickTracking()` — één gedelegeerde klik-listener op `document` die de
   belangrijke knoppen en uitgaande links herkent. Wordt site-breed gestart in
   `src/layouts/BaseLayout.astro`, dus geldt op elke pagina.

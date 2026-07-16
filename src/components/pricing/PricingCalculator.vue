@@ -17,7 +17,7 @@ function markCalculatorUsed(): void {
         return;
     }
     calculatorTracked = true;
-    track(EVENTS.pricingCalculatorUse, { page_language: props.locale });
+    track(EVENTS.pricingCalculatorUse);
 }
 
 interface OrderTier {

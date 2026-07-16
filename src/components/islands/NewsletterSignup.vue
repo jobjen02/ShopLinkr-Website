@@ -86,7 +86,6 @@ async function handleSubmit(): Promise<void> {
         track(EVENTS.newsletterSignup, {
             form_id: 'newsletter',
             source: 'website-footer',
-            page_language: props.locale,
         });
     } catch (error) {
         status.value = 'error';

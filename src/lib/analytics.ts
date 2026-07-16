@@ -39,9 +39,25 @@ export const EVENTS = {
 export type AnalyticsParams = Record<string, string | number | boolean | undefined>;
 
 /**
+ * Params attached to every event automatically, read from the DOM at push time.
+ * This is the single place to set site-wide defaults — callers never pass these,
+ * and an explicit param of the same name still wins over the default.
+ */
+function defaultParams(): AnalyticsParams {
+    if (typeof document === 'undefined') {
+        return {};
+    }
+    return {
+        page_language: document.documentElement.lang || undefined,
+        page_path: window.location.pathname,
+    };
+}
+
+/**
  * Push a semantic event onto the GTM dataLayer. A no-op on the server, and safe
  * to call before GTM has finished loading — GTM replays whatever it finds queued.
- * `undefined` params are dropped so GA4 never receives empty values.
+ * Global defaults (see defaultParams) are merged in first; `undefined` params are
+ * dropped so GA4 never receives empty values.
  */
 export function track(event: string, params: AnalyticsParams = {}): void {
     if (typeof window === 'undefined') {
@@ -50,8 +66,9 @@ export function track(event: string, params: AnalyticsParams = {}): void {
 
     window.dataLayer = window.dataLayer || [];
 
+    const merged: AnalyticsParams = { ...defaultParams(), ...params };
     const payload: Record<string, unknown> = { event };
-    for (const [key, value] of Object.entries(params)) {
+    for (const [key, value] of Object.entries(merged)) {
         if (value !== undefined) {
             payload[key] = value;
         }
@@ -135,7 +152,6 @@ function onClick(event: MouseEvent): void {
         return;
     }
 
-    const pageLanguage = document.documentElement.lang || undefined;
     const cta = classify(url);
 
     if (cta) {
@@ -144,8 +160,6 @@ function onClick(event: MouseEvent): void {
             cta_text: textOf(anchor),
             cta_location: locationOf(anchor),
             link_url: url.href,
-            page_path: window.location.pathname,
-            page_language: pageLanguage,
         });
         return;
     }
@@ -158,8 +172,6 @@ function onClick(event: MouseEvent): void {
             link_domain: url.host,
             link_text: textOf(anchor),
             cta_location: locationOf(anchor),
-            page_path: window.location.pathname,
-            page_language: pageLanguage,
         });
     }
 }

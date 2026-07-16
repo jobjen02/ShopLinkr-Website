@@ -111,7 +111,6 @@ async function handleSubmit(): Promise<void> {
         status.value = 'success';
         track(EVENTS.generateLead, {
             form_id: 'contact',
-            page_language: props.locale,
         });
     } catch (error) {
         status.value = 'error';
