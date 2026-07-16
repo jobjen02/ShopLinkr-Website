@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue';
 import { useTranslations } from '../../i18n/ui';
 import type { Locale } from '../../i18n/routes';
+import { track, EVENTS } from '../../lib/analytics';
 
 const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
 const t = computed(() => useTranslations(props.locale).contactForm);
@@ -108,6 +109,10 @@ async function handleSubmit(): Promise<void> {
         }
 
         status.value = 'success';
+        track(EVENTS.generateLead, {
+            form_id: 'contact',
+            page_language: props.locale,
+        });
     } catch (error) {
         status.value = 'error';
         const raw = error instanceof Error ? error.message : undefined;

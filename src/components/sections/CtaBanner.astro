@@ -7,7 +7,7 @@ const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 ---
 
-<section class="relative py-12 md:py-32 overflow-hidden">
+<section class="relative py-12 md:py-32 overflow-hidden" data-analytics-location="cta_banner">
     <div class="absolute inset-0 -z-10 pointer-events-none">
         <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[60rem] h-[60rem] bg-[radial-gradient(circle_at_center,var(--color-sunstone-mist),transparent_60%)] opacity-50 dark:bg-[radial-gradient(circle_at_center,color-mix(in_srgb,var(--color-sunstone)_6%,transparent),transparent_60%)] dark:opacity-100"></div>
     </div>

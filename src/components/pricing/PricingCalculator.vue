@@ -3,10 +3,22 @@ import { computed, ref } from 'vue';
 import { externalLinks } from '../../data/externalLinks';
 import { useTranslations } from '../../i18n/ui';
 import { localizeHref, type Locale } from '../../i18n/routes';
+import { track, EVENTS } from '../../lib/analytics';
 
 const props = withDefaults(defineProps<{ locale?: Locale }>(), { locale: 'nl' });
 const t = computed(() => useTranslations(props.locale).pricingCalculator);
 const contactHref = computed(() => localizeHref('/contact', props.locale));
+
+// Fire one engagement event the first time a visitor touches the calculator, so
+// GA4 can measure how many people actually try it (not just how many view the page).
+let calculatorTracked = false;
+function markCalculatorUsed(): void {
+    if (calculatorTracked) {
+        return;
+    }
+    calculatorTracked = true;
+    track(EVENTS.pricingCalculatorUse, { page_language: props.locale });
+}
 
 interface OrderTier {
     min: number;
@@ -132,6 +144,7 @@ const tickPositions = computed(() =>
 // A tick click sets the exact value (no per-day rounding), so a round monthly tick
 // like 500 shows 500 rather than snapping to 510.
 const setTick = (pd: number) => {
+    markCalculatorUsed();
     perDay.value = Math.max(0, Math.min(PER_DAY_MAX, pd));
 };
 
@@ -141,11 +154,13 @@ const hoveredTick = ref<number | null>(null);
 const tickActive = (pd: number, i: number) => perDay.value >= pd || hoveredTick.value === i;
 
 const setPerDay = (n: number) => {
+    markCalculatorUsed();
     perDay.value = Math.max(0, Math.min(PER_DAY_MAX, Math.round(n)));
 };
 
 // Dragging snaps to a nearby "nice" step; typing/clicking a tick is exact.
 const onSlider = (event: Event) => {
+    markCalculatorUsed();
     const pos = Number((event.target as HTMLInputElement).value);
     // Snap in the currently displayed unit: orders/day, or round monthly figures.
     perDay.value = isDay.value
@@ -164,6 +179,7 @@ const startEdit = (event: FocusEvent) => {
 };
 
 const onType = (event: Event) => {
+    markCalculatorUsed();
     const raw = (event.target as HTMLInputElement).value.replace(/[^0-9]/g, '');
     const n = raw === '' ? 0 : Math.min(displayMax.value, parseInt(raw, 10));
     draft.value = raw === '' ? '' : String(n);
@@ -180,6 +196,7 @@ const confirmEdit = (event: KeyboardEvent) => {
 };
 
 const setUnit = (u: Unit) => {
+    markCalculatorUsed();
     unit.value = u;
     editing.value = false;
 };
@@ -241,7 +258,7 @@ const volumeSentence = computed(() => {
 </script>
 
 <template>
-    <section class="py-8 md:py-16">
+    <section class="py-8 md:py-16" data-analytics-location="pricing">
         <div class="container-prose">
             <div class="relative mx-auto max-w-2xl overflow-hidden bg-paper dark:bg-charcoal rounded-2xl ring-1 ring-chalk-dark dark:ring-flint shadow-[0_24px_70px_-42px_rgba(25,25,25,0.4)] px-6 py-10 md:px-12 md:py-14">
                 <div
