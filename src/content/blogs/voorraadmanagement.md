@@ -3,7 +3,7 @@ title: "Voorraadmanagement"
 excerpt: "Voorraadmanagement is meer dan tellen: bestellen, opslaan en bijhouden zodat je nooit misgrijpt of vastzit aan dode voorraad. Zo pak je het slim aan."
 publishedAt: "2023-09-25T00:00:00.000Z"
 updatedAt: "2026-04-27T00:00:00.000Z"
-image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.png"
+image: "/images/blog/voorraadmanagement/7ZqIS7MdZdMG4BBCQCLioS24Uw.jpg"
 imageAlt: "Voorraadmanagement in ShopLinkr met realtime voorraadniveaus per kanaal"
 category: "Voorraad"
 ---

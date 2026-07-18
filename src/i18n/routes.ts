@@ -32,6 +32,9 @@ export const routes = {
     blog: { nl: 'blogs', en: 'blog' },
     guides: { nl: 'gidsen', en: 'guides' },
     support: { nl: 'support', en: 'support' },
+    // Not a rendered page but localized like one: the RSS feed endpoint, so
+    // BaseHead and the feed builder derive its per-locale path from one place.
+    rss: { nl: 'rss.xml', en: 'rss.xml' },
 
     // Features (functionaliteiten)
     features: { nl: 'functionaliteiten', en: 'features' },

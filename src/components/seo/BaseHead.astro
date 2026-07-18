@@ -1,6 +1,7 @@
 ---
 import { localizedPath, routes, type RouteKey } from '../../i18n/routes';
 import { localeMeta } from '../../i18n/localeData';
+import { useTranslations } from '../../i18n/ui';
 // The hero H1 is the LCP element and renders in Inter (latin). Import the woff2 so
 // Vite emits it and we get its hashed URL, then preload it below so the browser
 // starts fetching before it parses the fontsource stylesheet.
@@ -50,6 +51,7 @@ const canonicalURL = canonical
     : new URL(normalizedPath, Astro.site);
 
 const ogLocale = localeMeta[locale].og;
+const t = useTranslations(locale);
 
 // Reciprocal hreflang only when the page exists in both locales (routeKey is in
 // the map). x-default points to NL so brand/language-agnostic searches land on
@@ -216,4 +218,10 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
 </noscript>
 
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title={t.feed.title}
+    href={new URL(localizedPath('rss', locale), Astro.site)}
+/>
 {markdown && <link rel="alternate" type="text/markdown" href={new URL(`${canonicalURL.pathname.replace(/\/$/, '')}.md`, Astro.site)} />}

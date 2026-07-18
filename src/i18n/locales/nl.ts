@@ -24,6 +24,10 @@ const nl = {
             auto: 'Systeem',
         },
     },
+    feed: {
+        title: 'ShopLinkr — Blog & gidsen',
+        description: 'Artikelen en gidsen over voorraadbeheer, orderverwerking en multichannel verkopen voor webshops.',
+    },
     hero: {
         badge: 'Binnenkort ook voor fulfilmentbedrijven',
         heading: 'Magazijnsoftware voor webshops',
