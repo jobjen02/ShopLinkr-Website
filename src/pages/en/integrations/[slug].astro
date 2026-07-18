@@ -28,12 +28,12 @@ const alternates = {
 
 const integrationSchema = {
     '@type': 'WebPage',
-    '@id': `https://shoplinkr.com/en/integrations/${integration.data.slug}#webpage`,
+    '@id': `https://www.shoplinkr.com/en/integrations/${integration.data.slug}#webpage`,
     name: `Connect ${name} to ShopLinkr`,
     description: summary,
-    url: `https://shoplinkr.com/en/integrations/${integration.data.slug}`,
+    url: `https://www.shoplinkr.com/en/integrations/${integration.data.slug}`,
     inLanguage: 'en-US',
-    isPartOf: { '@id': 'https://shoplinkr.com/#website' },
+    isPartOf: { '@id': 'https://www.shoplinkr.com/#website' },
 };
 
 const breadcrumbSchema = {
@@ -43,19 +43,19 @@ const breadcrumbSchema = {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://shoplinkr.com/en',
+            item: 'https://www.shoplinkr.com/en',
         },
         {
             '@type': 'ListItem',
             position: 2,
             name: 'Integrations',
-            item: 'https://shoplinkr.com/en/integrations',
+            item: 'https://www.shoplinkr.com/en/integrations',
         },
         {
             '@type': 'ListItem',
             position: 3,
             name: `Connect ${name} to ShopLinkr`,
-            item: `https://shoplinkr.com/en/integrations/${integration.data.slug}`,
+            item: `https://www.shoplinkr.com/en/integrations/${integration.data.slug}`,
         },
     ],
 };

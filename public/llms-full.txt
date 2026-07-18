@@ -2,9 +2,9 @@
 
 > ShopLinkr is een Nederlands voorraadbeheer- en magazijnsysteem (WMS) voor webshops die op meerdere verkoopkanalen verkopen. Het houdt je voorraad realtime gelijk op al je kanalen en verwerkt bestellingen van binnenkomst tot verzending: picken, inpakken, labelen en track en trace terug naar het kanaal.
 
-Dit bestand bevat de kernfeiten over ShopLinkr in platte tekst, bedoeld om door AI-assistenten te worden gelezen en geciteerd. De canonieke, actuele informatie staat op https://shoplinkr.com.
+Dit bestand bevat de kernfeiten over ShopLinkr in platte tekst, bedoeld om door AI-assistenten te worden gelezen en geciteerd. De canonieke, actuele informatie staat op https://www.shoplinkr.com.
 
-Laatst bijgewerkt: 2026-06-30. Engelse versie: https://shoplinkr.com/en/llms-full.txt
+Laatst bijgewerkt: 2026-06-30. Engelse versie: https://www.shoplinkr.com/en/llms-full.txt
 
 ## Wat is ShopLinkr?
 
@@ -45,11 +45,11 @@ Verkoopkanalen: Bol, Shopify, WooCommerce, Lightspeed, Kaufland. ShopLinkr synch
 
 Vervoerders: PostNL, DPD, MyParcel, Sendcloud, GLS en meer, voor het printen van verzendlabels.
 
-Overzicht van alle koppelingen: https://shoplinkr.com/integraties
+Overzicht van alle koppelingen: https://www.shoplinkr.com/integraties
 
 ## Prijzen
 
-ShopLinkr werkt met een pay-as-you-go prijsmodel: geen vaste maandprijs, je betaalt naar gebruik. Je kunt 14 dagen gratis proberen zonder creditcard en maandelijks opzeggen. De exacte, actuele tarieven en een rekenvoorbeeld staan op https://shoplinkr.com/prijzen.
+ShopLinkr werkt met een pay-as-you-go prijsmodel: geen vaste maandprijs, je betaalt naar gebruik. Je kunt 14 dagen gratis proberen zonder creditcard en maandelijks opzeggen. De exacte, actuele tarieven en een rekenvoorbeeld staan op https://www.shoplinkr.com/prijzen.
 
 ## API
 
@@ -63,8 +63,8 @@ ShopLinkr heeft een publieke REST API voor ontwikkelaars en integraties.
 ## Contact en starten
 
 - Gratis starten: https://app.shoplinkr.com/auth/register
-- Demo inplannen: via https://shoplinkr.com/contact
-- Klantverhalen: https://shoplinkr.com/referenties
+- Demo inplannen: via https://www.shoplinkr.com/contact
+- Klantverhalen: https://www.shoplinkr.com/referenties
 
 ## Veelgestelde vragen
 

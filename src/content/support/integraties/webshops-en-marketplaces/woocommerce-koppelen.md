@@ -40,7 +40,7 @@ lastUpdated: "2026-06-01"
 <img alt="" src="/images/support/woocommerce-koppelen/GcR6sCwybvvnaguSNNjx8yxAz8.png">
 <ol>
 <li>
-<p>Vul bij "WooCommerce url" de url in van je WooCommerce website, bijvoorbeeld: https://shoplinkr.com. Let op: bij sommige websites is www vereist in combinatie met https, dit verschilt per WooCommerce site.</p>
+<p>Vul bij "WooCommerce url" de url in van je WooCommerce website, bijvoorbeeld: https://www.shoplinkr.com. Let op: bij sommige websites is www vereist in combinatie met https, dit verschilt per WooCommerce site.</p>
 </li>
 </ol>
 <img alt="" src="/images/support/woocommerce-koppelen/ESgFTsbSNT8VdTw2ux5ipEIkGE.png">

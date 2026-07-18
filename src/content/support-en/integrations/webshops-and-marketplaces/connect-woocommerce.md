@@ -41,7 +41,7 @@ translationKey: "woocommerce-koppelen"
 <img alt="" src="/images/support/woocommerce-koppelen/GcR6sCwybvvnaguSNNjx8yxAz8.png">
 <ol>
 <li>
-<p>Under "WooCommerce url", enter the url of your WooCommerce website, for example: https://shoplinkr.com. Please note: some websites require www in combination with https, this differs per WooCommerce site.</p>
+<p>Under "WooCommerce url", enter the url of your WooCommerce website, for example: https://www.shoplinkr.com. Please note: some websites require www in combination with https, this differs per WooCommerce site.</p>
 </li>
 </ol>
 <img alt="" src="/images/support/woocommerce-koppelen/ESgFTsbSNT8VdTw2ux5ipEIkGE.png">

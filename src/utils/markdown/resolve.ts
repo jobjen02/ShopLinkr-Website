@@ -6,7 +6,7 @@ import { documentFromHtml, integrationDocument } from './convert';
 // scraping the rendered page). Both the `.md` endpoint and the middleware go
 // through here, so a page's markdown is identical however it is requested.
 
-const ORIGIN = 'https://shoplinkr.com';
+const ORIGIN = 'https://www.shoplinkr.com';
 
 type AnyEntry = { id: string; body?: string; data: Record<string, any> };
 

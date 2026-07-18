@@ -12,7 +12,7 @@ translationKey: "bol-lvb-voorraad-switch"
 <p>Selling through bol fulfillment (LVB) but also shipping from your own warehouse? Then you need to switch your bol LVB stock between channels without selling the same item twice. Bol is a large Dutch sales channel, and LVB handles storage and shipping for you. The moment you also sell from your own stock or a webshop, your inventory levels drift apart fast. A central inventory tool keeps everything aligned in real time.</p>
 
 <h2>Why you need to sync stock across channels</h2>
-<p>If you sell the same product on bol, in your webshop, and maybe on another marketplace, every sale draws from the same physical stock. Without a connection you tally things up by hand, and that is exactly where it goes wrong: you sell something that is already gone, or you keep stock locked up for no reason. <a href="https://shoplinkr.com/en/features/inventory">Realtime inventory sync</a> updates every channel the instant an order comes in, so you never oversell and never lose revenue by marking products out of stock when they aren't.</p>
+<p>If you sell the same product on bol, in your webshop, and maybe on another marketplace, every sale draws from the same physical stock. Without a connection you tally things up by hand, and that is exactly where it goes wrong: you sell something that is already gone, or you keep stock locked up for no reason. <a href="https://www.shoplinkr.com/en/features/inventory">Realtime inventory sync</a> updates every channel the instant an order comes in, so you never oversell and never lose revenue by marking products out of stock when they aren't.</p>
 
 <h2>Switching stock between LVB and your own shipping</h2>
 <p>If you fulfill some products through LVB and others from your own warehouse, you want control per situation. Here is how you set that up in ShopLinkr:</p>
@@ -25,7 +25,7 @@ translationKey: "bol-lvb-voorraad-switch"
 <p>That way you move flexibly between source and channel without doing the math on every single product.</p>
 
 <h2>From stock to a smooth order process</h2>
-<p>Keeping stock aligned is step one. The shipping behind it should be just as tight. ShopLinkr processes your <a href="https://shoplinkr.com/en/features/orders">orders centrally</a>, generates <a href="https://shoplinkr.com/en/features/carriers">shipping labels</a> in one click for carriers like PostNL, DPD, and MyParcel, and sends track and trace back to your channel automatically. With <a href="https://shoplinkr.com/en/features/pick-lists">smart pick lists</a> and barcode scanning, you pick and pack faster with fewer mistakes. The whole chain, from stock to shipping, runs in one system.</p>
+<p>Keeping stock aligned is step one. The shipping behind it should be just as tight. ShopLinkr processes your <a href="https://www.shoplinkr.com/en/features/orders">orders centrally</a>, generates <a href="https://www.shoplinkr.com/en/features/carriers">shipping labels</a> in one click for carriers like PostNL, DPD, and MyParcel, and sends track and trace back to your channel automatically. With <a href="https://www.shoplinkr.com/en/features/pick-lists">smart pick lists</a> and barcode scanning, you pick and pack faster with fewer mistakes. The whole chain, from stock to shipping, runs in one system.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>What does LVB mean?</h3>
@@ -33,6 +33,6 @@ translationKey: "bol-lvb-voorraad-switch"
 <h3>Does syncing really stop me from overselling?</h3>
 <p>Yes. Because every channel updates in real time after an order, you see the same current count everywhere. So you never sell something that is already gone.</p>
 <h3>Does this work alongside my webshop?</h3>
-<p>Absolutely. Next to bol, you can connect platforms like Shopify, WooCommerce, and Kaufland, plus other marketplaces. Take a look at the available <a href="https://shoplinkr.com/en/integrations">integrations</a>.</p>
+<p>Absolutely. Next to bol, you can connect platforms like Shopify, WooCommerce, and Kaufland, plus other marketplaces. Take a look at the available <a href="https://www.shoplinkr.com/en/integrations">integrations</a>.</p>
 
 <p>Want to keep your stock aligned across bol and your other channels automatically? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and see how simple central inventory management can be.</p>

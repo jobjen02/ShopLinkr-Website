@@ -1,4 +1,4 @@
 Contact: mailto:contact@shoplinkr.com
 Expires: 2027-07-01T00:00:00.000Z
 Preferred-Languages: nl, en
-Canonical: https://shoplinkr.com/.well-known/security.txt
+Canonical: https://www.shoplinkr.com/.well-known/security.txt

@@ -20,7 +20,7 @@ const subcategoryInfo = categoryInfo && article.data.subcategory
     : undefined;
 
 const articleSlug = article.id.split('/').pop();
-const canonicalUrl = `https://shoplinkr.com/support/${articleSlug}`;
+const canonicalUrl = `https://www.shoplinkr.com/support/${articleSlug}`;
 
 const enArticles = await getCollection('supportArticlesEn');
 const enSlugByTk = new Map(
@@ -81,7 +81,7 @@ const articleSchema = {
     },
     articleSection: article.data.categoryLabel,
     author: authorSchema(article.data.author, 'nl'),
-    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
 };
 
 const breadcrumbItems = [
@@ -112,13 +112,13 @@ const breadcrumbSchema = {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://shoplinkr.com',
+            item: 'https://www.shoplinkr.com',
         },
         ...breadcrumbItems.map((item, index) => ({
             '@type': 'ListItem',
             position: index + 2,
             name: item.label,
-            item: `https://shoplinkr.com${item.href}`,
+            item: `https://www.shoplinkr.com${item.href}`,
         })),
         {
             '@type': 'ListItem',
