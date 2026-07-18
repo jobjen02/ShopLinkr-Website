@@ -22,6 +22,10 @@ const en: Dictionary = {
             auto: 'System',
         },
     },
+    feed: {
+        title: 'ShopLinkr — Blog & guides',
+        description: 'Articles and guides on inventory management, order processing and multichannel selling for online stores.',
+    },
     hero: {
         badge: 'Coming soon for fulfillment companies too',
         heading: 'Warehouse software for webshops',
