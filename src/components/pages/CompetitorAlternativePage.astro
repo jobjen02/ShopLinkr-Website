@@ -3,14 +3,24 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
+import { competitors, type CompetitorKey } from '../../data/competitors';
 import { localizeHref, localizedPath, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 import { localeMeta } from '../../i18n/localeData';
 import { breadcrumbs } from '../../utils/seo';
 
+interface Props {
+    competitorKey: CompetitorKey;
+}
+
+const { competitorKey } = Astro.props;
+const competitor = competitors[competitorKey];
+
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
-const p = t.pages.channeldockVsShoplinkr;
+const p = competitor.content[locale].alternative;
+
+const storyHref = `${localizedPath('customerStories', locale)}/${p.quote.storySlug}`;
 
 const jsonLd = [
     {
@@ -21,7 +31,7 @@ const jsonLd = [
     },
     breadcrumbs([
         ['Home', localizeHref('/', locale)],
-        [p.breadcrumbLeaf, localizeHref('/channeldock-vs-shoplinkr', locale)],
+        [p.breadcrumbLeaf, localizedPath(competitor.altRouteKey, locale)],
     ]),
     {
         '@type': 'FAQPage',
@@ -43,7 +53,7 @@ const jsonLd = [
     eyebrow={p.eyebrow}
     heading={p.heading}
     subheading={p.subheading}
-    routeKey="channeldockVsShoplinkr"
+    routeKey={competitor.altRouteKey}
     jsonLd={jsonLd}
 >
     <section class="pb-12 md:pb-16 bg-paper dark:bg-charcoal">
@@ -73,35 +83,38 @@ const jsonLd = [
     <section class="py-12 md:py-24 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="max-w-3xl">
-                <p class="eyebrow mb-4">{p.tldrEyebrow}</p>
+                <p class="eyebrow mb-4">{p.reasonsEyebrow}</p>
                 <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
-                    {p.tldrHeading}
+                    {p.reasonsHeading}
                 </h2>
             </div>
-            <ol class="mt-8 max-w-3xl space-y-4">
+            <div class="mt-10 grid md:grid-cols-2 gap-6">
                 {
-                    p.tldrPoints.map((point, index) => (
-                        <li class="flex items-start gap-4 rounded-xl ring-1 ring-chalk-dark dark:ring-flint bg-paper dark:bg-charcoal p-5">
-                            <span class="flex-shrink-0 h-7 w-7 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 flex items-center justify-center text-sm font-semibold">
+                    p.reasons.map((reason, index) => (
+                        <div class:list={['rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-8', index === p.reasons.length - 1 && 'md:col-span-2']}>
+                            <span class="inline-flex h-8 w-8 rounded-full bg-sunstone-mist dark:bg-sunstone/10 text-sunstone-deep ring-1 ring-sunstone-soft/40 dark:ring-sunstone/30 items-center justify-center text-sm font-semibold mb-4">
                                 {index + 1}
                             </span>
-                            <p class="text-base text-steel dark:text-gravel leading-relaxed">{point}</p>
-                        </li>
+                            <h3 class="text-lg md:text-xl font-semibold text-charcoal dark:text-paper tracking-tight mb-3">
+                                {reason.title}
+                            </h3>
+                            <p class="text-sm md:text-base text-steel dark:text-gravel leading-relaxed">{reason.body}</p>
+                        </div>
                     ))
                 }
-            </ol>
+            </div>
         </div>
     </section>
 
     <section class="py-12 md:py-24 bg-chalk-light dark:bg-graphite">
         <div class="container-prose">
             <div class="max-w-3xl">
-                <p class="eyebrow mb-4">{p.tableEyebrow}</p>
+                <p class="eyebrow mb-4">{p.diffsEyebrow}</p>
                 <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
-                    {p.tableHeading}
+                    {p.diffsHeading}
                 </h2>
                 <p class="mt-4 text-lg text-steel dark:text-gravel leading-relaxed">
-                    {p.tableIntro}
+                    {p.diffsIntro}
                 </p>
             </div>
 
@@ -113,68 +126,65 @@ const jsonLd = [
                                 {p.colFeature}
                             </th>
                             <th scope="col" class="px-5 py-4 text-sm font-semibold text-sunstone-deep w-[41%]">ShopLinkr</th>
-                            <th scope="col" class="px-5 py-4 text-sm font-semibold text-charcoal dark:text-paper w-[41%]">ChannelDock</th>
+                            <th scope="col" class="px-5 py-4 text-sm font-semibold text-charcoal dark:text-paper w-[41%]">{competitor.name}</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            p.rows.map((row) => (
+                            p.keyDiffs.map((row) => (
                                 <tr class="border-b border-chalk dark:border-flint/60 last:border-b-0 align-top">
                                     <th scope="row" class="px-5 py-4 font-semibold text-charcoal dark:text-paper whitespace-nowrap">
                                         {row.label}
                                     </th>
-                                    <td class="px-5 py-4 text-steel dark:text-gravel leading-relaxed">{row.shoplinkr}</td>
-                                    <td class="px-5 py-4 text-steel dark:text-gravel leading-relaxed">{row.channeldock}</td>
+                                    <td class="px-5 py-4 text-steel dark:text-gravel leading-relaxed bg-sunstone-mist/20 dark:bg-sunstone/[0.03]">{row.shoplinkr}</td>
+                                    <td class="px-5 py-4 text-steel dark:text-gravel leading-relaxed">{row.competitor}</td>
                                 </tr>
                             ))
                         }
                     </tbody>
                 </table>
             </div>
+        </div>
+    </section>
 
-            <p class="mt-5 max-w-3xl text-xs text-gravel leading-relaxed">
-                {p.tableNote}
-            </p>
+    <section class="py-12 md:py-20 bg-paper dark:bg-charcoal">
+        <div class="container-prose">
+            <figure class="max-w-3xl rounded-xl bg-chalk-light dark:bg-graphite ring-1 ring-chalk-dark dark:ring-flint p-8 md:p-10">
+                <i class="fa-solid fa-quote-left text-2xl text-sunstone-deep/50" aria-hidden="true"></i>
+                <blockquote class="mt-4 text-xl md:text-2xl text-charcoal dark:text-paper font-medium leading-snug tracking-tight">
+                    {p.quote.text}
+                </blockquote>
+                <figcaption class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
+                    <span class="text-sm font-semibold text-steel dark:text-gravel">{p.quote.author}</span>
+                    <a
+                        href={storyHref}
+                        class="inline-flex items-center gap-2 text-sm font-semibold text-sunstone-deep hover:text-charcoal dark:hover:text-paper transition-colors"
+                    >
+                        {p.quote.linkLabel}
+                        <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+                    </a>
+                </figcaption>
+            </figure>
         </div>
     </section>
 
     <section class="py-12 md:py-24 bg-paper dark:bg-charcoal">
         <div class="container-prose">
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-8">
-                    <h2 class="text-xl md:text-2xl font-semibold text-charcoal dark:text-paper tracking-tight mb-6">
-                        {p.strengthsShoplinkrHeading}
-                    </h2>
-                    <ul class="space-y-4">
-                        {
-                            p.strengthsShoplinkr.map((item) => (
-                                <li class="flex items-start gap-3">
-                                    <span class="flex-shrink-0 h-5 w-5 rounded-full bg-green/10 dark:bg-green/15 text-green flex items-center justify-center mt-0.5">
-                                        <i class="fa-solid fa-check text-[0.6rem]" aria-hidden="true" />
-                                    </span>
-                                    <p class="text-sm text-steel dark:text-gravel leading-relaxed">{item}</p>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-                <div class="rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6 md:p-8">
-                    <h2 class="text-xl md:text-2xl font-semibold text-charcoal dark:text-paper tracking-tight mb-6">
-                        {p.strengthsChanneldockHeading}
-                    </h2>
-                    <ul class="space-y-4">
-                        {
-                            p.strengthsChanneldock.map((item) => (
-                                <li class="flex items-start gap-3">
-                                    <span class="flex-shrink-0 h-5 w-5 rounded-full bg-chalk dark:bg-flint text-steel dark:text-gravel flex items-center justify-center mt-0.5">
-                                        <i class="fa-solid fa-check text-[0.6rem]" aria-hidden="true" />
-                                    </span>
-                                    <p class="text-sm text-steel dark:text-gravel leading-relaxed">{item}</p>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </div>
+            <div class="max-w-3xl">
+                <p class="eyebrow mb-4">{p.honestEyebrow}</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
+                    {p.honestHeading}
+                </h2>
+                <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
+                    {p.honestBody}
+                </p>
+                <a
+                    href={localizedPath(competitor.vsRouteKey, locale)}
+                    class="mt-6 inline-flex items-center gap-2 text-base font-semibold text-sunstone-deep hover:text-charcoal dark:hover:text-paper transition-colors"
+                >
+                    {p.compareLinkLabel}
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -182,21 +192,24 @@ const jsonLd = [
     <section class="py-12 md:py-24 bg-paper dark:bg-charcoal">
         <div class="container-prose">
             <div class="max-w-3xl">
-                <p class="eyebrow mb-4">{p.switchEyebrow}</p>
+                <p class="eyebrow mb-4">{p.stepsEyebrow}</p>
                 <h2 class="text-3xl md:text-4xl font-semibold text-charcoal dark:text-paper tracking-tight leading-[1.1]">
-                    {p.switchHeading}
+                    {p.stepsHeading}
                 </h2>
-                <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
-                    {p.switchBody}
-                </p>
-                <a
-                    href={localizedPath('channeldockAlternative', locale)}
-                    class="mt-6 inline-flex items-center gap-2 text-base font-semibold text-sunstone-deep hover:text-charcoal dark:hover:text-paper transition-colors"
-                >
-                    {p.switchLinkLabel}
-                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
-                </a>
             </div>
+            <ol class="mt-10 grid md:grid-cols-3 gap-6">
+                {
+                    p.steps.map((step, index) => (
+                        <li class="rounded-xl ring-1 ring-chalk-dark dark:ring-flint p-6">
+                            <span class="inline-flex h-8 w-8 rounded-full bg-charcoal dark:bg-paper text-paper dark:text-charcoal items-center justify-center text-sm font-semibold mb-4">
+                                {index + 1}
+                            </span>
+                            <h3 class="text-lg font-semibold text-charcoal dark:text-paper tracking-tight mb-3">{step.title}</h3>
+                            <p class="text-sm text-steel dark:text-gravel leading-relaxed">{step.body}</p>
+                        </li>
+                    ))
+                }
+            </ol>
         </div>
     </section>
 
