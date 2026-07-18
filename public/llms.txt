@@ -2,7 +2,7 @@
 
 > ShopLinkr is een Nederlands WMS en voorraadbeheerplatform voor kleine en middelgrote webshops. Het automatiseert orderverwerking, picklijsten, labelprinting en multi-channel voorraadsynchronisatie tussen Bol, Shopify, WooCommerce, Kaufland en alle Nederlandse vervoerders.
 
-Laatst bijgewerkt: 2026-06-30. Engelse versie: https://www.shoplinkr.com/en/llms.txt
+Laatst bijgewerkt: 2026-07-18. Engelse versie: https://www.shoplinkr.com/en/llms.txt
 
 ## Product
 - [Functionaliteiten overzicht](https://www.shoplinkr.com/functionaliteiten): Alle functies van ShopLinkr op één pagina.
@@ -36,6 +36,7 @@ Laatst bijgewerkt: 2026-06-30. Engelse versie: https://www.shoplinkr.com/en/llms
 - [Blog](https://www.shoplinkr.com/blogs): Artikelen over voorraadbeheer, magazijnoptimalisatie en e-commerce.
 - [Gidsen](https://www.shoplinkr.com/gidsen): Praktische gidsen over voorraadbeheer in Excel, vervoerders koppelen aan bol, Shopify en WooCommerce, en verkopen via bol.
 - [Gratis Excel template](https://www.shoplinkr.com/voorraadbeheer-excel-template): Voorraadbeheer Excel template om gratis te downloaden.
+- [ChannelDock vs ShopLinkr](https://www.shoplinkr.com/channeldock-vs-shoplinkr): Eerlijke vergelijking tussen ChannelDock en ShopLinkr: focus, functies en prijsmodel naast elkaar.
 
 ## Bedrijf
 - [Klantverhalen](https://www.shoplinkr.com/referenties): Cases van webshops die met ShopLinkr werken.
