@@ -3,7 +3,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import CtaBanner from '../sections/CtaBanner.astro';
 import FaqList from '../template/FaqList.astro';
 import { externalLinks } from '../../data/externalLinks';
-import { localizeHref, type Locale } from '../../i18n/routes';
+import { localizeHref, localizedPath, type Locale } from '../../i18n/routes';
 import { useTranslations } from '../../i18n/ui';
 import { localeMeta } from '../../i18n/localeData';
 import { breadcrumbs } from '../../utils/seo';
@@ -189,6 +189,13 @@ const jsonLd = [
                 <p class="mt-6 text-lg text-steel dark:text-gravel leading-relaxed">
                     {p.switchBody}
                 </p>
+                <a
+                    href={localizedPath('channeldockAlternative', locale)}
+                    class="mt-6 inline-flex items-center gap-2 text-base font-semibold text-sunstone-deep hover:text-charcoal dark:hover:text-paper transition-colors"
+                >
+                    {p.switchLinkLabel}
+                    <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
     </section>

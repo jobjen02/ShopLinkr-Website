@@ -2163,6 +2163,54 @@ const en: Dictionary = {
                 },
             ],
         },
+        channeldockAlternative: {
+            title: 'Looking for a ChannelDock alternative? Meet ShopLinkr | ShopLinkr',
+            description: 'Looking for an alternative to ChannelDock? ShopLinkr bundles stock, pick lists, shipping labels and order processing in one package without separate modules. Switch for free and try it 14 days without obligation.',
+            eyebrow: 'ChannelDock alternative',
+            heading: 'The Dutch alternative to ChannelDock',
+            subheading: 'ShopLinkr bundles everything your warehouse needs in one package: no separate modules, no price per extra channel, just pay-as-you-go per order. Switching is free and you can test for 14 days without obligation.',
+            breadcrumbLeaf: 'ChannelDock alternative',
+            reasonsEyebrow: 'Why switch',
+            reasonsHeading: 'Five reasons to consider ShopLinkr',
+            reasons: [
+                { title: 'Everything included, no modules', body: 'With ShopLinkr, pick lists, barcode scanning, location management, returns and restock advice are part of the package. You do not need to buy a separate WMS or PIM module to run your warehouse fully.' },
+                { title: 'One clear price per order', body: 'You pay as you go over your actual orders, with all features, unlimited channels and unlimited users included. No price per extra channel, no add-ons that appear later, and you can cancel monthly.' },
+                { title: 'Warehouse work at the core, not as an add-on', body: 'ShopLinkr is built around the warehouse: smart pick routes, scanning, locations and returns form the heart of the product. Ideal for webshops that ship their own parcels every day.' },
+                { title: 'Deep integrations for the Dutch market', body: 'bol including Shipping via bol, Kaufland, Shopify, WooCommerce and Lightspeed C-Series, plus Benelux carriers such as PostNL, DPD, GLS, MyParcel, Sendcloud and QLS. Not hundreds of shallow channels, but exactly the depth Dutch sellers need.' },
+                { title: 'Free migration and Dutch support', body: 'Our team sets up the switch with you for free, and after that you get fast Dutch-language support via chat and email. You test for 14 days with your own orders, no credit card required.' },
+            ],
+            honestEyebrow: 'Fair is fair',
+            honestHeading: 'When is ChannelDock the better fit?',
+            honestBody: 'If you mainly sell internationally on marketplaces such as Amazon, eBay and Zalando, need a full PIM module or run a fulfillment center for multiple clients, ChannelDock is a logical candidate. Compare both platforms side by side before you decide.',
+            compareLinkLabel: 'See the full comparison: ChannelDock vs ShopLinkr',
+            stepsEyebrow: 'How to switch',
+            stepsHeading: 'Switch in three steps',
+            steps: [
+                { title: 'Create a free account', body: 'Start your 14-day trial without a credit card and connect your sales channels in a few clicks.' },
+                { title: 'Products and stock flow in', body: 'Your products, stock levels and open orders are imported automatically from your channels. We help with setup and migration for free.' },
+                { title: 'Run in parallel and decide', body: 'Process your orders for two weeks alongside your current package. If you like it, cancel your old subscription; if not, you are not tied to anything.' },
+            ],
+            faqEyebrow: 'Frequently asked questions',
+            faqHeading: 'Frequently asked questions about switching',
+            faqs: [
+                {
+                    question: 'Why would I switch from ChannelDock to ShopLinkr?',
+                    answer: 'The most common reasons: all warehouse features come standard in the package instead of in separate modules, you pay one pay-as-you-go price per order without costs per extra channel, and you get Dutch-language support with free migration and onboarding.',
+                },
+                {
+                    question: 'What does ShopLinkr cost compared to ChannelDock?',
+                    answer: 'ShopLinkr charges pay-as-you-go per order, with all features, channels and users included and monthly cancellation. ChannelDock works with a free entry plan and beyond that a monthly fee with separate modules and paid extra channels. Which works out cheaper depends on your volume; run your own numbers on our pricing page.',
+                },
+                {
+                    question: 'Can I bring my data from ChannelDock?',
+                    answer: 'You reconnect your sales channels to ShopLinkr, after which products, stock and orders are imported automatically from those channels. Our team helps with migration and setup for free.',
+                },
+                {
+                    question: 'Can I use ShopLinkr alongside ChannelDock first?',
+                    answer: 'Yes, we even recommend it. You test ShopLinkr for 14 days for free with your own orders alongside your current package, no credit card required. That way you compare in practice and only switch for good once it proves itself.',
+                },
+            ],
+        },
         channeldockVsShoplinkr: {
             title: 'ChannelDock vs ShopLinkr: the differences at a glance | ShopLinkr',
             description: 'ChannelDock or ShopLinkr? Compare the focus, features and pricing model of both Dutch multichannel platforms and find out which one fits your webshop best.',
@@ -2211,6 +2259,7 @@ const en: Dictionary = {
             switchEyebrow: 'Switching',
             switchHeading: 'Switching from ChannelDock to ShopLinkr',
             switchBody: 'Switching does not have to be a project. You connect your sales channels in a few clicks, after which your products and stock flow in automatically. Migration and onboarding are free, and with the 14-day trial you can run ShopLinkr alongside your current package before you decide. After that, you can cancel any month.',
+            switchLinkLabel: 'Read more about ShopLinkr as a ChannelDock alternative',
             faqEyebrow: 'Frequently asked questions',
             faqHeading: 'Frequently asked questions about this comparison',
             faqs: [

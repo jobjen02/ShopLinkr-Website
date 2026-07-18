@@ -37,6 +37,7 @@ Last updated: 2026-07-18. Dutch version: https://www.shoplinkr.com/llms.txt
 - [Guides](https://www.shoplinkr.com/en/guides): Practical guides on inventory management in Excel, connecting carriers to bol, Shopify and WooCommerce, and selling via bol.
 - [Free Excel template](https://www.shoplinkr.com/en/inventory-excel-template): A free inventory management Excel template to download.
 - [ChannelDock vs ShopLinkr](https://www.shoplinkr.com/en/channeldock-vs-shoplinkr): An honest comparison of ChannelDock and ShopLinkr: focus, features and pricing side by side.
+- [ChannelDock alternative](https://www.shoplinkr.com/en/channeldock-alternative): Why webshops choose ShopLinkr as an alternative to ChannelDock, and how switching works.
 
 ## Company
 - [Customer stories](https://www.shoplinkr.com/en/customer-stories): Cases from webshops that run on ShopLinkr.

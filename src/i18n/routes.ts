@@ -70,6 +70,7 @@ export const routes = {
     wooInventorySync: { nl: 'woocommerce-voorraad-synchronisatie', en: 'woocommerce-inventory-sync' },
     shoplinkerOrShoplinkr: { nl: 'shoplinker-of-shoplinkr', en: 'shoplinker-or-shoplinkr' },
     channeldockVsShoplinkr: { nl: 'channeldock-vs-shoplinkr', en: 'channeldock-vs-shoplinkr' },
+    channeldockAlternative: { nl: 'channeldock-alternatief', en: 'channeldock-alternative' },
     webwinkelVakdagen: { nl: 'webwinkelvakdagen2026', en: 'webwinkel-vakdagen-2026' },
     returnFormTemplate: { nl: 'retourformulier-template', en: 'return-form-template' },
 } as const satisfies Record<string, Record<Locale, string>>;

@@ -2165,6 +2165,54 @@ const nl = {
                 },
             ],
         },
+        channeldockAlternative: {
+            title: 'ChannelDock alternatief? Ontdek ShopLinkr | ShopLinkr',
+            description: 'Op zoek naar een alternatief voor ChannelDock? ShopLinkr bundelt voorraad, picklijsten, verzendlabels en orderverwerking in één pakket zonder losse modules. Stap gratis over en probeer 14 dagen vrijblijvend.',
+            eyebrow: 'ChannelDock-alternatief',
+            heading: 'Het Nederlandse alternatief voor ChannelDock',
+            subheading: 'ShopLinkr bundelt alles wat je magazijn nodig heeft in één pakket: geen losse modules, geen prijs per extra kanaal, gewoon pay-as-you-go per bestelling. Overstappen is gratis en je test 14 dagen vrijblijvend.',
+            breadcrumbLeaf: 'ChannelDock-alternatief',
+            reasonsEyebrow: 'Waarom overstappen',
+            reasonsHeading: 'Vijf redenen om ShopLinkr te overwegen',
+            reasons: [
+                { title: 'Alles inbegrepen, geen modules', body: 'Bij ShopLinkr zijn picklijsten, barcode scannen, locatiebeheer, retouren en inkoopadvies onderdeel van het pakket. Je hoeft geen aparte WMS- of PIM-module bij te kopen om je magazijn volledig te draaien.' },
+                { title: 'Eén heldere prijs per bestelling', body: 'Je betaalt pay-as-you-go over je werkelijke bestellingen, met alle features, onbeperkte kanalen en onbeperkte gebruikers inbegrepen. Geen prijs per extra kanaal, geen add-ons die er later bijkomen, en maandelijks opzegbaar.' },
+                { title: 'Magazijnwerk als kern, niet als uitbreiding', body: 'ShopLinkr is gebouwd rond het magazijn: slimme pick-routes, scannen, locaties en retouren vormen het hart van het product. Ideaal voor webshops die elke dag zelf pakketten verzenden.' },
+                { title: 'Diepe koppelingen voor de Nederlandse markt', body: 'bol inclusief verzenden via bol, Kaufland, Shopify, WooCommerce en Lightspeed C-Series, plus Benelux-vervoerders zoals PostNL, DPD, GLS, MyParcel, Sendcloud en QLS. Geen honderden oppervlakkige kanalen, wel precies de diepgang die Nederlandse verkopers nodig hebben.' },
+                { title: 'Gratis migratie en Nederlandse support', body: 'Ons team zet de overstap gratis met je op, en daarna krijg je snelle Nederlandstalige support via chat en mail. Je test 14 dagen met je eigen orders, zonder creditcard.' },
+            ],
+            honestEyebrow: 'Eerlijk is eerlijk',
+            honestHeading: 'Wanneer past ChannelDock beter?',
+            honestBody: 'Verkoop je vooral internationaal op marketplaces als Amazon, eBay en Zalando, heb je een volwaardige PIM-module nodig of run je een fulfilmentcenter voor meerdere klanten, dan is ChannelDock een logische kandidaat. Vergelijk beide platformen rustig naast elkaar voordat je kiest.',
+            compareLinkLabel: 'Bekijk de volledige vergelijking: ChannelDock vs ShopLinkr',
+            stepsEyebrow: 'Zo stap je over',
+            stepsHeading: 'Overstappen in drie stappen',
+            steps: [
+                { title: 'Maak een gratis account', body: 'Start je proefperiode van 14 dagen zonder creditcard en koppel je verkoopkanalen in een paar klikken.' },
+                { title: 'Producten en voorraad rollen binnen', body: 'Je producten, voorraadaantallen en openstaande bestellingen worden automatisch ingelezen vanuit je kanalen. Wij helpen gratis met de inrichting en migratie.' },
+                { title: 'Draai parallel en beslis', body: 'Verwerk je orders twee weken naast je huidige pakket. Bevalt het, dan zeg je je oude abonnement op; zo niet, dan zit je nergens aan vast.' },
+            ],
+            faqEyebrow: 'Veelgestelde vragen',
+            faqHeading: 'Veelgestelde vragen over overstappen',
+            faqs: [
+                {
+                    question: 'Waarom zou ik overstappen van ChannelDock naar ShopLinkr?',
+                    answer: 'De meest genoemde redenen: alle magazijnfuncties zitten standaard in het pakket in plaats van in losse modules, je betaalt één pay-as-you-go prijs per bestelling zonder kosten per extra kanaal, en je krijgt Nederlandstalige support met gratis migratie en onboarding.',
+                },
+                {
+                    question: 'Wat kost ShopLinkr vergeleken met ChannelDock?',
+                    answer: 'ShopLinkr rekent pay-as-you-go per bestelling, met alle features, kanalen en gebruikers inbegrepen en maandelijks opzegbaar. ChannelDock werkt met een gratis instapplan en daarboven een maandprijs met losse modules en betaalde extra kanalen. Wat voordeliger uitpakt hangt af van je volume; reken je situatie na op onze prijzenpagina.',
+                },
+                {
+                    question: 'Kan ik mijn data meenemen vanuit ChannelDock?',
+                    answer: 'Je koppelt je verkoopkanalen opnieuw aan ShopLinkr, waarna producten, voorraad en bestellingen automatisch worden ingelezen vanuit die kanalen. Ons team helpt gratis bij de migratie en inrichting.',
+                },
+                {
+                    question: 'Kan ik ShopLinkr eerst naast ChannelDock gebruiken?',
+                    answer: 'Ja, dat raden we zelfs aan. Je test ShopLinkr 14 dagen gratis met je eigen orders naast je huidige pakket, zonder creditcard. Zo vergelijk je in de praktijk en stap je pas definitief over als het bevalt.',
+                },
+            ],
+        },
         channeldockVsShoplinkr: {
             title: 'ChannelDock vs ShopLinkr: de verschillen op een rij | ShopLinkr',
             description: 'ChannelDock of ShopLinkr? Vergelijk de focus, functies en het prijsmodel van beide Nederlandse multichannel-platformen en ontdek welke het beste bij jouw webshop past.',
@@ -2213,6 +2261,7 @@ const nl = {
             switchEyebrow: 'Overstappen',
             switchHeading: 'Overstappen van ChannelDock naar ShopLinkr',
             switchBody: 'Overstappen hoeft geen project te zijn. Je koppelt je verkoopkanalen in een paar klikken, waarna je producten en voorraad automatisch binnenkomen. Migratie en onboarding zijn gratis, en met de proefperiode van 14 dagen draai je ShopLinkr rustig naast je huidige pakket voordat je kiest. Opzeggen kan daarna elke maand.',
+            switchLinkLabel: 'Lees meer over ShopLinkr als ChannelDock-alternatief',
             faqEyebrow: 'Veelgestelde vragen',
             faqHeading: 'Veelgestelde vragen over deze vergelijking',
             faqs: [
