@@ -216,4 +216,10 @@ if (altUrls && (altUrls.nl || altUrls.en)) {
 </noscript>
 
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link
+    rel="alternate"
+    type="application/rss+xml"
+    title={locale === 'en' ? 'ShopLinkr — Blog & guides' : 'ShopLinkr — Blog & gidsen'}
+    href={new URL(locale === 'en' ? '/en/rss.xml' : '/rss.xml', Astro.site)}
+/>
 {markdown && <link rel="alternate" type="text/markdown" href={new URL(`${canonicalURL.pathname.replace(/\/$/, '')}.md`, Astro.site)} />}
