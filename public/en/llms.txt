@@ -2,48 +2,48 @@
 
 > ShopLinkr is a Dutch WMS and inventory management platform for small and medium webshops. It automates order processing, pick lists, label printing and multi-channel inventory sync across Bol, Shopify, WooCommerce, Kaufland and all major Dutch carriers.
 
-Last updated: 2026-06-30. Dutch version: https://shoplinkr.com/llms.txt
+Last updated: 2026-06-30. Dutch version: https://www.shoplinkr.com/llms.txt
 
 ## Product
-- [Features overview](https://shoplinkr.com/en/features): Every ShopLinkr feature on one page.
-- [Orders](https://shoplinkr.com/en/features/orders): Process orders from Bol, Shopify, WooCommerce and Kaufland in one place.
-- [Inventory](https://shoplinkr.com/en/features/inventory): Real-time inventory management across all your sales channels, with forecasting and fictitious stock.
-- [Products](https://shoplinkr.com/en/features/products): A central product overview for stock, variants and bundles.
-- [Pick lists](https://shoplinkr.com/en/features/pick-lists): Smart pick routes through your warehouse with barcode scanning and label printing.
-- [Rules](https://shoplinkr.com/en/features/rules): Automate recurring work with conditions and actions.
-- [Purchase advice](https://shoplinkr.com/en/features/purchase-advice): Smart reordering advice based on sales data and lead times.
-- [Locations](https://shoplinkr.com/en/features/locations): Hierarchical warehouse locations linked to products.
-- [Carriers](https://shoplinkr.com/en/features/carriers): Print labels for PostNL, DPD, MyParcel, Sendcloud and more.
-- [Returns](https://shoplinkr.com/en/features/returns): Process returns and book them back into stock with ease.
-- [Reports](https://shoplinkr.com/en/features/reports): Insight into bestsellers, dead stock, stock value and ABC analysis.
+- [Features overview](https://www.shoplinkr.com/en/features): Every ShopLinkr feature on one page.
+- [Orders](https://www.shoplinkr.com/en/features/orders): Process orders from Bol, Shopify, WooCommerce and Kaufland in one place.
+- [Inventory](https://www.shoplinkr.com/en/features/inventory): Real-time inventory management across all your sales channels, with forecasting and fictitious stock.
+- [Products](https://www.shoplinkr.com/en/features/products): A central product overview for stock, variants and bundles.
+- [Pick lists](https://www.shoplinkr.com/en/features/pick-lists): Smart pick routes through your warehouse with barcode scanning and label printing.
+- [Rules](https://www.shoplinkr.com/en/features/rules): Automate recurring work with conditions and actions.
+- [Purchase advice](https://www.shoplinkr.com/en/features/purchase-advice): Smart reordering advice based on sales data and lead times.
+- [Locations](https://www.shoplinkr.com/en/features/locations): Hierarchical warehouse locations linked to products.
+- [Carriers](https://www.shoplinkr.com/en/features/carriers): Print labels for PostNL, DPD, MyParcel, Sendcloud and more.
+- [Returns](https://www.shoplinkr.com/en/features/returns): Process returns and book them back into stock with ease.
+- [Reports](https://www.shoplinkr.com/en/features/reports): Insight into bestsellers, dead stock, stock value and ABC analysis.
 
 ## Integrations
-- [Integrations overview](https://shoplinkr.com/en/integrations): All webshop, marketplace and carrier connections.
-- [Bol](https://shoplinkr.com/en/integrations/bol-com): Sync inventory and orders with Bol.
-- [Shopify](https://shoplinkr.com/en/integrations/shopify): Inventory sync and order import for Shopify webshops.
-- [WooCommerce](https://shoplinkr.com/en/integrations/woocommerce): Inventory sync and order import for WooCommerce.
-- [Kaufland](https://shoplinkr.com/en/integrations/kaufland): Sell on Kaufland with real-time inventory sync.
-- [Lightspeed C-Series](https://shoplinkr.com/en/integrations/lightspeed-c-series): Inventory sync and order import for Lightspeed C-Series webshops.
+- [Integrations overview](https://www.shoplinkr.com/en/integrations): All webshop, marketplace and carrier connections.
+- [Bol](https://www.shoplinkr.com/en/integrations/bol-com): Sync inventory and orders with Bol.
+- [Shopify](https://www.shoplinkr.com/en/integrations/shopify): Inventory sync and order import for Shopify webshops.
+- [WooCommerce](https://www.shoplinkr.com/en/integrations/woocommerce): Inventory sync and order import for WooCommerce.
+- [Kaufland](https://www.shoplinkr.com/en/integrations/kaufland): Sell on Kaufland with real-time inventory sync.
+- [Lightspeed C-Series](https://www.shoplinkr.com/en/integrations/lightspeed-c-series): Inventory sync and order import for Lightspeed C-Series webshops.
 
 ## Support
-- [FAQ](https://shoplinkr.com/en/faq): Answers to the most common questions about inventory, order processing, shipping, pricing and more.
-- [Help centre](https://shoplinkr.com/en/support): Documentation and guides.
-- [Getting started](https://shoplinkr.com/en/support/categories/getting-started): Start guide for new users.
-- [Inventory management support](https://shoplinkr.com/en/support/categories/inventory-management): Help articles about inventory management.
-- [Order processing support](https://shoplinkr.com/en/support/categories/order-processing): Help articles about order processing.
+- [FAQ](https://www.shoplinkr.com/en/faq): Answers to the most common questions about inventory, order processing, shipping, pricing and more.
+- [Help centre](https://www.shoplinkr.com/en/support): Documentation and guides.
+- [Getting started](https://www.shoplinkr.com/en/support/categories/getting-started): Start guide for new users.
+- [Inventory management support](https://www.shoplinkr.com/en/support/categories/inventory-management): Help articles about inventory management.
+- [Order processing support](https://www.shoplinkr.com/en/support/categories/order-processing): Help articles about order processing.
 
 ## Resources
-- [Blog](https://shoplinkr.com/en/blog): Articles about inventory management, warehouse optimisation and e-commerce.
-- [Guides](https://shoplinkr.com/en/guides): Practical guides on inventory management in Excel, connecting carriers to bol, Shopify and WooCommerce, and selling via bol.
-- [Free Excel template](https://shoplinkr.com/en/inventory-excel-template): A free inventory management Excel template to download.
+- [Blog](https://www.shoplinkr.com/en/blog): Articles about inventory management, warehouse optimisation and e-commerce.
+- [Guides](https://www.shoplinkr.com/en/guides): Practical guides on inventory management in Excel, connecting carriers to bol, Shopify and WooCommerce, and selling via bol.
+- [Free Excel template](https://www.shoplinkr.com/en/inventory-excel-template): A free inventory management Excel template to download.
 
 ## Company
-- [Customer stories](https://shoplinkr.com/en/customer-stories): Cases from webshops that run on ShopLinkr.
-- [Team](https://shoplinkr.com/en/team): The people behind ShopLinkr.
-- [Contact](https://shoplinkr.com/en/contact): Request a demo or ask a question.
-- [Pricing](https://shoplinkr.com/en/pricing): Pay-as-you-go pricing model.
+- [Customer stories](https://www.shoplinkr.com/en/customer-stories): Cases from webshops that run on ShopLinkr.
+- [Team](https://www.shoplinkr.com/en/team): The people behind ShopLinkr.
+- [Contact](https://www.shoplinkr.com/en/contact): Request a demo or ask a question.
+- [Pricing](https://www.shoplinkr.com/en/pricing): Pay-as-you-go pricing model.
 
 ## Optional
-- [Full site data](https://shoplinkr.com/en/llms-full.txt): All core facts, features, the pricing model and FAQ in one markdown file.
-- [Dutch version](https://shoplinkr.com/llms.txt): This same index in Dutch.
-- [Cookie policy](https://shoplinkr.com/en/cookies): Which cookies we use and why.
+- [Full site data](https://www.shoplinkr.com/en/llms-full.txt): All core facts, features, the pricing model and FAQ in one markdown file.
+- [Dutch version](https://www.shoplinkr.com/llms.txt): This same index in Dutch.
+- [Cookie policy](https://www.shoplinkr.com/en/cookies): Which cookies we use and why.

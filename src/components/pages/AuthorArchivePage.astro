@@ -48,13 +48,13 @@ const jsonLd = {
     '@type': 'ProfilePage',
     mainEntity: {
         '@type': 'Person',
-        '@id': `https://shoplinkr.com/#${author.slug}`,
+        '@id': `https://www.shoplinkr.com/#${author.slug}`,
         name: author.name,
         jobTitle: role,
         description: bio,
-        image: `https://shoplinkr.com${author.photo}`,
+        image: `https://www.shoplinkr.com${author.photo}`,
         ...(author.linkedin && { url: author.linkedin, sameAs: [author.linkedin] }),
-        worksFor: { '@id': 'https://shoplinkr.com/#organization' },
+        worksFor: { '@id': 'https://www.shoplinkr.com/#organization' },
     },
 };
 

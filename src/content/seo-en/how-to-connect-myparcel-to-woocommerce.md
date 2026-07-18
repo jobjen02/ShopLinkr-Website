@@ -12,8 +12,8 @@ translationKey: "hoe-koppel-ik-myparcel-met-woocommerce"
 <p>ShopLinkr sits between your sales channels and your shipping. WooCommerce supplies the orders, MyParcel handles the labels, and you process everything in one place. Here is how to set it up:</p>
 <ol>
 <li>Create a ShopLinkr account and connect your WooCommerce store as a sales channel.</li>
-<li>Then connect your MyParcel account as a <a href="https://shoplinkr.com/en/features/carriers">carrier</a> in ShopLinkr.</li>
-<li>Your WooCommerce orders appear automatically in your <a href="https://shoplinkr.com/en/features/orders">order overview</a>.</li>
+<li>Then connect your MyParcel account as a <a href="https://www.shoplinkr.com/en/features/carriers">carrier</a> in ShopLinkr.</li>
+<li>Your WooCommerce orders appear automatically in your <a href="https://www.shoplinkr.com/en/features/orders">order overview</a>.</li>
 <li>Print a MyParcel label per order with one click. The track & trace goes back to WooCommerce automatically.</li>
 </ol>
 <p>You do not need to install a separate MyParcel plugin in WordPress or paste API keys into your store. The connection runs entirely through ShopLinkr.</p>
@@ -22,8 +22,8 @@ translationKey: "hoe-koppel-ik-myparcel-met-woocommerce"
 <ul>
 <li><strong>One click per label.</strong> No retyping addresses. With AutoPrint, labels even come out automatically the moment you process an order.</li>
 <li><strong>Automatic track & trace.</strong> As soon as the label is created, your customer receives the shipping details back through WooCommerce.</li>
-<li><strong>Realtime inventory.</strong> If you sell across several channels, ShopLinkr keeps your <a href="https://shoplinkr.com/en/features/inventory">inventory</a> in sync everywhere, so you never oversell.</li>
-<li><strong>Smarter packing.</strong> With <a href="https://shoplinkr.com/en/features/pick-lists">pick lists</a> and barcode scanning, you pack larger volumes without grabbing the wrong item.</li>
+<li><strong>Realtime inventory.</strong> If you sell across several channels, ShopLinkr keeps your <a href="https://www.shoplinkr.com/en/features/inventory">inventory</a> in sync everywhere, so you never oversell.</li>
+<li><strong>Smarter packing.</strong> With <a href="https://www.shoplinkr.com/en/features/pick-lists">pick lists</a> and barcode scanning, you pack larger volumes without grabbing the wrong item.</li>
 </ul>
 <p>If you also ship with other carriers such as PostNL or DPD alongside MyParcel, you manage them from the same screen. You choose the right label for each order. When a parcel comes back, you process the return in ShopLinkr and add the stock back in a single step.</p>
 <h2>Frequently asked questions</h2>
@@ -32,5 +32,5 @@ translationKey: "hoe-koppel-ik-myparcel-met-woocommerce"
 <h3>Does the track & trace reach my customer automatically?</h3>
 <p>Yes. As soon as you create a MyParcel label, ShopLinkr sends the track & trace back to your WooCommerce order, which informs your customer automatically.</p>
 <h3>Can I connect multiple stores and channels at once?</h3>
-<p>Yes. Besides WooCommerce, you can connect channels like bol, Shopify and Kaufland. See all the <a href="https://shoplinkr.com/en/integrations">integrations</a> ShopLinkr supports.</p>
+<p>Yes. Besides WooCommerce, you can connect channels like bol, Shopify and Kaufland. See all the <a href="https://www.shoplinkr.com/en/integrations">integrations</a> ShopLinkr supports.</p>
 <p>Ready to streamline your shipping? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and connect WooCommerce and MyParcel in a few minutes.</p>

@@ -31,13 +31,13 @@ const jsonLd = {
     '@type': 'Blog',
     name: 'ShopLinkr Blog',
     description: p.jsonLdDescription,
-    url: `https://shoplinkr.com${localizeHref('/blogs', locale)}`,
+    url: `https://www.shoplinkr.com${localizeHref('/blogs', locale)}`,
     inLanguage: localeMeta[locale].bcp47,
-    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
     blogPost: sorted.slice(0, 10).map((post) => ({
         '@type': 'BlogPosting',
         headline: post.data.title,
-        url: `https://shoplinkr.com${blogBase}/${post.id}`,
+        url: `https://www.shoplinkr.com${blogBase}/${post.id}`,
         datePublished: post.data.publishedAt.toISOString(),
     })),
 };

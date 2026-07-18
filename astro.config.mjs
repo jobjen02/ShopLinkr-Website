@@ -14,7 +14,7 @@ import { redirects } from './src/data/redirects.mjs';
 // server-rendered, so @astrojs/sitemap can't auto-discover them. We enumerate
 // every content URL from the source files here and feed them as `customPages`,
 // and build a pathname -> ISO date map for <lastmod> in the same pass.
-const ORIGIN = 'https://shoplinkr.com';
+const ORIGIN = 'https://www.shoplinkr.com';
 const CONTENT_DIR = fileURLToPath(new URL('./src/content', import.meta.url));
 
 function walkMarkdown(dir) {
@@ -113,7 +113,7 @@ function buildContent() {
 const { lastmod: lastmodByPath, customPages: contentCustomPages } = buildContent();
 
 export default defineConfig({
-    site: 'https://shoplinkr.com',
+    site: 'https://www.shoplinkr.com',
     output: 'server',
     // One canonical URL form: /x, never /x/. The Vercel adapter 308-redirects the
     // slashed variant and the generated sitemap emits slash-free URLs, so /prijzen

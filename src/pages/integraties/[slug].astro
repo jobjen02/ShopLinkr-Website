@@ -17,12 +17,12 @@ const supportHref = supportSlug ? `/support/${supportSlug}` : '/support';
 
 const integrationSchema = {
     '@type': 'WebPage',
-    '@id': `https://shoplinkr.com/integraties/${integration.data.slug}#webpage`,
+    '@id': `https://www.shoplinkr.com/integraties/${integration.data.slug}#webpage`,
     name: `${name} koppelen aan ShopLinkr`,
     description: summary,
-    url: `https://shoplinkr.com/integraties/${integration.data.slug}`,
+    url: `https://www.shoplinkr.com/integraties/${integration.data.slug}`,
     inLanguage: 'nl-NL',
-    isPartOf: { '@id': 'https://shoplinkr.com/#website' },
+    isPartOf: { '@id': 'https://www.shoplinkr.com/#website' },
 };
 
 const breadcrumbSchema = {
@@ -32,19 +32,19 @@ const breadcrumbSchema = {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://shoplinkr.com',
+            item: 'https://www.shoplinkr.com',
         },
         {
             '@type': 'ListItem',
             position: 2,
             name: 'Integraties',
-            item: 'https://shoplinkr.com/integraties',
+            item: 'https://www.shoplinkr.com/integraties',
         },
         {
             '@type': 'ListItem',
             position: 3,
             name: `${name} koppelen aan ShopLinkr`,
-            item: `https://shoplinkr.com/integraties/${integration.data.slug}`,
+            item: `https://www.shoplinkr.com/integraties/${integration.data.slug}`,
         },
     ],
 };

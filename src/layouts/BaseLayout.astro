@@ -47,11 +47,11 @@ const t = useTranslations(locale);
 const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://shoplinkr.com/#organization',
+    '@id': 'https://www.shoplinkr.com/#organization',
     name: 'ShopLinkr',
     legalName: 'ShopLinkr',
-    url: 'https://shoplinkr.com',
-    logo: 'https://shoplinkr.com/logo/logo-charcoal.svg',
+    url: 'https://www.shoplinkr.com',
+    logo: 'https://www.shoplinkr.com/logo/logo-charcoal.svg',
     description: t.footer.description,
     foundingDate: '2022',
     email: 'contact@shoplinkr.com',
@@ -72,7 +72,7 @@ const organizationSchema = {
         name: 'Netherlands',
     },
     // Links to the founder Person node emitted below, so the entity graph names a real person.
-    founder: { '@id': 'https://shoplinkr.com/#job-jenniskens' },
+    founder: { '@id': 'https://www.shoplinkr.com/#job-jenniskens' },
     contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
@@ -103,11 +103,11 @@ const organizationSchema = {
 const websiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://shoplinkr.com/#website',
+    '@id': 'https://www.shoplinkr.com/#website',
     name: 'ShopLinkr',
-    url: 'https://shoplinkr.com',
+    url: 'https://www.shoplinkr.com',
     inLanguage: localeMeta[locale].bcp47,
-    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
 };
 
 // Founder Person node, emitted site-wide so Organization.founder's @id resolves everywhere.

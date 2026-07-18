@@ -13,7 +13,7 @@ import { useTranslations } from '../../i18n/ui';
 const locale = (Astro.currentLocale ?? 'nl') as Locale;
 const t = useTranslations(locale);
 
-const origin = 'https://shoplinkr.com';
+const origin = 'https://www.shoplinkr.com';
 // Locale-general: works for any language in the route map, not just en.
 const homePath = localizeHref('/', locale);
 const homeUrl = homePath === '/' ? origin : `${origin}${homePath}`;
@@ -21,7 +21,7 @@ const pricingUrl = `${origin}${localizeHref('/prijzen', locale)}`;
 
 const jsonLd = {
     '@type': 'SoftwareApplication',
-    '@id': 'https://shoplinkr.com/#software',
+    '@id': 'https://www.shoplinkr.com/#software',
     name: 'ShopLinkr',
     alternateName: ['Shop Linkr', 'Shoplinker'],
     applicationCategory: 'BusinessApplication',
@@ -29,7 +29,7 @@ const jsonLd = {
     operatingSystem: 'Web',
     description: t.pages.home.jsonLdDescription,
     url: homeUrl,
-    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
     offers: {
         '@type': 'Offer',
         price: '5.00',

@@ -55,13 +55,13 @@ const jsonLd = [
             name: story.company,
             ...(story.url ? { url: story.url } : {}),
         },
-        author: { '@id': 'https://shoplinkr.com/#organization' },
-        publisher: { '@id': 'https://shoplinkr.com/#organization' },
+        author: { '@id': 'https://www.shoplinkr.com/#organization' },
+        publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://shoplinkr.com${detailHref}`,
+            '@id': `https://www.shoplinkr.com${detailHref}`,
         },
-        ...(story.logo ? { image: `https://shoplinkr.com${story.logo}` } : {}),
+        ...(story.logo ? { image: `https://www.shoplinkr.com${story.logo}` } : {}),
     },
 ];
 ---

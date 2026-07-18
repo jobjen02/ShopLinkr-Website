@@ -9,7 +9,7 @@ translationKey: "hoe-koppel-ik-sendy-met-shopify"
 <p>You don't connect Sendy directly to Shopify, you connect both through ShopLinkr. ShopLinkr is the platform where your Shopify orders arrive and where you process them. You add Sendy there as a carrier. From a single screen you then process your orders, create the shipping label and let track and trace flow back to your Shopify store automatically. Here is exactly how to connect Sendy to Shopify.</p>
 
 <h2>What does ShopLinkr do between Shopify and Sendy?</h2>
-<p>Shopify is your sales channel and Sendy handles shipping. ShopLinkr sits in between and brings the two together. You <a href="https://shoplinkr.com/en/integrations">connect Shopify as a sales channel</a> and Sendy as a <a href="https://shoplinkr.com/en/features/carriers">carrier</a>. After that, everything runs in one place:</p>
+<p>Shopify is your sales channel and Sendy handles shipping. ShopLinkr sits in between and brings the two together. You <a href="https://www.shoplinkr.com/en/integrations">connect Shopify as a sales channel</a> and Sendy as a <a href="https://www.shoplinkr.com/en/features/carriers">carrier</a>. After that, everything runs in one place:</p>
 <ul>
 <li><p><strong>Orders centralized</strong>: orders from Shopify flow into ShopLinkr automatically, alongside any other channels such as bol or WooCommerce.</p></li>
 <li><p><strong>Labels in one click</strong>: based on the order details, you create the Sendy label without retyping any addresses.</p></li>
@@ -22,11 +22,11 @@ translationKey: "hoe-koppel-ik-sendy-met-shopify"
 <ol>
 <li><p>Create a ShopLinkr account and connect your Shopify store as a sales channel.</p></li>
 <li><p>Add Sendy as a carrier in ShopLinkr and sign in with your Sendy credentials.</p></li>
-<li><p>Check that your Shopify orders arrive correctly in your <a href="https://shoplinkr.com/en/features/orders">order overview</a>.</p></li>
+<li><p>Check that your Shopify orders arrive correctly in your <a href="https://www.shoplinkr.com/en/features/orders">order overview</a>.</p></li>
 <li><p>Process an order and create the Sendy shipping label in one click. Print it and stick it on your parcel.</p></li>
 <li><p>Track and trace is sent back to Shopify automatically. Done.</p></li>
 </ol>
-<p>Processing a lot of orders at once? With <a href="https://shoplinkr.com/en/features/pick-lists">pick lists</a> and barcode scanning you pick and pack faster, and with AutoPrint labels roll out instantly. Because your <a href="https://shoplinkr.com/en/features/inventory">inventory syncs in real time</a> across every channel, you also avoid selling something that is out of stock.</p>
+<p>Processing a lot of orders at once? With <a href="https://www.shoplinkr.com/en/features/pick-lists">pick lists</a> and barcode scanning you pick and pack faster, and with AutoPrint labels roll out instantly. Because your <a href="https://www.shoplinkr.com/en/features/inventory">inventory syncs in real time</a> across every channel, you also avoid selling something that is out of stock.</p>
 
 <h2>Frequently asked questions</h2>
 <h3>Do I need ShopLinkr to connect Sendy to Shopify?</h3>
@@ -36,4 +36,4 @@ translationKey: "hoe-koppel-ik-sendy-met-shopify"
 <h3>Can I choose a different carrier per order?</h3>
 <p>Yes. Sendy is one of the carriers you connect. For each order you pick the carrier that suits the destination and the type of parcel.</p>
 
-<p>Want your entire order processing and shipping in one place? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and connect Shopify and Sendy yourself. Curious what else is possible? Browse the <a href="https://shoplinkr.com/en/integrations">integrations</a> or reach out through <a href="https://shoplinkr.com/en/support">support</a>.</p>
+<p>Want your entire order processing and shipping in one place? <a href="https://app.shoplinkr.com/auth/register">Try ShopLinkr free for 14 days</a> and connect Shopify and Sendy yourself. Curious what else is possible? Browse the <a href="https://www.shoplinkr.com/en/integrations">integrations</a> or reach out through <a href="https://www.shoplinkr.com/en/support">support</a>.</p>

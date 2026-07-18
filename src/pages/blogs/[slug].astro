@@ -29,7 +29,7 @@ const alternates = enSlug
 
 const formattedDate = articleDateLabel(blog.data.publishedAt, blog.data.updatedAt, 'nl');
 
-const canonicalUrl = `https://shoplinkr.com/blogs/${blog.id}`;
+const canonicalUrl = `https://www.shoplinkr.com/blogs/${blog.id}`;
 
 const articleSchema = {
     '@type': 'BlogPosting',
@@ -43,9 +43,9 @@ const articleSchema = {
         '@id': canonicalUrl,
     },
     author: authorSchema(blog.data.author, 'nl'),
-    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
     ...(blog.data.image && {
-        image: `https://shoplinkr.com${blog.data.image}`,
+        image: `https://www.shoplinkr.com${blog.data.image}`,
     }),
     ...(blog.data.category && {
         articleSection: blog.data.category,
@@ -59,13 +59,13 @@ const breadcrumbSchema = {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://shoplinkr.com',
+            item: 'https://www.shoplinkr.com',
         },
         {
             '@type': 'ListItem',
             position: 2,
             name: 'Blog',
-            item: 'https://shoplinkr.com/blogs',
+            item: 'https://www.shoplinkr.com/blogs',
         },
         {
             '@type': 'ListItem',

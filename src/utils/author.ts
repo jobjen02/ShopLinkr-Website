@@ -89,11 +89,11 @@ export function authorSchema(name: string | undefined, locale: Locale) {
     const a = getAuthor(name);
     return {
         '@type': 'Person',
-        '@id': `https://shoplinkr.com/#${a.slug}`,
+        '@id': `https://www.shoplinkr.com/#${a.slug}`,
         name: a.name,
         jobTitle: authorRole(a, locale),
         ...(a.linkedin && { url: a.linkedin, sameAs: [a.linkedin] }),
-        worksFor: { '@id': 'https://shoplinkr.com/#organization' },
+        worksFor: { '@id': 'https://www.shoplinkr.com/#organization' },
     };
 }
 

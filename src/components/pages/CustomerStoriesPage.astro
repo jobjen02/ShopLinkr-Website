@@ -60,7 +60,7 @@ const reviewSchema = voices.map((voice) => ({
     '@type': 'Review',
     itemReviewed: {
         '@type': 'SoftwareApplication',
-        '@id': 'https://shoplinkr.com/#software',
+        '@id': 'https://www.shoplinkr.com/#software',
         name: 'ShopLinkr',
     },
     author: {
@@ -69,7 +69,7 @@ const reviewSchema = voices.map((voice) => ({
         worksFor: { '@type': 'Organization', name: voice.company },
     },
     reviewBody: voice.quote,
-    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
 }));
 
 // One Article node per story, each pointing at its own detail page. url/image are
@@ -83,13 +83,13 @@ const storyArticles = customerStories.map((s) => ({
         name: s.company,
         ...(s.url ? { url: s.url } : {}),
     },
-    author: { '@id': 'https://shoplinkr.com/#organization' },
-    publisher: { '@id': 'https://shoplinkr.com/#organization' },
+    author: { '@id': 'https://www.shoplinkr.com/#organization' },
+    publisher: { '@id': 'https://www.shoplinkr.com/#organization' },
     mainEntityOfPage: {
         '@type': 'WebPage',
-        '@id': `https://shoplinkr.com${storiesBase}/${s.slug}`,
+        '@id': `https://www.shoplinkr.com${storiesBase}/${s.slug}`,
     },
-    ...(s.logo ? { image: `https://shoplinkr.com${s.logo}` } : {}),
+    ...(s.logo ? { image: `https://www.shoplinkr.com${s.logo}` } : {}),
 }));
 
 const jsonLd = [

@@ -1,4 +1,4 @@
-const SITE_URL = 'https://shoplinkr.com';
+const SITE_URL = 'https://www.shoplinkr.com';
 
 type Crumb = [label: string, path: string];
 

@@ -59,24 +59,24 @@ const jsonLd = [
         description: p.description,
         mainEntity: {
             '@type': 'Organization',
-            '@id': 'https://shoplinkr.com/#organization',
+            '@id': 'https://www.shoplinkr.com/#organization',
             name: 'ShopLinkr',
-            url: 'https://shoplinkr.com',
+            url: 'https://www.shoplinkr.com',
             foundingDate: '2022',
-            founder: { '@id': 'https://shoplinkr.com/#job-jenniskens' },
+            founder: { '@id': 'https://www.shoplinkr.com/#job-jenniskens' },
             employee: realTeam.map((member) => {
                 const a = getAuthor(member.name);
                 return {
                     '@type': 'Person',
-                    '@id': `https://shoplinkr.com/#${a.slug}`,
+                    '@id': `https://www.shoplinkr.com/#${a.slug}`,
                     name: member.name,
                     jobTitle: member.role,
                     description: member.bio,
                     ...(member.photo && {
-                        image: `https://shoplinkr.com${member.photo}`,
+                        image: `https://www.shoplinkr.com${member.photo}`,
                     }),
                     ...(a.linkedin && { url: a.linkedin, sameAs: [a.linkedin] }),
-                    worksFor: { '@id': 'https://shoplinkr.com/#organization' },
+                    worksFor: { '@id': 'https://www.shoplinkr.com/#organization' },
                 };
             }),
         },

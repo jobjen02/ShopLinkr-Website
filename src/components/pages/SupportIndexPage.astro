@@ -36,7 +36,7 @@ const jsonLd = {
     '@type': 'CollectionPage',
     name: p.jsonLdName,
     description: p.metaDescription,
-    url: `https://shoplinkr.com${supportBase}`,
+    url: `https://www.shoplinkr.com${supportBase}`,
     inLanguage: localeMeta[locale].bcp47,
     mainEntity: {
         '@type': 'ItemList',
@@ -44,7 +44,7 @@ const jsonLd = {
         itemListElement: categories.map((category, index) => ({
             '@type': 'ListItem',
             position: index + 1,
-            url: `https://shoplinkr.com${categoriesBase}/${category.slug}`,
+            url: `https://www.shoplinkr.com${categoriesBase}/${category.slug}`,
             name: category.label,
         })),
     },

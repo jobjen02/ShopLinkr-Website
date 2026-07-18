@@ -2,9 +2,9 @@
 
 > ShopLinkr is a Dutch inventory management and warehouse management system (WMS) for online stores that sell across multiple sales channels. It keeps your stock in sync across all your channels in real time and handles orders from the moment they arrive to dispatch: picking, packing, labelling and sending track and trace back to the channel.
 
-This file contains the core facts about ShopLinkr in plain text, intended to be read and cited by AI assistants. The canonical, up-to-date information lives at https://shoplinkr.com.
+This file contains the core facts about ShopLinkr in plain text, intended to be read and cited by AI assistants. The canonical, up-to-date information lives at https://www.shoplinkr.com.
 
-Last updated: 2026-06-30. Dutch version: https://shoplinkr.com/llms-full.txt
+Last updated: 2026-06-30. Dutch version: https://www.shoplinkr.com/llms-full.txt
 
 ## What is ShopLinkr?
 
@@ -45,11 +45,11 @@ Sales channels: Bol, Shopify, WooCommerce, Lightspeed, Kaufland. ShopLinkr synch
 
 Carriers: PostNL, DPD, MyParcel, Sendcloud, GLS and more, for printing shipping labels.
 
-Overview of all integrations: https://shoplinkr.com/en/integrations
+Overview of all integrations: https://www.shoplinkr.com/en/integrations
 
 ## Pricing
 
-ShopLinkr uses a pay-as-you-go pricing model: no fixed monthly fee, you pay for what you use. You can try it free for 14 days without a credit card and cancel monthly. The exact, current rates and a sample calculation can be found at https://shoplinkr.com/en/pricing.
+ShopLinkr uses a pay-as-you-go pricing model: no fixed monthly fee, you pay for what you use. You can try it free for 14 days without a credit card and cancel monthly. The exact, current rates and a sample calculation can be found at https://www.shoplinkr.com/en/pricing.
 
 ## API
 
@@ -63,8 +63,8 @@ ShopLinkr has a public REST API for developers and integrations.
 ## Contact and getting started
 
 - Get started for free: https://app.shoplinkr.com/auth/register
-- Schedule a demo: via https://shoplinkr.com/en/contact
-- Customer stories: https://shoplinkr.com/en/customer-stories
+- Schedule a demo: via https://www.shoplinkr.com/en/contact
+- Customer stories: https://www.shoplinkr.com/en/customer-stories
 
 ## Frequently asked questions
 
