@@ -92,6 +92,8 @@ const resolvedLocale = (locale ?? Astro.currentLocale ?? 'nl') as Locale;
                         alt={imageAlt ?? ''}
                         class="w-full aspect-video object-cover rounded-xl ring-1 ring-chalk-dark dark:ring-flint"
                         loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
                     />
                 </div>
             )}

@@ -51,7 +51,14 @@ const organizationSchema = {
     name: 'ShopLinkr',
     legalName: 'ShopLinkr',
     url: 'https://www.shoplinkr.com',
-    logo: 'https://www.shoplinkr.com/logo/logo-charcoal.svg',
+    // Raster logo: Google's Organization guidelines want a crawlable image of at
+    // least 112x112px and recommend PNG/JPG over SVG for the knowledge panel.
+    logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.shoplinkr.com/icon-512.png',
+        width: 512,
+        height: 512,
+    },
     description: t.footer.description,
     foundingDate: '2022',
     email: 'contact@shoplinkr.com',
