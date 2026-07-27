@@ -177,5 +177,10 @@ const founderSchema = founderPersonSchema(locale);
         </main>
         <Footer />
         <CookieBanner client:idle locale={locale} />
+        <script>
+            // Emit CTA + outbound-link events to the GTM dataLayer site-wide.
+            import { initClickTracking } from '../lib/analytics';
+            initClickTracking();
+        </script>
     </body>
 </html>

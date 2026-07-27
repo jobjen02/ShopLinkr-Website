@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue';
 import { useTranslations } from '../../i18n/ui';
 import type { Locale } from '../../i18n/routes';
+import { track, EVENTS } from '../../lib/analytics';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -82,6 +83,10 @@ async function handleSubmit(): Promise<void> {
         }
 
         status.value = 'success';
+        track(EVENTS.newsletterSignup, {
+            form_id: 'newsletter',
+            source: 'website-footer',
+        });
     } catch (error) {
         status.value = 'error';
         const raw = error instanceof Error ? error.message : undefined;
