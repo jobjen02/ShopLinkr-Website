@@ -74,25 +74,32 @@ GA4-configuratietag in GTM live staat (zie hieronder), vind je dit onder:
 City). Je kunt in vrijwel elk rapport ook _Country_ als secundaire dimensie
 toevoegen, bijv. om te zien uit welke landen je demo-aanvragen komen.
 
-## Éénmalige setup in GTM
+## Setup in GTM (container `GTM-M33XL5PD`)
 
-1. **Controleer de GA4-configuratietag.** Er moet een GA4-tag ("Google tag" /
-   GA4 Configuration) bestaan met jouw Measurement ID (`G-XXXXXXXXXX`) die op
-   **All Pages** vuurt. Die verzorgt `page_view` én de automatische landdata.
-2. **Maak Data Layer Variables** (type: *Data Layer Variable*, version 2) voor de
-   parameters die je in GA4 wilt zien: `cta_id`, `cta_text`, `cta_location`,
-   `link_url`, `link_domain`, `link_text`, `page_path`, `page_language`,
-   `form_id`, `source`.
-3. **Maak per event een trigger** (type: *Custom Event*), met de eventnaam exact
-   zoals in de tabel, bijv. `demo_booking_click`.
-4. **Maak per event een GA4 Event-tag** (type: *GA4 Event*), koppel je
-   GA4-configuratietag, zet de *Event Name* gelijk aan de eventnaam, en map onder
-   *Event Parameters* de Data Layer Variables uit stap 2. Laat de tag vuren op de
-   bijbehorende trigger uit stap 3.
-   - Sneller alternatief: één GA4 Event-tag met de ingebouwde variabele
-     `{{Event}}` als Event Name, met één trigger die op alle relevante custom
-     events vuurt.
-5. **Publiceer** de container.
+De GTM-kant is als kant-en-klaar importbestand aangeleverd; je hoeft de
+variabelen/triggers/tags niet met de hand te bouwen. De opzet daar:
+
+- **Variabelen** — Data Layer Variables voor `cta_id`, `cta_text`, `cta_location`,
+  `link_url`, `link_domain`, `link_text`, `form_id`, `source`, `page_language`.
+- **Trigger** `CE - ShopLinkr events` — één *Custom Event*-trigger met een regex
+  op alle eventnamen uit de tabel hierboven.
+- **Tag** `GA4 - ShopLinkr events` — één GA4 Event-tag met `{{Event}}` als
+  eventnaam, die de variabelen hierboven als event-parameters meestuurt.
+
+`page_path` wordt bewust *niet* als custom parameter doorgegeven: GA4 legt de
+pagina al bij elk event vast, en een eigen parameter met dezelfde naam levert
+een verwarrende dubbele dimensie op. De dataLayer bevat 'm wel.
+
+> **Volgorde bij uitrollen:** zet eerst deze site-code live, publiceer daarna pas
+> de GTM-container. De container leunt op de events uit `analytics.ts`; publiceer
+> je GTM eerder, dan is er even niets dat die events verstuurt.
+
+Let op één interactie met de bestaande Meta-opzet in de container: er staat een
+trigger die op *elk* custom event vuurt (alles wat niet met `gtm.` begint). Die
+pakt deze events dus automatisch mee richting de Facebook-pixel. `generate_lead`
+wordt daarbij vertaald naar het Meta-standaardevent `Lead`. De ruisgevoelige
+events (`outbound_click`, `login_click`, `pricing_calculator_use`) zijn met een
+blokkeertrigger uitgesloten.
 
 ## Éénmalige setup in GA4
 
